@@ -1,6 +1,5 @@
 {
     "npmName": "iconik-typescript",
-    "npmRepository": "https://github.com/bootsie123/iconik-typescript",
     "supportsES6": true,
     "withInterfaces": true
 }
