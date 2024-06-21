@@ -17,10 +17,10 @@ import { UserACL1 } from '../models/UserACL1';
 import { HttpFile } from '../http/http';
 
 export class ACLSchema {
-    'groupsAcl'?: Array<GroupACL1>;
-    'inheritedGroupsAcl'?: Array<GroupACL>;
+    'groupsAcl'?: Array<GroupACL>;
+    'inheritedGroupsAcl'?: Array<GroupACL1>;
     'inheritedUsersAcl'?: Array<UserACL>;
-    'propagatingGroupsAcl'?: Array<GroupACL>;
+    'propagatingGroupsAcl'?: Array<GroupACL1>;
     'propagatingUsersAcl'?: Array<UserACL>;
     'usersAcl'?: Array<UserACL1>;
 
@@ -30,13 +30,13 @@ export class ACLSchema {
         {
             "name": "groupsAcl",
             "baseName": "groups_acl",
-            "type": "Array<GroupACL1>",
+            "type": "Array<GroupACL>",
             "format": ""
         },
         {
             "name": "inheritedGroupsAcl",
             "baseName": "inherited_groups_acl",
-            "type": "Array<GroupACL>",
+            "type": "Array<GroupACL1>",
             "format": ""
         },
         {
@@ -48,7 +48,7 @@ export class ACLSchema {
         {
             "name": "propagatingGroupsAcl",
             "baseName": "propagating_groups_acl",
-            "type": "Array<GroupACL>",
+            "type": "Array<GroupACL1>",
             "format": ""
         },
         {
