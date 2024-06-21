@@ -79307,14 +79307,14 @@
         "properties": {
           "groups_acl": {
             "items": {
-              "$ref": "#/components/schemas/GroupACL"
+              "$ref": "#/components/schemas/GroupACL1"
             },
             "readOnly": true,
             "type": "array"
           },
           "inherited_groups_acl": {
             "items": {
-              "$ref": "#/components/schemas/GroupACL1"
+              "$ref": "#/components/schemas/GroupACL"
             },
             "readOnly": true,
             "type": "array"
@@ -79328,7 +79328,7 @@
           },
           "propagating_groups_acl": {
             "items": {
-              "$ref": "#/components/schemas/GroupACL1"
+              "$ref": "#/components/schemas/GroupACL"
             },
             "readOnly": true,
             "type": "array"
@@ -79788,6 +79788,14 @@
             "readOnly": true,
             "type": "string"
           },
+          "object_key": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "object_type": {
+            "readOnly": true,
+            "type": "string"
+          },
           "permissions": {
             "items": {
               "type": "string"
@@ -79804,14 +79812,6 @@
         "properties": {
           "group_id": {
             "format": "uuid",
-            "readOnly": true,
-            "type": "string"
-          },
-          "object_key": {
-            "readOnly": true,
-            "type": "string"
-          },
-          "object_type": {
             "readOnly": true,
             "type": "string"
           },
