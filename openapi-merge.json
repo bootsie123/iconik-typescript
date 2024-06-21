@@ -1,0 +1,83 @@
+{
+  "inputs": [
+    {
+      "inputURL": "https://app.iconik.io/docs/acls/spec",
+      "pathModification": {
+        "prepend": "/acls"
+      }
+    },
+    {
+      "inputURL": "https://app.iconik.io/docs/assets/spec",
+      "pathModification": {
+        "prepend": "/assets"
+      }
+    },
+    {
+      "inputURL": "https://app.iconik.io/docs/auth/spec",
+      "pathModification": {
+        "prepend": "/auth"
+      }
+    },
+    {
+      "inputURL": "https://app.iconik.io/docs/files/spec",
+      "pathModification": {
+        "prepend": "/files"
+      }
+    },
+    {
+      "inputURL": "https://app.iconik.io/docs/jobs/spec",
+      "pathModification": {
+        "prepend": "/jobs"
+      }
+    },
+    {
+      "inputURL": "https://app.iconik.io/docs/metadata/spec",
+      "pathModification": {
+        "prepend": "/metadata"
+      }
+    },
+    {
+      "inputURL": "https://app.iconik.io/docs/notifications/spec",
+      "pathModification": {
+        "prepend": "/notifications"
+      }
+    },
+    {
+      "inputURL": "https://app.iconik.io/docs/search/spec",
+      "pathModification": {
+        "prepend": "/search"
+      }
+    },
+    {
+      "inputURL": "https://app.iconik.io/docs/settings/spec",
+      "pathModification": {
+        "prepend": "/settings"
+      }
+    },
+    {
+      "inputURL": "https://app.iconik.io/docs/stats/spec",
+      "pathModification": {
+        "prepend": "/stats"
+      }
+    },
+    {
+      "inputURL": "https://app.iconik.io/docs/transcode/spec",
+      "pathModification": {
+        "prepend": "/transcode"
+      }
+    },
+    {
+      "inputURL": "https://app.iconik.io/docs/users/spec",
+      "pathModification": {
+        "prepend": "/users"
+      }
+    },
+    {
+      "inputURL": "https://app.iconik.io/docs/users-notifications/spec",
+      "pathModification": {
+        "prepend": "/users-notifications"
+      }
+    }
+  ],
+  "output": "./openapi.json"
+}
