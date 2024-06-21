@@ -1,6 +1,8 @@
 name: Generate SDK
 
-on: push
+on:
+  push:
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -28,7 +30,8 @@ jobs:
         uses: openapi-generators/openapitools-generator-action@v1.5.0
         with:
           generator: typescript
-          config-file: openapitools.json
+          config-file: config.json
+          command-args: --global-poperty=apiDocs
 
       - name: Commit new files
         run: |
