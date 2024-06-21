@@ -31,7 +31,7 @@ jobs:
         with:
           generator: typescript
           config-file: config.json
-          command-args: --global-poperty=apiDocs
+          command-args: --global-property=apiDocs
 
       - name: Commit new files
         run: |
