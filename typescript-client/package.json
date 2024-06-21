@@ -1,7 +1,7 @@
 {
-  "name": "",
-  "version": "",
-  "description": "OpenAPI client for ",
+  "name": "iconik-typescript",
+  "version": "2.0.0",
+  "description": "OpenAPI client for iconik-typescript",
   "author": "OpenAPI-Generator Contributors",
   "repository": {
     "type": "git",
@@ -15,10 +15,11 @@
   ],
   "license": "Unlicense",
   "main": "./dist/index.js",
-  "type": "commonjs",
+  "type": "module",
+  "module": "./dist/index.js",
   "exports": {
     ".": {
-      "require": "./dist/index.js",
+      "import": "./dist/index.js",
       "types": "./dist/index.d.js"
     }
   },
