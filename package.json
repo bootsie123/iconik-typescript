@@ -1,6 +1,6 @@
 {
   "name": "iconik-typescript",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "An auto-generated typescript library for the Iconik REST API",
   "main": "index.js",
   "homepage": "https://github.com/bootsie123/iconik-typescript",
