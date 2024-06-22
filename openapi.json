@@ -79321,7 +79321,7 @@
           },
           "inherited_users_acl": {
             "items": {
-              "$ref": "#/components/schemas/UserACL1"
+              "$ref": "#/components/schemas/UserACL"
             },
             "readOnly": true,
             "type": "array"
@@ -79335,14 +79335,14 @@
           },
           "propagating_users_acl": {
             "items": {
-              "$ref": "#/components/schemas/UserACL1"
+              "$ref": "#/components/schemas/UserACL"
             },
             "readOnly": true,
             "type": "array"
           },
           "users_acl": {
             "items": {
-              "$ref": "#/components/schemas/UserACL"
+              "$ref": "#/components/schemas/UserACL1"
             },
             "readOnly": true,
             "type": "array"
@@ -80061,6 +80061,14 @@
       },
       "UserACL": {
         "properties": {
+          "object_key": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "object_type": {
+            "readOnly": true,
+            "type": "string"
+          },
           "permissions": {
             "items": {
               "type": "string"
@@ -80080,14 +80088,6 @@
       },
       "UserACL1": {
         "properties": {
-          "object_key": {
-            "readOnly": true,
-            "type": "string"
-          },
-          "object_type": {
-            "readOnly": true,
-            "type": "string"
-          },
           "permissions": {
             "items": {
               "type": "string"
