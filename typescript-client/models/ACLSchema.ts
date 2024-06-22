@@ -17,12 +17,12 @@ import { UserACL1 } from '../models/UserACL1';
 import { HttpFile } from '../http/http';
 
 export class ACLSchema {
-    'groupsAcl'?: Array<GroupACL>;
-    'inheritedGroupsAcl'?: Array<GroupACL1>;
-    'inheritedUsersAcl'?: Array<UserACL>;
-    'propagatingGroupsAcl'?: Array<GroupACL1>;
-    'propagatingUsersAcl'?: Array<UserACL>;
-    'usersAcl'?: Array<UserACL1>;
+    'groupsAcl'?: Array<GroupACL1>;
+    'inheritedGroupsAcl'?: Array<GroupACL>;
+    'inheritedUsersAcl'?: Array<UserACL1>;
+    'propagatingGroupsAcl'?: Array<GroupACL>;
+    'propagatingUsersAcl'?: Array<UserACL1>;
+    'usersAcl'?: Array<UserACL>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -30,37 +30,37 @@ export class ACLSchema {
         {
             "name": "groupsAcl",
             "baseName": "groups_acl",
-            "type": "Array<GroupACL>",
+            "type": "Array<GroupACL1>",
             "format": ""
         },
         {
             "name": "inheritedGroupsAcl",
             "baseName": "inherited_groups_acl",
-            "type": "Array<GroupACL1>",
+            "type": "Array<GroupACL>",
             "format": ""
         },
         {
             "name": "inheritedUsersAcl",
             "baseName": "inherited_users_acl",
-            "type": "Array<UserACL>",
+            "type": "Array<UserACL1>",
             "format": ""
         },
         {
             "name": "propagatingGroupsAcl",
             "baseName": "propagating_groups_acl",
-            "type": "Array<GroupACL1>",
+            "type": "Array<GroupACL>",
             "format": ""
         },
         {
             "name": "propagatingUsersAcl",
             "baseName": "propagating_users_acl",
-            "type": "Array<UserACL>",
+            "type": "Array<UserACL1>",
             "format": ""
         },
         {
             "name": "usersAcl",
             "baseName": "users_acl",
-            "type": "Array<UserACL1>",
+            "type": "Array<UserACL>",
             "format": ""
         }    ];
 

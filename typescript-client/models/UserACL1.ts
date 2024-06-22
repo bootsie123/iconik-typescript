@@ -13,12 +13,26 @@
 import { HttpFile } from '../http/http';
 
 export class UserACL1 {
+    'objectKey'?: string;
+    'objectType'?: string;
     'permissions': Array<string>;
     'userId'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "objectKey",
+            "baseName": "object_key",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "objectType",
+            "baseName": "object_type",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "permissions",
             "baseName": "permissions",
