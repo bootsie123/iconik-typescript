@@ -44,4 +44,4 @@ jobs:
           VERSION=v$(cd typescript-client && npm pkg get version --workspaces=false | tr -d \")
           git tag ${VERSION}
           git push
-          git push ${VERSION} -f
+          git push origin ${VERSION} -f
