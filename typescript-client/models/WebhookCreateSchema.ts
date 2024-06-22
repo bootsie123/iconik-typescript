@@ -13,51 +13,123 @@
 import { HttpFile } from '../http/http';
 
 export class WebhookCreateSchema {
-    'description'?: string;
     /**
-    * Adding a query allows filtering out messages so webhooks will be called only if for messages that match this query.
+    * Operation of event. Example create, update, delete
     */
-    'query'?: string;
-    'dateModified'?: Date;
-    'id'?: string;
-    /**
-    * URL you want to be called when notification is appeared
-    */
-    'url': string;
-    'name'?: string;
+    'operation'?: string | null;
     'firstFailedAt'?: Date;
-    /**
-    * Realm of event. Example entity, contents, acls, metadata
-    */
-    'realm'?: string | null;
-    'lastError'?: string;
-    /**
-    * Define the key-value pairs your third party provider requires here
-    */
-    'headers'?: { [key: string]: string; };
-    'dateCreated'?: Date;
+    'name'?: string;
+    'description'?: string;
+    'id'?: string;
     /**
     * Type of events. Example assets, collections
     */
     'eventType': string;
     /**
-    * Operation of event. Example create, update, delete
-    */
-    'operation'?: string | null;
-    'status': WebhookCreateSchemaStatusEnum;
-    /**
     * ID of a particular object you want to subscribe on
     */
     'objectId'?: string | null;
+    'status': WebhookCreateSchemaStatusEnum;
     'lastPayload'?: string;
+    'dateCreated'?: Date;
     'deletedAt'?: Date;
+    /**
+    * Realm of event. Example entity, contents, acls, metadata
+    */
+    'realm'?: string | null;
+    /**
+    * URL you want to be called when notification is appeared
+    */
+    'url': string;
+    /**
+    * Adding a query allows filtering out messages so webhooks will be called only if for messages that match this query.
+    */
+    'query'?: string;
+    'dateModified'?: Date;
+    /**
+    * Define the key-value pairs your third party provider requires here
+    */
+    'headers'?: { [key: string]: string; };
+    'lastError'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
+            "name": "operation",
+            "baseName": "operation",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "firstFailedAt",
+            "baseName": "first_failed_at",
+            "type": "Date",
+            "format": "date-time"
+        },
+        {
+            "name": "name",
+            "baseName": "name",
+            "type": "string",
+            "format": ""
+        },
+        {
             "name": "description",
             "baseName": "description",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "id",
+            "baseName": "id",
+            "type": "string",
+            "format": "uuid"
+        },
+        {
+            "name": "eventType",
+            "baseName": "event_type",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "objectId",
+            "baseName": "object_id",
+            "type": "string",
+            "format": "uuid"
+        },
+        {
+            "name": "status",
+            "baseName": "status",
+            "type": "WebhookCreateSchemaStatusEnum",
+            "format": ""
+        },
+        {
+            "name": "lastPayload",
+            "baseName": "last_payload",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "dateCreated",
+            "baseName": "date_created",
+            "type": "Date",
+            "format": "date-time"
+        },
+        {
+            "name": "deletedAt",
+            "baseName": "deleted_at",
+            "type": "Date",
+            "format": "date-time"
+        },
+        {
+            "name": "realm",
+            "baseName": "realm",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "url",
+            "baseName": "url",
             "type": "string",
             "format": ""
         },
@@ -74,33 +146,9 @@ export class WebhookCreateSchema {
             "format": "date-time"
         },
         {
-            "name": "id",
-            "baseName": "id",
-            "type": "string",
-            "format": "uuid"
-        },
-        {
-            "name": "url",
-            "baseName": "url",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "name",
-            "baseName": "name",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "firstFailedAt",
-            "baseName": "first_failed_at",
-            "type": "Date",
-            "format": "date-time"
-        },
-        {
-            "name": "realm",
-            "baseName": "realm",
-            "type": "string",
+            "name": "headers",
+            "baseName": "headers",
+            "type": "{ [key: string]: string; }",
             "format": ""
         },
         {
@@ -108,54 +156,6 @@ export class WebhookCreateSchema {
             "baseName": "last_error",
             "type": "string",
             "format": ""
-        },
-        {
-            "name": "headers",
-            "baseName": "headers",
-            "type": "{ [key: string]: string; }",
-            "format": ""
-        },
-        {
-            "name": "dateCreated",
-            "baseName": "date_created",
-            "type": "Date",
-            "format": "date-time"
-        },
-        {
-            "name": "eventType",
-            "baseName": "event_type",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "operation",
-            "baseName": "operation",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "status",
-            "baseName": "status",
-            "type": "WebhookCreateSchemaStatusEnum",
-            "format": ""
-        },
-        {
-            "name": "objectId",
-            "baseName": "object_id",
-            "type": "string",
-            "format": "uuid"
-        },
-        {
-            "name": "lastPayload",
-            "baseName": "last_payload",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "deletedAt",
-            "baseName": "deleted_at",
-            "type": "Date",
-            "format": "date-time"
         }    ];
 
     static getAttributeTypeMap() {
