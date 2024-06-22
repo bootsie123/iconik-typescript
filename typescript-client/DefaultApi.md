@@ -1,4 +1,4 @@
-# .DefaultApi
+# iconik.DefaultApi
 
 All URIs are relative to *https://app.iconik.io/API*
 
@@ -720,13 +720,13 @@ Method | HTTP request | Description
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1AclObjectTypeContentDeleteRequest = {
+let body:iconik.DefaultApiAclsV1AclObjectTypeContentDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -798,13 +798,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1AclObjectTypeContentPutRequest = {
+let body:iconik.DefaultApiAclsV1AclObjectTypeContentPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -881,13 +881,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1AclObjectTypeDeleteRequest = {
+let body:iconik.DefaultApiAclsV1AclObjectTypeDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -957,13 +957,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1AclObjectTypeObjectKeyGetRequest = {
+let body:iconik.DefaultApiAclsV1AclObjectTypeObjectKeyGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -1023,13 +1023,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1AclObjectTypeObjectKeyPermissionGetRequest = {
+let body:iconik.DefaultApiAclsV1AclObjectTypeObjectKeyPermissionGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -1093,13 +1093,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1AclObjectTypeObjectKeyPermissionsGetRequest = {
+let body:iconik.DefaultApiAclsV1AclObjectTypeObjectKeyPermissionsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -1159,13 +1159,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1AclObjectTypePermissionPostRequest = {
+let body:iconik.DefaultApiAclsV1AclObjectTypePermissionPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -1233,13 +1233,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1AclObjectTypePutRequest = {
+let body:iconik.DefaultApiAclsV1AclObjectTypePutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -1313,13 +1313,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1AclPostRequest = {
+let body:iconik.DefaultApiAclsV1AclPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -1389,13 +1389,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1AclTemplatesGetRequest = {
+let body:iconik.DefaultApiAclsV1AclTemplatesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -1449,13 +1449,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1AclTemplatesPostRequest = {
+let body:iconik.DefaultApiAclsV1AclTemplatesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -1514,13 +1514,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1AclTemplatesTemplateIdDeleteRequest = {
+let body:iconik.DefaultApiAclsV1AclTemplatesTemplateIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -1578,13 +1578,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1AclTemplatesTemplateIdGetRequest = {
+let body:iconik.DefaultApiAclsV1AclTemplatesTemplateIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -1642,13 +1642,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1AclTemplatesTemplateIdObjectTypeObjectKeyPostRequest = {
+let body:iconik.DefaultApiAclsV1AclTemplatesTemplateIdObjectTypeObjectKeyPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -1719,13 +1719,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1AclTemplatesTemplateIdPatchRequest = {
+let body:iconik.DefaultApiAclsV1AclTemplatesTemplateIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -1788,13 +1788,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1AclTemplatesTemplateIdPutRequest = {
+let body:iconik.DefaultApiAclsV1AclTemplatesTemplateIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -1857,13 +1857,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1GroupsGroupIdAclObjectTypeObjectKeyDeleteRequest = {
+let body:iconik.DefaultApiAclsV1GroupsGroupIdAclObjectTypeObjectKeyDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -1927,13 +1927,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1GroupsGroupIdAclObjectTypeObjectKeyGetRequest = {
+let body:iconik.DefaultApiAclsV1GroupsGroupIdAclObjectTypeObjectKeyGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -1996,13 +1996,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1GroupsGroupIdAclObjectTypeObjectKeyPermissionGetRequest = {
+let body:iconik.DefaultApiAclsV1GroupsGroupIdAclObjectTypeObjectKeyPermissionGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -2069,13 +2069,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1GroupsGroupIdAclObjectTypeObjectKeyPutRequest = {
+let body:iconik.DefaultApiAclsV1GroupsGroupIdAclObjectTypeObjectKeyPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -2146,13 +2146,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1SharesObjectTypeObjectKeyGetRequest = {
+let body:iconik.DefaultApiAclsV1SharesObjectTypeObjectKeyGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -2212,13 +2212,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1SharesShareIdAclObjectTypeObjectKeyDeleteRequest = {
+let body:iconik.DefaultApiAclsV1SharesShareIdAclObjectTypeObjectKeyDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -2282,13 +2282,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1SharesShareIdAclObjectTypeObjectKeyGetRequest = {
+let body:iconik.DefaultApiAclsV1SharesShareIdAclObjectTypeObjectKeyGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -2351,13 +2351,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1SharesShareIdAclObjectTypeObjectKeyPermissionGetRequest = {
+let body:iconik.DefaultApiAclsV1SharesShareIdAclObjectTypeObjectKeyPermissionGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -2424,13 +2424,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1SharesShareIdAclObjectTypeObjectKeyPostRequest = {
+let body:iconik.DefaultApiAclsV1SharesShareIdAclObjectTypeObjectKeyPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -2500,13 +2500,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1SharesShareIdAclObjectTypeObjectKeyPutRequest = {
+let body:iconik.DefaultApiAclsV1SharesShareIdAclObjectTypeObjectKeyPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -2577,13 +2577,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1SharesShareIdAclObjectTypePutRequest = {
+let body:iconik.DefaultApiAclsV1SharesShareIdAclObjectTypePutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -2653,13 +2653,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1UsersUserIdAclObjectTypeObjectKeyDeleteRequest = {
+let body:iconik.DefaultApiAclsV1UsersUserIdAclObjectTypeObjectKeyDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -2723,13 +2723,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1UsersUserIdAclObjectTypeObjectKeyGetRequest = {
+let body:iconik.DefaultApiAclsV1UsersUserIdAclObjectTypeObjectKeyGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -2792,13 +2792,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1UsersUserIdAclObjectTypeObjectKeyPermissionGetRequest = {
+let body:iconik.DefaultApiAclsV1UsersUserIdAclObjectTypeObjectKeyPermissionGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -2865,13 +2865,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAclsV1UsersUserIdAclObjectTypeObjectKeyPutRequest = {
+let body:iconik.DefaultApiAclsV1UsersUserIdAclObjectTypeObjectKeyPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -2942,13 +2942,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ApprovalsBulkPostRequest = {
+let body:iconik.DefaultApiAssetsV1ApprovalsBulkPostRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -3011,13 +3011,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ApprovalsBulkRemovePostRequest = {
+let body:iconik.DefaultApiAssetsV1ApprovalsBulkRemovePostRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -3079,13 +3079,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -3144,13 +3144,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdGetRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -3214,13 +3214,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdHistoryGetRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdHistoryGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -3290,13 +3290,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdHistoryHistoryEntityIdDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdHistoryHistoryEntityIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -3356,13 +3356,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdHistoryHistoryEntityIdGetRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdHistoryHistoryEntityIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -3422,13 +3422,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdHistoryHistoryEntityIdReindexPostRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdHistoryHistoryEntityIdReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -3488,13 +3488,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdHistoryPostRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdHistoryPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -3561,13 +3561,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdPatchRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -3652,13 +3652,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdPurgeDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdPurgeDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -3716,13 +3716,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdPutRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -3807,13 +3807,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdReindexPostRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -3878,13 +3878,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdRelationsGetRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdRelationsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -3954,13 +3954,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdRelationsPostRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdRelationsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -4026,13 +4026,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdRelationsRelationTypeGetRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdRelationsRelationTypeGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -4095,13 +4095,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -4164,13 +4164,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdPostRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -4242,13 +4242,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdReversePostRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdReversePostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -4311,13 +4311,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdRestorePutRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdRestorePutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -4375,13 +4375,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdSearchDocumentPutRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdSearchDocumentPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -4464,13 +4464,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdSegmentsBulkDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdSegmentsBulkDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -4542,13 +4542,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdSegmentsBulkPostRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdSegmentsBulkPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -4660,13 +4660,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdSegmentsGetRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdSegmentsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -4778,13 +4778,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdSegmentsPostRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdSegmentsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -4895,13 +4895,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdSegmentsReindexPostRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdSegmentsReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -4967,13 +4967,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdSegmentsSegmentIdDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdSegmentsSegmentIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -5036,13 +5036,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdSegmentsSegmentIdGetRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdSegmentsSegmentIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -5109,13 +5109,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdSegmentsSegmentIdPatchRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdSegmentsSegmentIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -5223,13 +5223,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdSegmentsSegmentIdPutRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdSegmentsSegmentIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -5337,13 +5337,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdSegmentsSegmentIdReindexPostRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdSegmentsSegmentIdReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -5412,13 +5412,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdSegmentsSegmentTypeGetRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdSegmentsSegmentTypeGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -5515,13 +5515,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdSegmentsSrtGetRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdSegmentsSrtGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -5600,13 +5600,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdSegmentsVttGetRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdSegmentsVttGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -5685,13 +5685,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdUploadsDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdUploadsDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -5749,13 +5749,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdVersionsFromAssetsSourceAssetIdPostRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdVersionsFromAssetsSourceAssetIdPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -5826,13 +5826,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdVersionsFromVersionsSourceVersionIdPostRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdVersionsFromVersionsSourceVersionIdPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -5905,13 +5905,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdVersionsOldDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdVersionsOldDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -5970,13 +5970,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdVersionsPostRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdVersionsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -6044,13 +6044,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -6115,13 +6115,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdPatchRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -6195,13 +6195,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdPromotePutRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdPromotePutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -6262,13 +6262,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdPutRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -6342,13 +6342,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPropertiesGetRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPropertiesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -6409,13 +6409,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPropertiesPostRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPropertiesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -6482,13 +6482,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsSubtitlesPostRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsSubtitlesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -6558,13 +6558,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -6628,13 +6628,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesGetRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -6698,13 +6698,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesPatchRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -6774,13 +6774,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesPutRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -6850,13 +6850,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsAssetIdViewsPostRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsAssetIdViewsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -6914,13 +6914,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsGetRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -6993,13 +6993,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsPatchRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -7085,13 +7085,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsPostRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -7184,13 +7184,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsPutRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -7276,13 +7276,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsReindexPostRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -7346,13 +7346,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsRelationTypesGetRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsRelationTypesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -7406,13 +7406,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsRelationTypesPostRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsRelationTypesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -7475,13 +7475,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsRelationTypesRelationTypeDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsRelationTypesRelationTypeDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -7538,13 +7538,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsRelationTypesRelationTypeGetRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsRelationTypesRelationTypeGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -7601,13 +7601,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsRelationTypesRelationTypePatchRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsRelationTypesRelationTypePatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -7673,13 +7673,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsRelationTypesRelationTypePutRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsRelationTypesRelationTypePutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -7745,13 +7745,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1AssetsSegmentsReindexPostRequest = {
+let body:iconik.DefaultApiAssetsV1AssetsSegmentsReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -7816,13 +7816,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdAncestorsGetRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdAncestorsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -7880,13 +7880,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdContentInfoGetRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdContentInfoGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -7946,13 +7946,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdContentsGetRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdContentsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -8031,13 +8031,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdContentsObjectTypeObjectIdDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdContentsObjectTypeObjectIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -8101,13 +8101,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdContentsObjectTypeObjectIdPutRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdContentsObjectTypeObjectIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -8178,13 +8178,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdContentsObjectTypeObjectIdReindexPostRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdContentsObjectTypeObjectIdReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -8252,13 +8252,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdContentsOrderingCustomDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdContentsOrderingCustomDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -8316,13 +8316,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdContentsOrderingCustomPostRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdContentsOrderingCustomPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -8385,13 +8385,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdContentsPostRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdContentsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -8455,13 +8455,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -8519,13 +8519,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdFullPathGetRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdFullPathGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -8586,13 +8586,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdGetRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -8649,13 +8649,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdKeyframesPostRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdKeyframesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -8720,13 +8720,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdPatchRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -8804,13 +8804,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdPurgeDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdPurgeDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -8869,13 +8869,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdPutRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -8953,13 +8953,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdReindexContentsPostRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdReindexContentsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -9016,13 +9016,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdReindexPostRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -9087,13 +9087,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdRestorePutRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdRestorePutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -9152,13 +9152,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdSearchDocumentPutRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdSearchDocumentPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -9241,13 +9241,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdSizeGetRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdSizeGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -9311,13 +9311,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsCollectionIdSubcollectionsPostRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsCollectionIdSubcollectionsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -9381,13 +9381,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsGetRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -9463,13 +9463,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsPostRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -9549,13 +9549,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CollectionsReindexPostRequest = {
+let body:iconik.DefaultApiAssetsV1CollectionsReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -9618,13 +9618,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CustomActionsContextActionIdCallbackPostRequest = {
+let body:iconik.DefaultApiAssetsV1CustomActionsContextActionIdCallbackPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -9700,13 +9700,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CustomActionsContextActionIdDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1CustomActionsContextActionIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -9766,13 +9766,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CustomActionsContextActionIdGetRequest = {
+let body:iconik.DefaultApiAssetsV1CustomActionsContextActionIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -9832,13 +9832,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CustomActionsContextActionIdPatchRequest = {
+let body:iconik.DefaultApiAssetsV1CustomActionsContextActionIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -9913,13 +9913,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CustomActionsContextActionIdPutRequest = {
+let body:iconik.DefaultApiAssetsV1CustomActionsContextActionIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -9994,13 +9994,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CustomActionsContextGetRequest = {
+let body:iconik.DefaultApiAssetsV1CustomActionsContextGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -10058,13 +10058,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CustomActionsContextPostRequest = {
+let body:iconik.DefaultApiAssetsV1CustomActionsContextPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -10136,13 +10136,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CustomActionsGetRequest = {
+let body:iconik.DefaultApiAssetsV1CustomActionsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -10197,13 +10197,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1CustomActionsSharedContextActionIdCallbackPostRequest = {
+let body:iconik.DefaultApiAssetsV1CustomActionsSharedContextActionIdCallbackPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -10279,13 +10279,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1DeleteQueueAssetsDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1DeleteQueueAssetsDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -10346,13 +10346,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1DeleteQueueAssetsGetRequest = {
+let body:iconik.DefaultApiAssetsV1DeleteQueueAssetsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -10419,13 +10419,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1DeleteQueueAssetsPostRequest = {
+let body:iconik.DefaultApiAssetsV1DeleteQueueAssetsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -10486,13 +10486,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1DeleteQueueAssetsPurgeAllPostRequest = {
+let body:iconik.DefaultApiAssetsV1DeleteQueueAssetsPurgeAllPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -10546,13 +10546,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1DeleteQueueAssetsPurgePostRequest = {
+let body:iconik.DefaultApiAssetsV1DeleteQueueAssetsPurgePostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -10613,13 +10613,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1DeleteQueueAssetsRestoreAllPostRequest = {
+let body:iconik.DefaultApiAssetsV1DeleteQueueAssetsRestoreAllPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -10673,13 +10673,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1DeleteQueueBulkPostRequest = {
+let body:iconik.DefaultApiAssetsV1DeleteQueueBulkPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -10742,13 +10742,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1DeleteQueueCollectionsDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1DeleteQueueCollectionsDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -10810,13 +10810,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1DeleteQueueCollectionsGetRequest = {
+let body:iconik.DefaultApiAssetsV1DeleteQueueCollectionsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -10883,13 +10883,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1DeleteQueueCollectionsPostRequest = {
+let body:iconik.DefaultApiAssetsV1DeleteQueueCollectionsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -10951,13 +10951,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1DeleteQueueCollectionsPurgeAllPostRequest = {
+let body:iconik.DefaultApiAssetsV1DeleteQueueCollectionsPurgeAllPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -11011,13 +11011,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1DeleteQueueCollectionsPurgePostRequest = {
+let body:iconik.DefaultApiAssetsV1DeleteQueueCollectionsPurgePostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -11079,13 +11079,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1DeleteQueueCollectionsRestoreAllPostRequest = {
+let body:iconik.DefaultApiAssetsV1DeleteQueueCollectionsRestoreAllPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -11139,13 +11139,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1DeleteQueuePurgeAllPostRequest = {
+let body:iconik.DefaultApiAssetsV1DeleteQueuePurgeAllPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -11199,13 +11199,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1FavoritesAllDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1FavoritesAllDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -11260,13 +11260,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1FavoritesDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1FavoritesDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -11329,13 +11329,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1FavoritesGetRequest = {
+let body:iconik.DefaultApiAssetsV1FavoritesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -11399,13 +11399,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1FavoritesPostRequest = {
+let body:iconik.DefaultApiAssetsV1FavoritesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -11468,13 +11468,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1FavouritesAllDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1FavouritesAllDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -11529,13 +11529,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdApprovalsDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdApprovalsDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -11596,13 +11596,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdApprovalsExternalEmailDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdApprovalsExternalEmailDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -11666,13 +11666,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdApprovalsGetRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdApprovalsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -11733,13 +11733,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdApprovalsPutRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdApprovalsPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -11808,13 +11808,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdApprovalsRequestDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdApprovalsRequestDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -11875,13 +11875,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdApprovalsRequestGetRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdApprovalsRequestGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -11942,13 +11942,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdApprovalsRequestPatchRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdApprovalsRequestPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -12027,13 +12027,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdApprovalsRequestPostRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdApprovalsRequestPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -12112,13 +12112,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdApprovalsRequestPutRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdApprovalsRequestPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -12197,13 +12197,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdApprovalsUserUserIdDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdApprovalsUserUserIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -12267,13 +12267,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdSharesGetRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdSharesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -12340,13 +12340,13 @@ In case if is_approval=True, share options will be created respectively to user 
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdSharesPostRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdSharesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -12438,13 +12438,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdSharesShareIdDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdSharesShareIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -12508,13 +12508,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdSharesShareIdGetRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdSharesShareIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -12578,13 +12578,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdSharesShareIdPutRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdSharesShareIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -12670,13 +12670,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersGetRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -12746,13 +12746,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersPostRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -12822,13 +12822,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdDeleteRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -12895,13 +12895,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdGetRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -12968,13 +12968,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdPatchRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -13048,13 +13048,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdPutRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -13128,13 +13128,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdSharesUrlPostRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdSharesUrlPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -13220,13 +13220,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdVersionsVersionIdApprovalsGetRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdVersionsVersionIdApprovalsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -13290,13 +13290,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ObjectTypeObjectIdVersionsVersionIdApprovalsRequestGetRequest = {
+let body:iconik.DefaultApiAssetsV1ObjectTypeObjectIdVersionsVersionIdApprovalsRequestGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -13360,13 +13360,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1SegmentsReindexPostRequest = {
+let body:iconik.DefaultApiAssetsV1SegmentsReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -13431,13 +13431,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1ShareObjectTypePostRequest = {
+let body:iconik.DefaultApiAssetsV1ShareObjectTypePostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -13526,13 +13526,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1SharesAuthLoginPostRequest = {
+let body:iconik.DefaultApiAssetsV1SharesAuthLoginPostRequest = {
   // string
   appID: "App-ID_example",
   // ShareLoginSchema | body
@@ -13591,13 +13591,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1SharesAuthTokenGetRequest = {
+let body:iconik.DefaultApiAssetsV1SharesAuthTokenGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -13652,13 +13652,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAssetsV1SharesAuthTokenPutRequest = {
+let body:iconik.DefaultApiAssetsV1SharesAuthTokenPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -13712,13 +13712,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AppsAppIdDeleteRequest = {
+let body:iconik.DefaultApiAuthV1AppsAppIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -13775,13 +13775,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AppsAppIdGetRequest = {
+let body:iconik.DefaultApiAuthV1AppsAppIdGetRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -13835,13 +13835,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AppsAppIdPatchRequest = {
+let body:iconik.DefaultApiAuthV1AppsAppIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -13906,13 +13906,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AppsAppIdPutRequest = {
+let body:iconik.DefaultApiAuthV1AppsAppIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -13977,13 +13977,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AppsAppIdTokenPostRequest = {
+let body:iconik.DefaultApiAuthV1AppsAppIdTokenPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -14040,13 +14040,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AppsExternalAuthPostRequest = {
+let body:iconik.DefaultApiAuthV1AppsExternalAuthPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -14108,13 +14108,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AppsExternalAuthSecretGetRequest = {
+let body:iconik.DefaultApiAuthV1AppsExternalAuthSecretGetRequest = {
   // string
   secret: "secret_example",
 };
@@ -14165,13 +14165,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AppsGetRequest = {
+let body:iconik.DefaultApiAuthV1AppsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -14230,13 +14230,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AppsInstanceApprovedInstanceIdDeleteRequest = {
+let body:iconik.DefaultApiAuthV1AppsInstanceApprovedInstanceIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -14293,13 +14293,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AppsInstanceApprovedInstanceIdGetRequest = {
+let body:iconik.DefaultApiAuthV1AppsInstanceApprovedInstanceIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -14356,13 +14356,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AppsInstancePostRequest = {
+let body:iconik.DefaultApiAuthV1AppsInstancePostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -14422,13 +14422,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AppsPostRequest = {
+let body:iconik.DefaultApiAuthV1AppsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -14490,13 +14490,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthAdLoginPostRequest = {
+let body:iconik.DefaultApiAuthV1AuthAdLoginPostRequest = {
   // any | body
   body: {},
 };
@@ -14546,13 +14546,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthMultidomainLoginPostRequest = {
+let body:iconik.DefaultApiAuthV1AuthMultidomainLoginPostRequest = {
   // string
   tempAuthToken: "Temp-Auth-Token_example",
   // MultiDomainLoginSchema | body
@@ -14611,13 +14611,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthOauthLoginPostRequest = {
+let body:iconik.DefaultApiAuthV1AuthOauthLoginPostRequest = {
   // any | body
   body: {},
 };
@@ -14667,13 +14667,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSamlAcsPublicIdPostRequest = {
+let body:iconik.DefaultApiAuthV1AuthSamlAcsPublicIdPostRequest = {
   // string
   publicId: "public_id_example",
 };
@@ -14725,13 +14725,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSamlAcsSystemDomainIdIdentityProviderIdPostRequest = {
+let body:iconik.DefaultApiAuthV1AuthSamlAcsSystemDomainIdIdentityProviderIdPostRequest = {
   // string
   systemDomainId: "system_domain_id_example",
   // string
@@ -14786,13 +14786,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSamlDomainsDomainDeleteRequest = {
+let body:iconik.DefaultApiAuthV1AuthSamlDomainsDomainDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -14850,13 +14850,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSamlDomainsPostRequest = {
+let body:iconik.DefaultApiAuthV1AuthSamlDomainsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -14917,13 +14917,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSamlIdpConvertPostRequest = {
+let body:iconik.DefaultApiAuthV1AuthSamlIdpConvertPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -14984,13 +14984,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSamlIdpGetRequest = {
+let body:iconik.DefaultApiAuthV1AuthSamlIdpGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -15051,13 +15051,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSamlIdpIdentityProviderIdDeleteRequest = {
+let body:iconik.DefaultApiAuthV1AuthSamlIdpIdentityProviderIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -15115,13 +15115,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSamlIdpIdentityProviderIdGetRequest = {
+let body:iconik.DefaultApiAuthV1AuthSamlIdpIdentityProviderIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -15179,13 +15179,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSamlIdpIdentityProviderIdPatchRequest = {
+let body:iconik.DefaultApiAuthV1AuthSamlIdpIdentityProviderIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -15250,13 +15250,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSamlIdpIdentityProviderIdPutRequest = {
+let body:iconik.DefaultApiAuthV1AuthSamlIdpIdentityProviderIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -15321,13 +15321,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSamlIdpPostRequest = {
+let body:iconik.DefaultApiAuthV1AuthSamlIdpPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -15388,13 +15388,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSamlLoginPostRequest = {
+let body:iconik.DefaultApiAuthV1AuthSamlLoginPostRequest = {
   // SAMLLoginSchema | body
   sAMLLoginSchema: {
     email: "email_example",
@@ -15446,13 +15446,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSamlLogoutPublicIdPostRequest = {
+let body:iconik.DefaultApiAuthV1AuthSamlLogoutPublicIdPostRequest = {
   // string
   publicId: "public_id_example",
 };
@@ -15503,13 +15503,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSamlMetadataPublicIdGetRequest = {
+let body:iconik.DefaultApiAuthV1AuthSamlMetadataPublicIdGetRequest = {
   // string
   publicId: "public_id_example",
 };
@@ -15560,13 +15560,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSamlMetadataSystemDomainIdIdentityProviderIdGetRequest = {
+let body:iconik.DefaultApiAuthV1AuthSamlMetadataSystemDomainIdIdentityProviderIdGetRequest = {
   // string
   systemDomainId: "system_domain_id_example",
   // string
@@ -15620,13 +15620,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSamlMultidomainLoginPostRequest = {
+let body:iconik.DefaultApiAuthV1AuthSamlMultidomainLoginPostRequest = {
   // SAMLLoginSchema | body
   sAMLLoginSchema: {
     email: "email_example",
@@ -15678,13 +15678,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSamlSloPublicIdGetRequest = {
+let body:iconik.DefaultApiAuthV1AuthSamlSloPublicIdGetRequest = {
   // string
   publicId: "public_id_example",
 };
@@ -15735,13 +15735,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSamlSloSystemDomainIdIdentityProviderIdGetRequest = {
+let body:iconik.DefaultApiAuthV1AuthSamlSloSystemDomainIdIdentityProviderIdGetRequest = {
   // string
   systemDomainId: "system_domain_id_example",
   // string
@@ -15795,13 +15795,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSamlSsoPublicIdGetRequest = {
+let body:iconik.DefaultApiAuthV1AuthSamlSsoPublicIdGetRequest = {
   // string
   publicId: "public_id_example",
 };
@@ -15851,13 +15851,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSamlSsoSystemDomainIdIdentityProviderIdGetRequest = {
+let body:iconik.DefaultApiAuthV1AuthSamlSsoSystemDomainIdIdentityProviderIdGetRequest = {
   // string
   systemDomainId: "system_domain_id_example",
   // string
@@ -15910,13 +15910,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthSimpleLoginPostRequest = {
+let body:iconik.DefaultApiAuthV1AuthSimpleLoginPostRequest = {
   // SimpleLoginSchema | body
   simpleLoginSchema: {
     appName: "appName_example",
@@ -15971,13 +15971,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthTokenDeleteRequest = {
+let body:iconik.DefaultApiAuthV1AuthTokenDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -16031,13 +16031,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthTokenGetRequest = {
+let body:iconik.DefaultApiAuthV1AuthTokenGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -16091,13 +16091,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthTokenPostRequest = {
+let body:iconik.DefaultApiAuthV1AuthTokenPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -16151,13 +16151,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthTokenPutRequest = {
+let body:iconik.DefaultApiAuthV1AuthTokenPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -16211,13 +16211,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthTokenTokenIdDeleteRequest = {
+let body:iconik.DefaultApiAuthV1AuthTokenTokenIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -16274,13 +16274,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthTokenTokenIdGetRequest = {
+let body:iconik.DefaultApiAuthV1AuthTokenTokenIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -16337,13 +16337,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1AuthTokensGetRequest = {
+let body:iconik.DefaultApiAuthV1AuthTokensGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -16402,13 +16402,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1MarketplaceGoogleLinkPostRequest = {
+let body:iconik.DefaultApiAuthV1MarketplaceGoogleLinkPostRequest = {
   // MarketplaceGoogleLinkSchema | body
   marketplaceGoogleLinkSchema: {
     marketplaceSignupNonce: "marketplaceSignupNonce_example",
@@ -16460,13 +16460,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1MarketplaceGoogleSignupPostRequest = {
+let body:iconik.DefaultApiAuthV1MarketplaceGoogleSignupPostRequest = {
   // string (optional)
   xGcpMarketplaceToken: "xGcpMarketplaceToken_example",
 };
@@ -16516,13 +16516,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1PasswordChecksGetRequest = {
+let body:iconik.DefaultApiAuthV1PasswordChecksGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -16576,13 +16576,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1PasswordForgotPostRequest = {
+let body:iconik.DefaultApiAuthV1PasswordForgotPostRequest = {
   // ForgotPasswordSchema | body
   forgotPasswordSchema: {
     email: "email_example",
@@ -16634,13 +16634,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1PasswordResetHashChecksGetRequest = {
+let body:iconik.DefaultApiAuthV1PasswordResetHashChecksGetRequest = {
   // string
   resetHash: "reset_hash_example",
 };
@@ -16691,13 +16691,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1PasswordResetResetHashPutRequest = {
+let body:iconik.DefaultApiAuthV1PasswordResetResetHashPutRequest = {
   // string
   resetHash: "reset_hash_example",
   // ResetPasswordSchema | body
@@ -16754,13 +16754,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1ReferralCodesCodeDeleteRequest = {
+let body:iconik.DefaultApiAuthV1ReferralCodesCodeDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -16817,13 +16817,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1ReferralCodesCodeGetRequest = {
+let body:iconik.DefaultApiAuthV1ReferralCodesCodeGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -16880,13 +16880,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1ReferralCodesGetRequest = {
+let body:iconik.DefaultApiAuthV1ReferralCodesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -16940,13 +16940,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1ReferralCodesPostRequest = {
+let body:iconik.DefaultApiAuthV1ReferralCodesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -17012,13 +17012,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1RegistrationsCountriesGetRequest = {
+let body:iconik.DefaultApiAuthV1RegistrationsCountriesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -17072,13 +17072,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1RegistrationsPostRequest = {
+let body:iconik.DefaultApiAuthV1RegistrationsPostRequest = {
   // RegistrationSchema | body
   registrationSchema: {
     companyName: "companyName_example",
@@ -17141,13 +17141,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1RegistrationsVerifyEmailHashPostRequest = {
+let body:iconik.DefaultApiAuthV1RegistrationsVerifyEmailHashPostRequest = {
   // string
   emailHash: "email_hash_example",
 };
@@ -17198,13 +17198,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1SystemDomainsGetRequest = {
+let body:iconik.DefaultApiAuthV1SystemDomainsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -17263,13 +17263,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1SystemDomainsPostRequest = {
+let body:iconik.DefaultApiAuthV1SystemDomainsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -17330,13 +17330,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1SystemDomainsReferralCodeReferralCodePostRequest = {
+let body:iconik.DefaultApiAuthV1SystemDomainsReferralCodeReferralCodePostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -17404,13 +17404,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1SystemDomainsSystemDomainIdDeleteRequest = {
+let body:iconik.DefaultApiAuthV1SystemDomainsSystemDomainIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -17467,13 +17467,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1SystemDomainsSystemDomainIdE2eDeleteRequest = {
+let body:iconik.DefaultApiAuthV1SystemDomainsSystemDomainIdE2eDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -17530,13 +17530,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1SystemDomainsSystemDomainIdGetRequest = {
+let body:iconik.DefaultApiAuthV1SystemDomainsSystemDomainIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -17594,13 +17594,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1SystemDomainsSystemDomainIdLogoDeleteRequest = {
+let body:iconik.DefaultApiAuthV1SystemDomainsSystemDomainIdLogoDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -17658,13 +17658,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1SystemDomainsSystemDomainIdLogoPostRequest = {
+let body:iconik.DefaultApiAuthV1SystemDomainsSystemDomainIdLogoPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -17726,13 +17726,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1SystemDomainsSystemDomainIdPatchRequest = {
+let body:iconik.DefaultApiAuthV1SystemDomainsSystemDomainIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -17797,13 +17797,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1SystemDomainsSystemDomainIdPutRequest = {
+let body:iconik.DefaultApiAuthV1SystemDomainsSystemDomainIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -17868,13 +17868,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiAuthV1SystemDomainsTemplatesGetRequest = {
+let body:iconik.DefaultApiAuthV1SystemDomainsTemplatesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -17927,13 +17927,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AnalysisProfilesGetRequest = {
+let body:iconik.DefaultApiFilesV1AnalysisProfilesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -17993,13 +17993,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AnalysisProfilesMediaTypeDefaultGetRequest = {
+let body:iconik.DefaultApiFilesV1AnalysisProfilesMediaTypeDefaultGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -18058,13 +18058,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AnalysisProfilesPostRequest = {
+let body:iconik.DefaultApiFilesV1AnalysisProfilesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -18128,13 +18128,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AnalysisProfilesProfileIdDefaultDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AnalysisProfilesProfileIdDefaultDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -18191,13 +18191,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AnalysisProfilesProfileIdDefaultPostRequest = {
+let body:iconik.DefaultApiFilesV1AnalysisProfilesProfileIdDefaultPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -18254,13 +18254,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AnalysisProfilesProfileIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AnalysisProfilesProfileIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -18318,13 +18318,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AnalysisProfilesProfileIdGetRequest = {
+let body:iconik.DefaultApiFilesV1AnalysisProfilesProfileIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -18381,13 +18381,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AnalysisProfilesProfileIdPatchRequest = {
+let body:iconik.DefaultApiFilesV1AnalysisProfilesProfileIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -18455,13 +18455,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AnalysisProfilesProfileIdPutRequest = {
+let body:iconik.DefaultApiFilesV1AnalysisProfilesProfileIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -18529,13 +18529,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AnalysisServiceAccountsAnalysisServiceAccountIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AnalysisServiceAccountsAnalysisServiceAccountIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -18593,13 +18593,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AnalysisServiceAccountsAnalysisServiceAccountIdGetRequest = {
+let body:iconik.DefaultApiFilesV1AnalysisServiceAccountsAnalysisServiceAccountIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -18656,13 +18656,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AnalysisServiceAccountsAnalysisServiceAccountIdPatchRequest = {
+let body:iconik.DefaultApiFilesV1AnalysisServiceAccountsAnalysisServiceAccountIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -18727,13 +18727,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AnalysisServiceAccountsAnalysisServiceAccountIdPutRequest = {
+let body:iconik.DefaultApiFilesV1AnalysisServiceAccountsAnalysisServiceAccountIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -18798,13 +18798,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AnalysisServiceAccountsGetRequest = {
+let body:iconik.DefaultApiFilesV1AnalysisServiceAccountsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -18864,13 +18864,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AnalysisServiceAccountsPostRequest = {
+let body:iconik.DefaultApiFilesV1AnalysisServiceAccountsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -18931,13 +18931,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdCustomKeyframePostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdCustomKeyframePostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -18994,13 +18994,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdCustomKeyframePosterIdPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdCustomKeyframePosterIdPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -19063,13 +19063,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdExportLocationsExportLocationIdPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdExportLocationsExportLocationIdPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -19147,13 +19147,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFileSetsFileSetIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFileSetsFileSetIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -19217,13 +19217,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFileSetsFileSetIdFilesGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFileSetsFileSetIdFilesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -19293,13 +19293,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFileSetsFileSetIdGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFileSetsFileSetIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -19359,13 +19359,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFileSetsFileSetIdPatchRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFileSetsFileSetIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -19443,13 +19443,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFileSetsFileSetIdPurgeDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFileSetsFileSetIdPurgeDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -19510,13 +19510,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFileSetsFileSetIdPutRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFileSetsFileSetIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -19594,13 +19594,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFileSetsFileSetIdRestorePutRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFileSetsFileSetIdRestorePutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -19661,13 +19661,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFileSetsGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFileSetsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -19733,13 +19733,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFileSetsPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFileSetsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -19813,13 +19813,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdCaptureMillisecondsPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdCaptureMillisecondsPostRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -19891,13 +19891,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -19957,13 +19957,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdDownloadUrlGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdDownloadUrlGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -20023,13 +20023,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdEditProxiesPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdEditProxiesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -20103,13 +20103,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -20178,13 +20178,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdIsgHandlerUrlGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdIsgHandlerUrlGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -20244,13 +20244,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdKeyframesPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdKeyframesPostRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -20320,13 +20320,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdMediainfoPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdMediainfoPostRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -20395,13 +20395,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdMultipartB2CancelPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdMultipartB2CancelPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -20469,13 +20469,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdMultipartB2FinishPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdMultipartB2FinishPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -20546,13 +20546,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdMultipartB2StartPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdMultipartB2StartPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -20620,13 +20620,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdMultipartCleanupPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdMultipartCleanupPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -20695,13 +20695,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdMultipartGcsComposeUrlPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdMultipartGcsComposeUrlPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -20770,13 +20770,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdMultipartPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdMultipartPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -20847,13 +20847,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdMultipartUrlGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdMultipartUrlGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -20925,13 +20925,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdMultipartUrlPartGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdMultipartUrlPartGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -21006,13 +21006,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdMultipartUrlS3PartPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdMultipartUrlS3PartPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -21087,13 +21087,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdPatchRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -21175,13 +21175,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdPutRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -21263,13 +21263,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdReindexPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -21328,13 +21328,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesFileIdSubtitlesPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesFileIdSubtitlesPostRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -21401,13 +21401,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -21476,13 +21476,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFilesPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFilesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -21559,13 +21559,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdArchiveDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdArchiveDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -21631,13 +21631,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdArchivePostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdArchivePostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -21708,13 +21708,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -21778,13 +21778,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -21848,13 +21848,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdPutRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -21918,13 +21918,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdComponentsGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdComponentsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -21985,13 +21985,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdComponentsPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdComponentsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -22061,13 +22061,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -22131,13 +22131,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdFileSetsGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdFileSetsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -22203,13 +22203,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdFileSetsSourcesGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdFileSetsSourcesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -22268,13 +22268,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdFileSetsSourcesStorageMethodGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdFileSetsSourcesStorageMethodGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -22336,13 +22336,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -22402,13 +22402,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdPatchRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -22497,13 +22497,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdPurgeDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdPurgeDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -22564,13 +22564,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdPutRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -22659,13 +22659,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdRestorePostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdRestorePostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -22733,13 +22733,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdRestorePutRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdRestorePutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -22800,13 +22800,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdStoragesStorageIdFileSetsGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsFormatIdStoragesStorageIdFileSetsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -22875,13 +22875,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -22944,13 +22944,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsNameGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsNameGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -23010,13 +23010,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdFormatsPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdFormatsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -23101,13 +23101,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdKeyframesGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdKeyframesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -23179,13 +23179,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdKeyframesKeyframeIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdKeyframesKeyframeIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -23249,13 +23249,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdKeyframesKeyframeIdGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdKeyframesKeyframeIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -23318,13 +23318,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdKeyframesKeyframeIdPatchRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdKeyframesKeyframeIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -23413,13 +23413,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdKeyframesKeyframeIdPublicDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdKeyframesKeyframeIdPublicDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -23479,13 +23479,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdKeyframesKeyframeIdPublicPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdKeyframesKeyframeIdPublicPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -23545,13 +23545,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdKeyframesKeyframeIdPutRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdKeyframesKeyframeIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -23640,13 +23640,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdKeyframesPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdKeyframesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -23734,13 +23734,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdMethodStorageMethodKeyframesPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdMethodStorageMethodKeyframesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -23831,13 +23831,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdMethodStorageMethodProxiesPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdMethodStorageMethodProxiesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -23920,13 +23920,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdProxiesGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdProxiesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -23999,13 +23999,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdProxiesPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdProxiesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -24085,13 +24085,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -24152,13 +24152,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdDownloadUrlGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdDownloadUrlGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -24219,13 +24219,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -24289,13 +24289,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdKeyframesPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdKeyframesPostRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -24364,13 +24364,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdMultipartCleanupPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdMultipartCleanupPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -24436,13 +24436,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdMultipartUrlGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdMultipartUrlGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -24511,13 +24511,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdMultipartUrlPartGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdMultipartUrlPartGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -24589,13 +24589,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdPatchRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -24679,13 +24679,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdPublicDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdPublicDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -24745,13 +24745,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdPublicPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdPublicPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -24811,13 +24811,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdPutRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdProxiesProxyIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -24901,13 +24901,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdSubtitlesGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdSubtitlesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -24970,13 +24970,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdSubtitlesLanguageCcGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdSubtitlesLanguageCcGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -25036,13 +25036,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdSubtitlesLanguageCcWebvttGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdSubtitlesLanguageCcWebvttGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -25102,13 +25102,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdSubtitlesLanguageGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdSubtitlesLanguageGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -25168,13 +25168,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdSubtitlesLanguageWebvttGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdSubtitlesLanguageWebvttGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -25234,13 +25234,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdSubtitlesPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdSubtitlesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -25307,13 +25307,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdSubtitlesSubtitleIdCcDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdSubtitlesSubtitleIdCcDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -25373,13 +25373,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdSubtitlesSubtitleIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdSubtitlesSubtitleIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -25439,13 +25439,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdSubtitlesSubtitleIdGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdSubtitlesSubtitleIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -25505,13 +25505,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdSubtitlesSubtitleIdPatchRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdSubtitlesSubtitleIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -25582,13 +25582,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdSubtitlesSubtitleIdPutRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdSubtitlesSubtitleIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -25659,13 +25659,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdTemporaryFileSetsFileSetIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdTemporaryFileSetsFileSetIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -25729,13 +25729,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdTemporaryFileSetsFileSetIdFilesGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdTemporaryFileSetsFileSetIdFilesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -25796,13 +25796,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdTemporaryFileSetsPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdTemporaryFileSetsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -25877,13 +25877,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdTemporaryFilesFileIdPatchRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdTemporaryFilesFileIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -25966,13 +25966,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdTemporaryFilesFileIdPutRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdTemporaryFilesFileIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -26055,13 +26055,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdTemporaryFilesPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdTemporaryFilesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -26142,13 +26142,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdVersionsAllFileSetsDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdVersionsAllFileSetsDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -26211,13 +26211,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdVersionsAllFilesDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdVersionsAllFilesDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -26274,13 +26274,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdVersionsAllFormatsDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdVersionsAllFormatsDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -26338,13 +26338,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdVersionsAllKeyframesDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdVersionsAllKeyframesDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -26402,13 +26402,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdVersionsAllProxiesDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdVersionsAllProxiesDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -26466,13 +26466,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdVersionsAllSubtitlesDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdVersionsAllSubtitlesDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -26529,13 +26529,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdFileSetsDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdFileSetsDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -26601,13 +26601,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdFileSetsGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdFileSetsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -26676,13 +26676,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdFilesDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdFilesDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -26742,13 +26742,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdFilesGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdFilesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -26820,13 +26820,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdFormatsDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdFormatsDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -26887,13 +26887,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdFormatsGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdFormatsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -26959,13 +26959,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdKeyframesDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdKeyframesDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -27029,13 +27029,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdKeyframesGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdKeyframesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -27107,13 +27107,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdProxiesDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdProxiesDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -27174,13 +27174,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdProxiesGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdProxiesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -27253,13 +27253,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdSubtitlesDeleteRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdSubtitlesDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -27319,13 +27319,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdSubtitlesGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdSubtitlesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -27391,13 +27391,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdSubtitlesLanguageCcWebvttGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdSubtitlesLanguageCcWebvttGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -27460,13 +27460,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdSubtitlesLanguageWebvttGetRequest = {
+let body:iconik.DefaultApiFilesV1AssetsAssetIdVersionsVersionIdSubtitlesLanguageWebvttGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -27529,13 +27529,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsBulkKeyframesPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsBulkKeyframesPostRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -27602,13 +27602,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1AssetsExportLocationsExportLocationIdPostRequest = {
+let body:iconik.DefaultApiFilesV1AssetsExportLocationsExportLocationIdPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -27685,13 +27685,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1CollectionsCollectionIdCustomKeyframePosterIdPostRequest = {
+let body:iconik.DefaultApiFilesV1CollectionsCollectionIdCustomKeyframePosterIdPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -27754,13 +27754,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1CollectionsCollectionIdExportLocationsExportLocationIdPostRequest = {
+let body:iconik.DefaultApiFilesV1CollectionsCollectionIdExportLocationsExportLocationIdPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -27835,13 +27835,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1CollectionsCollectionIdKeyframesGetRequest = {
+let body:iconik.DefaultApiFilesV1CollectionsCollectionIdKeyframesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -27907,13 +27907,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1CollectionsCollectionIdKeyframesKeyframeIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1CollectionsCollectionIdKeyframesKeyframeIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -27977,13 +27977,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1CollectionsCollectionIdKeyframesKeyframeIdGetRequest = {
+let body:iconik.DefaultApiFilesV1CollectionsCollectionIdKeyframesKeyframeIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -28043,13 +28043,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1CollectionsCollectionIdKeyframesKeyframeIdPatchRequest = {
+let body:iconik.DefaultApiFilesV1CollectionsCollectionIdKeyframesKeyframeIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -28136,13 +28136,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1CollectionsCollectionIdKeyframesKeyframeIdPutRequest = {
+let body:iconik.DefaultApiFilesV1CollectionsCollectionIdKeyframesKeyframeIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -28229,13 +28229,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1CollectionsCollectionIdKeyframesPostRequest = {
+let body:iconik.DefaultApiFilesV1CollectionsCollectionIdKeyframesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -28318,13 +28318,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1DeleteQueueFileSetsDeleteRequest = {
+let body:iconik.DefaultApiFilesV1DeleteQueueFileSetsDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -28385,13 +28385,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1DeleteQueueFileSetsGetRequest = {
+let body:iconik.DefaultApiFilesV1DeleteQueueFileSetsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -28461,13 +28461,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1DeleteQueueFileSetsPurgeAllPostRequest = {
+let body:iconik.DefaultApiFilesV1DeleteQueueFileSetsPurgeAllPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -28521,13 +28521,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1DeleteQueueFileSetsPurgePostRequest = {
+let body:iconik.DefaultApiFilesV1DeleteQueueFileSetsPurgePostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -28588,13 +28588,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1DeleteQueueFormatsDeleteRequest = {
+let body:iconik.DefaultApiFilesV1DeleteQueueFormatsDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -28655,13 +28655,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1DeleteQueueFormatsGetRequest = {
+let body:iconik.DefaultApiFilesV1DeleteQueueFormatsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -28731,13 +28731,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1DeleteQueueFormatsPurgeAllPostRequest = {
+let body:iconik.DefaultApiFilesV1DeleteQueueFormatsPurgeAllPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -28791,13 +28791,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1DeleteQueueFormatsPurgePostRequest = {
+let body:iconik.DefaultApiFilesV1DeleteQueueFormatsPurgePostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -28858,13 +28858,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1ExportLocationsExportLocationIdBulkExportPostRequest = {
+let body:iconik.DefaultApiFilesV1ExportLocationsExportLocationIdBulkExportPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -28942,13 +28942,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1ExportLocationsExportLocationIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1ExportLocationsExportLocationIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -29005,13 +29005,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1ExportLocationsExportLocationIdGetRequest = {
+let body:iconik.DefaultApiFilesV1ExportLocationsExportLocationIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -29068,13 +29068,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1ExportLocationsExportLocationIdPatchRequest = {
+let body:iconik.DefaultApiFilesV1ExportLocationsExportLocationIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -29151,13 +29151,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1ExportLocationsExportLocationIdPutRequest = {
+let body:iconik.DefaultApiFilesV1ExportLocationsExportLocationIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -29234,13 +29234,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1ExportLocationsExportLocationIdReindexPostRequest = {
+let body:iconik.DefaultApiFilesV1ExportLocationsExportLocationIdReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -29296,13 +29296,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1ExportLocationsGetRequest = {
+let body:iconik.DefaultApiFilesV1ExportLocationsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -29370,13 +29370,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1ExportLocationsPostRequest = {
+let body:iconik.DefaultApiFilesV1ExportLocationsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -29450,13 +29450,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1ExportsTemporaryFileSetsFileSetIdStoragesStorageIdPostRequest = {
+let body:iconik.DefaultApiFilesV1ExportsTemporaryFileSetsFileSetIdStoragesStorageIdPostRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -29552,13 +29552,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1FileSetsFileSetIdFilesGetRequest = {
+let body:iconik.DefaultApiFilesV1FileSetsFileSetIdFilesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -29616,13 +29616,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1FileSetsFileSetIdStoragesStorageIdPostRequest = {
+let body:iconik.DefaultApiFilesV1FileSetsFileSetIdStoragesStorageIdPostRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -29715,13 +29715,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1FileSetsFileSetIdTransfersFromStorageIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1FileSetsFileSetIdTransfersFromStorageIdDeleteRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -29783,13 +29783,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1FileSetsFileSetIdTransfersToStorageIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1FileSetsFileSetIdTransfersToStorageIdDeleteRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -29851,13 +29851,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1FilesChecksumChecksumGetRequest = {
+let body:iconik.DefaultApiFilesV1FilesChecksumChecksumGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -29920,13 +29920,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1FilesFileIdDeletionsFromStorageIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1FilesFileIdDeletionsFromStorageIdDeleteRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -29985,13 +29985,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1FilesMissingStoragesStorageIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1FilesMissingStoragesStorageIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -30051,13 +30051,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1FilesStoragesStorageIdPostRequest = {
+let body:iconik.DefaultApiFilesV1FilesStoragesStorageIdPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -30123,13 +30123,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1FormatsFormatIdStoragesStorageIdPostRequest = {
+let body:iconik.DefaultApiFilesV1FormatsFormatIdStoragesStorageIdPostRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -30219,13 +30219,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1FormatsFormatNameArchiveBulkPostRequest = {
+let body:iconik.DefaultApiFilesV1FormatsFormatNameArchiveBulkPostRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -30297,13 +30297,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1FormatsFormatNameRestoreBulkPostRequest = {
+let body:iconik.DefaultApiFilesV1FormatsFormatNameRestoreBulkPostRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -30376,13 +30376,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1SharesStoragesStorageIdFilesGetRequest = {
+let body:iconik.DefaultApiFilesV1SharesStoragesStorageIdFilesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -30445,13 +30445,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesFilesReindexPostRequest = {
+let body:iconik.DefaultApiFilesV1StoragesFilesReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -30504,13 +30504,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesGetRequest = {
+let body:iconik.DefaultApiFilesV1StoragesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -30599,13 +30599,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesIsgLatestVersionGetRequest = {
+let body:iconik.DefaultApiFilesV1StoragesIsgLatestVersionGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -30660,13 +30660,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesMatchingPurposeGetRequest = {
+let body:iconik.DefaultApiFilesV1StoragesMatchingPurposeGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -30726,13 +30726,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesMatchingPurposeMethodMethodGetRequest = {
+let body:iconik.DefaultApiFilesV1StoragesMatchingPurposeMethodMethodGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -30792,13 +30792,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesPostRequest = {
+let body:iconik.DefaultApiFilesV1StoragesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -30865,13 +30865,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesPurposeDefaultGetRequest = {
+let body:iconik.DefaultApiFilesV1StoragesPurposeDefaultGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -30930,13 +30930,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesReindexPostRequest = {
+let body:iconik.DefaultApiFilesV1StoragesReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -30989,13 +30989,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdAutoScanDeleteRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdAutoScanDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -31052,13 +31052,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdAutoScanGetRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdAutoScanGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -31115,13 +31115,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdAutoScanPostRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdAutoScanPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -31183,13 +31183,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdBulkPostRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdBulkPostRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -31266,13 +31266,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdDefaultDeleteRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdDefaultDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -31329,13 +31329,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdDefaultPostRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdDefaultPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -31392,13 +31392,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -31455,13 +31455,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdDeletionsDeletionIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdDeletionsDeletionIdDeleteRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -31520,13 +31520,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdDeletionsFromGetRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdDeletionsFromGetRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -31587,13 +31587,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdDeletionsGetRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdDeletionsGetRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -31654,13 +31654,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdFilesDeleteRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdFilesDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -31747,13 +31747,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdFilesFileIdReindexPostRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdFilesFileIdReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -31812,13 +31812,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdFilesGetRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdFilesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -31920,13 +31920,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdFilesPatchRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdFilesPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -32005,13 +32005,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdFilesPostRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdFilesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -32088,13 +32088,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdFilesPutRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdFilesPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -32173,13 +32173,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdFilesReindexPostRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdFilesReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -32235,13 +32235,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdGatewayEventsEventIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdGatewayEventsEventIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -32301,13 +32301,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdGatewayEventsGetRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdGatewayEventsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -32368,13 +32368,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdGatewayEventsPostRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdGatewayEventsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -32438,13 +32438,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdGatewayEventsPurgePostRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdGatewayEventsPurgePostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -32508,13 +32508,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdGatewayReportGetRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdGatewayReportGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -32572,13 +32572,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdGatewayReportPutRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdGatewayReportPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -32667,13 +32667,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdGatewayStatusPutRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdGatewayStatusPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -32736,13 +32736,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdGetRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -32799,13 +32799,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdLogsPostRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdLogsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -32866,13 +32866,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdObjectTypeFilesDeleteRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdObjectTypeFilesDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -32941,13 +32941,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdPatchRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -33017,13 +33017,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdPutRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -33093,13 +33093,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdReindexPostRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -33155,13 +33155,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdScanPostRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdScanPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -33229,13 +33229,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdSearchDocumentPutRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdSearchDocumentPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -33306,13 +33306,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdTemporaryFilesGetRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdTemporaryFilesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -33376,13 +33376,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdTranscodersGetRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdTranscodersGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -33444,13 +33444,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdTranscodersTranscoderIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdTranscodersTranscoderIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -33510,13 +33510,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdTranscodersTranscoderIdPutRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdTranscodersTranscoderIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -33577,13 +33577,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdTransfersFromGetRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdTransfersFromGetRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -33644,13 +33644,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdTransfersFromTransferIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdTransfersFromTransferIdDeleteRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -33715,13 +33715,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdTransfersFromTransferIdGetRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdTransfersFromTransferIdGetRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -33782,13 +33782,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdTransfersToGetRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdTransfersToGetRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -33849,13 +33849,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdTransfersToTransferIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdTransfersToTransferIdDeleteRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -33920,13 +33920,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdTransfersToTransferIdGetRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdTransfersToTransferIdGetRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -33987,13 +33987,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdVerificationsAccessGetRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdVerificationsAccessGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -34051,13 +34051,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1StoragesStorageIdVerificationsPermissionsGetRequest = {
+let body:iconik.DefaultApiFilesV1StoragesStorageIdVerificationsPermissionsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -34115,13 +34115,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1TranscodersGetRequest = {
+let body:iconik.DefaultApiFilesV1TranscodersGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -34189,13 +34189,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1TranscodersPostRequest = {
+let body:iconik.DefaultApiFilesV1TranscodersPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -34256,13 +34256,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1TranscodersTranscoderIdDeleteRequest = {
+let body:iconik.DefaultApiFilesV1TranscodersTranscoderIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -34319,13 +34319,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1TranscodersTranscoderIdGetRequest = {
+let body:iconik.DefaultApiFilesV1TranscodersTranscoderIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -34382,13 +34382,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1TranscodersTranscoderIdLogsPostRequest = {
+let body:iconik.DefaultApiFilesV1TranscodersTranscoderIdLogsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -34449,13 +34449,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1TranscodersTranscoderIdPatchRequest = {
+let body:iconik.DefaultApiFilesV1TranscodersTranscoderIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -34519,13 +34519,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1TranscodersTranscoderIdPutRequest = {
+let body:iconik.DefaultApiFilesV1TranscodersTranscoderIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -34589,13 +34589,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1TranscodersTranscoderIdReindexPostRequest = {
+let body:iconik.DefaultApiFilesV1TranscodersTranscoderIdReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -34651,13 +34651,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1TranscodersTranscoderIdStoragesGetRequest = {
+let body:iconik.DefaultApiFilesV1TranscodersTranscoderIdStoragesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -34719,13 +34719,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1TransfersTransferIdUrlsPostRequest = {
+let body:iconik.DefaultApiFilesV1TransfersTransferIdUrlsPostRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -34783,13 +34783,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiFilesV1TransfersTransferIdUrlsVerifyGetRequest = {
+let body:iconik.DefaultApiFilesV1TransfersTransferIdUrlsVerifyGetRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -34851,13 +34851,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiJobsV1JobsDeleteRequest = {
+let body:iconik.DefaultApiJobsV1JobsDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -34918,13 +34918,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiJobsV1JobsGetRequest = {
+let body:iconik.DefaultApiJobsV1JobsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -35030,13 +35030,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiJobsV1JobsJobIdDeleteRequest = {
+let body:iconik.DefaultApiJobsV1JobsJobIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -35094,13 +35094,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiJobsV1JobsJobIdGetRequest = {
+let body:iconik.DefaultApiJobsV1JobsJobIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -35158,13 +35158,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiJobsV1JobsJobIdPatchRequest = {
+let body:iconik.DefaultApiJobsV1JobsJobIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -35269,13 +35269,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiJobsV1JobsJobIdPutRequest = {
+let body:iconik.DefaultApiJobsV1JobsJobIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -35380,13 +35380,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiJobsV1JobsJobIdReindexPostRequest = {
+let body:iconik.DefaultApiJobsV1JobsJobIdReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -35448,13 +35448,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiJobsV1JobsJobIdStepsJobStepIdPatchRequest = {
+let body:iconik.DefaultApiJobsV1JobsJobIdStepsJobStepIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -35523,13 +35523,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiJobsV1JobsJobIdStepsJobStepIdPutRequest = {
+let body:iconik.DefaultApiJobsV1JobsJobIdStepsJobStepIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -35598,13 +35598,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiJobsV1JobsJobIdStepsPatchRequest = {
+let body:iconik.DefaultApiJobsV1JobsJobIdStepsPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -35674,13 +35674,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiJobsV1JobsJobIdStepsPutRequest = {
+let body:iconik.DefaultApiJobsV1JobsJobIdStepsPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -35750,13 +35750,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiJobsV1JobsPostRequest = {
+let body:iconik.DefaultApiJobsV1JobsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -35858,13 +35858,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiJobsV1JobsPriorityPutRequest = {
+let body:iconik.DefaultApiJobsV1JobsPriorityPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -35927,13 +35927,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiJobsV1JobsStatePutRequest = {
+let body:iconik.DefaultApiJobsV1JobsStatePutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -35995,13 +35995,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1AssetsAssetIdObjectTypeObjectIdViewsViewIdGetRequest = {
+let body:iconik.DefaultApiMetadataV1AssetsAssetIdObjectTypeObjectIdViewsViewIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -36068,13 +36068,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1AssetsAssetIdObjectTypeObjectIdViewsViewIdPutRequest = {
+let body:iconik.DefaultApiMetadataV1AssetsAssetIdObjectTypeObjectIdViewsViewIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -36152,13 +36152,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1AssetsAssetIdVersionsVersionIdViewsViewIdGetRequest = {
+let body:iconik.DefaultApiMetadataV1AssetsAssetIdVersionsVersionIdViewsViewIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -36222,13 +36222,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1AssetsObjectTypeObjectIdVersionsVersionIdViewsViewIdGetRequest = {
+let body:iconik.DefaultApiMetadataV1AssetsObjectTypeObjectIdVersionsVersionIdViewsViewIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -36295,13 +36295,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1FieldsFieldNameDeleteRequest = {
+let body:iconik.DefaultApiMetadataV1FieldsFieldNameDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -36359,13 +36359,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1FieldsFieldNameGetRequest = {
+let body:iconik.DefaultApiMetadataV1FieldsFieldNameGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -36423,13 +36423,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1FieldsFieldNamePatchRequest = {
+let body:iconik.DefaultApiMetadataV1FieldsFieldNamePatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -36516,13 +36516,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1FieldsFieldNamePutRequest = {
+let body:iconik.DefaultApiMetadataV1FieldsFieldNamePutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -36609,13 +36609,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1FieldsGetRequest = {
+let body:iconik.DefaultApiMetadataV1FieldsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -36678,13 +36678,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1FieldsPostRequest = {
+let body:iconik.DefaultApiMetadataV1FieldsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -36768,13 +36768,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1MappingFieldsFieldNameGetRequest = {
+let body:iconik.DefaultApiMetadataV1MappingFieldsFieldNameGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -36831,13 +36831,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1MappingFieldsPostRequest = {
+let body:iconik.DefaultApiMetadataV1MappingFieldsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -36897,13 +36897,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1MappingOptionsGetRequest = {
+let body:iconik.DefaultApiMetadataV1MappingOptionsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -36957,13 +36957,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1ObjectTypeCategoriesGetRequest = {
+let body:iconik.DefaultApiMetadataV1ObjectTypeCategoriesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -37020,13 +37020,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1ObjectTypeCategoriesNameDeleteRequest = {
+let body:iconik.DefaultApiMetadataV1ObjectTypeCategoriesNameDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -37087,13 +37087,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1ObjectTypeCategoriesNameGetRequest = {
+let body:iconik.DefaultApiMetadataV1ObjectTypeCategoriesNameGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -37154,13 +37154,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1ObjectTypeCategoriesNamePutRequest = {
+let body:iconik.DefaultApiMetadataV1ObjectTypeCategoriesNamePutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -37232,13 +37232,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1ObjectTypeCategoriesNameViewsGetRequest = {
+let body:iconik.DefaultApiMetadataV1ObjectTypeCategoriesNameViewsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -37305,13 +37305,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1ObjectTypeCategoriesPostRequest = {
+let body:iconik.DefaultApiMetadataV1ObjectTypeCategoriesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -37380,13 +37380,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1ObjectTypeContentViewsViewIdPutRequest = {
+let body:iconik.DefaultApiMetadataV1ObjectTypeContentViewsViewIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -37460,13 +37460,13 @@ This endpoint is available only for admins
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1ObjectTypeObjectIdGetRequest = {
+let body:iconik.DefaultApiMetadataV1ObjectTypeObjectIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -37530,13 +37530,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1ObjectTypeObjectIdPutRequest = {
+let body:iconik.DefaultApiMetadataV1ObjectTypeObjectIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -37608,13 +37608,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1ObjectTypeObjectIdViewsViewIdGetRequest = {
+let body:iconik.DefaultApiMetadataV1ObjectTypeObjectIdViewsViewIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -37678,13 +37678,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1ObjectTypeObjectIdViewsViewIdPutRequest = {
+let body:iconik.DefaultApiMetadataV1ObjectTypeObjectIdViewsViewIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -37759,13 +37759,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1ObjectTypeViewsViewIdPostRequest = {
+let body:iconik.DefaultApiMetadataV1ObjectTypeViewsViewIdPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -37843,13 +37843,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1ObjectTypeViewsViewIdPutRequest = {
+let body:iconik.DefaultApiMetadataV1ObjectTypeViewsViewIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -37921,13 +37921,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1UserFieldsGetRequest = {
+let body:iconik.DefaultApiMetadataV1UserFieldsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -37981,13 +37981,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1ViewsGetRequest = {
+let body:iconik.DefaultApiMetadataV1ViewsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -38041,13 +38041,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1ViewsPostRequest = {
+let body:iconik.DefaultApiMetadataV1ViewsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -38124,13 +38124,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1ViewsViewIdDeleteRequest = {
+let body:iconik.DefaultApiMetadataV1ViewsViewIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -38188,13 +38188,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1ViewsViewIdGetRequest = {
+let body:iconik.DefaultApiMetadataV1ViewsViewIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -38255,13 +38255,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1ViewsViewIdPatchRequest = {
+let body:iconik.DefaultApiMetadataV1ViewsViewIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -38342,13 +38342,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiMetadataV1ViewsViewIdPutRequest = {
+let body:iconik.DefaultApiMetadataV1ViewsViewIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -38429,13 +38429,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiNotificationsV1WebhooksGetRequest = {
+let body:iconik.DefaultApiNotificationsV1WebhooksGetRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -38489,37 +38489,37 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiNotificationsV1WebhooksPostRequest = {
+let body:iconik.DefaultApiNotificationsV1WebhooksPostRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
   appID: "App-ID_example",
   // WebhookCreateSchema | body
   webhookCreateSchema: {
+    operation: "update",
+    firstFailedAt: new Date('1970-01-01T00:00:00.00Z'),
+    name: "name_example",
     description: "description_example",
+    eventType: "assets",
+    objectId: "d7a5a7e8-4247-11ee-b3d8-a683e79fffaf",
+    status: "ENABLED",
+    lastPayload: "lastPayload_example",
+    dateCreated: new Date('1970-01-01T00:00:00.00Z'),
+    deletedAt: new Date('1970-01-01T00:00:00.00Z'),
+    realm: "metadata",
+    url: "https://example.com/webhook_handler",
     query: "data.is_archived=false AND data.size>0 (data.status="CLOSED" OR data.status="DELETED") AND data.external_id!=null",
     dateModified: new Date('1970-01-01T00:00:00.00Z'),
-    url: "https://example.com/webhook_handler",
-    name: "name_example",
-    firstFailedAt: new Date('1970-01-01T00:00:00.00Z'),
-    realm: "metadata",
-    lastError: "lastError_example",
     headers: {
       "key": "key_example",
     },
-    dateCreated: new Date('1970-01-01T00:00:00.00Z'),
-    eventType: "assets",
-    operation: "update",
-    status: "ENABLED",
-    objectId: "d7a5a7e8-4247-11ee-b3d8-a683e79fffaf",
-    lastPayload: "lastPayload_example",
-    deletedAt: new Date('1970-01-01T00:00:00.00Z'),
+    lastError: "lastError_example",
   },
 };
 
@@ -38571,13 +38571,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiNotificationsV1WebhooksWebhookIdDeleteRequest = {
+let body:iconik.DefaultApiNotificationsV1WebhooksWebhookIdDeleteRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -38634,13 +38634,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiNotificationsV1WebhooksWebhookIdGetRequest = {
+let body:iconik.DefaultApiNotificationsV1WebhooksWebhookIdGetRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -38697,13 +38697,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiNotificationsV1WebhooksWebhookIdPutRequest = {
+let body:iconik.DefaultApiNotificationsV1WebhooksWebhookIdPutRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -38712,24 +38712,24 @@ let body:.DefaultApiNotificationsV1WebhooksWebhookIdPutRequest = {
   webhookId: "webhook_id_example",
   // WebhookCreateSchema | body
   webhookCreateSchema: {
+    operation: "update",
+    firstFailedAt: new Date('1970-01-01T00:00:00.00Z'),
+    name: "name_example",
     description: "description_example",
+    eventType: "assets",
+    objectId: "d7a5a7e8-4247-11ee-b3d8-a683e79fffaf",
+    status: "ENABLED",
+    lastPayload: "lastPayload_example",
+    dateCreated: new Date('1970-01-01T00:00:00.00Z'),
+    deletedAt: new Date('1970-01-01T00:00:00.00Z'),
+    realm: "metadata",
+    url: "https://example.com/webhook_handler",
     query: "data.is_archived=false AND data.size>0 (data.status="CLOSED" OR data.status="DELETED") AND data.external_id!=null",
     dateModified: new Date('1970-01-01T00:00:00.00Z'),
-    url: "https://example.com/webhook_handler",
-    name: "name_example",
-    firstFailedAt: new Date('1970-01-01T00:00:00.00Z'),
-    realm: "metadata",
-    lastError: "lastError_example",
     headers: {
       "key": "key_example",
     },
-    dateCreated: new Date('1970-01-01T00:00:00.00Z'),
-    eventType: "assets",
-    operation: "update",
-    status: "ENABLED",
-    objectId: "d7a5a7e8-4247-11ee-b3d8-a683e79fffaf",
-    lastPayload: "lastPayload_example",
-    deletedAt: new Date('1970-01-01T00:00:00.00Z'),
+    lastError: "lastError_example",
   },
 };
 
@@ -38782,13 +38782,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1DiscoveryDefaultEntitiesAdminGetRequest = {
+let body:iconik.DefaultApiSearchV1DiscoveryDefaultEntitiesAdminGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -38842,13 +38842,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1DiscoveryDefaultEntitiesEntityIdDeleteRequest = {
+let body:iconik.DefaultApiSearchV1DiscoveryDefaultEntitiesEntityIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -38906,13 +38906,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1DiscoveryDefaultEntitiesEntityIdGetRequest = {
+let body:iconik.DefaultApiSearchV1DiscoveryDefaultEntitiesEntityIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -38970,13 +38970,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1DiscoveryDefaultEntitiesEntityIdPatchRequest = {
+let body:iconik.DefaultApiSearchV1DiscoveryDefaultEntitiesEntityIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -39045,13 +39045,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1DiscoveryDefaultEntitiesEntityIdPutRequest = {
+let body:iconik.DefaultApiSearchV1DiscoveryDefaultEntitiesEntityIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -39120,13 +39120,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1DiscoveryDefaultEntitiesGetRequest = {
+let body:iconik.DefaultApiSearchV1DiscoveryDefaultEntitiesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -39180,13 +39180,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1DiscoveryDefaultEntitiesPostRequest = {
+let body:iconik.DefaultApiSearchV1DiscoveryDefaultEntitiesPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -39251,13 +39251,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1DiscoveryDefaultPutRequest = {
+let body:iconik.DefaultApiSearchV1DiscoveryDefaultPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -39318,13 +39318,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1DiscoveryEntitiesObjectTypeObjectIdPatchRequest = {
+let body:iconik.DefaultApiSearchV1DiscoveryEntitiesObjectTypeObjectIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -39396,13 +39396,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1DiscoveryEntitiesObjectTypeObjectIdPutRequest = {
+let body:iconik.DefaultApiSearchV1DiscoveryEntitiesObjectTypeObjectIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -39474,13 +39474,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchHistoryGetRequest = {
+let body:iconik.DefaultApiSearchV1SearchHistoryGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -39534,13 +39534,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchHistorySearchHistoryIdDeleteRequest = {
+let body:iconik.DefaultApiSearchV1SearchHistorySearchHistoryIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -39598,13 +39598,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchHistorySearchHistoryIdGetRequest = {
+let body:iconik.DefaultApiSearchV1SearchHistorySearchHistoryIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -39662,13 +39662,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchPostRequest = {
+let body:iconik.DefaultApiSearchV1SearchPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -39804,13 +39804,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchSavedGetRequest = {
+let body:iconik.DefaultApiSearchV1SearchSavedGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -39889,13 +39889,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchSavedGroupGroupIdDeleteRequest = {
+let body:iconik.DefaultApiSearchV1SearchSavedGroupGroupIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -39952,13 +39952,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchSavedGroupGroupIdGetRequest = {
+let body:iconik.DefaultApiSearchV1SearchSavedGroupGroupIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -40015,13 +40015,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchSavedGroupGroupIdPatchRequest = {
+let body:iconik.DefaultApiSearchV1SearchSavedGroupGroupIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -40086,13 +40086,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchSavedGroupGroupIdPutRequest = {
+let body:iconik.DefaultApiSearchV1SearchSavedGroupGroupIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -40157,13 +40157,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchSavedGroupGroupIdSearchSearchIdDeleteRequest = {
+let body:iconik.DefaultApiSearchV1SearchSavedGroupGroupIdSearchSearchIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -40224,13 +40224,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchSavedGroupGroupIdSearchSearchIdPostRequest = {
+let body:iconik.DefaultApiSearchV1SearchSavedGroupGroupIdSearchSearchIdPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -40291,13 +40291,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchSavedGroupPostRequest = {
+let body:iconik.DefaultApiSearchV1SearchSavedGroupPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -40358,13 +40358,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchSavedGroupsGetRequest = {
+let body:iconik.DefaultApiSearchV1SearchSavedGroupsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -40431,13 +40431,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchSavedGroupsGroupIdReindexPostRequest = {
+let body:iconik.DefaultApiSearchV1SearchSavedGroupsGroupIdReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -40495,13 +40495,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchSavedPostRequest = {
+let body:iconik.DefaultApiSearchV1SearchSavedPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -40622,13 +40622,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchSavedSearchIdDeleteRequest = {
+let body:iconik.DefaultApiSearchV1SearchSavedSearchIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -40686,13 +40686,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchSavedSearchIdGetRequest = {
+let body:iconik.DefaultApiSearchV1SearchSavedSearchIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -40759,13 +40759,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchSavedSearchIdPatchRequest = {
+let body:iconik.DefaultApiSearchV1SearchSavedSearchIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -40890,13 +40890,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchSavedSearchIdPutRequest = {
+let body:iconik.DefaultApiSearchV1SearchSavedSearchIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -41021,13 +41021,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchSavedSearchIdReindexPostRequest = {
+let body:iconik.DefaultApiSearchV1SearchSavedSearchIdReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -41090,13 +41090,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSearchV1SearchSuggestPostRequest = {
+let body:iconik.DefaultApiSearchV1SearchSuggestPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -41160,13 +41160,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1CorsHostsCorsHostIdDeleteRequest = {
+let body:iconik.DefaultApiSettingsV1CorsHostsCorsHostIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -41223,13 +41223,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1CorsHostsCorsHostIdGetRequest = {
+let body:iconik.DefaultApiSettingsV1CorsHostsCorsHostIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -41287,13 +41287,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1CorsHostsGetRequest = {
+let body:iconik.DefaultApiSettingsV1CorsHostsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -41348,13 +41348,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1CorsHostsPostRequest = {
+let body:iconik.DefaultApiSettingsV1CorsHostsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -41413,13 +41413,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1GroupGroupIdDeleteRequest = {
+let body:iconik.DefaultApiSettingsV1GroupGroupIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -41476,13 +41476,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1GroupGroupIdGetRequest = {
+let body:iconik.DefaultApiSettingsV1GroupGroupIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -41540,13 +41540,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1GroupGroupIdPatchRequest = {
+let body:iconik.DefaultApiSettingsV1GroupGroupIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -41648,13 +41648,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1GroupGroupIdPutRequest = {
+let body:iconik.DefaultApiSettingsV1GroupGroupIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -41756,13 +41756,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1KubernetesRealmGetRequest = {
+let body:iconik.DefaultApiSettingsV1KubernetesRealmGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -41826,13 +41826,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1KubernetesRealmPatchRequest = {
+let body:iconik.DefaultApiSettingsV1KubernetesRealmPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -41894,13 +41894,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1KubernetesRealmSettingNameDeleteRequest = {
+let body:iconik.DefaultApiSettingsV1KubernetesRealmSettingNameDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -41960,13 +41960,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1KubernetesRealmSettingNameGetRequest = {
+let body:iconik.DefaultApiSettingsV1KubernetesRealmSettingNameGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -42026,13 +42026,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1MergedCurrentGetRequest = {
+let body:iconik.DefaultApiSettingsV1MergedCurrentGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -42090,13 +42090,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1MergedUserIdGetRequest = {
+let body:iconik.DefaultApiSettingsV1MergedUserIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -42157,13 +42157,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1SystemCurrentGetRequest = {
+let body:iconik.DefaultApiSettingsV1SystemCurrentGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -42221,13 +42221,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1SystemCurrentPatchRequest = {
+let body:iconik.DefaultApiSettingsV1SystemCurrentPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -42349,13 +42349,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1SystemCurrentPutRequest = {
+let body:iconik.DefaultApiSettingsV1SystemCurrentPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -42477,13 +42477,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1SystemSystemDomainIdGetRequest = {
+let body:iconik.DefaultApiSettingsV1SystemSystemDomainIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -42544,13 +42544,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1SystemSystemDomainIdPatchRequest = {
+let body:iconik.DefaultApiSettingsV1SystemSystemDomainIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -42675,13 +42675,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1SystemSystemDomainIdPutRequest = {
+let body:iconik.DefaultApiSettingsV1SystemSystemDomainIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -42806,13 +42806,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1UserAttributesDeleteRequest = {
+let body:iconik.DefaultApiSettingsV1UserAttributesDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -42896,13 +42896,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1UserUserIdDeleteRequest = {
+let body:iconik.DefaultApiSettingsV1UserUserIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -42959,13 +42959,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1UserUserIdGetRequest = {
+let body:iconik.DefaultApiSettingsV1UserUserIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -43023,13 +43023,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1UserUserIdPatchRequest = {
+let body:iconik.DefaultApiSettingsV1UserUserIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -43127,13 +43127,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiSettingsV1UserUserIdPutRequest = {
+let body:iconik.DefaultApiSettingsV1UserUserIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -43231,13 +43231,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1AssetsByPeriodGetRequest = {
+let body:iconik.DefaultApiStatsV1AssetsByPeriodGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -43301,13 +43301,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1AssetsPostRequest = {
+let body:iconik.DefaultApiStatsV1AssetsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -43375,13 +43375,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingChargesChargeIdReceiptUrlGetRequest = {
+let body:iconik.DefaultApiStatsV1BillingChargesChargeIdReceiptUrlGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -43438,13 +43438,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingCreditsPostRequest = {
+let body:iconik.DefaultApiStatsV1BillingCreditsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -43506,13 +43506,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingCreditsPriceGetRequest = {
+let body:iconik.DefaultApiStatsV1BillingCreditsPriceGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -43570,13 +43570,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingCreditsVerifyPostRequest = {
+let body:iconik.DefaultApiStatsV1BillingCreditsVerifyPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -43636,13 +43636,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingCustomerCardDeleteRequest = {
+let body:iconik.DefaultApiStatsV1BillingCustomerCardDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -43697,13 +43697,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingCustomerCardPostRequest = {
+let body:iconik.DefaultApiStatsV1BillingCustomerCardPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -43763,13 +43763,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingCustomerGetRequest = {
+let body:iconik.DefaultApiStatsV1BillingCustomerGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -43838,13 +43838,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingCustomerPostRequest = {
+let body:iconik.DefaultApiStatsV1BillingCustomerPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -43918,13 +43918,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingGetRequest = {
+let body:iconik.DefaultApiStatsV1BillingGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -43991,13 +43991,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingInvoicesGetRequest = {
+let body:iconik.DefaultApiStatsV1BillingInvoicesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -44057,13 +44057,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingPostRequest = {
+let body:iconik.DefaultApiStatsV1BillingPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -44132,13 +44132,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingPriceListsGetRequest = {
+let body:iconik.DefaultApiStatsV1BillingPriceListsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -44193,13 +44193,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingPriceListsNameCurrencyDeleteRequest = {
+let body:iconik.DefaultApiStatsV1BillingPriceListsNameCurrencyDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -44260,13 +44260,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingPriceListsNameCurrencyGetRequest = {
+let body:iconik.DefaultApiStatsV1BillingPriceListsNameCurrencyGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -44327,13 +44327,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingPriceListsPutRequest = {
+let body:iconik.DefaultApiStatsV1BillingPriceListsPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -44395,13 +44395,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingRecipientsGetRequest = {
+let body:iconik.DefaultApiStatsV1BillingRecipientsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -44456,13 +44456,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingRecipientsPutRequest = {
+let body:iconik.DefaultApiStatsV1BillingRecipientsPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -44524,13 +44524,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingSettingsGetRequest = {
+let body:iconik.DefaultApiStatsV1BillingSettingsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -44585,13 +44585,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingSettingsPutRequest = {
+let body:iconik.DefaultApiStatsV1BillingSettingsPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -44653,13 +44653,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingStatusGetRequest = {
+let body:iconik.DefaultApiStatsV1BillingStatusGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -44713,13 +44713,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1BillingSystemDomainIdBillingIdDeleteRequest = {
+let body:iconik.DefaultApiStatsV1BillingSystemDomainIdBillingIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -44780,13 +44780,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1CollectionsByPeriodGetRequest = {
+let body:iconik.DefaultApiStatsV1CollectionsByPeriodGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -44850,13 +44850,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1IdObjectIdInfoGetRequest = {
+let body:iconik.DefaultApiStatsV1IdObjectIdInfoGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -44914,13 +44914,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1OrdwayBillingCustomerGetRequest = {
+let body:iconik.DefaultApiStatsV1OrdwayBillingCustomerGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -44975,13 +44975,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1OrdwayBillingGetRequest = {
+let body:iconik.DefaultApiStatsV1OrdwayBillingGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -45048,13 +45048,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1OrdwayBillingInvoicesGetRequest = {
+let body:iconik.DefaultApiStatsV1OrdwayBillingInvoicesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -45114,13 +45114,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1StorageAccessByPeriodGetRequest = {
+let body:iconik.DefaultApiStatsV1StorageAccessByPeriodGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -45184,13 +45184,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1StorageUsageByPeriodGetRequest = {
+let body:iconik.DefaultApiStatsV1StorageUsageByPeriodGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -45254,13 +45254,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1SystemLogsRecipientsGetRequest = {
+let body:iconik.DefaultApiStatsV1SystemLogsRecipientsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -45320,13 +45320,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1SystemLogsRecipientsLogsRecipientIdDeleteRequest = {
+let body:iconik.DefaultApiStatsV1SystemLogsRecipientsLogsRecipientIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -45384,13 +45384,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1SystemLogsRecipientsLogsRecipientIdGetRequest = {
+let body:iconik.DefaultApiStatsV1SystemLogsRecipientsLogsRecipientIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -45447,13 +45447,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1SystemLogsRecipientsLogsRecipientIdPatchRequest = {
+let body:iconik.DefaultApiStatsV1SystemLogsRecipientsLogsRecipientIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -45518,13 +45518,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1SystemLogsRecipientsLogsRecipientIdPostRequest = {
+let body:iconik.DefaultApiStatsV1SystemLogsRecipientsLogsRecipientIdPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -45582,13 +45582,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1SystemLogsRecipientsLogsRecipientIdPutRequest = {
+let body:iconik.DefaultApiStatsV1SystemLogsRecipientsLogsRecipientIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -45653,13 +45653,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1SystemLogsRecipientsPostRequest = {
+let body:iconik.DefaultApiStatsV1SystemLogsRecipientsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -45720,13 +45720,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1TranscoderUsageByPeriodGetRequest = {
+let body:iconik.DefaultApiStatsV1TranscoderUsageByPeriodGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -45790,13 +45790,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiStatsV1UserAuditByPeriodGetRequest = {
+let body:iconik.DefaultApiStatsV1UserAuditByPeriodGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -45863,13 +45863,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1AnalyzeAssetsAssetIdPostRequest = {
+let body:iconik.DefaultApiTranscodeV1AnalyzeAssetsAssetIdPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -45933,13 +45933,13 @@ with a default analysis profile of specified media typewith a default analysis p
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1AnalyzeAssetsAssetIdProfilesDefaultMediaTypePostRequest = {
+let body:iconik.DefaultApiTranscodeV1AnalyzeAssetsAssetIdProfilesDefaultMediaTypePostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -46006,13 +46006,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1AnalyzeAssetsAssetIdProfilesDefaultPostRequest = {
+let body:iconik.DefaultApiTranscodeV1AnalyzeAssetsAssetIdProfilesDefaultPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -46076,13 +46076,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1AnalyzeAssetsAssetIdProfilesProfileIdPostRequest = {
+let body:iconik.DefaultApiTranscodeV1AnalyzeAssetsAssetIdProfilesProfileIdPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -46149,13 +46149,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1AnalyzeBulkPostRequest = {
+let body:iconik.DefaultApiTranscodeV1AnalyzeBulkPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -46221,13 +46221,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1AssetsLinkMetadataPostRequest = {
+let body:iconik.DefaultApiTranscodeV1AssetsLinkMetadataPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -46287,13 +46287,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1EdgeTranscodeJobsJobIdAcknowledgePostRequest = {
+let body:iconik.DefaultApiTranscodeV1EdgeTranscodeJobsJobIdAcknowledgePostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -46351,13 +46351,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1EdgeTranscodeWorkersGetRequest = {
+let body:iconik.DefaultApiTranscodeV1EdgeTranscodeWorkersGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -46411,13 +46411,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1EdgeTranscodeWorkersPostRequest = {
+let body:iconik.DefaultApiTranscodeV1EdgeTranscodeWorkersPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -46477,13 +46477,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1EdgeTranscodeWorkersWorkerIdDeleteRequest = {
+let body:iconik.DefaultApiTranscodeV1EdgeTranscodeWorkersWorkerIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -46541,13 +46541,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1EdgeTranscodeWorkersWorkerIdGetRequest = {
+let body:iconik.DefaultApiTranscodeV1EdgeTranscodeWorkersWorkerIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -46605,13 +46605,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1EdgeTranscodeWorkersWorkerIdPatchRequest = {
+let body:iconik.DefaultApiTranscodeV1EdgeTranscodeWorkersWorkerIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -46675,13 +46675,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1EdgeTranscodeWorkersWorkerIdPutRequest = {
+let body:iconik.DefaultApiTranscodeV1EdgeTranscodeWorkersWorkerIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -46745,13 +46745,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1KeyframesCollectionsCollectionIdPostRequest = {
+let body:iconik.DefaultApiTranscodeV1KeyframesCollectionsCollectionIdPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -46822,13 +46822,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1StoragesStorageIdDeleteRequest = {
+let body:iconik.DefaultApiTranscodeV1StoragesStorageIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -46891,13 +46891,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1StoragesStorageIdEdgeTranscodeJobsGetRequest = {
+let body:iconik.DefaultApiTranscodeV1StoragesStorageIdEdgeTranscodeJobsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -46957,13 +46957,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1StoragesStorageIdFilesFileIdTranscodeDeleteRequest = {
+let body:iconik.DefaultApiTranscodeV1StoragesStorageIdFilesFileIdTranscodeDeleteRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -47022,13 +47022,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1StoragesStorageIdTranscodeGetRequest = {
+let body:iconik.DefaultApiTranscodeV1StoragesStorageIdTranscodeGetRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -47089,13 +47089,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1StoragesStorageIdTranscodeRecordIdDeleteRequest = {
+let body:iconik.DefaultApiTranscodeV1StoragesStorageIdTranscodeRecordIdDeleteRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -47154,13 +47154,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1StoragesStorageIdTranscodeRecordIdGetRequest = {
+let body:iconik.DefaultApiTranscodeV1StoragesStorageIdTranscodeRecordIdGetRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -47219,13 +47219,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1TranscodeObjectTypeObjectIdGetRequest = {
+let body:iconik.DefaultApiTranscodeV1TranscodeObjectTypeObjectIdGetRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -47284,13 +47284,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1TranscodeObjectTypeObjectIdVersionsVersionIdGetRequest = {
+let body:iconik.DefaultApiTranscodeV1TranscodeObjectTypeObjectIdVersionsVersionIdGetRequest = {
   // string
   authToken: "Auth-Token_example",
   // string
@@ -47352,13 +47352,13 @@ Use /API/files/v1/assets/ID/files/ID/keyframes insteadUse /API/files/v1/assets/I
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1TranscodePostRequest = {
+let body:iconik.DefaultApiTranscodeV1TranscodePostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -47503,13 +47503,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1TranscodeQueueGetRequest = {
+let body:iconik.DefaultApiTranscodeV1TranscodeQueueGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -47572,13 +47572,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1TranscodeQueueSystemGetRequest = {
+let body:iconik.DefaultApiTranscodeV1TranscodeQueueSystemGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -47644,13 +47644,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1TranscodeTranscodeJobIdDeleteRequest = {
+let body:iconik.DefaultApiTranscodeV1TranscodeTranscodeJobIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -47708,13 +47708,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1TranscodeTranscodeJobIdGetRequest = {
+let body:iconik.DefaultApiTranscodeV1TranscodeTranscodeJobIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -47771,13 +47771,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1TranscodeTranscodeJobIdPositionPositionPostRequest = {
+let body:iconik.DefaultApiTranscodeV1TranscodeTranscodeJobIdPositionPositionPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -47838,13 +47838,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1TranscodeTranscodeJobIdPriorityPriorityPutRequest = {
+let body:iconik.DefaultApiTranscodeV1TranscodeTranscodeJobIdPriorityPriorityPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -47905,13 +47905,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1TranscribeAssetsAssetIdProfilesDefaultPostRequest = {
+let body:iconik.DefaultApiTranscodeV1TranscribeAssetsAssetIdProfilesDefaultPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -47977,13 +47977,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiTranscodeV1TranscribeBulkPostRequest = {
+let body:iconik.DefaultApiTranscodeV1TranscribeBulkPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -48050,13 +48050,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersNotificationsV1NotificationSettingsGetRequest = {
+let body:iconik.DefaultApiUsersNotificationsV1NotificationSettingsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -48117,13 +48117,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGetRequest = {
+let body:iconik.DefaultApiUsersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -48190,13 +48190,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPutRequest = {
+let body:iconik.DefaultApiUsersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -48268,13 +48268,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersNotificationsV1NotificationsAllReadPutRequest = {
+let body:iconik.DefaultApiUsersNotificationsV1NotificationsAllReadPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -48328,13 +48328,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersNotificationsV1NotificationsGetRequest = {
+let body:iconik.DefaultApiUsersNotificationsV1NotificationsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -48395,13 +48395,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersNotificationsV1NotificationsNotificationIdDeleteRequest = {
+let body:iconik.DefaultApiUsersNotificationsV1NotificationsNotificationIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -48459,13 +48459,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersNotificationsV1NotificationsNotificationIdGetRequest = {
+let body:iconik.DefaultApiUsersNotificationsV1NotificationsNotificationIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -48523,13 +48523,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersNotificationsV1NotificationsPostRequest = {
+let body:iconik.DefaultApiUsersNotificationsV1NotificationsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -48604,13 +48604,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersNotificationsV1NotificationsSystemPostRequest = {
+let body:iconik.DefaultApiUsersNotificationsV1NotificationsSystemPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -48686,13 +48686,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDeleteRequest = {
+let body:iconik.DefaultApiUsersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -48753,13 +48753,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersNotificationsV1ObjectTypeObjectIdSubscriptionsGetRequest = {
+let body:iconik.DefaultApiUsersNotificationsV1ObjectTypeObjectIdSubscriptionsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -48820,13 +48820,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersNotificationsV1SubscriptionsGetRequest = {
+let body:iconik.DefaultApiUsersNotificationsV1SubscriptionsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -48881,13 +48881,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersNotificationsV1SubscriptionsPostRequest = {
+let body:iconik.DefaultApiUsersNotificationsV1SubscriptionsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -48950,13 +48950,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersNotificationsV1SubscriptionsSubscriptionIdDeleteRequest = {
+let body:iconik.DefaultApiUsersNotificationsV1SubscriptionsSubscriptionIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -49014,13 +49014,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersNotificationsV1SubscriptionsSubscriptionIdGetRequest = {
+let body:iconik.DefaultApiUsersNotificationsV1SubscriptionsSubscriptionIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -49078,13 +49078,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1GroupsBasicGetRequest = {
+let body:iconik.DefaultApiUsersV1GroupsBasicGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -49172,13 +49172,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1GroupsGetRequest = {
+let body:iconik.DefaultApiUsersV1GroupsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -49266,13 +49266,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1GroupsGroupIdDeleteRequest = {
+let body:iconik.DefaultApiUsersV1GroupsGroupIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -49330,13 +49330,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1GroupsGroupIdGetRequest = {
+let body:iconik.DefaultApiUsersV1GroupsGroupIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -49394,13 +49394,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1GroupsGroupIdLogoDeleteRequest = {
+let body:iconik.DefaultApiUsersV1GroupsGroupIdLogoDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -49457,13 +49457,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1GroupsGroupIdLogoPostRequest = {
+let body:iconik.DefaultApiUsersV1GroupsGroupIdLogoPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -49525,13 +49525,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1GroupsGroupIdPatchRequest = {
+let body:iconik.DefaultApiUsersV1GroupsGroupIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -49603,13 +49603,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1GroupsGroupIdPutRequest = {
+let body:iconik.DefaultApiUsersV1GroupsGroupIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -49681,13 +49681,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1GroupsGroupIdReindexPostRequest = {
+let body:iconik.DefaultApiUsersV1GroupsGroupIdReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -49745,13 +49745,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1GroupsGroupIdUsersUserIdDeleteRequest = {
+let body:iconik.DefaultApiUsersV1GroupsGroupIdUsersUserIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -49812,13 +49812,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1GroupsGroupIdUsersUserIdPostRequest = {
+let body:iconik.DefaultApiUsersV1GroupsGroupIdUsersUserIdPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -49878,13 +49878,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1GroupsMappingsGetRequest = {
+let body:iconik.DefaultApiUsersV1GroupsMappingsGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -49945,13 +49945,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1GroupsMappingsNameDeleteRequest = {
+let body:iconik.DefaultApiUsersV1GroupsMappingsNameDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -50009,13 +50009,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1GroupsMappingsNameGetRequest = {
+let body:iconik.DefaultApiUsersV1GroupsMappingsNameGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -50073,13 +50073,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1GroupsMappingsPostRequest = {
+let body:iconik.DefaultApiUsersV1GroupsMappingsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -50140,13 +50140,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1GroupsPostRequest = {
+let body:iconik.DefaultApiUsersV1GroupsPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -50214,13 +50214,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1UsersBasicGetRequest = {
+let body:iconik.DefaultApiUsersV1UsersBasicGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -50329,13 +50329,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1UsersCurrentGetRequest = {
+let body:iconik.DefaultApiUsersV1UsersCurrentGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -50390,13 +50390,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1UsersCurrentPatchRequest = {
+let body:iconik.DefaultApiUsersV1UsersCurrentPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -50474,13 +50474,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1UsersCurrentPhotoDeleteRequest = {
+let body:iconik.DefaultApiUsersV1UsersCurrentPhotoDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -50535,13 +50535,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1UsersCurrentPhotoPostRequest = {
+let body:iconik.DefaultApiUsersV1UsersCurrentPhotoPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -50600,13 +50600,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1UsersCurrentPutRequest = {
+let body:iconik.DefaultApiUsersV1UsersCurrentPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -50684,13 +50684,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1UsersCurrentRolesGetRequest = {
+let body:iconik.DefaultApiUsersV1UsersCurrentRolesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -50744,13 +50744,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1UsersGetRequest = {
+let body:iconik.DefaultApiUsersV1UsersGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -50859,13 +50859,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1UsersPostRequest = {
+let body:iconik.DefaultApiUsersV1UsersPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -50942,13 +50942,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1UsersUserIdDeleteRequest = {
+let body:iconik.DefaultApiUsersV1UsersUserIdDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -51006,13 +51006,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1UsersUserIdGetRequest = {
+let body:iconik.DefaultApiUsersV1UsersUserIdGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -51070,13 +51070,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1UsersUserIdPatchRequest = {
+let body:iconik.DefaultApiUsersV1UsersUserIdPatchRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -51157,13 +51157,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1UsersUserIdPhotoDeleteRequest = {
+let body:iconik.DefaultApiUsersV1UsersUserIdPhotoDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -51221,13 +51221,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1UsersUserIdPhotoPostRequest = {
+let body:iconik.DefaultApiUsersV1UsersUserIdPhotoPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -51289,13 +51289,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1UsersUserIdPutRequest = {
+let body:iconik.DefaultApiUsersV1UsersUserIdPutRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -51376,13 +51376,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1UsersUserIdReindexPostRequest = {
+let body:iconik.DefaultApiUsersV1UsersUserIdReindexPostRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -51440,13 +51440,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1UsersUserIdRolesGetRequest = {
+let body:iconik.DefaultApiUsersV1UsersUserIdRolesGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -51503,13 +51503,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1UsersUserIdRolesRoleGetRequest = {
+let body:iconik.DefaultApiUsersV1UsersUserIdRolesRoleGetRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -51569,13 +51569,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1UsersUserIdSamlDeleteRequest = {
+let body:iconik.DefaultApiUsersV1UsersUserIdSamlDeleteRequest = {
   // string
   appID: "App-ID_example",
   // string
@@ -51632,13 +51632,13 @@ No authorization required
 
 
 ```typescript
-import {  } from '';
+import { iconik } from 'iconik-typescript';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = iconik.createConfiguration();
+const apiInstance = new iconik.DefaultApi(configuration);
 
-let body:.DefaultApiUsersV1UsersUserIdSamlPutRequest = {
+let body:iconik.DefaultApiUsersV1UsersUserIdSamlPutRequest = {
   // string
   appID: "App-ID_example",
   // string
