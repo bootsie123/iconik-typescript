@@ -655,18 +655,18 @@ import { WebhookInternalSchema } from '../models/WebhookInternalSchema';
 import { WebhookSchema } from '../models/WebhookSchema';
 import { WebhooksSchema } from '../models/WebhooksSchema';
 import { ZencoderSettingsSchema } from '../models/ZencoderSettingsSchema';
-import { ObservableDefaultApi } from './ObservableAPI';
+import { ObservableAclsApi } from './ObservableAPI';
 
-import { DefaultApiRequestFactory, DefaultApiResponseProcessor} from "../apis/DefaultApi";
-export class PromiseDefaultApi {
-    private api: ObservableDefaultApi
+import { AclsApiRequestFactory, AclsApiResponseProcessor} from "../apis/AclsApi";
+export class PromiseAclsApi {
+    private api: ObservableAclsApi
 
     public constructor(
         configuration: Configuration,
-        requestFactory?: DefaultApiRequestFactory,
-        responseProcessor?: DefaultApiResponseProcessor
+        requestFactory?: AclsApiRequestFactory,
+        responseProcessor?: AclsApiResponseProcessor
     ) {
-        this.api = new ObservableDefaultApi(configuration, requestFactory, responseProcessor);
+        this.api = new ObservableAclsApi(configuration, requestFactory, responseProcessor);
     }
 
     /**
@@ -1513,6 +1513,25 @@ export class PromiseDefaultApi {
     public aclsV1UsersUserIdAclObjectTypeObjectKeyPut(appID: string, authToken: string, userId: string, objectType: string, objectKey: string, userACLSchema: UserACLSchema, _options?: Configuration): Promise<UserACLSchema> {
         const result = this.api.aclsV1UsersUserIdAclObjectTypeObjectKeyPut(appID, authToken, userId, objectType, objectKey, userACLSchema, _options);
         return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableAssetsApi } from './ObservableAPI';
+
+import { AssetsApiRequestFactory, AssetsApiResponseProcessor} from "../apis/AssetsApi";
+export class PromiseAssetsApi {
+    private api: ObservableAssetsApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: AssetsApiRequestFactory,
+        responseProcessor?: AssetsApiResponseProcessor
+    ) {
+        this.api = new ObservableAssetsApi(configuration, requestFactory, responseProcessor);
     }
 
     /**
@@ -5455,6 +5474,25 @@ export class PromiseDefaultApi {
         return result.toPromise();
     }
 
+
+}
+
+
+
+import { ObservableAuthApi } from './ObservableAPI';
+
+import { AuthApiRequestFactory, AuthApiResponseProcessor} from "../apis/AuthApi";
+export class PromiseAuthApi {
+    private api: ObservableAuthApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: AuthApiRequestFactory,
+        responseProcessor?: AuthApiResponseProcessor
+    ) {
+        this.api = new ObservableAuthApi(configuration, requestFactory, responseProcessor);
+    }
+
     /**
      *  Required roles:  - can_delete_apps 
      * Delete a particular app by id
@@ -6987,6 +7025,25 @@ export class PromiseDefaultApi {
     public authV1SystemDomainsTemplatesGet(appID: string, authToken: string, _options?: Configuration): Promise<SystemDomainsSchema> {
         const result = this.api.authV1SystemDomainsTemplatesGet(appID, authToken, _options);
         return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableFilesApi } from './ObservableAPI';
+
+import { FilesApiRequestFactory, FilesApiResponseProcessor} from "../apis/FilesApi";
+export class PromiseFilesApi {
+    private api: ObservableFilesApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: FilesApiRequestFactory,
+        responseProcessor?: FilesApiResponseProcessor
+    ) {
+        this.api = new ObservableFilesApi(configuration, requestFactory, responseProcessor);
     }
 
     /**
@@ -13349,6 +13406,25 @@ export class PromiseDefaultApi {
         return result.toPromise();
     }
 
+
+}
+
+
+
+import { ObservableJobsApi } from './ObservableAPI';
+
+import { JobsApiRequestFactory, JobsApiResponseProcessor} from "../apis/JobsApi";
+export class PromiseJobsApi {
+    private api: ObservableJobsApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: JobsApiRequestFactory,
+        responseProcessor?: JobsApiResponseProcessor
+    ) {
+        this.api = new ObservableJobsApi(configuration, requestFactory, responseProcessor);
+    }
+
     /**
      *  Required roles:  - can_delete_jobs 
      * Delete multiple jobs by ids list
@@ -13733,6 +13809,25 @@ export class PromiseDefaultApi {
     public jobsV1JobsStatePut(appID: string, authToken: string, jobsStateSchema1: JobsStateSchema1, _options?: Configuration): Promise<void> {
         const result = this.api.jobsV1JobsStatePut(appID, authToken, jobsStateSchema1, _options);
         return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableMetadataApi } from './ObservableAPI';
+
+import { MetadataApiRequestFactory, MetadataApiResponseProcessor} from "../apis/MetadataApi";
+export class PromiseMetadataApi {
+    private api: ObservableMetadataApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: MetadataApiRequestFactory,
+        responseProcessor?: MetadataApiResponseProcessor
+    ) {
+        this.api = new ObservableMetadataApi(configuration, requestFactory, responseProcessor);
     }
 
     /**
@@ -14605,6 +14700,25 @@ export class PromiseDefaultApi {
         return result.toPromise();
     }
 
+
+}
+
+
+
+import { ObservableNotificationsApi } from './ObservableAPI';
+
+import { NotificationsApiRequestFactory, NotificationsApiResponseProcessor} from "../apis/NotificationsApi";
+export class PromiseNotificationsApi {
+    private api: ObservableNotificationsApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: NotificationsApiRequestFactory,
+        responseProcessor?: NotificationsApiResponseProcessor
+    ) {
+        this.api = new ObservableNotificationsApi(configuration, requestFactory, responseProcessor);
+    }
+
     /**
      *  Required roles:  - can_read_webhooks 
      * Get all webhooks
@@ -14723,6 +14837,25 @@ export class PromiseDefaultApi {
     public notificationsV1WebhooksWebhookIdPut(authToken: string, appID: string, webhookId: string, webhookCreateSchema: WebhookCreateSchema, _options?: Configuration): Promise<WebhookSchema> {
         const result = this.api.notificationsV1WebhooksWebhookIdPut(authToken, appID, webhookId, webhookCreateSchema, _options);
         return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableSearchApi } from './ObservableAPI';
+
+import { SearchApiRequestFactory, SearchApiResponseProcessor} from "../apis/SearchApi";
+export class PromiseSearchApi {
+    private api: ObservableSearchApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: SearchApiRequestFactory,
+        responseProcessor?: SearchApiResponseProcessor
+    ) {
+        this.api = new ObservableSearchApi(configuration, requestFactory, responseProcessor);
     }
 
     /**
@@ -15529,6 +15662,25 @@ export class PromiseDefaultApi {
         return result.toPromise();
     }
 
+
+}
+
+
+
+import { ObservableSettingsApi } from './ObservableAPI';
+
+import { SettingsApiRequestFactory, SettingsApiResponseProcessor} from "../apis/SettingsApi";
+export class PromiseSettingsApi {
+    private api: ObservableSettingsApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: SettingsApiRequestFactory,
+        responseProcessor?: SettingsApiResponseProcessor
+    ) {
+        this.api = new ObservableSettingsApi(configuration, requestFactory, responseProcessor);
+    }
+
     /**
      *  Required roles:  - can_delete_cors_hosts 
      * Delete a particular CORS host by id
@@ -16151,6 +16303,25 @@ export class PromiseDefaultApi {
     public settingsV1UserUserIdPut(appID: string, authToken: string, userId: string, userSettingSchema: UserSettingSchema, _options?: Configuration): Promise<UserSettingSchema> {
         const result = this.api.settingsV1UserUserIdPut(appID, authToken, userId, userSettingSchema, _options);
         return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableStatsApi } from './ObservableAPI';
+
+import { StatsApiRequestFactory, StatsApiResponseProcessor} from "../apis/StatsApi";
+export class PromiseStatsApi {
+    private api: ObservableStatsApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: StatsApiRequestFactory,
+        responseProcessor?: StatsApiResponseProcessor
+    ) {
+        this.api = new ObservableStatsApi(configuration, requestFactory, responseProcessor);
     }
 
     /**
@@ -17131,6 +17302,25 @@ export class PromiseDefaultApi {
         return result.toPromise();
     }
 
+
+}
+
+
+
+import { ObservableTranscodeApi } from './ObservableAPI';
+
+import { TranscodeApiRequestFactory, TranscodeApiResponseProcessor} from "../apis/TranscodeApi";
+export class PromiseTranscodeApi {
+    private api: ObservableTranscodeApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: TranscodeApiRequestFactory,
+        responseProcessor?: TranscodeApiResponseProcessor
+    ) {
+        this.api = new ObservableTranscodeApi(configuration, requestFactory, responseProcessor);
+    }
+
     /**
      *  Required roles:  - can_analyze_content 
      * Start a job that sends an asset for analysis
@@ -17927,382 +18117,23 @@ export class PromiseDefaultApi {
         return result.toPromise();
     }
 
-    /**
-     *  Required roles:  - can_read_notification_settings 
-     * Returns a particular notification_setting by id
-     * @param appID 
-     * @param authToken 
-     * @param perPage The number of items for each page
-     * @param lastId ID of a last file set on previous page
-     */
-    public usersNotificationsV1NotificationSettingsGetWithHttpInfo(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<HttpInfo<NotificationSettingsSchema>> {
-        const result = this.api.usersNotificationsV1NotificationSettingsGetWithHttpInfo(appID, authToken, perPage, lastId, _options);
-        return result.toPromise();
-    }
 
-    /**
-     *  Required roles:  - can_read_notification_settings 
-     * Returns a particular notification_setting by id
-     * @param appID 
-     * @param authToken 
-     * @param perPage The number of items for each page
-     * @param lastId ID of a last file set on previous page
-     */
-    public usersNotificationsV1NotificationSettingsGet(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<NotificationSettingsSchema> {
-        const result = this.api.usersNotificationsV1NotificationSettingsGet(appID, authToken, perPage, lastId, _options);
-        return result.toPromise();
-    }
+}
 
-    /**
-     *  Required roles:  - can_read_notification_settings 
-     * Returns a particular notification_setting by id
-     * @param appID 
-     * @param authToken 
-     * @param objectType 
-     * @param subObjectType 
-     * @param eventType 
-     * @param protocol 
-     */
-    public usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGetWithHttpInfo(appID: string, authToken: string, objectType: string, subObjectType: string, eventType: string, protocol: string, _options?: Configuration): Promise<HttpInfo<NotificationSettingSchema>> {
-        const result = this.api.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGetWithHttpInfo(appID, authToken, objectType, subObjectType, eventType, protocol, _options);
-        return result.toPromise();
-    }
 
-    /**
-     *  Required roles:  - can_read_notification_settings 
-     * Returns a particular notification_setting by id
-     * @param appID 
-     * @param authToken 
-     * @param objectType 
-     * @param subObjectType 
-     * @param eventType 
-     * @param protocol 
-     */
-    public usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGet(appID: string, authToken: string, objectType: string, subObjectType: string, eventType: string, protocol: string, _options?: Configuration): Promise<NotificationSettingSchema> {
-        const result = this.api.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGet(appID, authToken, objectType, subObjectType, eventType, protocol, _options);
-        return result.toPromise();
-    }
 
-    /**
-     * 
-     * Create a new notification_setting
-     * @param appID 
-     * @param authToken 
-     * @param objectType 
-     * @param subObjectType 
-     * @param eventType 
-     * @param protocol 
-     * @param notificationSettingSchema body
-     */
-    public usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPutWithHttpInfo(appID: string, authToken: string, objectType: string, subObjectType: string, eventType: string, protocol: string, notificationSettingSchema: NotificationSettingSchema, _options?: Configuration): Promise<HttpInfo<NotificationSettingSchema>> {
-        const result = this.api.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPutWithHttpInfo(appID, authToken, objectType, subObjectType, eventType, protocol, notificationSettingSchema, _options);
-        return result.toPromise();
-    }
+import { ObservableUsersApi } from './ObservableAPI';
 
-    /**
-     * 
-     * Create a new notification_setting
-     * @param appID 
-     * @param authToken 
-     * @param objectType 
-     * @param subObjectType 
-     * @param eventType 
-     * @param protocol 
-     * @param notificationSettingSchema body
-     */
-    public usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPut(appID: string, authToken: string, objectType: string, subObjectType: string, eventType: string, protocol: string, notificationSettingSchema: NotificationSettingSchema, _options?: Configuration): Promise<NotificationSettingSchema> {
-        const result = this.api.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPut(appID, authToken, objectType, subObjectType, eventType, protocol, notificationSettingSchema, _options);
-        return result.toPromise();
-    }
+import { UsersApiRequestFactory, UsersApiResponseProcessor} from "../apis/UsersApi";
+export class PromiseUsersApi {
+    private api: ObservableUsersApi
 
-    /**
-     *  Required roles:  - can_read_notifications 
-     * Update notification
-     * @param appID 
-     * @param authToken 
-     */
-    public usersNotificationsV1NotificationsAllReadPutWithHttpInfo(appID: string, authToken: string, _options?: Configuration): Promise<HttpInfo<void>> {
-        const result = this.api.usersNotificationsV1NotificationsAllReadPutWithHttpInfo(appID, authToken, _options);
-        return result.toPromise();
-    }
-
-    /**
-     *  Required roles:  - can_read_notifications 
-     * Update notification
-     * @param appID 
-     * @param authToken 
-     */
-    public usersNotificationsV1NotificationsAllReadPut(appID: string, authToken: string, _options?: Configuration): Promise<void> {
-        const result = this.api.usersNotificationsV1NotificationsAllReadPut(appID, authToken, _options);
-        return result.toPromise();
-    }
-
-    /**
-     *  Required roles:  - can_read_notifications 
-     * Returns a list of notifications
-     * @param appID 
-     * @param authToken 
-     * @param perPage The number of items for each page
-     * @param lastId ID of a last file set on previous page
-     */
-    public usersNotificationsV1NotificationsGetWithHttpInfo(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<HttpInfo<NotificationsSchema>> {
-        const result = this.api.usersNotificationsV1NotificationsGetWithHttpInfo(appID, authToken, perPage, lastId, _options);
-        return result.toPromise();
-    }
-
-    /**
-     *  Required roles:  - can_read_notifications 
-     * Returns a list of notifications
-     * @param appID 
-     * @param authToken 
-     * @param perPage The number of items for each page
-     * @param lastId ID of a last file set on previous page
-     */
-    public usersNotificationsV1NotificationsGet(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<NotificationsSchema> {
-        const result = this.api.usersNotificationsV1NotificationsGet(appID, authToken, perPage, lastId, _options);
-        return result.toPromise();
-    }
-
-    /**
-     *  Required roles:  - can_delete_notifications 
-     * Delete a particular notification by id
-     * @param appID 
-     * @param authToken 
-     * @param notificationId 
-     */
-    public usersNotificationsV1NotificationsNotificationIdDeleteWithHttpInfo(appID: string, authToken: string, notificationId: string, _options?: Configuration): Promise<HttpInfo<void>> {
-        const result = this.api.usersNotificationsV1NotificationsNotificationIdDeleteWithHttpInfo(appID, authToken, notificationId, _options);
-        return result.toPromise();
-    }
-
-    /**
-     *  Required roles:  - can_delete_notifications 
-     * Delete a particular notification by id
-     * @param appID 
-     * @param authToken 
-     * @param notificationId 
-     */
-    public usersNotificationsV1NotificationsNotificationIdDelete(appID: string, authToken: string, notificationId: string, _options?: Configuration): Promise<void> {
-        const result = this.api.usersNotificationsV1NotificationsNotificationIdDelete(appID, authToken, notificationId, _options);
-        return result.toPromise();
-    }
-
-    /**
-     *  Required roles:  - can_read_notifications 
-     * Returns a particular notification by id
-     * @param appID 
-     * @param authToken 
-     * @param notificationId 
-     */
-    public usersNotificationsV1NotificationsNotificationIdGetWithHttpInfo(appID: string, authToken: string, notificationId: string, _options?: Configuration): Promise<HttpInfo<NotificationSchema>> {
-        const result = this.api.usersNotificationsV1NotificationsNotificationIdGetWithHttpInfo(appID, authToken, notificationId, _options);
-        return result.toPromise();
-    }
-
-    /**
-     *  Required roles:  - can_read_notifications 
-     * Returns a particular notification by id
-     * @param appID 
-     * @param authToken 
-     * @param notificationId 
-     */
-    public usersNotificationsV1NotificationsNotificationIdGet(appID: string, authToken: string, notificationId: string, _options?: Configuration): Promise<NotificationSchema> {
-        const result = this.api.usersNotificationsV1NotificationsNotificationIdGet(appID, authToken, notificationId, _options);
-        return result.toPromise();
-    }
-
-    /**
-     * 
-     * Create a new notification
-     * @param appID 
-     * @param authToken 
-     * @param notificationSchema body
-     */
-    public usersNotificationsV1NotificationsPostWithHttpInfo(appID: string, authToken: string, notificationSchema: NotificationSchema, _options?: Configuration): Promise<HttpInfo<NotificationSchema>> {
-        const result = this.api.usersNotificationsV1NotificationsPostWithHttpInfo(appID, authToken, notificationSchema, _options);
-        return result.toPromise();
-    }
-
-    /**
-     * 
-     * Create a new notification
-     * @param appID 
-     * @param authToken 
-     * @param notificationSchema body
-     */
-    public usersNotificationsV1NotificationsPost(appID: string, authToken: string, notificationSchema: NotificationSchema, _options?: Configuration): Promise<NotificationSchema> {
-        const result = this.api.usersNotificationsV1NotificationsPost(appID, authToken, notificationSchema, _options);
-        return result.toPromise();
-    }
-
-    /**
-     * 
-     * Create a new system notification
-     * @param appID 
-     * @param authToken 
-     * @param systemNotificationSchema body
-     */
-    public usersNotificationsV1NotificationsSystemPostWithHttpInfo(appID: string, authToken: string, systemNotificationSchema: SystemNotificationSchema, _options?: Configuration): Promise<HttpInfo<NotificationSchema>> {
-        const result = this.api.usersNotificationsV1NotificationsSystemPostWithHttpInfo(appID, authToken, systemNotificationSchema, _options);
-        return result.toPromise();
-    }
-
-    /**
-     * 
-     * Create a new system notification
-     * @param appID 
-     * @param authToken 
-     * @param systemNotificationSchema body
-     */
-    public usersNotificationsV1NotificationsSystemPost(appID: string, authToken: string, systemNotificationSchema: SystemNotificationSchema, _options?: Configuration): Promise<NotificationSchema> {
-        const result = this.api.usersNotificationsV1NotificationsSystemPost(appID, authToken, systemNotificationSchema, _options);
-        return result.toPromise();
-    }
-
-    /**
-     *  Required roles:  - can_read_subscriptions 
-     * Delete all user subscriptions for a specific object_type and object_id
-     * @param appID 
-     * @param authToken 
-     * @param objectType 
-     * @param objectId 
-     */
-    public usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDeleteWithHttpInfo(appID: string, authToken: string, objectType: string, objectId: string, _options?: Configuration): Promise<HttpInfo<SubscriptionSchema>> {
-        const result = this.api.usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDeleteWithHttpInfo(appID, authToken, objectType, objectId, _options);
-        return result.toPromise();
-    }
-
-    /**
-     *  Required roles:  - can_read_subscriptions 
-     * Delete all user subscriptions for a specific object_type and object_id
-     * @param appID 
-     * @param authToken 
-     * @param objectType 
-     * @param objectId 
-     */
-    public usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDelete(appID: string, authToken: string, objectType: string, objectId: string, _options?: Configuration): Promise<SubscriptionSchema> {
-        const result = this.api.usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDelete(appID, authToken, objectType, objectId, _options);
-        return result.toPromise();
-    }
-
-    /**
-     *  Required roles:  - can_read_subscriptions 
-     * Returns user subscriptions for a specific object_type and object_id
-     * @param appID 
-     * @param authToken 
-     * @param objectType 
-     * @param objectId 
-     */
-    public usersNotificationsV1ObjectTypeObjectIdSubscriptionsGetWithHttpInfo(appID: string, authToken: string, objectType: string, objectId: string, _options?: Configuration): Promise<HttpInfo<SubscriptionsSchema>> {
-        const result = this.api.usersNotificationsV1ObjectTypeObjectIdSubscriptionsGetWithHttpInfo(appID, authToken, objectType, objectId, _options);
-        return result.toPromise();
-    }
-
-    /**
-     *  Required roles:  - can_read_subscriptions 
-     * Returns user subscriptions for a specific object_type and object_id
-     * @param appID 
-     * @param authToken 
-     * @param objectType 
-     * @param objectId 
-     */
-    public usersNotificationsV1ObjectTypeObjectIdSubscriptionsGet(appID: string, authToken: string, objectType: string, objectId: string, _options?: Configuration): Promise<SubscriptionsSchema> {
-        const result = this.api.usersNotificationsV1ObjectTypeObjectIdSubscriptionsGet(appID, authToken, objectType, objectId, _options);
-        return result.toPromise();
-    }
-
-    /**
-     *  Required roles:  - can_read_subscriptions 
-     * Returns all user subscriptions
-     * @param appID 
-     * @param authToken 
-     */
-    public usersNotificationsV1SubscriptionsGetWithHttpInfo(appID: string, authToken: string, _options?: Configuration): Promise<HttpInfo<SubscriptionSchema>> {
-        const result = this.api.usersNotificationsV1SubscriptionsGetWithHttpInfo(appID, authToken, _options);
-        return result.toPromise();
-    }
-
-    /**
-     *  Required roles:  - can_read_subscriptions 
-     * Returns all user subscriptions
-     * @param appID 
-     * @param authToken 
-     */
-    public usersNotificationsV1SubscriptionsGet(appID: string, authToken: string, _options?: Configuration): Promise<SubscriptionSchema> {
-        const result = this.api.usersNotificationsV1SubscriptionsGet(appID, authToken, _options);
-        return result.toPromise();
-    }
-
-    /**
-     * 
-     * Create a new subscription
-     * @param appID 
-     * @param authToken 
-     * @param subscriptionSchema body
-     */
-    public usersNotificationsV1SubscriptionsPostWithHttpInfo(appID: string, authToken: string, subscriptionSchema: SubscriptionSchema, _options?: Configuration): Promise<HttpInfo<SubscriptionSchema>> {
-        const result = this.api.usersNotificationsV1SubscriptionsPostWithHttpInfo(appID, authToken, subscriptionSchema, _options);
-        return result.toPromise();
-    }
-
-    /**
-     * 
-     * Create a new subscription
-     * @param appID 
-     * @param authToken 
-     * @param subscriptionSchema body
-     */
-    public usersNotificationsV1SubscriptionsPost(appID: string, authToken: string, subscriptionSchema: SubscriptionSchema, _options?: Configuration): Promise<SubscriptionSchema> {
-        const result = this.api.usersNotificationsV1SubscriptionsPost(appID, authToken, subscriptionSchema, _options);
-        return result.toPromise();
-    }
-
-    /**
-     *  Required roles:  - can_write_subscriptions 
-     * Delete a particular subscription by id
-     * @param appID 
-     * @param authToken 
-     * @param subscriptionId 
-     */
-    public usersNotificationsV1SubscriptionsSubscriptionIdDeleteWithHttpInfo(appID: string, authToken: string, subscriptionId: string, _options?: Configuration): Promise<HttpInfo<void>> {
-        const result = this.api.usersNotificationsV1SubscriptionsSubscriptionIdDeleteWithHttpInfo(appID, authToken, subscriptionId, _options);
-        return result.toPromise();
-    }
-
-    /**
-     *  Required roles:  - can_write_subscriptions 
-     * Delete a particular subscription by id
-     * @param appID 
-     * @param authToken 
-     * @param subscriptionId 
-     */
-    public usersNotificationsV1SubscriptionsSubscriptionIdDelete(appID: string, authToken: string, subscriptionId: string, _options?: Configuration): Promise<void> {
-        const result = this.api.usersNotificationsV1SubscriptionsSubscriptionIdDelete(appID, authToken, subscriptionId, _options);
-        return result.toPromise();
-    }
-
-    /**
-     *  Required roles:  - can_read_subscriptions 
-     * Returns a particular subscription by id
-     * @param appID 
-     * @param authToken 
-     * @param subscriptionId 
-     */
-    public usersNotificationsV1SubscriptionsSubscriptionIdGetWithHttpInfo(appID: string, authToken: string, subscriptionId: string, _options?: Configuration): Promise<HttpInfo<SubscriptionSchema>> {
-        const result = this.api.usersNotificationsV1SubscriptionsSubscriptionIdGetWithHttpInfo(appID, authToken, subscriptionId, _options);
-        return result.toPromise();
-    }
-
-    /**
-     *  Required roles:  - can_read_subscriptions 
-     * Returns a particular subscription by id
-     * @param appID 
-     * @param authToken 
-     * @param subscriptionId 
-     */
-    public usersNotificationsV1SubscriptionsSubscriptionIdGet(appID: string, authToken: string, subscriptionId: string, _options?: Configuration): Promise<SubscriptionSchema> {
-        const result = this.api.usersNotificationsV1SubscriptionsSubscriptionIdGet(appID, authToken, subscriptionId, _options);
-        return result.toPromise();
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: UsersApiRequestFactory,
+        responseProcessor?: UsersApiResponseProcessor
+    ) {
+        this.api = new ObservableUsersApi(configuration, requestFactory, responseProcessor);
     }
 
     /**
@@ -19290,6 +19121,403 @@ export class PromiseDefaultApi {
      */
     public usersV1UsersUserIdSamlPut(appID: string, authToken: string, userId: string, userSamlIdpUpdateSchema: UserSamlIdpUpdateSchema, _options?: Configuration): Promise<UserSchema1> {
         const result = this.api.usersV1UsersUserIdSamlPut(appID, authToken, userId, userSamlIdpUpdateSchema, _options);
+        return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableUsersNotificationsApi } from './ObservableAPI';
+
+import { UsersNotificationsApiRequestFactory, UsersNotificationsApiResponseProcessor} from "../apis/UsersNotificationsApi";
+export class PromiseUsersNotificationsApi {
+    private api: ObservableUsersNotificationsApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: UsersNotificationsApiRequestFactory,
+        responseProcessor?: UsersNotificationsApiResponseProcessor
+    ) {
+        this.api = new ObservableUsersNotificationsApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     *  Required roles:  - can_read_notification_settings 
+     * Returns a particular notification_setting by id
+     * @param appID 
+     * @param authToken 
+     * @param perPage The number of items for each page
+     * @param lastId ID of a last file set on previous page
+     */
+    public usersNotificationsV1NotificationSettingsGetWithHttpInfo(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<HttpInfo<NotificationSettingsSchema>> {
+        const result = this.api.usersNotificationsV1NotificationSettingsGetWithHttpInfo(appID, authToken, perPage, lastId, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_read_notification_settings 
+     * Returns a particular notification_setting by id
+     * @param appID 
+     * @param authToken 
+     * @param perPage The number of items for each page
+     * @param lastId ID of a last file set on previous page
+     */
+    public usersNotificationsV1NotificationSettingsGet(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<NotificationSettingsSchema> {
+        const result = this.api.usersNotificationsV1NotificationSettingsGet(appID, authToken, perPage, lastId, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_read_notification_settings 
+     * Returns a particular notification_setting by id
+     * @param appID 
+     * @param authToken 
+     * @param objectType 
+     * @param subObjectType 
+     * @param eventType 
+     * @param protocol 
+     */
+    public usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGetWithHttpInfo(appID: string, authToken: string, objectType: string, subObjectType: string, eventType: string, protocol: string, _options?: Configuration): Promise<HttpInfo<NotificationSettingSchema>> {
+        const result = this.api.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGetWithHttpInfo(appID, authToken, objectType, subObjectType, eventType, protocol, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_read_notification_settings 
+     * Returns a particular notification_setting by id
+     * @param appID 
+     * @param authToken 
+     * @param objectType 
+     * @param subObjectType 
+     * @param eventType 
+     * @param protocol 
+     */
+    public usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGet(appID: string, authToken: string, objectType: string, subObjectType: string, eventType: string, protocol: string, _options?: Configuration): Promise<NotificationSettingSchema> {
+        const result = this.api.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGet(appID, authToken, objectType, subObjectType, eventType, protocol, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * 
+     * Create a new notification_setting
+     * @param appID 
+     * @param authToken 
+     * @param objectType 
+     * @param subObjectType 
+     * @param eventType 
+     * @param protocol 
+     * @param notificationSettingSchema body
+     */
+    public usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPutWithHttpInfo(appID: string, authToken: string, objectType: string, subObjectType: string, eventType: string, protocol: string, notificationSettingSchema: NotificationSettingSchema, _options?: Configuration): Promise<HttpInfo<NotificationSettingSchema>> {
+        const result = this.api.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPutWithHttpInfo(appID, authToken, objectType, subObjectType, eventType, protocol, notificationSettingSchema, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * 
+     * Create a new notification_setting
+     * @param appID 
+     * @param authToken 
+     * @param objectType 
+     * @param subObjectType 
+     * @param eventType 
+     * @param protocol 
+     * @param notificationSettingSchema body
+     */
+    public usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPut(appID: string, authToken: string, objectType: string, subObjectType: string, eventType: string, protocol: string, notificationSettingSchema: NotificationSettingSchema, _options?: Configuration): Promise<NotificationSettingSchema> {
+        const result = this.api.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPut(appID, authToken, objectType, subObjectType, eventType, protocol, notificationSettingSchema, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_read_notifications 
+     * Update notification
+     * @param appID 
+     * @param authToken 
+     */
+    public usersNotificationsV1NotificationsAllReadPutWithHttpInfo(appID: string, authToken: string, _options?: Configuration): Promise<HttpInfo<void>> {
+        const result = this.api.usersNotificationsV1NotificationsAllReadPutWithHttpInfo(appID, authToken, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_read_notifications 
+     * Update notification
+     * @param appID 
+     * @param authToken 
+     */
+    public usersNotificationsV1NotificationsAllReadPut(appID: string, authToken: string, _options?: Configuration): Promise<void> {
+        const result = this.api.usersNotificationsV1NotificationsAllReadPut(appID, authToken, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_read_notifications 
+     * Returns a list of notifications
+     * @param appID 
+     * @param authToken 
+     * @param perPage The number of items for each page
+     * @param lastId ID of a last file set on previous page
+     */
+    public usersNotificationsV1NotificationsGetWithHttpInfo(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<HttpInfo<NotificationsSchema>> {
+        const result = this.api.usersNotificationsV1NotificationsGetWithHttpInfo(appID, authToken, perPage, lastId, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_read_notifications 
+     * Returns a list of notifications
+     * @param appID 
+     * @param authToken 
+     * @param perPage The number of items for each page
+     * @param lastId ID of a last file set on previous page
+     */
+    public usersNotificationsV1NotificationsGet(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<NotificationsSchema> {
+        const result = this.api.usersNotificationsV1NotificationsGet(appID, authToken, perPage, lastId, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_delete_notifications 
+     * Delete a particular notification by id
+     * @param appID 
+     * @param authToken 
+     * @param notificationId 
+     */
+    public usersNotificationsV1NotificationsNotificationIdDeleteWithHttpInfo(appID: string, authToken: string, notificationId: string, _options?: Configuration): Promise<HttpInfo<void>> {
+        const result = this.api.usersNotificationsV1NotificationsNotificationIdDeleteWithHttpInfo(appID, authToken, notificationId, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_delete_notifications 
+     * Delete a particular notification by id
+     * @param appID 
+     * @param authToken 
+     * @param notificationId 
+     */
+    public usersNotificationsV1NotificationsNotificationIdDelete(appID: string, authToken: string, notificationId: string, _options?: Configuration): Promise<void> {
+        const result = this.api.usersNotificationsV1NotificationsNotificationIdDelete(appID, authToken, notificationId, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_read_notifications 
+     * Returns a particular notification by id
+     * @param appID 
+     * @param authToken 
+     * @param notificationId 
+     */
+    public usersNotificationsV1NotificationsNotificationIdGetWithHttpInfo(appID: string, authToken: string, notificationId: string, _options?: Configuration): Promise<HttpInfo<NotificationSchema>> {
+        const result = this.api.usersNotificationsV1NotificationsNotificationIdGetWithHttpInfo(appID, authToken, notificationId, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_read_notifications 
+     * Returns a particular notification by id
+     * @param appID 
+     * @param authToken 
+     * @param notificationId 
+     */
+    public usersNotificationsV1NotificationsNotificationIdGet(appID: string, authToken: string, notificationId: string, _options?: Configuration): Promise<NotificationSchema> {
+        const result = this.api.usersNotificationsV1NotificationsNotificationIdGet(appID, authToken, notificationId, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * 
+     * Create a new notification
+     * @param appID 
+     * @param authToken 
+     * @param notificationSchema body
+     */
+    public usersNotificationsV1NotificationsPostWithHttpInfo(appID: string, authToken: string, notificationSchema: NotificationSchema, _options?: Configuration): Promise<HttpInfo<NotificationSchema>> {
+        const result = this.api.usersNotificationsV1NotificationsPostWithHttpInfo(appID, authToken, notificationSchema, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * 
+     * Create a new notification
+     * @param appID 
+     * @param authToken 
+     * @param notificationSchema body
+     */
+    public usersNotificationsV1NotificationsPost(appID: string, authToken: string, notificationSchema: NotificationSchema, _options?: Configuration): Promise<NotificationSchema> {
+        const result = this.api.usersNotificationsV1NotificationsPost(appID, authToken, notificationSchema, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * 
+     * Create a new system notification
+     * @param appID 
+     * @param authToken 
+     * @param systemNotificationSchema body
+     */
+    public usersNotificationsV1NotificationsSystemPostWithHttpInfo(appID: string, authToken: string, systemNotificationSchema: SystemNotificationSchema, _options?: Configuration): Promise<HttpInfo<NotificationSchema>> {
+        const result = this.api.usersNotificationsV1NotificationsSystemPostWithHttpInfo(appID, authToken, systemNotificationSchema, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * 
+     * Create a new system notification
+     * @param appID 
+     * @param authToken 
+     * @param systemNotificationSchema body
+     */
+    public usersNotificationsV1NotificationsSystemPost(appID: string, authToken: string, systemNotificationSchema: SystemNotificationSchema, _options?: Configuration): Promise<NotificationSchema> {
+        const result = this.api.usersNotificationsV1NotificationsSystemPost(appID, authToken, systemNotificationSchema, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_read_subscriptions 
+     * Delete all user subscriptions for a specific object_type and object_id
+     * @param appID 
+     * @param authToken 
+     * @param objectType 
+     * @param objectId 
+     */
+    public usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDeleteWithHttpInfo(appID: string, authToken: string, objectType: string, objectId: string, _options?: Configuration): Promise<HttpInfo<SubscriptionSchema>> {
+        const result = this.api.usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDeleteWithHttpInfo(appID, authToken, objectType, objectId, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_read_subscriptions 
+     * Delete all user subscriptions for a specific object_type and object_id
+     * @param appID 
+     * @param authToken 
+     * @param objectType 
+     * @param objectId 
+     */
+    public usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDelete(appID: string, authToken: string, objectType: string, objectId: string, _options?: Configuration): Promise<SubscriptionSchema> {
+        const result = this.api.usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDelete(appID, authToken, objectType, objectId, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_read_subscriptions 
+     * Returns user subscriptions for a specific object_type and object_id
+     * @param appID 
+     * @param authToken 
+     * @param objectType 
+     * @param objectId 
+     */
+    public usersNotificationsV1ObjectTypeObjectIdSubscriptionsGetWithHttpInfo(appID: string, authToken: string, objectType: string, objectId: string, _options?: Configuration): Promise<HttpInfo<SubscriptionsSchema>> {
+        const result = this.api.usersNotificationsV1ObjectTypeObjectIdSubscriptionsGetWithHttpInfo(appID, authToken, objectType, objectId, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_read_subscriptions 
+     * Returns user subscriptions for a specific object_type and object_id
+     * @param appID 
+     * @param authToken 
+     * @param objectType 
+     * @param objectId 
+     */
+    public usersNotificationsV1ObjectTypeObjectIdSubscriptionsGet(appID: string, authToken: string, objectType: string, objectId: string, _options?: Configuration): Promise<SubscriptionsSchema> {
+        const result = this.api.usersNotificationsV1ObjectTypeObjectIdSubscriptionsGet(appID, authToken, objectType, objectId, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_read_subscriptions 
+     * Returns all user subscriptions
+     * @param appID 
+     * @param authToken 
+     */
+    public usersNotificationsV1SubscriptionsGetWithHttpInfo(appID: string, authToken: string, _options?: Configuration): Promise<HttpInfo<SubscriptionSchema>> {
+        const result = this.api.usersNotificationsV1SubscriptionsGetWithHttpInfo(appID, authToken, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_read_subscriptions 
+     * Returns all user subscriptions
+     * @param appID 
+     * @param authToken 
+     */
+    public usersNotificationsV1SubscriptionsGet(appID: string, authToken: string, _options?: Configuration): Promise<SubscriptionSchema> {
+        const result = this.api.usersNotificationsV1SubscriptionsGet(appID, authToken, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * 
+     * Create a new subscription
+     * @param appID 
+     * @param authToken 
+     * @param subscriptionSchema body
+     */
+    public usersNotificationsV1SubscriptionsPostWithHttpInfo(appID: string, authToken: string, subscriptionSchema: SubscriptionSchema, _options?: Configuration): Promise<HttpInfo<SubscriptionSchema>> {
+        const result = this.api.usersNotificationsV1SubscriptionsPostWithHttpInfo(appID, authToken, subscriptionSchema, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * 
+     * Create a new subscription
+     * @param appID 
+     * @param authToken 
+     * @param subscriptionSchema body
+     */
+    public usersNotificationsV1SubscriptionsPost(appID: string, authToken: string, subscriptionSchema: SubscriptionSchema, _options?: Configuration): Promise<SubscriptionSchema> {
+        const result = this.api.usersNotificationsV1SubscriptionsPost(appID, authToken, subscriptionSchema, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_write_subscriptions 
+     * Delete a particular subscription by id
+     * @param appID 
+     * @param authToken 
+     * @param subscriptionId 
+     */
+    public usersNotificationsV1SubscriptionsSubscriptionIdDeleteWithHttpInfo(appID: string, authToken: string, subscriptionId: string, _options?: Configuration): Promise<HttpInfo<void>> {
+        const result = this.api.usersNotificationsV1SubscriptionsSubscriptionIdDeleteWithHttpInfo(appID, authToken, subscriptionId, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_write_subscriptions 
+     * Delete a particular subscription by id
+     * @param appID 
+     * @param authToken 
+     * @param subscriptionId 
+     */
+    public usersNotificationsV1SubscriptionsSubscriptionIdDelete(appID: string, authToken: string, subscriptionId: string, _options?: Configuration): Promise<void> {
+        const result = this.api.usersNotificationsV1SubscriptionsSubscriptionIdDelete(appID, authToken, subscriptionId, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_read_subscriptions 
+     * Returns a particular subscription by id
+     * @param appID 
+     * @param authToken 
+     * @param subscriptionId 
+     */
+    public usersNotificationsV1SubscriptionsSubscriptionIdGetWithHttpInfo(appID: string, authToken: string, subscriptionId: string, _options?: Configuration): Promise<HttpInfo<SubscriptionSchema>> {
+        const result = this.api.usersNotificationsV1SubscriptionsSubscriptionIdGetWithHttpInfo(appID, authToken, subscriptionId, _options);
+        return result.toPromise();
+    }
+
+    /**
+     *  Required roles:  - can_read_subscriptions 
+     * Returns a particular subscription by id
+     * @param appID 
+     * @param authToken 
+     * @param subscriptionId 
+     */
+    public usersNotificationsV1SubscriptionsSubscriptionIdGet(appID: string, authToken: string, subscriptionId: string, _options?: Configuration): Promise<SubscriptionSchema> {
+        const result = this.api.usersNotificationsV1SubscriptionsSubscriptionIdGet(appID, authToken, subscriptionId, _options);
         return result.toPromise();
     }
 

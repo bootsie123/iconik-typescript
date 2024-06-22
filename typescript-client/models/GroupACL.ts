@@ -14,8 +14,6 @@ import { HttpFile } from '../http/http';
 
 export class GroupACL {
     'groupId'?: string;
-    'objectKey'?: string;
-    'objectType'?: string;
     'permissions': Array<string>;
 
     static readonly discriminator: string | undefined = undefined;
@@ -26,18 +24,6 @@ export class GroupACL {
             "baseName": "group_id",
             "type": "string",
             "format": "uuid"
-        },
-        {
-            "name": "objectKey",
-            "baseName": "object_key",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "objectType",
-            "baseName": "object_type",
-            "type": "string",
-            "format": ""
         },
         {
             "name": "permissions",

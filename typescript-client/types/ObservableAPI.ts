@@ -657,20 +657,20 @@ import { WebhookSchema } from '../models/WebhookSchema';
 import { WebhooksSchema } from '../models/WebhooksSchema';
 import { ZencoderSettingsSchema } from '../models/ZencoderSettingsSchema';
 
-import { DefaultApiRequestFactory, DefaultApiResponseProcessor} from "../apis/DefaultApi";
-export class ObservableDefaultApi {
-    private requestFactory: DefaultApiRequestFactory;
-    private responseProcessor: DefaultApiResponseProcessor;
+import { AclsApiRequestFactory, AclsApiResponseProcessor} from "../apis/AclsApi";
+export class ObservableAclsApi {
+    private requestFactory: AclsApiRequestFactory;
+    private responseProcessor: AclsApiResponseProcessor;
     private configuration: Configuration;
 
     public constructor(
         configuration: Configuration,
-        requestFactory?: DefaultApiRequestFactory,
-        responseProcessor?: DefaultApiResponseProcessor
+        requestFactory?: AclsApiRequestFactory,
+        responseProcessor?: AclsApiResponseProcessor
     ) {
         this.configuration = configuration;
-        this.requestFactory = requestFactory || new DefaultApiRequestFactory(configuration);
-        this.responseProcessor = responseProcessor || new DefaultApiResponseProcessor();
+        this.requestFactory = requestFactory || new AclsApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new AclsApiResponseProcessor();
     }
 
     /**
@@ -1920,6 +1920,24 @@ export class ObservableDefaultApi {
      */
     public aclsV1UsersUserIdAclObjectTypeObjectKeyPut(appID: string, authToken: string, userId: string, objectType: string, objectKey: string, userACLSchema: UserACLSchema, _options?: Configuration): Observable<UserACLSchema> {
         return this.aclsV1UsersUserIdAclObjectTypeObjectKeyPutWithHttpInfo(appID, authToken, userId, objectType, objectKey, userACLSchema, _options).pipe(map((apiResponse: HttpInfo<UserACLSchema>) => apiResponse.data));
+    }
+
+}
+
+import { AssetsApiRequestFactory, AssetsApiResponseProcessor} from "../apis/AssetsApi";
+export class ObservableAssetsApi {
+    private requestFactory: AssetsApiRequestFactory;
+    private responseProcessor: AssetsApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: AssetsApiRequestFactory,
+        responseProcessor?: AssetsApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new AssetsApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new AssetsApiResponseProcessor();
     }
 
     /**
@@ -7747,6 +7765,24 @@ export class ObservableDefaultApi {
         return this.assetsV1SharesAuthTokenPutWithHttpInfo(appID, shareAuthToken, _options).pipe(map((apiResponse: HttpInfo<ShareTokenSchema>) => apiResponse.data));
     }
 
+}
+
+import { AuthApiRequestFactory, AuthApiResponseProcessor} from "../apis/AuthApi";
+export class ObservableAuthApi {
+    private requestFactory: AuthApiRequestFactory;
+    private responseProcessor: AuthApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: AuthApiRequestFactory,
+        responseProcessor?: AuthApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new AuthApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new AuthApiResponseProcessor();
+    }
+
     /**
      *  Required roles:  - can_delete_apps 
      * Delete a particular app by id
@@ -10150,6 +10186,24 @@ export class ObservableDefaultApi {
      */
     public authV1SystemDomainsTemplatesGet(appID: string, authToken: string, _options?: Configuration): Observable<SystemDomainsSchema> {
         return this.authV1SystemDomainsTemplatesGetWithHttpInfo(appID, authToken, _options).pipe(map((apiResponse: HttpInfo<SystemDomainsSchema>) => apiResponse.data));
+    }
+
+}
+
+import { FilesApiRequestFactory, FilesApiResponseProcessor} from "../apis/FilesApi";
+export class ObservableFilesApi {
+    private requestFactory: FilesApiRequestFactory;
+    private responseProcessor: FilesApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: FilesApiRequestFactory,
+        responseProcessor?: FilesApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new FilesApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new FilesApiResponseProcessor();
     }
 
     /**
@@ -19541,6 +19595,24 @@ export class ObservableDefaultApi {
         return this.filesV1TransfersTransferIdUrlsVerifyGetWithHttpInfo(authToken, appID, transferId, userId, signature, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
     }
 
+}
+
+import { JobsApiRequestFactory, JobsApiResponseProcessor} from "../apis/JobsApi";
+export class ObservableJobsApi {
+    private requestFactory: JobsApiRequestFactory;
+    private responseProcessor: JobsApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: JobsApiRequestFactory,
+        responseProcessor?: JobsApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new JobsApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new JobsApiResponseProcessor();
+    }
+
     /**
      *  Required roles:  - can_delete_jobs 
      * Delete multiple jobs by ids list
@@ -20107,6 +20179,24 @@ export class ObservableDefaultApi {
      */
     public jobsV1JobsStatePut(appID: string, authToken: string, jobsStateSchema1: JobsStateSchema1, _options?: Configuration): Observable<void> {
         return this.jobsV1JobsStatePutWithHttpInfo(appID, authToken, jobsStateSchema1, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
+    }
+
+}
+
+import { MetadataApiRequestFactory, MetadataApiResponseProcessor} from "../apis/MetadataApi";
+export class ObservableMetadataApi {
+    private requestFactory: MetadataApiRequestFactory;
+    private responseProcessor: MetadataApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: MetadataApiRequestFactory,
+        responseProcessor?: MetadataApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new MetadataApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new MetadataApiResponseProcessor();
     }
 
     /**
@@ -21408,6 +21498,24 @@ export class ObservableDefaultApi {
         return this.metadataV1ViewsViewIdPutWithHttpInfo(appID, authToken, viewId, metadataViewInputSchema, _options).pipe(map((apiResponse: HttpInfo<MetadataViewSchema>) => apiResponse.data));
     }
 
+}
+
+import { NotificationsApiRequestFactory, NotificationsApiResponseProcessor} from "../apis/NotificationsApi";
+export class ObservableNotificationsApi {
+    private requestFactory: NotificationsApiRequestFactory;
+    private responseProcessor: NotificationsApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: NotificationsApiRequestFactory,
+        responseProcessor?: NotificationsApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new NotificationsApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new NotificationsApiResponseProcessor();
+    }
+
     /**
      *  Required roles:  - can_read_webhooks 
      * Get all webhooks
@@ -21591,6 +21699,24 @@ export class ObservableDefaultApi {
      */
     public notificationsV1WebhooksWebhookIdPut(authToken: string, appID: string, webhookId: string, webhookCreateSchema: WebhookCreateSchema, _options?: Configuration): Observable<WebhookSchema> {
         return this.notificationsV1WebhooksWebhookIdPutWithHttpInfo(authToken, appID, webhookId, webhookCreateSchema, _options).pipe(map((apiResponse: HttpInfo<WebhookSchema>) => apiResponse.data));
+    }
+
+}
+
+import { SearchApiRequestFactory, SearchApiResponseProcessor} from "../apis/SearchApi";
+export class ObservableSearchApi {
+    private requestFactory: SearchApiRequestFactory;
+    private responseProcessor: SearchApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: SearchApiRequestFactory,
+        responseProcessor?: SearchApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new SearchApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new SearchApiResponseProcessor();
     }
 
     /**
@@ -22800,6 +22926,24 @@ export class ObservableDefaultApi {
         return this.searchV1SearchSuggestPostWithHttpInfo(appID, authToken, searchSuggestSchema, _options).pipe(map((apiResponse: HttpInfo<SearchSuggestsResponseSchema>) => apiResponse.data));
     }
 
+}
+
+import { SettingsApiRequestFactory, SettingsApiResponseProcessor} from "../apis/SettingsApi";
+export class ObservableSettingsApi {
+    private requestFactory: SettingsApiRequestFactory;
+    private responseProcessor: SettingsApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: SettingsApiRequestFactory,
+        responseProcessor?: SettingsApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new SettingsApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new SettingsApiResponseProcessor();
+    }
+
     /**
      *  Required roles:  - can_delete_cors_hosts 
      * Delete a particular CORS host by id
@@ -23747,6 +23891,24 @@ export class ObservableDefaultApi {
      */
     public settingsV1UserUserIdPut(appID: string, authToken: string, userId: string, userSettingSchema: UserSettingSchema, _options?: Configuration): Observable<UserSettingSchema> {
         return this.settingsV1UserUserIdPutWithHttpInfo(appID, authToken, userId, userSettingSchema, _options).pipe(map((apiResponse: HttpInfo<UserSettingSchema>) => apiResponse.data));
+    }
+
+}
+
+import { StatsApiRequestFactory, StatsApiResponseProcessor} from "../apis/StatsApi";
+export class ObservableStatsApi {
+    private requestFactory: StatsApiRequestFactory;
+    private responseProcessor: StatsApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: StatsApiRequestFactory,
+        responseProcessor?: StatsApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new StatsApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new StatsApiResponseProcessor();
     }
 
     /**
@@ -25234,6 +25396,24 @@ export class ObservableDefaultApi {
         return this.statsV1UserAuditByPeriodGetWithHttpInfo(appID, authToken, period, fromDate, toDate, systemDomainId, _options).pipe(map((apiResponse: HttpInfo<UserUsagesSchema>) => apiResponse.data));
     }
 
+}
+
+import { TranscodeApiRequestFactory, TranscodeApiResponseProcessor} from "../apis/TranscodeApi";
+export class ObservableTranscodeApi {
+    private requestFactory: TranscodeApiRequestFactory;
+    private responseProcessor: TranscodeApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: TranscodeApiRequestFactory,
+        responseProcessor?: TranscodeApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new TranscodeApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new TranscodeApiResponseProcessor();
+    }
+
     /**
      *  Required roles:  - can_analyze_content 
      * Start a job that sends an asset for analysis
@@ -26433,577 +26613,22 @@ export class ObservableDefaultApi {
         return this.transcodeV1TranscribeBulkPostWithHttpInfo(appID, authToken, bulkTranscribeSchema, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
     }
 
-    /**
-     *  Required roles:  - can_read_notification_settings 
-     * Returns a particular notification_setting by id
-     * @param appID 
-     * @param authToken 
-     * @param perPage The number of items for each page
-     * @param lastId ID of a last file set on previous page
-     */
-    public usersNotificationsV1NotificationSettingsGetWithHttpInfo(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Observable<HttpInfo<NotificationSettingsSchema>> {
-        const requestContextPromise = this.requestFactory.usersNotificationsV1NotificationSettingsGet(appID, authToken, perPage, lastId, _options);
+}
 
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (let middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
+import { UsersApiRequestFactory, UsersApiResponseProcessor} from "../apis/UsersApi";
+export class ObservableUsersApi {
+    private requestFactory: UsersApiRequestFactory;
+    private responseProcessor: UsersApiResponseProcessor;
+    private configuration: Configuration;
 
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (let middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1NotificationSettingsGetWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     *  Required roles:  - can_read_notification_settings 
-     * Returns a particular notification_setting by id
-     * @param appID 
-     * @param authToken 
-     * @param perPage The number of items for each page
-     * @param lastId ID of a last file set on previous page
-     */
-    public usersNotificationsV1NotificationSettingsGet(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Observable<NotificationSettingsSchema> {
-        return this.usersNotificationsV1NotificationSettingsGetWithHttpInfo(appID, authToken, perPage, lastId, _options).pipe(map((apiResponse: HttpInfo<NotificationSettingsSchema>) => apiResponse.data));
-    }
-
-    /**
-     *  Required roles:  - can_read_notification_settings 
-     * Returns a particular notification_setting by id
-     * @param appID 
-     * @param authToken 
-     * @param objectType 
-     * @param subObjectType 
-     * @param eventType 
-     * @param protocol 
-     */
-    public usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGetWithHttpInfo(appID: string, authToken: string, objectType: string, subObjectType: string, eventType: string, protocol: string, _options?: Configuration): Observable<HttpInfo<NotificationSettingSchema>> {
-        const requestContextPromise = this.requestFactory.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGet(appID, authToken, objectType, subObjectType, eventType, protocol, _options);
-
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (let middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (let middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGetWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     *  Required roles:  - can_read_notification_settings 
-     * Returns a particular notification_setting by id
-     * @param appID 
-     * @param authToken 
-     * @param objectType 
-     * @param subObjectType 
-     * @param eventType 
-     * @param protocol 
-     */
-    public usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGet(appID: string, authToken: string, objectType: string, subObjectType: string, eventType: string, protocol: string, _options?: Configuration): Observable<NotificationSettingSchema> {
-        return this.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGetWithHttpInfo(appID, authToken, objectType, subObjectType, eventType, protocol, _options).pipe(map((apiResponse: HttpInfo<NotificationSettingSchema>) => apiResponse.data));
-    }
-
-    /**
-     * 
-     * Create a new notification_setting
-     * @param appID 
-     * @param authToken 
-     * @param objectType 
-     * @param subObjectType 
-     * @param eventType 
-     * @param protocol 
-     * @param notificationSettingSchema body
-     */
-    public usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPutWithHttpInfo(appID: string, authToken: string, objectType: string, subObjectType: string, eventType: string, protocol: string, notificationSettingSchema: NotificationSettingSchema, _options?: Configuration): Observable<HttpInfo<NotificationSettingSchema>> {
-        const requestContextPromise = this.requestFactory.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPut(appID, authToken, objectType, subObjectType, eventType, protocol, notificationSettingSchema, _options);
-
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (let middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (let middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPutWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * 
-     * Create a new notification_setting
-     * @param appID 
-     * @param authToken 
-     * @param objectType 
-     * @param subObjectType 
-     * @param eventType 
-     * @param protocol 
-     * @param notificationSettingSchema body
-     */
-    public usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPut(appID: string, authToken: string, objectType: string, subObjectType: string, eventType: string, protocol: string, notificationSettingSchema: NotificationSettingSchema, _options?: Configuration): Observable<NotificationSettingSchema> {
-        return this.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPutWithHttpInfo(appID, authToken, objectType, subObjectType, eventType, protocol, notificationSettingSchema, _options).pipe(map((apiResponse: HttpInfo<NotificationSettingSchema>) => apiResponse.data));
-    }
-
-    /**
-     *  Required roles:  - can_read_notifications 
-     * Update notification
-     * @param appID 
-     * @param authToken 
-     */
-    public usersNotificationsV1NotificationsAllReadPutWithHttpInfo(appID: string, authToken: string, _options?: Configuration): Observable<HttpInfo<void>> {
-        const requestContextPromise = this.requestFactory.usersNotificationsV1NotificationsAllReadPut(appID, authToken, _options);
-
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (let middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (let middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1NotificationsAllReadPutWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     *  Required roles:  - can_read_notifications 
-     * Update notification
-     * @param appID 
-     * @param authToken 
-     */
-    public usersNotificationsV1NotificationsAllReadPut(appID: string, authToken: string, _options?: Configuration): Observable<void> {
-        return this.usersNotificationsV1NotificationsAllReadPutWithHttpInfo(appID, authToken, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
-    }
-
-    /**
-     *  Required roles:  - can_read_notifications 
-     * Returns a list of notifications
-     * @param appID 
-     * @param authToken 
-     * @param perPage The number of items for each page
-     * @param lastId ID of a last file set on previous page
-     */
-    public usersNotificationsV1NotificationsGetWithHttpInfo(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Observable<HttpInfo<NotificationsSchema>> {
-        const requestContextPromise = this.requestFactory.usersNotificationsV1NotificationsGet(appID, authToken, perPage, lastId, _options);
-
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (let middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (let middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1NotificationsGetWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     *  Required roles:  - can_read_notifications 
-     * Returns a list of notifications
-     * @param appID 
-     * @param authToken 
-     * @param perPage The number of items for each page
-     * @param lastId ID of a last file set on previous page
-     */
-    public usersNotificationsV1NotificationsGet(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Observable<NotificationsSchema> {
-        return this.usersNotificationsV1NotificationsGetWithHttpInfo(appID, authToken, perPage, lastId, _options).pipe(map((apiResponse: HttpInfo<NotificationsSchema>) => apiResponse.data));
-    }
-
-    /**
-     *  Required roles:  - can_delete_notifications 
-     * Delete a particular notification by id
-     * @param appID 
-     * @param authToken 
-     * @param notificationId 
-     */
-    public usersNotificationsV1NotificationsNotificationIdDeleteWithHttpInfo(appID: string, authToken: string, notificationId: string, _options?: Configuration): Observable<HttpInfo<void>> {
-        const requestContextPromise = this.requestFactory.usersNotificationsV1NotificationsNotificationIdDelete(appID, authToken, notificationId, _options);
-
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (let middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (let middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1NotificationsNotificationIdDeleteWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     *  Required roles:  - can_delete_notifications 
-     * Delete a particular notification by id
-     * @param appID 
-     * @param authToken 
-     * @param notificationId 
-     */
-    public usersNotificationsV1NotificationsNotificationIdDelete(appID: string, authToken: string, notificationId: string, _options?: Configuration): Observable<void> {
-        return this.usersNotificationsV1NotificationsNotificationIdDeleteWithHttpInfo(appID, authToken, notificationId, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
-    }
-
-    /**
-     *  Required roles:  - can_read_notifications 
-     * Returns a particular notification by id
-     * @param appID 
-     * @param authToken 
-     * @param notificationId 
-     */
-    public usersNotificationsV1NotificationsNotificationIdGetWithHttpInfo(appID: string, authToken: string, notificationId: string, _options?: Configuration): Observable<HttpInfo<NotificationSchema>> {
-        const requestContextPromise = this.requestFactory.usersNotificationsV1NotificationsNotificationIdGet(appID, authToken, notificationId, _options);
-
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (let middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (let middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1NotificationsNotificationIdGetWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     *  Required roles:  - can_read_notifications 
-     * Returns a particular notification by id
-     * @param appID 
-     * @param authToken 
-     * @param notificationId 
-     */
-    public usersNotificationsV1NotificationsNotificationIdGet(appID: string, authToken: string, notificationId: string, _options?: Configuration): Observable<NotificationSchema> {
-        return this.usersNotificationsV1NotificationsNotificationIdGetWithHttpInfo(appID, authToken, notificationId, _options).pipe(map((apiResponse: HttpInfo<NotificationSchema>) => apiResponse.data));
-    }
-
-    /**
-     * 
-     * Create a new notification
-     * @param appID 
-     * @param authToken 
-     * @param notificationSchema body
-     */
-    public usersNotificationsV1NotificationsPostWithHttpInfo(appID: string, authToken: string, notificationSchema: NotificationSchema, _options?: Configuration): Observable<HttpInfo<NotificationSchema>> {
-        const requestContextPromise = this.requestFactory.usersNotificationsV1NotificationsPost(appID, authToken, notificationSchema, _options);
-
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (let middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (let middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1NotificationsPostWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * 
-     * Create a new notification
-     * @param appID 
-     * @param authToken 
-     * @param notificationSchema body
-     */
-    public usersNotificationsV1NotificationsPost(appID: string, authToken: string, notificationSchema: NotificationSchema, _options?: Configuration): Observable<NotificationSchema> {
-        return this.usersNotificationsV1NotificationsPostWithHttpInfo(appID, authToken, notificationSchema, _options).pipe(map((apiResponse: HttpInfo<NotificationSchema>) => apiResponse.data));
-    }
-
-    /**
-     * 
-     * Create a new system notification
-     * @param appID 
-     * @param authToken 
-     * @param systemNotificationSchema body
-     */
-    public usersNotificationsV1NotificationsSystemPostWithHttpInfo(appID: string, authToken: string, systemNotificationSchema: SystemNotificationSchema, _options?: Configuration): Observable<HttpInfo<NotificationSchema>> {
-        const requestContextPromise = this.requestFactory.usersNotificationsV1NotificationsSystemPost(appID, authToken, systemNotificationSchema, _options);
-
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (let middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (let middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1NotificationsSystemPostWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * 
-     * Create a new system notification
-     * @param appID 
-     * @param authToken 
-     * @param systemNotificationSchema body
-     */
-    public usersNotificationsV1NotificationsSystemPost(appID: string, authToken: string, systemNotificationSchema: SystemNotificationSchema, _options?: Configuration): Observable<NotificationSchema> {
-        return this.usersNotificationsV1NotificationsSystemPostWithHttpInfo(appID, authToken, systemNotificationSchema, _options).pipe(map((apiResponse: HttpInfo<NotificationSchema>) => apiResponse.data));
-    }
-
-    /**
-     *  Required roles:  - can_read_subscriptions 
-     * Delete all user subscriptions for a specific object_type and object_id
-     * @param appID 
-     * @param authToken 
-     * @param objectType 
-     * @param objectId 
-     */
-    public usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDeleteWithHttpInfo(appID: string, authToken: string, objectType: string, objectId: string, _options?: Configuration): Observable<HttpInfo<SubscriptionSchema>> {
-        const requestContextPromise = this.requestFactory.usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDelete(appID, authToken, objectType, objectId, _options);
-
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (let middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (let middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDeleteWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     *  Required roles:  - can_read_subscriptions 
-     * Delete all user subscriptions for a specific object_type and object_id
-     * @param appID 
-     * @param authToken 
-     * @param objectType 
-     * @param objectId 
-     */
-    public usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDelete(appID: string, authToken: string, objectType: string, objectId: string, _options?: Configuration): Observable<SubscriptionSchema> {
-        return this.usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDeleteWithHttpInfo(appID, authToken, objectType, objectId, _options).pipe(map((apiResponse: HttpInfo<SubscriptionSchema>) => apiResponse.data));
-    }
-
-    /**
-     *  Required roles:  - can_read_subscriptions 
-     * Returns user subscriptions for a specific object_type and object_id
-     * @param appID 
-     * @param authToken 
-     * @param objectType 
-     * @param objectId 
-     */
-    public usersNotificationsV1ObjectTypeObjectIdSubscriptionsGetWithHttpInfo(appID: string, authToken: string, objectType: string, objectId: string, _options?: Configuration): Observable<HttpInfo<SubscriptionsSchema>> {
-        const requestContextPromise = this.requestFactory.usersNotificationsV1ObjectTypeObjectIdSubscriptionsGet(appID, authToken, objectType, objectId, _options);
-
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (let middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (let middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1ObjectTypeObjectIdSubscriptionsGetWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     *  Required roles:  - can_read_subscriptions 
-     * Returns user subscriptions for a specific object_type and object_id
-     * @param appID 
-     * @param authToken 
-     * @param objectType 
-     * @param objectId 
-     */
-    public usersNotificationsV1ObjectTypeObjectIdSubscriptionsGet(appID: string, authToken: string, objectType: string, objectId: string, _options?: Configuration): Observable<SubscriptionsSchema> {
-        return this.usersNotificationsV1ObjectTypeObjectIdSubscriptionsGetWithHttpInfo(appID, authToken, objectType, objectId, _options).pipe(map((apiResponse: HttpInfo<SubscriptionsSchema>) => apiResponse.data));
-    }
-
-    /**
-     *  Required roles:  - can_read_subscriptions 
-     * Returns all user subscriptions
-     * @param appID 
-     * @param authToken 
-     */
-    public usersNotificationsV1SubscriptionsGetWithHttpInfo(appID: string, authToken: string, _options?: Configuration): Observable<HttpInfo<SubscriptionSchema>> {
-        const requestContextPromise = this.requestFactory.usersNotificationsV1SubscriptionsGet(appID, authToken, _options);
-
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (let middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (let middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1SubscriptionsGetWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     *  Required roles:  - can_read_subscriptions 
-     * Returns all user subscriptions
-     * @param appID 
-     * @param authToken 
-     */
-    public usersNotificationsV1SubscriptionsGet(appID: string, authToken: string, _options?: Configuration): Observable<SubscriptionSchema> {
-        return this.usersNotificationsV1SubscriptionsGetWithHttpInfo(appID, authToken, _options).pipe(map((apiResponse: HttpInfo<SubscriptionSchema>) => apiResponse.data));
-    }
-
-    /**
-     * 
-     * Create a new subscription
-     * @param appID 
-     * @param authToken 
-     * @param subscriptionSchema body
-     */
-    public usersNotificationsV1SubscriptionsPostWithHttpInfo(appID: string, authToken: string, subscriptionSchema: SubscriptionSchema, _options?: Configuration): Observable<HttpInfo<SubscriptionSchema>> {
-        const requestContextPromise = this.requestFactory.usersNotificationsV1SubscriptionsPost(appID, authToken, subscriptionSchema, _options);
-
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (let middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (let middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1SubscriptionsPostWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * 
-     * Create a new subscription
-     * @param appID 
-     * @param authToken 
-     * @param subscriptionSchema body
-     */
-    public usersNotificationsV1SubscriptionsPost(appID: string, authToken: string, subscriptionSchema: SubscriptionSchema, _options?: Configuration): Observable<SubscriptionSchema> {
-        return this.usersNotificationsV1SubscriptionsPostWithHttpInfo(appID, authToken, subscriptionSchema, _options).pipe(map((apiResponse: HttpInfo<SubscriptionSchema>) => apiResponse.data));
-    }
-
-    /**
-     *  Required roles:  - can_write_subscriptions 
-     * Delete a particular subscription by id
-     * @param appID 
-     * @param authToken 
-     * @param subscriptionId 
-     */
-    public usersNotificationsV1SubscriptionsSubscriptionIdDeleteWithHttpInfo(appID: string, authToken: string, subscriptionId: string, _options?: Configuration): Observable<HttpInfo<void>> {
-        const requestContextPromise = this.requestFactory.usersNotificationsV1SubscriptionsSubscriptionIdDelete(appID, authToken, subscriptionId, _options);
-
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (let middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (let middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1SubscriptionsSubscriptionIdDeleteWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     *  Required roles:  - can_write_subscriptions 
-     * Delete a particular subscription by id
-     * @param appID 
-     * @param authToken 
-     * @param subscriptionId 
-     */
-    public usersNotificationsV1SubscriptionsSubscriptionIdDelete(appID: string, authToken: string, subscriptionId: string, _options?: Configuration): Observable<void> {
-        return this.usersNotificationsV1SubscriptionsSubscriptionIdDeleteWithHttpInfo(appID, authToken, subscriptionId, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
-    }
-
-    /**
-     *  Required roles:  - can_read_subscriptions 
-     * Returns a particular subscription by id
-     * @param appID 
-     * @param authToken 
-     * @param subscriptionId 
-     */
-    public usersNotificationsV1SubscriptionsSubscriptionIdGetWithHttpInfo(appID: string, authToken: string, subscriptionId: string, _options?: Configuration): Observable<HttpInfo<SubscriptionSchema>> {
-        const requestContextPromise = this.requestFactory.usersNotificationsV1SubscriptionsSubscriptionIdGet(appID, authToken, subscriptionId, _options);
-
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (let middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (let middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1SubscriptionsSubscriptionIdGetWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     *  Required roles:  - can_read_subscriptions 
-     * Returns a particular subscription by id
-     * @param appID 
-     * @param authToken 
-     * @param subscriptionId 
-     */
-    public usersNotificationsV1SubscriptionsSubscriptionIdGet(appID: string, authToken: string, subscriptionId: string, _options?: Configuration): Observable<SubscriptionSchema> {
-        return this.usersNotificationsV1SubscriptionsSubscriptionIdGetWithHttpInfo(appID, authToken, subscriptionId, _options).pipe(map((apiResponse: HttpInfo<SubscriptionSchema>) => apiResponse.data));
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: UsersApiRequestFactory,
+        responseProcessor?: UsersApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new UsersApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new UsersApiResponseProcessor();
     }
 
     /**
@@ -28460,6 +28085,597 @@ export class ObservableDefaultApi {
      */
     public usersV1UsersUserIdSamlPut(appID: string, authToken: string, userId: string, userSamlIdpUpdateSchema: UserSamlIdpUpdateSchema, _options?: Configuration): Observable<UserSchema1> {
         return this.usersV1UsersUserIdSamlPutWithHttpInfo(appID, authToken, userId, userSamlIdpUpdateSchema, _options).pipe(map((apiResponse: HttpInfo<UserSchema1>) => apiResponse.data));
+    }
+
+}
+
+import { UsersNotificationsApiRequestFactory, UsersNotificationsApiResponseProcessor} from "../apis/UsersNotificationsApi";
+export class ObservableUsersNotificationsApi {
+    private requestFactory: UsersNotificationsApiRequestFactory;
+    private responseProcessor: UsersNotificationsApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: UsersNotificationsApiRequestFactory,
+        responseProcessor?: UsersNotificationsApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new UsersNotificationsApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new UsersNotificationsApiResponseProcessor();
+    }
+
+    /**
+     *  Required roles:  - can_read_notification_settings 
+     * Returns a particular notification_setting by id
+     * @param appID 
+     * @param authToken 
+     * @param perPage The number of items for each page
+     * @param lastId ID of a last file set on previous page
+     */
+    public usersNotificationsV1NotificationSettingsGetWithHttpInfo(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Observable<HttpInfo<NotificationSettingsSchema>> {
+        const requestContextPromise = this.requestFactory.usersNotificationsV1NotificationSettingsGet(appID, authToken, perPage, lastId, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1NotificationSettingsGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     *  Required roles:  - can_read_notification_settings 
+     * Returns a particular notification_setting by id
+     * @param appID 
+     * @param authToken 
+     * @param perPage The number of items for each page
+     * @param lastId ID of a last file set on previous page
+     */
+    public usersNotificationsV1NotificationSettingsGet(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Observable<NotificationSettingsSchema> {
+        return this.usersNotificationsV1NotificationSettingsGetWithHttpInfo(appID, authToken, perPage, lastId, _options).pipe(map((apiResponse: HttpInfo<NotificationSettingsSchema>) => apiResponse.data));
+    }
+
+    /**
+     *  Required roles:  - can_read_notification_settings 
+     * Returns a particular notification_setting by id
+     * @param appID 
+     * @param authToken 
+     * @param objectType 
+     * @param subObjectType 
+     * @param eventType 
+     * @param protocol 
+     */
+    public usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGetWithHttpInfo(appID: string, authToken: string, objectType: string, subObjectType: string, eventType: string, protocol: string, _options?: Configuration): Observable<HttpInfo<NotificationSettingSchema>> {
+        const requestContextPromise = this.requestFactory.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGet(appID, authToken, objectType, subObjectType, eventType, protocol, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     *  Required roles:  - can_read_notification_settings 
+     * Returns a particular notification_setting by id
+     * @param appID 
+     * @param authToken 
+     * @param objectType 
+     * @param subObjectType 
+     * @param eventType 
+     * @param protocol 
+     */
+    public usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGet(appID: string, authToken: string, objectType: string, subObjectType: string, eventType: string, protocol: string, _options?: Configuration): Observable<NotificationSettingSchema> {
+        return this.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGetWithHttpInfo(appID, authToken, objectType, subObjectType, eventType, protocol, _options).pipe(map((apiResponse: HttpInfo<NotificationSettingSchema>) => apiResponse.data));
+    }
+
+    /**
+     * 
+     * Create a new notification_setting
+     * @param appID 
+     * @param authToken 
+     * @param objectType 
+     * @param subObjectType 
+     * @param eventType 
+     * @param protocol 
+     * @param notificationSettingSchema body
+     */
+    public usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPutWithHttpInfo(appID: string, authToken: string, objectType: string, subObjectType: string, eventType: string, protocol: string, notificationSettingSchema: NotificationSettingSchema, _options?: Configuration): Observable<HttpInfo<NotificationSettingSchema>> {
+        const requestContextPromise = this.requestFactory.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPut(appID, authToken, objectType, subObjectType, eventType, protocol, notificationSettingSchema, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPutWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * 
+     * Create a new notification_setting
+     * @param appID 
+     * @param authToken 
+     * @param objectType 
+     * @param subObjectType 
+     * @param eventType 
+     * @param protocol 
+     * @param notificationSettingSchema body
+     */
+    public usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPut(appID: string, authToken: string, objectType: string, subObjectType: string, eventType: string, protocol: string, notificationSettingSchema: NotificationSettingSchema, _options?: Configuration): Observable<NotificationSettingSchema> {
+        return this.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPutWithHttpInfo(appID, authToken, objectType, subObjectType, eventType, protocol, notificationSettingSchema, _options).pipe(map((apiResponse: HttpInfo<NotificationSettingSchema>) => apiResponse.data));
+    }
+
+    /**
+     *  Required roles:  - can_read_notifications 
+     * Update notification
+     * @param appID 
+     * @param authToken 
+     */
+    public usersNotificationsV1NotificationsAllReadPutWithHttpInfo(appID: string, authToken: string, _options?: Configuration): Observable<HttpInfo<void>> {
+        const requestContextPromise = this.requestFactory.usersNotificationsV1NotificationsAllReadPut(appID, authToken, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1NotificationsAllReadPutWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     *  Required roles:  - can_read_notifications 
+     * Update notification
+     * @param appID 
+     * @param authToken 
+     */
+    public usersNotificationsV1NotificationsAllReadPut(appID: string, authToken: string, _options?: Configuration): Observable<void> {
+        return this.usersNotificationsV1NotificationsAllReadPutWithHttpInfo(appID, authToken, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
+    }
+
+    /**
+     *  Required roles:  - can_read_notifications 
+     * Returns a list of notifications
+     * @param appID 
+     * @param authToken 
+     * @param perPage The number of items for each page
+     * @param lastId ID of a last file set on previous page
+     */
+    public usersNotificationsV1NotificationsGetWithHttpInfo(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Observable<HttpInfo<NotificationsSchema>> {
+        const requestContextPromise = this.requestFactory.usersNotificationsV1NotificationsGet(appID, authToken, perPage, lastId, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1NotificationsGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     *  Required roles:  - can_read_notifications 
+     * Returns a list of notifications
+     * @param appID 
+     * @param authToken 
+     * @param perPage The number of items for each page
+     * @param lastId ID of a last file set on previous page
+     */
+    public usersNotificationsV1NotificationsGet(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Observable<NotificationsSchema> {
+        return this.usersNotificationsV1NotificationsGetWithHttpInfo(appID, authToken, perPage, lastId, _options).pipe(map((apiResponse: HttpInfo<NotificationsSchema>) => apiResponse.data));
+    }
+
+    /**
+     *  Required roles:  - can_delete_notifications 
+     * Delete a particular notification by id
+     * @param appID 
+     * @param authToken 
+     * @param notificationId 
+     */
+    public usersNotificationsV1NotificationsNotificationIdDeleteWithHttpInfo(appID: string, authToken: string, notificationId: string, _options?: Configuration): Observable<HttpInfo<void>> {
+        const requestContextPromise = this.requestFactory.usersNotificationsV1NotificationsNotificationIdDelete(appID, authToken, notificationId, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1NotificationsNotificationIdDeleteWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     *  Required roles:  - can_delete_notifications 
+     * Delete a particular notification by id
+     * @param appID 
+     * @param authToken 
+     * @param notificationId 
+     */
+    public usersNotificationsV1NotificationsNotificationIdDelete(appID: string, authToken: string, notificationId: string, _options?: Configuration): Observable<void> {
+        return this.usersNotificationsV1NotificationsNotificationIdDeleteWithHttpInfo(appID, authToken, notificationId, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
+    }
+
+    /**
+     *  Required roles:  - can_read_notifications 
+     * Returns a particular notification by id
+     * @param appID 
+     * @param authToken 
+     * @param notificationId 
+     */
+    public usersNotificationsV1NotificationsNotificationIdGetWithHttpInfo(appID: string, authToken: string, notificationId: string, _options?: Configuration): Observable<HttpInfo<NotificationSchema>> {
+        const requestContextPromise = this.requestFactory.usersNotificationsV1NotificationsNotificationIdGet(appID, authToken, notificationId, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1NotificationsNotificationIdGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     *  Required roles:  - can_read_notifications 
+     * Returns a particular notification by id
+     * @param appID 
+     * @param authToken 
+     * @param notificationId 
+     */
+    public usersNotificationsV1NotificationsNotificationIdGet(appID: string, authToken: string, notificationId: string, _options?: Configuration): Observable<NotificationSchema> {
+        return this.usersNotificationsV1NotificationsNotificationIdGetWithHttpInfo(appID, authToken, notificationId, _options).pipe(map((apiResponse: HttpInfo<NotificationSchema>) => apiResponse.data));
+    }
+
+    /**
+     * 
+     * Create a new notification
+     * @param appID 
+     * @param authToken 
+     * @param notificationSchema body
+     */
+    public usersNotificationsV1NotificationsPostWithHttpInfo(appID: string, authToken: string, notificationSchema: NotificationSchema, _options?: Configuration): Observable<HttpInfo<NotificationSchema>> {
+        const requestContextPromise = this.requestFactory.usersNotificationsV1NotificationsPost(appID, authToken, notificationSchema, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1NotificationsPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * 
+     * Create a new notification
+     * @param appID 
+     * @param authToken 
+     * @param notificationSchema body
+     */
+    public usersNotificationsV1NotificationsPost(appID: string, authToken: string, notificationSchema: NotificationSchema, _options?: Configuration): Observable<NotificationSchema> {
+        return this.usersNotificationsV1NotificationsPostWithHttpInfo(appID, authToken, notificationSchema, _options).pipe(map((apiResponse: HttpInfo<NotificationSchema>) => apiResponse.data));
+    }
+
+    /**
+     * 
+     * Create a new system notification
+     * @param appID 
+     * @param authToken 
+     * @param systemNotificationSchema body
+     */
+    public usersNotificationsV1NotificationsSystemPostWithHttpInfo(appID: string, authToken: string, systemNotificationSchema: SystemNotificationSchema, _options?: Configuration): Observable<HttpInfo<NotificationSchema>> {
+        const requestContextPromise = this.requestFactory.usersNotificationsV1NotificationsSystemPost(appID, authToken, systemNotificationSchema, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1NotificationsSystemPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * 
+     * Create a new system notification
+     * @param appID 
+     * @param authToken 
+     * @param systemNotificationSchema body
+     */
+    public usersNotificationsV1NotificationsSystemPost(appID: string, authToken: string, systemNotificationSchema: SystemNotificationSchema, _options?: Configuration): Observable<NotificationSchema> {
+        return this.usersNotificationsV1NotificationsSystemPostWithHttpInfo(appID, authToken, systemNotificationSchema, _options).pipe(map((apiResponse: HttpInfo<NotificationSchema>) => apiResponse.data));
+    }
+
+    /**
+     *  Required roles:  - can_read_subscriptions 
+     * Delete all user subscriptions for a specific object_type and object_id
+     * @param appID 
+     * @param authToken 
+     * @param objectType 
+     * @param objectId 
+     */
+    public usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDeleteWithHttpInfo(appID: string, authToken: string, objectType: string, objectId: string, _options?: Configuration): Observable<HttpInfo<SubscriptionSchema>> {
+        const requestContextPromise = this.requestFactory.usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDelete(appID, authToken, objectType, objectId, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDeleteWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     *  Required roles:  - can_read_subscriptions 
+     * Delete all user subscriptions for a specific object_type and object_id
+     * @param appID 
+     * @param authToken 
+     * @param objectType 
+     * @param objectId 
+     */
+    public usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDelete(appID: string, authToken: string, objectType: string, objectId: string, _options?: Configuration): Observable<SubscriptionSchema> {
+        return this.usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDeleteWithHttpInfo(appID, authToken, objectType, objectId, _options).pipe(map((apiResponse: HttpInfo<SubscriptionSchema>) => apiResponse.data));
+    }
+
+    /**
+     *  Required roles:  - can_read_subscriptions 
+     * Returns user subscriptions for a specific object_type and object_id
+     * @param appID 
+     * @param authToken 
+     * @param objectType 
+     * @param objectId 
+     */
+    public usersNotificationsV1ObjectTypeObjectIdSubscriptionsGetWithHttpInfo(appID: string, authToken: string, objectType: string, objectId: string, _options?: Configuration): Observable<HttpInfo<SubscriptionsSchema>> {
+        const requestContextPromise = this.requestFactory.usersNotificationsV1ObjectTypeObjectIdSubscriptionsGet(appID, authToken, objectType, objectId, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1ObjectTypeObjectIdSubscriptionsGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     *  Required roles:  - can_read_subscriptions 
+     * Returns user subscriptions for a specific object_type and object_id
+     * @param appID 
+     * @param authToken 
+     * @param objectType 
+     * @param objectId 
+     */
+    public usersNotificationsV1ObjectTypeObjectIdSubscriptionsGet(appID: string, authToken: string, objectType: string, objectId: string, _options?: Configuration): Observable<SubscriptionsSchema> {
+        return this.usersNotificationsV1ObjectTypeObjectIdSubscriptionsGetWithHttpInfo(appID, authToken, objectType, objectId, _options).pipe(map((apiResponse: HttpInfo<SubscriptionsSchema>) => apiResponse.data));
+    }
+
+    /**
+     *  Required roles:  - can_read_subscriptions 
+     * Returns all user subscriptions
+     * @param appID 
+     * @param authToken 
+     */
+    public usersNotificationsV1SubscriptionsGetWithHttpInfo(appID: string, authToken: string, _options?: Configuration): Observable<HttpInfo<SubscriptionSchema>> {
+        const requestContextPromise = this.requestFactory.usersNotificationsV1SubscriptionsGet(appID, authToken, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1SubscriptionsGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     *  Required roles:  - can_read_subscriptions 
+     * Returns all user subscriptions
+     * @param appID 
+     * @param authToken 
+     */
+    public usersNotificationsV1SubscriptionsGet(appID: string, authToken: string, _options?: Configuration): Observable<SubscriptionSchema> {
+        return this.usersNotificationsV1SubscriptionsGetWithHttpInfo(appID, authToken, _options).pipe(map((apiResponse: HttpInfo<SubscriptionSchema>) => apiResponse.data));
+    }
+
+    /**
+     * 
+     * Create a new subscription
+     * @param appID 
+     * @param authToken 
+     * @param subscriptionSchema body
+     */
+    public usersNotificationsV1SubscriptionsPostWithHttpInfo(appID: string, authToken: string, subscriptionSchema: SubscriptionSchema, _options?: Configuration): Observable<HttpInfo<SubscriptionSchema>> {
+        const requestContextPromise = this.requestFactory.usersNotificationsV1SubscriptionsPost(appID, authToken, subscriptionSchema, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1SubscriptionsPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * 
+     * Create a new subscription
+     * @param appID 
+     * @param authToken 
+     * @param subscriptionSchema body
+     */
+    public usersNotificationsV1SubscriptionsPost(appID: string, authToken: string, subscriptionSchema: SubscriptionSchema, _options?: Configuration): Observable<SubscriptionSchema> {
+        return this.usersNotificationsV1SubscriptionsPostWithHttpInfo(appID, authToken, subscriptionSchema, _options).pipe(map((apiResponse: HttpInfo<SubscriptionSchema>) => apiResponse.data));
+    }
+
+    /**
+     *  Required roles:  - can_write_subscriptions 
+     * Delete a particular subscription by id
+     * @param appID 
+     * @param authToken 
+     * @param subscriptionId 
+     */
+    public usersNotificationsV1SubscriptionsSubscriptionIdDeleteWithHttpInfo(appID: string, authToken: string, subscriptionId: string, _options?: Configuration): Observable<HttpInfo<void>> {
+        const requestContextPromise = this.requestFactory.usersNotificationsV1SubscriptionsSubscriptionIdDelete(appID, authToken, subscriptionId, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1SubscriptionsSubscriptionIdDeleteWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     *  Required roles:  - can_write_subscriptions 
+     * Delete a particular subscription by id
+     * @param appID 
+     * @param authToken 
+     * @param subscriptionId 
+     */
+    public usersNotificationsV1SubscriptionsSubscriptionIdDelete(appID: string, authToken: string, subscriptionId: string, _options?: Configuration): Observable<void> {
+        return this.usersNotificationsV1SubscriptionsSubscriptionIdDeleteWithHttpInfo(appID, authToken, subscriptionId, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
+    }
+
+    /**
+     *  Required roles:  - can_read_subscriptions 
+     * Returns a particular subscription by id
+     * @param appID 
+     * @param authToken 
+     * @param subscriptionId 
+     */
+    public usersNotificationsV1SubscriptionsSubscriptionIdGetWithHttpInfo(appID: string, authToken: string, subscriptionId: string, _options?: Configuration): Observable<HttpInfo<SubscriptionSchema>> {
+        const requestContextPromise = this.requestFactory.usersNotificationsV1SubscriptionsSubscriptionIdGet(appID, authToken, subscriptionId, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.usersNotificationsV1SubscriptionsSubscriptionIdGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     *  Required roles:  - can_read_subscriptions 
+     * Returns a particular subscription by id
+     * @param appID 
+     * @param authToken 
+     * @param subscriptionId 
+     */
+    public usersNotificationsV1SubscriptionsSubscriptionIdGet(appID: string, authToken: string, subscriptionId: string, _options?: Configuration): Observable<SubscriptionSchema> {
+        return this.usersNotificationsV1SubscriptionsSubscriptionIdGetWithHttpInfo(appID, authToken, subscriptionId, _options).pipe(map((apiResponse: HttpInfo<SubscriptionSchema>) => apiResponse.data));
     }
 
 }
