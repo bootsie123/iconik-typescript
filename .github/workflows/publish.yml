@@ -6,6 +6,9 @@ on:
     types:
       - completed
 
+permissions:
+  id-token: write
+
 jobs:
   publish:
     name: Publish to NPM
@@ -29,6 +32,6 @@ jobs:
           npm run build
 
       - name: Publish to npm
-        run: npm publish --provenance
+        run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
