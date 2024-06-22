@@ -11,6 +11,25 @@ openapi.servers = [
   }
 ];
 
+console.log("Adding tags...");
+
+if (!openapi.tags) openapi.tags = [];
+
+for (const [path, obj] of Object.entries(openapi.paths)) {
+  const tagName = path.split("/")[1];
+
+  if (!openapi.tags.find(tag => tag.name === tagName))
+    openapi.tags.push({
+      name: tagName
+    });
+
+  for (const method of Object.values(obj)) {
+    if (!method.tags) method.tags = [tagName];
+  }
+}
+
+console.log("Tags added!");
+
 fs.writeFileSync("./openapi.json", JSON.stringify(openapi, null, 2));
 
 console.log("Specs merged!");

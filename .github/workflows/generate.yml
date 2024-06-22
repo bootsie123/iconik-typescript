@@ -28,6 +28,9 @@ jobs:
           npm ci
           npm run merge
 
+      - name: Remove old sdk
+        run: rm -rf typescript-client
+
       - name: Generate sdk
         uses: openapi-generators/openapitools-generator-action@v1.5.0
         with:
