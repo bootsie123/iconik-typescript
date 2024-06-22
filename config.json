@@ -1,5 +1,7 @@
 {
     "npmName": "iconik-typescript",
     "supportsES6": true,
-    "withInterfaces": true
+    "withInterfaces": true,
+    "moduleName": "iconik",
+    "projectName": "iconik-typescript"
 }
