@@ -19,10 +19,10 @@ import { HttpFile } from '../http/http';
 export class ACLSchema {
     'groupsAcl'?: Array<GroupACL1>;
     'inheritedGroupsAcl'?: Array<GroupACL>;
-    'inheritedUsersAcl'?: Array<UserACL>;
+    'inheritedUsersAcl'?: Array<UserACL1>;
     'propagatingGroupsAcl'?: Array<GroupACL>;
-    'propagatingUsersAcl'?: Array<UserACL>;
-    'usersAcl'?: Array<UserACL1>;
+    'propagatingUsersAcl'?: Array<UserACL1>;
+    'usersAcl'?: Array<UserACL>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -42,7 +42,7 @@ export class ACLSchema {
         {
             "name": "inheritedUsersAcl",
             "baseName": "inherited_users_acl",
-            "type": "Array<UserACL>",
+            "type": "Array<UserACL1>",
             "format": ""
         },
         {
@@ -54,13 +54,13 @@ export class ACLSchema {
         {
             "name": "propagatingUsersAcl",
             "baseName": "propagating_users_acl",
-            "type": "Array<UserACL>",
+            "type": "Array<UserACL1>",
             "format": ""
         },
         {
             "name": "usersAcl",
             "baseName": "users_acl",
-            "type": "Array<UserACL1>",
+            "type": "Array<UserACL>",
             "format": ""
         }    ];
 
