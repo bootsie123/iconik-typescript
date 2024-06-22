@@ -35,7 +35,12 @@ jobs:
           config-file: config.json
           command-args: "--global-property=apiDocs --git-repo-id ${GITHUB_REPOSITORY#*/} --git-user-id ${GITHUB_REPOSITORY_OWNER}"
 
+      - name: Verify changes
+        id: verify_changes
+        run: git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
+
       - name: Commit new files
+        if: steps.verify_changes.outputs.changed == 'true'
         run: |
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
