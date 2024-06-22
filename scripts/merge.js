@@ -19,7 +19,7 @@ const version = openapi?.info?.version;
 
 const packageJSON = JSON.parse(fs.readFileSync("./package.json"));
 
-if (version && version !== packageJSON.json) {
+if (version && version !== packageJSON.version) {
   console.log(
     `OpenAPI (${version}) and package.json (${packageJSON.version}) versions are mismatched!\nUpdating package.json version to ${version}...`
   );
