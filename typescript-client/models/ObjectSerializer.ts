@@ -1301,10 +1301,10 @@ import { UsersV1UsersCurrentPhotoPost201Response } from '../models/UsersV1UsersC
 import { UsersV1UsersCurrentPhotoPostRequest } from '../models/UsersV1UsersCurrentPhotoPostRequest';
 import { VantageSettingsSchema } from '../models/VantageSettingsSchema';
 import { WatchFolderVideoTranscoderSchema } from '../models/WatchFolderVideoTranscoderSchema';
-import { WebhookBaseSchema       , WebhookBaseSchemaStatusEnum            } from '../models/WebhookBaseSchema';
-import { WebhookCreateSchema       , WebhookCreateSchemaStatusEnum            } from '../models/WebhookCreateSchema';
-import { WebhookInternalSchema       , WebhookInternalSchemaStatusEnum            } from '../models/WebhookInternalSchema';
-import { WebhookSchema       , WebhookSchemaStatusEnum            } from '../models/WebhookSchema';
+import { WebhookBaseSchema             , WebhookBaseSchemaStatusEnum      } from '../models/WebhookBaseSchema';
+import { WebhookCreateSchema             , WebhookCreateSchemaStatusEnum      } from '../models/WebhookCreateSchema';
+import { WebhookInternalSchema             , WebhookInternalSchemaStatusEnum      } from '../models/WebhookInternalSchema';
+import { WebhookSchema             , WebhookSchemaStatusEnum      } from '../models/WebhookSchema';
 import { WebhooksSchema } from '../models/WebhooksSchema';
 import { ZencoderSettingsSchema } from '../models/ZencoderSettingsSchema';
 
