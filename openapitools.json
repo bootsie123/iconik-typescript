@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+  "spaces": 2,
+  "generator-cli": {
+    "version": "7.6.0",
+    "useDocker": true,
+    "generators": {
+      "iconik": {
+        "generatorName": "typescript",
+        "output": "typescript-client",
+        "glob": "openapi.json",
+        "additionalProperties": {
+          "npmName": "iconik-typescript",
+          "withInterfaces": true,
+          "moduleName": "iconik",
+          "projectName": "iconik-typescript"
+        },
+        "globalProperty": {
+          "apiDocs": true,
+          "modelDocs": true
+        }
+      }
+    }
+  }
+}
