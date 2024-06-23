@@ -35,25 +35,13 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_acls 
      * Delete acls for content of multiple objects
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param deleteBulkACLsSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1AclObjectTypeContentDelete(appID: string, authToken: string, objectType: string, deleteBulkACLsSchema: DeleteBulkACLsSchema, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1AclObjectTypeContentDelete(objectType: string, deleteBulkACLsSchema: DeleteBulkACLsSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclObjectTypeContentDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclObjectTypeContentDelete", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -65,6 +53,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         if (deleteBulkACLsSchema === null || deleteBulkACLsSchema === undefined) {
             throw new RequiredError("AclsApi", "aclsV1AclObjectTypeContentDelete", "deleteBulkACLsSchema");
         }
+
+
 
 
         // Path Params
@@ -93,6 +83,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -105,25 +106,13 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_acls 
      * Create a new acl for content of multiple objects
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param createBulkACLsSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1AclObjectTypeContentPut(appID: string, authToken: string, objectType: string, createBulkACLsSchema: CreateBulkACLsSchema, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1AclObjectTypeContentPut(objectType: string, createBulkACLsSchema: CreateBulkACLsSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclObjectTypeContentPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclObjectTypeContentPut", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -135,6 +124,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         if (createBulkACLsSchema === null || createBulkACLsSchema === undefined) {
             throw new RequiredError("AclsApi", "aclsV1AclObjectTypeContentPut", "createBulkACLsSchema");
         }
+
+
 
 
         // Path Params
@@ -163,6 +154,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -175,25 +177,13 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_acls 
      * Delete acls for multiple objects
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param deleteACLsSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1AclObjectTypeDelete(appID: string, authToken: string, objectType: string, deleteACLsSchema: DeleteACLsSchema, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1AclObjectTypeDelete(objectType: string, deleteACLsSchema: DeleteACLsSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclObjectTypeDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclObjectTypeDelete", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -205,6 +195,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         if (deleteACLsSchema === null || deleteACLsSchema === undefined) {
             throw new RequiredError("AclsApi", "aclsV1AclObjectTypeDelete", "deleteACLsSchema");
         }
+
+
 
 
         // Path Params
@@ -233,6 +225,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -245,25 +248,13 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_acls 
      * List of object permissions
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectKey 
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1AclObjectTypeObjectKeyGet(appID: string, authToken: string, objectType: string, objectKey: string, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1AclObjectTypeObjectKeyGet(objectType: string, objectKey: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclObjectTypeObjectKeyGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclObjectTypeObjectKeyGet", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -275,6 +266,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         if (objectKey === null || objectKey === undefined) {
             throw new RequiredError("AclsApi", "aclsV1AclObjectTypeObjectKeyGet", "objectKey");
         }
+
+
 
 
         // Path Params
@@ -293,6 +286,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -305,26 +309,14 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_acls 
      * Check if particular object has required permission
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectKey 
      * @param permission 
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1AclObjectTypeObjectKeyPermissionGet(appID: string, authToken: string, objectType: string, objectKey: string, permission: string, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1AclObjectTypeObjectKeyPermissionGet(objectType: string, objectKey: string, permission: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclObjectTypeObjectKeyPermissionGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclObjectTypeObjectKeyPermissionGet", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -344,6 +336,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/acls/v1/acl/{object_type}/{object_key}/{permission}/'
             .replace('{' + 'object_type' + '}', encodeURIComponent(String(objectType)))
@@ -361,6 +355,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -373,25 +378,13 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * List of permissions for the user
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectKey 
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1AclObjectTypeObjectKeyPermissionsGet(appID: string, authToken: string, objectType: string, objectKey: string, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1AclObjectTypeObjectKeyPermissionsGet(objectType: string, objectKey: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclObjectTypeObjectKeyPermissionsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclObjectTypeObjectKeyPermissionsGet", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -403,6 +396,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         if (objectKey === null || objectKey === undefined) {
             throw new RequiredError("AclsApi", "aclsV1AclObjectTypeObjectKeyPermissionsGet", "objectKey");
         }
+
+
 
 
         // Path Params
@@ -421,6 +416,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -433,26 +439,14 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_acls 
      * Check if objects have required permission
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param permission 
      * @param aCLsSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1AclObjectTypePermissionPost(appID: string, authToken: string, objectType: string, permission: string, aCLsSchema: ACLsSchema, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1AclObjectTypePermissionPost(objectType: string, permission: string, aCLsSchema: ACLsSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclObjectTypePermissionPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclObjectTypePermissionPost", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -470,6 +464,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         if (aCLsSchema === null || aCLsSchema === undefined) {
             throw new RequiredError("AclsApi", "aclsV1AclObjectTypePermissionPost", "aCLsSchema");
         }
+
+
 
 
         // Path Params
@@ -499,6 +495,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -511,25 +518,13 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_acls 
      * Create a new acl for multiple objects
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param createACLsSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1AclObjectTypePut(appID: string, authToken: string, objectType: string, createACLsSchema: CreateACLsSchema, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1AclObjectTypePut(objectType: string, createACLsSchema: CreateACLsSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclObjectTypePut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclObjectTypePut", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -541,6 +536,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         if (createACLsSchema === null || createACLsSchema === undefined) {
             throw new RequiredError("AclsApi", "aclsV1AclObjectTypePut", "createACLsSchema");
         }
+
+
 
 
         // Path Params
@@ -569,6 +566,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -581,29 +589,19 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_acls 
      * Check if objects have required permission
+     * @param checkBulkACLsSchema body
      * @param appID 
      * @param authToken 
-     * @param checkBulkACLsSchema body
      */
-    public async aclsV1AclPost(appID: string, authToken: string, checkBulkACLsSchema: CheckBulkACLsSchema, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1AclPost(checkBulkACLsSchema: CheckBulkACLsSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclPost", "authToken");
-        }
-
 
         // verify required parameter 'checkBulkACLsSchema' is not null or undefined
         if (checkBulkACLsSchema === null || checkBulkACLsSchema === undefined) {
             throw new RequiredError("AclsApi", "aclsV1AclPost", "checkBulkACLsSchema");
         }
+
+
 
 
         // Path Params
@@ -631,6 +629,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -646,19 +655,9 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async aclsV1AclTemplatesGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1AclTemplatesGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclTemplatesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclTemplatesGet", "authToken");
-        }
 
 
         // Path Params
@@ -675,6 +674,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -687,29 +697,19 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_acl_templates 
      * Create an acl template
+     * @param aCLTemplateSchema body
      * @param appID 
      * @param authToken 
-     * @param aCLTemplateSchema body
      */
-    public async aclsV1AclTemplatesPost(appID: string, authToken: string, aCLTemplateSchema: ACLTemplateSchema, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1AclTemplatesPost(aCLTemplateSchema: ACLTemplateSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclTemplatesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclTemplatesPost", "authToken");
-        }
-
 
         // verify required parameter 'aCLTemplateSchema' is not null or undefined
         if (aCLTemplateSchema === null || aCLTemplateSchema === undefined) {
             throw new RequiredError("AclsApi", "aclsV1AclTemplatesPost", "aCLTemplateSchema");
         }
+
+
 
 
         // Path Params
@@ -737,6 +737,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -749,29 +760,19 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_acl_templates 
      * Remove an acl template
+     * @param templateId 
      * @param appID 
      * @param authToken 
-     * @param templateId 
      */
-    public async aclsV1AclTemplatesTemplateIdDelete(appID: string, authToken: string, templateId: string, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1AclTemplatesTemplateIdDelete(templateId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclTemplatesTemplateIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclTemplatesTemplateIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'templateId' is not null or undefined
         if (templateId === null || templateId === undefined) {
             throw new RequiredError("AclsApi", "aclsV1AclTemplatesTemplateIdDelete", "templateId");
         }
+
+
 
 
         // Path Params
@@ -789,6 +790,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -801,29 +813,19 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_acl_templates 
      * Retreive an acl template
+     * @param templateId 
      * @param appID 
      * @param authToken 
-     * @param templateId 
      */
-    public async aclsV1AclTemplatesTemplateIdGet(appID: string, authToken: string, templateId: string, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1AclTemplatesTemplateIdGet(templateId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclTemplatesTemplateIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclTemplatesTemplateIdGet", "authToken");
-        }
-
 
         // verify required parameter 'templateId' is not null or undefined
         if (templateId === null || templateId === undefined) {
             throw new RequiredError("AclsApi", "aclsV1AclTemplatesTemplateIdGet", "templateId");
         }
+
+
 
 
         // Path Params
@@ -841,6 +843,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -853,28 +866,16 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Apply template permissions to an object
-     * @param appID 
-     * @param authToken 
      * @param templateId 
      * @param objectType 
      * @param objectKey 
+     * @param appID 
+     * @param authToken 
      * @param ignoreReindexing 
      * @param restrictAclsCollectionId Do not apply any ACLs that are not in the collection_id provided (Parent collection normally)
      */
-    public async aclsV1AclTemplatesTemplateIdObjectTypeObjectKeyPost(appID: string, authToken: string, templateId: string, objectType: string, objectKey: string, ignoreReindexing?: boolean, restrictAclsCollectionId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1AclTemplatesTemplateIdObjectTypeObjectKeyPost(templateId: string, objectType: string, objectKey: string, appID?: string, authToken?: string, ignoreReindexing?: boolean, restrictAclsCollectionId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclTemplatesTemplateIdObjectTypeObjectKeyPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclTemplatesTemplateIdObjectTypeObjectKeyPost", "authToken");
-        }
-
 
         // verify required parameter 'templateId' is not null or undefined
         if (templateId === null || templateId === undefined) {
@@ -892,6 +893,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         if (objectKey === null || objectKey === undefined) {
             throw new RequiredError("AclsApi", "aclsV1AclTemplatesTemplateIdObjectTypeObjectKeyPost", "objectKey");
         }
+
+
 
 
 
@@ -923,6 +926,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -935,25 +949,13 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_acl_templates 
      * Update an acl template
-     * @param appID 
-     * @param authToken 
      * @param templateId 
      * @param aCLTemplateSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1AclTemplatesTemplateIdPatch(appID: string, authToken: string, templateId: string, aCLTemplateSchema: ACLTemplateSchema, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1AclTemplatesTemplateIdPatch(templateId: string, aCLTemplateSchema: ACLTemplateSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclTemplatesTemplateIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclTemplatesTemplateIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'templateId' is not null or undefined
         if (templateId === null || templateId === undefined) {
@@ -965,6 +967,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         if (aCLTemplateSchema === null || aCLTemplateSchema === undefined) {
             throw new RequiredError("AclsApi", "aclsV1AclTemplatesTemplateIdPatch", "aCLTemplateSchema");
         }
+
+
 
 
         // Path Params
@@ -993,6 +997,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1005,25 +1020,13 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_acl_templates 
      * Update an acl template
-     * @param appID 
-     * @param authToken 
      * @param templateId 
      * @param aCLTemplateSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1AclTemplatesTemplateIdPut(appID: string, authToken: string, templateId: string, aCLTemplateSchema: ACLTemplateSchema, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1AclTemplatesTemplateIdPut(templateId: string, aCLTemplateSchema: ACLTemplateSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclTemplatesTemplateIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1AclTemplatesTemplateIdPut", "authToken");
-        }
-
 
         // verify required parameter 'templateId' is not null or undefined
         if (templateId === null || templateId === undefined) {
@@ -1035,6 +1038,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         if (aCLTemplateSchema === null || aCLTemplateSchema === undefined) {
             throw new RequiredError("AclsApi", "aclsV1AclTemplatesTemplateIdPut", "aCLTemplateSchema");
         }
+
+
 
 
         // Path Params
@@ -1063,6 +1068,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1075,26 +1091,14 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_acls 
      * Delete a particular acl by id for an object
-     * @param appID 
-     * @param authToken 
      * @param groupId 
      * @param objectType 
      * @param objectKey 
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1GroupsGroupIdAclObjectTypeObjectKeyDelete(appID: string, authToken: string, groupId: string, objectType: string, objectKey: string, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1GroupsGroupIdAclObjectTypeObjectKeyDelete(groupId: string, objectType: string, objectKey: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1GroupsGroupIdAclObjectTypeObjectKeyDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1GroupsGroupIdAclObjectTypeObjectKeyDelete", "authToken");
-        }
-
 
         // verify required parameter 'groupId' is not null or undefined
         if (groupId === null || groupId === undefined) {
@@ -1114,6 +1118,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/acls/v1/groups/{group_id}/acl/{object_type}/{object_key}/'
             .replace('{' + 'group_id' + '}', encodeURIComponent(String(groupId)))
@@ -1131,6 +1137,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1143,26 +1160,14 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_acls 
      * List of groups permissions for an object
-     * @param appID 
-     * @param authToken 
      * @param groupId 
      * @param objectType 
      * @param objectKey 
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1GroupsGroupIdAclObjectTypeObjectKeyGet(appID: string, authToken: string, groupId: string, objectType: string, objectKey: string, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1GroupsGroupIdAclObjectTypeObjectKeyGet(groupId: string, objectType: string, objectKey: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1GroupsGroupIdAclObjectTypeObjectKeyGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1GroupsGroupIdAclObjectTypeObjectKeyGet", "authToken");
-        }
-
 
         // verify required parameter 'groupId' is not null or undefined
         if (groupId === null || groupId === undefined) {
@@ -1182,6 +1187,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/acls/v1/groups/{group_id}/acl/{object_type}/{object_key}/'
             .replace('{' + 'group_id' + '}', encodeURIComponent(String(groupId)))
@@ -1199,6 +1206,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1211,27 +1229,15 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_acls 
      * Check if group has particular permission for an object
-     * @param appID 
-     * @param authToken 
      * @param groupId 
      * @param objectType 
      * @param objectKey 
      * @param permission 
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1GroupsGroupIdAclObjectTypeObjectKeyPermissionGet(appID: string, authToken: string, groupId: string, objectType: string, objectKey: string, permission: string, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1GroupsGroupIdAclObjectTypeObjectKeyPermissionGet(groupId: string, objectType: string, objectKey: string, permission: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1GroupsGroupIdAclObjectTypeObjectKeyPermissionGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1GroupsGroupIdAclObjectTypeObjectKeyPermissionGet", "authToken");
-        }
-
 
         // verify required parameter 'groupId' is not null or undefined
         if (groupId === null || groupId === undefined) {
@@ -1257,6 +1263,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/acls/v1/groups/{group_id}/acl/{object_type}/{object_key}/{permission}/'
             .replace('{' + 'group_id' + '}', encodeURIComponent(String(groupId)))
@@ -1275,6 +1283,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1287,27 +1306,15 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_acls 
      * Update or create group acl for an object
-     * @param appID 
-     * @param authToken 
      * @param groupId 
      * @param objectType 
      * @param objectKey 
      * @param groupACLSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1GroupsGroupIdAclObjectTypeObjectKeyPut(appID: string, authToken: string, groupId: string, objectType: string, objectKey: string, groupACLSchema: GroupACLSchema, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1GroupsGroupIdAclObjectTypeObjectKeyPut(groupId: string, objectType: string, objectKey: string, groupACLSchema: GroupACLSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1GroupsGroupIdAclObjectTypeObjectKeyPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1GroupsGroupIdAclObjectTypeObjectKeyPut", "authToken");
-        }
-
 
         // verify required parameter 'groupId' is not null or undefined
         if (groupId === null || groupId === undefined) {
@@ -1331,6 +1338,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         if (groupACLSchema === null || groupACLSchema === undefined) {
             throw new RequiredError("AclsApi", "aclsV1GroupsGroupIdAclObjectTypeObjectKeyPut", "groupACLSchema");
         }
+
+
 
 
         // Path Params
@@ -1361,6 +1370,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1373,25 +1393,13 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_acls 
      * List of share acls
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectKey 
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1SharesObjectTypeObjectKeyGet(appID: string, authToken: string, objectType: string, objectKey: string, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1SharesObjectTypeObjectKeyGet(objectType: string, objectKey: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1SharesObjectTypeObjectKeyGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1SharesObjectTypeObjectKeyGet", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -1403,6 +1411,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         if (objectKey === null || objectKey === undefined) {
             throw new RequiredError("AclsApi", "aclsV1SharesObjectTypeObjectKeyGet", "objectKey");
         }
+
+
 
 
         // Path Params
@@ -1421,6 +1431,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1433,26 +1454,14 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_acls 
      * Delete a share acl for an object
-     * @param appID 
-     * @param authToken 
      * @param shareId 
      * @param objectType 
      * @param objectKey 
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1SharesShareIdAclObjectTypeObjectKeyDelete(appID: string, authToken: string, shareId: string, objectType: string, objectKey: string, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1SharesShareIdAclObjectTypeObjectKeyDelete(shareId: string, objectType: string, objectKey: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1SharesShareIdAclObjectTypeObjectKeyDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1SharesShareIdAclObjectTypeObjectKeyDelete", "authToken");
-        }
-
 
         // verify required parameter 'shareId' is not null or undefined
         if (shareId === null || shareId === undefined) {
@@ -1472,6 +1481,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/acls/v1/shares/{share_id}/acl/{object_type}/{object_key}/'
             .replace('{' + 'share_id' + '}', encodeURIComponent(String(shareId)))
@@ -1489,6 +1500,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1501,26 +1523,14 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_acls 
      * List of share permissions for an object
-     * @param appID 
-     * @param authToken 
      * @param shareId 
      * @param objectType 
      * @param objectKey 
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1SharesShareIdAclObjectTypeObjectKeyGet(appID: string, authToken: string, shareId: string, objectType: string, objectKey: string, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1SharesShareIdAclObjectTypeObjectKeyGet(shareId: string, objectType: string, objectKey: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1SharesShareIdAclObjectTypeObjectKeyGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1SharesShareIdAclObjectTypeObjectKeyGet", "authToken");
-        }
-
 
         // verify required parameter 'shareId' is not null or undefined
         if (shareId === null || shareId === undefined) {
@@ -1540,6 +1550,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/acls/v1/shares/{share_id}/acl/{object_type}/{object_key}/'
             .replace('{' + 'share_id' + '}', encodeURIComponent(String(shareId)))
@@ -1557,6 +1569,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1569,27 +1592,15 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_acls 
      * Returns a share acl for an object
-     * @param appID 
-     * @param authToken 
      * @param shareId 
      * @param objectType 
      * @param objectKey 
      * @param permission 
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1SharesShareIdAclObjectTypeObjectKeyPermissionGet(appID: string, authToken: string, shareId: string, objectType: string, objectKey: string, permission: string, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1SharesShareIdAclObjectTypeObjectKeyPermissionGet(shareId: string, objectType: string, objectKey: string, permission: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1SharesShareIdAclObjectTypeObjectKeyPermissionGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1SharesShareIdAclObjectTypeObjectKeyPermissionGet", "authToken");
-        }
-
 
         // verify required parameter 'shareId' is not null or undefined
         if (shareId === null || shareId === undefined) {
@@ -1615,6 +1626,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/acls/v1/shares/{share_id}/acl/{object_type}/{object_key}/{permission}/'
             .replace('{' + 'share_id' + '}', encodeURIComponent(String(shareId)))
@@ -1633,6 +1646,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1645,27 +1669,15 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_acls 
      * Create a new share acl for an object
-     * @param appID 
-     * @param authToken 
      * @param shareId 
      * @param objectType 
      * @param objectKey 
      * @param shareACLSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1SharesShareIdAclObjectTypeObjectKeyPost(appID: string, authToken: string, shareId: string, objectType: string, objectKey: string, shareACLSchema: ShareACLSchema, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1SharesShareIdAclObjectTypeObjectKeyPost(shareId: string, objectType: string, objectKey: string, shareACLSchema: ShareACLSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1SharesShareIdAclObjectTypeObjectKeyPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1SharesShareIdAclObjectTypeObjectKeyPost", "authToken");
-        }
-
 
         // verify required parameter 'shareId' is not null or undefined
         if (shareId === null || shareId === undefined) {
@@ -1689,6 +1701,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         if (shareACLSchema === null || shareACLSchema === undefined) {
             throw new RequiredError("AclsApi", "aclsV1SharesShareIdAclObjectTypeObjectKeyPost", "shareACLSchema");
         }
+
+
 
 
         // Path Params
@@ -1719,6 +1733,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1731,27 +1756,15 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_acls 
      * Update share acl for an object
-     * @param appID 
-     * @param authToken 
      * @param shareId 
      * @param objectType 
      * @param objectKey 
      * @param shareACLSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1SharesShareIdAclObjectTypeObjectKeyPut(appID: string, authToken: string, shareId: string, objectType: string, objectKey: string, shareACLSchema: ShareACLSchema, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1SharesShareIdAclObjectTypeObjectKeyPut(shareId: string, objectType: string, objectKey: string, shareACLSchema: ShareACLSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1SharesShareIdAclObjectTypeObjectKeyPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1SharesShareIdAclObjectTypeObjectKeyPut", "authToken");
-        }
-
 
         // verify required parameter 'shareId' is not null or undefined
         if (shareId === null || shareId === undefined) {
@@ -1775,6 +1788,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         if (shareACLSchema === null || shareACLSchema === undefined) {
             throw new RequiredError("AclsApi", "aclsV1SharesShareIdAclObjectTypeObjectKeyPut", "shareACLSchema");
         }
+
+
 
 
         // Path Params
@@ -1805,6 +1820,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1817,26 +1843,14 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_acls 
      * Create a new acl for multiple share objects
-     * @param appID 
-     * @param authToken 
      * @param shareId 
      * @param objectType 
      * @param createShareACLsSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1SharesShareIdAclObjectTypePut(appID: string, authToken: string, shareId: string, objectType: string, createShareACLsSchema: CreateShareACLsSchema, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1SharesShareIdAclObjectTypePut(shareId: string, objectType: string, createShareACLsSchema: CreateShareACLsSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1SharesShareIdAclObjectTypePut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1SharesShareIdAclObjectTypePut", "authToken");
-        }
-
 
         // verify required parameter 'shareId' is not null or undefined
         if (shareId === null || shareId === undefined) {
@@ -1854,6 +1868,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         if (createShareACLsSchema === null || createShareACLsSchema === undefined) {
             throw new RequiredError("AclsApi", "aclsV1SharesShareIdAclObjectTypePut", "createShareACLsSchema");
         }
+
+
 
 
         // Path Params
@@ -1883,6 +1899,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1895,26 +1922,14 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_acls 
      * Delete a user acl for an object
-     * @param appID 
-     * @param authToken 
      * @param userId 
      * @param objectType 
      * @param objectKey 
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1UsersUserIdAclObjectTypeObjectKeyDelete(appID: string, authToken: string, userId: string, objectType: string, objectKey: string, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1UsersUserIdAclObjectTypeObjectKeyDelete(userId: string, objectType: string, objectKey: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1UsersUserIdAclObjectTypeObjectKeyDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1UsersUserIdAclObjectTypeObjectKeyDelete", "authToken");
-        }
-
 
         // verify required parameter 'userId' is not null or undefined
         if (userId === null || userId === undefined) {
@@ -1934,6 +1949,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/acls/v1/users/{user_id}/acl/{object_type}/{object_key}/'
             .replace('{' + 'user_id' + '}', encodeURIComponent(String(userId)))
@@ -1951,6 +1968,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1963,26 +1991,14 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_acls 
      * List of user permissions for an object
-     * @param appID 
-     * @param authToken 
      * @param userId 
      * @param objectType 
      * @param objectKey 
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1UsersUserIdAclObjectTypeObjectKeyGet(appID: string, authToken: string, userId: string, objectType: string, objectKey: string, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1UsersUserIdAclObjectTypeObjectKeyGet(userId: string, objectType: string, objectKey: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1UsersUserIdAclObjectTypeObjectKeyGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1UsersUserIdAclObjectTypeObjectKeyGet", "authToken");
-        }
-
 
         // verify required parameter 'userId' is not null or undefined
         if (userId === null || userId === undefined) {
@@ -2002,6 +2018,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/acls/v1/users/{user_id}/acl/{object_type}/{object_key}/'
             .replace('{' + 'user_id' + '}', encodeURIComponent(String(userId)))
@@ -2019,6 +2037,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2031,27 +2060,15 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_acls 
      * Returns a user acl for an object
-     * @param appID 
-     * @param authToken 
      * @param userId 
      * @param objectType 
      * @param objectKey 
      * @param permission 
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1UsersUserIdAclObjectTypeObjectKeyPermissionGet(appID: string, authToken: string, userId: string, objectType: string, objectKey: string, permission: string, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1UsersUserIdAclObjectTypeObjectKeyPermissionGet(userId: string, objectType: string, objectKey: string, permission: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1UsersUserIdAclObjectTypeObjectKeyPermissionGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1UsersUserIdAclObjectTypeObjectKeyPermissionGet", "authToken");
-        }
-
 
         // verify required parameter 'userId' is not null or undefined
         if (userId === null || userId === undefined) {
@@ -2077,6 +2094,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/acls/v1/users/{user_id}/acl/{object_type}/{object_key}/{permission}/'
             .replace('{' + 'user_id' + '}', encodeURIComponent(String(userId)))
@@ -2095,6 +2114,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2107,27 +2137,15 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_acls 
      * Update or create user acl for an object
-     * @param appID 
-     * @param authToken 
      * @param userId 
      * @param objectType 
      * @param objectKey 
      * @param userACLSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async aclsV1UsersUserIdAclObjectTypeObjectKeyPut(appID: string, authToken: string, userId: string, objectType: string, objectKey: string, userACLSchema: UserACLSchema, _options?: Configuration): Promise<RequestContext> {
+    public async aclsV1UsersUserIdAclObjectTypeObjectKeyPut(userId: string, objectType: string, objectKey: string, userACLSchema: UserACLSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1UsersUserIdAclObjectTypeObjectKeyPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AclsApi", "aclsV1UsersUserIdAclObjectTypeObjectKeyPut", "authToken");
-        }
-
 
         // verify required parameter 'userId' is not null or undefined
         if (userId === null || userId === undefined) {
@@ -2151,6 +2169,8 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         if (userACLSchema === null || userACLSchema === undefined) {
             throw new RequiredError("AclsApi", "aclsV1UsersUserIdAclObjectTypeObjectKeyPut", "userACLSchema");
         }
+
+
 
 
         // Path Params
@@ -2181,6 +2201,17 @@ export class AclsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {

@@ -61,12 +61,12 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1AssetsByPeriodGetRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // string | Period of stats (month or day)
   period: "period_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | Filter by from_date (optional)
   fromDate: "from_date_example",
   // string | Filter by to_date (optional)
@@ -83,9 +83,9 @@ apiInstance.statsV1AssetsByPeriodGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **period** | [**string**] | Period of stats (month or day) | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **fromDate** | [**string**] | Filter by from_date | (optional) defaults to undefined
  **toDate** | [**string**] | Filter by to_date | (optional) defaults to undefined
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -131,10 +131,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1AssetsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // AssetUsageSchema | body
   assetUsageSchema: {
     assetId: "assetId_example",
@@ -147,6 +143,10 @@ let body:iconik.StatsApiStatsV1AssetsPostRequest = {
     time: new Date('1970-01-01T00:00:00.00Z'),
     userId: "userId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1AssetsPost(body).then((data:any) => {
@@ -160,8 +160,8 @@ apiInstance.statsV1AssetsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetUsageSchema** | **AssetUsageSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -206,11 +206,11 @@ const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingChargesChargeIdReceiptUrlGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   chargeId: "charge_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1BillingChargesChargeIdReceiptUrlGet(body).then((data:any) => {
@@ -223,9 +223,9 @@ apiInstance.statsV1BillingChargesChargeIdReceiptUrlGet(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **chargeId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -268,16 +268,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingCreditsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // BillingCreditsSchema | body
   billingCreditsSchema: {
     autoPay: true,
     credits: 1,
     customMessage: "customMessage_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1BillingCreditsPost(body).then((data:any) => {
@@ -291,8 +291,8 @@ apiInstance.statsV1BillingCreditsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billingCreditsSchema** | **BillingCreditsSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -336,12 +336,12 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingCreditsPriceGetRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // number
   credits: 1,
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1BillingCreditsPriceGet(body).then((data:any) => {
@@ -354,9 +354,9 @@ apiInstance.statsV1BillingCreditsPriceGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **credits** | [**number**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -365,7 +365,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -400,14 +400,14 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingCreditsVerifyPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // BillingCreditsVerifySchema | body
   billingCreditsVerifySchema: {
     invoiceId: "invoiceId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1BillingCreditsVerifyPost(body).then((data:any) => {
@@ -421,8 +421,8 @@ apiInstance.statsV1BillingCreditsVerifyPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billingCreditsVerifySchema** | **BillingCreditsVerifySchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -466,9 +466,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingCustomerCardDeleteRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -482,8 +482,8 @@ apiInstance.statsV1BillingCustomerCardDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -527,14 +527,14 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingCustomerCardPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // BillingCustomerCardSchema | body
   billingCustomerCardSchema: {
     source: "source_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1BillingCustomerCardPost(body).then((data:any) => {
@@ -548,8 +548,8 @@ apiInstance.statsV1BillingCustomerCardPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billingCustomerCardSchema** | **BillingCustomerCardSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -558,7 +558,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -593,10 +593,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingCustomerGetRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // BillingSchema | body
   billingSchema: {
     balance: 3.14,
@@ -610,6 +606,10 @@ let body:iconik.StatsApiStatsV1BillingCustomerGetRequest = {
     systemDomainId: "systemDomainId_example",
     value: 3.14,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1BillingCustomerGet(body).then((data:any) => {
@@ -623,8 +623,8 @@ apiInstance.statsV1BillingCustomerGet(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billingSchema** | **BillingSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -633,7 +633,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -668,10 +668,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingCustomerPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // BillingCustomerSchema | body
   billingCustomerSchema: {
     businessVatId: "businessVatId_example",
@@ -690,6 +686,10 @@ let body:iconik.StatsApiStatsV1BillingCustomerPostRequest = {
       phone: "phone_example",
     },
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1BillingCustomerPost(body).then((data:any) => {
@@ -703,8 +703,8 @@ apiInstance.statsV1BillingCustomerPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billingCustomerSchema** | **BillingCustomerSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -713,7 +713,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -748,9 +748,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // string | Filter by from_date (optional)
   fromDate: "from_date_example",
@@ -772,8 +772,8 @@ apiInstance.statsV1BillingGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **fromDate** | [**string**] | Filter by from_date | (optional) defaults to undefined
  **toDate** | [**string**] | Filter by from_date | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 100
@@ -786,7 +786,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -821,9 +821,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingInvoicesGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // string (optional)
   startingAfter: "starting_after_example",
@@ -841,8 +841,8 @@ apiInstance.statsV1BillingInvoicesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **startingAfter** | [**string**] |  | (optional) defaults to undefined
  **limit** | [**number**] |  | (optional) defaults to undefined
 
@@ -853,7 +853,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -887,10 +887,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // BillingSchema | body
   billingSchema: {
     balance: 3.14,
@@ -904,6 +900,10 @@ let body:iconik.StatsApiStatsV1BillingPostRequest = {
     systemDomainId: "systemDomainId_example",
     value: 3.14,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1BillingPost(body).then((data:any) => {
@@ -917,8 +917,8 @@ apiInstance.statsV1BillingPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billingSchema** | **BillingSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -927,7 +927,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -962,9 +962,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingPriceListsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -978,8 +978,8 @@ apiInstance.statsV1BillingPriceListsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -988,7 +988,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1024,13 +1024,13 @@ const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingPriceListsNameCurrencyDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   name: "name_example",
   // string
   currency: "currency_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1BillingPriceListsNameCurrencyDelete(body).then((data:any) => {
@@ -1043,10 +1043,10 @@ apiInstance.statsV1BillingPriceListsNameCurrencyDelete(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **name** | [**string**] |  | defaults to undefined
  **currency** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1055,7 +1055,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1091,13 +1091,13 @@ const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingPriceListsNameCurrencyGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   name: "name_example",
   // string
   currency: "currency_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1BillingPriceListsNameCurrencyGet(body).then((data:any) => {
@@ -1110,10 +1110,10 @@ apiInstance.statsV1BillingPriceListsNameCurrencyGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **name** | [**string**] |  | defaults to undefined
  **currency** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1122,7 +1122,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1157,16 +1157,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingPriceListsPutRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // PriceSchema | body
   priceSchema: {
     currency: "EUR",
     name: "name_example",
     prices: {},
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1BillingPriceListsPut(body).then((data:any) => {
@@ -1180,8 +1180,8 @@ apiInstance.statsV1BillingPriceListsPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **priceSchema** | **PriceSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1190,7 +1190,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1225,9 +1225,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingRecipientsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -1241,8 +1241,8 @@ apiInstance.statsV1BillingRecipientsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1251,7 +1251,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1286,16 +1286,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingRecipientsPutRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // BillingRecipientsSchema | body
   billingRecipientsSchema: {
     emails: [
       "emails_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1BillingRecipientsPut(body).then((data:any) => {
@@ -1309,8 +1309,8 @@ apiInstance.statsV1BillingRecipientsPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billingRecipientsSchema** | **BillingRecipientsSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1319,7 +1319,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1354,9 +1354,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingSettingsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -1370,8 +1370,8 @@ apiInstance.statsV1BillingSettingsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1380,7 +1380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1415,16 +1415,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingSettingsPutRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // BillingSettingsSchema | body
   billingSettingsSchema: {
     autoRefillAmount: -2147483648,
     enableAutoTopUp: true,
     lowBalanceTrigger: -2147483648,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1BillingSettingsPut(body).then((data:any) => {
@@ -1438,8 +1438,8 @@ apiInstance.statsV1BillingSettingsPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billingSettingsSchema** | **BillingSettingsSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1448,7 +1448,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1483,9 +1483,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingStatusGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -1499,8 +1499,8 @@ apiInstance.statsV1BillingStatusGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1509,7 +1509,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1544,13 +1544,13 @@ const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1BillingSystemDomainIdBillingIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   systemDomainId: "system_domain_id_example",
   // string
   billingId: "billing_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1BillingSystemDomainIdBillingIdDelete(body).then((data:any) => {
@@ -1563,10 +1563,10 @@ apiInstance.statsV1BillingSystemDomainIdBillingIdDelete(body).then((data:any) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **systemDomainId** | [**string**] |  | defaults to undefined
  **billingId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1575,7 +1575,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1610,12 +1610,12 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1CollectionsByPeriodGetRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // string | Period of stats (month or day)
   period: "period_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | Filter by from_date (optional)
   fromDate: "from_date_example",
   // string | Filter by to_date (optional)
@@ -1632,9 +1632,9 @@ apiInstance.statsV1CollectionsByPeriodGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **period** | [**string**] | Period of stats (month or day) | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **fromDate** | [**string**] | Filter by from_date | (optional) defaults to undefined
  **toDate** | [**string**] | Filter by to_date | (optional) defaults to undefined
 
@@ -1645,7 +1645,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1680,12 +1680,12 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1IdObjectIdInfoGetRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // string | Object ID
   objectId: "object_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1IdObjectIdInfoGet(body).then((data:any) => {
@@ -1698,9 +1698,9 @@ apiInstance.statsV1IdObjectIdInfoGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] | Object ID | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1709,7 +1709,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1744,9 +1744,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1OrdwayBillingCustomerGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -1760,8 +1760,8 @@ apiInstance.statsV1OrdwayBillingCustomerGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1770,7 +1770,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1805,9 +1805,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1OrdwayBillingGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // string | Filter by from_date (optional)
   fromDate: "from_date_example",
@@ -1829,8 +1829,8 @@ apiInstance.statsV1OrdwayBillingGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **fromDate** | [**string**] | Filter by from_date | (optional) defaults to undefined
  **toDate** | [**string**] | Filter by from_date | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to undefined
@@ -1843,7 +1843,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1878,9 +1878,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1OrdwayBillingInvoicesGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 1,
@@ -1898,8 +1898,8 @@ apiInstance.statsV1OrdwayBillingInvoicesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
 
@@ -1910,7 +1910,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1944,12 +1944,12 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1StorageAccessByPeriodGetRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // string | Period of stats (month or day)
   period: "period_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | Filter by from_date (optional)
   fromDate: "from_date_example",
   // string | Filter by to_date (optional)
@@ -1966,9 +1966,9 @@ apiInstance.statsV1StorageAccessByPeriodGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **period** | [**string**] | Period of stats (month or day) | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **fromDate** | [**string**] | Filter by from_date | (optional) defaults to undefined
  **toDate** | [**string**] | Filter by to_date | (optional) defaults to undefined
 
@@ -1979,7 +1979,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2014,12 +2014,12 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1StorageUsageByPeriodGetRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // string | Period of stats (month or day)
   period: "period_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | Filter by from_date (optional)
   fromDate: "from_date_example",
   // string | Filter by to_date (optional)
@@ -2036,9 +2036,9 @@ apiInstance.statsV1StorageUsageByPeriodGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **period** | [**string**] | Period of stats (month or day) | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **fromDate** | [**string**] | Filter by from_date | (optional) defaults to undefined
  **toDate** | [**string**] | Filter by to_date | (optional) defaults to undefined
 
@@ -2049,7 +2049,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2084,9 +2084,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1SystemLogsRecipientsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
@@ -2104,8 +2104,8 @@ apiInstance.statsV1SystemLogsRecipientsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last service account set on previous page | (optional) defaults to undefined
 
@@ -2116,7 +2116,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2151,11 +2151,11 @@ const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1SystemLogsRecipientsLogsRecipientIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   logsRecipientId: "logs_recipient_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1SystemLogsRecipientsLogsRecipientIdDelete(body).then((data:any) => {
@@ -2168,9 +2168,9 @@ apiInstance.statsV1SystemLogsRecipientsLogsRecipientIdDelete(body).then((data:an
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **logsRecipientId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2179,7 +2179,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2215,11 +2215,11 @@ const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1SystemLogsRecipientsLogsRecipientIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   logsRecipientId: "logs_recipient_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1SystemLogsRecipientsLogsRecipientIdGet(body).then((data:any) => {
@@ -2232,9 +2232,9 @@ apiInstance.statsV1SystemLogsRecipientsLogsRecipientIdGet(body).then((data:any) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **logsRecipientId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2243,7 +2243,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2278,10 +2278,6 @@ const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1SystemLogsRecipientsLogsRecipientIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   logsRecipientId: "logs_recipient_id_example",
   // LogsRecipientSchema | body
   logsRecipientSchema: {
@@ -2289,6 +2285,10 @@ let body:iconik.StatsApiStatsV1SystemLogsRecipientsLogsRecipientIdPatchRequest =
     name: "name_example",
     settings: {},
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1SystemLogsRecipientsLogsRecipientIdPatch(body).then((data:any) => {
@@ -2302,9 +2302,9 @@ apiInstance.statsV1SystemLogsRecipientsLogsRecipientIdPatch(body).then((data:any
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **logsRecipientSchema** | **LogsRecipientSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **logsRecipientId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2313,7 +2313,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2349,11 +2349,11 @@ const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1SystemLogsRecipientsLogsRecipientIdPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   logsRecipientId: "logs_recipient_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1SystemLogsRecipientsLogsRecipientIdPost(body).then((data:any) => {
@@ -2366,9 +2366,9 @@ apiInstance.statsV1SystemLogsRecipientsLogsRecipientIdPost(body).then((data:any)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **logsRecipientId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2377,7 +2377,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2413,10 +2413,6 @@ const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1SystemLogsRecipientsLogsRecipientIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   logsRecipientId: "logs_recipient_id_example",
   // LogsRecipientSchema | body
   logsRecipientSchema: {
@@ -2424,6 +2420,10 @@ let body:iconik.StatsApiStatsV1SystemLogsRecipientsLogsRecipientIdPutRequest = {
     name: "name_example",
     settings: {},
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1SystemLogsRecipientsLogsRecipientIdPut(body).then((data:any) => {
@@ -2437,9 +2437,9 @@ apiInstance.statsV1SystemLogsRecipientsLogsRecipientIdPut(body).then((data:any) 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **logsRecipientSchema** | **LogsRecipientSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **logsRecipientId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2448,7 +2448,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2483,16 +2483,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1SystemLogsRecipientsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // LogsRecipientSchema | body
   logsRecipientSchema: {
     method: "GOOGLE",
     name: "name_example",
     settings: {},
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.statsV1SystemLogsRecipientsPost(body).then((data:any) => {
@@ -2506,8 +2506,8 @@ apiInstance.statsV1SystemLogsRecipientsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **logsRecipientSchema** | **LogsRecipientSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2516,7 +2516,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2551,11 +2551,11 @@ const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1TranscoderUsageByPeriodGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   period: "period_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | Filter by from_date (optional)
   fromDate: "from_date_example",
   // string | Filter by to_date (optional)
@@ -2572,9 +2572,9 @@ apiInstance.statsV1TranscoderUsageByPeriodGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **period** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **fromDate** | [**string**] | Filter by from_date | (optional) defaults to undefined
  **toDate** | [**string**] | Filter by to_date | (optional) defaults to undefined
 
@@ -2585,7 +2585,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2620,12 +2620,12 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.StatsApi(configuration);
 
 let body:iconik.StatsApiStatsV1UserAuditByPeriodGetRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // string | Period of stats (month, day or day_detailed)
   period: "period_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | Filter by from_date (optional)
   fromDate: "from_date_example",
   // string | Filter by to_date (optional)
@@ -2644,9 +2644,9 @@ apiInstance.statsV1UserAuditByPeriodGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **period** | [**string**] | Period of stats (month, day or day_detailed) | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **fromDate** | [**string**] | Filter by from_date | (optional) defaults to undefined
  **toDate** | [**string**] | Filter by to_date | (optional) defaults to undefined
  **systemDomainId** | [**string**] | Filter by system_domain_id (Only for super admins) | (optional) defaults to undefined
@@ -2658,7 +2658,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 

@@ -24,19 +24,9 @@ export class NotificationsApiRequestFactory extends BaseAPIRequestFactory {
      * @param authToken 
      * @param appID 
      */
-    public async notificationsV1WebhooksGet(authToken: string, appID: string, _options?: Configuration): Promise<RequestContext> {
+    public async notificationsV1WebhooksGet(authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("NotificationsApi", "notificationsV1WebhooksGet", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("NotificationsApi", "notificationsV1WebhooksGet", "appID");
-        }
 
 
         // Path Params
@@ -53,6 +43,17 @@ export class NotificationsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -65,29 +66,19 @@ export class NotificationsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_webhooks 
      * Create a new webhook
+     * @param webhookCreateSchema body
      * @param authToken 
      * @param appID 
-     * @param webhookCreateSchema body
      */
-    public async notificationsV1WebhooksPost(authToken: string, appID: string, webhookCreateSchema: WebhookCreateSchema, _options?: Configuration): Promise<RequestContext> {
+    public async notificationsV1WebhooksPost(webhookCreateSchema: WebhookCreateSchema, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("NotificationsApi", "notificationsV1WebhooksPost", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("NotificationsApi", "notificationsV1WebhooksPost", "appID");
-        }
-
 
         // verify required parameter 'webhookCreateSchema' is not null or undefined
         if (webhookCreateSchema === null || webhookCreateSchema === undefined) {
             throw new RequiredError("NotificationsApi", "notificationsV1WebhooksPost", "webhookCreateSchema");
         }
+
+
 
 
         // Path Params
@@ -115,6 +106,17 @@ export class NotificationsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -127,29 +129,19 @@ export class NotificationsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_webhooks 
      * Delete a webhook
+     * @param webhookId 
      * @param authToken 
      * @param appID 
-     * @param webhookId 
      */
-    public async notificationsV1WebhooksWebhookIdDelete(authToken: string, appID: string, webhookId: string, _options?: Configuration): Promise<RequestContext> {
+    public async notificationsV1WebhooksWebhookIdDelete(webhookId: string, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("NotificationsApi", "notificationsV1WebhooksWebhookIdDelete", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("NotificationsApi", "notificationsV1WebhooksWebhookIdDelete", "appID");
-        }
-
 
         // verify required parameter 'webhookId' is not null or undefined
         if (webhookId === null || webhookId === undefined) {
             throw new RequiredError("NotificationsApi", "notificationsV1WebhooksWebhookIdDelete", "webhookId");
         }
+
+
 
 
         // Path Params
@@ -167,6 +159,17 @@ export class NotificationsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -179,29 +182,19 @@ export class NotificationsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_webhooks 
      * Get a webhook definition
+     * @param webhookId 
      * @param authToken 
      * @param appID 
-     * @param webhookId 
      */
-    public async notificationsV1WebhooksWebhookIdGet(authToken: string, appID: string, webhookId: string, _options?: Configuration): Promise<RequestContext> {
+    public async notificationsV1WebhooksWebhookIdGet(webhookId: string, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("NotificationsApi", "notificationsV1WebhooksWebhookIdGet", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("NotificationsApi", "notificationsV1WebhooksWebhookIdGet", "appID");
-        }
-
 
         // verify required parameter 'webhookId' is not null or undefined
         if (webhookId === null || webhookId === undefined) {
             throw new RequiredError("NotificationsApi", "notificationsV1WebhooksWebhookIdGet", "webhookId");
         }
+
+
 
 
         // Path Params
@@ -219,6 +212,17 @@ export class NotificationsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -231,25 +235,13 @@ export class NotificationsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_webhooks 
      * Update a webhook
-     * @param authToken 
-     * @param appID 
      * @param webhookId 
      * @param webhookCreateSchema body
+     * @param authToken 
+     * @param appID 
      */
-    public async notificationsV1WebhooksWebhookIdPut(authToken: string, appID: string, webhookId: string, webhookCreateSchema: WebhookCreateSchema, _options?: Configuration): Promise<RequestContext> {
+    public async notificationsV1WebhooksWebhookIdPut(webhookId: string, webhookCreateSchema: WebhookCreateSchema, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("NotificationsApi", "notificationsV1WebhooksWebhookIdPut", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("NotificationsApi", "notificationsV1WebhooksWebhookIdPut", "appID");
-        }
-
 
         // verify required parameter 'webhookId' is not null or undefined
         if (webhookId === null || webhookId === undefined) {
@@ -261,6 +253,8 @@ export class NotificationsApiRequestFactory extends BaseAPIRequestFactory {
         if (webhookCreateSchema === null || webhookCreateSchema === undefined) {
             throw new RequiredError("NotificationsApi", "notificationsV1WebhooksWebhookIdPut", "webhookCreateSchema");
         }
+
+
 
 
         // Path Params
@@ -289,6 +283,17 @@ export class NotificationsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {

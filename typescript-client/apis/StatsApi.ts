@@ -41,31 +41,21 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_stats 
      * Returns all asset usage
+     * @param period Period of stats (month or day)
      * @param appID 
      * @param authToken 
-     * @param period Period of stats (month or day)
      * @param fromDate Filter by from_date
      * @param toDate Filter by to_date
      */
-    public async statsV1AssetsByPeriodGet(appID: string, authToken: string, period: string, fromDate?: string, toDate?: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1AssetsByPeriodGet(period: string, appID?: string, authToken?: string, fromDate?: string, toDate?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1AssetsByPeriodGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1AssetsByPeriodGet", "authToken");
-        }
-
 
         // verify required parameter 'period' is not null or undefined
         if (period === null || period === undefined) {
             throw new RequiredError("StatsApi", "statsV1AssetsByPeriodGet", "period");
         }
+
+
 
 
 
@@ -95,6 +85,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -107,29 +108,19 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * <br/>system_domain_id will be automatically added when<br/>posting to this end point.
      * Sets asset usage.
+     * @param assetUsageSchema body
      * @param appID 
      * @param authToken 
-     * @param assetUsageSchema body
      */
-    public async statsV1AssetsPost(appID: string, authToken: string, assetUsageSchema: AssetUsageSchema, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1AssetsPost(assetUsageSchema: AssetUsageSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1AssetsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1AssetsPost", "authToken");
-        }
-
 
         // verify required parameter 'assetUsageSchema' is not null or undefined
         if (assetUsageSchema === null || assetUsageSchema === undefined) {
             throw new RequiredError("StatsApi", "statsV1AssetsPost", "assetUsageSchema");
         }
+
+
 
 
         // Path Params
@@ -157,6 +148,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -169,29 +171,19 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_billing 
      * Returns billing receipt
+     * @param chargeId 
      * @param appID 
      * @param authToken 
-     * @param chargeId 
      */
-    public async statsV1BillingChargesChargeIdReceiptUrlGet(appID: string, authToken: string, chargeId: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingChargesChargeIdReceiptUrlGet(chargeId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingChargesChargeIdReceiptUrlGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingChargesChargeIdReceiptUrlGet", "authToken");
-        }
-
 
         // verify required parameter 'chargeId' is not null or undefined
         if (chargeId === null || chargeId === undefined) {
             throw new RequiredError("StatsApi", "statsV1BillingChargesChargeIdReceiptUrlGet", "chargeId");
         }
+
+
 
 
         // Path Params
@@ -209,6 +201,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -221,29 +224,19 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_billing 
      * Add credits to an account
+     * @param billingCreditsSchema body
      * @param appID 
      * @param authToken 
-     * @param billingCreditsSchema body
      */
-    public async statsV1BillingCreditsPost(appID: string, authToken: string, billingCreditsSchema: BillingCreditsSchema, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingCreditsPost(billingCreditsSchema: BillingCreditsSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingCreditsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingCreditsPost", "authToken");
-        }
-
 
         // verify required parameter 'billingCreditsSchema' is not null or undefined
         if (billingCreditsSchema === null || billingCreditsSchema === undefined) {
             throw new RequiredError("StatsApi", "statsV1BillingCreditsPost", "billingCreditsSchema");
         }
+
+
 
 
         // Path Params
@@ -271,6 +264,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -283,29 +287,19 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_billing 
      * Checks the total price that needs to be paid including VAT if it\'s needed
+     * @param credits 
      * @param appID 
      * @param authToken 
-     * @param credits 
      */
-    public async statsV1BillingCreditsPriceGet(appID: string, authToken: string, credits: number, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingCreditsPriceGet(credits: number, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingCreditsPriceGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingCreditsPriceGet", "authToken");
-        }
-
 
         // verify required parameter 'credits' is not null or undefined
         if (credits === null || credits === undefined) {
             throw new RequiredError("StatsApi", "statsV1BillingCreditsPriceGet", "credits");
         }
+
+
 
 
         // Path Params
@@ -327,6 +321,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -339,29 +344,19 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_billing 
      * Verify status of add credits to an account
+     * @param billingCreditsVerifySchema body
      * @param appID 
      * @param authToken 
-     * @param billingCreditsVerifySchema body
      */
-    public async statsV1BillingCreditsVerifyPost(appID: string, authToken: string, billingCreditsVerifySchema: BillingCreditsVerifySchema, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingCreditsVerifyPost(billingCreditsVerifySchema: BillingCreditsVerifySchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingCreditsVerifyPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingCreditsVerifyPost", "authToken");
-        }
-
 
         // verify required parameter 'billingCreditsVerifySchema' is not null or undefined
         if (billingCreditsVerifySchema === null || billingCreditsVerifySchema === undefined) {
             throw new RequiredError("StatsApi", "statsV1BillingCreditsVerifyPost", "billingCreditsVerifySchema");
         }
+
+
 
 
         // Path Params
@@ -389,6 +384,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -404,19 +410,9 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async statsV1BillingCustomerCardDelete(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingCustomerCardDelete(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingCustomerCardDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingCustomerCardDelete", "authToken");
-        }
 
 
         // Path Params
@@ -433,6 +429,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -445,29 +452,19 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_billing 
      * Creates billing customer card
+     * @param billingCustomerCardSchema body
      * @param appID 
      * @param authToken 
-     * @param billingCustomerCardSchema body
      */
-    public async statsV1BillingCustomerCardPost(appID: string, authToken: string, billingCustomerCardSchema: BillingCustomerCardSchema, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingCustomerCardPost(billingCustomerCardSchema: BillingCustomerCardSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingCustomerCardPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingCustomerCardPost", "authToken");
-        }
-
 
         // verify required parameter 'billingCustomerCardSchema' is not null or undefined
         if (billingCustomerCardSchema === null || billingCustomerCardSchema === undefined) {
             throw new RequiredError("StatsApi", "statsV1BillingCustomerCardPost", "billingCustomerCardSchema");
         }
+
+
 
 
         // Path Params
@@ -495,6 +492,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -507,29 +515,19 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_billing 
      * Returns billing customer
+     * @param billingSchema body
      * @param appID 
      * @param authToken 
-     * @param billingSchema body
      */
-    public async statsV1BillingCustomerGet(appID: string, authToken: string, billingSchema: BillingSchema, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingCustomerGet(billingSchema: BillingSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingCustomerGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingCustomerGet", "authToken");
-        }
-
 
         // verify required parameter 'billingSchema' is not null or undefined
         if (billingSchema === null || billingSchema === undefined) {
             throw new RequiredError("StatsApi", "statsV1BillingCustomerGet", "billingSchema");
         }
+
+
 
 
         // Path Params
@@ -557,6 +555,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -569,29 +578,19 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_billing 
      * Updates billing customer
+     * @param billingCustomerSchema body
      * @param appID 
      * @param authToken 
-     * @param billingCustomerSchema body
      */
-    public async statsV1BillingCustomerPost(appID: string, authToken: string, billingCustomerSchema: BillingCustomerSchema, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingCustomerPost(billingCustomerSchema: BillingCustomerSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingCustomerPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingCustomerPost", "authToken");
-        }
-
 
         // verify required parameter 'billingCustomerSchema' is not null or undefined
         if (billingCustomerSchema === null || billingCustomerSchema === undefined) {
             throw new RequiredError("StatsApi", "statsV1BillingCustomerPost", "billingCustomerSchema");
         }
+
+
 
 
         // Path Params
@@ -619,6 +618,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -638,19 +648,9 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
      * @param perPage The number of items for each page
      * @param lastId ID of a last file on previous page
      */
-    public async statsV1BillingGet(appID: string, authToken: string, fromDate?: string, toDate?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingGet(appID?: string, authToken?: string, fromDate?: string, toDate?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingGet", "authToken");
-        }
 
 
 
@@ -691,6 +691,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -708,19 +719,9 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
      * @param startingAfter 
      * @param limit 
      */
-    public async statsV1BillingInvoicesGet(appID: string, authToken: string, startingAfter?: string, limit?: number, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingInvoicesGet(appID?: string, authToken?: string, startingAfter?: string, limit?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingInvoicesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingInvoicesGet", "authToken");
-        }
 
 
 
@@ -749,6 +750,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -761,29 +773,19 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Updates Billing (Requires super admin access).
+     * @param billingSchema body
      * @param appID 
      * @param authToken 
-     * @param billingSchema body
      */
-    public async statsV1BillingPost(appID: string, authToken: string, billingSchema: BillingSchema, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingPost(billingSchema: BillingSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingPost", "authToken");
-        }
-
 
         // verify required parameter 'billingSchema' is not null or undefined
         if (billingSchema === null || billingSchema === undefined) {
             throw new RequiredError("StatsApi", "statsV1BillingPost", "billingSchema");
         }
+
+
 
 
         // Path Params
@@ -811,6 +813,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -826,19 +839,9 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async statsV1BillingPriceListsGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingPriceListsGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingPriceListsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingPriceListsGet", "authToken");
-        }
 
 
         // Path Params
@@ -855,6 +858,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -867,25 +881,13 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Delete a Price list
-     * @param appID 
-     * @param authToken 
      * @param name 
      * @param currency 
+     * @param appID 
+     * @param authToken 
      */
-    public async statsV1BillingPriceListsNameCurrencyDelete(appID: string, authToken: string, name: string, currency: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingPriceListsNameCurrencyDelete(name: string, currency: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingPriceListsNameCurrencyDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingPriceListsNameCurrencyDelete", "authToken");
-        }
-
 
         // verify required parameter 'name' is not null or undefined
         if (name === null || name === undefined) {
@@ -897,6 +899,8 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         if (currency === null || currency === undefined) {
             throw new RequiredError("StatsApi", "statsV1BillingPriceListsNameCurrencyDelete", "currency");
         }
+
+
 
 
         // Path Params
@@ -915,6 +919,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -927,25 +942,13 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Get a Price List
-     * @param appID 
-     * @param authToken 
      * @param name 
      * @param currency 
+     * @param appID 
+     * @param authToken 
      */
-    public async statsV1BillingPriceListsNameCurrencyGet(appID: string, authToken: string, name: string, currency: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingPriceListsNameCurrencyGet(name: string, currency: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingPriceListsNameCurrencyGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingPriceListsNameCurrencyGet", "authToken");
-        }
-
 
         // verify required parameter 'name' is not null or undefined
         if (name === null || name === undefined) {
@@ -957,6 +960,8 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         if (currency === null || currency === undefined) {
             throw new RequiredError("StatsApi", "statsV1BillingPriceListsNameCurrencyGet", "currency");
         }
+
+
 
 
         // Path Params
@@ -975,6 +980,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -987,29 +1003,19 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Creates or updates a Price List
+     * @param priceSchema body
      * @param appID 
      * @param authToken 
-     * @param priceSchema body
      */
-    public async statsV1BillingPriceListsPut(appID: string, authToken: string, priceSchema: PriceSchema, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingPriceListsPut(priceSchema: PriceSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingPriceListsPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingPriceListsPut", "authToken");
-        }
-
 
         // verify required parameter 'priceSchema' is not null or undefined
         if (priceSchema === null || priceSchema === undefined) {
             throw new RequiredError("StatsApi", "statsV1BillingPriceListsPut", "priceSchema");
         }
+
+
 
 
         // Path Params
@@ -1037,6 +1043,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1052,19 +1069,9 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async statsV1BillingRecipientsGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingRecipientsGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingRecipientsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingRecipientsGet", "authToken");
-        }
 
 
         // Path Params
@@ -1081,6 +1088,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1093,29 +1111,19 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_billing 
      * Updates Billing Recipients
+     * @param billingRecipientsSchema body
      * @param appID 
      * @param authToken 
-     * @param billingRecipientsSchema body
      */
-    public async statsV1BillingRecipientsPut(appID: string, authToken: string, billingRecipientsSchema: BillingRecipientsSchema, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingRecipientsPut(billingRecipientsSchema: BillingRecipientsSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingRecipientsPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingRecipientsPut", "authToken");
-        }
-
 
         // verify required parameter 'billingRecipientsSchema' is not null or undefined
         if (billingRecipientsSchema === null || billingRecipientsSchema === undefined) {
             throw new RequiredError("StatsApi", "statsV1BillingRecipientsPut", "billingRecipientsSchema");
         }
+
+
 
 
         // Path Params
@@ -1143,6 +1151,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1158,19 +1177,9 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async statsV1BillingSettingsGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingSettingsGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingSettingsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingSettingsGet", "authToken");
-        }
 
 
         // Path Params
@@ -1187,6 +1196,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1199,29 +1219,19 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_billing 
      * Updates Billing Settings
+     * @param billingSettingsSchema body
      * @param appID 
      * @param authToken 
-     * @param billingSettingsSchema body
      */
-    public async statsV1BillingSettingsPut(appID: string, authToken: string, billingSettingsSchema: BillingSettingsSchema, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingSettingsPut(billingSettingsSchema: BillingSettingsSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingSettingsPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingSettingsPut", "authToken");
-        }
-
 
         // verify required parameter 'billingSettingsSchema' is not null or undefined
         if (billingSettingsSchema === null || billingSettingsSchema === undefined) {
             throw new RequiredError("StatsApi", "statsV1BillingSettingsPut", "billingSettingsSchema");
         }
+
+
 
 
         // Path Params
@@ -1249,6 +1259,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1264,19 +1285,9 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async statsV1BillingStatusGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingStatusGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingStatusGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingStatusGet", "authToken");
-        }
 
 
         // Path Params
@@ -1293,6 +1304,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1305,25 +1327,13 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Delete billing record (Requires super admin access).
-     * @param appID 
-     * @param authToken 
      * @param systemDomainId 
      * @param billingId 
+     * @param appID 
+     * @param authToken 
      */
-    public async statsV1BillingSystemDomainIdBillingIdDelete(appID: string, authToken: string, systemDomainId: string, billingId: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1BillingSystemDomainIdBillingIdDelete(systemDomainId: string, billingId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingSystemDomainIdBillingIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1BillingSystemDomainIdBillingIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'systemDomainId' is not null or undefined
         if (systemDomainId === null || systemDomainId === undefined) {
@@ -1335,6 +1345,8 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         if (billingId === null || billingId === undefined) {
             throw new RequiredError("StatsApi", "statsV1BillingSystemDomainIdBillingIdDelete", "billingId");
         }
+
+
 
 
         // Path Params
@@ -1353,6 +1365,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1365,31 +1388,21 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_stats 
      * Returns all collection usage
+     * @param period Period of stats (month or day)
      * @param appID 
      * @param authToken 
-     * @param period Period of stats (month or day)
      * @param fromDate Filter by from_date
      * @param toDate Filter by to_date
      */
-    public async statsV1CollectionsByPeriodGet(appID: string, authToken: string, period: string, fromDate?: string, toDate?: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1CollectionsByPeriodGet(period: string, appID?: string, authToken?: string, fromDate?: string, toDate?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1CollectionsByPeriodGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1CollectionsByPeriodGet", "authToken");
-        }
-
 
         // verify required parameter 'period' is not null or undefined
         if (period === null || period === undefined) {
             throw new RequiredError("StatsApi", "statsV1CollectionsByPeriodGet", "period");
         }
+
+
 
 
 
@@ -1419,6 +1432,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1431,29 +1455,19 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Internal endpoint to convert ID to system domain
+     * @param objectId Object ID
      * @param appID 
      * @param authToken 
-     * @param objectId Object ID
      */
-    public async statsV1IdObjectIdInfoGet(appID: string, authToken: string, objectId: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1IdObjectIdInfoGet(objectId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1IdObjectIdInfoGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1IdObjectIdInfoGet", "authToken");
-        }
-
 
         // verify required parameter 'objectId' is not null or undefined
         if (objectId === null || objectId === undefined) {
             throw new RequiredError("StatsApi", "statsV1IdObjectIdInfoGet", "objectId");
         }
+
+
 
 
         // Path Params
@@ -1471,6 +1485,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1486,19 +1511,9 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async statsV1OrdwayBillingCustomerGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1OrdwayBillingCustomerGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1OrdwayBillingCustomerGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1OrdwayBillingCustomerGet", "authToken");
-        }
 
 
         // Path Params
@@ -1515,6 +1530,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1534,19 +1560,9 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
      * @param perPage The number of items for each page
      * @param page Which page number to fetch
      */
-    public async statsV1OrdwayBillingGet(appID: string, authToken: string, fromDate?: string, toDate?: string, perPage?: number, page?: number, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1OrdwayBillingGet(appID?: string, authToken?: string, fromDate?: string, toDate?: string, perPage?: number, page?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1OrdwayBillingGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1OrdwayBillingGet", "authToken");
-        }
 
 
 
@@ -1587,6 +1603,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1604,19 +1631,9 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
      * @param perPage The number of items for each page
      * @param page Which page number to fetch
      */
-    public async statsV1OrdwayBillingInvoicesGet(appID: string, authToken: string, perPage?: number, page?: number, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1OrdwayBillingInvoicesGet(appID?: string, authToken?: string, perPage?: number, page?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1OrdwayBillingInvoicesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1OrdwayBillingInvoicesGet", "authToken");
-        }
 
 
 
@@ -1645,6 +1662,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1657,31 +1685,21 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_stats 
      * Returns storage_access for all storages
+     * @param period Period of stats (month or day)
      * @param appID 
      * @param authToken 
-     * @param period Period of stats (month or day)
      * @param fromDate Filter by from_date
      * @param toDate Filter by to_date
      */
-    public async statsV1StorageAccessByPeriodGet(appID: string, authToken: string, period: string, fromDate?: string, toDate?: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1StorageAccessByPeriodGet(period: string, appID?: string, authToken?: string, fromDate?: string, toDate?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1StorageAccessByPeriodGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1StorageAccessByPeriodGet", "authToken");
-        }
-
 
         // verify required parameter 'period' is not null or undefined
         if (period === null || period === undefined) {
             throw new RequiredError("StatsApi", "statsV1StorageAccessByPeriodGet", "period");
         }
+
+
 
 
 
@@ -1711,6 +1729,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1723,31 +1752,21 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_stats 
      * Returns storage_usage for all storages
+     * @param period Period of stats (month or day)
      * @param appID 
      * @param authToken 
-     * @param period Period of stats (month or day)
      * @param fromDate Filter by from_date
      * @param toDate Filter by to_date
      */
-    public async statsV1StorageUsageByPeriodGet(appID: string, authToken: string, period: string, fromDate?: string, toDate?: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1StorageUsageByPeriodGet(period: string, appID?: string, authToken?: string, fromDate?: string, toDate?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1StorageUsageByPeriodGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1StorageUsageByPeriodGet", "authToken");
-        }
-
 
         // verify required parameter 'period' is not null or undefined
         if (period === null || period === undefined) {
             throw new RequiredError("StatsApi", "statsV1StorageUsageByPeriodGet", "period");
         }
+
+
 
 
 
@@ -1777,6 +1796,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1794,19 +1824,9 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
      * @param perPage The number of items for each page
      * @param lastId ID of a last service account set on previous page
      */
-    public async statsV1SystemLogsRecipientsGet(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1SystemLogsRecipientsGet(appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1SystemLogsRecipientsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1SystemLogsRecipientsGet", "authToken");
-        }
 
 
 
@@ -1835,6 +1855,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1847,29 +1878,19 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_logs_recipients 
      * Delete logs recipient settings
+     * @param logsRecipientId 
      * @param appID 
      * @param authToken 
-     * @param logsRecipientId 
      */
-    public async statsV1SystemLogsRecipientsLogsRecipientIdDelete(appID: string, authToken: string, logsRecipientId: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1SystemLogsRecipientsLogsRecipientIdDelete(logsRecipientId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1SystemLogsRecipientsLogsRecipientIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1SystemLogsRecipientsLogsRecipientIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'logsRecipientId' is not null or undefined
         if (logsRecipientId === null || logsRecipientId === undefined) {
             throw new RequiredError("StatsApi", "statsV1SystemLogsRecipientsLogsRecipientIdDelete", "logsRecipientId");
         }
+
+
 
 
         // Path Params
@@ -1887,6 +1908,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1899,29 +1931,19 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_logs_recipients 
      * Get settings of a logs recipient
+     * @param logsRecipientId 
      * @param appID 
      * @param authToken 
-     * @param logsRecipientId 
      */
-    public async statsV1SystemLogsRecipientsLogsRecipientIdGet(appID: string, authToken: string, logsRecipientId: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1SystemLogsRecipientsLogsRecipientIdGet(logsRecipientId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1SystemLogsRecipientsLogsRecipientIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1SystemLogsRecipientsLogsRecipientIdGet", "authToken");
-        }
-
 
         // verify required parameter 'logsRecipientId' is not null or undefined
         if (logsRecipientId === null || logsRecipientId === undefined) {
             throw new RequiredError("StatsApi", "statsV1SystemLogsRecipientsLogsRecipientIdGet", "logsRecipientId");
         }
+
+
 
 
         // Path Params
@@ -1939,6 +1961,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1951,25 +1984,13 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_logs_recipients 
      * Change logs recipient settings
-     * @param appID 
-     * @param authToken 
      * @param logsRecipientId 
      * @param logsRecipientSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async statsV1SystemLogsRecipientsLogsRecipientIdPatch(appID: string, authToken: string, logsRecipientId: string, logsRecipientSchema: LogsRecipientSchema, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1SystemLogsRecipientsLogsRecipientIdPatch(logsRecipientId: string, logsRecipientSchema: LogsRecipientSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1SystemLogsRecipientsLogsRecipientIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1SystemLogsRecipientsLogsRecipientIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'logsRecipientId' is not null or undefined
         if (logsRecipientId === null || logsRecipientId === undefined) {
@@ -1981,6 +2002,8 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         if (logsRecipientSchema === null || logsRecipientSchema === undefined) {
             throw new RequiredError("StatsApi", "statsV1SystemLogsRecipientsLogsRecipientIdPatch", "logsRecipientSchema");
         }
+
+
 
 
         // Path Params
@@ -2009,6 +2032,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2021,29 +2055,19 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_logs_recipients 
      * Test logs recipient connection
+     * @param logsRecipientId 
      * @param appID 
      * @param authToken 
-     * @param logsRecipientId 
      */
-    public async statsV1SystemLogsRecipientsLogsRecipientIdPost(appID: string, authToken: string, logsRecipientId: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1SystemLogsRecipientsLogsRecipientIdPost(logsRecipientId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1SystemLogsRecipientsLogsRecipientIdPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1SystemLogsRecipientsLogsRecipientIdPost", "authToken");
-        }
-
 
         // verify required parameter 'logsRecipientId' is not null or undefined
         if (logsRecipientId === null || logsRecipientId === undefined) {
             throw new RequiredError("StatsApi", "statsV1SystemLogsRecipientsLogsRecipientIdPost", "logsRecipientId");
         }
+
+
 
 
         // Path Params
@@ -2061,6 +2085,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2073,25 +2108,13 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_logs_recipients 
      * Change logs recipient settings
-     * @param appID 
-     * @param authToken 
      * @param logsRecipientId 
      * @param logsRecipientSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async statsV1SystemLogsRecipientsLogsRecipientIdPut(appID: string, authToken: string, logsRecipientId: string, logsRecipientSchema: LogsRecipientSchema, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1SystemLogsRecipientsLogsRecipientIdPut(logsRecipientId: string, logsRecipientSchema: LogsRecipientSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1SystemLogsRecipientsLogsRecipientIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1SystemLogsRecipientsLogsRecipientIdPut", "authToken");
-        }
-
 
         // verify required parameter 'logsRecipientId' is not null or undefined
         if (logsRecipientId === null || logsRecipientId === undefined) {
@@ -2103,6 +2126,8 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         if (logsRecipientSchema === null || logsRecipientSchema === undefined) {
             throw new RequiredError("StatsApi", "statsV1SystemLogsRecipientsLogsRecipientIdPut", "logsRecipientSchema");
         }
+
+
 
 
         // Path Params
@@ -2131,6 +2156,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2143,29 +2179,19 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_logs_recipients 
      * Create logs recipient settings
+     * @param logsRecipientSchema body
      * @param appID 
      * @param authToken 
-     * @param logsRecipientSchema body
      */
-    public async statsV1SystemLogsRecipientsPost(appID: string, authToken: string, logsRecipientSchema: LogsRecipientSchema, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1SystemLogsRecipientsPost(logsRecipientSchema: LogsRecipientSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1SystemLogsRecipientsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1SystemLogsRecipientsPost", "authToken");
-        }
-
 
         // verify required parameter 'logsRecipientSchema' is not null or undefined
         if (logsRecipientSchema === null || logsRecipientSchema === undefined) {
             throw new RequiredError("StatsApi", "statsV1SystemLogsRecipientsPost", "logsRecipientSchema");
         }
+
+
 
 
         // Path Params
@@ -2193,6 +2219,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2205,31 +2242,21 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_stats 
      * Returns transcoder_usage for all transcoders
+     * @param period 
      * @param appID 
      * @param authToken 
-     * @param period 
      * @param fromDate Filter by from_date
      * @param toDate Filter by to_date
      */
-    public async statsV1TranscoderUsageByPeriodGet(appID: string, authToken: string, period: string, fromDate?: string, toDate?: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1TranscoderUsageByPeriodGet(period: string, appID?: string, authToken?: string, fromDate?: string, toDate?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1TranscoderUsageByPeriodGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1TranscoderUsageByPeriodGet", "authToken");
-        }
-
 
         // verify required parameter 'period' is not null or undefined
         if (period === null || period === undefined) {
             throw new RequiredError("StatsApi", "statsV1TranscoderUsageByPeriodGet", "period");
         }
+
+
 
 
 
@@ -2259,6 +2286,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2271,32 +2309,22 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_stats 
      * Returns all audit
+     * @param period Period of stats (month, day or day_detailed)
      * @param appID 
      * @param authToken 
-     * @param period Period of stats (month, day or day_detailed)
      * @param fromDate Filter by from_date
      * @param toDate Filter by to_date
      * @param systemDomainId Filter by system_domain_id (Only for super admins)
      */
-    public async statsV1UserAuditByPeriodGet(appID: string, authToken: string, period: string, fromDate?: string, toDate?: string, systemDomainId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async statsV1UserAuditByPeriodGet(period: string, appID?: string, authToken?: string, fromDate?: string, toDate?: string, systemDomainId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("StatsApi", "statsV1UserAuditByPeriodGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("StatsApi", "statsV1UserAuditByPeriodGet", "authToken");
-        }
-
 
         // verify required parameter 'period' is not null or undefined
         if (period === null || period === undefined) {
             throw new RequiredError("StatsApi", "statsV1UserAuditByPeriodGet", "period");
         }
+
+
 
 
 
@@ -2332,6 +2360,17 @@ export class StatsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {

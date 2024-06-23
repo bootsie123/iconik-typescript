@@ -49,29 +49,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_apps 
      * Delete a particular app by id
+     * @param appId 
      * @param appID 
      * @param authToken 
-     * @param appId 
      */
-    public async authV1AppsAppIdDelete(appID: string, authToken: string, appId: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AppsAppIdDelete(appId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsAppIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsAppIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'appId' is not null or undefined
         if (appId === null || appId === undefined) {
             throw new RequiredError("AuthApi", "authV1AppsAppIdDelete", "appId");
         }
+
+
 
 
         // Path Params
@@ -89,6 +79,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -101,22 +102,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_apps 
      * Returns a particular app by id
-     * @param authToken 
      * @param appId 
+     * @param authToken 
      */
-    public async authV1AppsAppIdGet(authToken: string, appId: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AppsAppIdGet(appId: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsAppIdGet", "authToken");
-        }
-
 
         // verify required parameter 'appId' is not null or undefined
         if (appId === null || appId === undefined) {
             throw new RequiredError("AuthApi", "authV1AppsAppIdGet", "appId");
         }
+
 
 
         // Path Params
@@ -131,6 +127,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -143,25 +150,13 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_apps 
      * Update app
-     * @param appID 
-     * @param authToken 
      * @param appId 
      * @param appSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async authV1AppsAppIdPatch(appID: string, authToken: string, appId: string, appSchema: AppSchema, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AppsAppIdPatch(appId: string, appSchema: AppSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsAppIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsAppIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'appId' is not null or undefined
         if (appId === null || appId === undefined) {
@@ -173,6 +168,8 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         if (appSchema === null || appSchema === undefined) {
             throw new RequiredError("AuthApi", "authV1AppsAppIdPatch", "appSchema");
         }
+
+
 
 
         // Path Params
@@ -201,6 +198,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -213,25 +221,13 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_apps 
      * Update app
-     * @param appID 
-     * @param authToken 
      * @param appId 
      * @param appSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async authV1AppsAppIdPut(appID: string, authToken: string, appId: string, appSchema: AppSchema, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AppsAppIdPut(appId: string, appSchema: AppSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsAppIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsAppIdPut", "authToken");
-        }
-
 
         // verify required parameter 'appId' is not null or undefined
         if (appId === null || appId === undefined) {
@@ -243,6 +239,8 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         if (appSchema === null || appSchema === undefined) {
             throw new RequiredError("AuthApi", "authV1AppsAppIdPut", "appSchema");
         }
+
+
 
 
         // Path Params
@@ -271,6 +269,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -283,29 +292,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_apps 
      * Creates app token by id and returns it\'s data
+     * @param appId 
      * @param appID 
      * @param authToken 
-     * @param appId 
      */
-    public async authV1AppsAppIdTokenPost(appID: string, authToken: string, appId: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AppsAppIdTokenPost(appId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsAppIdTokenPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsAppIdTokenPost", "authToken");
-        }
-
 
         // verify required parameter 'appId' is not null or undefined
         if (appId === null || appId === undefined) {
             throw new RequiredError("AuthApi", "authV1AppsAppIdTokenPost", "appId");
         }
+
+
 
 
         // Path Params
@@ -323,6 +322,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -335,29 +345,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Create a new token for the logged in user and store it for an external app
+     * @param externalAuthRequestSchema body
      * @param appID 
      * @param authToken 
-     * @param externalAuthRequestSchema body
      */
-    public async authV1AppsExternalAuthPost(appID: string, authToken: string, externalAuthRequestSchema: ExternalAuthRequestSchema, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AppsExternalAuthPost(externalAuthRequestSchema: ExternalAuthRequestSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsExternalAuthPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsExternalAuthPost", "authToken");
-        }
-
 
         // verify required parameter 'externalAuthRequestSchema' is not null or undefined
         if (externalAuthRequestSchema === null || externalAuthRequestSchema === undefined) {
             throw new RequiredError("AuthApi", "authV1AppsExternalAuthPost", "externalAuthRequestSchema");
         }
+
+
 
 
         // Path Params
@@ -385,6 +385,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -417,6 +428,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -434,19 +456,9 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
      * @param perPage The number of items for each page
      * @param lastId ID of a last file set on previous page
      */
-    public async authV1AppsGet(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AppsGet(appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsGet", "authToken");
-        }
 
 
 
@@ -475,6 +487,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -487,29 +510,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Delete an approved instance of an app
+     * @param approvedInstanceId 
      * @param appID 
      * @param authToken 
-     * @param approvedInstanceId 
      */
-    public async authV1AppsInstanceApprovedInstanceIdDelete(appID: string, authToken: string, approvedInstanceId: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AppsInstanceApprovedInstanceIdDelete(approvedInstanceId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsInstanceApprovedInstanceIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsInstanceApprovedInstanceIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'approvedInstanceId' is not null or undefined
         if (approvedInstanceId === null || approvedInstanceId === undefined) {
             throw new RequiredError("AuthApi", "authV1AppsInstanceApprovedInstanceIdDelete", "approvedInstanceId");
         }
+
+
 
 
         // Path Params
@@ -527,6 +540,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -539,29 +563,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Gets an approved instance of an app
+     * @param approvedInstanceId 
      * @param appID 
      * @param authToken 
-     * @param approvedInstanceId 
      */
-    public async authV1AppsInstanceApprovedInstanceIdGet(appID: string, authToken: string, approvedInstanceId: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AppsInstanceApprovedInstanceIdGet(approvedInstanceId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsInstanceApprovedInstanceIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsInstanceApprovedInstanceIdGet", "authToken");
-        }
-
 
         // verify required parameter 'approvedInstanceId' is not null or undefined
         if (approvedInstanceId === null || approvedInstanceId === undefined) {
             throw new RequiredError("AuthApi", "authV1AppsInstanceApprovedInstanceIdGet", "approvedInstanceId");
         }
+
+
 
 
         // Path Params
@@ -579,6 +593,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -591,29 +616,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Create a new app instance
+     * @param approvedAppInstanceSchema body
      * @param appID 
      * @param authToken 
-     * @param approvedAppInstanceSchema body
      */
-    public async authV1AppsInstancePost(appID: string, authToken: string, approvedAppInstanceSchema: ApprovedAppInstanceSchema, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AppsInstancePost(approvedAppInstanceSchema: ApprovedAppInstanceSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsInstancePost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsInstancePost", "authToken");
-        }
-
 
         // verify required parameter 'approvedAppInstanceSchema' is not null or undefined
         if (approvedAppInstanceSchema === null || approvedAppInstanceSchema === undefined) {
             throw new RequiredError("AuthApi", "authV1AppsInstancePost", "approvedAppInstanceSchema");
         }
+
+
 
 
         // Path Params
@@ -641,6 +656,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -653,29 +679,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_apps 
      * Create a new app
+     * @param appSchema body
      * @param appID 
      * @param authToken 
-     * @param appSchema body
      */
-    public async authV1AppsPost(appID: string, authToken: string, appSchema: AppSchema, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AppsPost(appSchema: AppSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AppsPost", "authToken");
-        }
-
 
         // verify required parameter 'appSchema' is not null or undefined
         if (appSchema === null || appSchema === undefined) {
             throw new RequiredError("AuthApi", "authV1AppsPost", "appSchema");
         }
+
+
 
 
         // Path Params
@@ -703,6 +719,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -745,6 +772,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -797,6 +835,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -839,6 +888,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -871,6 +931,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -911,6 +982,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -923,29 +1005,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Unbind domain from identity provider
+     * @param domain 
      * @param appID 
      * @param authToken 
-     * @param domain 
      */
-    public async authV1AuthSamlDomainsDomainDelete(appID: string, authToken: string, domain: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AuthSamlDomainsDomainDelete(domain: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthSamlDomainsDomainDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthSamlDomainsDomainDelete", "authToken");
-        }
-
 
         // verify required parameter 'domain' is not null or undefined
         if (domain === null || domain === undefined) {
             throw new RequiredError("AuthApi", "authV1AuthSamlDomainsDomainDelete", "domain");
         }
+
+
 
 
         // Path Params
@@ -963,6 +1035,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -975,29 +1058,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Bind domain to identity provider
+     * @param domainIdentityProviderMapSchema body
      * @param appID 
      * @param authToken 
-     * @param domainIdentityProviderMapSchema body
      */
-    public async authV1AuthSamlDomainsPost(appID: string, authToken: string, domainIdentityProviderMapSchema: DomainIdentityProviderMapSchema, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AuthSamlDomainsPost(domainIdentityProviderMapSchema: DomainIdentityProviderMapSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthSamlDomainsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthSamlDomainsPost", "authToken");
-        }
-
 
         // verify required parameter 'domainIdentityProviderMapSchema' is not null or undefined
         if (domainIdentityProviderMapSchema === null || domainIdentityProviderMapSchema === undefined) {
             throw new RequiredError("AuthApi", "authV1AuthSamlDomainsPost", "domainIdentityProviderMapSchema");
         }
+
+
 
 
         // Path Params
@@ -1025,6 +1098,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1037,29 +1121,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * <br/>Input should be a SAML EntityDescriptor XML.
      * Convert an IdP EntityDescriptor XML into json suitable as a settings configuration.
+     * @param identityProviderSchema 
      * @param appID 
      * @param authToken 
-     * @param identityProviderSchema 
      */
-    public async authV1AuthSamlIdpConvertPost(appID: string, authToken: string, identityProviderSchema: IdentityProviderSchema, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AuthSamlIdpConvertPost(identityProviderSchema: IdentityProviderSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthSamlIdpConvertPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthSamlIdpConvertPost", "authToken");
-        }
-
 
         // verify required parameter 'identityProviderSchema' is not null or undefined
         if (identityProviderSchema === null || identityProviderSchema === undefined) {
             throw new RequiredError("AuthApi", "authV1AuthSamlIdpConvertPost", "identityProviderSchema");
         }
+
+
 
 
         // Path Params
@@ -1087,6 +1161,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1104,19 +1189,9 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
      * @param perPage The number of items for each page
      * @param lastId 
      */
-    public async authV1AuthSamlIdpGet(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AuthSamlIdpGet(appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthSamlIdpGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthSamlIdpGet", "authToken");
-        }
 
 
 
@@ -1145,6 +1220,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1157,29 +1243,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_identity_providers 
      * Delete a particular identity provider by id
+     * @param identityProviderId 
      * @param appID 
      * @param authToken 
-     * @param identityProviderId 
      */
-    public async authV1AuthSamlIdpIdentityProviderIdDelete(appID: string, authToken: string, identityProviderId: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AuthSamlIdpIdentityProviderIdDelete(identityProviderId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthSamlIdpIdentityProviderIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthSamlIdpIdentityProviderIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'identityProviderId' is not null or undefined
         if (identityProviderId === null || identityProviderId === undefined) {
             throw new RequiredError("AuthApi", "authV1AuthSamlIdpIdentityProviderIdDelete", "identityProviderId");
         }
+
+
 
 
         // Path Params
@@ -1197,6 +1273,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1209,29 +1296,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_identity_providers 
      * Get a particular identity provider by id
+     * @param identityProviderId 
      * @param appID 
      * @param authToken 
-     * @param identityProviderId 
      */
-    public async authV1AuthSamlIdpIdentityProviderIdGet(appID: string, authToken: string, identityProviderId: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AuthSamlIdpIdentityProviderIdGet(identityProviderId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthSamlIdpIdentityProviderIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthSamlIdpIdentityProviderIdGet", "authToken");
-        }
-
 
         // verify required parameter 'identityProviderId' is not null or undefined
         if (identityProviderId === null || identityProviderId === undefined) {
             throw new RequiredError("AuthApi", "authV1AuthSamlIdpIdentityProviderIdGet", "identityProviderId");
         }
+
+
 
 
         // Path Params
@@ -1249,6 +1326,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1261,25 +1349,13 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_identity_providers 
      * Update a particular identity provider by id
-     * @param appID 
-     * @param authToken 
      * @param identityProviderId 
      * @param identityProviderSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async authV1AuthSamlIdpIdentityProviderIdPatch(appID: string, authToken: string, identityProviderId: string, identityProviderSchema: IdentityProviderSchema, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AuthSamlIdpIdentityProviderIdPatch(identityProviderId: string, identityProviderSchema: IdentityProviderSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthSamlIdpIdentityProviderIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthSamlIdpIdentityProviderIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'identityProviderId' is not null or undefined
         if (identityProviderId === null || identityProviderId === undefined) {
@@ -1291,6 +1367,8 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         if (identityProviderSchema === null || identityProviderSchema === undefined) {
             throw new RequiredError("AuthApi", "authV1AuthSamlIdpIdentityProviderIdPatch", "identityProviderSchema");
         }
+
+
 
 
         // Path Params
@@ -1319,6 +1397,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1331,25 +1420,13 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_identity_providers 
      * Update a particular identity provider by id
-     * @param appID 
-     * @param authToken 
      * @param identityProviderId 
      * @param identityProviderSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async authV1AuthSamlIdpIdentityProviderIdPut(appID: string, authToken: string, identityProviderId: string, identityProviderSchema: IdentityProviderSchema, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AuthSamlIdpIdentityProviderIdPut(identityProviderId: string, identityProviderSchema: IdentityProviderSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthSamlIdpIdentityProviderIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthSamlIdpIdentityProviderIdPut", "authToken");
-        }
-
 
         // verify required parameter 'identityProviderId' is not null or undefined
         if (identityProviderId === null || identityProviderId === undefined) {
@@ -1361,6 +1438,8 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         if (identityProviderSchema === null || identityProviderSchema === undefined) {
             throw new RequiredError("AuthApi", "authV1AuthSamlIdpIdentityProviderIdPut", "identityProviderSchema");
         }
+
+
 
 
         // Path Params
@@ -1389,6 +1468,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1401,29 +1491,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * <br/>Input can either be an IdentityProviderSchema as json or a SAML<br/>EntityDescriptor XML.<br/>Input can either be an IdentityProviderSchema as json or a SAML<br/>EntityDescriptor XML. Required roles:  - can_write_identity_providers 
      * Create a new identity provider.
+     * @param identityProviderSchema 
      * @param appID 
      * @param authToken 
-     * @param identityProviderSchema 
      */
-    public async authV1AuthSamlIdpPost(appID: string, authToken: string, identityProviderSchema: IdentityProviderSchema, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AuthSamlIdpPost(identityProviderSchema: IdentityProviderSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthSamlIdpPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthSamlIdpPost", "authToken");
-        }
-
 
         // verify required parameter 'identityProviderSchema' is not null or undefined
         if (identityProviderSchema === null || identityProviderSchema === undefined) {
             throw new RequiredError("AuthApi", "authV1AuthSamlIdpPost", "identityProviderSchema");
         }
+
+
 
 
         // Path Params
@@ -1453,6 +1533,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1495,6 +1586,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1527,6 +1629,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1559,6 +1672,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1599,6 +1723,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1641,6 +1776,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1673,6 +1819,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1713,6 +1870,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1745,6 +1913,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1785,6 +1964,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1827,6 +2017,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1842,19 +2043,9 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async authV1AuthTokenDelete(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AuthTokenDelete(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthTokenDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthTokenDelete", "authToken");
-        }
 
 
         // Path Params
@@ -1871,6 +2062,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1886,19 +2088,9 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async authV1AuthTokenGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AuthTokenGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthTokenGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthTokenGet", "authToken");
-        }
 
 
         // Path Params
@@ -1915,6 +2107,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1930,19 +2133,9 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async authV1AuthTokenPost(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AuthTokenPost(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthTokenPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthTokenPost", "authToken");
-        }
 
 
         // Path Params
@@ -1959,6 +2152,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1974,19 +2178,9 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async authV1AuthTokenPut(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AuthTokenPut(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthTokenPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthTokenPut", "authToken");
-        }
 
 
         // Path Params
@@ -2003,6 +2197,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2015,29 +2220,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Revoke token by ID
+     * @param tokenId 
      * @param appID 
      * @param authToken 
-     * @param tokenId 
      */
-    public async authV1AuthTokenTokenIdDelete(appID: string, authToken: string, tokenId: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AuthTokenTokenIdDelete(tokenId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthTokenTokenIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthTokenTokenIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'tokenId' is not null or undefined
         if (tokenId === null || tokenId === undefined) {
             throw new RequiredError("AuthApi", "authV1AuthTokenTokenIdDelete", "tokenId");
         }
+
+
 
 
         // Path Params
@@ -2055,6 +2250,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2067,29 +2273,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Get token by ID
+     * @param tokenId 
      * @param appID 
      * @param authToken 
-     * @param tokenId 
      */
-    public async authV1AuthTokenTokenIdGet(appID: string, authToken: string, tokenId: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AuthTokenTokenIdGet(tokenId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthTokenTokenIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthTokenTokenIdGet", "authToken");
-        }
-
 
         // verify required parameter 'tokenId' is not null or undefined
         if (tokenId === null || tokenId === undefined) {
             throw new RequiredError("AuthApi", "authV1AuthTokenTokenIdGet", "tokenId");
         }
+
+
 
 
         // Path Params
@@ -2107,6 +2303,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2124,19 +2331,9 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
      * @param perPage The number of items for each page
      * @param lastId ID of a last file set on previous page
      */
-    public async authV1AuthTokensGet(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1AuthTokensGet(appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthTokensGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1AuthTokensGet", "authToken");
-        }
 
 
 
@@ -2165,6 +2362,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2207,6 +2415,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2258,6 +2477,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
             requestContext.setHeaderParam("Content-Type", contentType);
         }
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2273,19 +2503,9 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async authV1PasswordChecksGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1PasswordChecksGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1PasswordChecksGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1PasswordChecksGet", "authToken");
-        }
 
 
         // Path Params
@@ -2302,6 +2522,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2344,6 +2575,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2376,6 +2618,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2426,6 +2679,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2438,29 +2702,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Delete a referral_code
+     * @param code 
      * @param appID 
      * @param authToken 
-     * @param code 
      */
-    public async authV1ReferralCodesCodeDelete(appID: string, authToken: string, code: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1ReferralCodesCodeDelete(code: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1ReferralCodesCodeDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1ReferralCodesCodeDelete", "authToken");
-        }
-
 
         // verify required parameter 'code' is not null or undefined
         if (code === null || code === undefined) {
             throw new RequiredError("AuthApi", "authV1ReferralCodesCodeDelete", "code");
         }
+
+
 
 
         // Path Params
@@ -2478,6 +2732,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2490,29 +2755,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Get a referral_code
+     * @param code 
      * @param appID 
      * @param authToken 
-     * @param code 
      */
-    public async authV1ReferralCodesCodeGet(appID: string, authToken: string, code: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1ReferralCodesCodeGet(code: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1ReferralCodesCodeGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1ReferralCodesCodeGet", "authToken");
-        }
-
 
         // verify required parameter 'code' is not null or undefined
         if (code === null || code === undefined) {
             throw new RequiredError("AuthApi", "authV1ReferralCodesCodeGet", "code");
         }
+
+
 
 
         // Path Params
@@ -2530,6 +2785,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2545,19 +2811,9 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async authV1ReferralCodesGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1ReferralCodesGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1ReferralCodesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1ReferralCodesGet", "authToken");
-        }
 
 
         // Path Params
@@ -2574,6 +2830,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2586,29 +2853,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Create a new referral_code
+     * @param referralCodeSchema body
      * @param appID 
      * @param authToken 
-     * @param referralCodeSchema body
      */
-    public async authV1ReferralCodesPost(appID: string, authToken: string, referralCodeSchema: ReferralCodeSchema, _options?: Configuration): Promise<RequestContext> {
+    public async authV1ReferralCodesPost(referralCodeSchema: ReferralCodeSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1ReferralCodesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1ReferralCodesPost", "authToken");
-        }
-
 
         // verify required parameter 'referralCodeSchema' is not null or undefined
         if (referralCodeSchema === null || referralCodeSchema === undefined) {
             throw new RequiredError("AuthApi", "authV1ReferralCodesPost", "referralCodeSchema");
         }
+
+
 
 
         // Path Params
@@ -2636,6 +2893,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2651,19 +2919,9 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async authV1RegistrationsCountriesGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1RegistrationsCountriesGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1RegistrationsCountriesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1RegistrationsCountriesGet", "authToken");
-        }
 
 
         // Path Params
@@ -2680,6 +2938,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2722,6 +2991,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2754,6 +3034,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2771,19 +3062,9 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
      * @param query Query the name
      * @param statuses Comma separated list of statuses to show
      */
-    public async authV1SystemDomainsGet(appID: string, authToken: string, query?: string, statuses?: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1SystemDomainsGet(appID?: string, authToken?: string, query?: string, statuses?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsGet", "authToken");
-        }
 
 
 
@@ -2812,6 +3093,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2824,29 +3116,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Create a new system domain
+     * @param systemDomainSchema body
      * @param appID 
      * @param authToken 
-     * @param systemDomainSchema body
      */
-    public async authV1SystemDomainsPost(appID: string, authToken: string, systemDomainSchema: SystemDomainSchema, _options?: Configuration): Promise<RequestContext> {
+    public async authV1SystemDomainsPost(systemDomainSchema: SystemDomainSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsPost", "authToken");
-        }
-
 
         // verify required parameter 'systemDomainSchema' is not null or undefined
         if (systemDomainSchema === null || systemDomainSchema === undefined) {
             throw new RequiredError("AuthApi", "authV1SystemDomainsPost", "systemDomainSchema");
         }
+
+
 
 
         // Path Params
@@ -2874,6 +3156,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2886,25 +3179,13 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Create a new system domain from a referral code (That is associated to your domain)
-     * @param appID 
-     * @param authToken 
      * @param referralCode 
      * @param systemDomainFromReferralCodeSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async authV1SystemDomainsReferralCodeReferralCodePost(appID: string, authToken: string, referralCode: string, systemDomainFromReferralCodeSchema: SystemDomainFromReferralCodeSchema, _options?: Configuration): Promise<RequestContext> {
+    public async authV1SystemDomainsReferralCodeReferralCodePost(referralCode: string, systemDomainFromReferralCodeSchema: SystemDomainFromReferralCodeSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsReferralCodeReferralCodePost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsReferralCodeReferralCodePost", "authToken");
-        }
-
 
         // verify required parameter 'referralCode' is not null or undefined
         if (referralCode === null || referralCode === undefined) {
@@ -2916,6 +3197,8 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         if (systemDomainFromReferralCodeSchema === null || systemDomainFromReferralCodeSchema === undefined) {
             throw new RequiredError("AuthApi", "authV1SystemDomainsReferralCodeReferralCodePost", "systemDomainFromReferralCodeSchema");
         }
+
+
 
 
         // Path Params
@@ -2944,6 +3227,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2956,29 +3250,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Delete a particular system_domain by id
+     * @param systemDomainId 
      * @param appID 
      * @param authToken 
-     * @param systemDomainId 
      */
-    public async authV1SystemDomainsSystemDomainIdDelete(appID: string, authToken: string, systemDomainId: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1SystemDomainsSystemDomainIdDelete(systemDomainId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'systemDomainId' is not null or undefined
         if (systemDomainId === null || systemDomainId === undefined) {
             throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdDelete", "systemDomainId");
         }
+
+
 
 
         // Path Params
@@ -2996,6 +3280,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3008,29 +3303,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * (For internal use. Should not be displayed in Swagger docs)
      * Delete a particular system_domain by id.
+     * @param systemDomainId 
      * @param appID 
      * @param authToken 
-     * @param systemDomainId 
      */
-    public async authV1SystemDomainsSystemDomainIdE2eDelete(appID: string, authToken: string, systemDomainId: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1SystemDomainsSystemDomainIdE2eDelete(systemDomainId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdE2eDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdE2eDelete", "authToken");
-        }
-
 
         // verify required parameter 'systemDomainId' is not null or undefined
         if (systemDomainId === null || systemDomainId === undefined) {
             throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdE2eDelete", "systemDomainId");
         }
+
+
 
 
         // Path Params
@@ -3048,6 +3333,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3060,29 +3356,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_system_domains 
      * Returns a particular system domain by id
+     * @param systemDomainId 
      * @param appID 
      * @param authToken 
-     * @param systemDomainId 
      */
-    public async authV1SystemDomainsSystemDomainIdGet(appID: string, authToken: string, systemDomainId: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1SystemDomainsSystemDomainIdGet(systemDomainId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdGet", "authToken");
-        }
-
 
         // verify required parameter 'systemDomainId' is not null or undefined
         if (systemDomainId === null || systemDomainId === undefined) {
             throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdGet", "systemDomainId");
         }
+
+
 
 
         // Path Params
@@ -3100,6 +3386,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3112,29 +3409,19 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Delete system domain logo image.
+     * @param systemDomainId 
      * @param appID 
      * @param authToken 
-     * @param systemDomainId 
      */
-    public async authV1SystemDomainsSystemDomainIdLogoDelete(appID: string, authToken: string, systemDomainId: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1SystemDomainsSystemDomainIdLogoDelete(systemDomainId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdLogoDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdLogoDelete", "authToken");
-        }
-
 
         // verify required parameter 'systemDomainId' is not null or undefined
         if (systemDomainId === null || systemDomainId === undefined) {
             throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdLogoDelete", "systemDomainId");
         }
+
+
 
 
         // Path Params
@@ -3152,6 +3439,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3164,25 +3462,13 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Upload system domain logo image.
-     * @param appID 
-     * @param authToken 
      * @param systemDomainId 
      * @param authV1SystemDomainsSystemDomainIdLogoPostRequest 
+     * @param appID 
+     * @param authToken 
      */
-    public async authV1SystemDomainsSystemDomainIdLogoPost(appID: string, authToken: string, systemDomainId: string, authV1SystemDomainsSystemDomainIdLogoPostRequest: AuthV1SystemDomainsSystemDomainIdLogoPostRequest, _options?: Configuration): Promise<RequestContext> {
+    public async authV1SystemDomainsSystemDomainIdLogoPost(systemDomainId: string, authV1SystemDomainsSystemDomainIdLogoPostRequest: AuthV1SystemDomainsSystemDomainIdLogoPostRequest, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdLogoPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdLogoPost", "authToken");
-        }
-
 
         // verify required parameter 'systemDomainId' is not null or undefined
         if (systemDomainId === null || systemDomainId === undefined) {
@@ -3194,6 +3480,8 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         if (authV1SystemDomainsSystemDomainIdLogoPostRequest === null || authV1SystemDomainsSystemDomainIdLogoPostRequest === undefined) {
             throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdLogoPost", "authV1SystemDomainsSystemDomainIdLogoPostRequest");
         }
+
+
 
 
         // Path Params
@@ -3222,6 +3510,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3234,25 +3533,13 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Update system domain
-     * @param appID 
-     * @param authToken 
      * @param systemDomainId 
      * @param systemDomainSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async authV1SystemDomainsSystemDomainIdPatch(appID: string, authToken: string, systemDomainId: string, systemDomainSchema: SystemDomainSchema, _options?: Configuration): Promise<RequestContext> {
+    public async authV1SystemDomainsSystemDomainIdPatch(systemDomainId: string, systemDomainSchema: SystemDomainSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'systemDomainId' is not null or undefined
         if (systemDomainId === null || systemDomainId === undefined) {
@@ -3264,6 +3551,8 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         if (systemDomainSchema === null || systemDomainSchema === undefined) {
             throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdPatch", "systemDomainSchema");
         }
+
+
 
 
         // Path Params
@@ -3292,6 +3581,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3304,25 +3604,13 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Update system domain
-     * @param appID 
-     * @param authToken 
      * @param systemDomainId 
      * @param systemDomainSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async authV1SystemDomainsSystemDomainIdPut(appID: string, authToken: string, systemDomainId: string, systemDomainSchema: SystemDomainSchema, _options?: Configuration): Promise<RequestContext> {
+    public async authV1SystemDomainsSystemDomainIdPut(systemDomainId: string, systemDomainSchema: SystemDomainSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdPut", "authToken");
-        }
-
 
         // verify required parameter 'systemDomainId' is not null or undefined
         if (systemDomainId === null || systemDomainId === undefined) {
@@ -3334,6 +3622,8 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         if (systemDomainSchema === null || systemDomainSchema === undefined) {
             throw new RequiredError("AuthApi", "authV1SystemDomainsSystemDomainIdPut", "systemDomainSchema");
         }
+
+
 
 
         // Path Params
@@ -3362,6 +3652,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3377,19 +3678,9 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async authV1SystemDomainsTemplatesGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async authV1SystemDomainsTemplatesGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsTemplatesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AuthApi", "authV1SystemDomainsTemplatesGet", "authToken");
-        }
 
 
         // Path Params
@@ -3406,6 +3697,17 @@ export class AuthApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {

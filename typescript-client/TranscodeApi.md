@@ -54,11 +54,11 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1AnalyzeAssetsAssetIdPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // AnalyzeSchema | body (optional)
   analyzeSchema: {
     force: false,
@@ -78,9 +78,9 @@ apiInstance.transcodeV1AnalyzeAssetsAssetIdPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **analyzeSchema** | **AnalyzeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -124,13 +124,13 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1AnalyzeAssetsAssetIdProfilesDefaultMediaTypePostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   mediaType: "media_type_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // AnalyzeSchema | body (optional)
   analyzeSchema: {
     force: false,
@@ -150,10 +150,10 @@ apiInstance.transcodeV1AnalyzeAssetsAssetIdProfilesDefaultMediaTypePost(body).th
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **analyzeSchema** | **AnalyzeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **mediaType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -197,11 +197,11 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1AnalyzeAssetsAssetIdProfilesDefaultPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // AnalyzeSchema | body (optional)
   analyzeSchema: {
     force: false,
@@ -221,9 +221,9 @@ apiInstance.transcodeV1AnalyzeAssetsAssetIdProfilesDefaultPost(body).then((data:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **analyzeSchema** | **AnalyzeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -267,13 +267,13 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1AnalyzeAssetsAssetIdProfilesProfileIdPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   profileId: "profile_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // AnalyzeSchema | body (optional)
   analyzeSchema: {
     force: false,
@@ -293,10 +293,10 @@ apiInstance.transcodeV1AnalyzeAssetsAssetIdProfilesProfileIdPost(body).then((dat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **analyzeSchema** | **AnalyzeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **profileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -339,9 +339,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1AnalyzeBulkPostRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // BulkAnalyzeSchema | body (optional)
   bulkAnalyzeSchema: {
@@ -366,8 +366,8 @@ apiInstance.transcodeV1AnalyzeBulkPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bulkAnalyzeSchema** | **BulkAnalyzeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -411,14 +411,14 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1AssetsLinkMetadataPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // AssetLinkURLSchema | body
   assetLinkURLSchema: {
     url: "url_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.transcodeV1AssetsLinkMetadataPost(body).then((data:any) => {
@@ -432,8 +432,8 @@ apiInstance.transcodeV1AssetsLinkMetadataPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetLinkURLSchema** | **AssetLinkURLSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -442,7 +442,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -478,11 +478,11 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1EdgeTranscodeJobsJobIdAcknowledgePostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   jobId: "job_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.transcodeV1EdgeTranscodeJobsJobIdAcknowledgePost(body).then((data:any) => {
@@ -495,9 +495,9 @@ apiInstance.transcodeV1EdgeTranscodeJobsJobIdAcknowledgePost(body).then((data:an
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **jobId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -541,9 +541,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1EdgeTranscodeWorkersGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -557,8 +557,8 @@ apiInstance.transcodeV1EdgeTranscodeWorkersGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -567,7 +567,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -601,15 +601,15 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1EdgeTranscodeWorkersPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // EdgeTranscodeWorkerSchema | body
   edgeTranscodeWorkerSchema: {
     status: "ACTIVE",
     storageId: "storageId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.transcodeV1EdgeTranscodeWorkersPost(body).then((data:any) => {
@@ -623,8 +623,8 @@ apiInstance.transcodeV1EdgeTranscodeWorkersPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **edgeTranscodeWorkerSchema** | **EdgeTranscodeWorkerSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -633,7 +633,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -668,11 +668,11 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1EdgeTranscodeWorkersWorkerIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   workerId: "worker_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.transcodeV1EdgeTranscodeWorkersWorkerIdDelete(body).then((data:any) => {
@@ -685,9 +685,9 @@ apiInstance.transcodeV1EdgeTranscodeWorkersWorkerIdDelete(body).then((data:any) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **workerId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -696,7 +696,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -732,11 +732,11 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1EdgeTranscodeWorkersWorkerIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   workerId: "worker_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.transcodeV1EdgeTranscodeWorkersWorkerIdGet(body).then((data:any) => {
@@ -749,9 +749,9 @@ apiInstance.transcodeV1EdgeTranscodeWorkersWorkerIdGet(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **workerId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -760,7 +760,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -796,16 +796,16 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1EdgeTranscodeWorkersWorkerIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   workerId: "worker_id_example",
   // EdgeTranscodeWorkerSchema | body
   edgeTranscodeWorkerSchema: {
     status: "ACTIVE",
     storageId: "storageId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.transcodeV1EdgeTranscodeWorkersWorkerIdPatch(body).then((data:any) => {
@@ -819,9 +819,9 @@ apiInstance.transcodeV1EdgeTranscodeWorkersWorkerIdPatch(body).then((data:any) =
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **edgeTranscodeWorkerSchema** | **EdgeTranscodeWorkerSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **workerId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -830,7 +830,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -866,16 +866,16 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1EdgeTranscodeWorkersWorkerIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   workerId: "worker_id_example",
   // EdgeTranscodeWorkerSchema | body
   edgeTranscodeWorkerSchema: {
     status: "ACTIVE",
     storageId: "storageId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.transcodeV1EdgeTranscodeWorkersWorkerIdPut(body).then((data:any) => {
@@ -889,9 +889,9 @@ apiInstance.transcodeV1EdgeTranscodeWorkersWorkerIdPut(body).then((data:any) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **edgeTranscodeWorkerSchema** | **EdgeTranscodeWorkerSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **workerId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -900,7 +900,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -936,11 +936,11 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1KeyframesCollectionsCollectionIdPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // GenerateCollectionKeyframeSchema | body (optional)
   generateCollectionKeyframeSchema: {
     deletedAssetId: "deletedAssetId_example",
@@ -967,9 +967,9 @@ apiInstance.transcodeV1KeyframesCollectionsCollectionIdPost(body).then((data:any
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **generateCollectionKeyframeSchema** | **GenerateCollectionKeyframeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -978,7 +978,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1013,11 +1013,11 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1StoragesStorageIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // AbortStorageTranscodeJobsSchema | body (optional)
   abortStorageTranscodeJobsSchema: {
     errorMessage: "errorMessage_example",
@@ -1035,9 +1035,9 @@ apiInstance.transcodeV1StoragesStorageIdDelete(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **abortStorageTranscodeJobsSchema** | **AbortStorageTranscodeJobsSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1046,7 +1046,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1082,11 +1082,11 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1StoragesStorageIdEdgeTranscodeJobsGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The max number of items to fetch (optional)
   limit: 10,
 };
@@ -1101,9 +1101,9 @@ apiInstance.transcodeV1StoragesStorageIdEdgeTranscodeJobsGet(body).then((data:an
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **limit** | [**number**] | The max number of items to fetch | (optional) defaults to 10
 
 
@@ -1113,7 +1113,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1148,13 +1148,13 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1StoragesStorageIdFilesFileIdTranscodeDeleteRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   storageId: "storage_id_example",
   // string
   fileId: "file_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.transcodeV1StoragesStorageIdFilesFileIdTranscodeDelete(body).then((data:any) => {
@@ -1167,10 +1167,10 @@ apiInstance.transcodeV1StoragesStorageIdFilesFileIdTranscodeDelete(body).then((d
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1179,7 +1179,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1213,11 +1213,11 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1StoragesStorageIdTranscodeGetRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // string | ID of a last transcode job entity on previous page (optional)
@@ -1234,9 +1234,9 @@ apiInstance.transcodeV1StoragesStorageIdTranscodeGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last transcode job entity on previous page | (optional) defaults to undefined
 
@@ -1247,7 +1247,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1280,13 +1280,13 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1StoragesStorageIdTranscodeRecordIdDeleteRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   storageId: "storage_id_example",
   // string
   recordId: "record_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.transcodeV1StoragesStorageIdTranscodeRecordIdDelete(body).then((data:any) => {
@@ -1299,10 +1299,10 @@ apiInstance.transcodeV1StoragesStorageIdTranscodeRecordIdDelete(body).then((data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
  **recordId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1311,7 +1311,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1345,13 +1345,13 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1StoragesStorageIdTranscodeRecordIdGetRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   storageId: "storage_id_example",
   // string
   recordId: "record_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.transcodeV1StoragesStorageIdTranscodeRecordIdGet(body).then((data:any) => {
@@ -1364,10 +1364,10 @@ apiInstance.transcodeV1StoragesStorageIdTranscodeRecordIdGet(body).then((data:an
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
  **recordId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1376,7 +1376,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1410,13 +1410,13 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1TranscodeObjectTypeObjectIdGetRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.transcodeV1TranscodeObjectTypeObjectIdGet(body).then((data:any) => {
@@ -1429,10 +1429,10 @@ apiInstance.transcodeV1TranscodeObjectTypeObjectIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1441,7 +1441,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1475,15 +1475,15 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1TranscodeObjectTypeObjectIdVersionsVersionIdGetRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
   // string
   versionId: "version_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.transcodeV1TranscodeObjectTypeObjectIdVersionsVersionIdGet(body).then((data:any) => {
@@ -1496,11 +1496,11 @@ apiInstance.transcodeV1TranscodeObjectTypeObjectIdVersionsVersionIdGet(body).the
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1509,7 +1509,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1542,10 +1542,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1TranscodePostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // JobSchema1 | body
   jobSchema1: {
     amazonRekognition: true,
@@ -1636,6 +1632,10 @@ let body:iconik.TranscodeApiTranscodeV1TranscodePostRequest = {
     ],
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.transcodeV1TranscodePost(body).then((data:any) => {
@@ -1649,8 +1649,8 @@ apiInstance.transcodeV1TranscodePost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jobSchema1** | **JobSchema1**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1659,7 +1659,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1693,9 +1693,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1TranscodeQueueGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number (optional)
   perPage: 1,
@@ -1715,8 +1715,8 @@ apiInstance.transcodeV1TranscodeQueueGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] |  | (optional) defaults to undefined
  **page** | [**number**] |  | (optional) defaults to undefined
  **sort** | [**string**] | A comma separated list of fieldnames without spaces. object_type,user_id,retry_count,priority,type,status | (optional) defaults to undefined
@@ -1728,7 +1728,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1762,9 +1762,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1TranscodeQueueSystemGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // boolean (optional)
   perDomainId: true,
@@ -1786,8 +1786,8 @@ apiInstance.transcodeV1TranscodeQueueSystemGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perDomainId** | [**boolean**] |  | (optional) defaults to undefined
  **perPage** | [**number**] |  | (optional) defaults to undefined
  **page** | [**number**] |  | (optional) defaults to undefined
@@ -1800,7 +1800,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1835,11 +1835,11 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1TranscodeTranscodeJobIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   transcodeJobId: "transcode_job_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.transcodeV1TranscodeTranscodeJobIdDelete(body).then((data:any) => {
@@ -1852,9 +1852,9 @@ apiInstance.transcodeV1TranscodeTranscodeJobIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **transcodeJobId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1863,7 +1863,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1899,11 +1899,11 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1TranscodeTranscodeJobIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   transcodeJobId: "transcode_job_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.transcodeV1TranscodeTranscodeJobIdGet(body).then((data:any) => {
@@ -1916,9 +1916,9 @@ apiInstance.transcodeV1TranscodeTranscodeJobIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **transcodeJobId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1927,7 +1927,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1962,13 +1962,13 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1TranscodeTranscodeJobIdPositionPositionPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   transcodeJobId: "transcode_job_id_example",
   // string | move transcode job to \"top\" or \"bottom\" position
   position: "position_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.transcodeV1TranscodeTranscodeJobIdPositionPositionPost(body).then((data:any) => {
@@ -1981,10 +1981,10 @@ apiInstance.transcodeV1TranscodeTranscodeJobIdPositionPositionPost(body).then((d
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **transcodeJobId** | [**string**] |  | defaults to undefined
  **position** | [**string**] | move transcode job to \&quot;top\&quot; or \&quot;bottom\&quot; position | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1993,7 +1993,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2029,13 +2029,13 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1TranscodeTranscodeJobIdPriorityPriorityPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   transcodeJobId: "transcode_job_id_example",
   // number
   priority: 1,
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.transcodeV1TranscodeTranscodeJobIdPriorityPriorityPut(body).then((data:any) => {
@@ -2048,10 +2048,10 @@ apiInstance.transcodeV1TranscodeTranscodeJobIdPriorityPriorityPut(body).then((da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **transcodeJobId** | [**string**] |  | defaults to undefined
  **priority** | [**number**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2060,7 +2060,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2096,11 +2096,11 @@ const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1TranscribeAssetsAssetIdProfilesDefaultPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // TranscribeSchema | body (optional)
   transcribeSchema: {
     engine: "engine_example",
@@ -2122,9 +2122,9 @@ apiInstance.transcodeV1TranscribeAssetsAssetIdProfilesDefaultPost(body).then((da
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **transcribeSchema** | **TranscribeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2133,7 +2133,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2167,10 +2167,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.TranscodeApi(configuration);
 
 let body:iconik.TranscodeApiTranscodeV1TranscribeBulkPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // BulkTranscribeSchema | body
   bulkTranscribeSchema: {
     engine: "engine_example",
@@ -2183,6 +2179,10 @@ let body:iconik.TranscodeApiTranscodeV1TranscribeBulkPostRequest = {
     profileId: "profileId_example",
     speakers: 1,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.transcodeV1TranscribeBulkPost(body).then((data:any) => {
@@ -2196,8 +2196,8 @@ apiInstance.transcodeV1TranscribeBulkPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bulkTranscribeSchema** | **BulkTranscribeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2206,7 +2206,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 

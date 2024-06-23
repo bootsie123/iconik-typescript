@@ -90,11 +90,11 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AppsAppIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   appId: "app_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1AppsAppIdDelete(body).then((data:any) => {
@@ -107,9 +107,9 @@ apiInstance.authV1AppsAppIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **appId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -153,9 +153,9 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AppsAppIdGetRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
   appId: "app_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1AppsAppIdGet(body).then((data:any) => {
@@ -168,8 +168,8 @@ apiInstance.authV1AppsAppIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
  **appId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -213,10 +213,6 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AppsAppIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   appId: "app_id_example",
   // AppSchema | body
   appSchema: {
@@ -225,6 +221,10 @@ let body:iconik.AuthApiAuthV1AppsAppIdPatchRequest = {
     name: "name_example",
     url: "url_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1AppsAppIdPatch(body).then((data:any) => {
@@ -238,9 +238,9 @@ apiInstance.authV1AppsAppIdPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appSchema** | **AppSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **appId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -284,10 +284,6 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AppsAppIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   appId: "app_id_example",
   // AppSchema | body
   appSchema: {
@@ -296,6 +292,10 @@ let body:iconik.AuthApiAuthV1AppsAppIdPutRequest = {
     name: "name_example",
     url: "url_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1AppsAppIdPut(body).then((data:any) => {
@@ -309,9 +309,9 @@ apiInstance.authV1AppsAppIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appSchema** | **AppSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **appId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -355,11 +355,11 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AppsAppIdTokenPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   appId: "app_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1AppsAppIdTokenPost(body).then((data:any) => {
@@ -372,9 +372,9 @@ apiInstance.authV1AppsAppIdTokenPost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **appId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -417,10 +417,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AppsExternalAuthPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // ExternalAuthRequestSchema | body
   externalAuthRequestSchema: {
     appId: "appId_example",
@@ -428,6 +424,10 @@ let body:iconik.AuthApiAuthV1AppsExternalAuthPostRequest = {
     redirectInfo: null,
     secret: "secret_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1AppsExternalAuthPost(body).then((data:any) => {
@@ -441,8 +441,8 @@ apiInstance.authV1AppsExternalAuthPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **externalAuthRequestSchema** | **ExternalAuthRequestSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -451,7 +451,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -508,7 +508,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -542,9 +542,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AppsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
@@ -562,8 +562,8 @@ apiInstance.authV1AppsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last file set on previous page | (optional) defaults to undefined
 
@@ -574,7 +574,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -608,11 +608,11 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AppsInstanceApprovedInstanceIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   approvedInstanceId: "approved_instance_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1AppsInstanceApprovedInstanceIdDelete(body).then((data:any) => {
@@ -625,9 +625,9 @@ apiInstance.authV1AppsInstanceApprovedInstanceIdDelete(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **approvedInstanceId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -636,7 +636,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -671,11 +671,11 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AppsInstanceApprovedInstanceIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   approvedInstanceId: "approved_instance_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1AppsInstanceApprovedInstanceIdGet(body).then((data:any) => {
@@ -688,9 +688,9 @@ apiInstance.authV1AppsInstanceApprovedInstanceIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **approvedInstanceId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -699,7 +699,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -733,15 +733,15 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AppsInstancePostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // ApprovedAppInstanceSchema | body
   approvedAppInstanceSchema: {
     appId: "appId_example",
     id: "id_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1AppsInstancePost(body).then((data:any) => {
@@ -755,8 +755,8 @@ apiInstance.authV1AppsInstancePost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **approvedAppInstanceSchema** | **ApprovedAppInstanceSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -765,7 +765,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -799,10 +799,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AppsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // AppSchema | body
   appSchema: {
     defaultUserId: "defaultUserId_example",
@@ -810,6 +806,10 @@ let body:iconik.AuthApiAuthV1AppsPostRequest = {
     name: "name_example",
     url: "url_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1AppsPost(body).then((data:any) => {
@@ -823,8 +823,8 @@ apiInstance.authV1AppsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appSchema** | **AppSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -833,7 +833,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -890,7 +890,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -954,7 +954,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1011,7 +1011,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1067,7 +1067,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1128,7 +1128,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1164,11 +1164,11 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AuthSamlDomainsDomainDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   domain: "domain_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1AuthSamlDomainsDomainDelete(body).then((data:any) => {
@@ -1181,9 +1181,9 @@ apiInstance.authV1AuthSamlDomainsDomainDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **domain** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1192,7 +1192,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1227,16 +1227,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AuthSamlDomainsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // DomainIdentityProviderMapSchema | body
   domainIdentityProviderMapSchema: {
     domain: "domain_example",
     identityProviderId: "identityProviderId_example",
     systemDomainId: "systemDomainId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1AuthSamlDomainsPost(body).then((data:any) => {
@@ -1250,8 +1250,8 @@ apiInstance.authV1AuthSamlDomainsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **domainIdentityProviderMapSchema** | **DomainIdentityProviderMapSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1260,7 +1260,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1294,16 +1294,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AuthSamlIdpConvertPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // IdentityProviderSchema
   identityProviderSchema: {
     settings: null,
     type: "onelogin.com",
     verboseLogging: true,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1AuthSamlIdpConvertPost(body).then((data:any) => {
@@ -1317,8 +1317,8 @@ apiInstance.authV1AuthSamlIdpConvertPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identityProviderSchema** | **IdentityProviderSchema**|  |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1327,7 +1327,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1361,9 +1361,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AuthSamlIdpGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 1,
@@ -1381,8 +1381,8 @@ apiInstance.authV1AuthSamlIdpGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to undefined
  **lastId** | [**string**] |  | (optional) defaults to undefined
 
@@ -1393,7 +1393,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1429,11 +1429,11 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AuthSamlIdpIdentityProviderIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   identityProviderId: "identity_provider_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1AuthSamlIdpIdentityProviderIdDelete(body).then((data:any) => {
@@ -1446,9 +1446,9 @@ apiInstance.authV1AuthSamlIdpIdentityProviderIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **identityProviderId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1457,7 +1457,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1493,11 +1493,11 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AuthSamlIdpIdentityProviderIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   identityProviderId: "identity_provider_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1AuthSamlIdpIdentityProviderIdGet(body).then((data:any) => {
@@ -1510,9 +1510,9 @@ apiInstance.authV1AuthSamlIdpIdentityProviderIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **identityProviderId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1521,7 +1521,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1557,10 +1557,6 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AuthSamlIdpIdentityProviderIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   identityProviderId: "identity_provider_id_example",
   // IdentityProviderSchema | body
   identityProviderSchema: {
@@ -1568,6 +1564,10 @@ let body:iconik.AuthApiAuthV1AuthSamlIdpIdentityProviderIdPatchRequest = {
     type: "onelogin.com",
     verboseLogging: true,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1AuthSamlIdpIdentityProviderIdPatch(body).then((data:any) => {
@@ -1581,9 +1581,9 @@ apiInstance.authV1AuthSamlIdpIdentityProviderIdPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identityProviderSchema** | **IdentityProviderSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **identityProviderId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1592,7 +1592,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1628,10 +1628,6 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AuthSamlIdpIdentityProviderIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   identityProviderId: "identity_provider_id_example",
   // IdentityProviderSchema | body
   identityProviderSchema: {
@@ -1639,6 +1635,10 @@ let body:iconik.AuthApiAuthV1AuthSamlIdpIdentityProviderIdPutRequest = {
     type: "onelogin.com",
     verboseLogging: true,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1AuthSamlIdpIdentityProviderIdPut(body).then((data:any) => {
@@ -1652,9 +1652,9 @@ apiInstance.authV1AuthSamlIdpIdentityProviderIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identityProviderSchema** | **IdentityProviderSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **identityProviderId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1663,7 +1663,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1698,16 +1698,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AuthSamlIdpPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // IdentityProviderSchema
   identityProviderSchema: {
     settings: null,
     type: "onelogin.com",
     verboseLogging: true,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1AuthSamlIdpPost(body).then((data:any) => {
@@ -1721,8 +1721,8 @@ apiInstance.authV1AuthSamlIdpPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identityProviderSchema** | **IdentityProviderSchema**|  |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1731,7 +1731,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1790,7 +1790,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1846,7 +1846,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1903,7 +1903,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1963,7 +1963,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2022,7 +2022,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2078,7 +2078,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2138,7 +2138,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2195,7 +2195,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2254,7 +2254,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2315,7 +2315,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2348,9 +2348,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AuthTokenDeleteRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -2364,8 +2364,8 @@ apiInstance.authV1AuthTokenDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2374,7 +2374,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2408,9 +2408,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AuthTokenGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -2424,8 +2424,8 @@ apiInstance.authV1AuthTokenGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2434,7 +2434,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2468,9 +2468,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AuthTokenPostRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -2484,8 +2484,8 @@ apiInstance.authV1AuthTokenPost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2494,7 +2494,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2528,9 +2528,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AuthTokenPutRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -2544,8 +2544,8 @@ apiInstance.authV1AuthTokenPut(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2554,7 +2554,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2589,11 +2589,11 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AuthTokenTokenIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   tokenId: "token_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1AuthTokenTokenIdDelete(body).then((data:any) => {
@@ -2606,9 +2606,9 @@ apiInstance.authV1AuthTokenTokenIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **tokenId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2617,7 +2617,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2652,11 +2652,11 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AuthTokenTokenIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   tokenId: "token_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1AuthTokenTokenIdGet(body).then((data:any) => {
@@ -2669,9 +2669,9 @@ apiInstance.authV1AuthTokenTokenIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **tokenId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2680,7 +2680,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2714,9 +2714,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1AuthTokensGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
@@ -2734,8 +2734,8 @@ apiInstance.authV1AuthTokensGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last file set on previous page | (optional) defaults to undefined
 
@@ -2746,7 +2746,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2804,7 +2804,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2860,7 +2860,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2893,9 +2893,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1PasswordChecksGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -2909,8 +2909,8 @@ apiInstance.authV1PasswordChecksGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2919,7 +2919,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2978,7 +2978,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3034,7 +3034,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3097,7 +3097,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3132,11 +3132,11 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1ReferralCodesCodeDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   code: "code_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1ReferralCodesCodeDelete(body).then((data:any) => {
@@ -3149,9 +3149,9 @@ apiInstance.authV1ReferralCodesCodeDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **code** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3160,7 +3160,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3195,11 +3195,11 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1ReferralCodesCodeGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   code: "code_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1ReferralCodesCodeGet(body).then((data:any) => {
@@ -3212,9 +3212,9 @@ apiInstance.authV1ReferralCodesCodeGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **code** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3223,7 +3223,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3257,9 +3257,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1ReferralCodesGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -3273,8 +3273,8 @@ apiInstance.authV1ReferralCodesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3283,7 +3283,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3317,10 +3317,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1ReferralCodesPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // ReferralCodeSchema | body
   referralCodeSchema: {
     code: "code_example",
@@ -3331,6 +3327,10 @@ let body:iconik.AuthApiAuthV1ReferralCodesPostRequest = {
     validTo: new Date('1970-01-01T00:00:00.00Z'),
     value: 3.14,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1ReferralCodesPost(body).then((data:any) => {
@@ -3344,8 +3344,8 @@ apiInstance.authV1ReferralCodesPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **referralCodeSchema** | **ReferralCodeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3354,7 +3354,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3389,9 +3389,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1RegistrationsCountriesGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -3405,8 +3405,8 @@ apiInstance.authV1RegistrationsCountriesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3415,7 +3415,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3484,7 +3484,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3541,7 +3541,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3575,9 +3575,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1SystemDomainsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // string | Query the name (optional)
   query: "query_example",
@@ -3595,8 +3595,8 @@ apiInstance.authV1SystemDomainsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **query** | [**string**] | Query the name | (optional) defaults to undefined
  **statuses** | [**string**] | Comma separated list of statuses to show | (optional) defaults to undefined
 
@@ -3607,7 +3607,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3640,16 +3640,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1SystemDomainsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // SystemDomainSchema | body
   systemDomainSchema: {
     baseUrl: "baseUrl_example",
     description: "description_example",
     name: "name_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1SystemDomainsPost(body).then((data:any) => {
@@ -3663,8 +3663,8 @@ apiInstance.authV1SystemDomainsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemDomainSchema** | **SystemDomainSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3673,7 +3673,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3708,10 +3708,6 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1SystemDomainsReferralCodeReferralCodePostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   referralCode: "referral_code_example",
   // SystemDomainFromReferralCodeSchema | body
   systemDomainFromReferralCodeSchema: {
@@ -3723,6 +3719,10 @@ let body:iconik.AuthApiAuthV1SystemDomainsReferralCodeReferralCodePostRequest = 
     description: "description_example",
     name: "name_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1SystemDomainsReferralCodeReferralCodePost(body).then((data:any) => {
@@ -3736,9 +3736,9 @@ apiInstance.authV1SystemDomainsReferralCodeReferralCodePost(body).then((data:any
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemDomainFromReferralCodeSchema** | **SystemDomainFromReferralCodeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **referralCode** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3747,7 +3747,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3782,11 +3782,11 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1SystemDomainsSystemDomainIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   systemDomainId: "system_domain_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1SystemDomainsSystemDomainIdDelete(body).then((data:any) => {
@@ -3799,9 +3799,9 @@ apiInstance.authV1SystemDomainsSystemDomainIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **systemDomainId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3810,7 +3810,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3845,11 +3845,11 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1SystemDomainsSystemDomainIdE2eDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   systemDomainId: "system_domain_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1SystemDomainsSystemDomainIdE2eDelete(body).then((data:any) => {
@@ -3862,9 +3862,9 @@ apiInstance.authV1SystemDomainsSystemDomainIdE2eDelete(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **systemDomainId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3873,7 +3873,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3908,11 +3908,11 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1SystemDomainsSystemDomainIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   systemDomainId: "system_domain_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1SystemDomainsSystemDomainIdGet(body).then((data:any) => {
@@ -3925,9 +3925,9 @@ apiInstance.authV1SystemDomainsSystemDomainIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **systemDomainId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3936,7 +3936,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3972,11 +3972,11 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1SystemDomainsSystemDomainIdLogoDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   systemDomainId: "system_domain_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1SystemDomainsSystemDomainIdLogoDelete(body).then((data:any) => {
@@ -3989,9 +3989,9 @@ apiInstance.authV1SystemDomainsSystemDomainIdLogoDelete(body).then((data:any) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **systemDomainId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4000,7 +4000,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4036,15 +4036,15 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1SystemDomainsSystemDomainIdLogoPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   systemDomainId: "system_domain_id_example",
   // AuthV1SystemDomainsSystemDomainIdLogoPostRequest
   authV1SystemDomainsSystemDomainIdLogoPostRequest: {
     logo: { data: Buffer.from(fs.readFileSync('/path/to/file', 'utf-8')), name: '/path/to/file' },
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1SystemDomainsSystemDomainIdLogoPost(body).then((data:any) => {
@@ -4058,9 +4058,9 @@ apiInstance.authV1SystemDomainsSystemDomainIdLogoPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authV1SystemDomainsSystemDomainIdLogoPostRequest** | **AuthV1SystemDomainsSystemDomainIdLogoPostRequest**|  |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **systemDomainId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4069,7 +4069,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4104,10 +4104,6 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1SystemDomainsSystemDomainIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   systemDomainId: "system_domain_id_example",
   // SystemDomainSchema | body
   systemDomainSchema: {
@@ -4115,6 +4111,10 @@ let body:iconik.AuthApiAuthV1SystemDomainsSystemDomainIdPatchRequest = {
     description: "description_example",
     name: "name_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1SystemDomainsSystemDomainIdPatch(body).then((data:any) => {
@@ -4128,9 +4128,9 @@ apiInstance.authV1SystemDomainsSystemDomainIdPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemDomainSchema** | **SystemDomainSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **systemDomainId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4139,7 +4139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4175,10 +4175,6 @@ const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1SystemDomainsSystemDomainIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   systemDomainId: "system_domain_id_example",
   // SystemDomainSchema | body
   systemDomainSchema: {
@@ -4186,6 +4182,10 @@ let body:iconik.AuthApiAuthV1SystemDomainsSystemDomainIdPutRequest = {
     description: "description_example",
     name: "name_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.authV1SystemDomainsSystemDomainIdPut(body).then((data:any) => {
@@ -4199,9 +4199,9 @@ apiInstance.authV1SystemDomainsSystemDomainIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemDomainSchema** | **SystemDomainSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **systemDomainId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4210,7 +4210,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4245,9 +4245,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AuthApi(configuration);
 
 let body:iconik.AuthApiAuthV1SystemDomainsTemplatesGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -4261,8 +4261,8 @@ apiInstance.authV1SystemDomainsTemplatesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4271,7 +4271,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 

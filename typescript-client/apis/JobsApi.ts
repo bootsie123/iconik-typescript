@@ -26,29 +26,19 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_jobs 
      * Delete multiple jobs by ids list
+     * @param jobsBulkDeleteSchema body
      * @param appID 
      * @param authToken 
-     * @param jobsBulkDeleteSchema body
      */
-    public async jobsV1JobsDelete(appID: string, authToken: string, jobsBulkDeleteSchema: JobsBulkDeleteSchema, _options?: Configuration): Promise<RequestContext> {
+    public async jobsV1JobsDelete(jobsBulkDeleteSchema: JobsBulkDeleteSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsDelete", "authToken");
-        }
-
 
         // verify required parameter 'jobsBulkDeleteSchema' is not null or undefined
         if (jobsBulkDeleteSchema === null || jobsBulkDeleteSchema === undefined) {
             throw new RequiredError("JobsApi", "jobsV1JobsDelete", "jobsBulkDeleteSchema");
         }
+
+
 
 
         // Path Params
@@ -76,6 +66,17 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -108,19 +109,9 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
      * @param query Filter by any of the above with wildcard support
      * @param ids Filter list of id:s (comma separated)
      */
-    public async jobsV1JobsGet(appID: string, authToken: string, facets?: boolean, aggregations?: string, page?: number, perPage?: number, scroll?: boolean, scrollId?: string, sort?: string, type?: string, objectType?: string, parentId?: string, objectId?: string, status?: string, createdBy?: string, dateCreated?: string, dateModified?: string, query?: string, ids?: string, _options?: Configuration): Promise<RequestContext> {
+    public async jobsV1JobsGet(appID?: string, authToken?: string, facets?: boolean, aggregations?: string, page?: number, perPage?: number, scroll?: boolean, scrollId?: string, sort?: string, type?: string, objectType?: string, parentId?: string, objectId?: string, status?: string, createdBy?: string, dateCreated?: string, dateModified?: string, query?: string, ids?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsGet", "authToken");
-        }
 
 
 
@@ -239,6 +230,17 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -251,29 +253,19 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_jobs 
      * Delete a particular job by id
+     * @param jobId 
      * @param appID 
      * @param authToken 
-     * @param jobId 
      */
-    public async jobsV1JobsJobIdDelete(appID: string, authToken: string, jobId: string, _options?: Configuration): Promise<RequestContext> {
+    public async jobsV1JobsJobIdDelete(jobId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsJobIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsJobIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'jobId' is not null or undefined
         if (jobId === null || jobId === undefined) {
             throw new RequiredError("JobsApi", "jobsV1JobsJobIdDelete", "jobId");
         }
+
+
 
 
         // Path Params
@@ -291,6 +283,17 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -303,29 +306,19 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_jobs 
      * Returns a particular job by id
+     * @param jobId 
      * @param appID 
      * @param authToken 
-     * @param jobId 
      */
-    public async jobsV1JobsJobIdGet(appID: string, authToken: string, jobId: string, _options?: Configuration): Promise<RequestContext> {
+    public async jobsV1JobsJobIdGet(jobId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsJobIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsJobIdGet", "authToken");
-        }
-
 
         // verify required parameter 'jobId' is not null or undefined
         if (jobId === null || jobId === undefined) {
             throw new RequiredError("JobsApi", "jobsV1JobsJobIdGet", "jobId");
         }
+
+
 
 
         // Path Params
@@ -343,6 +336,17 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -355,25 +359,13 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_jobs 
      * Update job
-     * @param appID 
-     * @param authToken 
      * @param jobId 
      * @param jobSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async jobsV1JobsJobIdPatch(appID: string, authToken: string, jobId: string, jobSchema: JobSchema, _options?: Configuration): Promise<RequestContext> {
+    public async jobsV1JobsJobIdPatch(jobId: string, jobSchema: JobSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsJobIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsJobIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'jobId' is not null or undefined
         if (jobId === null || jobId === undefined) {
@@ -385,6 +377,8 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         if (jobSchema === null || jobSchema === undefined) {
             throw new RequiredError("JobsApi", "jobsV1JobsJobIdPatch", "jobSchema");
         }
+
+
 
 
         // Path Params
@@ -413,6 +407,17 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -425,25 +430,13 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_jobs 
      * Update job
-     * @param appID 
-     * @param authToken 
      * @param jobId 
      * @param jobSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async jobsV1JobsJobIdPut(appID: string, authToken: string, jobId: string, jobSchema: JobSchema, _options?: Configuration): Promise<RequestContext> {
+    public async jobsV1JobsJobIdPut(jobId: string, jobSchema: JobSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsJobIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsJobIdPut", "authToken");
-        }
-
 
         // verify required parameter 'jobId' is not null or undefined
         if (jobId === null || jobId === undefined) {
@@ -455,6 +448,8 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         if (jobSchema === null || jobSchema === undefined) {
             throw new RequiredError("JobsApi", "jobsV1JobsJobIdPut", "jobSchema");
         }
+
+
 
 
         // Path Params
@@ -483,6 +478,17 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -495,25 +501,13 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_jobs 
      * Reindex job
-     * @param appID 
-     * @param authToken 
      * @param jobId 
      * @param reindexJobSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async jobsV1JobsJobIdReindexPost(appID: string, authToken: string, jobId: string, reindexJobSchema: ReindexJobSchema, _options?: Configuration): Promise<RequestContext> {
+    public async jobsV1JobsJobIdReindexPost(jobId: string, reindexJobSchema: ReindexJobSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsJobIdReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsJobIdReindexPost", "authToken");
-        }
-
 
         // verify required parameter 'jobId' is not null or undefined
         if (jobId === null || jobId === undefined) {
@@ -525,6 +519,8 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         if (reindexJobSchema === null || reindexJobSchema === undefined) {
             throw new RequiredError("JobsApi", "jobsV1JobsJobIdReindexPost", "reindexJobSchema");
         }
+
+
 
 
         // Path Params
@@ -553,6 +549,17 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -565,26 +572,14 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_jobs 
      * Update job step
-     * @param appID 
-     * @param authToken 
      * @param jobId 
      * @param jobStepId 
      * @param jobStepSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async jobsV1JobsJobIdStepsJobStepIdPatch(appID: string, authToken: string, jobId: string, jobStepId: string, jobStepSchema: JobStepSchema, _options?: Configuration): Promise<RequestContext> {
+    public async jobsV1JobsJobIdStepsJobStepIdPatch(jobId: string, jobStepId: string, jobStepSchema: JobStepSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsJobIdStepsJobStepIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsJobIdStepsJobStepIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'jobId' is not null or undefined
         if (jobId === null || jobId === undefined) {
@@ -604,6 +599,8 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/jobs/v1/jobs/{job_id}/steps/{job_step_id}/'
             .replace('{' + 'job_id' + '}', encodeURIComponent(String(jobId)))
@@ -631,6 +628,17 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -643,26 +651,14 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_jobs 
      * Update job step
-     * @param appID 
-     * @param authToken 
      * @param jobId 
      * @param jobStepId 
      * @param jobStepSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async jobsV1JobsJobIdStepsJobStepIdPut(appID: string, authToken: string, jobId: string, jobStepId: string, jobStepSchema: JobStepSchema, _options?: Configuration): Promise<RequestContext> {
+    public async jobsV1JobsJobIdStepsJobStepIdPut(jobId: string, jobStepId: string, jobStepSchema: JobStepSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsJobIdStepsJobStepIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsJobIdStepsJobStepIdPut", "authToken");
-        }
-
 
         // verify required parameter 'jobId' is not null or undefined
         if (jobId === null || jobId === undefined) {
@@ -682,6 +678,8 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/jobs/v1/jobs/{job_id}/steps/{job_step_id}/'
             .replace('{' + 'job_id' + '}', encodeURIComponent(String(jobId)))
@@ -709,6 +707,17 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -721,25 +730,13 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_jobs 
      * Update multiple job steps
-     * @param appID 
-     * @param authToken 
      * @param jobId 
      * @param jobStepsUpdateSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async jobsV1JobsJobIdStepsPatch(appID: string, authToken: string, jobId: string, jobStepsUpdateSchema: JobStepsUpdateSchema, _options?: Configuration): Promise<RequestContext> {
+    public async jobsV1JobsJobIdStepsPatch(jobId: string, jobStepsUpdateSchema: JobStepsUpdateSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsJobIdStepsPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsJobIdStepsPatch", "authToken");
-        }
-
 
         // verify required parameter 'jobId' is not null or undefined
         if (jobId === null || jobId === undefined) {
@@ -751,6 +748,8 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         if (jobStepsUpdateSchema === null || jobStepsUpdateSchema === undefined) {
             throw new RequiredError("JobsApi", "jobsV1JobsJobIdStepsPatch", "jobStepsUpdateSchema");
         }
+
+
 
 
         // Path Params
@@ -779,6 +778,17 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -791,25 +801,13 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_jobs 
      * Update multiple job steps
-     * @param appID 
-     * @param authToken 
      * @param jobId 
      * @param jobStepsUpdateSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async jobsV1JobsJobIdStepsPut(appID: string, authToken: string, jobId: string, jobStepsUpdateSchema: JobStepsUpdateSchema, _options?: Configuration): Promise<RequestContext> {
+    public async jobsV1JobsJobIdStepsPut(jobId: string, jobStepsUpdateSchema: JobStepsUpdateSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsJobIdStepsPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsJobIdStepsPut", "authToken");
-        }
-
 
         // verify required parameter 'jobId' is not null or undefined
         if (jobId === null || jobId === undefined) {
@@ -821,6 +819,8 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         if (jobStepsUpdateSchema === null || jobStepsUpdateSchema === undefined) {
             throw new RequiredError("JobsApi", "jobsV1JobsJobIdStepsPut", "jobStepsUpdateSchema");
         }
+
+
 
 
         // Path Params
@@ -849,6 +849,17 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -861,29 +872,19 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_jobs 
      * Create a new job
+     * @param jobSchema body
      * @param appID 
      * @param authToken 
-     * @param jobSchema body
      */
-    public async jobsV1JobsPost(appID: string, authToken: string, jobSchema: JobSchema, _options?: Configuration): Promise<RequestContext> {
+    public async jobsV1JobsPost(jobSchema: JobSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsPost", "authToken");
-        }
-
 
         // verify required parameter 'jobSchema' is not null or undefined
         if (jobSchema === null || jobSchema === undefined) {
             throw new RequiredError("JobsApi", "jobsV1JobsPost", "jobSchema");
         }
+
+
 
 
         // Path Params
@@ -911,6 +912,17 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -923,29 +935,19 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_jobs 
      * Change jobs priority
+     * @param jobsPrioritySchema body
      * @param appID 
      * @param authToken 
-     * @param jobsPrioritySchema body
      */
-    public async jobsV1JobsPriorityPut(appID: string, authToken: string, jobsPrioritySchema: JobsPrioritySchema, _options?: Configuration): Promise<RequestContext> {
+    public async jobsV1JobsPriorityPut(jobsPrioritySchema: JobsPrioritySchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsPriorityPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsPriorityPut", "authToken");
-        }
-
 
         // verify required parameter 'jobsPrioritySchema' is not null or undefined
         if (jobsPrioritySchema === null || jobsPrioritySchema === undefined) {
             throw new RequiredError("JobsApi", "jobsV1JobsPriorityPut", "jobsPrioritySchema");
         }
+
+
 
 
         // Path Params
@@ -973,6 +975,17 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -985,29 +998,19 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_jobs 
      * Change jobs state
+     * @param jobsStateSchema1 body
      * @param appID 
      * @param authToken 
-     * @param jobsStateSchema1 body
      */
-    public async jobsV1JobsStatePut(appID: string, authToken: string, jobsStateSchema1: JobsStateSchema1, _options?: Configuration): Promise<RequestContext> {
+    public async jobsV1JobsStatePut(jobsStateSchema1: JobsStateSchema1, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsStatePut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("JobsApi", "jobsV1JobsStatePut", "authToken");
-        }
-
 
         // verify required parameter 'jobsStateSchema1' is not null or undefined
         if (jobsStateSchema1 === null || jobsStateSchema1 === undefined) {
             throw new RequiredError("JobsApi", "jobsV1JobsStatePut", "jobsStateSchema1");
         }
+
+
 
 
         // Path Params
@@ -1035,6 +1038,17 @@ export class JobsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {

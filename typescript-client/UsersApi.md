@@ -58,9 +58,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1GroupsBasicGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | Which page number to fetch (optional)
   page: 1,
@@ -96,8 +96,8 @@ apiInstance.usersV1GroupsBasicGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **sort** | [**string**] | A comma separated list of fieldnames with order. For example - first_name,asc;last_name,desc | (optional) defaults to undefined
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -152,9 +152,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1GroupsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | Which page number to fetch (optional)
   page: 1,
@@ -190,8 +190,8 @@ apiInstance.usersV1GroupsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **sort** | [**string**] | A comma separated list of fieldnames with order. For example - first_name,asc;last_name,desc | (optional) defaults to undefined
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -247,11 +247,11 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1GroupsGroupIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   groupId: "group_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1GroupsGroupIdDelete(body).then((data:any) => {
@@ -264,9 +264,9 @@ apiInstance.usersV1GroupsGroupIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **groupId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -311,11 +311,11 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1GroupsGroupIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   groupId: "group_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1GroupsGroupIdGet(body).then((data:any) => {
@@ -328,9 +328,9 @@ apiInstance.usersV1GroupsGroupIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **groupId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -375,11 +375,11 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1GroupsGroupIdLogoDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   groupId: "group_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1GroupsGroupIdLogoDelete(body).then((data:any) => {
@@ -392,9 +392,9 @@ apiInstance.usersV1GroupsGroupIdLogoDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **groupId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -438,15 +438,15 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1GroupsGroupIdLogoPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   groupId: "group_id_example",
   // AuthV1SystemDomainsSystemDomainIdLogoPostRequest
   authV1SystemDomainsSystemDomainIdLogoPostRequest: {
     logo: { data: Buffer.from(fs.readFileSync('/path/to/file', 'utf-8')), name: '/path/to/file' },
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1GroupsGroupIdLogoPost(body).then((data:any) => {
@@ -460,9 +460,9 @@ apiInstance.usersV1GroupsGroupIdLogoPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authV1SystemDomainsSystemDomainIdLogoPostRequest** | **AuthV1SystemDomainsSystemDomainIdLogoPostRequest**|  |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **groupId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -506,10 +506,6 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1GroupsGroupIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   groupId: "group_id_example",
   // GroupSchema | body
   groupSchema: {
@@ -524,6 +520,10 @@ let body:iconik.UsersApiUsersV1GroupsGroupIdPatchRequest = {
     ],
     samlPrimaryGroupPriority: -2147483648,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1GroupsGroupIdPatch(body).then((data:any) => {
@@ -537,9 +537,9 @@ apiInstance.usersV1GroupsGroupIdPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupSchema** | **GroupSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **groupId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -548,7 +548,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -584,10 +584,6 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1GroupsGroupIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   groupId: "group_id_example",
   // GroupSchema | body
   groupSchema: {
@@ -602,6 +598,10 @@ let body:iconik.UsersApiUsersV1GroupsGroupIdPutRequest = {
     ],
     samlPrimaryGroupPriority: -2147483648,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1GroupsGroupIdPut(body).then((data:any) => {
@@ -615,9 +615,9 @@ apiInstance.usersV1GroupsGroupIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupSchema** | **GroupSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **groupId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -626,7 +626,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -662,11 +662,11 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1GroupsGroupIdReindexPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   groupId: "group_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1GroupsGroupIdReindexPost(body).then((data:any) => {
@@ -679,9 +679,9 @@ apiInstance.usersV1GroupsGroupIdReindexPost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **groupId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -690,7 +690,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -726,13 +726,13 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1GroupsGroupIdUsersUserIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   groupId: "group_id_example",
   // string
   userId: "user_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1GroupsGroupIdUsersUserIdDelete(body).then((data:any) => {
@@ -745,10 +745,10 @@ apiInstance.usersV1GroupsGroupIdUsersUserIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **groupId** | [**string**] |  | defaults to undefined
  **userId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -757,7 +757,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -793,13 +793,13 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1GroupsGroupIdUsersUserIdPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   groupId: "group_id_example",
   // string
   userId: "user_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1GroupsGroupIdUsersUserIdPost(body).then((data:any) => {
@@ -812,10 +812,10 @@ apiInstance.usersV1GroupsGroupIdUsersUserIdPost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **groupId** | [**string**] |  | defaults to undefined
  **userId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -824,7 +824,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -858,9 +858,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1GroupsMappingsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 1,
@@ -878,8 +878,8 @@ apiInstance.usersV1GroupsMappingsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to undefined
  **lastId** | [**string**] |  | (optional) defaults to undefined
 
@@ -890,7 +890,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -926,11 +926,11 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1GroupsMappingsNameDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   name: "name_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1GroupsMappingsNameDelete(body).then((data:any) => {
@@ -943,9 +943,9 @@ apiInstance.usersV1GroupsMappingsNameDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **name** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -954,7 +954,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -990,11 +990,11 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1GroupsMappingsNameGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   name: "name_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1GroupsMappingsNameGet(body).then((data:any) => {
@@ -1007,9 +1007,9 @@ apiInstance.usersV1GroupsMappingsNameGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **name** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1018,7 +1018,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1053,15 +1053,15 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1GroupsMappingsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // GroupMappingSchema | body
   groupMappingSchema: {
     groupId: "groupId_example",
     name: "name_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1GroupsMappingsPost(body).then((data:any) => {
@@ -1075,8 +1075,8 @@ apiInstance.usersV1GroupsMappingsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupMappingSchema** | **GroupMappingSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1085,7 +1085,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1120,10 +1120,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1GroupsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // GroupSchema | body
   groupSchema: {
     alias: "alias_example",
@@ -1137,6 +1133,10 @@ let body:iconik.UsersApiUsersV1GroupsPostRequest = {
     ],
     samlPrimaryGroupPriority: -2147483648,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1GroupsPost(body).then((data:any) => {
@@ -1150,8 +1150,8 @@ apiInstance.usersV1GroupsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupSchema** | **GroupSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1160,7 +1160,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1194,9 +1194,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1UsersBasicGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | Which page number to fetch (optional)
   page: 1,
@@ -1246,8 +1246,8 @@ apiInstance.usersV1UsersBasicGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **sort** | [**string**] | A comma separated list of fieldnames with order. For example - first_name,asc;last_name,desc | (optional) defaults to undefined
@@ -1274,7 +1274,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1309,9 +1309,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1UsersCurrentGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -1325,8 +1325,8 @@ apiInstance.usersV1UsersCurrentGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1335,7 +1335,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1370,10 +1370,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1UsersCurrentPatchRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // UserSchema1 | body
   userSchema1: {
     dateTermsAccepted: new Date('1970-01-01T00:00:00.00Z'),
@@ -1396,6 +1392,10 @@ let body:iconik.UsersApiUsersV1UsersCurrentPatchRequest = {
     ],
     type: "POWER",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1UsersCurrentPatch(body).then((data:any) => {
@@ -1409,8 +1409,8 @@ apiInstance.usersV1UsersCurrentPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userSchema1** | **UserSchema1**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1419,7 +1419,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1454,9 +1454,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1UsersCurrentPhotoDeleteRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -1470,8 +1470,8 @@ apiInstance.usersV1UsersCurrentPhotoDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1480,7 +1480,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1515,14 +1515,14 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1UsersCurrentPhotoPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // UsersV1UsersCurrentPhotoPostRequest
   usersV1UsersCurrentPhotoPostRequest: {
     photo: { data: Buffer.from(fs.readFileSync('/path/to/file', 'utf-8')), name: '/path/to/file' },
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1UsersCurrentPhotoPost(body).then((data:any) => {
@@ -1536,8 +1536,8 @@ apiInstance.usersV1UsersCurrentPhotoPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **usersV1UsersCurrentPhotoPostRequest** | **UsersV1UsersCurrentPhotoPostRequest**|  |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1546,7 +1546,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1580,10 +1580,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1UsersCurrentPutRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // UserSchema1 | body
   userSchema1: {
     dateTermsAccepted: new Date('1970-01-01T00:00:00.00Z'),
@@ -1606,6 +1602,10 @@ let body:iconik.UsersApiUsersV1UsersCurrentPutRequest = {
     ],
     type: "POWER",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1UsersCurrentPut(body).then((data:any) => {
@@ -1619,8 +1619,8 @@ apiInstance.usersV1UsersCurrentPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userSchema1** | **UserSchema1**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1629,7 +1629,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1664,9 +1664,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1UsersCurrentRolesGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -1680,8 +1680,8 @@ apiInstance.usersV1UsersCurrentRolesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1690,7 +1690,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1724,9 +1724,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1UsersGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | Which page number to fetch (optional)
   page: 1,
@@ -1776,8 +1776,8 @@ apiInstance.usersV1UsersGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **sort** | [**string**] | A comma separated list of fieldnames with order. For example - first_name,asc;last_name,desc | (optional) defaults to undefined
@@ -1804,7 +1804,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1839,10 +1839,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1UsersPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // UserCreateSchema | body
   userCreateSchema: {
     dateTermsAccepted: new Date('1970-01-01T00:00:00.00Z'),
@@ -1865,6 +1861,10 @@ let body:iconik.UsersApiUsersV1UsersPostRequest = {
     ],
     type: "POWER",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1UsersPost(body).then((data:any) => {
@@ -1878,8 +1878,8 @@ apiInstance.usersV1UsersPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userCreateSchema** | **UserCreateSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1888,7 +1888,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1923,11 +1923,11 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1UsersUserIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   userId: "user_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1UsersUserIdDelete(body).then((data:any) => {
@@ -1940,9 +1940,9 @@ apiInstance.usersV1UsersUserIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **userId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1951,7 +1951,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1987,11 +1987,11 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1UsersUserIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   userId: "user_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1UsersUserIdGet(body).then((data:any) => {
@@ -2004,9 +2004,9 @@ apiInstance.usersV1UsersUserIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **userId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2015,7 +2015,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2051,10 +2051,6 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1UsersUserIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   userId: "user_id_example",
   // UserSchema1 | body
   userSchema1: {
@@ -2078,6 +2074,10 @@ let body:iconik.UsersApiUsersV1UsersUserIdPatchRequest = {
     ],
     type: "POWER",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1UsersUserIdPatch(body).then((data:any) => {
@@ -2091,9 +2091,9 @@ apiInstance.usersV1UsersUserIdPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userSchema1** | **UserSchema1**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **userId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2102,7 +2102,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2138,11 +2138,11 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1UsersUserIdPhotoDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   userId: "user_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1UsersUserIdPhotoDelete(body).then((data:any) => {
@@ -2155,9 +2155,9 @@ apiInstance.usersV1UsersUserIdPhotoDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **userId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2166,7 +2166,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2202,15 +2202,15 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1UsersUserIdPhotoPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   userId: "user_id_example",
   // UsersV1UsersCurrentPhotoPostRequest
   usersV1UsersCurrentPhotoPostRequest: {
     photo: { data: Buffer.from(fs.readFileSync('/path/to/file', 'utf-8')), name: '/path/to/file' },
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1UsersUserIdPhotoPost(body).then((data:any) => {
@@ -2224,9 +2224,9 @@ apiInstance.usersV1UsersUserIdPhotoPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **usersV1UsersCurrentPhotoPostRequest** | **UsersV1UsersCurrentPhotoPostRequest**|  |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **userId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2235,7 +2235,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2270,10 +2270,6 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1UsersUserIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   userId: "user_id_example",
   // UserSchema1 | body
   userSchema1: {
@@ -2297,6 +2293,10 @@ let body:iconik.UsersApiUsersV1UsersUserIdPutRequest = {
     ],
     type: "POWER",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1UsersUserIdPut(body).then((data:any) => {
@@ -2310,9 +2310,9 @@ apiInstance.usersV1UsersUserIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userSchema1** | **UserSchema1**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **userId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2321,7 +2321,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2357,11 +2357,11 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1UsersUserIdReindexPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   userId: "user_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1UsersUserIdReindexPost(body).then((data:any) => {
@@ -2374,9 +2374,9 @@ apiInstance.usersV1UsersUserIdReindexPost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **userId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2385,7 +2385,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2421,11 +2421,11 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1UsersUserIdRolesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   userId: "user_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1UsersUserIdRolesGet(body).then((data:any) => {
@@ -2438,9 +2438,9 @@ apiInstance.usersV1UsersUserIdRolesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **userId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2449,7 +2449,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2484,13 +2484,13 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1UsersUserIdRolesRoleGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   userId: "user_id_example",
   // string
   role: "role_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1UsersUserIdRolesRoleGet(body).then((data:any) => {
@@ -2503,10 +2503,10 @@ apiInstance.usersV1UsersUserIdRolesRoleGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **userId** | [**string**] |  | defaults to undefined
  **role** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2515,7 +2515,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2550,11 +2550,11 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1UsersUserIdSamlDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   userId: "user_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1UsersUserIdSamlDelete(body).then((data:any) => {
@@ -2567,9 +2567,9 @@ apiInstance.usersV1UsersUserIdSamlDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **userId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2578,7 +2578,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2613,16 +2613,16 @@ const apiInstance = new iconik.UsersApi(configuration);
 
 let body:iconik.UsersApiUsersV1UsersUserIdSamlPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   userId: "user_id_example",
   // UserSamlIdpUpdateSchema | body
   userSamlIdpUpdateSchema: {
     email: "email_example",
     identityProviderId: "identityProviderId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersV1UsersUserIdSamlPut(body).then((data:any) => {
@@ -2636,9 +2636,9 @@ apiInstance.usersV1UsersUserIdSamlPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userSamlIdpUpdateSchema** | **UserSamlIdpUpdateSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **userId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2647,7 +2647,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 

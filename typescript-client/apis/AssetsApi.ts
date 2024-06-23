@@ -82,29 +82,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_approval_status_in_bulk 
      * Create a job for bulk request & set approval
+     * @param bulkSetApprovalSchema body
      * @param authToken 
      * @param appID 
-     * @param bulkSetApprovalSchema body
      */
-    public async assetsV1ApprovalsBulkPost(authToken: string, appID: string, bulkSetApprovalSchema: BulkSetApprovalSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ApprovalsBulkPost(bulkSetApprovalSchema: BulkSetApprovalSchema, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ApprovalsBulkPost", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ApprovalsBulkPost", "appID");
-        }
-
 
         // verify required parameter 'bulkSetApprovalSchema' is not null or undefined
         if (bulkSetApprovalSchema === null || bulkSetApprovalSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1ApprovalsBulkPost", "bulkSetApprovalSchema");
         }
+
+
 
 
         // Path Params
@@ -132,6 +122,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -144,29 +145,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_approval_status_in_bulk 
      * Create a job for bulk approval status removal
+     * @param bulkRemoveApprovalSchema body
      * @param authToken 
      * @param appID 
-     * @param bulkRemoveApprovalSchema body
      */
-    public async assetsV1ApprovalsBulkRemovePost(authToken: string, appID: string, bulkRemoveApprovalSchema: BulkRemoveApprovalSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ApprovalsBulkRemovePost(bulkRemoveApprovalSchema: BulkRemoveApprovalSchema, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ApprovalsBulkRemovePost", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ApprovalsBulkRemovePost", "appID");
-        }
-
 
         // verify required parameter 'bulkRemoveApprovalSchema' is not null or undefined
         if (bulkRemoveApprovalSchema === null || bulkRemoveApprovalSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1ApprovalsBulkRemovePost", "bulkRemoveApprovalSchema");
         }
+
+
 
 
         // Path Params
@@ -194,6 +185,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -206,29 +208,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_assets 
      * Delete a particular asset by id
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      */
-    public async assetsV1AssetsAssetIdDelete(appID: string, authToken: string, assetId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdDelete(assetId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdDelete", "assetId");
         }
+
+
 
 
         // Path Params
@@ -246,6 +238,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -258,31 +261,21 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_assets 
      * Returns a particular asset by id
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      * @param includeCollections include collection membership
      * @param includeUsers include info about the users who have interacted with this asset
      */
-    public async assetsV1AssetsAssetIdGet(appID: string, authToken: string, assetId: string, includeCollections?: boolean, includeUsers?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdGet(assetId: string, appID?: string, authToken?: string, includeCollections?: boolean, includeUsers?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdGet", "assetId");
         }
+
+
 
 
 
@@ -312,6 +305,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -324,33 +328,23 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_assets_history 
      * Get list of assets
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      * @param perPage The number of items for each page
      * @param page Which page number to fetch
      * @param sort A comma separated list of fieldnames with order. For example - first_name,asc;last_name,desc
      * @param filter A comma separated list of fieldnames with order For example - first_name,eq,Vlad;last_name,eq,Gudkov
      */
-    public async assetsV1AssetsAssetIdHistoryGet(appID: string, authToken: string, assetId: string, perPage?: number, page?: number, sort?: string, filter?: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdHistoryGet(assetId: string, appID?: string, authToken?: string, perPage?: number, page?: number, sort?: string, filter?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdHistoryGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdHistoryGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdHistoryGet", "assetId");
         }
+
+
 
 
 
@@ -392,6 +386,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -404,25 +409,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_assets_history 
      * Deletes an asset history entity
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param historyEntityId 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdHistoryHistoryEntityIdDelete(appID: string, authToken: string, assetId: string, historyEntityId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdHistoryHistoryEntityIdDelete(assetId: string, historyEntityId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdHistoryHistoryEntityIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdHistoryHistoryEntityIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -434,6 +427,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (historyEntityId === null || historyEntityId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdHistoryHistoryEntityIdDelete", "historyEntityId");
         }
+
+
 
 
         // Path Params
@@ -452,6 +447,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -464,25 +470,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_assets_history 
      * Get an asset history entity
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param historyEntityId 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdHistoryHistoryEntityIdGet(appID: string, authToken: string, assetId: string, historyEntityId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdHistoryHistoryEntityIdGet(assetId: string, historyEntityId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdHistoryHistoryEntityIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdHistoryHistoryEntityIdGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -494,6 +488,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (historyEntityId === null || historyEntityId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdHistoryHistoryEntityIdGet", "historyEntityId");
         }
+
+
 
 
         // Path Params
@@ -512,6 +508,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -524,25 +531,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_assets_history 
      * Reindex asset history entity
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param historyEntityId 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdHistoryHistoryEntityIdReindexPost(appID: string, authToken: string, assetId: string, historyEntityId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdHistoryHistoryEntityIdReindexPost(assetId: string, historyEntityId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdHistoryHistoryEntityIdReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdHistoryHistoryEntityIdReindexPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -554,6 +549,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (historyEntityId === null || historyEntityId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdHistoryHistoryEntityIdReindexPost", "historyEntityId");
         }
+
+
 
 
         // Path Params
@@ -572,6 +569,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -584,25 +592,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_assets_history 
      * Create an asset history entity
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param assetHistorySchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdHistoryPost(appID: string, authToken: string, assetId: string, assetHistorySchema: AssetHistorySchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdHistoryPost(assetId: string, assetHistorySchema: AssetHistorySchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdHistoryPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdHistoryPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -614,6 +610,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (assetHistorySchema === null || assetHistorySchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdHistoryPost", "assetHistorySchema");
         }
+
+
 
 
         // Path Params
@@ -642,6 +640,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -654,25 +663,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_assets 
      * Update asset
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param assetSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdPatch(appID: string, authToken: string, assetId: string, assetSchema: AssetSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdPatch(assetId: string, assetSchema: AssetSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -684,6 +681,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (assetSchema === null || assetSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdPatch", "assetSchema");
         }
+
+
 
 
         // Path Params
@@ -712,6 +711,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -724,29 +734,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_purge_assets 
      * Purges a particular asset by id immediately
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      */
-    public async assetsV1AssetsAssetIdPurgeDelete(appID: string, authToken: string, assetId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdPurgeDelete(assetId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdPurgeDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdPurgeDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdPurgeDelete", "assetId");
         }
+
+
 
 
         // Path Params
@@ -764,6 +764,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -776,25 +787,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_assets 
      * Update asset
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param assetSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdPut(appID: string, authToken: string, assetId: string, assetSchema: AssetSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdPut(assetId: string, assetSchema: AssetSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdPut", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -806,6 +805,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (assetSchema === null || assetSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdPut", "assetSchema");
         }
+
+
 
 
         // Path Params
@@ -834,6 +835,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -846,25 +858,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_assets 
      * Reindex asset
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param reindexAssetSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdReindexPost(appID: string, authToken: string, assetId: string, reindexAssetSchema: ReindexAssetSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdReindexPost(assetId: string, reindexAssetSchema: ReindexAssetSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdReindexPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -876,6 +876,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (reindexAssetSchema === null || reindexAssetSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdReindexPost", "reindexAssetSchema");
         }
+
+
 
 
         // Path Params
@@ -904,6 +906,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -916,33 +929,23 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_asset_relations 
      * Returns an assets relations
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      * @param includeDeleted Also show assets from recycle bin in relations
      * @param perPage The number of items for each page
      * @param page Which page number to fetch
      * @param sort A comma separated list of fieldnames with order. For example - first_name,asc;last_name,desc
      */
-    public async assetsV1AssetsAssetIdRelationsGet(appID: string, authToken: string, assetId: string, includeDeleted?: boolean, perPage?: number, page?: number, sort?: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdRelationsGet(assetId: string, appID?: string, authToken?: string, includeDeleted?: boolean, perPage?: number, page?: number, sort?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdRelationsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdRelationsGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdRelationsGet", "assetId");
         }
+
+
 
 
 
@@ -984,6 +987,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -996,25 +1010,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_create_asset_relations 
      * Create a new asset relation
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param relationSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdRelationsPost(appID: string, authToken: string, assetId: string, relationSchema: RelationSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdRelationsPost(assetId: string, relationSchema: RelationSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdRelationsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdRelationsPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1026,6 +1028,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (relationSchema === null || relationSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdRelationsPost", "relationSchema");
         }
+
+
 
 
         // Path Params
@@ -1054,6 +1058,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1066,26 +1081,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_asset_relations 
      * Returns assets that has a relation to this asset
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param relationType 
+     * @param appID 
+     * @param authToken 
      * @param includeDeleted Also show assets from recycle bin in relations
      */
-    public async assetsV1AssetsAssetIdRelationsRelationTypeGet(appID: string, authToken: string, assetId: string, relationType: string, includeDeleted?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdRelationsRelationTypeGet(assetId: string, relationType: string, appID?: string, authToken?: string, includeDeleted?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdRelationsRelationTypeGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdRelationsRelationTypeGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1097,6 +1100,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (relationType === null || relationType === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdRelationsRelationTypeGet", "relationType");
         }
+
+
 
 
 
@@ -1121,6 +1126,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1133,26 +1149,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_asset_relations 
      * Delete a particular asset by id
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param relationType 
      * @param relatedToAssetId 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdDelete(appID: string, authToken: string, assetId: string, relationType: string, relatedToAssetId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdDelete(assetId: string, relationType: string, relatedToAssetId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1172,6 +1176,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/assets/v1/assets/{asset_id}/relations/{relation_type}/{related_to_asset_id}/'
             .replace('{' + 'asset_id' + '}', encodeURIComponent(String(assetId)))
@@ -1189,6 +1195,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1201,27 +1218,15 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_create_asset_relations 
      * Create a new asset relation
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param relationType 
      * @param relatedToAssetId 
      * @param relationSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdPost(appID: string, authToken: string, assetId: string, relationType: string, relatedToAssetId: string, relationSchema: RelationSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdPost(assetId: string, relationType: string, relatedToAssetId: string, relationSchema: RelationSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1245,6 +1250,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (relationSchema === null || relationSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdPost", "relationSchema");
         }
+
+
 
 
         // Path Params
@@ -1275,6 +1282,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1287,26 +1305,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_create_asset_relations 
      * Reverse a particular asset\'s relation
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param relationType 
      * @param relatedToAssetId 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdReversePost(appID: string, authToken: string, assetId: string, relationType: string, relatedToAssetId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdReversePost(assetId: string, relationType: string, relatedToAssetId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdReversePost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdReversePost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1326,6 +1332,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/assets/v1/assets/{asset_id}/relations/{relation_type}/{related_to_asset_id}/reverse/'
             .replace('{' + 'asset_id' + '}', encodeURIComponent(String(assetId)))
@@ -1343,6 +1351,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1355,29 +1374,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_assets 
      * Restore deleted asset by id
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      */
-    public async assetsV1AssetsAssetIdRestorePut(appID: string, authToken: string, assetId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdRestorePut(assetId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdRestorePut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdRestorePut", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdRestorePut", "assetId");
         }
+
+
 
 
         // Path Params
@@ -1395,6 +1404,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1407,25 +1427,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_assets 
      * Update metadata for asset
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param assetElasticSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdSearchDocumentPut(appID: string, authToken: string, assetId: string, assetElasticSchema: AssetElasticSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdSearchDocumentPut(assetId: string, assetElasticSchema: AssetElasticSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSearchDocumentPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSearchDocumentPut", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1437,6 +1445,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (assetElasticSchema === null || assetElasticSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSearchDocumentPut", "assetElasticSchema");
         }
+
+
 
 
         // Path Params
@@ -1465,6 +1475,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1477,27 +1498,15 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_segments 
      * Delete segments with either ids or by type
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param deleteSegmentsSchema body
+     * @param appID 
+     * @param authToken 
      * @param immediately If false, delete segments asynchronously
      * @param ignoreReindexing If false, reindex
      */
-    public async assetsV1AssetsAssetIdSegmentsBulkDelete(appID: string, authToken: string, assetId: string, deleteSegmentsSchema: DeleteSegmentsSchema, immediately?: boolean, ignoreReindexing?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdSegmentsBulkDelete(assetId: string, deleteSegmentsSchema: DeleteSegmentsSchema, appID?: string, authToken?: string, immediately?: boolean, ignoreReindexing?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsBulkDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsBulkDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1509,6 +1518,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (deleteSegmentsSchema === null || deleteSegmentsSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsBulkDelete", "deleteSegmentsSchema");
         }
+
+
 
 
 
@@ -1549,6 +1560,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1561,25 +1583,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_create_segments 
      * Create multiple new segments for a single asset
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param bulkCreateSegmentsSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdSegmentsBulkPost(appID: string, authToken: string, assetId: string, bulkCreateSegmentsSchema: BulkCreateSegmentsSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdSegmentsBulkPost(assetId: string, bulkCreateSegmentsSchema: BulkCreateSegmentsSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsBulkPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsBulkPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1591,6 +1601,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (bulkCreateSegmentsSchema === null || bulkCreateSegmentsSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsBulkPost", "bulkCreateSegmentsSchema");
         }
+
+
 
 
         // Path Params
@@ -1619,6 +1631,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1631,9 +1654,9 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_segments 
      * List of segments
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      * @param sort Sort on field (Comma separated)
      * @param ids Only include these segments (Comma separated)
      * @param query Search using query
@@ -1653,25 +1676,15 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param status Filter segments by status
      * @param includeUsers Include segment\&#39;s authors info
      */
-    public async assetsV1AssetsAssetIdSegmentsGet(appID: string, authToken: string, assetId: string, sort?: string, ids?: string, query?: string, includes?: string, perPage?: number, page?: number, scroll?: boolean, scrollId?: string, transcriptionId?: string, versionId?: string, segmentType?: string, segmentColor?: string, timeStartMilliseconds?: number, timeEndMilliseconds?: number, timeStartMillisecondsGte?: number, timeEndMillisecondsLte?: number, status?: string, includeUsers?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdSegmentsGet(assetId: string, appID?: string, authToken?: string, sort?: string, ids?: string, query?: string, includes?: string, perPage?: number, page?: number, scroll?: boolean, scrollId?: string, transcriptionId?: string, versionId?: string, segmentType?: string, segmentColor?: string, timeStartMilliseconds?: number, timeEndMilliseconds?: number, timeStartMillisecondsGte?: number, timeEndMillisecondsLte?: number, status?: string, includeUsers?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsGet", "assetId");
         }
+
+
 
 
 
@@ -1797,6 +1810,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1809,26 +1833,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_create_segments 
      * Create a new segment
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param segmentSchema body
+     * @param appID 
+     * @param authToken 
      * @param shareUserEmail This header is used for shares by URL to identify user. Only valid emails are allowed.
      */
-    public async assetsV1AssetsAssetIdSegmentsPost(appID: string, authToken: string, assetId: string, segmentSchema: SegmentSchema, shareUserEmail?: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdSegmentsPost(assetId: string, segmentSchema: SegmentSchema, appID?: string, authToken?: string, shareUserEmail?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1840,6 +1852,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (segmentSchema === null || segmentSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsPost", "segmentSchema");
         }
+
+
 
 
 
@@ -1872,6 +1886,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1884,25 +1909,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_segments 
      * Reindex assets segments
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param reindexSegmentSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdSegmentsReindexPost(appID: string, authToken: string, assetId: string, reindexSegmentSchema: ReindexSegmentSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdSegmentsReindexPost(assetId: string, reindexSegmentSchema: ReindexSegmentSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsReindexPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1914,6 +1927,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (reindexSegmentSchema === null || reindexSegmentSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsReindexPost", "reindexSegmentSchema");
         }
+
+
 
 
         // Path Params
@@ -1942,6 +1957,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1954,26 +1980,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_segments 
      * Delete a particular segment from an asset by id
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param segmentId 
+     * @param appID 
+     * @param authToken 
      * @param softDelete 
      */
-    public async assetsV1AssetsAssetIdSegmentsSegmentIdDelete(appID: string, authToken: string, assetId: string, segmentId: string, softDelete?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdSegmentsSegmentIdDelete(assetId: string, segmentId: string, appID?: string, authToken?: string, softDelete?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSegmentIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSegmentIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1985,6 +1999,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (segmentId === null || segmentId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSegmentIdDelete", "segmentId");
         }
+
+
 
 
 
@@ -2009,6 +2025,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2021,27 +2048,15 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_segments 
      * Get a segment by ID
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param segmentId 
+     * @param appID 
+     * @param authToken 
      * @param scroll If true passed then uses scroll pagination instead of default one
      * @param scrollId In order to get next batch of results using scroll pagination the scroll_id is required 
      */
-    public async assetsV1AssetsAssetIdSegmentsSegmentIdGet(appID: string, authToken: string, assetId: string, segmentId: string, scroll?: boolean, scrollId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdSegmentsSegmentIdGet(assetId: string, segmentId: string, appID?: string, authToken?: string, scroll?: boolean, scrollId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSegmentIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSegmentIdGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2053,6 +2068,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (segmentId === null || segmentId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSegmentIdGet", "segmentId");
         }
+
+
 
 
 
@@ -2083,6 +2100,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2095,26 +2123,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_segments 
      * Update segment
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param segmentId 
      * @param editSegmentSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdSegmentsSegmentIdPatch(appID: string, authToken: string, assetId: string, segmentId: string, editSegmentSchema: EditSegmentSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdSegmentsSegmentIdPatch(assetId: string, segmentId: string, editSegmentSchema: EditSegmentSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSegmentIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSegmentIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2132,6 +2148,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (editSegmentSchema === null || editSegmentSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSegmentIdPatch", "editSegmentSchema");
         }
+
+
 
 
         // Path Params
@@ -2161,6 +2179,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2173,26 +2202,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_segments 
      * Update segment
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param segmentId 
      * @param editSegmentSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdSegmentsSegmentIdPut(appID: string, authToken: string, assetId: string, segmentId: string, editSegmentSchema: EditSegmentSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdSegmentsSegmentIdPut(assetId: string, segmentId: string, editSegmentSchema: EditSegmentSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSegmentIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSegmentIdPut", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2210,6 +2227,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (editSegmentSchema === null || editSegmentSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSegmentIdPut", "editSegmentSchema");
         }
+
+
 
 
         // Path Params
@@ -2239,6 +2258,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2251,26 +2281,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_segments 
      * Reindex assets segment
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param segmentId 
      * @param reindexSegmentSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdSegmentsSegmentIdReindexPost(appID: string, authToken: string, assetId: string, segmentId: string, reindexSegmentSchema: ReindexSegmentSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdSegmentsSegmentIdReindexPost(assetId: string, segmentId: string, reindexSegmentSchema: ReindexSegmentSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSegmentIdReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSegmentIdReindexPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2288,6 +2306,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (reindexSegmentSchema === null || reindexSegmentSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSegmentIdReindexPost", "reindexSegmentSchema");
         }
+
+
 
 
         // Path Params
@@ -2317,6 +2337,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2329,10 +2360,10 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_segments 
      * List of segments
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param segmentType 
+     * @param appID 
+     * @param authToken 
      * @param sort Sort on field (Comma separated)
      * @param ids Only include these segments (Comma separated)
      * @param query Search using query
@@ -2346,20 +2377,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param timeStartMillisecondsGte Get segments with start time greater than or equal to time_start_milliseconds__gte 
      * @param timeEndMillisecondsLte Get segments with end time less than or equal to time_end_milliseconds__lte
      */
-    public async assetsV1AssetsAssetIdSegmentsSegmentTypeGet(appID: string, authToken: string, assetId: string, segmentType: string, sort?: string, ids?: string, query?: string, includes?: string, perPage?: number, page?: number, scroll?: boolean, scrollId?: string, timeStartMilliseconds?: number, timeEndMilliseconds?: number, timeStartMillisecondsGte?: number, timeEndMillisecondsLte?: number, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdSegmentsSegmentTypeGet(assetId: string, segmentType: string, appID?: string, authToken?: string, sort?: string, ids?: string, query?: string, includes?: string, perPage?: number, page?: number, scroll?: boolean, scrollId?: string, timeStartMilliseconds?: number, timeEndMilliseconds?: number, timeStartMillisecondsGte?: number, timeEndMillisecondsLte?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSegmentTypeGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSegmentTypeGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2371,6 +2390,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (segmentType === null || segmentType === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSegmentTypeGet", "segmentType");
         }
+
+
 
 
 
@@ -2461,6 +2482,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2473,9 +2505,9 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_segments 
      * List of segments as SRT file
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      * @param ids Only include these segments (Comma separated)
      * @param query Search using query
      * @param transcriptionId Filter segments by transcription_id
@@ -2484,25 +2516,15 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param segmentColor Filter segments by segment_color
      * @param wordsPerLine Limit the number of words per subtitle line
      */
-    public async assetsV1AssetsAssetIdSegmentsSrtGet(appID: string, authToken: string, assetId: string, ids?: string, query?: string, transcriptionId?: string, versionId?: string, segmentType?: string, segmentColor?: string, wordsPerLine?: number, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdSegmentsSrtGet(assetId: string, appID?: string, authToken?: string, ids?: string, query?: string, transcriptionId?: string, versionId?: string, segmentType?: string, segmentColor?: string, wordsPerLine?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSrtGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSrtGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsSrtGet", "assetId");
         }
+
+
 
 
 
@@ -2562,6 +2584,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2574,9 +2607,9 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_segments 
      * List of segments as WebVTT file
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      * @param ids Only include these segments (Comma separated)
      * @param query Search using query
      * @param transcriptionId Filter segments by transcription_id
@@ -2585,25 +2618,15 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param segmentColor Filter segments by segment_color
      * @param wordsPerLine Limit the number of words per subtitle line
      */
-    public async assetsV1AssetsAssetIdSegmentsVttGet(appID: string, authToken: string, assetId: string, ids?: string, query?: string, transcriptionId?: string, versionId?: string, segmentType?: string, segmentColor?: string, wordsPerLine?: number, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdSegmentsVttGet(assetId: string, appID?: string, authToken?: string, ids?: string, query?: string, transcriptionId?: string, versionId?: string, segmentType?: string, segmentColor?: string, wordsPerLine?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsVttGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsVttGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdSegmentsVttGet", "assetId");
         }
+
+
 
 
 
@@ -2663,6 +2686,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2675,29 +2709,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_create_assets 
      * Delete a particular asset by id on failed uplaod
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      */
-    public async assetsV1AssetsAssetIdUploadsDelete(appID: string, authToken: string, assetId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdUploadsDelete(assetId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdUploadsDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdUploadsDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdUploadsDelete", "assetId");
         }
+
+
 
 
         // Path Params
@@ -2715,6 +2739,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2727,26 +2762,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_versions 
      * Create a new asset\'s version from another asset
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param sourceAssetId 
      * @param createAssetVersionFromAssetSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdVersionsFromAssetsSourceAssetIdPost(appID: string, authToken: string, assetId: string, sourceAssetId: string, createAssetVersionFromAssetSchema: CreateAssetVersionFromAssetSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdVersionsFromAssetsSourceAssetIdPost(assetId: string, sourceAssetId: string, createAssetVersionFromAssetSchema: CreateAssetVersionFromAssetSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsFromAssetsSourceAssetIdPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsFromAssetsSourceAssetIdPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2764,6 +2787,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (createAssetVersionFromAssetSchema === null || createAssetVersionFromAssetSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsFromAssetsSourceAssetIdPost", "createAssetVersionFromAssetSchema");
         }
+
+
 
 
         // Path Params
@@ -2793,6 +2818,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2805,26 +2841,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_versions 
      * Create a new asset\'s version from another version
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param sourceVersionId 
      * @param createAssetVersionFromVersionSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdVersionsFromVersionsSourceVersionIdPost(appID: string, authToken: string, assetId: string, sourceVersionId: string, createAssetVersionFromVersionSchema: CreateAssetVersionFromVersionSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdVersionsFromVersionsSourceVersionIdPost(assetId: string, sourceVersionId: string, createAssetVersionFromVersionSchema: CreateAssetVersionFromVersionSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsFromVersionsSourceVersionIdPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsFromVersionsSourceVersionIdPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2842,6 +2866,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (createAssetVersionFromVersionSchema === null || createAssetVersionFromVersionSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsFromVersionsSourceVersionIdPost", "createAssetVersionFromVersionSchema");
         }
+
+
 
 
         // Path Params
@@ -2871,6 +2897,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2883,29 +2920,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_versions 
      * Delete all asset versions except the latest one
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      */
-    public async assetsV1AssetsAssetIdVersionsOldDelete(appID: string, authToken: string, assetId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdVersionsOldDelete(assetId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsOldDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsOldDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsOldDelete", "assetId");
         }
+
+
 
 
         // Path Params
@@ -2923,6 +2950,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2935,25 +2973,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_versions 
      * Add asset version
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param createAssetVersionSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdVersionsPost(appID: string, authToken: string, assetId: string, createAssetVersionSchema: CreateAssetVersionSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdVersionsPost(assetId: string, createAssetVersionSchema: CreateAssetVersionSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2965,6 +2991,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (createAssetVersionSchema === null || createAssetVersionSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsPost", "createAssetVersionSchema");
         }
+
+
 
 
         // Path Params
@@ -2993,6 +3021,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3005,26 +3044,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_versions 
      * Delete a particular asset version by id
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
+     * @param appID 
+     * @param authToken 
      * @param hardDelete completely remove the version
      */
-    public async assetsV1AssetsAssetIdVersionsVersionIdDelete(appID: string, authToken: string, assetId: string, versionId: string, hardDelete?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdVersionsVersionIdDelete(assetId: string, versionId: string, appID?: string, authToken?: string, hardDelete?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3036,6 +3063,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (versionId === null || versionId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdDelete", "versionId");
         }
+
+
 
 
 
@@ -3060,6 +3089,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3072,26 +3112,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_versions 
      * Edit asset version
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
      * @param assetVersionSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdVersionsVersionIdPatch(appID: string, authToken: string, assetId: string, versionId: string, assetVersionSchema: AssetVersionSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdVersionsVersionIdPatch(assetId: string, versionId: string, assetVersionSchema: AssetVersionSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3109,6 +3137,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (assetVersionSchema === null || assetVersionSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdPatch", "assetVersionSchema");
         }
+
+
 
 
         // Path Params
@@ -3138,6 +3168,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3150,25 +3191,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_versions 
      * Promote a particular asset version to a latest version
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdVersionsVersionIdPromotePut(appID: string, authToken: string, assetId: string, versionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdVersionsVersionIdPromotePut(assetId: string, versionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdPromotePut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdPromotePut", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3180,6 +3209,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (versionId === null || versionId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdPromotePut", "versionId");
         }
+
+
 
 
         // Path Params
@@ -3198,6 +3229,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3210,26 +3252,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_versions 
      * Edit asset version
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
      * @param assetVersionSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdVersionsVersionIdPut(appID: string, authToken: string, assetId: string, versionId: string, assetVersionSchema: AssetVersionSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdVersionsVersionIdPut(assetId: string, versionId: string, assetVersionSchema: AssetVersionSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdPut", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3247,6 +3277,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (assetVersionSchema === null || assetVersionSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdPut", "assetVersionSchema");
         }
+
+
 
 
         // Path Params
@@ -3276,6 +3308,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3288,25 +3331,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_transcriptions 
      * Get a list of transcription properties
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPropertiesGet(appID: string, authToken: string, assetId: string, versionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPropertiesGet(assetId: string, versionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPropertiesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPropertiesGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3318,6 +3349,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (versionId === null || versionId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPropertiesGet", "versionId");
         }
+
+
 
 
         // Path Params
@@ -3336,6 +3369,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3348,26 +3392,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_transcriptions 
      * Add a new transcription properties
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
      * @param assetTranscriptionPropertiesSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPropertiesPost(appID: string, authToken: string, assetId: string, versionId: string, assetTranscriptionPropertiesSchema: AssetTranscriptionPropertiesSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPropertiesPost(assetId: string, versionId: string, assetTranscriptionPropertiesSchema: AssetTranscriptionPropertiesSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPropertiesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPropertiesPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3385,6 +3417,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (assetTranscriptionPropertiesSchema === null || assetTranscriptionPropertiesSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPropertiesPost", "assetTranscriptionPropertiesSchema");
         }
+
+
 
 
         // Path Params
@@ -3414,6 +3448,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3426,26 +3471,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_transcriptions 
      * Add a new transcription properties
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
      * @param assetTranscriptionFromSubtitleSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsSubtitlesPost(appID: string, authToken: string, assetId: string, versionId: string, assetTranscriptionFromSubtitleSchema: AssetTranscriptionFromSubtitleSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsSubtitlesPost(assetId: string, versionId: string, assetTranscriptionFromSubtitleSchema: AssetTranscriptionFromSubtitleSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsSubtitlesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsSubtitlesPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3463,6 +3496,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (assetTranscriptionFromSubtitleSchema === null || assetTranscriptionFromSubtitleSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsSubtitlesPost", "assetTranscriptionFromSubtitleSchema");
         }
+
+
 
 
         // Path Params
@@ -3492,6 +3527,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3504,26 +3550,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_transcriptions 
      * Delete transcription properties by ID
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
      * @param transcriptionId 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesDelete(appID: string, authToken: string, assetId: string, versionId: string, transcriptionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesDelete(assetId: string, versionId: string, transcriptionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3543,6 +3577,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/assets/v1/assets/{asset_id}/versions/{version_id}/transcriptions/{transcription_id}/properties/'
             .replace('{' + 'asset_id' + '}', encodeURIComponent(String(assetId)))
@@ -3560,6 +3596,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3572,26 +3619,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_transcriptions 
      * Get a transcription properties by ID
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
      * @param transcriptionId 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesGet(appID: string, authToken: string, assetId: string, versionId: string, transcriptionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesGet(assetId: string, versionId: string, transcriptionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3611,6 +3646,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/assets/v1/assets/{asset_id}/versions/{version_id}/transcriptions/{transcription_id}/properties/'
             .replace('{' + 'asset_id' + '}', encodeURIComponent(String(assetId)))
@@ -3628,6 +3665,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3640,27 +3688,15 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_transcriptions 
      * Update transcription properties by ID
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
      * @param transcriptionId 
      * @param assetTranscriptionPropertiesSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesPatch(appID: string, authToken: string, assetId: string, versionId: string, transcriptionId: string, assetTranscriptionPropertiesSchema: AssetTranscriptionPropertiesSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesPatch(assetId: string, versionId: string, transcriptionId: string, assetTranscriptionPropertiesSchema: AssetTranscriptionPropertiesSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesPatch", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3684,6 +3720,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (assetTranscriptionPropertiesSchema === null || assetTranscriptionPropertiesSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesPatch", "assetTranscriptionPropertiesSchema");
         }
+
+
 
 
         // Path Params
@@ -3714,6 +3752,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3726,27 +3775,15 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_transcriptions 
      * Update transcription properties by ID
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
      * @param transcriptionId 
      * @param assetTranscriptionPropertiesSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesPut(appID: string, authToken: string, assetId: string, versionId: string, transcriptionId: string, assetTranscriptionPropertiesSchema: AssetTranscriptionPropertiesSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesPut(assetId: string, versionId: string, transcriptionId: string, assetTranscriptionPropertiesSchema: AssetTranscriptionPropertiesSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesPut", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3770,6 +3807,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (assetTranscriptionPropertiesSchema === null || assetTranscriptionPropertiesSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesPut", "assetTranscriptionPropertiesSchema");
         }
+
+
 
 
         // Path Params
@@ -3800,6 +3839,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3812,29 +3862,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_assets 
      * Mark asset as viewed
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      */
-    public async assetsV1AssetsAssetIdViewsPost(appID: string, authToken: string, assetId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsAssetIdViewsPost(assetId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdViewsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdViewsPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsAssetIdViewsPost", "assetId");
         }
+
+
 
 
         // Path Params
@@ -3852,6 +3892,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3873,19 +3924,9 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param sort A comma separated list of fieldnames with order. For example - first_name,asc;last_name,desc
      * @param fieldName filter by field_name
      */
-    public async assetsV1AssetsGet(appID: string, authToken: string, perPage?: number, page?: number, scroll?: boolean, scrollId?: string, sort?: string, fieldName?: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsGet(appID?: string, authToken?: string, perPage?: number, page?: number, scroll?: boolean, scrollId?: string, sort?: string, fieldName?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsGet", "authToken");
-        }
 
 
 
@@ -3938,6 +3979,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3950,29 +4002,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_assets 
      * Bulk update assets
+     * @param bulkAssetEditSchema body
      * @param appID 
      * @param authToken 
-     * @param bulkAssetEditSchema body
      */
-    public async assetsV1AssetsPatch(appID: string, authToken: string, bulkAssetEditSchema: BulkAssetEditSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsPatch(bulkAssetEditSchema: BulkAssetEditSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsPatch", "authToken");
-        }
-
 
         // verify required parameter 'bulkAssetEditSchema' is not null or undefined
         if (bulkAssetEditSchema === null || bulkAssetEditSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsPatch", "bulkAssetEditSchema");
         }
+
+
 
 
         // Path Params
@@ -4000,6 +4042,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4012,32 +4065,22 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_create_assets 
      * Create a new asset
+     * @param assetCreateSchema body
      * @param appID 
      * @param authToken 
-     * @param assetCreateSchema body
      * @param applyDefaultAcls Adds default ACLs to an asset
      * @param applyCollectionAcls Adds containing collection\&#39;s ACLs to an asset
      * @param assignToCollection Adds the asset to the collection specified in the body
      */
-    public async assetsV1AssetsPost(appID: string, authToken: string, assetCreateSchema: AssetCreateSchema, applyDefaultAcls?: boolean, applyCollectionAcls?: boolean, assignToCollection?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsPost(assetCreateSchema: AssetCreateSchema, appID?: string, authToken?: string, applyDefaultAcls?: boolean, applyCollectionAcls?: boolean, assignToCollection?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsPost", "authToken");
-        }
-
 
         // verify required parameter 'assetCreateSchema' is not null or undefined
         if (assetCreateSchema === null || assetCreateSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsPost", "assetCreateSchema");
         }
+
+
 
 
 
@@ -4083,6 +4126,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4095,29 +4149,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_assets 
      * Bulk update assets
+     * @param bulkAssetEditSchema body
      * @param appID 
      * @param authToken 
-     * @param bulkAssetEditSchema body
      */
-    public async assetsV1AssetsPut(appID: string, authToken: string, bulkAssetEditSchema: BulkAssetEditSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsPut(bulkAssetEditSchema: BulkAssetEditSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsPut", "authToken");
-        }
-
 
         // verify required parameter 'bulkAssetEditSchema' is not null or undefined
         if (bulkAssetEditSchema === null || bulkAssetEditSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsPut", "bulkAssetEditSchema");
         }
+
+
 
 
         // Path Params
@@ -4145,6 +4189,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4161,19 +4216,9 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param authToken 
      * @param reindexAllAssetsSchema body
      */
-    public async assetsV1AssetsReindexPost(appID: string, authToken: string, reindexAllAssetsSchema?: ReindexAllAssetsSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsReindexPost(appID?: string, authToken?: string, reindexAllAssetsSchema?: ReindexAllAssetsSchema, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsReindexPost", "authToken");
-        }
 
 
 
@@ -4202,6 +4247,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4217,19 +4273,9 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async assetsV1AssetsRelationTypesGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsRelationTypesGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsRelationTypesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsRelationTypesGet", "authToken");
-        }
 
 
         // Path Params
@@ -4246,6 +4292,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4258,29 +4315,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_asset_relation_types 
      * Create a new asset relation type
+     * @param relationTypeSchema body
      * @param appID 
      * @param authToken 
-     * @param relationTypeSchema body
      */
-    public async assetsV1AssetsRelationTypesPost(appID: string, authToken: string, relationTypeSchema: RelationTypeSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsRelationTypesPost(relationTypeSchema: RelationTypeSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsRelationTypesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsRelationTypesPost", "authToken");
-        }
-
 
         // verify required parameter 'relationTypeSchema' is not null or undefined
         if (relationTypeSchema === null || relationTypeSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsRelationTypesPost", "relationTypeSchema");
         }
+
+
 
 
         // Path Params
@@ -4308,6 +4355,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4320,29 +4378,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_asset_relation_types 
      * Delete an asset relation type
+     * @param relationType 
      * @param appID 
      * @param authToken 
-     * @param relationType 
      */
-    public async assetsV1AssetsRelationTypesRelationTypeDelete(appID: string, authToken: string, relationType: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsRelationTypesRelationTypeDelete(relationType: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsRelationTypesRelationTypeDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsRelationTypesRelationTypeDelete", "authToken");
-        }
-
 
         // verify required parameter 'relationType' is not null or undefined
         if (relationType === null || relationType === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsRelationTypesRelationTypeDelete", "relationType");
         }
+
+
 
 
         // Path Params
@@ -4360,6 +4408,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4372,29 +4431,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_asset_relations 
      * Get a relation type
+     * @param relationType 
      * @param appID 
      * @param authToken 
-     * @param relationType 
      */
-    public async assetsV1AssetsRelationTypesRelationTypeGet(appID: string, authToken: string, relationType: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsRelationTypesRelationTypeGet(relationType: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsRelationTypesRelationTypeGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsRelationTypesRelationTypeGet", "authToken");
-        }
-
 
         // verify required parameter 'relationType' is not null or undefined
         if (relationType === null || relationType === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsRelationTypesRelationTypeGet", "relationType");
         }
+
+
 
 
         // Path Params
@@ -4412,6 +4461,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4424,25 +4484,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_asset_relation_types 
      * Update an asset relation type
-     * @param appID 
-     * @param authToken 
      * @param relationType 
      * @param relationTypeSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsRelationTypesRelationTypePatch(appID: string, authToken: string, relationType: string, relationTypeSchema: RelationTypeSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsRelationTypesRelationTypePatch(relationType: string, relationTypeSchema: RelationTypeSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsRelationTypesRelationTypePatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsRelationTypesRelationTypePatch", "authToken");
-        }
-
 
         // verify required parameter 'relationType' is not null or undefined
         if (relationType === null || relationType === undefined) {
@@ -4454,6 +4502,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (relationTypeSchema === null || relationTypeSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsRelationTypesRelationTypePatch", "relationTypeSchema");
         }
+
+
 
 
         // Path Params
@@ -4482,6 +4532,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4494,25 +4555,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_asset_relation_types 
      * Update an asset relation type
-     * @param appID 
-     * @param authToken 
      * @param relationType 
      * @param relationTypeSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1AssetsRelationTypesRelationTypePut(appID: string, authToken: string, relationType: string, relationTypeSchema: RelationTypeSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsRelationTypesRelationTypePut(relationType: string, relationTypeSchema: RelationTypeSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsRelationTypesRelationTypePut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsRelationTypesRelationTypePut", "authToken");
-        }
-
 
         // verify required parameter 'relationType' is not null or undefined
         if (relationType === null || relationType === undefined) {
@@ -4524,6 +4573,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (relationTypeSchema === null || relationTypeSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsRelationTypesRelationTypePut", "relationTypeSchema");
         }
+
+
 
 
         // Path Params
@@ -4552,6 +4603,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4564,29 +4626,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_segments 
      * Trigger reindexing of all segments
+     * @param reindexAllSegmentsSchema body
      * @param appID 
      * @param authToken 
-     * @param reindexAllSegmentsSchema body
      */
-    public async assetsV1AssetsSegmentsReindexPost(appID: string, authToken: string, reindexAllSegmentsSchema: ReindexAllSegmentsSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1AssetsSegmentsReindexPost(reindexAllSegmentsSchema: ReindexAllSegmentsSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsSegmentsReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1AssetsSegmentsReindexPost", "authToken");
-        }
-
 
         // verify required parameter 'reindexAllSegmentsSchema' is not null or undefined
         if (reindexAllSegmentsSchema === null || reindexAllSegmentsSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1AssetsSegmentsReindexPost", "reindexAllSegmentsSchema");
         }
+
+
 
 
         // Path Params
@@ -4614,6 +4666,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4626,29 +4689,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_collections 
      * Returns list of ancestors of a collection
+     * @param collectionId 
      * @param appID 
      * @param authToken 
-     * @param collectionId 
      */
-    public async assetsV1CollectionsCollectionIdAncestorsGet(appID: string, authToken: string, collectionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdAncestorsGet(collectionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdAncestorsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdAncestorsGet", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdAncestorsGet", "collectionId");
         }
+
+
 
 
         // Path Params
@@ -4666,6 +4719,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4678,30 +4742,20 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_collections 
      * Returns all sub-collections and assets number for a specific collection
+     * @param collectionId 
      * @param appID 
      * @param authToken 
-     * @param collectionId 
      * @param onlyActive If false, include all the contents
      */
-    public async assetsV1CollectionsCollectionIdContentInfoGet(appID: string, authToken: string, collectionId: string, onlyActive?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdContentInfoGet(collectionId: string, appID?: string, authToken?: string, onlyActive?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentInfoGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentInfoGet", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentInfoGet", "collectionId");
         }
+
+
 
 
 
@@ -4725,6 +4779,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4737,9 +4802,9 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_collections 
      * Returns contents of a collection by id
+     * @param collectionId 
      * @param appID 
      * @param authToken 
-     * @param collectionId 
      * @param objectTypes Comma separated list of content types. Example - assets,collections
      * @param objectIds Comma separated list of content ids.
      * @param externalId 
@@ -4748,25 +4813,15 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param sort A comma separated list of fieldnames with order. For example - first_name,asc;last_name,desc
      * @param filter A comma separated list of fieldnames with order For example - first_name,eq,Vlad;last_name,eq,Gudkov
      */
-    public async assetsV1CollectionsCollectionIdContentsGet(appID: string, authToken: string, collectionId: string, objectTypes?: string, objectIds?: string, externalId?: string, perPage?: number, page?: number, sort?: string, filter?: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdContentsGet(collectionId: string, appID?: string, authToken?: string, objectTypes?: string, objectIds?: string, externalId?: string, perPage?: number, page?: number, sort?: string, filter?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentsGet", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentsGet", "collectionId");
         }
+
+
 
 
 
@@ -4826,6 +4881,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4838,26 +4904,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_collections 
      * Delete a particular content object in a collection by id
-     * @param appID 
-     * @param authToken 
      * @param collectionId 
      * @param objectType 
      * @param objectId 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1CollectionsCollectionIdContentsObjectTypeObjectIdDelete(appID: string, authToken: string, collectionId: string, objectType: string, objectId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdContentsObjectTypeObjectIdDelete(collectionId: string, objectType: string, objectId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentsObjectTypeObjectIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentsObjectTypeObjectIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
@@ -4877,6 +4931,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/assets/v1/collections/{collection_id}/contents/{object_type}/{object_id}/'
             .replace('{' + 'collection_id' + '}', encodeURIComponent(String(collectionId)))
@@ -4894,6 +4950,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4906,27 +4973,15 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_collections 
      * Update an order of a particular content object in a collection
-     * @param appID 
-     * @param authToken 
      * @param collectionId 
      * @param objectType 
      * @param objectId 
      * @param collectionContentOrderingSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1CollectionsCollectionIdContentsObjectTypeObjectIdPut(appID: string, authToken: string, collectionId: string, objectType: string, objectId: string, collectionContentOrderingSchema: CollectionContentOrderingSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdContentsObjectTypeObjectIdPut(collectionId: string, objectType: string, objectId: string, collectionContentOrderingSchema: CollectionContentOrderingSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentsObjectTypeObjectIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentsObjectTypeObjectIdPut", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
@@ -4950,6 +5005,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (collectionContentOrderingSchema === null || collectionContentOrderingSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentsObjectTypeObjectIdPut", "collectionContentOrderingSchema");
         }
+
+
 
 
         // Path Params
@@ -4980,6 +5037,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4992,27 +5060,15 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_collections 
      * Reindex collection content
-     * @param appID 
-     * @param authToken 
      * @param collectionId 
      * @param objectType 
      * @param objectId 
      * @param reindexCollectionContentSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1CollectionsCollectionIdContentsObjectTypeObjectIdReindexPost(appID: string, authToken: string, collectionId: string, objectType: string, objectId: string, reindexCollectionContentSchema: ReindexCollectionContentSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdContentsObjectTypeObjectIdReindexPost(collectionId: string, objectType: string, objectId: string, reindexCollectionContentSchema: ReindexCollectionContentSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentsObjectTypeObjectIdReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentsObjectTypeObjectIdReindexPost", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
@@ -5036,6 +5092,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (reindexCollectionContentSchema === null || reindexCollectionContentSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentsObjectTypeObjectIdReindexPost", "reindexCollectionContentSchema");
         }
+
+
 
 
         // Path Params
@@ -5066,6 +5124,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5078,29 +5147,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_collections 
      * Disable custom ordering for a collection\'s content
+     * @param collectionId 
      * @param appID 
      * @param authToken 
-     * @param collectionId 
      */
-    public async assetsV1CollectionsCollectionIdContentsOrderingCustomDelete(appID: string, authToken: string, collectionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdContentsOrderingCustomDelete(collectionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentsOrderingCustomDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentsOrderingCustomDelete", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentsOrderingCustomDelete", "collectionId");
         }
+
+
 
 
         // Path Params
@@ -5118,6 +5177,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5130,25 +5200,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_collections 
      * Enable custom ordering for a collection\'s content
-     * @param appID 
-     * @param authToken 
      * @param collectionId 
      * @param createCollectionContentOrderingSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1CollectionsCollectionIdContentsOrderingCustomPost(appID: string, authToken: string, collectionId: string, createCollectionContentOrderingSchema: CreateCollectionContentOrderingSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdContentsOrderingCustomPost(collectionId: string, createCollectionContentOrderingSchema: CreateCollectionContentOrderingSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentsOrderingCustomPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentsOrderingCustomPost", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
@@ -5160,6 +5218,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (createCollectionContentOrderingSchema === null || createCollectionContentOrderingSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentsOrderingCustomPost", "createCollectionContentOrderingSchema");
         }
+
+
 
 
         // Path Params
@@ -5188,6 +5248,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5200,25 +5271,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_collections 
      * Add an object to a collection
-     * @param appID 
-     * @param authToken 
      * @param collectionId 
      * @param collectionContentSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1CollectionsCollectionIdContentsPost(appID: string, authToken: string, collectionId: string, collectionContentSchema: CollectionContentSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdContentsPost(collectionId: string, collectionContentSchema: CollectionContentSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentsPost", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
@@ -5230,6 +5289,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (collectionContentSchema === null || collectionContentSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdContentsPost", "collectionContentSchema");
         }
+
+
 
 
         // Path Params
@@ -5258,6 +5319,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5270,29 +5342,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_collections 
      * Delete a particular collection by id
+     * @param collectionId 
      * @param appID 
      * @param authToken 
-     * @param collectionId 
      */
-    public async assetsV1CollectionsCollectionIdDelete(appID: string, authToken: string, collectionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdDelete(collectionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdDelete", "collectionId");
         }
+
+
 
 
         // Path Params
@@ -5310,6 +5372,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5322,30 +5395,20 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_collections 
      * Gets the full path of the collection
+     * @param collectionId 
      * @param appID 
      * @param authToken 
-     * @param collectionId 
      * @param getUploadPath Use to get the upload path instead of the full path
      */
-    public async assetsV1CollectionsCollectionIdFullPathGet(appID: string, authToken: string, collectionId: string, getUploadPath?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdFullPathGet(collectionId: string, appID?: string, authToken?: string, getUploadPath?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdFullPathGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdFullPathGet", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdFullPathGet", "collectionId");
         }
+
+
 
 
 
@@ -5369,6 +5432,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5381,29 +5455,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_collections 
      * Returns a particular collection by id
+     * @param collectionId 
      * @param appID 
      * @param authToken 
-     * @param collectionId 
      */
-    public async assetsV1CollectionsCollectionIdGet(appID: string, authToken: string, collectionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdGet(collectionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdGet", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdGet", "collectionId");
         }
+
+
 
 
         // Path Params
@@ -5421,6 +5485,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5433,25 +5508,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_collections 
      * Pick up to three asset_ids for collection keyframes
-     * @param appID 
-     * @param authToken 
      * @param collectionId 
      * @param synchronizeCollectionKeyframesSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1CollectionsCollectionIdKeyframesPost(appID: string, authToken: string, collectionId: string, synchronizeCollectionKeyframesSchema: SynchronizeCollectionKeyframesSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdKeyframesPost(collectionId: string, synchronizeCollectionKeyframesSchema: SynchronizeCollectionKeyframesSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdKeyframesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdKeyframesPost", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
@@ -5463,6 +5526,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (synchronizeCollectionKeyframesSchema === null || synchronizeCollectionKeyframesSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdKeyframesPost", "synchronizeCollectionKeyframesSchema");
         }
+
+
 
 
         // Path Params
@@ -5491,6 +5556,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5503,26 +5579,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_collections 
      * Update collection
-     * @param appID 
-     * @param authToken 
      * @param collectionId 
      * @param collectionInputSchema body
+     * @param appID 
+     * @param authToken 
      * @param changeParentMode Set to \&#39;move\&#39; or \&#39;copy\&#39;. Ignored if \&#39;parent_id\&#39; hasn\&#39;t changed
      */
-    public async assetsV1CollectionsCollectionIdPatch(appID: string, authToken: string, collectionId: string, collectionInputSchema: CollectionInputSchema, changeParentMode?: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdPatch(collectionId: string, collectionInputSchema: CollectionInputSchema, appID?: string, authToken?: string, changeParentMode?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
@@ -5534,6 +5598,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (collectionInputSchema === null || collectionInputSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdPatch", "collectionInputSchema");
         }
+
+
 
 
 
@@ -5568,6 +5634,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5580,29 +5657,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_purge_collections 
      * Purges deleted collection by id immediately
+     * @param collectionId 
      * @param appID 
      * @param authToken 
-     * @param collectionId 
      */
-    public async assetsV1CollectionsCollectionIdPurgeDelete(appID: string, authToken: string, collectionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdPurgeDelete(collectionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdPurgeDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdPurgeDelete", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdPurgeDelete", "collectionId");
         }
+
+
 
 
         // Path Params
@@ -5620,6 +5687,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5632,26 +5710,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_collections 
      * Update collection
-     * @param appID 
-     * @param authToken 
      * @param collectionId 
      * @param collectionInputSchema body
+     * @param appID 
+     * @param authToken 
      * @param changeParentMode Set to \&#39;move\&#39; or \&#39;copy\&#39;. Ignored if \&#39;parent_id\&#39; hasn\&#39;t changed
      */
-    public async assetsV1CollectionsCollectionIdPut(appID: string, authToken: string, collectionId: string, collectionInputSchema: CollectionInputSchema, changeParentMode?: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdPut(collectionId: string, collectionInputSchema: CollectionInputSchema, appID?: string, authToken?: string, changeParentMode?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdPut", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
@@ -5663,6 +5729,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (collectionInputSchema === null || collectionInputSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdPut", "collectionInputSchema");
         }
+
+
 
 
 
@@ -5697,6 +5765,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5709,29 +5788,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_collections 
      * Reindex collection and its content
+     * @param collectionId 
      * @param appID 
      * @param authToken 
-     * @param collectionId 
      */
-    public async assetsV1CollectionsCollectionIdReindexContentsPost(appID: string, authToken: string, collectionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdReindexContentsPost(collectionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdReindexContentsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdReindexContentsPost", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdReindexContentsPost", "collectionId");
         }
+
+
 
 
         // Path Params
@@ -5749,6 +5818,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5761,25 +5841,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_collections 
      * Reindex collection
-     * @param appID 
-     * @param authToken 
      * @param collectionId 
      * @param reindexCollectionSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1CollectionsCollectionIdReindexPost(appID: string, authToken: string, collectionId: string, reindexCollectionSchema: ReindexCollectionSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdReindexPost(collectionId: string, reindexCollectionSchema: ReindexCollectionSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdReindexPost", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
@@ -5791,6 +5859,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (reindexCollectionSchema === null || reindexCollectionSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdReindexPost", "reindexCollectionSchema");
         }
+
+
 
 
         // Path Params
@@ -5819,6 +5889,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5831,29 +5912,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_collections 
      * Restore deleted collection by id
+     * @param collectionId 
      * @param appID 
      * @param authToken 
-     * @param collectionId 
      */
-    public async assetsV1CollectionsCollectionIdRestorePut(appID: string, authToken: string, collectionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdRestorePut(collectionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdRestorePut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdRestorePut", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdRestorePut", "collectionId");
         }
+
+
 
 
         // Path Params
@@ -5871,6 +5942,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5883,25 +5965,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_collections 
      * Update metadata for collection
-     * @param appID 
-     * @param authToken 
      * @param collectionId 
      * @param collectionSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1CollectionsCollectionIdSearchDocumentPut(appID: string, authToken: string, collectionId: string, collectionSchema: CollectionSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdSearchDocumentPut(collectionId: string, collectionSchema: CollectionSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdSearchDocumentPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdSearchDocumentPut", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
@@ -5913,6 +5983,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (collectionSchema === null || collectionSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdSearchDocumentPut", "collectionSchema");
         }
+
+
 
 
         // Path Params
@@ -5941,6 +6013,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5953,31 +6036,21 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_collections 
      * Returns the size of all the collection\'s assets in bytes
+     * @param collectionId 
      * @param appID 
      * @param authToken 
-     * @param collectionId 
      * @param formatName Compute total size only for files with the specified format name
      * @param includeSubcollections Compute total size for all files including sub_collections\&#39; assets
      */
-    public async assetsV1CollectionsCollectionIdSizeGet(appID: string, authToken: string, collectionId: string, formatName?: string, includeSubcollections?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdSizeGet(collectionId: string, appID?: string, authToken?: string, formatName?: string, includeSubcollections?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdSizeGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdSizeGet", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdSizeGet", "collectionId");
         }
+
+
 
 
 
@@ -6007,6 +6080,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6019,25 +6103,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_collections 
      * Copy a collection (recursively) in to another collection
-     * @param appID 
-     * @param authToken 
      * @param collectionId 
      * @param collectionContentSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1CollectionsCollectionIdSubcollectionsPost(appID: string, authToken: string, collectionId: string, collectionContentSchema: CollectionContentSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsCollectionIdSubcollectionsPost(collectionId: string, collectionContentSchema: CollectionContentSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdSubcollectionsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdSubcollectionsPost", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
@@ -6049,6 +6121,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (collectionContentSchema === null || collectionContentSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsCollectionIdSubcollectionsPost", "collectionContentSchema");
         }
+
+
 
 
         // Path Params
@@ -6077,6 +6151,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6099,19 +6184,9 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param isRoot Filter by is_root
      * @param status Filter by status
      */
-    public async assetsV1CollectionsGet(appID: string, authToken: string, perPage?: number, page?: number, scroll?: boolean, scrollId?: string, sort?: string, isRoot?: string, status?: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsGet(appID?: string, authToken?: string, perPage?: number, page?: number, scroll?: boolean, scrollId?: string, sort?: string, isRoot?: string, status?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsGet", "authToken");
-        }
 
 
 
@@ -6170,6 +6245,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6182,32 +6268,22 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_create_collections 
      * Create a new collection
+     * @param collectionInputSchema body
      * @param appID 
      * @param authToken 
-     * @param collectionInputSchema body
      * @param applyDefaultAcls Adds default ACLs to a collection
      * @param applyCollectionAcls Adds containing collection\&#39;s ACLs to a collection
      * @param restrictCollectionAcls Restricts ACLS to containing collection\&#39;s ACLs
      */
-    public async assetsV1CollectionsPost(appID: string, authToken: string, collectionInputSchema: CollectionInputSchema, applyDefaultAcls?: boolean, applyCollectionAcls?: boolean, restrictCollectionAcls?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsPost(collectionInputSchema: CollectionInputSchema, appID?: string, authToken?: string, applyDefaultAcls?: boolean, applyCollectionAcls?: boolean, restrictCollectionAcls?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsPost", "authToken");
-        }
-
 
         // verify required parameter 'collectionInputSchema' is not null or undefined
         if (collectionInputSchema === null || collectionInputSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CollectionsPost", "collectionInputSchema");
         }
+
+
 
 
 
@@ -6253,6 +6329,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6269,19 +6356,9 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param authToken 
      * @param reindexAllCollectionsSchema body
      */
-    public async assetsV1CollectionsReindexPost(appID: string, authToken: string, reindexAllCollectionsSchema?: ReindexAllCollectionsSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CollectionsReindexPost(appID?: string, authToken?: string, reindexAllCollectionsSchema?: ReindexAllCollectionsSchema, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CollectionsReindexPost", "authToken");
-        }
 
 
 
@@ -6310,6 +6387,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6322,26 +6410,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_custom_actions 
      * Schedules a celery task that will call custom action
-     * @param appID 
-     * @param authToken 
      * @param context 
      * @param actionId 
      * @param customActionCallbackSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1CustomActionsContextActionIdCallbackPost(appID: string, authToken: string, context: string, actionId: string, customActionCallbackSchema: CustomActionCallbackSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CustomActionsContextActionIdCallbackPost(context: string, actionId: string, customActionCallbackSchema: CustomActionCallbackSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextActionIdCallbackPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextActionIdCallbackPost", "authToken");
-        }
-
 
         // verify required parameter 'context' is not null or undefined
         if (context === null || context === undefined) {
@@ -6359,6 +6435,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (customActionCallbackSchema === null || customActionCallbackSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextActionIdCallbackPost", "customActionCallbackSchema");
         }
+
+
 
 
         // Path Params
@@ -6388,6 +6466,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6400,25 +6489,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Deletes an custom action
-     * @param appID 
-     * @param authToken 
      * @param context 
      * @param actionId 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1CustomActionsContextActionIdDelete(appID: string, authToken: string, context: string, actionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CustomActionsContextActionIdDelete(context: string, actionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextActionIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextActionIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'context' is not null or undefined
         if (context === null || context === undefined) {
@@ -6430,6 +6507,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (actionId === null || actionId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextActionIdDelete", "actionId");
         }
+
+
 
 
         // Path Params
@@ -6448,6 +6527,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6460,25 +6550,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_custom_actions 
      * Get an asset custom action
-     * @param appID 
-     * @param authToken 
      * @param context 
      * @param actionId 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1CustomActionsContextActionIdGet(appID: string, authToken: string, context: string, actionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CustomActionsContextActionIdGet(context: string, actionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextActionIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextActionIdGet", "authToken");
-        }
-
 
         // verify required parameter 'context' is not null or undefined
         if (context === null || context === undefined) {
@@ -6490,6 +6568,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (actionId === null || actionId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextActionIdGet", "actionId");
         }
+
+
 
 
         // Path Params
@@ -6508,6 +6588,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6520,26 +6611,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Update an custom action
-     * @param appID 
-     * @param authToken 
      * @param context 
      * @param actionId 
      * @param customActionSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1CustomActionsContextActionIdPatch(appID: string, authToken: string, context: string, actionId: string, customActionSchema: CustomActionSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CustomActionsContextActionIdPatch(context: string, actionId: string, customActionSchema: CustomActionSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextActionIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextActionIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'context' is not null or undefined
         if (context === null || context === undefined) {
@@ -6557,6 +6636,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (customActionSchema === null || customActionSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextActionIdPatch", "customActionSchema");
         }
+
+
 
 
         // Path Params
@@ -6586,6 +6667,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6598,26 +6690,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Update an custom action
-     * @param appID 
-     * @param authToken 
      * @param context 
      * @param actionId 
      * @param customActionSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1CustomActionsContextActionIdPut(appID: string, authToken: string, context: string, actionId: string, customActionSchema: CustomActionSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CustomActionsContextActionIdPut(context: string, actionId: string, customActionSchema: CustomActionSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextActionIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextActionIdPut", "authToken");
-        }
-
 
         // verify required parameter 'context' is not null or undefined
         if (context === null || context === undefined) {
@@ -6635,6 +6715,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (customActionSchema === null || customActionSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextActionIdPut", "customActionSchema");
         }
+
+
 
 
         // Path Params
@@ -6664,6 +6746,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6676,29 +6769,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_custom_actions 
      * Get list of custom actions by context
+     * @param context 
      * @param appID 
      * @param authToken 
-     * @param context 
      */
-    public async assetsV1CustomActionsContextGet(appID: string, authToken: string, context: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CustomActionsContextGet(context: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextGet", "authToken");
-        }
-
 
         // verify required parameter 'context' is not null or undefined
         if (context === null || context === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextGet", "context");
         }
+
+
 
 
         // Path Params
@@ -6716,6 +6799,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6728,25 +6822,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Create an custom action
-     * @param appID 
-     * @param authToken 
      * @param context 
      * @param customActionSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1CustomActionsContextPost(appID: string, authToken: string, context: string, customActionSchema: CustomActionSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CustomActionsContextPost(context: string, customActionSchema: CustomActionSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextPost", "authToken");
-        }
-
 
         // verify required parameter 'context' is not null or undefined
         if (context === null || context === undefined) {
@@ -6758,6 +6840,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (customActionSchema === null || customActionSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CustomActionsContextPost", "customActionSchema");
         }
+
+
 
 
         // Path Params
@@ -6786,6 +6870,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6801,19 +6896,9 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async assetsV1CustomActionsGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CustomActionsGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CustomActionsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CustomActionsGet", "authToken");
-        }
 
 
         // Path Params
@@ -6830,6 +6915,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6842,26 +6938,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_custom_actions 
      * Schedules a celery task that will call custom action on shares
-     * @param appID 
-     * @param authToken 
      * @param context 
      * @param actionId 
      * @param customActionCallbackSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1CustomActionsSharedContextActionIdCallbackPost(appID: string, authToken: string, context: string, actionId: string, customActionCallbackSchema: CustomActionCallbackSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1CustomActionsSharedContextActionIdCallbackPost(context: string, actionId: string, customActionCallbackSchema: CustomActionCallbackSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CustomActionsSharedContextActionIdCallbackPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1CustomActionsSharedContextActionIdCallbackPost", "authToken");
-        }
-
 
         // verify required parameter 'context' is not null or undefined
         if (context === null || context === undefined) {
@@ -6879,6 +6963,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (customActionCallbackSchema === null || customActionCallbackSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1CustomActionsSharedContextActionIdCallbackPost", "customActionCallbackSchema");
         }
+
+
 
 
         // Path Params
@@ -6908,6 +6994,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6920,29 +7017,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_assets 
      * Delete assets from delete queue (Mark assets as active again)
+     * @param deleteQueueSchema body
      * @param appID 
      * @param authToken 
-     * @param deleteQueueSchema body
      */
-    public async assetsV1DeleteQueueAssetsDelete(appID: string, authToken: string, deleteQueueSchema: DeleteQueueSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1DeleteQueueAssetsDelete(deleteQueueSchema: DeleteQueueSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueAssetsDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueAssetsDelete", "authToken");
-        }
-
 
         // verify required parameter 'deleteQueueSchema' is not null or undefined
         if (deleteQueueSchema === null || deleteQueueSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1DeleteQueueAssetsDelete", "deleteQueueSchema");
         }
+
+
 
 
         // Path Params
@@ -6970,6 +7057,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6989,19 +7087,9 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param sort A comma separated list of fieldnames with order. For example - first_name,asc;last_name,desc
      * @param filter A comma separated list of fieldnames with order For example - first_name,eq,Vlad;last_name,eq,Gudkov
      */
-    public async assetsV1DeleteQueueAssetsGet(appID: string, authToken: string, perPage?: number, page?: number, sort?: string, filter?: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1DeleteQueueAssetsGet(appID?: string, authToken?: string, perPage?: number, page?: number, sort?: string, filter?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueAssetsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueAssetsGet", "authToken");
-        }
 
 
 
@@ -7042,6 +7130,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7054,29 +7153,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_assets 
      * Add assets to a delete queue (Mark assets as deleted)
+     * @param deleteQueueSchema body
      * @param appID 
      * @param authToken 
-     * @param deleteQueueSchema body
      */
-    public async assetsV1DeleteQueueAssetsPost(appID: string, authToken: string, deleteQueueSchema: DeleteQueueSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1DeleteQueueAssetsPost(deleteQueueSchema: DeleteQueueSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueAssetsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueAssetsPost", "authToken");
-        }
-
 
         // verify required parameter 'deleteQueueSchema' is not null or undefined
         if (deleteQueueSchema === null || deleteQueueSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1DeleteQueueAssetsPost", "deleteQueueSchema");
         }
+
+
 
 
         // Path Params
@@ -7104,6 +7193,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7119,19 +7219,9 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async assetsV1DeleteQueueAssetsPurgeAllPost(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1DeleteQueueAssetsPurgeAllPost(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueAssetsPurgeAllPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueAssetsPurgeAllPost", "authToken");
-        }
 
 
         // Path Params
@@ -7148,6 +7238,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7160,29 +7261,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_purge_assets 
      * Purge assets from delete queue (Permanently delete)
+     * @param deleteQueueSchema body
      * @param appID 
      * @param authToken 
-     * @param deleteQueueSchema body
      */
-    public async assetsV1DeleteQueueAssetsPurgePost(appID: string, authToken: string, deleteQueueSchema: DeleteQueueSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1DeleteQueueAssetsPurgePost(deleteQueueSchema: DeleteQueueSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueAssetsPurgePost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueAssetsPurgePost", "authToken");
-        }
-
 
         // verify required parameter 'deleteQueueSchema' is not null or undefined
         if (deleteQueueSchema === null || deleteQueueSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1DeleteQueueAssetsPurgePost", "deleteQueueSchema");
         }
+
+
 
 
         // Path Params
@@ -7210,6 +7301,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7225,19 +7327,9 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async assetsV1DeleteQueueAssetsRestoreAllPost(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1DeleteQueueAssetsRestoreAllPost(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueAssetsRestoreAllPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueAssetsRestoreAllPost", "authToken");
-        }
 
 
         // Path Params
@@ -7254,6 +7346,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7266,29 +7369,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_assets 
      * Bulk delete objects
+     * @param bulkDeleteSchema body
      * @param appID 
      * @param authToken 
-     * @param bulkDeleteSchema body
      */
-    public async assetsV1DeleteQueueBulkPost(appID: string, authToken: string, bulkDeleteSchema: BulkDeleteSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1DeleteQueueBulkPost(bulkDeleteSchema: BulkDeleteSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueBulkPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueBulkPost", "authToken");
-        }
-
 
         // verify required parameter 'bulkDeleteSchema' is not null or undefined
         if (bulkDeleteSchema === null || bulkDeleteSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1DeleteQueueBulkPost", "bulkDeleteSchema");
         }
+
+
 
 
         // Path Params
@@ -7316,6 +7409,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7328,29 +7432,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_collections 
      * Delete collections from delete queue (Mark collections as active again)
+     * @param deleteQueueSchema body
      * @param appID 
      * @param authToken 
-     * @param deleteQueueSchema body
      */
-    public async assetsV1DeleteQueueCollectionsDelete(appID: string, authToken: string, deleteQueueSchema: DeleteQueueSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1DeleteQueueCollectionsDelete(deleteQueueSchema: DeleteQueueSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueCollectionsDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueCollectionsDelete", "authToken");
-        }
-
 
         // verify required parameter 'deleteQueueSchema' is not null or undefined
         if (deleteQueueSchema === null || deleteQueueSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1DeleteQueueCollectionsDelete", "deleteQueueSchema");
         }
+
+
 
 
         // Path Params
@@ -7378,6 +7472,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7397,19 +7502,9 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param sort A comma separated list of fieldnames with order. For example - first_name,asc;last_name,desc
      * @param filter A comma separated list of fieldnames with order For example - first_name,eq,Vlad;last_name,eq,Gudkov
      */
-    public async assetsV1DeleteQueueCollectionsGet(appID: string, authToken: string, perPage?: number, page?: number, sort?: string, filter?: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1DeleteQueueCollectionsGet(appID?: string, authToken?: string, perPage?: number, page?: number, sort?: string, filter?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueCollectionsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueCollectionsGet", "authToken");
-        }
 
 
 
@@ -7450,6 +7545,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7462,29 +7568,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_collections 
      * Add collections to a delete queue (Mark collections as deleted)
+     * @param deleteQueueSchema body
      * @param appID 
      * @param authToken 
-     * @param deleteQueueSchema body
      */
-    public async assetsV1DeleteQueueCollectionsPost(appID: string, authToken: string, deleteQueueSchema: DeleteQueueSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1DeleteQueueCollectionsPost(deleteQueueSchema: DeleteQueueSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueCollectionsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueCollectionsPost", "authToken");
-        }
-
 
         // verify required parameter 'deleteQueueSchema' is not null or undefined
         if (deleteQueueSchema === null || deleteQueueSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1DeleteQueueCollectionsPost", "deleteQueueSchema");
         }
+
+
 
 
         // Path Params
@@ -7512,6 +7608,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7527,19 +7634,9 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async assetsV1DeleteQueueCollectionsPurgeAllPost(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1DeleteQueueCollectionsPurgeAllPost(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueCollectionsPurgeAllPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueCollectionsPurgeAllPost", "authToken");
-        }
 
 
         // Path Params
@@ -7556,6 +7653,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7568,29 +7676,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_purge_collections 
      * Purge collections from delete queue (Permanently delete)
+     * @param deleteQueueSchema body
      * @param appID 
      * @param authToken 
-     * @param deleteQueueSchema body
      */
-    public async assetsV1DeleteQueueCollectionsPurgePost(appID: string, authToken: string, deleteQueueSchema: DeleteQueueSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1DeleteQueueCollectionsPurgePost(deleteQueueSchema: DeleteQueueSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueCollectionsPurgePost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueCollectionsPurgePost", "authToken");
-        }
-
 
         // verify required parameter 'deleteQueueSchema' is not null or undefined
         if (deleteQueueSchema === null || deleteQueueSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1DeleteQueueCollectionsPurgePost", "deleteQueueSchema");
         }
+
+
 
 
         // Path Params
@@ -7618,6 +7716,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7633,19 +7742,9 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async assetsV1DeleteQueueCollectionsRestoreAllPost(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1DeleteQueueCollectionsRestoreAllPost(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueCollectionsRestoreAllPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueueCollectionsRestoreAllPost", "authToken");
-        }
 
 
         // Path Params
@@ -7662,6 +7761,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7677,19 +7787,9 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async assetsV1DeleteQueuePurgeAllPost(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1DeleteQueuePurgeAllPost(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueuePurgeAllPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1DeleteQueuePurgeAllPost", "authToken");
-        }
 
 
         // Path Params
@@ -7706,6 +7806,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7721,19 +7832,9 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async assetsV1FavoritesAllDelete(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1FavoritesAllDelete(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1FavoritesAllDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1FavoritesAllDelete", "authToken");
-        }
 
 
         // Path Params
@@ -7750,6 +7851,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7762,29 +7874,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_favorites 
      * Deletes objects items from a list of favorites
+     * @param bulkDeleteFromFavoritesSchema body
      * @param appID 
      * @param authToken 
-     * @param bulkDeleteFromFavoritesSchema body
      */
-    public async assetsV1FavoritesDelete(appID: string, authToken: string, bulkDeleteFromFavoritesSchema: BulkDeleteFromFavoritesSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1FavoritesDelete(bulkDeleteFromFavoritesSchema: BulkDeleteFromFavoritesSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1FavoritesDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1FavoritesDelete", "authToken");
-        }
-
 
         // verify required parameter 'bulkDeleteFromFavoritesSchema' is not null or undefined
         if (bulkDeleteFromFavoritesSchema === null || bulkDeleteFromFavoritesSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1FavoritesDelete", "bulkDeleteFromFavoritesSchema");
         }
+
+
 
 
         // Path Params
@@ -7812,6 +7914,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7830,19 +7943,9 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param page Which page number to fetch
      * @param sort A comma separated list of fieldnames with order. For example - title,asc;date_created,desc
      */
-    public async assetsV1FavoritesGet(appID: string, authToken: string, perPage?: number, page?: number, sort?: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1FavoritesGet(appID?: string, authToken?: string, perPage?: number, page?: number, sort?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1FavoritesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1FavoritesGet", "authToken");
-        }
 
 
 
@@ -7877,6 +7980,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7889,29 +8003,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_favorites 
      * Adds multiple objects to a list of favorites
+     * @param bulkAddToFavoritesSchema body
      * @param appID 
      * @param authToken 
-     * @param bulkAddToFavoritesSchema body
      */
-    public async assetsV1FavoritesPost(appID: string, authToken: string, bulkAddToFavoritesSchema: BulkAddToFavoritesSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1FavoritesPost(bulkAddToFavoritesSchema: BulkAddToFavoritesSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1FavoritesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1FavoritesPost", "authToken");
-        }
-
 
         // verify required parameter 'bulkAddToFavoritesSchema' is not null or undefined
         if (bulkAddToFavoritesSchema === null || bulkAddToFavoritesSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1FavoritesPost", "bulkAddToFavoritesSchema");
         }
+
+
 
 
         // Path Params
@@ -7939,6 +8043,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7954,19 +8069,9 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async assetsV1FavouritesAllDelete(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1FavouritesAllDelete(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1FavouritesAllDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1FavouritesAllDelete", "authToken");
-        }
 
 
         // Path Params
@@ -7983,6 +8088,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7995,25 +8111,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Deletes an objects approval status
-     * @param appID 
-     * @param authToken 
      * @param objectId 
      * @param objectType 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdApprovalsDelete(appID: string, authToken: string, objectId: string, objectType: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdApprovalsDelete(objectId: string, objectType: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsDelete", "authToken");
-        }
-
 
         // verify required parameter 'objectId' is not null or undefined
         if (objectId === null || objectId === undefined) {
@@ -8025,6 +8129,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (objectType === null || objectType === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsDelete", "objectType");
         }
+
+
 
 
         // Path Params
@@ -8043,6 +8149,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8055,26 +8172,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_approval_status 
      * Deletes an objects approval status by user_id
-     * @param appID 
-     * @param authToken 
      * @param objectId 
      * @param objectType 
      * @param email 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdApprovalsExternalEmailDelete(appID: string, authToken: string, objectId: string, objectType: string, email: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdApprovalsExternalEmailDelete(objectId: string, objectType: string, email: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsExternalEmailDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsExternalEmailDelete", "authToken");
-        }
-
 
         // verify required parameter 'objectId' is not null or undefined
         if (objectId === null || objectId === undefined) {
@@ -8094,6 +8199,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/assets/v1/{object_type}/{object_id}/approvals/external/{email}/'
             .replace('{' + 'object_id' + '}', encodeURIComponent(String(objectId)))
@@ -8111,6 +8218,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8123,25 +8241,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_approval_request 
      * Returns an objects approval request
-     * @param appID 
-     * @param authToken 
      * @param objectId 
      * @param objectType 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdApprovalsGet(appID: string, authToken: string, objectId: string, objectType: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdApprovalsGet(objectId: string, objectType: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsGet", "authToken");
-        }
-
 
         // verify required parameter 'objectId' is not null or undefined
         if (objectId === null || objectId === undefined) {
@@ -8153,6 +8259,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (objectType === null || objectType === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsGet", "objectType");
         }
+
+
 
 
         // Path Params
@@ -8171,6 +8279,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8183,26 +8302,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_approval_status 
      * Returns an objects approval status
-     * @param appID 
-     * @param authToken 
      * @param objectId 
      * @param objectType 
      * @param approvalBySchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdApprovalsPut(appID: string, authToken: string, objectId: string, objectType: string, approvalBySchema: ApprovalBySchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdApprovalsPut(objectId: string, objectType: string, approvalBySchema: ApprovalBySchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsPut", "authToken");
-        }
-
 
         // verify required parameter 'objectId' is not null or undefined
         if (objectId === null || objectId === undefined) {
@@ -8220,6 +8327,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (approvalBySchema === null || approvalBySchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsPut", "approvalBySchema");
         }
+
+
 
 
         // Path Params
@@ -8249,6 +8358,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8261,25 +8381,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_approval_request 
      * Deletes an objects approval request
-     * @param appID 
-     * @param authToken 
      * @param objectId 
      * @param objectType 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdApprovalsRequestDelete(appID: string, authToken: string, objectId: string, objectType: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdApprovalsRequestDelete(objectId: string, objectType: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsRequestDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsRequestDelete", "authToken");
-        }
-
 
         // verify required parameter 'objectId' is not null or undefined
         if (objectId === null || objectId === undefined) {
@@ -8291,6 +8399,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (objectType === null || objectType === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsRequestDelete", "objectType");
         }
+
+
 
 
         // Path Params
@@ -8309,6 +8419,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8321,25 +8442,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_approval_request 
      * Returns an objects approval request
-     * @param appID 
-     * @param authToken 
      * @param objectId 
      * @param objectType 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdApprovalsRequestGet(appID: string, authToken: string, objectId: string, objectType: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdApprovalsRequestGet(objectId: string, objectType: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsRequestGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsRequestGet", "authToken");
-        }
-
 
         // verify required parameter 'objectId' is not null or undefined
         if (objectId === null || objectId === undefined) {
@@ -8351,6 +8460,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (objectType === null || objectType === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsRequestGet", "objectType");
         }
+
+
 
 
         // Path Params
@@ -8369,6 +8480,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8381,26 +8503,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_approval_request 
      * Edits an approval request
-     * @param appID 
-     * @param authToken 
      * @param objectId 
      * @param objectType 
      * @param approvalSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdApprovalsRequestPatch(appID: string, authToken: string, objectId: string, objectType: string, approvalSchema: ApprovalSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdApprovalsRequestPatch(objectId: string, objectType: string, approvalSchema: ApprovalSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsRequestPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsRequestPatch", "authToken");
-        }
-
 
         // verify required parameter 'objectId' is not null or undefined
         if (objectId === null || objectId === undefined) {
@@ -8418,6 +8528,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (approvalSchema === null || approvalSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsRequestPatch", "approvalSchema");
         }
+
+
 
 
         // Path Params
@@ -8447,6 +8559,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8459,26 +8582,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_approval_request 
      * Creates an objects approval request
-     * @param appID 
-     * @param authToken 
      * @param objectId 
      * @param objectType 
      * @param approvalSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdApprovalsRequestPost(appID: string, authToken: string, objectId: string, objectType: string, approvalSchema: ApprovalSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdApprovalsRequestPost(objectId: string, objectType: string, approvalSchema: ApprovalSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsRequestPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsRequestPost", "authToken");
-        }
-
 
         // verify required parameter 'objectId' is not null or undefined
         if (objectId === null || objectId === undefined) {
@@ -8496,6 +8607,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (approvalSchema === null || approvalSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsRequestPost", "approvalSchema");
         }
+
+
 
 
         // Path Params
@@ -8525,6 +8638,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8537,26 +8661,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_approval_request 
      * Edits an approval request
-     * @param appID 
-     * @param authToken 
      * @param objectId 
      * @param objectType 
      * @param approvalSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdApprovalsRequestPut(appID: string, authToken: string, objectId: string, objectType: string, approvalSchema: ApprovalSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdApprovalsRequestPut(objectId: string, objectType: string, approvalSchema: ApprovalSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsRequestPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsRequestPut", "authToken");
-        }
-
 
         // verify required parameter 'objectId' is not null or undefined
         if (objectId === null || objectId === undefined) {
@@ -8574,6 +8686,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (approvalSchema === null || approvalSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsRequestPut", "approvalSchema");
         }
+
+
 
 
         // Path Params
@@ -8603,6 +8717,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8615,26 +8740,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_approval_status 
      * Deletes an objects approval status by user_id
-     * @param appID 
-     * @param authToken 
      * @param objectId 
      * @param objectType 
      * @param userId 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdApprovalsUserUserIdDelete(appID: string, authToken: string, objectId: string, objectType: string, userId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdApprovalsUserUserIdDelete(objectId: string, objectType: string, userId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsUserUserIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdApprovalsUserUserIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'objectId' is not null or undefined
         if (objectId === null || objectId === undefined) {
@@ -8654,6 +8767,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/assets/v1/{object_type}/{object_id}/approvals/user/{user_id}/'
             .replace('{' + 'object_id' + '}', encodeURIComponent(String(objectId)))
@@ -8671,6 +8786,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8683,27 +8809,15 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_shares 
      * Get list of shares
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
+     * @param appID 
+     * @param authToken 
      * @param perPage The number of items for each page
      * @param lastId 
      */
-    public async assetsV1ObjectTypeObjectIdSharesGet(appID: string, authToken: string, objectType: string, objectId: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdSharesGet(objectType: string, objectId: string, appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesGet", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -8715,6 +8829,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (objectId === null || objectId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesGet", "objectId");
         }
+
+
 
 
 
@@ -8745,6 +8861,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8757,27 +8884,15 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * In case if is_approval=True, share options will be created respectively to user roles.<br/>In case if is_approval=True, share options will be created respectively to user roles.<br/> Required roles:  - can_write_shares 
      * Create a new share.
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
      * @param shareCreateSchema body
+     * @param appID 
+     * @param authToken 
      * @param isApproval 
      */
-    public async assetsV1ObjectTypeObjectIdSharesPost(appID: string, authToken: string, objectType: string, objectId: string, shareCreateSchema: ShareCreateSchema, isApproval?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdSharesPost(objectType: string, objectId: string, shareCreateSchema: ShareCreateSchema, appID?: string, authToken?: string, isApproval?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesPost", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -8795,6 +8910,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (shareCreateSchema === null || shareCreateSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesPost", "shareCreateSchema");
         }
+
+
 
 
 
@@ -8830,6 +8947,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8842,26 +8970,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_object_shares 
      * Delete a particular share by id
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
      * @param shareId 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdSharesShareIdDelete(appID: string, authToken: string, objectType: string, objectId: string, shareId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdSharesShareIdDelete(objectType: string, objectId: string, shareId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -8881,6 +8997,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/assets/v1/{object_type}/{object_id}/shares/{share_id}/'
             .replace('{' + 'object_type' + '}', encodeURIComponent(String(objectType)))
@@ -8898,6 +9016,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8910,26 +9039,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Returns a particular share by id
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
      * @param shareId 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdSharesShareIdGet(appID: string, authToken: string, objectType: string, objectId: string, shareId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdSharesShareIdGet(objectType: string, objectId: string, shareId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdGet", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -8949,6 +9066,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/assets/v1/{object_type}/{object_id}/shares/{share_id}/'
             .replace('{' + 'object_type' + '}', encodeURIComponent(String(objectType)))
@@ -8966,6 +9085,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8978,27 +9108,15 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_shares 
      * Update share
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
      * @param shareId 
      * @param shareSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdSharesShareIdPut(appID: string, authToken: string, objectType: string, objectId: string, shareId: string, shareSchema: ShareSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdSharesShareIdPut(objectType: string, objectId: string, shareId: string, shareSchema: ShareSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdPut", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -9022,6 +9140,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (shareSchema === null || shareSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdPut", "shareSchema");
         }
+
+
 
 
         // Path Params
@@ -9052,6 +9172,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9064,28 +9195,16 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_shares 
      * Get list of share users
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
      * @param shareId 
+     * @param appID 
+     * @param authToken 
      * @param perPage The number of items for each page
      * @param lastId 
      */
-    public async assetsV1ObjectTypeObjectIdSharesShareIdUsersGet(appID: string, authToken: string, objectType: string, objectId: string, shareId: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdSharesShareIdUsersGet(objectType: string, objectId: string, shareId: string, appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdUsersGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdUsersGet", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -9103,6 +9222,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (shareId === null || shareId === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdUsersGet", "shareId");
         }
+
+
 
 
 
@@ -9134,6 +9255,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9146,27 +9278,15 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_shares 
      * Add a new share_user to a share
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
      * @param shareId 
      * @param shareUserSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdSharesShareIdUsersPost(appID: string, authToken: string, objectType: string, objectId: string, shareId: string, shareUserSchema: ShareUserSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdSharesShareIdUsersPost(objectType: string, objectId: string, shareId: string, shareUserSchema: ShareUserSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdUsersPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdUsersPost", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -9190,6 +9310,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (shareUserSchema === null || shareUserSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdUsersPost", "shareUserSchema");
         }
+
+
 
 
         // Path Params
@@ -9220,6 +9342,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9232,27 +9365,15 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_shares 
      * Delete a particular share_user user by id
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
      * @param shareId 
      * @param shareUserId 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdDelete(appID: string, authToken: string, objectType: string, objectId: string, shareId: string, shareUserId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdDelete(objectType: string, objectId: string, shareId: string, shareUserId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -9278,6 +9399,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/assets/v1/{object_type}/{object_id}/shares/{share_id}/users/{share_user_id}/'
             .replace('{' + 'object_type' + '}', encodeURIComponent(String(objectType)))
@@ -9296,6 +9419,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9308,27 +9442,15 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_shares 
      * Returns a particular share user by id
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
      * @param shareId 
      * @param shareUserId 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdGet(appID: string, authToken: string, objectType: string, objectId: string, shareId: string, shareUserId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdGet(objectType: string, objectId: string, shareId: string, shareUserId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdGet", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -9354,6 +9476,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/assets/v1/{object_type}/{object_id}/shares/{share_id}/users/{share_user_id}/'
             .replace('{' + 'object_type' + '}', encodeURIComponent(String(objectType)))
@@ -9372,6 +9496,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9384,28 +9519,16 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_shares 
      * Update share user
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
      * @param shareId 
      * @param shareUserId 
      * @param shareUserSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdPatch(appID: string, authToken: string, objectType: string, objectId: string, shareId: string, shareUserId: string, shareUserSchema: ShareUserSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdPatch(objectType: string, objectId: string, shareId: string, shareUserId: string, shareUserSchema: ShareUserSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -9437,6 +9560,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/assets/v1/{object_type}/{object_id}/shares/{share_id}/users/{share_user_id}/'
             .replace('{' + 'object_type' + '}', encodeURIComponent(String(objectType)))
@@ -9466,6 +9591,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9478,28 +9614,16 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_shares 
      * Update share user
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
      * @param shareId 
      * @param shareUserId 
      * @param shareUserSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdPut(appID: string, authToken: string, objectType: string, objectId: string, shareId: string, shareUserId: string, shareUserSchema: ShareUserSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdPut(objectType: string, objectId: string, shareId: string, shareUserId: string, shareUserSchema: ShareUserSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdPut", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -9531,6 +9655,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/assets/v1/{object_type}/{object_id}/shares/{share_id}/users/{share_user_id}/'
             .replace('{' + 'object_type' + '}', encodeURIComponent(String(objectType)))
@@ -9560,6 +9686,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9572,26 +9709,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_shares 
      * Generates a URL for the shared object
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
      * @param shareURLCreateSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdSharesUrlPost(appID: string, authToken: string, objectType: string, objectId: string, shareURLCreateSchema: ShareURLCreateSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdSharesUrlPost(objectType: string, objectId: string, shareURLCreateSchema: ShareURLCreateSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesUrlPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesUrlPost", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -9609,6 +9734,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (shareURLCreateSchema === null || shareURLCreateSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdSharesUrlPost", "shareURLCreateSchema");
         }
+
+
 
 
         // Path Params
@@ -9638,6 +9765,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9650,26 +9788,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_approval_request 
      * Returns an objects approval request by version
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
      * @param versionId 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdVersionsVersionIdApprovalsGet(appID: string, authToken: string, objectType: string, objectId: string, versionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdVersionsVersionIdApprovalsGet(objectType: string, objectId: string, versionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdVersionsVersionIdApprovalsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdVersionsVersionIdApprovalsGet", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -9689,6 +9815,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/assets/v1/{object_type}/{object_id}/versions/{version_id}/approvals/'
             .replace('{' + 'object_type' + '}', encodeURIComponent(String(objectType)))
@@ -9706,6 +9834,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9718,26 +9857,14 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_approval_request 
      * Returns an objects approval request by version
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
      * @param versionId 
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ObjectTypeObjectIdVersionsVersionIdApprovalsRequestGet(appID: string, authToken: string, objectType: string, objectId: string, versionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ObjectTypeObjectIdVersionsVersionIdApprovalsRequestGet(objectType: string, objectId: string, versionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdVersionsVersionIdApprovalsRequestGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ObjectTypeObjectIdVersionsVersionIdApprovalsRequestGet", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -9757,6 +9884,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/assets/v1/{object_type}/{object_id}/versions/{version_id}/approvals/request/'
             .replace('{' + 'object_type' + '}', encodeURIComponent(String(objectType)))
@@ -9774,6 +9903,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9786,29 +9926,19 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_segments 
      * Trigger reindexing of specific segment ids
+     * @param reindexSegmentsSchema body
      * @param appID 
      * @param authToken 
-     * @param reindexSegmentsSchema body
      */
-    public async assetsV1SegmentsReindexPost(appID: string, authToken: string, reindexSegmentsSchema: ReindexSegmentsSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1SegmentsReindexPost(reindexSegmentsSchema: ReindexSegmentsSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1SegmentsReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1SegmentsReindexPost", "authToken");
-        }
-
 
         // verify required parameter 'reindexSegmentsSchema' is not null or undefined
         if (reindexSegmentsSchema === null || reindexSegmentsSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1SegmentsReindexPost", "reindexSegmentsSchema");
         }
+
+
 
 
         // Path Params
@@ -9836,6 +9966,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9848,25 +9989,13 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_shares 
      * Create a new share of multiple objects (currently only assets are supported)
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param bulkShareCreateSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async assetsV1ShareObjectTypePost(appID: string, authToken: string, objectType: string, bulkShareCreateSchema: BulkShareCreateSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1ShareObjectTypePost(objectType: string, bulkShareCreateSchema: BulkShareCreateSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ShareObjectTypePost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1ShareObjectTypePost", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -9878,6 +10007,8 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         if (bulkShareCreateSchema === null || bulkShareCreateSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1ShareObjectTypePost", "bulkShareCreateSchema");
         }
+
+
 
 
         // Path Params
@@ -9906,6 +10037,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9918,22 +10060,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Login for share
-     * @param appID 
      * @param shareLoginSchema body
+     * @param appID 
      */
-    public async assetsV1SharesAuthLoginPost(appID: string, shareLoginSchema: ShareLoginSchema, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1SharesAuthLoginPost(shareLoginSchema: ShareLoginSchema, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1SharesAuthLoginPost", "appID");
-        }
-
 
         // verify required parameter 'shareLoginSchema' is not null or undefined
         if (shareLoginSchema === null || shareLoginSchema === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1SharesAuthLoginPost", "shareLoginSchema");
         }
+
 
 
         // Path Params
@@ -9958,6 +10095,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9970,22 +10118,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Check if a token is valid
-     * @param appID 
      * @param shareAuthToken 
+     * @param appID 
      */
-    public async assetsV1SharesAuthTokenGet(appID: string, shareAuthToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1SharesAuthTokenGet(shareAuthToken: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1SharesAuthTokenGet", "appID");
-        }
-
 
         // verify required parameter 'shareAuthToken' is not null or undefined
         if (shareAuthToken === null || shareAuthToken === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1SharesAuthTokenGet", "shareAuthToken");
         }
+
 
 
         // Path Params
@@ -10002,6 +10145,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Share-Auth-Token", ObjectSerializer.serialize(shareAuthToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -10014,22 +10168,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Refreshes a token for share
-     * @param appID 
      * @param shareAuthToken 
+     * @param appID 
      */
-    public async assetsV1SharesAuthTokenPut(appID: string, shareAuthToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async assetsV1SharesAuthTokenPut(shareAuthToken: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("AssetsApi", "assetsV1SharesAuthTokenPut", "appID");
-        }
-
 
         // verify required parameter 'shareAuthToken' is not null or undefined
         if (shareAuthToken === null || shareAuthToken === undefined) {
             throw new RequiredError("AssetsApi", "assetsV1SharesAuthTokenPut", "shareAuthToken");
         }
+
 
 
         // Path Params
@@ -10046,6 +10195,17 @@ export class AssetsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Share-Auth-Token", ObjectSerializer.serialize(shareAuthToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {

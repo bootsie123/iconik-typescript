@@ -56,10 +56,6 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1AssetsAssetIdObjectTypeObjectIdViewsViewIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   assetId: "asset_id_example",
@@ -67,6 +63,10 @@ let body:iconik.MetadataApiMetadataV1AssetsAssetIdObjectTypeObjectIdViewsViewIdG
   objectId: "object_id_example",
   // string
   viewId: "view_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1AssetsAssetIdObjectTypeObjectIdViewsViewIdGet(body).then((data:any) => {
@@ -79,12 +79,12 @@ apiInstance.metadataV1AssetsAssetIdObjectTypeObjectIdViewsViewIdGet(body).then((
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **viewId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -129,10 +129,6 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1AssetsAssetIdObjectTypeObjectIdViewsViewIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   objectType: "object_type_example",
@@ -150,6 +146,10 @@ let body:iconik.MetadataApiMetadataV1AssetsAssetIdObjectTypeObjectIdViewsViewIdP
     objectType: "objectType_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1AssetsAssetIdObjectTypeObjectIdViewsViewIdPut(body).then((data:any) => {
@@ -163,12 +163,12 @@ apiInstance.metadataV1AssetsAssetIdObjectTypeObjectIdViewsViewIdPut(body).then((
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **metadataValuesSchema** | **MetadataValuesSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **viewId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -213,15 +213,15 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1AssetsAssetIdVersionsVersionIdViewsViewIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
   // string
   viewId: "view_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1AssetsAssetIdVersionsVersionIdViewsViewIdGet(body).then((data:any) => {
@@ -234,11 +234,11 @@ apiInstance.metadataV1AssetsAssetIdVersionsVersionIdViewsViewIdGet(body).then((d
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
  **viewId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -283,10 +283,6 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1AssetsObjectTypeObjectIdVersionsVersionIdViewsViewIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
@@ -294,6 +290,10 @@ let body:iconik.MetadataApiMetadataV1AssetsObjectTypeObjectIdVersionsVersionIdVi
   versionId: "version_id_example",
   // string
   viewId: "view_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1AssetsObjectTypeObjectIdVersionsVersionIdViewsViewIdGet(body).then((data:any) => {
@@ -306,12 +306,12 @@ apiInstance.metadataV1AssetsObjectTypeObjectIdVersionsVersionIdViewsViewIdGet(bo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
  **viewId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -356,11 +356,11 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1FieldsFieldNameDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   fieldName: "field_name_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1FieldsFieldNameDelete(body).then((data:any) => {
@@ -373,9 +373,9 @@ apiInstance.metadataV1FieldsFieldNameDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **fieldName** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -420,11 +420,11 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1FieldsFieldNameGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   fieldName: "field_name_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1FieldsFieldNameGet(body).then((data:any) => {
@@ -437,9 +437,9 @@ apiInstance.metadataV1FieldsFieldNameGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **fieldName** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -448,7 +448,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -484,10 +484,6 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1FieldsFieldNamePatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   fieldName: "field_name_example",
   // MetadataFieldSchema | body
   metadataFieldSchema: {
@@ -517,6 +513,10 @@ let body:iconik.MetadataApiMetadataV1FieldsFieldNamePatchRequest = {
     sourceUrl: "sourceUrl_example",
     useAsFacet: true,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1FieldsFieldNamePatch(body).then((data:any) => {
@@ -530,9 +530,9 @@ apiInstance.metadataV1FieldsFieldNamePatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **metadataFieldSchema** | **MetadataFieldSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **fieldName** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -541,7 +541,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -577,10 +577,6 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1FieldsFieldNamePutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   fieldName: "field_name_example",
   // MetadataFieldSchema | body
   metadataFieldSchema: {
@@ -610,6 +606,10 @@ let body:iconik.MetadataApiMetadataV1FieldsFieldNamePutRequest = {
     sourceUrl: "sourceUrl_example",
     useAsFacet: true,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1FieldsFieldNamePut(body).then((data:any) => {
@@ -623,9 +623,9 @@ apiInstance.metadataV1FieldsFieldNamePut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **metadataFieldSchema** | **MetadataFieldSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **fieldName** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -634,7 +634,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -669,9 +669,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1FieldsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of items for each page (Default 500) (optional)
   perPage: 1,
@@ -691,8 +691,8 @@ apiInstance.metadataV1FieldsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page (Default 500) | (optional) defaults to undefined
  **lastFieldName** | [**string**] | If your request returns per_page entries, send the last value of \&quot;name\&quot; to fetch next page | (optional) defaults to undefined
  **filter** | [**string**] | A comma separated list of fieldnames For example - first_name,last_name,salary | (optional) defaults to undefined
@@ -704,7 +704,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -738,10 +738,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1FieldsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // MetadataFieldCreateSchema | body
   metadataFieldCreateSchema: {
     autoSet: true,
@@ -771,6 +767,10 @@ let body:iconik.MetadataApiMetadataV1FieldsPostRequest = {
     sourceUrl: "sourceUrl_example",
     useAsFacet: true,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1FieldsPost(body).then((data:any) => {
@@ -784,8 +784,8 @@ apiInstance.metadataV1FieldsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **metadataFieldCreateSchema** | **MetadataFieldCreateSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -794,7 +794,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -829,11 +829,11 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1MappingFieldsFieldNameGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   fieldName: "field_name_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1MappingFieldsFieldNameGet(body).then((data:any) => {
@@ -846,9 +846,9 @@ apiInstance.metadataV1MappingFieldsFieldNameGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **fieldName** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -857,7 +857,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -891,15 +891,15 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1MappingFieldsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // MetadataFieldMappingSchema | body
   metadataFieldMappingSchema: {
     mappedFieldName: "mappedFieldName_example",
     name: "name_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1MappingFieldsPost(body).then((data:any) => {
@@ -913,8 +913,8 @@ apiInstance.metadataV1MappingFieldsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **metadataFieldMappingSchema** | **MetadataFieldMappingSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -923,7 +923,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -957,9 +957,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1MappingOptionsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -973,8 +973,8 @@ apiInstance.metadataV1MappingOptionsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -983,7 +983,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1018,11 +1018,11 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1ObjectTypeCategoriesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1ObjectTypeCategoriesGet(body).then((data:any) => {
@@ -1035,9 +1035,9 @@ apiInstance.metadataV1ObjectTypeCategoriesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1046,7 +1046,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1081,13 +1081,13 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1ObjectTypeCategoriesNameDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   name: "name_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1ObjectTypeCategoriesNameDelete(body).then((data:any) => {
@@ -1100,10 +1100,10 @@ apiInstance.metadataV1ObjectTypeCategoriesNameDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **name** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1112,7 +1112,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1148,13 +1148,13 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1ObjectTypeCategoriesNameGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   name: "name_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1ObjectTypeCategoriesNameGet(body).then((data:any) => {
@@ -1167,10 +1167,10 @@ apiInstance.metadataV1ObjectTypeCategoriesNameGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **name** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1179,7 +1179,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1215,10 +1215,6 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1ObjectTypeCategoriesNamePutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   name: "name_example",
@@ -1232,6 +1228,10 @@ let body:iconik.MetadataApiMetadataV1ObjectTypeCategoriesNamePutRequest = {
       "viewIds_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1ObjectTypeCategoriesNamePut(body).then((data:any) => {
@@ -1245,10 +1245,10 @@ apiInstance.metadataV1ObjectTypeCategoriesNamePut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **metadataCategorySchema** | **MetadataCategorySchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **name** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1257,7 +1257,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1293,13 +1293,13 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1ObjectTypeCategoriesNameViewsGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   name: "name_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean (optional)
   extOptions: true,
   // boolean (optional)
@@ -1316,10 +1316,10 @@ apiInstance.metadataV1ObjectTypeCategoriesNameViewsGet(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **name** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **extOptions** | [**boolean**] |  | (optional) defaults to undefined
  **writableOnly** | [**boolean**] |  | (optional) defaults to undefined
 
@@ -1330,7 +1330,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1366,10 +1366,6 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1ObjectTypeCategoriesPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // MetadataCategorySchema | body
   metadataCategorySchema: {
@@ -1381,6 +1377,10 @@ let body:iconik.MetadataApiMetadataV1ObjectTypeCategoriesPostRequest = {
       "viewIds_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1ObjectTypeCategoriesPost(body).then((data:any) => {
@@ -1394,9 +1394,9 @@ apiInstance.metadataV1ObjectTypeCategoriesPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **metadataCategorySchema** | **MetadataCategorySchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1405,7 +1405,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1441,10 +1441,6 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1ObjectTypeContentViewsViewIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   viewId: "view_id_example",
@@ -1460,6 +1456,10 @@ let body:iconik.MetadataApiMetadataV1ObjectTypeContentViewsViewIdPutRequest = {
     ],
     objectType: "objectType_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1ObjectTypeContentViewsViewIdPut(body).then((data:any) => {
@@ -1473,10 +1473,10 @@ apiInstance.metadataV1ObjectTypeContentViewsViewIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionMetadataValuesBatchSchema** | **CollectionMetadataValuesBatchSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **viewId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1485,7 +1485,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1521,13 +1521,13 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1ObjectTypeObjectIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Filter out metadata field values, for deleted fields (optional)
   includeValuesForDeletedFields: false,
 };
@@ -1542,10 +1542,10 @@ apiInstance.metadataV1ObjectTypeObjectIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **includeValuesForDeletedFields** | [**boolean**] | Filter out metadata field values, for deleted fields | (optional) defaults to false
 
 
@@ -1555,7 +1555,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1591,10 +1591,6 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1ObjectTypeObjectIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
@@ -1608,6 +1604,10 @@ let body:iconik.MetadataApiMetadataV1ObjectTypeObjectIdPutRequest = {
     objectType: "objectType_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1ObjectTypeObjectIdPut(body).then((data:any) => {
@@ -1621,10 +1621,10 @@ apiInstance.metadataV1ObjectTypeObjectIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **metadataValuesSchema** | **MetadataValuesSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1633,7 +1633,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1669,15 +1669,15 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1ObjectTypeObjectIdViewsViewIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
   // string
   viewId: "view_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1ObjectTypeObjectIdViewsViewIdGet(body).then((data:any) => {
@@ -1690,11 +1690,11 @@ apiInstance.metadataV1ObjectTypeObjectIdViewsViewIdGet(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **viewId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1703,7 +1703,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1739,10 +1739,6 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1ObjectTypeObjectIdViewsViewIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
@@ -1758,6 +1754,10 @@ let body:iconik.MetadataApiMetadataV1ObjectTypeObjectIdViewsViewIdPutRequest = {
     objectType: "objectType_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1ObjectTypeObjectIdViewsViewIdPut(body).then((data:any) => {
@@ -1771,11 +1771,11 @@ apiInstance.metadataV1ObjectTypeObjectIdViewsViewIdPut(body).then((data:any) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **metadataValuesSchema** | **MetadataValuesSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **viewId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1784,7 +1784,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1820,10 +1820,6 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1ObjectTypeViewsViewIdPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   viewId: "view_id_example",
@@ -1843,6 +1839,10 @@ let body:iconik.MetadataApiMetadataV1ObjectTypeViewsViewIdPostRequest = {
     ],
     objectType: "objectType_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1ObjectTypeViewsViewIdPost(body).then((data:any) => {
@@ -1856,10 +1856,10 @@ apiInstance.metadataV1ObjectTypeViewsViewIdPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createMetadataValuesBatchSchema** | **CreateMetadataValuesBatchSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **viewId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1868,7 +1868,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1904,10 +1904,6 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1ObjectTypeViewsViewIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   viewId: "view_id_example",
@@ -1921,6 +1917,10 @@ let body:iconik.MetadataApiMetadataV1ObjectTypeViewsViewIdPutRequest = {
     ],
     objectType: "objectType_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1ObjectTypeViewsViewIdPut(body).then((data:any) => {
@@ -1934,10 +1934,10 @@ apiInstance.metadataV1ObjectTypeViewsViewIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **metadataValuesBatchSchema** | **MetadataValuesBatchSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **viewId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1946,7 +1946,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1981,9 +1981,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1UserFieldsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -1997,8 +1997,8 @@ apiInstance.metadataV1UserFieldsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2007,7 +2007,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2041,9 +2041,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1ViewsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -2057,8 +2057,8 @@ apiInstance.metadataV1ViewsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2067,7 +2067,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2101,10 +2101,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1ViewsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // MetadataViewInputSchema | body
   metadataViewInputSchema: {
     description: "description_example",
@@ -2127,6 +2123,10 @@ let body:iconik.MetadataApiMetadataV1ViewsPostRequest = {
       },
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1ViewsPost(body).then((data:any) => {
@@ -2140,8 +2140,8 @@ apiInstance.metadataV1ViewsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **metadataViewInputSchema** | **MetadataViewInputSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2150,7 +2150,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2185,11 +2185,11 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1ViewsViewIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   viewId: "view_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1ViewsViewIdDelete(body).then((data:any) => {
@@ -2202,9 +2202,9 @@ apiInstance.metadataV1ViewsViewIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **viewId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2213,7 +2213,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2249,11 +2249,11 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1ViewsViewIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   viewId: "view_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean (optional)
   mergeFields: true,
 };
@@ -2268,9 +2268,9 @@ apiInstance.metadataV1ViewsViewIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **viewId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **mergeFields** | [**boolean**] |  | (optional) defaults to true
 
 
@@ -2280,7 +2280,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2316,10 +2316,6 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1ViewsViewIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   viewId: "view_id_example",
   // MetadataViewInputSchema | body
   metadataViewInputSchema: {
@@ -2343,6 +2339,10 @@ let body:iconik.MetadataApiMetadataV1ViewsViewIdPatchRequest = {
       },
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1ViewsViewIdPatch(body).then((data:any) => {
@@ -2356,9 +2356,9 @@ apiInstance.metadataV1ViewsViewIdPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **metadataViewInputSchema** | **MetadataViewInputSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **viewId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2367,7 +2367,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2403,10 +2403,6 @@ const apiInstance = new iconik.MetadataApi(configuration);
 
 let body:iconik.MetadataApiMetadataV1ViewsViewIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   viewId: "view_id_example",
   // MetadataViewInputSchema | body
   metadataViewInputSchema: {
@@ -2430,6 +2426,10 @@ let body:iconik.MetadataApiMetadataV1ViewsViewIdPutRequest = {
       },
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.metadataV1ViewsViewIdPut(body).then((data:any) => {
@@ -2443,9 +2443,9 @@ apiInstance.metadataV1ViewsViewIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **metadataViewInputSchema** | **MetadataViewInputSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **viewId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2454,7 +2454,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 

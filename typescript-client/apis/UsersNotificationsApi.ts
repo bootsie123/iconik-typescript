@@ -30,19 +30,9 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
      * @param perPage The number of items for each page
      * @param lastId ID of a last file set on previous page
      */
-    public async usersNotificationsV1NotificationSettingsGet(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async usersNotificationsV1NotificationSettingsGet(appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationSettingsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationSettingsGet", "authToken");
-        }
 
 
 
@@ -71,6 +61,17 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -83,27 +84,15 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_notification_settings 
      * Returns a particular notification_setting by id
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param subObjectType 
      * @param eventType 
      * @param protocol 
+     * @param appID 
+     * @param authToken 
      */
-    public async usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGet(appID: string, authToken: string, objectType: string, subObjectType: string, eventType: string, protocol: string, _options?: Configuration): Promise<RequestContext> {
+    public async usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGet(objectType: string, subObjectType: string, eventType: string, protocol: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGet", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -129,6 +118,8 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/users-notifications/v1/notification_settings/{object_type}/{sub_object_type}/{event_type}/{protocol}/'
             .replace('{' + 'object_type' + '}', encodeURIComponent(String(objectType)))
@@ -147,6 +138,17 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -159,28 +161,16 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Create a new notification_setting
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param subObjectType 
      * @param eventType 
      * @param protocol 
      * @param notificationSettingSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPut(appID: string, authToken: string, objectType: string, subObjectType: string, eventType: string, protocol: string, notificationSettingSchema: NotificationSettingSchema, _options?: Configuration): Promise<RequestContext> {
+    public async usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPut(objectType: string, subObjectType: string, eventType: string, protocol: string, notificationSettingSchema: NotificationSettingSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPut", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -212,6 +202,8 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/users-notifications/v1/notification_settings/{object_type}/{sub_object_type}/{event_type}/{protocol}/'
             .replace('{' + 'object_type' + '}', encodeURIComponent(String(objectType)))
@@ -241,6 +233,17 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -256,19 +259,9 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async usersNotificationsV1NotificationsAllReadPut(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async usersNotificationsV1NotificationsAllReadPut(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationsAllReadPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationsAllReadPut", "authToken");
-        }
 
 
         // Path Params
@@ -285,6 +278,17 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -302,19 +306,9 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
      * @param perPage The number of items for each page
      * @param lastId ID of a last file set on previous page
      */
-    public async usersNotificationsV1NotificationsGet(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async usersNotificationsV1NotificationsGet(appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationsGet", "authToken");
-        }
 
 
 
@@ -343,6 +337,17 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -355,29 +360,19 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_notifications 
      * Delete a particular notification by id
+     * @param notificationId 
      * @param appID 
      * @param authToken 
-     * @param notificationId 
      */
-    public async usersNotificationsV1NotificationsNotificationIdDelete(appID: string, authToken: string, notificationId: string, _options?: Configuration): Promise<RequestContext> {
+    public async usersNotificationsV1NotificationsNotificationIdDelete(notificationId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationsNotificationIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationsNotificationIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'notificationId' is not null or undefined
         if (notificationId === null || notificationId === undefined) {
             throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationsNotificationIdDelete", "notificationId");
         }
+
+
 
 
         // Path Params
@@ -395,6 +390,17 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -407,29 +413,19 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_notifications 
      * Returns a particular notification by id
+     * @param notificationId 
      * @param appID 
      * @param authToken 
-     * @param notificationId 
      */
-    public async usersNotificationsV1NotificationsNotificationIdGet(appID: string, authToken: string, notificationId: string, _options?: Configuration): Promise<RequestContext> {
+    public async usersNotificationsV1NotificationsNotificationIdGet(notificationId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationsNotificationIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationsNotificationIdGet", "authToken");
-        }
-
 
         // verify required parameter 'notificationId' is not null or undefined
         if (notificationId === null || notificationId === undefined) {
             throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationsNotificationIdGet", "notificationId");
         }
+
+
 
 
         // Path Params
@@ -447,6 +443,17 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -459,29 +466,19 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Create a new notification
+     * @param notificationSchema body
      * @param appID 
      * @param authToken 
-     * @param notificationSchema body
      */
-    public async usersNotificationsV1NotificationsPost(appID: string, authToken: string, notificationSchema: NotificationSchema, _options?: Configuration): Promise<RequestContext> {
+    public async usersNotificationsV1NotificationsPost(notificationSchema: NotificationSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationsPost", "authToken");
-        }
-
 
         // verify required parameter 'notificationSchema' is not null or undefined
         if (notificationSchema === null || notificationSchema === undefined) {
             throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationsPost", "notificationSchema");
         }
+
+
 
 
         // Path Params
@@ -509,6 +506,17 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -521,29 +529,19 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Create a new system notification
+     * @param systemNotificationSchema body
      * @param appID 
      * @param authToken 
-     * @param systemNotificationSchema body
      */
-    public async usersNotificationsV1NotificationsSystemPost(appID: string, authToken: string, systemNotificationSchema: SystemNotificationSchema, _options?: Configuration): Promise<RequestContext> {
+    public async usersNotificationsV1NotificationsSystemPost(systemNotificationSchema: SystemNotificationSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationsSystemPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationsSystemPost", "authToken");
-        }
-
 
         // verify required parameter 'systemNotificationSchema' is not null or undefined
         if (systemNotificationSchema === null || systemNotificationSchema === undefined) {
             throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1NotificationsSystemPost", "systemNotificationSchema");
         }
+
+
 
 
         // Path Params
@@ -571,6 +569,17 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -583,25 +592,13 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_subscriptions 
      * Delete all user subscriptions for a specific object_type and object_id
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
+     * @param appID 
+     * @param authToken 
      */
-    public async usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDelete(appID: string, authToken: string, objectType: string, objectId: string, _options?: Configuration): Promise<RequestContext> {
+    public async usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDelete(objectType: string, objectId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDelete", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -613,6 +610,8 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
         if (objectId === null || objectId === undefined) {
             throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDelete", "objectId");
         }
+
+
 
 
         // Path Params
@@ -631,6 +630,17 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -643,25 +653,13 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_subscriptions 
      * Returns user subscriptions for a specific object_type and object_id
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
+     * @param appID 
+     * @param authToken 
      */
-    public async usersNotificationsV1ObjectTypeObjectIdSubscriptionsGet(appID: string, authToken: string, objectType: string, objectId: string, _options?: Configuration): Promise<RequestContext> {
+    public async usersNotificationsV1ObjectTypeObjectIdSubscriptionsGet(objectType: string, objectId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1ObjectTypeObjectIdSubscriptionsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1ObjectTypeObjectIdSubscriptionsGet", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -673,6 +671,8 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
         if (objectId === null || objectId === undefined) {
             throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1ObjectTypeObjectIdSubscriptionsGet", "objectId");
         }
+
+
 
 
         // Path Params
@@ -691,6 +691,17 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -706,19 +717,9 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async usersNotificationsV1SubscriptionsGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async usersNotificationsV1SubscriptionsGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1SubscriptionsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1SubscriptionsGet", "authToken");
-        }
 
 
         // Path Params
@@ -735,6 +736,17 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -747,29 +759,19 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Create a new subscription
+     * @param subscriptionSchema body
      * @param appID 
      * @param authToken 
-     * @param subscriptionSchema body
      */
-    public async usersNotificationsV1SubscriptionsPost(appID: string, authToken: string, subscriptionSchema: SubscriptionSchema, _options?: Configuration): Promise<RequestContext> {
+    public async usersNotificationsV1SubscriptionsPost(subscriptionSchema: SubscriptionSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1SubscriptionsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1SubscriptionsPost", "authToken");
-        }
-
 
         // verify required parameter 'subscriptionSchema' is not null or undefined
         if (subscriptionSchema === null || subscriptionSchema === undefined) {
             throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1SubscriptionsPost", "subscriptionSchema");
         }
+
+
 
 
         // Path Params
@@ -797,6 +799,17 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -809,29 +822,19 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_subscriptions 
      * Delete a particular subscription by id
+     * @param subscriptionId 
      * @param appID 
      * @param authToken 
-     * @param subscriptionId 
      */
-    public async usersNotificationsV1SubscriptionsSubscriptionIdDelete(appID: string, authToken: string, subscriptionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async usersNotificationsV1SubscriptionsSubscriptionIdDelete(subscriptionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1SubscriptionsSubscriptionIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1SubscriptionsSubscriptionIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'subscriptionId' is not null or undefined
         if (subscriptionId === null || subscriptionId === undefined) {
             throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1SubscriptionsSubscriptionIdDelete", "subscriptionId");
         }
+
+
 
 
         // Path Params
@@ -849,6 +852,17 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -861,29 +875,19 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_subscriptions 
      * Returns a particular subscription by id
+     * @param subscriptionId 
      * @param appID 
      * @param authToken 
-     * @param subscriptionId 
      */
-    public async usersNotificationsV1SubscriptionsSubscriptionIdGet(appID: string, authToken: string, subscriptionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async usersNotificationsV1SubscriptionsSubscriptionIdGet(subscriptionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1SubscriptionsSubscriptionIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1SubscriptionsSubscriptionIdGet", "authToken");
-        }
-
 
         // verify required parameter 'subscriptionId' is not null or undefined
         if (subscriptionId === null || subscriptionId === undefined) {
             throw new RequiredError("UsersNotificationsApi", "usersNotificationsV1SubscriptionsSubscriptionIdGet", "subscriptionId");
         }
+
+
 
 
         // Path Params
@@ -901,6 +905,17 @@ export class UsersNotificationsApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {

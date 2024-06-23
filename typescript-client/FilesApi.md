@@ -255,9 +255,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AnalysisProfilesGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
@@ -275,8 +275,8 @@ apiInstance.filesV1AnalysisProfilesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last profile set on previous page | (optional) defaults to undefined
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -322,11 +322,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AnalysisProfilesMediaTypeDefaultGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   mediaType: "media_type_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AnalysisProfilesMediaTypeDefaultGet(body).then((data:any) => {
@@ -339,9 +339,9 @@ apiInstance.filesV1AnalysisProfilesMediaTypeDefaultGet(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **mediaType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -386,10 +386,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AnalysisProfilesPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // AnalysisProfileSchema | body
   analysisProfileSchema: {
     analysisServiceAccountId: "analysisServiceAccountId_example",
@@ -399,6 +395,10 @@ let body:iconik.FilesApiFilesV1AnalysisProfilesPostRequest = {
     serviceType: "GOOGLE_VISION",
     settings: {},
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AnalysisProfilesPost(body).then((data:any) => {
@@ -412,8 +412,8 @@ apiInstance.filesV1AnalysisProfilesPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **analysisProfileSchema** | **AnalysisProfileSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -422,7 +422,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -457,11 +457,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AnalysisProfilesProfileIdDefaultDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   profileId: "profile_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AnalysisProfilesProfileIdDefaultDelete(body).then((data:any) => {
@@ -474,9 +474,9 @@ apiInstance.filesV1AnalysisProfilesProfileIdDefaultDelete(body).then((data:any) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **profileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -485,7 +485,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -520,11 +520,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AnalysisProfilesProfileIdDefaultPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   profileId: "profile_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AnalysisProfilesProfileIdDefaultPost(body).then((data:any) => {
@@ -537,9 +537,9 @@ apiInstance.filesV1AnalysisProfilesProfileIdDefaultPost(body).then((data:any) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **profileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -548,7 +548,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -583,11 +583,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AnalysisProfilesProfileIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   profileId: "profile_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AnalysisProfilesProfileIdDelete(body).then((data:any) => {
@@ -600,9 +600,9 @@ apiInstance.filesV1AnalysisProfilesProfileIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **profileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -611,7 +611,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -647,11 +647,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AnalysisProfilesProfileIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   profileId: "profile_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AnalysisProfilesProfileIdGet(body).then((data:any) => {
@@ -664,9 +664,9 @@ apiInstance.filesV1AnalysisProfilesProfileIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **profileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -675,7 +675,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -710,10 +710,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AnalysisProfilesProfileIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   profileId: "profile_id_example",
   // AnalysisProfileSchema | body
   analysisProfileSchema: {
@@ -724,6 +720,10 @@ let body:iconik.FilesApiFilesV1AnalysisProfilesProfileIdPatchRequest = {
     serviceType: "GOOGLE_VISION",
     settings: {},
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AnalysisProfilesProfileIdPatch(body).then((data:any) => {
@@ -737,9 +737,9 @@ apiInstance.filesV1AnalysisProfilesProfileIdPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **analysisProfileSchema** | **AnalysisProfileSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **profileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -748,7 +748,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -784,10 +784,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AnalysisProfilesProfileIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   profileId: "profile_id_example",
   // AnalysisProfileSchema | body
   analysisProfileSchema: {
@@ -798,6 +794,10 @@ let body:iconik.FilesApiFilesV1AnalysisProfilesProfileIdPutRequest = {
     serviceType: "GOOGLE_VISION",
     settings: {},
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AnalysisProfilesProfileIdPut(body).then((data:any) => {
@@ -811,9 +811,9 @@ apiInstance.filesV1AnalysisProfilesProfileIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **analysisProfileSchema** | **AnalysisProfileSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **profileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -822,7 +822,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -858,11 +858,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AnalysisServiceAccountsAnalysisServiceAccountIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   analysisServiceAccountId: "analysis_service_account_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AnalysisServiceAccountsAnalysisServiceAccountIdDelete(body).then((data:any) => {
@@ -875,9 +875,9 @@ apiInstance.filesV1AnalysisServiceAccountsAnalysisServiceAccountIdDelete(body).t
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **analysisServiceAccountId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -886,7 +886,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -922,11 +922,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AnalysisServiceAccountsAnalysisServiceAccountIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   analysisServiceAccountId: "analysis_service_account_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AnalysisServiceAccountsAnalysisServiceAccountIdGet(body).then((data:any) => {
@@ -939,9 +939,9 @@ apiInstance.filesV1AnalysisServiceAccountsAnalysisServiceAccountIdGet(body).then
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **analysisServiceAccountId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -950,7 +950,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -985,10 +985,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AnalysisServiceAccountsAnalysisServiceAccountIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   analysisServiceAccountId: "analysis_service_account_id_example",
   // AnalysisServiceAccountSchema | body
   analysisServiceAccountSchema: {
@@ -996,6 +992,10 @@ let body:iconik.FilesApiFilesV1AnalysisServiceAccountsAnalysisServiceAccountIdPa
     name: "name_example",
     settings: {},
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AnalysisServiceAccountsAnalysisServiceAccountIdPatch(body).then((data:any) => {
@@ -1009,9 +1009,9 @@ apiInstance.filesV1AnalysisServiceAccountsAnalysisServiceAccountIdPatch(body).th
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **analysisServiceAccountSchema** | **AnalysisServiceAccountSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **analysisServiceAccountId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1020,7 +1020,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1056,10 +1056,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AnalysisServiceAccountsAnalysisServiceAccountIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   analysisServiceAccountId: "analysis_service_account_id_example",
   // AnalysisServiceAccountSchema | body
   analysisServiceAccountSchema: {
@@ -1067,6 +1063,10 @@ let body:iconik.FilesApiFilesV1AnalysisServiceAccountsAnalysisServiceAccountIdPu
     name: "name_example",
     settings: {},
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AnalysisServiceAccountsAnalysisServiceAccountIdPut(body).then((data:any) => {
@@ -1080,9 +1080,9 @@ apiInstance.filesV1AnalysisServiceAccountsAnalysisServiceAccountIdPut(body).then
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **analysisServiceAccountSchema** | **AnalysisServiceAccountSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **analysisServiceAccountId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1091,7 +1091,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1126,9 +1126,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AnalysisServiceAccountsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
@@ -1146,8 +1146,8 @@ apiInstance.filesV1AnalysisServiceAccountsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last service account set on previous page | (optional) defaults to undefined
 
@@ -1158,7 +1158,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1192,16 +1192,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AnalysisServiceAccountsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // AnalysisServiceAccountSchema | body
   analysisServiceAccountSchema: {
     method: "GOOGLE_AI",
     name: "name_example",
     settings: {},
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AnalysisServiceAccountsPost(body).then((data:any) => {
@@ -1215,8 +1215,8 @@ apiInstance.filesV1AnalysisServiceAccountsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **analysisServiceAccountSchema** | **AnalysisServiceAccountSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1225,7 +1225,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1260,11 +1260,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdCustomKeyframePostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdCustomKeyframePost(body).then((data:any) => {
@@ -1277,9 +1277,9 @@ apiInstance.filesV1AssetsAssetIdCustomKeyframePost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1288,7 +1288,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1323,13 +1323,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdCustomKeyframePosterIdPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   posterId: "poster_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | set to false to keep current custom_poster and custom_keyframe on asset (optional)
   overwrite: true,
 };
@@ -1344,10 +1344,10 @@ apiInstance.filesV1AssetsAssetIdCustomKeyframePosterIdPost(body).then((data:any)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **posterId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **overwrite** | [**boolean**] | set to false to keep current custom_poster and custom_keyframe on asset | (optional) defaults to undefined
 
 
@@ -1357,7 +1357,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1392,10 +1392,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdExportLocationsExportLocationIdPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   exportLocationId: "export_location_id_example",
@@ -1413,6 +1409,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdExportLocationsExportLocationIdPostR
       "transcodeProfileIds_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Enable transfer through iconik host (creates egress) (optional)
   allowHostTransfer: true,
 };
@@ -1428,10 +1428,10 @@ apiInstance.filesV1AssetsAssetIdExportLocationsExportLocationIdPost(body).then((
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetExportSchema** | **AssetExportSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **exportLocationId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **allowHostTransfer** | [**boolean**] | Enable transfer through iconik host (creates egress) | (optional) defaults to undefined
 
 
@@ -1441,7 +1441,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1476,13 +1476,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFileSetsFileSetIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileSetId: "file_set_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | If true, keep source objects (optional)
   keepSource: false,
 };
@@ -1497,10 +1497,10 @@ apiInstance.filesV1AssetsAssetIdFileSetsFileSetIdDelete(body).then((data:any) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileSetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **keepSource** | [**boolean**] | If true, keep source objects | (optional) defaults to false
 
 
@@ -1510,7 +1510,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1546,13 +1546,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFileSetsFileSetIdFilesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileSetId: "file_set_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 1,
   // string (optional)
@@ -1573,10 +1573,10 @@ apiInstance.filesV1AssetsAssetIdFileSetsFileSetIdFilesGet(body).then((data:any) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileSetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to undefined
  **lastId** | [**string**] |  | (optional) defaults to undefined
  **generateSignedUrl** | [**boolean**] | Set to false if you don\&#39;t need a URL, will speed things up | (optional) defaults to true
@@ -1589,7 +1589,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1622,13 +1622,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFileSetsFileSetIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileSetId: "file_set_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFileSetsFileSetIdGet(body).then((data:any) => {
@@ -1641,10 +1641,10 @@ apiInstance.filesV1AssetsAssetIdFileSetsFileSetIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileSetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1653,7 +1653,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1688,10 +1688,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFileSetsFileSetIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileSetId: "file_set_id_example",
@@ -1711,6 +1707,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFileSetsFileSetIdPatchRequest = {
     storageId: "storageId_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFileSetsFileSetIdPatch(body).then((data:any) => {
@@ -1724,10 +1724,10 @@ apiInstance.filesV1AssetsAssetIdFileSetsFileSetIdPatch(body).then((data:any) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileSetSchema** | **FileSetSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileSetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1736,7 +1736,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1772,13 +1772,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFileSetsFileSetIdPurgeDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileSetId: "file_set_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFileSetsFileSetIdPurgeDelete(body).then((data:any) => {
@@ -1791,10 +1791,10 @@ apiInstance.filesV1AssetsAssetIdFileSetsFileSetIdPurgeDelete(body).then((data:an
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileSetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1803,7 +1803,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1839,10 +1839,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFileSetsFileSetIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileSetId: "file_set_id_example",
@@ -1862,6 +1858,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFileSetsFileSetIdPutRequest = {
     storageId: "storageId_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFileSetsFileSetIdPut(body).then((data:any) => {
@@ -1875,10 +1875,10 @@ apiInstance.filesV1AssetsAssetIdFileSetsFileSetIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileSetSchema** | **FileSetSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileSetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1887,7 +1887,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1923,13 +1923,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFileSetsFileSetIdRestorePutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileSetId: "file_set_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFileSetsFileSetIdRestorePut(body).then((data:any) => {
@@ -1942,10 +1942,10 @@ apiInstance.filesV1AssetsAssetIdFileSetsFileSetIdRestorePut(body).then((data:any
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileSetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1954,7 +1954,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1990,11 +1990,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFileSetsGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // string | ID of a last file set on previous page (optional)
@@ -2013,9 +2013,9 @@ apiInstance.filesV1AssetsAssetIdFileSetsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last file set on previous page | (optional) defaults to undefined
  **fileCount** | [**boolean**] | Set to true if you need a total amount of files in a file set | (optional) defaults to false
@@ -2027,7 +2027,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2062,10 +2062,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFileSetsPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // FileSetSchema | body
   fileSetSchema: {
@@ -2083,6 +2079,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFileSetsPostRequest = {
     storageId: "storageId_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFileSetsPost(body).then((data:any) => {
@@ -2096,9 +2096,9 @@ apiInstance.filesV1AssetsAssetIdFileSetsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileSetSchema** | **FileSetSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2107,7 +2107,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2142,10 +2142,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdCaptureMillisecondsPostRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
@@ -2158,6 +2154,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdCaptureMillisecondsPostRe
     updateProxyMediainfo: true,
     useStorageTranscodeIgnorePattern: true,
   },
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFilesFileIdCaptureMillisecondsPost(body).then((data:any) => {
@@ -2171,11 +2171,11 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdCaptureMillisecondsPost(body).then((d
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **transcodeRequestSchema** | **TranscodeRequestSchema**| body |
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
  **milliseconds** | [**number**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2184,7 +2184,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2220,13 +2220,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFilesFileIdDelete(body).then((data:any) => {
@@ -2239,10 +2239,10 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2251,7 +2251,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2286,13 +2286,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdDownloadUrlGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFilesFileIdDownloadUrlGet(body).then((data:any) => {
@@ -2305,10 +2305,10 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdDownloadUrlGet(body).then((data:any) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2317,7 +2317,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2352,10 +2352,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdEditProxiesPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
@@ -2372,6 +2368,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdEditProxiesPostRequest = 
     versionId: "versionId_example",
     width: -2147483648,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFilesFileIdEditProxiesPost(body).then((data:any) => {
@@ -2385,10 +2385,10 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdEditProxiesPost(body).then((data:any)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **editProxySchema** | **EditProxySchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2397,7 +2397,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2432,13 +2432,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Set to true to get a new upload url for the file (optional)
   generateSignedPostUrl: false,
   // string | Set to attachment if you want a download link. Note that this will not create a asset history entry for the download (optional)
@@ -2457,10 +2457,10 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **generateSignedPostUrl** | [**boolean**] | Set to true to get a new upload url for the file | (optional) defaults to false
  **contentDisposition** | [**string**] | Set to attachment if you want a download link. Note that this will not create a asset history entry for the download | (optional) defaults to 'inline'
  **bypassUrlCache** | [**boolean**] | Set to true to get a new url for the file rather than using a cached url | (optional) defaults to false
@@ -2472,7 +2472,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2507,13 +2507,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdIsgHandlerUrlGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFilesFileIdIsgHandlerUrlGet(body).then((data:any) => {
@@ -2526,10 +2526,10 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdIsgHandlerUrlGet(body).then((data:any
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2538,7 +2538,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2573,10 +2573,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdKeyframesPostRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
@@ -2587,6 +2583,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdKeyframesPostRequest = {
     updateProxyMediainfo: true,
     useStorageTranscodeIgnorePattern: true,
   },
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFilesFileIdKeyframesPost(body).then((data:any) => {
@@ -2600,10 +2600,10 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdKeyframesPost(body).then((data:any) =
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **transcodeRequestSchema** | **TranscodeRequestSchema**| body |
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2612,7 +2612,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2649,10 +2649,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdMediainfoPostRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
@@ -2663,6 +2659,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdMediainfoPostRequest = {
     updateProxyMediainfo: true,
     useStorageTranscodeIgnorePattern: true,
   },
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFilesFileIdMediainfoPost(body).then((data:any) => {
@@ -2676,10 +2676,10 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdMediainfoPost(body).then((data:any) =
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **transcodeRequestSchema** | **TranscodeRequestSchema**| body |
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2688,7 +2688,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2724,10 +2724,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdMultipartB2CancelPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
@@ -2735,6 +2731,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdMultipartB2CancelPostRequ
   multipartB2CancelUpload: {
     uploadFileId: "uploadFileId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Use temporary file record (optional)
   temporary: false,
 };
@@ -2750,10 +2750,10 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdMultipartB2CancelPost(body).then((dat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **multipartB2CancelUpload** | **MultipartB2CancelUpload**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **temporary** | [**boolean**] | Use temporary file record | (optional) defaults to false
 
 
@@ -2763,7 +2763,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2798,10 +2798,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdMultipartB2FinishPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
@@ -2812,6 +2808,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdMultipartB2FinishPostRequ
     ],
     uploadFileId: "uploadFileId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Use temporary file record (optional)
   temporary: false,
 };
@@ -2827,10 +2827,10 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdMultipartB2FinishPost(body).then((dat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **multipartB2FinishUpload** | **MultipartB2FinishUpload**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **temporary** | [**boolean**] | Use temporary file record | (optional) defaults to false
 
 
@@ -2840,7 +2840,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2875,13 +2875,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdMultipartB2StartPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Use temporary file record (optional)
   temporary: false,
   // MultipartB2StartUpload | body (optional)
@@ -2901,10 +2901,10 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdMultipartB2StartPost(body).then((data
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **multipartB2StartUpload** | **MultipartB2StartUpload**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **temporary** | [**boolean**] | Use temporary file record | (optional) defaults to false
 
 
@@ -2914,7 +2914,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2949,10 +2949,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdMultipartCleanupPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
@@ -2964,6 +2960,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdMultipartCleanupPostReque
     temporary: false,
     uploadId: "uploadId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFilesFileIdMultipartCleanupPost(body).then((data:any) => {
@@ -2977,10 +2977,10 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdMultipartCleanupPost(body).then((data
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **multipartUploadCleanupSchema** | **MultipartUploadCleanupSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2989,7 +2989,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3024,10 +3024,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdMultipartGcsComposeUrlPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
@@ -3036,6 +3032,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdMultipartGcsComposeUrlPos
     contentType: "contentType_example",
     partsGroup: -9223372036854776000,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Use temporary file record (optional)
   temporary: false,
 };
@@ -3051,10 +3051,10 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdMultipartGcsComposeUrlPost(body).then
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **multipartUploadComposeSchema** | **MultipartUploadComposeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **temporary** | [**boolean**] | Use temporary file record | (optional) defaults to false
 
 
@@ -3064,7 +3064,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3099,10 +3099,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdMultipartPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
@@ -3113,6 +3109,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdMultipartPostRequest = {
       "partsRange_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Use temporary file record (optional)
   temporary: false,
 };
@@ -3128,10 +3128,10 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdMultipartPost(body).then((data:any) =
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **multipartUploadSchema** | **MultipartUploadSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **temporary** | [**boolean**] | Use temporary file record | (optional) defaults to false
 
 
@@ -3141,7 +3141,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3176,15 +3176,15 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdMultipartUrlGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
   // string | Multipart UploadId
   uploadId: "upload_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | List of multipart upload urls of required type (optional)
   type: "type_example",
   // number | Maximum PartNumber that multipart upload has (optional)
@@ -3203,11 +3203,11 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdMultipartUrlGet(body).then((data:any)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
  **uploadId** | [**string**] | Multipart UploadId | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **type** | [**string**] | List of multipart upload urls of required type | (optional) defaults to undefined
  **maxPartNumber** | [**number**] | Maximum PartNumber that multipart upload has | (optional) defaults to undefined
  **temporary** | [**boolean**] | Use temporary file record | (optional) defaults to false
@@ -3219,7 +3219,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3254,15 +3254,15 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdMultipartUrlPartGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
   // number | Number of parts to upload
   partsNum: 1,
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | Multipart UploadId (optional)
   uploadId: "upload_id_example",
   // number | The number of items for each page (optional)
@@ -3283,11 +3283,11 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdMultipartUrlPartGet(body).then((data:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
  **partsNum** | [**number**] | Number of parts to upload | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **uploadId** | [**string**] | Multipart UploadId | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
@@ -3300,7 +3300,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3335,10 +3335,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdMultipartUrlS3PartPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
@@ -3352,6 +3348,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdMultipartUrlS3PartPostReq
     ],
     uploadId: "uploadId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Use temporary file record (optional)
   temporary: false,
 };
@@ -3367,10 +3367,10 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdMultipartUrlS3PartPost(body).then((da
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **multiPartS3UrlPartsSchema** | **MultiPartS3UrlPartsSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **temporary** | [**boolean**] | Use temporary file record | (optional) defaults to false
 
 
@@ -3380,7 +3380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3416,10 +3416,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
@@ -3443,6 +3439,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdPatchRequest = {
     userId: "userId_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFilesFileIdPatch(body).then((data:any) => {
@@ -3456,10 +3456,10 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileSchema** | **FileSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3468,7 +3468,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3504,10 +3504,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
@@ -3531,6 +3527,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdPutRequest = {
     userId: "userId_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFilesFileIdPut(body).then((data:any) => {
@@ -3544,10 +3544,10 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileSchema** | **FileSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3556,7 +3556,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3592,13 +3592,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdReindexPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFilesFileIdReindexPost(body).then((data:any) => {
@@ -3611,10 +3611,10 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdReindexPost(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3623,7 +3623,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3657,13 +3657,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesFileIdSubtitlesPostRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
   // SubtitleRequestSchema | body (optional)
   subtitleRequestSchema: {
     createTranscription: true,
@@ -3682,10 +3682,10 @@ apiInstance.filesV1AssetsAssetIdFilesFileIdSubtitlesPost(body).then((data:any) =
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subtitleRequestSchema** | **SubtitleRequestSchema**| body |
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3694,7 +3694,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3730,11 +3730,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // boolean | Set to True if you do need a URL, this makes the request slower. (optional)
@@ -3755,9 +3755,9 @@ apiInstance.filesV1AssetsAssetIdFilesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **generateSignedUrl** | [**boolean**] | Set to True if you do need a URL, this makes the request slower. | (optional) defaults to false
  **contentDisposition** | [**string**] | Set to attachment if you want a download link. Note that this will not create a download in asset history | (optional) defaults to 'inline'
@@ -3770,7 +3770,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3805,10 +3805,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFilesPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // FileCreateSchema | body
   fileCreateSchema: {
@@ -3829,6 +3825,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFilesPostRequest = {
     userId: "userId_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFilesPost(body).then((data:any) => {
@@ -3842,9 +3842,9 @@ apiInstance.filesV1AssetsAssetIdFilesPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileCreateSchema** | **FileCreateSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3853,7 +3853,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3888,10 +3888,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdArchiveDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   formatId: "format_id_example",
@@ -3899,6 +3895,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdArchiveDeleteRequest 
   formatDeleteArchiveSchema: {
     fileSetId: "fileSetId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFormatsFormatIdArchiveDelete(body).then((data:any) => {
@@ -3912,10 +3912,10 @@ apiInstance.filesV1AssetsAssetIdFormatsFormatIdArchiveDelete(body).then((data:an
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **formatDeleteArchiveSchema** | **FormatDeleteArchiveSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **formatId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3924,7 +3924,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3960,10 +3960,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdArchivePostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   formatId: "format_id_example",
@@ -3976,6 +3972,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdArchivePostRequest = 
     formatId: "formatId_example",
     originalFileSetId: "originalFileSetId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFormatsFormatIdArchivePost(body).then((data:any) => {
@@ -3989,10 +3989,10 @@ apiInstance.filesV1AssetsAssetIdFormatsFormatIdArchivePost(body).then((data:any)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **formatArchiveSchema** | **FormatArchiveSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **formatId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4001,7 +4001,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4037,15 +4037,15 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   formatId: "format_id_example",
   // string
   componentId: "component_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdDelete(body).then((data:any) => {
@@ -4058,11 +4058,11 @@ apiInstance.filesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdDelete(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **formatId** | [**string**] |  | defaults to undefined
  **componentId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4071,7 +4071,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4107,15 +4107,15 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   formatId: "format_id_example",
   // string
   componentId: "component_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdGet(body).then((data:any) => {
@@ -4128,11 +4128,11 @@ apiInstance.filesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdGet(body).th
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **formatId** | [**string**] |  | defaults to undefined
  **componentId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4141,7 +4141,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4177,15 +4177,15 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   formatId: "format_id_example",
   // string
   componentId: "component_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdPut(body).then((data:any) => {
@@ -4198,11 +4198,11 @@ apiInstance.filesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdPut(body).th
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **formatId** | [**string**] |  | defaults to undefined
  **componentId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4211,7 +4211,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4247,13 +4247,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdComponentsGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   formatId: "format_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFormatsFormatIdComponentsGet(body).then((data:any) => {
@@ -4266,10 +4266,10 @@ apiInstance.filesV1AssetsAssetIdFormatsFormatIdComponentsGet(body).then((data:an
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **formatId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4278,7 +4278,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4314,10 +4314,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdComponentsPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   formatId: "format_id_example",
@@ -4329,6 +4325,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdComponentsPostRequest
     name: "name_example",
     type: "VIDEO",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFormatsFormatIdComponentsPost(body).then((data:any) => {
@@ -4342,10 +4342,10 @@ apiInstance.filesV1AssetsAssetIdFormatsFormatIdComponentsPost(body).then((data:a
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **componentSchema** | **ComponentSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **formatId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4354,7 +4354,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4390,13 +4390,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   formatId: "format_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Permanently delete format without sending it to the Recycle Bin (optional)
   deleteImmediately: true,
 };
@@ -4411,10 +4411,10 @@ apiInstance.filesV1AssetsAssetIdFormatsFormatIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **formatId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **deleteImmediately** | [**boolean**] | Permanently delete format without sending it to the Recycle Bin | (optional) defaults to undefined
 
 
@@ -4424,7 +4424,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4460,13 +4460,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdFileSetsGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   formatId: "format_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // string | ID of a last file set on previous page (optional)
@@ -4483,10 +4483,10 @@ apiInstance.filesV1AssetsAssetIdFormatsFormatIdFileSetsGet(body).then((data:any)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **formatId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last file set on previous page | (optional) defaults to undefined
 
@@ -4497,7 +4497,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4532,13 +4532,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdFileSetsSourcesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   formatId: "format_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFormatsFormatIdFileSetsSourcesGet(body).then((data:any) => {
@@ -4551,10 +4551,10 @@ apiInstance.filesV1AssetsAssetIdFormatsFormatIdFileSetsSourcesGet(body).then((da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **formatId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4563,7 +4563,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4597,15 +4597,15 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdFileSetsSourcesStorageMethodGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   formatId: "format_id_example",
   // string
   storageMethod: "storage_method_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFormatsFormatIdFileSetsSourcesStorageMethodGet(body).then((data:any) => {
@@ -4618,11 +4618,11 @@ apiInstance.filesV1AssetsAssetIdFormatsFormatIdFileSetsSourcesStorageMethodGet(b
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **formatId** | [**string**] |  | defaults to undefined
  **storageMethod** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4631,7 +4631,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4665,13 +4665,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   formatId: "format_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFormatsFormatIdGet(body).then((data:any) => {
@@ -4684,10 +4684,10 @@ apiInstance.filesV1AssetsAssetIdFormatsFormatIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **formatId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4696,7 +4696,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4731,10 +4731,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   formatId: "format_id_example",
@@ -4765,6 +4761,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdPatchRequest = {
     userId: "userId_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFormatsFormatIdPatch(body).then((data:any) => {
@@ -4778,10 +4778,10 @@ apiInstance.filesV1AssetsAssetIdFormatsFormatIdPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **formatSchema** | **FormatSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **formatId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4790,7 +4790,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4826,13 +4826,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdPurgeDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   formatId: "format_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFormatsFormatIdPurgeDelete(body).then((data:any) => {
@@ -4845,10 +4845,10 @@ apiInstance.filesV1AssetsAssetIdFormatsFormatIdPurgeDelete(body).then((data:any)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **formatId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4857,7 +4857,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4893,10 +4893,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   formatId: "format_id_example",
@@ -4927,6 +4923,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdPutRequest = {
     userId: "userId_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFormatsFormatIdPut(body).then((data:any) => {
@@ -4940,10 +4940,10 @@ apiInstance.filesV1AssetsAssetIdFormatsFormatIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **formatSchema** | **FormatSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **formatId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4952,7 +4952,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4988,10 +4988,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdRestorePostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   formatId: "format_id_example",
@@ -5001,6 +4997,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdRestorePostRequest = 
     destinationStorageId: "destinationStorageId_example",
     storageId: "storageId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFormatsFormatIdRestorePost(body).then((data:any) => {
@@ -5014,10 +5014,10 @@ apiInstance.filesV1AssetsAssetIdFormatsFormatIdRestorePost(body).then((data:any)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **formatRestoreSchema** | **FormatRestoreSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **formatId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -5026,7 +5026,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5062,13 +5062,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdRestorePutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   formatId: "format_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFormatsFormatIdRestorePut(body).then((data:any) => {
@@ -5081,10 +5081,10 @@ apiInstance.filesV1AssetsAssetIdFormatsFormatIdRestorePut(body).then((data:any) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **formatId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -5093,7 +5093,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5129,15 +5129,15 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsFormatIdStoragesStorageIdFileSetsGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   formatId: "format_id_example",
   // string
   storageId: "storage_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // string | ID of a last file set on previous page (optional)
@@ -5154,11 +5154,11 @@ apiInstance.filesV1AssetsAssetIdFormatsFormatIdStoragesStorageIdFileSetsGet(body
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **formatId** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last file set on previous page | (optional) defaults to undefined
 
@@ -5169,7 +5169,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5204,11 +5204,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // string | ID of a last format on previous page (optional)
@@ -5225,9 +5225,9 @@ apiInstance.filesV1AssetsAssetIdFormatsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last format on previous page | (optional) defaults to undefined
 
@@ -5238,7 +5238,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5273,13 +5273,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsNameGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   name: "name_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFormatsNameGet(body).then((data:any) => {
@@ -5292,10 +5292,10 @@ apiInstance.filesV1AssetsAssetIdFormatsNameGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **name** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -5304,7 +5304,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5339,10 +5339,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // FormatSchema | body
   formatSchema: {
@@ -5371,6 +5367,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdFormatsPostRequest = {
     userId: "userId_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdFormatsPost(body).then((data:any) => {
@@ -5384,9 +5384,9 @@ apiInstance.filesV1AssetsAssetIdFormatsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **formatSchema** | **FormatSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -5395,7 +5395,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5430,11 +5430,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdKeyframesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // boolean | Set to false if you don\'t need a URL, will speed things up (optional)
@@ -5457,9 +5457,9 @@ apiInstance.filesV1AssetsAssetIdKeyframesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **generateSignedUrl** | [**boolean**] | Set to false if you don\&#39;t need a URL, will speed things up | (optional) defaults to true
  **contentDisposition** | [**string**] | Set to attachment if you do not want a download link | (optional) defaults to 'inline'
@@ -5473,7 +5473,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5508,13 +5508,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdKeyframesKeyframeIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   keyframeId: "keyframe_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean (optional)
   keepPoster: true,
 };
@@ -5529,10 +5529,10 @@ apiInstance.filesV1AssetsAssetIdKeyframesKeyframeIdDelete(body).then((data:any) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **keyframeId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **keepPoster** | [**boolean**] |  | (optional) defaults to undefined
 
 
@@ -5542,7 +5542,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5578,13 +5578,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdKeyframesKeyframeIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   keyframeId: "keyframe_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | Set to attachment if you do not want a download link (optional)
   contentDisposition: "inline",
 };
@@ -5599,10 +5599,10 @@ apiInstance.filesV1AssetsAssetIdKeyframesKeyframeIdGet(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **keyframeId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **contentDisposition** | [**string**] | Set to attachment if you do not want a download link | (optional) defaults to 'inline'
 
 
@@ -5612,7 +5612,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5647,10 +5647,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdKeyframesKeyframeIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   keyframeId: "keyframe_id_example",
@@ -5681,6 +5677,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdKeyframesKeyframeIdPatchRequest = {
     type: "KEYFRAME_MAP",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdKeyframesKeyframeIdPatch(body).then((data:any) => {
@@ -5694,10 +5694,10 @@ apiInstance.filesV1AssetsAssetIdKeyframesKeyframeIdPatch(body).then((data:any) =
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **keyframeSchema** | **KeyframeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **keyframeId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -5706,7 +5706,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5742,13 +5742,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdKeyframesKeyframeIdPublicDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   keyframeId: "keyframe_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdKeyframesKeyframeIdPublicDelete(body).then((data:any) => {
@@ -5761,10 +5761,10 @@ apiInstance.filesV1AssetsAssetIdKeyframesKeyframeIdPublicDelete(body).then((data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **keyframeId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -5773,7 +5773,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5808,13 +5808,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdKeyframesKeyframeIdPublicPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   keyframeId: "keyframe_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdKeyframesKeyframeIdPublicPost(body).then((data:any) => {
@@ -5827,10 +5827,10 @@ apiInstance.filesV1AssetsAssetIdKeyframesKeyframeIdPublicPost(body).then((data:a
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **keyframeId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -5839,7 +5839,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5874,10 +5874,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdKeyframesKeyframeIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   keyframeId: "keyframe_id_example",
@@ -5908,6 +5904,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdKeyframesKeyframeIdPutRequest = {
     type: "KEYFRAME_MAP",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdKeyframesKeyframeIdPut(body).then((data:any) => {
@@ -5921,10 +5921,10 @@ apiInstance.filesV1AssetsAssetIdKeyframesKeyframeIdPut(body).then((data:any) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **keyframeSchema** | **KeyframeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **keyframeId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -5933,7 +5933,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5969,10 +5969,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdKeyframesPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // KeyframeSchema | body
   keyframeSchema: {
@@ -6001,6 +5997,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdKeyframesPostRequest = {
     type: "KEYFRAME_MAP",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Set to True to get a google resumable upload link (optional)
   useGoogleResumableUpload: false,
 };
@@ -6016,9 +6016,9 @@ apiInstance.filesV1AssetsAssetIdKeyframesPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **keyframeSchema** | **KeyframeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **useGoogleResumableUpload** | [**boolean**] | Set to True to get a google resumable upload link | (optional) defaults to false
 
 
@@ -6028,7 +6028,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6063,10 +6063,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdMethodStorageMethodKeyframesPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   storageMethod: "storage_method_example",
@@ -6097,6 +6093,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdMethodStorageMethodKeyframesPostRequ
     type: "KEYFRAME_MAP",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Set to True to get a google resumable upload link (optional)
   useGoogleResumableUpload: false,
 };
@@ -6112,10 +6112,10 @@ apiInstance.filesV1AssetsAssetIdMethodStorageMethodKeyframesPost(body).then((dat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **keyframeSchema** | **KeyframeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **storageMethod** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **useGoogleResumableUpload** | [**boolean**] | Set to True to get a google resumable upload link | (optional) defaults to false
 
 
@@ -6125,7 +6125,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6160,10 +6160,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdMethodStorageMethodProxiesPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   storageMethod: "storage_method_example",
@@ -6189,6 +6185,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdMethodStorageMethodProxiesPostReques
     storageId: "storageId_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdMethodStorageMethodProxiesPost(body).then((data:any) => {
@@ -6202,10 +6202,10 @@ apiInstance.filesV1AssetsAssetIdMethodStorageMethodProxiesPost(body).then((data:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **proxySchema** | **ProxySchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **storageMethod** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -6214,7 +6214,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6249,11 +6249,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdProxiesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // boolean | Set to false if you don\'t need a URL, will speed things up (optional)
@@ -6276,9 +6276,9 @@ apiInstance.filesV1AssetsAssetIdProxiesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **generateSignedUrl** | [**boolean**] | Set to false if you don\&#39;t need a URL, will speed things up | (optional) defaults to true
  **contentDisposition** | [**string**] | Set to attachment if you want a download link | (optional) defaults to 'inline'
@@ -6292,7 +6292,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6328,10 +6328,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdProxiesPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // ProxySchema | body
   proxySchema: {
@@ -6355,6 +6351,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdProxiesPostRequest = {
     storageId: "storageId_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdProxiesPost(body).then((data:any) => {
@@ -6368,9 +6368,9 @@ apiInstance.filesV1AssetsAssetIdProxiesPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **proxySchema** | **ProxySchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -6379,7 +6379,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6414,13 +6414,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdProxiesProxyIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   proxyId: "proxy_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdProxiesProxyIdDelete(body).then((data:any) => {
@@ -6433,10 +6433,10 @@ apiInstance.filesV1AssetsAssetIdProxiesProxyIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **proxyId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -6445,7 +6445,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6481,13 +6481,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdProxiesProxyIdDownloadUrlGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   proxyId: "proxy_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdProxiesProxyIdDownloadUrlGet(body).then((data:any) => {
@@ -6500,10 +6500,10 @@ apiInstance.filesV1AssetsAssetIdProxiesProxyIdDownloadUrlGet(body).then((data:an
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **proxyId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -6512,7 +6512,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6548,13 +6548,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdProxiesProxyIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   proxyId: "proxy_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | Set to attachment if you want a download link (optional)
   contentDisposition: "inline",
 };
@@ -6569,10 +6569,10 @@ apiInstance.filesV1AssetsAssetIdProxiesProxyIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **proxyId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **contentDisposition** | [**string**] | Set to attachment if you want a download link | (optional) defaults to 'inline'
 
 
@@ -6582,7 +6582,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6618,10 +6618,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdProxiesProxyIdKeyframesPostRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   assetId: "asset_id_example",
   // string
   proxyId: "proxy_id_example",
@@ -6632,6 +6628,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdProxiesProxyIdKeyframesPostRequest =
     updateProxyMediainfo: true,
     useStorageTranscodeIgnorePattern: true,
   },
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.filesV1AssetsAssetIdProxiesProxyIdKeyframesPost(body).then((data:any) => {
@@ -6645,10 +6645,10 @@ apiInstance.filesV1AssetsAssetIdProxiesProxyIdKeyframesPost(body).then((data:any
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **transcodeRequestSchema** | **TranscodeRequestSchema**| body |
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **proxyId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -6657,7 +6657,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6693,10 +6693,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdProxiesProxyIdMultipartCleanupPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   proxyId: "proxy_id_example",
@@ -6705,6 +6701,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdProxiesProxyIdMultipartCleanupPostRe
     abortUpload: true,
     uploadId: "uploadId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdProxiesProxyIdMultipartCleanupPost(body).then((data:any) => {
@@ -6718,10 +6718,10 @@ apiInstance.filesV1AssetsAssetIdProxiesProxyIdMultipartCleanupPost(body).then((d
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **multipartUploadProxyCleanupSchema** | **MultipartUploadProxyCleanupSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **proxyId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -6730,7 +6730,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6765,15 +6765,15 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdProxiesProxyIdMultipartUrlGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   proxyId: "proxy_id_example",
   // string | Multipart UploadId
   uploadId: "upload_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | List of multipart upload urls of required type (optional)
   type: "type_example",
   // number | Maximum PartNumber that multipart upload has (optional)
@@ -6790,11 +6790,11 @@ apiInstance.filesV1AssetsAssetIdProxiesProxyIdMultipartUrlGet(body).then((data:a
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **proxyId** | [**string**] |  | defaults to undefined
  **uploadId** | [**string**] | Multipart UploadId | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **type** | [**string**] | List of multipart upload urls of required type | (optional) defaults to undefined
  **maxPartNumber** | [**number**] | Maximum PartNumber that multipart upload has | (optional) defaults to undefined
 
@@ -6805,7 +6805,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6840,15 +6840,15 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdProxiesProxyIdMultipartUrlPartGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   proxyId: "proxy_id_example",
   // number | Number of parts to upload
   partsNum: 1,
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | Multipart UploadId (optional)
   uploadId: "upload_id_example",
   // number | The number of items for each page (optional)
@@ -6867,11 +6867,11 @@ apiInstance.filesV1AssetsAssetIdProxiesProxyIdMultipartUrlPartGet(body).then((da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **proxyId** | [**string**] |  | defaults to undefined
  **partsNum** | [**number**] | Number of parts to upload | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **uploadId** | [**string**] | Multipart UploadId | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
@@ -6883,7 +6883,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6918,10 +6918,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdProxiesProxyIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   proxyId: "proxy_id_example",
@@ -6947,6 +6943,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdProxiesProxyIdPatchRequest = {
     storageId: "storageId_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdProxiesProxyIdPatch(body).then((data:any) => {
@@ -6960,10 +6960,10 @@ apiInstance.filesV1AssetsAssetIdProxiesProxyIdPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **proxySchema** | **ProxySchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **proxyId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -6972,7 +6972,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7008,13 +7008,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdProxiesProxyIdPublicDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   proxyId: "proxy_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdProxiesProxyIdPublicDelete(body).then((data:any) => {
@@ -7027,10 +7027,10 @@ apiInstance.filesV1AssetsAssetIdProxiesProxyIdPublicDelete(body).then((data:any)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **proxyId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7039,7 +7039,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7074,13 +7074,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdProxiesProxyIdPublicPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   proxyId: "proxy_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdProxiesProxyIdPublicPost(body).then((data:any) => {
@@ -7093,10 +7093,10 @@ apiInstance.filesV1AssetsAssetIdProxiesProxyIdPublicPost(body).then((data:any) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **proxyId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7105,7 +7105,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7140,10 +7140,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdProxiesProxyIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   proxyId: "proxy_id_example",
@@ -7169,6 +7165,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdProxiesProxyIdPutRequest = {
     storageId: "storageId_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdProxiesProxyIdPut(body).then((data:any) => {
@@ -7182,10 +7182,10 @@ apiInstance.filesV1AssetsAssetIdProxiesProxyIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **proxySchema** | **ProxySchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **proxyId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7194,7 +7194,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7230,11 +7230,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdSubtitlesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // string | ID of a last subtitle on previous page (optional)
@@ -7251,9 +7251,9 @@ apiInstance.filesV1AssetsAssetIdSubtitlesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last subtitle on previous page | (optional) defaults to undefined
 
@@ -7264,7 +7264,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7299,13 +7299,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdSubtitlesLanguageCcGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   language: "language_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdSubtitlesLanguageCcGet(body).then((data:any) => {
@@ -7318,10 +7318,10 @@ apiInstance.filesV1AssetsAssetIdSubtitlesLanguageCcGet(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **language** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7330,7 +7330,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7365,13 +7365,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdSubtitlesLanguageCcWebvttGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   language: "language_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdSubtitlesLanguageCcWebvttGet(body).then((data:any) => {
@@ -7384,10 +7384,10 @@ apiInstance.filesV1AssetsAssetIdSubtitlesLanguageCcWebvttGet(body).then((data:an
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **language** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7396,7 +7396,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7431,13 +7431,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdSubtitlesLanguageGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   language: "language_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdSubtitlesLanguageGet(body).then((data:any) => {
@@ -7450,10 +7450,10 @@ apiInstance.filesV1AssetsAssetIdSubtitlesLanguageGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **language** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7462,7 +7462,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7497,13 +7497,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdSubtitlesLanguageWebvttGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   language: "language_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdSubtitlesLanguageWebvttGet(body).then((data:any) => {
@@ -7516,10 +7516,10 @@ apiInstance.filesV1AssetsAssetIdSubtitlesLanguageWebvttGet(body).then((data:any)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **language** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7528,7 +7528,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7563,10 +7563,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdSubtitlesPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // SubtitleSchema | body
   subtitleSchema: {
@@ -7577,6 +7573,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdSubtitlesPostRequest = {
     name: "name_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdSubtitlesPost(body).then((data:any) => {
@@ -7590,9 +7590,9 @@ apiInstance.filesV1AssetsAssetIdSubtitlesPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subtitleSchema** | **SubtitleSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7601,7 +7601,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7636,13 +7636,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdSubtitlesSubtitleIdCcDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   subtitleId: "subtitle_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdSubtitlesSubtitleIdCcDelete(body).then((data:any) => {
@@ -7655,10 +7655,10 @@ apiInstance.filesV1AssetsAssetIdSubtitlesSubtitleIdCcDelete(body).then((data:any
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **subtitleId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7667,7 +7667,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7702,13 +7702,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdSubtitlesSubtitleIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   subtitleId: "subtitle_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdSubtitlesSubtitleIdDelete(body).then((data:any) => {
@@ -7721,10 +7721,10 @@ apiInstance.filesV1AssetsAssetIdSubtitlesSubtitleIdDelete(body).then((data:any) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **subtitleId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7733,7 +7733,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7768,13 +7768,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdSubtitlesSubtitleIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   subtitleId: "subtitle_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdSubtitlesSubtitleIdGet(body).then((data:any) => {
@@ -7787,10 +7787,10 @@ apiInstance.filesV1AssetsAssetIdSubtitlesSubtitleIdGet(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **subtitleId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7799,7 +7799,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7834,10 +7834,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdSubtitlesSubtitleIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   subtitleId: "subtitle_id_example",
@@ -7850,6 +7846,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdSubtitlesSubtitleIdPatchRequest = {
     name: "name_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdSubtitlesSubtitleIdPatch(body).then((data:any) => {
@@ -7863,10 +7863,10 @@ apiInstance.filesV1AssetsAssetIdSubtitlesSubtitleIdPatch(body).then((data:any) =
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subtitleSchema** | **SubtitleSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **subtitleId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7875,7 +7875,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7911,10 +7911,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdSubtitlesSubtitleIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   subtitleId: "subtitle_id_example",
@@ -7927,6 +7923,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdSubtitlesSubtitleIdPutRequest = {
     name: "name_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdSubtitlesSubtitleIdPut(body).then((data:any) => {
@@ -7940,10 +7940,10 @@ apiInstance.filesV1AssetsAssetIdSubtitlesSubtitleIdPut(body).then((data:any) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subtitleSchema** | **SubtitleSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **subtitleId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7952,7 +7952,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7988,13 +7988,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdTemporaryFileSetsFileSetIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileSetId: "file_set_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean (optional)
   deleteCloudObjects: true,
 };
@@ -8009,10 +8009,10 @@ apiInstance.filesV1AssetsAssetIdTemporaryFileSetsFileSetIdDelete(body).then((dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileSetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **deleteCloudObjects** | [**boolean**] |  | (optional) defaults to true
 
 
@@ -8022,7 +8022,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8058,13 +8058,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdTemporaryFileSetsFileSetIdFilesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileSetId: "file_set_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Set to false if you don\'t need a URL, will speed things up (optional)
   generateSignedUrl: true,
 };
@@ -8079,10 +8079,10 @@ apiInstance.filesV1AssetsAssetIdTemporaryFileSetsFileSetIdFilesGet(body).then((d
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileSetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **generateSignedUrl** | [**boolean**] | Set to false if you don\&#39;t need a URL, will speed things up | (optional) defaults to true
 
 
@@ -8092,7 +8092,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8125,10 +8125,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdTemporaryFileSetsPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // TemporaryFileSetSchema | body
   temporaryFileSetSchema: {
@@ -8147,6 +8143,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdTemporaryFileSetsPostRequest = {
     storageId: "storageId_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdTemporaryFileSetsPost(body).then((data:any) => {
@@ -8160,9 +8160,9 @@ apiInstance.filesV1AssetsAssetIdTemporaryFileSetsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **temporaryFileSetSchema** | **TemporaryFileSetSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8171,7 +8171,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8206,10 +8206,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdTemporaryFilesFileIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
@@ -8233,6 +8229,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdTemporaryFilesFileIdPatchRequest = {
     userId: "userId_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdTemporaryFilesFileIdPatch(body).then((data:any) => {
@@ -8246,10 +8246,10 @@ apiInstance.filesV1AssetsAssetIdTemporaryFilesFileIdPatch(body).then((data:any) 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileSchema** | **FileSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8258,7 +8258,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8295,10 +8295,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdTemporaryFilesFileIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   fileId: "file_id_example",
@@ -8322,6 +8318,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdTemporaryFilesFileIdPutRequest = {
     userId: "userId_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdTemporaryFilesFileIdPut(body).then((data:any) => {
@@ -8335,10 +8335,10 @@ apiInstance.filesV1AssetsAssetIdTemporaryFilesFileIdPut(body).then((data:any) =>
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileSchema** | **FileSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8347,7 +8347,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8384,10 +8384,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdTemporaryFilesPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // FileSchema | body
   fileSchema: {
@@ -8409,6 +8405,10 @@ let body:iconik.FilesApiFilesV1AssetsAssetIdTemporaryFilesPostRequest = {
     userId: "userId_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean (optional)
   store: true,
 };
@@ -8424,9 +8424,9 @@ apiInstance.filesV1AssetsAssetIdTemporaryFilesPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileSchema** | **FileSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **store** | [**boolean**] |  | (optional) defaults to undefined
 
 
@@ -8436,7 +8436,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8471,11 +8471,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdVersionsAllFileSetsDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // string | ID of a last file set on previous page (optional)
@@ -8492,9 +8492,9 @@ apiInstance.filesV1AssetsAssetIdVersionsAllFileSetsDelete(body).then((data:any) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last file set on previous page | (optional) defaults to undefined
 
@@ -8505,7 +8505,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8540,11 +8540,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdVersionsAllFilesDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdVersionsAllFilesDelete(body).then((data:any) => {
@@ -8557,9 +8557,9 @@ apiInstance.filesV1AssetsAssetIdVersionsAllFilesDelete(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8568,7 +8568,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8603,11 +8603,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdVersionsAllFormatsDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdVersionsAllFormatsDelete(body).then((data:any) => {
@@ -8620,9 +8620,9 @@ apiInstance.filesV1AssetsAssetIdVersionsAllFormatsDelete(body).then((data:any) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8631,7 +8631,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8667,11 +8667,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdVersionsAllKeyframesDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdVersionsAllKeyframesDelete(body).then((data:any) => {
@@ -8684,9 +8684,9 @@ apiInstance.filesV1AssetsAssetIdVersionsAllKeyframesDelete(body).then((data:any)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8695,7 +8695,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8731,11 +8731,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdVersionsAllProxiesDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdVersionsAllProxiesDelete(body).then((data:any) => {
@@ -8748,9 +8748,9 @@ apiInstance.filesV1AssetsAssetIdVersionsAllProxiesDelete(body).then((data:any) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8759,7 +8759,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8795,11 +8795,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdVersionsAllSubtitlesDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdVersionsAllSubtitlesDelete(body).then((data:any) => {
@@ -8812,9 +8812,9 @@ apiInstance.filesV1AssetsAssetIdVersionsAllSubtitlesDelete(body).then((data:any)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8823,7 +8823,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8858,13 +8858,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdVersionsVersionIdFileSetsDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // string | ID of a last file set on previous page (optional)
@@ -8881,10 +8881,10 @@ apiInstance.filesV1AssetsAssetIdVersionsVersionIdFileSetsDelete(body).then((data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last file set on previous page | (optional) defaults to undefined
 
@@ -8895,7 +8895,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8930,13 +8930,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdVersionsVersionIdFileSetsGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // string | ID of a last file set on previous page (optional)
@@ -8955,10 +8955,10 @@ apiInstance.filesV1AssetsAssetIdVersionsVersionIdFileSetsGet(body).then((data:an
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last file set on previous page | (optional) defaults to undefined
  **fileCount** | [**boolean**] | Set to true if you need a total amount of files in a file set | (optional) defaults to false
@@ -8970,7 +8970,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9005,13 +9005,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdVersionsVersionIdFilesDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdVersionsVersionIdFilesDelete(body).then((data:any) => {
@@ -9024,10 +9024,10 @@ apiInstance.filesV1AssetsAssetIdVersionsVersionIdFilesDelete(body).then((data:an
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -9036,7 +9036,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9071,13 +9071,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdVersionsVersionIdFilesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // boolean | Set to False if you do not need a URL, will slow things down otherwise (optional)
@@ -9098,10 +9098,10 @@ apiInstance.filesV1AssetsAssetIdVersionsVersionIdFilesGet(body).then((data:any) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **generateSignedUrl** | [**boolean**] | Set to False if you do not need a URL, will slow things down otherwise | (optional) defaults to true
  **contentDisposition** | [**string**] | Set to attachment if you want a download link. Note that this will not create a download in asset history | (optional) defaults to 'inline'
@@ -9114,7 +9114,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9149,13 +9149,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdVersionsVersionIdFormatsDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdVersionsVersionIdFormatsDelete(body).then((data:any) => {
@@ -9168,10 +9168,10 @@ apiInstance.filesV1AssetsAssetIdVersionsVersionIdFormatsDelete(body).then((data:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -9180,7 +9180,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9216,13 +9216,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdVersionsVersionIdFormatsGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // string | ID of a last format on previous page (optional)
@@ -9239,10 +9239,10 @@ apiInstance.filesV1AssetsAssetIdVersionsVersionIdFormatsGet(body).then((data:any
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last format on previous page | (optional) defaults to undefined
 
@@ -9253,7 +9253,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9288,13 +9288,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdVersionsVersionIdKeyframesDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean (optional)
   keepPoster: true,
 };
@@ -9309,10 +9309,10 @@ apiInstance.filesV1AssetsAssetIdVersionsVersionIdKeyframesDelete(body).then((dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **keepPoster** | [**boolean**] |  | (optional) defaults to undefined
 
 
@@ -9322,7 +9322,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9358,13 +9358,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdVersionsVersionIdKeyframesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // boolean | Set to false if you don\'t need a URL, will speed things up (optional)
@@ -9385,10 +9385,10 @@ apiInstance.filesV1AssetsAssetIdVersionsVersionIdKeyframesGet(body).then((data:a
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **generateSignedUrl** | [**boolean**] | Set to false if you don\&#39;t need a URL, will speed things up | (optional) defaults to true
  **contentDisposition** | [**string**] | Set to attachment if you do not want a download link | (optional) defaults to 'inline'
@@ -9401,7 +9401,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9436,13 +9436,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdVersionsVersionIdProxiesDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdVersionsVersionIdProxiesDelete(body).then((data:any) => {
@@ -9455,10 +9455,10 @@ apiInstance.filesV1AssetsAssetIdVersionsVersionIdProxiesDelete(body).then((data:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -9467,7 +9467,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9503,13 +9503,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdVersionsVersionIdProxiesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // boolean | Set to false if you don\'t need a URL, will speed things up (optional)
@@ -9530,10 +9530,10 @@ apiInstance.filesV1AssetsAssetIdVersionsVersionIdProxiesGet(body).then((data:any
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **generateSignedUrl** | [**boolean**] | Set to false if you don\&#39;t need a URL, will speed things up | (optional) defaults to true
  **contentDisposition** | [**string**] | Set to attachment if you want a download link | (optional) defaults to 'inline'
@@ -9546,7 +9546,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9582,13 +9582,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdVersionsVersionIdSubtitlesDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdVersionsVersionIdSubtitlesDelete(body).then((data:any) => {
@@ -9601,10 +9601,10 @@ apiInstance.filesV1AssetsAssetIdVersionsVersionIdSubtitlesDelete(body).then((dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -9613,7 +9613,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9648,13 +9648,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdVersionsVersionIdSubtitlesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // string | ID of a last subtitle on previous page (optional)
@@ -9671,10 +9671,10 @@ apiInstance.filesV1AssetsAssetIdVersionsVersionIdSubtitlesGet(body).then((data:a
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last subtitle on previous page | (optional) defaults to undefined
 
@@ -9685,7 +9685,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9720,15 +9720,15 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdVersionsVersionIdSubtitlesLanguageCcWebvttGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
   // string
   language: "language_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdVersionsVersionIdSubtitlesLanguageCcWebvttGet(body).then((data:any) => {
@@ -9741,11 +9741,11 @@ apiInstance.filesV1AssetsAssetIdVersionsVersionIdSubtitlesLanguageCcWebvttGet(bo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
  **language** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -9754,7 +9754,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9789,15 +9789,15 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsAssetIdVersionsVersionIdSubtitlesLanguageWebvttGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
   // string
   language: "language_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1AssetsAssetIdVersionsVersionIdSubtitlesLanguageWebvttGet(body).then((data:any) => {
@@ -9810,11 +9810,11 @@ apiInstance.filesV1AssetsAssetIdVersionsVersionIdSubtitlesLanguageWebvttGet(body
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
  **language** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -9823,7 +9823,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9857,10 +9857,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsBulkKeyframesPostRequest = {
-  // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
   // BulkTranscodeSchema | body
   bulkTranscodeSchema: {
     formatName: "ORIGINAL",
@@ -9873,6 +9869,10 @@ let body:iconik.FilesApiFilesV1AssetsBulkKeyframesPostRequest = {
     preferredStorageMethod: "FILE",
     priority: 1,
   },
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.filesV1AssetsBulkKeyframesPost(body).then((data:any) => {
@@ -9886,8 +9886,8 @@ apiInstance.filesV1AssetsBulkKeyframesPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bulkTranscodeSchema** | **BulkTranscodeSchema**| body |
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -9896,7 +9896,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9931,8 +9931,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1AssetsExportLocationsExportLocationIdPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
   exportLocationId: "export_location_id_example",
   // AssetBatchExportSchema | body
   assetBatchExportSchema: {
@@ -9953,6 +9951,8 @@ let body:iconik.FilesApiFilesV1AssetsExportLocationsExportLocationIdPostRequest 
       "transcodeProfileIds_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
   // boolean | Enable transfer through iconik host (creates egress) (optional)
   allowHostTransfer: true,
 };
@@ -9968,8 +9968,8 @@ apiInstance.filesV1AssetsExportLocationsExportLocationIdPost(body).then((data:an
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetBatchExportSchema** | **AssetBatchExportSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
  **exportLocationId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
  **allowHostTransfer** | [**boolean**] | Enable transfer through iconik host (creates egress) | (optional) defaults to undefined
 
 
@@ -9979,7 +9979,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10014,13 +10014,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1CollectionsCollectionIdCustomKeyframePosterIdPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
   // string
   posterId: "poster_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | set to false to keep current custom_poster and custom_keyframe on asset (optional)
   overwrite: true,
 };
@@ -10035,10 +10035,10 @@ apiInstance.filesV1CollectionsCollectionIdCustomKeyframePosterIdPost(body).then(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
  **posterId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **overwrite** | [**boolean**] | set to false to keep current custom_poster and custom_keyframe on asset | (optional) defaults to undefined
 
 
@@ -10048,7 +10048,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10083,10 +10083,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1CollectionsCollectionIdExportLocationsExportLocationIdPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
   // string
   exportLocationId: "export_location_id_example",
@@ -10101,6 +10097,10 @@ let body:iconik.FilesApiFilesV1CollectionsCollectionIdExportLocationsExportLocat
     overwrite: true,
     preferredOriginalStorageId: "preferredOriginalStorageId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Enable transfer through iconik host (creates egress) (optional)
   allowHostTransfer: true,
 };
@@ -10116,10 +10116,10 @@ apiInstance.filesV1CollectionsCollectionIdExportLocationsExportLocationIdPost(bo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionExportSchema** | **CollectionExportSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
  **exportLocationId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **allowHostTransfer** | [**boolean**] | Enable transfer through iconik host (creates egress) | (optional) defaults to undefined
 
 
@@ -10129,7 +10129,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10164,11 +10164,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1CollectionsCollectionIdKeyframesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // boolean | Set to false if you don\'t need a URL, will speed things up (optional)
@@ -10187,9 +10187,9 @@ apiInstance.filesV1CollectionsCollectionIdKeyframesGet(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **generateSignedUrl** | [**boolean**] | Set to false if you don\&#39;t need a URL, will speed things up | (optional) defaults to true
  **lastId** | [**string**] | ID of a last collection keyframe on previous page | (optional) defaults to undefined
@@ -10201,7 +10201,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10236,13 +10236,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1CollectionsCollectionIdKeyframesKeyframeIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
   // string
   keyframeId: "keyframe_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | set to true to force a regeneration of default keyframes (optional)
   regenerateKeyframes: true,
 };
@@ -10257,10 +10257,10 @@ apiInstance.filesV1CollectionsCollectionIdKeyframesKeyframeIdDelete(body).then((
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
  **keyframeId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **regenerateKeyframes** | [**boolean**] | set to true to force a regeneration of default keyframes | (optional) defaults to undefined
 
 
@@ -10270,7 +10270,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10306,13 +10306,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1CollectionsCollectionIdKeyframesKeyframeIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
   // string
   keyframeId: "keyframe_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1CollectionsCollectionIdKeyframesKeyframeIdGet(body).then((data:any) => {
@@ -10325,10 +10325,10 @@ apiInstance.filesV1CollectionsCollectionIdKeyframesKeyframeIdGet(body).then((dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
  **keyframeId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10337,7 +10337,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10372,10 +10372,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1CollectionsCollectionIdKeyframesKeyframeIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
   // string
   keyframeId: "keyframe_id_example",
@@ -10404,6 +10400,10 @@ let body:iconik.FilesApiFilesV1CollectionsCollectionIdKeyframesKeyframeIdPatchRe
     },
     type: "KEYFRAME_MAP",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1CollectionsCollectionIdKeyframesKeyframeIdPatch(body).then((data:any) => {
@@ -10417,10 +10417,10 @@ apiInstance.filesV1CollectionsCollectionIdKeyframesKeyframeIdPatch(body).then((d
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionKeyframeSchema** | **CollectionKeyframeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
  **keyframeId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10429,7 +10429,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10465,10 +10465,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1CollectionsCollectionIdKeyframesKeyframeIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
   // string
   keyframeId: "keyframe_id_example",
@@ -10497,6 +10493,10 @@ let body:iconik.FilesApiFilesV1CollectionsCollectionIdKeyframesKeyframeIdPutRequ
     },
     type: "KEYFRAME_MAP",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1CollectionsCollectionIdKeyframesKeyframeIdPut(body).then((data:any) => {
@@ -10510,10 +10510,10 @@ apiInstance.filesV1CollectionsCollectionIdKeyframesKeyframeIdPut(body).then((dat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionKeyframeSchema** | **CollectionKeyframeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
  **keyframeId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10522,7 +10522,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10558,10 +10558,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1CollectionsCollectionIdKeyframesPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
   // CollectionKeyframeSchema | body
   collectionKeyframeSchema: {
@@ -10588,6 +10584,10 @@ let body:iconik.FilesApiFilesV1CollectionsCollectionIdKeyframesPostRequest = {
     },
     type: "KEYFRAME_MAP",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1CollectionsCollectionIdKeyframesPost(body).then((data:any) => {
@@ -10601,9 +10601,9 @@ apiInstance.filesV1CollectionsCollectionIdKeyframesPost(body).then((data:any) =>
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionKeyframeSchema** | **CollectionKeyframeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10612,7 +10612,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10646,16 +10646,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1DeleteQueueFileSetsDeleteRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // DeleteQueueSchema | body
   deleteQueueSchema: {
     ids: [
       "ids_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1DeleteQueueFileSetsDelete(body).then((data:any) => {
@@ -10669,8 +10669,8 @@ apiInstance.filesV1DeleteQueueFileSetsDelete(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteQueueSchema** | **DeleteQueueSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10679,7 +10679,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10713,9 +10713,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1DeleteQueueFileSetsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 1,
@@ -10739,8 +10739,8 @@ apiInstance.filesV1DeleteQueueFileSetsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
  **sort** | [**string**] | A comma separated list of fieldnames with order. For example - first_name,asc;last_name,desc | (optional) defaults to undefined
@@ -10754,7 +10754,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10789,9 +10789,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1DeleteQueueFileSetsPurgeAllPostRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -10805,8 +10805,8 @@ apiInstance.filesV1DeleteQueueFileSetsPurgeAllPost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10815,7 +10815,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10849,16 +10849,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1DeleteQueueFileSetsPurgePostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // DeleteQueueSchema | body
   deleteQueueSchema: {
     ids: [
       "ids_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1DeleteQueueFileSetsPurgePost(body).then((data:any) => {
@@ -10872,8 +10872,8 @@ apiInstance.filesV1DeleteQueueFileSetsPurgePost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteQueueSchema** | **DeleteQueueSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10882,7 +10882,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10916,16 +10916,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1DeleteQueueFormatsDeleteRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // DeleteQueueSchema | body
   deleteQueueSchema: {
     ids: [
       "ids_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1DeleteQueueFormatsDelete(body).then((data:any) => {
@@ -10939,8 +10939,8 @@ apiInstance.filesV1DeleteQueueFormatsDelete(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteQueueSchema** | **DeleteQueueSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10949,7 +10949,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10983,9 +10983,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1DeleteQueueFormatsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 1,
@@ -11009,8 +11009,8 @@ apiInstance.filesV1DeleteQueueFormatsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
  **sort** | [**string**] | A comma separated list of fieldnames with order. For example - first_name,asc;last_name,desc | (optional) defaults to undefined
@@ -11024,7 +11024,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -11059,9 +11059,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1DeleteQueueFormatsPurgeAllPostRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -11075,8 +11075,8 @@ apiInstance.filesV1DeleteQueueFormatsPurgeAllPost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -11085,7 +11085,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -11119,16 +11119,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1DeleteQueueFormatsPurgePostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // DeleteQueueSchema | body
   deleteQueueSchema: {
     ids: [
       "ids_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1DeleteQueueFormatsPurgePost(body).then((data:any) => {
@@ -11142,8 +11142,8 @@ apiInstance.filesV1DeleteQueueFormatsPurgePost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteQueueSchema** | **DeleteQueueSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -11152,7 +11152,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -11187,10 +11187,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1ExportLocationsExportLocationIdBulkExportPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   exportLocationId: "export_location_id_example",
   // BulkFilesetExportSchema | body
   bulkFilesetExportSchema: {
@@ -11209,6 +11205,10 @@ let body:iconik.FilesApiFilesV1ExportLocationsExportLocationIdBulkExportPostRequ
     overwrite: true,
     preferredOriginalStorageId: "preferredOriginalStorageId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Enable transfer through iconik host (creates egress) (optional)
   allowHostTransfer: true,
 };
@@ -11224,9 +11224,9 @@ apiInstance.filesV1ExportLocationsExportLocationIdBulkExportPost(body).then((dat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bulkFilesetExportSchema** | **BulkFilesetExportSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **exportLocationId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **allowHostTransfer** | [**boolean**] | Enable transfer through iconik host (creates egress) | (optional) defaults to undefined
 
 
@@ -11236,7 +11236,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -11271,11 +11271,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1ExportLocationsExportLocationIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   exportLocationId: "export_location_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1ExportLocationsExportLocationIdDelete(body).then((data:any) => {
@@ -11288,9 +11288,9 @@ apiInstance.filesV1ExportLocationsExportLocationIdDelete(body).then((data:any) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **exportLocationId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -11299,7 +11299,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -11334,11 +11334,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1ExportLocationsExportLocationIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   exportLocationId: "export_location_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1ExportLocationsExportLocationIdGet(body).then((data:any) => {
@@ -11351,9 +11351,9 @@ apiInstance.filesV1ExportLocationsExportLocationIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **exportLocationId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -11362,7 +11362,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -11397,10 +11397,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1ExportLocationsExportLocationIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   exportLocationId: "export_location_id_example",
   // ExportLocationSchema | body
   exportLocationSchema: {
@@ -11421,6 +11417,10 @@ let body:iconik.FilesApiFilesV1ExportLocationsExportLocationIdPatchRequest = {
     ],
     transcriptionFormat: "WEBVTT",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1ExportLocationsExportLocationIdPatch(body).then((data:any) => {
@@ -11434,9 +11434,9 @@ apiInstance.filesV1ExportLocationsExportLocationIdPatch(body).then((data:any) =>
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **exportLocationSchema** | **ExportLocationSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **exportLocationId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -11445,7 +11445,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -11480,10 +11480,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1ExportLocationsExportLocationIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   exportLocationId: "export_location_id_example",
   // ExportLocationSchema | body
   exportLocationSchema: {
@@ -11504,6 +11500,10 @@ let body:iconik.FilesApiFilesV1ExportLocationsExportLocationIdPutRequest = {
     ],
     transcriptionFormat: "WEBVTT",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1ExportLocationsExportLocationIdPut(body).then((data:any) => {
@@ -11517,9 +11517,9 @@ apiInstance.filesV1ExportLocationsExportLocationIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **exportLocationSchema** | **ExportLocationSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **exportLocationId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -11528,7 +11528,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -11563,11 +11563,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1ExportLocationsExportLocationIdReindexPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   exportLocationId: "export_location_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1ExportLocationsExportLocationIdReindexPost(body).then((data:any) => {
@@ -11580,9 +11580,9 @@ apiInstance.filesV1ExportLocationsExportLocationIdReindexPost(body).then((data:a
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **exportLocationId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -11591,7 +11591,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -11624,9 +11624,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1ExportLocationsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // string | Search query (optional)
   query: "query_example",
@@ -11650,8 +11650,8 @@ apiInstance.filesV1ExportLocationsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **query** | [**string**] | Search query | (optional) defaults to undefined
  **ids** | [**string**] | Filter list of id:s (comma separated) | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
@@ -11665,7 +11665,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -11698,10 +11698,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1ExportLocationsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // ExportLocationSchema | body
   exportLocationSchema: {
     description: "description_example",
@@ -11721,6 +11717,10 @@ let body:iconik.FilesApiFilesV1ExportLocationsPostRequest = {
     ],
     transcriptionFormat: "WEBVTT",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1ExportLocationsPost(body).then((data:any) => {
@@ -11734,8 +11734,8 @@ apiInstance.filesV1ExportLocationsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **exportLocationSchema** | **ExportLocationSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -11744,7 +11744,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -11778,10 +11778,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1ExportsTemporaryFileSetsFileSetIdStoragesStorageIdPostRequest = {
-  // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
   // string
   fileSetId: "file_set_id_example",
   // string | Destination storage_id
@@ -11819,6 +11815,10 @@ let body:iconik.FilesApiFilesV1ExportsTemporaryFileSetsFileSetIdStoragesStorageI
     parentJobId: "parentJobId_example",
     temporaryFileSetSource: true,
   },
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.filesV1ExportsTemporaryFileSetsFileSetIdStoragesStorageIdPost(body).then((data:any) => {
@@ -11832,10 +11832,10 @@ apiInstance.filesV1ExportsTemporaryFileSetsFileSetIdStoragesStorageIdPost(body).
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **completeExportToLocalStorageSchema** | **CompleteExportToLocalStorageSchema**| body |
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **fileSetId** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] | Destination storage_id | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -11844,7 +11844,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -11881,11 +11881,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1FileSetsFileSetIdFilesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   fileSetId: "file_set_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Set to false if you don\'t need a URL, will speed things up (optional)
   generateSignedUrl: true,
 };
@@ -11900,9 +11900,9 @@ apiInstance.filesV1FileSetsFileSetIdFilesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **fileSetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **generateSignedUrl** | [**boolean**] | Set to false if you don\&#39;t need a URL, will speed things up | (optional) defaults to true
 
 
@@ -11912,7 +11912,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -11945,10 +11945,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1FileSetsFileSetIdStoragesStorageIdPostRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   fileSetId: "file_set_id_example",
   // string | Destination storage_id
   storageId: "storage_id_example",
@@ -11978,6 +11974,10 @@ let body:iconik.FilesApiFilesV1FileSetsFileSetIdStoragesStorageIdPostRequest = {
     parentJobId: "parentJobId_example",
     temporaryFileSetSource: true,
   },
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
   // boolean | Enable transfer through iconik host (creates egress) (optional)
   allowHostTransfer: true,
 };
@@ -11993,10 +11993,10 @@ apiInstance.filesV1FileSetsFileSetIdStoragesStorageIdPost(body).then((data:any) 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **transferFromStorageSchema** | **TransferFromStorageSchema**| body |
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **fileSetId** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] | Destination storage_id | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
  **allowHostTransfer** | [**boolean**] | Enable transfer through iconik host (creates egress) | (optional) defaults to undefined
 
 
@@ -12006,7 +12006,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -12044,13 +12044,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1FileSetsFileSetIdTransfersFromStorageIdDeleteRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   fileSetId: "file_set_id_example",
   // string
   storageId: "storage_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
   // boolean (optional)
   failed: true,
 };
@@ -12065,10 +12065,10 @@ apiInstance.filesV1FileSetsFileSetIdTransfersFromStorageIdDelete(body).then((dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **fileSetId** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
  **failed** | [**boolean**] |  | (optional) defaults to undefined
 
 
@@ -12078,7 +12078,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -12112,13 +12112,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1FileSetsFileSetIdTransfersToStorageIdDeleteRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   fileSetId: "file_set_id_example",
   // string
   storageId: "storage_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
   // boolean (optional)
   failed: true,
 };
@@ -12133,10 +12133,10 @@ apiInstance.filesV1FileSetsFileSetIdTransfersToStorageIdDelete(body).then((data:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **fileSetId** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
  **failed** | [**boolean**] |  | (optional) defaults to undefined
 
 
@@ -12146,7 +12146,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -12180,11 +12180,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1FilesChecksumChecksumGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   checksum: "checksum_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 1,
   // string (optional)
@@ -12201,9 +12201,9 @@ apiInstance.filesV1FilesChecksumChecksumGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **checksum** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to undefined
  **lastId** | [**string**] |  | (optional) defaults to undefined
 
@@ -12214,7 +12214,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -12249,13 +12249,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1FilesFileIdDeletionsFromStorageIdDeleteRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   fileId: "file_id_example",
   // string
   storageId: "storage_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.filesV1FilesFileIdDeletionsFromStorageIdDelete(body).then((data:any) => {
@@ -12268,10 +12268,10 @@ apiInstance.filesV1FilesFileIdDeletionsFromStorageIdDelete(body).then((data:any)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -12280,7 +12280,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -12314,11 +12314,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1FilesMissingStoragesStorageIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean (optional)
   removeAssets: true,
 };
@@ -12333,9 +12333,9 @@ apiInstance.filesV1FilesMissingStoragesStorageIdDelete(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **removeAssets** | [**boolean**] |  | (optional) defaults to undefined
 
 
@@ -12345,7 +12345,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -12380,16 +12380,16 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1FilesStoragesStorageIdPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // FileExistenceCheckSchema | body
   fileExistenceCheckSchema: {
     directoryPath: "directoryPath_example",
     fileName: "fileName_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean (optional)
   getFileSize: true,
 };
@@ -12405,9 +12405,9 @@ apiInstance.filesV1FilesStoragesStorageIdPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileExistenceCheckSchema** | **FileExistenceCheckSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **getFileSize** | [**boolean**] |  | (optional) defaults to undefined
 
 
@@ -12417,7 +12417,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -12452,10 +12452,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1FormatsFormatIdStoragesStorageIdPostRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   formatId: "format_id_example",
   // string | Destination storage_id
   storageId: "storage_id_example",
@@ -12485,6 +12481,10 @@ let body:iconik.FilesApiFilesV1FormatsFormatIdStoragesStorageIdPostRequest = {
     parentJobId: "parentJobId_example",
     temporaryFileSetSource: true,
   },
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.filesV1FormatsFormatIdStoragesStorageIdPost(body).then((data:any) => {
@@ -12498,10 +12498,10 @@ apiInstance.filesV1FormatsFormatIdStoragesStorageIdPost(body).then((data:any) =>
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **transferFromStorageSchema** | **TransferFromStorageSchema**| body |
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **formatId** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] | Destination storage_id | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -12510,7 +12510,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -12548,10 +12548,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1FormatsFormatNameArchiveBulkPostRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   formatName: "format_name_example",
   // BulkFilesetArchiveSchema | body
   bulkFilesetArchiveSchema: {
@@ -12566,6 +12562,10 @@ let body:iconik.FilesApiFilesV1FormatsFormatNameArchiveBulkPostRequest = {
     objectType: "assets",
     preferredOriginalStorageId: "preferredOriginalStorageId_example",
   },
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.filesV1FormatsFormatNameArchiveBulkPost(body).then((data:any) => {
@@ -12579,9 +12579,9 @@ apiInstance.filesV1FormatsFormatNameArchiveBulkPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bulkFilesetArchiveSchema** | **BulkFilesetArchiveSchema**| body |
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **formatName** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -12590,7 +12590,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -12626,10 +12626,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1FormatsFormatNameRestoreBulkPostRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   formatName: "format_name_example",
   // BulkFilesetRestoreSchema | body
   bulkFilesetRestoreSchema: {
@@ -12645,6 +12641,10 @@ let body:iconik.FilesApiFilesV1FormatsFormatNameRestoreBulkPostRequest = {
     objectType: "assets",
     preferredOriginalStorageId: "preferredOriginalStorageId_example",
   },
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.filesV1FormatsFormatNameRestoreBulkPost(body).then((data:any) => {
@@ -12658,9 +12658,9 @@ apiInstance.filesV1FormatsFormatNameRestoreBulkPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bulkFilesetRestoreSchema** | **BulkFilesetRestoreSchema**| body |
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **formatName** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -12669,7 +12669,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -12705,15 +12705,15 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1SharesStoragesStorageIdFilesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // string
   directoryPath: "directory_path_example",
   // string | Filter by name
   name: "name_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1SharesStoragesStorageIdFilesGet(body).then((data:any) => {
@@ -12726,11 +12726,11 @@ apiInstance.filesV1SharesStoragesStorageIdFilesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
  **directoryPath** | [**string**] |  | defaults to undefined
  **name** | [**string**] | Filter by name | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -12739,7 +12739,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -12773,9 +12773,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesFilesReindexPostRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -12789,8 +12789,8 @@ apiInstance.filesV1StoragesFilesReindexPost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -12799,7 +12799,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -12832,9 +12832,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | Which page number to fetch (optional)
   page: 1,
@@ -12872,8 +12872,8 @@ apiInstance.filesV1StoragesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **sort** | [**string**] | A comma separated list of fieldnames with order. For example - status,asc;last_scanned,desc | (optional) defaults to undefined
@@ -12894,7 +12894,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -12927,9 +12927,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesIsgLatestVersionGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -12943,8 +12943,8 @@ apiInstance.filesV1StoragesIsgLatestVersionGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -12953,7 +12953,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -12989,11 +12989,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesMatchingPurposeGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   purpose: "purpose_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string (optional)
   storageId: "storage_id_example",
 };
@@ -13008,9 +13008,9 @@ apiInstance.filesV1StoragesMatchingPurposeGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **purpose** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **storageId** | [**string**] |  | (optional) defaults to undefined
 
 
@@ -13020,7 +13020,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -13055,13 +13055,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesMatchingPurposeMethodMethodGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   purpose: "purpose_example",
   // string
   method: "method_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesMatchingPurposeMethodMethodGet(body).then((data:any) => {
@@ -13074,10 +13074,10 @@ apiInstance.filesV1StoragesMatchingPurposeMethodMethodGet(body).then((data:any) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **purpose** | [**string**] |  | defaults to undefined
  **method** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -13086,7 +13086,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -13120,10 +13120,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // StorageSchema | body
   storageSchema: {
     description: "description_example",
@@ -13136,6 +13132,10 @@ let body:iconik.FilesApiFilesV1StoragesPostRequest = {
     status: "ACTIVE",
     statusMessage: "statusMessage_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesPost(body).then((data:any) => {
@@ -13149,8 +13149,8 @@ apiInstance.filesV1StoragesPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **storageSchema** | **StorageSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -13159,7 +13159,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -13194,11 +13194,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesPurposeDefaultGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   purpose: "purpose_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesPurposeDefaultGet(body).then((data:any) => {
@@ -13211,9 +13211,9 @@ apiInstance.filesV1StoragesPurposeDefaultGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **purpose** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -13222,7 +13222,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -13258,9 +13258,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesReindexPostRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -13274,8 +13274,8 @@ apiInstance.filesV1StoragesReindexPost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -13284,7 +13284,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -13318,11 +13318,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdAutoScanDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdAutoScanDelete(body).then((data:any) => {
@@ -13335,9 +13335,9 @@ apiInstance.filesV1StoragesStorageIdAutoScanDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -13346,7 +13346,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -13381,11 +13381,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdAutoScanGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdAutoScanGet(body).then((data:any) => {
@@ -13398,9 +13398,9 @@ apiInstance.filesV1StoragesStorageIdAutoScanGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -13409,7 +13409,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -13444,15 +13444,15 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdAutoScanPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // StorageAutoScanSchema | body
   storageAutoScanSchema: {
     hoursInterval: 24,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdAutoScanPost(body).then((data:any) => {
@@ -13466,9 +13466,9 @@ apiInstance.filesV1StoragesStorageIdAutoScanPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **storageAutoScanSchema** | **StorageAutoScanSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -13477,7 +13477,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -13511,10 +13511,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdBulkPostRequest = {
-  // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
   // string | Destination storage_id
   storageId: "storage_id_example",
   // BulkTransferToStorageSchema | body
@@ -13532,6 +13528,10 @@ let body:iconik.FilesApiFilesV1StoragesStorageIdBulkPostRequest = {
     overwrite: false,
     preferredOriginalStorageId: "preferredOriginalStorageId_example",
   },
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
   // boolean | Enable transfer through iconik host (creates egress) (optional)
   allowHostTransfer: true,
 };
@@ -13547,9 +13547,9 @@ apiInstance.filesV1StoragesStorageIdBulkPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bulkTransferToStorageSchema** | **BulkTransferToStorageSchema**| body |
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] | Destination storage_id | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
  **allowHostTransfer** | [**boolean**] | Enable transfer through iconik host (creates egress) | (optional) defaults to undefined
 
 
@@ -13559,7 +13559,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -13595,11 +13595,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdDefaultDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdDefaultDelete(body).then((data:any) => {
@@ -13612,9 +13612,9 @@ apiInstance.filesV1StoragesStorageIdDefaultDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -13623,7 +13623,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -13658,11 +13658,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdDefaultPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdDefaultPost(body).then((data:any) => {
@@ -13675,9 +13675,9 @@ apiInstance.filesV1StoragesStorageIdDefaultPost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -13686,7 +13686,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -13721,11 +13721,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdDelete(body).then((data:any) => {
@@ -13738,9 +13738,9 @@ apiInstance.filesV1StoragesStorageIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -13749,7 +13749,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -13784,13 +13784,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdDeletionsDeletionIdDeleteRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   storageId: "storage_id_example",
   // string
   deletionId: "deletion_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.filesV1StoragesStorageIdDeletionsDeletionIdDelete(body).then((data:any) => {
@@ -13803,10 +13803,10 @@ apiInstance.filesV1StoragesStorageIdDeletionsDeletionIdDelete(body).then((data:a
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
  **deletionId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -13815,7 +13815,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -13849,11 +13849,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdDeletionsFromGetRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // string | ID of a last file deletion entity on previous page (optional)
@@ -13870,9 +13870,9 @@ apiInstance.filesV1StoragesStorageIdDeletionsFromGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last file deletion entity on previous page | (optional) defaults to undefined
 
@@ -13883,7 +13883,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -13916,11 +13916,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdDeletionsGetRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // string | ID of a last file deletion entity on previous page (optional)
@@ -13937,9 +13937,9 @@ apiInstance.filesV1StoragesStorageIdDeletionsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last file deletion entity on previous page | (optional) defaults to undefined
 
@@ -13950,7 +13950,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -13983,11 +13983,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdFilesDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string (optional)
   path: "path_example",
   // string (optional)
@@ -14020,9 +14020,9 @@ apiInstance.filesV1StoragesStorageIdFilesDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **path** | [**string**] |  | (optional) defaults to undefined
  **pathSeparator** | [**string**] |  | (optional) defaults to undefined
  **directoryPath** | [**string**] |  | (optional) defaults to undefined
@@ -14041,7 +14041,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -14076,13 +14076,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdFilesFileIdReindexPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // string
   fileId: "file_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdFilesFileIdReindexPost(body).then((data:any) => {
@@ -14095,10 +14095,10 @@ apiInstance.filesV1StoragesStorageIdFilesFileIdReindexPost(body).then((data:any)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
  **fileId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -14107,7 +14107,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -14141,11 +14141,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdFilesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string (optional)
   path: "path_example",
   // string (optional)
@@ -14188,9 +14188,9 @@ apiInstance.filesV1StoragesStorageIdFilesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **path** | [**string**] |  | (optional) defaults to undefined
  **pathSeparator** | [**string**] |  | (optional) defaults to undefined
  **directoryPath** | [**string**] |  | (optional) defaults to undefined
@@ -14214,7 +14214,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -14249,10 +14249,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdFilesPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // FileBaseSchema | body
   fileBaseSchema: {
@@ -14273,6 +14269,10 @@ let body:iconik.FilesApiFilesV1StoragesStorageIdFilesPatchRequest = {
     userId: "userId_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdFilesPatch(body).then((data:any) => {
@@ -14286,9 +14286,9 @@ apiInstance.filesV1StoragesStorageIdFilesPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileBaseSchema** | **FileBaseSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -14297,7 +14297,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -14334,10 +14334,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdFilesPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // FileBaseSchema | body
   fileBaseSchema: {
@@ -14358,6 +14354,10 @@ let body:iconik.FilesApiFilesV1StoragesStorageIdFilesPostRequest = {
     userId: "userId_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdFilesPost(body).then((data:any) => {
@@ -14371,9 +14371,9 @@ apiInstance.filesV1StoragesStorageIdFilesPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileBaseSchema** | **FileBaseSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -14382,7 +14382,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -14417,10 +14417,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdFilesPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // FileBaseSchema | body
   fileBaseSchema: {
@@ -14441,6 +14437,10 @@ let body:iconik.FilesApiFilesV1StoragesStorageIdFilesPutRequest = {
     userId: "userId_example",
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdFilesPut(body).then((data:any) => {
@@ -14454,9 +14454,9 @@ apiInstance.filesV1StoragesStorageIdFilesPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileBaseSchema** | **FileBaseSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -14465,7 +14465,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -14502,11 +14502,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdFilesReindexPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdFilesReindexPost(body).then((data:any) => {
@@ -14519,9 +14519,9 @@ apiInstance.filesV1StoragesStorageIdFilesReindexPost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -14530,7 +14530,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -14564,13 +14564,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdGatewayEventsEventIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // string
   eventId: "event_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdGatewayEventsEventIdDelete(body).then((data:any) => {
@@ -14583,10 +14583,10 @@ apiInstance.filesV1StoragesStorageIdGatewayEventsEventIdDelete(body).then((data:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
  **eventId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -14595,7 +14595,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -14630,13 +14630,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdGatewayEventsGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // string
   lastId: "last_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdGatewayEventsGet(body).then((data:any) => {
@@ -14649,10 +14649,10 @@ apiInstance.filesV1StoragesStorageIdGatewayEventsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
  **lastId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -14661,7 +14661,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -14697,16 +14697,16 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdGatewayEventsPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // IconikStorageGatewayEventSchema | body
   iconikStorageGatewayEventSchema: {
     data: {},
     type: "RESTART",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdGatewayEventsPost(body).then((data:any) => {
@@ -14720,9 +14720,9 @@ apiInstance.filesV1StoragesStorageIdGatewayEventsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **iconikStorageGatewayEventSchema** | **IconikStorageGatewayEventSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -14731,7 +14731,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -14767,10 +14767,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdGatewayEventsPurgePostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // IconikStorageGatewayEventsPurgeSchema | body
   iconikStorageGatewayEventsPurgeSchema: {
@@ -14778,6 +14774,10 @@ let body:iconik.FilesApiFilesV1StoragesStorageIdGatewayEventsPurgePostRequest = 
       "eventIds_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdGatewayEventsPurgePost(body).then((data:any) => {
@@ -14791,9 +14791,9 @@ apiInstance.filesV1StoragesStorageIdGatewayEventsPurgePost(body).then((data:any)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **iconikStorageGatewayEventsPurgeSchema** | **IconikStorageGatewayEventsPurgeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -14802,7 +14802,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -14837,11 +14837,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdGatewayReportGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdGatewayReportGet(body).then((data:any) => {
@@ -14854,9 +14854,9 @@ apiInstance.filesV1StoragesStorageIdGatewayReportGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -14865,7 +14865,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -14901,10 +14901,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdGatewayReportPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // GatewayReportSchema | body
   gatewayReportSchema: {
@@ -14936,6 +14932,10 @@ let body:iconik.FilesApiFilesV1StoragesStorageIdGatewayReportPutRequest = {
     waitingPreviewTranscodeJobsNumber: -2147483648,
     waitingTranscodeJobsNumber: -2147483648,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdGatewayReportPut(body).then((data:any) => {
@@ -14949,9 +14949,9 @@ apiInstance.filesV1StoragesStorageIdGatewayReportPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gatewayReportSchema** | **GatewayReportSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -14960,7 +14960,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -14996,15 +14996,15 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdGatewayStatusPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // GatewayStatusSchema | body
   gatewayStatusSchema: {
     status: "status_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdGatewayStatusPut(body).then((data:any) => {
@@ -15018,9 +15018,9 @@ apiInstance.filesV1StoragesStorageIdGatewayStatusPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gatewayStatusSchema** | **GatewayStatusSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -15029,7 +15029,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -15065,11 +15065,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdGet(body).then((data:any) => {
@@ -15082,9 +15082,9 @@ apiInstance.filesV1StoragesStorageIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -15093,7 +15093,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -15128,13 +15128,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdLogsPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // string
   filename: "filename_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdLogsPost(body).then((data:any) => {
@@ -15147,10 +15147,10 @@ apiInstance.filesV1StoragesStorageIdLogsPost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
  **filename** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -15159,7 +15159,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -15195,10 +15195,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdObjectTypeFilesDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // string
   objectType: "object_type_example",
@@ -15209,6 +15205,10 @@ let body:iconik.FilesApiFilesV1StoragesStorageIdObjectTypeFilesDeleteRequest = {
     ],
     objectType: "objectType_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdObjectTypeFilesDelete(body).then((data:any) => {
@@ -15222,10 +15222,10 @@ apiInstance.filesV1StoragesStorageIdObjectTypeFilesDelete(body).then((data:any) 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **storageFilesDeleteBulkSchema** | **StorageFilesDeleteBulkSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -15234,7 +15234,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -15270,10 +15270,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // StorageSchema | body
   storageSchema: {
@@ -15287,6 +15283,10 @@ let body:iconik.FilesApiFilesV1StoragesStorageIdPatchRequest = {
     status: "ACTIVE",
     statusMessage: "statusMessage_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdPatch(body).then((data:any) => {
@@ -15300,9 +15300,9 @@ apiInstance.filesV1StoragesStorageIdPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **storageSchema** | **StorageSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -15311,7 +15311,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -15346,10 +15346,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // StorageSchema | body
   storageSchema: {
@@ -15363,6 +15359,10 @@ let body:iconik.FilesApiFilesV1StoragesStorageIdPutRequest = {
     status: "ACTIVE",
     statusMessage: "statusMessage_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdPut(body).then((data:any) => {
@@ -15376,9 +15376,9 @@ apiInstance.filesV1StoragesStorageIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **storageSchema** | **StorageSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -15387,7 +15387,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -15422,11 +15422,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdReindexPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdReindexPost(body).then((data:any) => {
@@ -15439,9 +15439,9 @@ apiInstance.filesV1StoragesStorageIdReindexPost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -15450,7 +15450,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -15484,10 +15484,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdScanPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // StorageScanSchema | body
   storageScanSchema: {
@@ -15499,6 +15495,10 @@ let body:iconik.FilesApiFilesV1StoragesStorageIdScanPostRequest = {
       "paths_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdScanPost(body).then((data:any) => {
@@ -15512,9 +15512,9 @@ apiInstance.filesV1StoragesStorageIdScanPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **storageScanSchema** | **StorageScanSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -15523,7 +15523,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -15558,10 +15558,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdSearchDocumentPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // StorageSchema | body
   storageSchema: {
@@ -15575,6 +15571,10 @@ let body:iconik.FilesApiFilesV1StoragesStorageIdSearchDocumentPutRequest = {
     status: "ACTIVE",
     statusMessage: "statusMessage_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdSearchDocumentPut(body).then((data:any) => {
@@ -15588,9 +15588,9 @@ apiInstance.filesV1StoragesStorageIdSearchDocumentPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **storageSchema** | **StorageSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -15599,7 +15599,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -15635,11 +15635,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdTemporaryFilesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 100,
   // string | ID of a last file on previous page (optional)
@@ -15656,9 +15656,9 @@ apiInstance.filesV1StoragesStorageIdTemporaryFilesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 100
  **lastId** | [**string**] | ID of a last file on previous page | (optional) defaults to undefined
 
@@ -15669,7 +15669,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -15705,11 +15705,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdTranscodersGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // string | ID of a last transcoder on previous page (optional)
@@ -15726,9 +15726,9 @@ apiInstance.filesV1StoragesStorageIdTranscodersGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last transcoder on previous page | (optional) defaults to undefined
 
@@ -15739,7 +15739,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -15773,13 +15773,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdTranscodersTranscoderIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // string
   transcoderId: "transcoder_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdTranscodersTranscoderIdDelete(body).then((data:any) => {
@@ -15792,10 +15792,10 @@ apiInstance.filesV1StoragesStorageIdTranscodersTranscoderIdDelete(body).then((da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
  **transcoderId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -15804,7 +15804,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -15839,13 +15839,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdTranscodersTranscoderIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
   // string
   transcoderId: "transcoder_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdTranscodersTranscoderIdPut(body).then((data:any) => {
@@ -15858,10 +15858,10 @@ apiInstance.filesV1StoragesStorageIdTranscodersTranscoderIdPut(body).then((data:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
  **transcoderId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -15870,7 +15870,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -15906,11 +15906,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdTransfersFromGetRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // string | ID of a last transfer on previous page (optional)
@@ -15927,9 +15927,9 @@ apiInstance.filesV1StoragesStorageIdTransfersFromGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last transfer on previous page | (optional) defaults to undefined
 
@@ -15940,7 +15940,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -15973,13 +15973,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdTransfersFromTransferIdDeleteRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   storageId: "storage_id_example",
   // string
   transferId: "transfer_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
   // boolean (optional)
   failed: true,
   // boolean (optional)
@@ -15996,10 +15996,10 @@ apiInstance.filesV1StoragesStorageIdTransfersFromTransferIdDelete(body).then((da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
  **transferId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
  **failed** | [**boolean**] |  | (optional) defaults to undefined
  **completed** | [**boolean**] |  | (optional) defaults to undefined
 
@@ -16010,7 +16010,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -16044,13 +16044,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdTransfersFromTransferIdGetRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   storageId: "storage_id_example",
   // string
   transferId: "transfer_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.filesV1StoragesStorageIdTransfersFromTransferIdGet(body).then((data:any) => {
@@ -16063,10 +16063,10 @@ apiInstance.filesV1StoragesStorageIdTransfersFromTransferIdGet(body).then((data:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
  **transferId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -16075,7 +16075,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -16111,11 +16111,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdTransfersToGetRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // string | ID of a last transfer on previous page (optional)
@@ -16132,9 +16132,9 @@ apiInstance.filesV1StoragesStorageIdTransfersToGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last transfer on previous page | (optional) defaults to undefined
 
@@ -16145,7 +16145,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -16178,13 +16178,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdTransfersToTransferIdDeleteRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   storageId: "storage_id_example",
   // string
   transferId: "transfer_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
   // boolean (optional)
   failed: true,
   // boolean (optional)
@@ -16201,10 +16201,10 @@ apiInstance.filesV1StoragesStorageIdTransfersToTransferIdDelete(body).then((data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
  **transferId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
  **failed** | [**boolean**] |  | (optional) defaults to undefined
  **completed** | [**boolean**] |  | (optional) defaults to undefined
 
@@ -16215,7 +16215,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -16249,13 +16249,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdTransfersToTransferIdGetRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   storageId: "storage_id_example",
   // string
   transferId: "transfer_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.filesV1StoragesStorageIdTransfersToTransferIdGet(body).then((data:any) => {
@@ -16268,10 +16268,10 @@ apiInstance.filesV1StoragesStorageIdTransfersToTransferIdGet(body).then((data:an
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
  **transferId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -16280,7 +16280,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -16316,11 +16316,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdVerificationsAccessGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdVerificationsAccessGet(body).then((data:any) => {
@@ -16333,9 +16333,9 @@ apiInstance.filesV1StoragesStorageIdVerificationsAccessGet(body).then((data:any)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -16344,7 +16344,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -16380,11 +16380,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1StoragesStorageIdVerificationsPermissionsGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   storageId: "storage_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1StoragesStorageIdVerificationsPermissionsGet(body).then((data:any) => {
@@ -16397,9 +16397,9 @@ apiInstance.filesV1StoragesStorageIdVerificationsPermissionsGet(body).then((data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **storageId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -16408,7 +16408,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -16443,9 +16443,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1TranscodersGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 1,
@@ -16469,8 +16469,8 @@ apiInstance.filesV1TranscodersGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
  **query** | [**string**] | Search query | (optional) defaults to undefined
@@ -16484,7 +16484,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -16517,16 +16517,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1TranscodersPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // TranscoderSchema | body
   transcoderSchema: {
     name: "name_example",
     settings: {},
     type: "VANTAGE",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1TranscodersPost(body).then((data:any) => {
@@ -16540,8 +16540,8 @@ apiInstance.filesV1TranscodersPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **transcoderSchema** | **TranscoderSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -16550,7 +16550,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -16585,11 +16585,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1TranscodersTranscoderIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   transcoderId: "transcoder_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1TranscodersTranscoderIdDelete(body).then((data:any) => {
@@ -16602,9 +16602,9 @@ apiInstance.filesV1TranscodersTranscoderIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **transcoderId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -16613,7 +16613,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -16648,11 +16648,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1TranscodersTranscoderIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   transcoderId: "transcoder_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1TranscodersTranscoderIdGet(body).then((data:any) => {
@@ -16665,9 +16665,9 @@ apiInstance.filesV1TranscodersTranscoderIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **transcoderId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -16676,7 +16676,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -16711,13 +16711,13 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1TranscodersTranscoderIdLogsPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   transcoderId: "transcoder_id_example",
   // string
   filename: "filename_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1TranscodersTranscoderIdLogsPost(body).then((data:any) => {
@@ -16730,10 +16730,10 @@ apiInstance.filesV1TranscodersTranscoderIdLogsPost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **transcoderId** | [**string**] |  | defaults to undefined
  **filename** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -16742,7 +16742,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -16778,10 +16778,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1TranscodersTranscoderIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   transcoderId: "transcoder_id_example",
   // TranscoderSchema | body
   transcoderSchema: {
@@ -16789,6 +16785,10 @@ let body:iconik.FilesApiFilesV1TranscodersTranscoderIdPatchRequest = {
     settings: {},
     type: "VANTAGE",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1TranscodersTranscoderIdPatch(body).then((data:any) => {
@@ -16802,9 +16802,9 @@ apiInstance.filesV1TranscodersTranscoderIdPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **transcoderSchema** | **TranscoderSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **transcoderId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -16813,7 +16813,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -16848,10 +16848,6 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1TranscodersTranscoderIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   transcoderId: "transcoder_id_example",
   // TranscoderSchema | body
   transcoderSchema: {
@@ -16859,6 +16855,10 @@ let body:iconik.FilesApiFilesV1TranscodersTranscoderIdPutRequest = {
     settings: {},
     type: "VANTAGE",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1TranscodersTranscoderIdPut(body).then((data:any) => {
@@ -16872,9 +16872,9 @@ apiInstance.filesV1TranscodersTranscoderIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **transcoderSchema** | **TranscoderSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **transcoderId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -16883,7 +16883,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -16918,11 +16918,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1TranscodersTranscoderIdReindexPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   transcoderId: "transcoder_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.filesV1TranscodersTranscoderIdReindexPost(body).then((data:any) => {
@@ -16935,9 +16935,9 @@ apiInstance.filesV1TranscodersTranscoderIdReindexPost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **transcoderId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -16946,7 +16946,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -16980,11 +16980,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1TranscodersTranscoderIdStoragesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   transcoderId: "transcoder_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
   // string | ID of a last storage on previous page (optional)
@@ -17001,9 +17001,9 @@ apiInstance.filesV1TranscodersTranscoderIdStoragesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **transcoderId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last storage on previous page | (optional) defaults to undefined
 
@@ -17014,7 +17014,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -17048,11 +17048,11 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1TransfersTransferIdUrlsPostRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   transferId: "transfer_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.filesV1TransfersTransferIdUrlsPost(body).then((data:any) => {
@@ -17065,9 +17065,9 @@ apiInstance.filesV1TransfersTransferIdUrlsPost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **transferId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -17076,7 +17076,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -17112,15 +17112,15 @@ const apiInstance = new iconik.FilesApi(configuration);
 
 let body:iconik.FilesApiFilesV1TransfersTransferIdUrlsVerifyGetRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   transferId: "transfer_id_example",
   // string
   userId: "user_id_example",
   // string
   signature: "signature_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.filesV1TransfersTransferIdUrlsVerifyGet(body).then((data:any) => {
@@ -17133,11 +17133,11 @@ apiInstance.filesV1TransfersTransferIdUrlsVerifyGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **transferId** | [**string**] |  | defaults to undefined
  **userId** | [**string**] |  | defaults to undefined
  **signature** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -17146,7 +17146,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 

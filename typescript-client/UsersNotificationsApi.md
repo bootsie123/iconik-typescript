@@ -37,9 +37,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersNotificationsApi(configuration);
 
 let body:iconik.UsersNotificationsApiUsersNotificationsV1NotificationSettingsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
@@ -57,8 +57,8 @@ apiInstance.usersNotificationsV1NotificationSettingsGet(body).then((data:any) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last file set on previous page | (optional) defaults to undefined
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -105,10 +105,6 @@ const apiInstance = new iconik.UsersNotificationsApi(configuration);
 
 let body:iconik.UsersNotificationsApiUsersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   subObjectType: "sub_object_type_example",
@@ -116,6 +112,10 @@ let body:iconik.UsersNotificationsApiUsersNotificationsV1NotificationSettingsObj
   eventType: "event_type_example",
   // string
   protocol: "protocol_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolGet(body).then((data:any) => {
@@ -128,12 +128,12 @@ apiInstance.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEvent
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **subObjectType** | [**string**] |  | defaults to undefined
  **eventType** | [**string**] |  | defaults to undefined
  **protocol** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -178,10 +178,6 @@ const apiInstance = new iconik.UsersNotificationsApi(configuration);
 
 let body:iconik.UsersNotificationsApiUsersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   subObjectType: "sub_object_type_example",
@@ -194,6 +190,10 @@ let body:iconik.UsersNotificationsApiUsersNotificationsV1NotificationSettingsObj
     enabled: true,
     settings: {},
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEventTypeProtocolPut(body).then((data:any) => {
@@ -207,12 +207,12 @@ apiInstance.usersNotificationsV1NotificationSettingsObjectTypeSubObjectTypeEvent
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **notificationSettingSchema** | **NotificationSettingSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **subObjectType** | [**string**] |  | defaults to undefined
  **eventType** | [**string**] |  | defaults to undefined
  **protocol** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -255,9 +255,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersNotificationsApi(configuration);
 
 let body:iconik.UsersNotificationsApiUsersNotificationsV1NotificationsAllReadPutRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -271,8 +271,8 @@ apiInstance.usersNotificationsV1NotificationsAllReadPut(body).then((data:any) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -315,9 +315,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersNotificationsApi(configuration);
 
 let body:iconik.UsersNotificationsApiUsersNotificationsV1NotificationsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 10,
@@ -335,8 +335,8 @@ apiInstance.usersNotificationsV1NotificationsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to 10
  **lastId** | [**string**] | ID of a last file set on previous page | (optional) defaults to undefined
 
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -383,11 +383,11 @@ const apiInstance = new iconik.UsersNotificationsApi(configuration);
 
 let body:iconik.UsersNotificationsApiUsersNotificationsV1NotificationsNotificationIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   notificationId: "notification_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersNotificationsV1NotificationsNotificationIdDelete(body).then((data:any) => {
@@ -400,9 +400,9 @@ apiInstance.usersNotificationsV1NotificationsNotificationIdDelete(body).then((da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **notificationId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -411,7 +411,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -447,11 +447,11 @@ const apiInstance = new iconik.UsersNotificationsApi(configuration);
 
 let body:iconik.UsersNotificationsApiUsersNotificationsV1NotificationsNotificationIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   notificationId: "notification_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersNotificationsV1NotificationsNotificationIdGet(body).then((data:any) => {
@@ -464,9 +464,9 @@ apiInstance.usersNotificationsV1NotificationsNotificationIdGet(body).then((data:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **notificationId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -475,7 +475,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -510,10 +510,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersNotificationsApi(configuration);
 
 let body:iconik.UsersNotificationsApiUsersNotificationsV1NotificationsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // NotificationSchema | body
   notificationSchema: {
     context: {},
@@ -534,6 +530,10 @@ let body:iconik.UsersNotificationsApiUsersNotificationsV1NotificationsPostReques
     subObjectType: "subObjectType_example",
     userId: "userId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersNotificationsV1NotificationsPost(body).then((data:any) => {
@@ -547,8 +547,8 @@ apiInstance.usersNotificationsV1NotificationsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **notificationSchema** | **NotificationSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -557,7 +557,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -591,10 +591,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersNotificationsApi(configuration);
 
 let body:iconik.UsersNotificationsApiUsersNotificationsV1NotificationsSystemPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // SystemNotificationSchema | body
   systemNotificationSchema: {
     context: {},
@@ -616,6 +612,10 @@ let body:iconik.UsersNotificationsApiUsersNotificationsV1NotificationsSystemPost
     systemDomainId: "systemDomainId_example",
     userId: "userId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersNotificationsV1NotificationsSystemPost(body).then((data:any) => {
@@ -629,8 +629,8 @@ apiInstance.usersNotificationsV1NotificationsSystemPost(body).then((data:any) =>
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemNotificationSchema** | **SystemNotificationSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -639,7 +639,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -674,13 +674,13 @@ const apiInstance = new iconik.UsersNotificationsApi(configuration);
 
 let body:iconik.UsersNotificationsApiUsersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDelete(body).then((data:any) => {
@@ -693,10 +693,10 @@ apiInstance.usersNotificationsV1ObjectTypeObjectIdSubscriptionsAllDelete(body).t
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -705,7 +705,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -741,13 +741,13 @@ const apiInstance = new iconik.UsersNotificationsApi(configuration);
 
 let body:iconik.UsersNotificationsApiUsersNotificationsV1ObjectTypeObjectIdSubscriptionsGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersNotificationsV1ObjectTypeObjectIdSubscriptionsGet(body).then((data:any) => {
@@ -760,10 +760,10 @@ apiInstance.usersNotificationsV1ObjectTypeObjectIdSubscriptionsGet(body).then((d
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -772,7 +772,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -807,9 +807,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersNotificationsApi(configuration);
 
 let body:iconik.UsersNotificationsApiUsersNotificationsV1SubscriptionsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -823,8 +823,8 @@ apiInstance.usersNotificationsV1SubscriptionsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -833,7 +833,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -868,10 +868,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.UsersNotificationsApi(configuration);
 
 let body:iconik.UsersNotificationsApiUsersNotificationsV1SubscriptionsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // SubscriptionSchema | body
   subscriptionSchema: {
     eventType: "eventType_example",
@@ -880,6 +876,10 @@ let body:iconik.UsersNotificationsApiUsersNotificationsV1SubscriptionsPostReques
     subObjectId: "subObjectId_example",
     subObjectType: "subObjectType_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersNotificationsV1SubscriptionsPost(body).then((data:any) => {
@@ -893,8 +893,8 @@ apiInstance.usersNotificationsV1SubscriptionsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscriptionSchema** | **SubscriptionSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -903,7 +903,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -938,11 +938,11 @@ const apiInstance = new iconik.UsersNotificationsApi(configuration);
 
 let body:iconik.UsersNotificationsApiUsersNotificationsV1SubscriptionsSubscriptionIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   subscriptionId: "subscription_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersNotificationsV1SubscriptionsSubscriptionIdDelete(body).then((data:any) => {
@@ -955,9 +955,9 @@ apiInstance.usersNotificationsV1SubscriptionsSubscriptionIdDelete(body).then((da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **subscriptionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -966,7 +966,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1002,11 +1002,11 @@ const apiInstance = new iconik.UsersNotificationsApi(configuration);
 
 let body:iconik.UsersNotificationsApiUsersNotificationsV1SubscriptionsSubscriptionIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   subscriptionId: "subscription_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.usersNotificationsV1SubscriptionsSubscriptionIdGet(body).then((data:any) => {
@@ -1019,9 +1019,9 @@ apiInstance.usersNotificationsV1SubscriptionsSubscriptionIdGet(body).then((data:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **subscriptionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1030,7 +1030,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 

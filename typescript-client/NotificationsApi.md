@@ -27,9 +27,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.NotificationsApi(configuration);
 
 let body:iconik.NotificationsApiNotificationsV1WebhooksGetRequest = {
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
-  // string
+  // string (optional)
   appID: "App-ID_example",
 };
 
@@ -43,8 +43,8 @@ apiInstance.notificationsV1WebhooksGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -87,10 +87,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.NotificationsApi(configuration);
 
 let body:iconik.NotificationsApiNotificationsV1WebhooksPostRequest = {
-  // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
   // WebhookCreateSchema | body
   webhookCreateSchema: {
     operation: "update",
@@ -112,6 +108,10 @@ let body:iconik.NotificationsApiNotificationsV1WebhooksPostRequest = {
     },
     lastError: "lastError_example",
   },
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.notificationsV1WebhooksPost(body).then((data:any) => {
@@ -125,8 +125,8 @@ apiInstance.notificationsV1WebhooksPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **webhookCreateSchema** | **WebhookCreateSchema**| body |
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -170,11 +170,11 @@ const apiInstance = new iconik.NotificationsApi(configuration);
 
 let body:iconik.NotificationsApiNotificationsV1WebhooksWebhookIdDeleteRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   webhookId: "webhook_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.notificationsV1WebhooksWebhookIdDelete(body).then((data:any) => {
@@ -187,9 +187,9 @@ apiInstance.notificationsV1WebhooksWebhookIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **webhookId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -233,11 +233,11 @@ const apiInstance = new iconik.NotificationsApi(configuration);
 
 let body:iconik.NotificationsApiNotificationsV1WebhooksWebhookIdGetRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   webhookId: "webhook_id_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.notificationsV1WebhooksWebhookIdGet(body).then((data:any) => {
@@ -250,9 +250,9 @@ apiInstance.notificationsV1WebhooksWebhookIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **webhookId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -296,10 +296,6 @@ const apiInstance = new iconik.NotificationsApi(configuration);
 
 let body:iconik.NotificationsApiNotificationsV1WebhooksWebhookIdPutRequest = {
   // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
-  // string
   webhookId: "webhook_id_example",
   // WebhookCreateSchema | body
   webhookCreateSchema: {
@@ -322,6 +318,10 @@ let body:iconik.NotificationsApiNotificationsV1WebhooksWebhookIdPutRequest = {
     },
     lastError: "lastError_example",
   },
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.notificationsV1WebhooksWebhookIdPut(body).then((data:any) => {
@@ -335,9 +335,9 @@ apiInstance.notificationsV1WebhooksWebhookIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **webhookCreateSchema** | **WebhookCreateSchema**| body |
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
  **webhookId** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 

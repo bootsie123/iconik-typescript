@@ -35,19 +35,9 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async searchV1DiscoveryDefaultEntitiesAdminGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1DiscoveryDefaultEntitiesAdminGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultEntitiesAdminGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultEntitiesAdminGet", "authToken");
-        }
 
 
         // Path Params
@@ -64,6 +54,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -76,29 +77,19 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_discovery_entities 
      * Delete a discovery entity by id
+     * @param entityId 
      * @param appID 
      * @param authToken 
-     * @param entityId 
      */
-    public async searchV1DiscoveryDefaultEntitiesEntityIdDelete(appID: string, authToken: string, entityId: string, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1DiscoveryDefaultEntitiesEntityIdDelete(entityId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultEntitiesEntityIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultEntitiesEntityIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'entityId' is not null or undefined
         if (entityId === null || entityId === undefined) {
             throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultEntitiesEntityIdDelete", "entityId");
         }
+
+
 
 
         // Path Params
@@ -116,6 +107,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -128,29 +130,19 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_discovery_entities 
      * Returns discovery entity
+     * @param entityId 
      * @param appID 
      * @param authToken 
-     * @param entityId 
      */
-    public async searchV1DiscoveryDefaultEntitiesEntityIdGet(appID: string, authToken: string, entityId: string, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1DiscoveryDefaultEntitiesEntityIdGet(entityId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultEntitiesEntityIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultEntitiesEntityIdGet", "authToken");
-        }
-
 
         // verify required parameter 'entityId' is not null or undefined
         if (entityId === null || entityId === undefined) {
             throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultEntitiesEntityIdGet", "entityId");
         }
+
+
 
 
         // Path Params
@@ -168,6 +160,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -180,25 +183,13 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_discovery_entities 
      * Update a discovery entity by id
-     * @param appID 
-     * @param authToken 
      * @param entityId 
      * @param discoveryEntitySchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async searchV1DiscoveryDefaultEntitiesEntityIdPatch(appID: string, authToken: string, entityId: string, discoveryEntitySchema: DiscoveryEntitySchema, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1DiscoveryDefaultEntitiesEntityIdPatch(entityId: string, discoveryEntitySchema: DiscoveryEntitySchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultEntitiesEntityIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultEntitiesEntityIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'entityId' is not null or undefined
         if (entityId === null || entityId === undefined) {
@@ -210,6 +201,8 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         if (discoveryEntitySchema === null || discoveryEntitySchema === undefined) {
             throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultEntitiesEntityIdPatch", "discoveryEntitySchema");
         }
+
+
 
 
         // Path Params
@@ -238,6 +231,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -250,25 +254,13 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_discovery_entities 
      * Update a discovery entity by id
-     * @param appID 
-     * @param authToken 
      * @param entityId 
      * @param discoveryEntitySchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async searchV1DiscoveryDefaultEntitiesEntityIdPut(appID: string, authToken: string, entityId: string, discoveryEntitySchema: DiscoveryEntitySchema, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1DiscoveryDefaultEntitiesEntityIdPut(entityId: string, discoveryEntitySchema: DiscoveryEntitySchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultEntitiesEntityIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultEntitiesEntityIdPut", "authToken");
-        }
-
 
         // verify required parameter 'entityId' is not null or undefined
         if (entityId === null || entityId === undefined) {
@@ -280,6 +272,8 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         if (discoveryEntitySchema === null || discoveryEntitySchema === undefined) {
             throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultEntitiesEntityIdPut", "discoveryEntitySchema");
         }
+
+
 
 
         // Path Params
@@ -308,6 +302,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -323,19 +328,9 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async searchV1DiscoveryDefaultEntitiesGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1DiscoveryDefaultEntitiesGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultEntitiesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultEntitiesGet", "authToken");
-        }
 
 
         // Path Params
@@ -352,6 +347,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -364,29 +370,19 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * <br/>This creates an entry for the discovery view to show collections and saved searches.<br/>Object Type should be one of COLLECTION, SAVED_SEARCH, ASSET, RECOMMENDATION or TRENDING<br/>Object ID is only needed in the case of COLLECTION, SAVED_SEARCH or ASSET<br/>metadata is for user defined extra data.<br/><br/>This creates an entry for the discovery view to show collections and saved searches.<br/>Object Type should be one of COLLECTION, SAVED_SEARCH, ASSET, RECOMMENDATION or TRENDING<br/>Object ID is only needed in the case of COLLECTION, SAVED_SEARCH or ASSET<br/>metadata is for user defined extra data.<br/> Required roles:  - can_write_discovery_entities 
      * Adds a new discovery entity.
+     * @param discoveryEntitySchema body
      * @param appID 
      * @param authToken 
-     * @param discoveryEntitySchema body
      */
-    public async searchV1DiscoveryDefaultEntitiesPost(appID: string, authToken: string, discoveryEntitySchema: DiscoveryEntitySchema, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1DiscoveryDefaultEntitiesPost(discoveryEntitySchema: DiscoveryEntitySchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultEntitiesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultEntitiesPost", "authToken");
-        }
-
 
         // verify required parameter 'discoveryEntitySchema' is not null or undefined
         if (discoveryEntitySchema === null || discoveryEntitySchema === undefined) {
             throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultEntitiesPost", "discoveryEntitySchema");
         }
+
+
 
 
         // Path Params
@@ -414,6 +410,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -426,29 +433,19 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_discovery_entities 
      * Update default discovery view
+     * @param discoveryViewSettingsSchema body
      * @param appID 
      * @param authToken 
-     * @param discoveryViewSettingsSchema body
      */
-    public async searchV1DiscoveryDefaultPut(appID: string, authToken: string, discoveryViewSettingsSchema: DiscoveryViewSettingsSchema, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1DiscoveryDefaultPut(discoveryViewSettingsSchema: DiscoveryViewSettingsSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultPut", "authToken");
-        }
-
 
         // verify required parameter 'discoveryViewSettingsSchema' is not null or undefined
         if (discoveryViewSettingsSchema === null || discoveryViewSettingsSchema === undefined) {
             throw new RequiredError("SearchApi", "searchV1DiscoveryDefaultPut", "discoveryViewSettingsSchema");
         }
+
+
 
 
         // Path Params
@@ -476,6 +473,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -488,26 +496,14 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_discovery_entities 
      * Update a discovery entity by object\'s type and id
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
      * @param discoveryEntitySchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async searchV1DiscoveryEntitiesObjectTypeObjectIdPatch(appID: string, authToken: string, objectType: string, objectId: string, discoveryEntitySchema: DiscoveryEntitySchema, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1DiscoveryEntitiesObjectTypeObjectIdPatch(objectType: string, objectId: string, discoveryEntitySchema: DiscoveryEntitySchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1DiscoveryEntitiesObjectTypeObjectIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1DiscoveryEntitiesObjectTypeObjectIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -525,6 +521,8 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         if (discoveryEntitySchema === null || discoveryEntitySchema === undefined) {
             throw new RequiredError("SearchApi", "searchV1DiscoveryEntitiesObjectTypeObjectIdPatch", "discoveryEntitySchema");
         }
+
+
 
 
         // Path Params
@@ -554,6 +552,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -566,26 +575,14 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_discovery_entities 
      * Update a discovery entity by object\'s type and id
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
      * @param discoveryEntitySchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async searchV1DiscoveryEntitiesObjectTypeObjectIdPut(appID: string, authToken: string, objectType: string, objectId: string, discoveryEntitySchema: DiscoveryEntitySchema, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1DiscoveryEntitiesObjectTypeObjectIdPut(objectType: string, objectId: string, discoveryEntitySchema: DiscoveryEntitySchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1DiscoveryEntitiesObjectTypeObjectIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1DiscoveryEntitiesObjectTypeObjectIdPut", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -603,6 +600,8 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         if (discoveryEntitySchema === null || discoveryEntitySchema === undefined) {
             throw new RequiredError("SearchApi", "searchV1DiscoveryEntitiesObjectTypeObjectIdPut", "discoveryEntitySchema");
         }
+
+
 
 
         // Path Params
@@ -632,6 +631,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -647,19 +657,9 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async searchV1SearchHistoryGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchHistoryGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchHistoryGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchHistoryGet", "authToken");
-        }
 
 
         // Path Params
@@ -676,6 +676,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -688,29 +699,19 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_search_history 
      * Delete a search from history by its id
+     * @param searchHistoryId 
      * @param appID 
      * @param authToken 
-     * @param searchHistoryId 
      */
-    public async searchV1SearchHistorySearchHistoryIdDelete(appID: string, authToken: string, searchHistoryId: string, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchHistorySearchHistoryIdDelete(searchHistoryId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchHistorySearchHistoryIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchHistorySearchHistoryIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'searchHistoryId' is not null or undefined
         if (searchHistoryId === null || searchHistoryId === undefined) {
             throw new RequiredError("SearchApi", "searchV1SearchHistorySearchHistoryIdDelete", "searchHistoryId");
         }
+
+
 
 
         // Path Params
@@ -728,6 +729,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -740,29 +752,19 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_search_history 
      * Returns results of search history
+     * @param searchHistoryId 
      * @param appID 
      * @param authToken 
-     * @param searchHistoryId 
      */
-    public async searchV1SearchHistorySearchHistoryIdGet(appID: string, authToken: string, searchHistoryId: string, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchHistorySearchHistoryIdGet(searchHistoryId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchHistorySearchHistoryIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchHistorySearchHistoryIdGet", "authToken");
-        }
-
 
         // verify required parameter 'searchHistoryId' is not null or undefined
         if (searchHistoryId === null || searchHistoryId === undefined) {
             throw new RequiredError("SearchApi", "searchV1SearchHistorySearchHistoryIdGet", "searchHistoryId");
         }
+
+
 
 
         // Path Params
@@ -780,6 +782,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -792,9 +805,9 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_search 
      * Search
+     * @param searchCriteriaSchema body
      * @param appID 
      * @param authToken 
-     * @param searchCriteriaSchema body
      * @param perPage The number of documents for each page
      * @param page Which page number to fetch
      * @param scroll If true passed then uses scroll pagination instead of default one (Deprecated, user search_after body parameter instead)
@@ -803,25 +816,15 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
      * @param generateSignedDownloadUrl Set to true if you also want the file download URLs generated
      * @param saveSearchHistory Set to false if you don\&#39;t want to save the search to the history
      */
-    public async searchV1SearchPost(appID: string, authToken: string, searchCriteriaSchema: SearchCriteriaSchema, perPage?: number, page?: number, scroll?: boolean, scrollId?: string, generateSignedUrl?: boolean, generateSignedDownloadUrl?: boolean, saveSearchHistory?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchPost(searchCriteriaSchema: SearchCriteriaSchema, appID?: string, authToken?: string, perPage?: number, page?: number, scroll?: boolean, scrollId?: string, generateSignedUrl?: boolean, generateSignedDownloadUrl?: boolean, saveSearchHistory?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchPost", "authToken");
-        }
-
 
         // verify required parameter 'searchCriteriaSchema' is not null or undefined
         if (searchCriteriaSchema === null || searchCriteriaSchema === undefined) {
             throw new RequiredError("SearchApi", "searchV1SearchPost", "searchCriteriaSchema");
         }
+
+
 
 
 
@@ -891,6 +894,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -914,19 +928,9 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
      * @param ids Filter list of id:s (comma separated)
      * @param query Search using query
      */
-    public async searchV1SearchSavedGet(appID: string, authToken: string, perPage?: number, page?: number, scroll?: boolean, scrollId?: string, sort?: string, groupId?: string, ids?: string, query?: string, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchSavedGet(appID?: string, authToken?: string, perPage?: number, page?: number, scroll?: boolean, scrollId?: string, sort?: string, groupId?: string, ids?: string, query?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedGet", "authToken");
-        }
 
 
 
@@ -991,6 +995,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1003,29 +1018,19 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_saved_search_groups 
      * Delete a saved search group by it\'s id
+     * @param groupId 
      * @param appID 
      * @param authToken 
-     * @param groupId 
      */
-    public async searchV1SearchSavedGroupGroupIdDelete(appID: string, authToken: string, groupId: string, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchSavedGroupGroupIdDelete(groupId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedGroupGroupIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedGroupGroupIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'groupId' is not null or undefined
         if (groupId === null || groupId === undefined) {
             throw new RequiredError("SearchApi", "searchV1SearchSavedGroupGroupIdDelete", "groupId");
         }
+
+
 
 
         // Path Params
@@ -1043,6 +1048,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1055,29 +1071,19 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_saved_searches 
      * Returns saved search group data
+     * @param groupId 
      * @param appID 
      * @param authToken 
-     * @param groupId 
      */
-    public async searchV1SearchSavedGroupGroupIdGet(appID: string, authToken: string, groupId: string, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchSavedGroupGroupIdGet(groupId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedGroupGroupIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedGroupGroupIdGet", "authToken");
-        }
-
 
         // verify required parameter 'groupId' is not null or undefined
         if (groupId === null || groupId === undefined) {
             throw new RequiredError("SearchApi", "searchV1SearchSavedGroupGroupIdGet", "groupId");
         }
+
+
 
 
         // Path Params
@@ -1095,6 +1101,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1107,25 +1124,13 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_saved_search_groups 
      * Update and return saved search group data
-     * @param appID 
-     * @param authToken 
      * @param groupId 
      * @param savedSearchGroupSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async searchV1SearchSavedGroupGroupIdPatch(appID: string, authToken: string, groupId: string, savedSearchGroupSchema: SavedSearchGroupSchema, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchSavedGroupGroupIdPatch(groupId: string, savedSearchGroupSchema: SavedSearchGroupSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedGroupGroupIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedGroupGroupIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'groupId' is not null or undefined
         if (groupId === null || groupId === undefined) {
@@ -1137,6 +1142,8 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         if (savedSearchGroupSchema === null || savedSearchGroupSchema === undefined) {
             throw new RequiredError("SearchApi", "searchV1SearchSavedGroupGroupIdPatch", "savedSearchGroupSchema");
         }
+
+
 
 
         // Path Params
@@ -1165,6 +1172,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1177,25 +1195,13 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_saved_search_groups 
      * Update and return saved search group data
-     * @param appID 
-     * @param authToken 
      * @param groupId 
      * @param savedSearchGroupSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async searchV1SearchSavedGroupGroupIdPut(appID: string, authToken: string, groupId: string, savedSearchGroupSchema: SavedSearchGroupSchema, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchSavedGroupGroupIdPut(groupId: string, savedSearchGroupSchema: SavedSearchGroupSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedGroupGroupIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedGroupGroupIdPut", "authToken");
-        }
-
 
         // verify required parameter 'groupId' is not null or undefined
         if (groupId === null || groupId === undefined) {
@@ -1207,6 +1213,8 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         if (savedSearchGroupSchema === null || savedSearchGroupSchema === undefined) {
             throw new RequiredError("SearchApi", "searchV1SearchSavedGroupGroupIdPut", "savedSearchGroupSchema");
         }
+
+
 
 
         // Path Params
@@ -1235,6 +1243,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1247,25 +1266,13 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_saved_searches 
      * Delete saved search from search group
-     * @param appID 
-     * @param authToken 
      * @param groupId 
      * @param searchId 
+     * @param appID 
+     * @param authToken 
      */
-    public async searchV1SearchSavedGroupGroupIdSearchSearchIdDelete(appID: string, authToken: string, groupId: string, searchId: string, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchSavedGroupGroupIdSearchSearchIdDelete(groupId: string, searchId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedGroupGroupIdSearchSearchIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedGroupGroupIdSearchSearchIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'groupId' is not null or undefined
         if (groupId === null || groupId === undefined) {
@@ -1277,6 +1284,8 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         if (searchId === null || searchId === undefined) {
             throw new RequiredError("SearchApi", "searchV1SearchSavedGroupGroupIdSearchSearchIdDelete", "searchId");
         }
+
+
 
 
         // Path Params
@@ -1295,6 +1304,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1307,25 +1327,13 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_saved_searches 
      * Adds saved search to group
-     * @param appID 
-     * @param authToken 
      * @param groupId 
      * @param searchId 
+     * @param appID 
+     * @param authToken 
      */
-    public async searchV1SearchSavedGroupGroupIdSearchSearchIdPost(appID: string, authToken: string, groupId: string, searchId: string, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchSavedGroupGroupIdSearchSearchIdPost(groupId: string, searchId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedGroupGroupIdSearchSearchIdPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedGroupGroupIdSearchSearchIdPost", "authToken");
-        }
-
 
         // verify required parameter 'groupId' is not null or undefined
         if (groupId === null || groupId === undefined) {
@@ -1337,6 +1345,8 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         if (searchId === null || searchId === undefined) {
             throw new RequiredError("SearchApi", "searchV1SearchSavedGroupGroupIdSearchSearchIdPost", "searchId");
         }
+
+
 
 
         // Path Params
@@ -1355,6 +1365,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1367,29 +1388,19 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_saved_search_groups 
      * Create and return saved search group data
+     * @param savedSearchGroupSchema body
      * @param appID 
      * @param authToken 
-     * @param savedSearchGroupSchema body
      */
-    public async searchV1SearchSavedGroupPost(appID: string, authToken: string, savedSearchGroupSchema: SavedSearchGroupSchema, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchSavedGroupPost(savedSearchGroupSchema: SavedSearchGroupSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedGroupPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedGroupPost", "authToken");
-        }
-
 
         // verify required parameter 'savedSearchGroupSchema' is not null or undefined
         if (savedSearchGroupSchema === null || savedSearchGroupSchema === undefined) {
             throw new RequiredError("SearchApi", "searchV1SearchSavedGroupPost", "savedSearchGroupSchema");
         }
+
+
 
 
         // Path Params
@@ -1417,6 +1428,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1436,19 +1458,9 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
      * @param ids A comma separated list of IDs. for example - 3c2db7d8-1f39-46e3-8c77-992101e5e616,683a2c63-63a0-42b0-aed8-5b62dedba840
      * @param sort A comma separated list of fieldnames with order. For example - first_name,asc;last_name,desc
      */
-    public async searchV1SearchSavedGroupsGet(appID: string, authToken: string, perPage?: number, page?: number, ids?: string, sort?: string, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchSavedGroupsGet(appID?: string, authToken?: string, perPage?: number, page?: number, ids?: string, sort?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedGroupsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedGroupsGet", "authToken");
-        }
 
 
 
@@ -1489,6 +1501,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1501,29 +1524,19 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_saved_searches 
      * Reindex a particular saved search group by id
+     * @param groupId 
      * @param appID 
      * @param authToken 
-     * @param groupId 
      */
-    public async searchV1SearchSavedGroupsGroupIdReindexPost(appID: string, authToken: string, groupId: string, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchSavedGroupsGroupIdReindexPost(groupId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedGroupsGroupIdReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedGroupsGroupIdReindexPost", "authToken");
-        }
-
 
         // verify required parameter 'groupId' is not null or undefined
         if (groupId === null || groupId === undefined) {
             throw new RequiredError("SearchApi", "searchV1SearchSavedGroupsGroupIdReindexPost", "groupId");
         }
+
+
 
 
         // Path Params
@@ -1541,6 +1554,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1553,29 +1577,19 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_saved_searches 
      * Search, save and return result of this search
+     * @param savedSearchSchema body
      * @param appID 
      * @param authToken 
-     * @param savedSearchSchema body
      */
-    public async searchV1SearchSavedPost(appID: string, authToken: string, savedSearchSchema: SavedSearchSchema, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchSavedPost(savedSearchSchema: SavedSearchSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedPost", "authToken");
-        }
-
 
         // verify required parameter 'savedSearchSchema' is not null or undefined
         if (savedSearchSchema === null || savedSearchSchema === undefined) {
             throw new RequiredError("SearchApi", "searchV1SearchSavedPost", "savedSearchSchema");
         }
+
+
 
 
         // Path Params
@@ -1603,6 +1617,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1615,29 +1640,19 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_saved_searches 
      * Delete a saved search by its id
+     * @param searchId 
      * @param appID 
      * @param authToken 
-     * @param searchId 
      */
-    public async searchV1SearchSavedSearchIdDelete(appID: string, authToken: string, searchId: string, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchSavedSearchIdDelete(searchId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedSearchIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedSearchIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'searchId' is not null or undefined
         if (searchId === null || searchId === undefined) {
             throw new RequiredError("SearchApi", "searchV1SearchSavedSearchIdDelete", "searchId");
         }
+
+
 
 
         // Path Params
@@ -1655,6 +1670,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1667,32 +1693,22 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_saved_searches 
      * Returns results of saved search
+     * @param searchId 
      * @param appID 
      * @param authToken 
-     * @param searchId 
      * @param perPage The number of items for each page
      * @param page Which page number to fetch
      * @param includeResults Set to false if you only want the search definition
      */
-    public async searchV1SearchSavedSearchIdGet(appID: string, authToken: string, searchId: string, perPage?: number, page?: number, includeResults?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchSavedSearchIdGet(searchId: string, appID?: string, authToken?: string, perPage?: number, page?: number, includeResults?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedSearchIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedSearchIdGet", "authToken");
-        }
-
 
         // verify required parameter 'searchId' is not null or undefined
         if (searchId === null || searchId === undefined) {
             throw new RequiredError("SearchApi", "searchV1SearchSavedSearchIdGet", "searchId");
         }
+
+
 
 
 
@@ -1728,6 +1744,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1740,25 +1767,13 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_saved_searches 
      * Search and save this search
-     * @param appID 
-     * @param authToken 
      * @param searchId 
      * @param savedSearchSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async searchV1SearchSavedSearchIdPatch(appID: string, authToken: string, searchId: string, savedSearchSchema: SavedSearchSchema, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchSavedSearchIdPatch(searchId: string, savedSearchSchema: SavedSearchSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedSearchIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedSearchIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'searchId' is not null or undefined
         if (searchId === null || searchId === undefined) {
@@ -1770,6 +1785,8 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         if (savedSearchSchema === null || savedSearchSchema === undefined) {
             throw new RequiredError("SearchApi", "searchV1SearchSavedSearchIdPatch", "savedSearchSchema");
         }
+
+
 
 
         // Path Params
@@ -1798,6 +1815,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1810,25 +1838,13 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_saved_searches 
      * Search and save this search
-     * @param appID 
-     * @param authToken 
      * @param searchId 
      * @param savedSearchSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async searchV1SearchSavedSearchIdPut(appID: string, authToken: string, searchId: string, savedSearchSchema: SavedSearchSchema, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchSavedSearchIdPut(searchId: string, savedSearchSchema: SavedSearchSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedSearchIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedSearchIdPut", "authToken");
-        }
-
 
         // verify required parameter 'searchId' is not null or undefined
         if (searchId === null || searchId === undefined) {
@@ -1840,6 +1856,8 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         if (savedSearchSchema === null || savedSearchSchema === undefined) {
             throw new RequiredError("SearchApi", "searchV1SearchSavedSearchIdPut", "savedSearchSchema");
         }
+
+
 
 
         // Path Params
@@ -1868,6 +1886,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1880,25 +1909,13 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_saved_searches 
      * Reindex a particular saved search by id
-     * @param appID 
-     * @param authToken 
      * @param searchId 
      * @param reindexSavedSearchSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async searchV1SearchSavedSearchIdReindexPost(appID: string, authToken: string, searchId: string, reindexSavedSearchSchema: ReindexSavedSearchSchema, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchSavedSearchIdReindexPost(searchId: string, reindexSavedSearchSchema: ReindexSavedSearchSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedSearchIdReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSavedSearchIdReindexPost", "authToken");
-        }
-
 
         // verify required parameter 'searchId' is not null or undefined
         if (searchId === null || searchId === undefined) {
@@ -1910,6 +1927,8 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         if (reindexSavedSearchSchema === null || reindexSavedSearchSchema === undefined) {
             throw new RequiredError("SearchApi", "searchV1SearchSavedSearchIdReindexPost", "reindexSavedSearchSchema");
         }
+
+
 
 
         // Path Params
@@ -1938,6 +1957,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1950,29 +1980,19 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_search 
      * Returns search suggestions for a particular query.
+     * @param searchSuggestSchema body
      * @param appID 
      * @param authToken 
-     * @param searchSuggestSchema body
      */
-    public async searchV1SearchSuggestPost(appID: string, authToken: string, searchSuggestSchema: SearchSuggestSchema, _options?: Configuration): Promise<RequestContext> {
+    public async searchV1SearchSuggestPost(searchSuggestSchema: SearchSuggestSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSuggestPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("SearchApi", "searchV1SearchSuggestPost", "authToken");
-        }
-
 
         // verify required parameter 'searchSuggestSchema' is not null or undefined
         if (searchSuggestSchema === null || searchSuggestSchema === undefined) {
             throw new RequiredError("SearchApi", "searchV1SearchSuggestPost", "searchSuggestSchema");
         }
+
+
 
 
         // Path Params
@@ -2000,6 +2020,17 @@ export class SearchApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {

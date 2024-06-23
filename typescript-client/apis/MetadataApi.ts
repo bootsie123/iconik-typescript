@@ -32,27 +32,15 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_metadata_values 
      * Get asset metadata by object type, object ID and view ID
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param assetId 
      * @param objectId 
      * @param viewId 
+     * @param appID 
+     * @param authToken 
      */
-    public async metadataV1AssetsAssetIdObjectTypeObjectIdViewsViewIdGet(appID: string, authToken: string, objectType: string, assetId: string, objectId: string, viewId: string, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1AssetsAssetIdObjectTypeObjectIdViewsViewIdGet(objectType: string, assetId: string, objectId: string, viewId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1AssetsAssetIdObjectTypeObjectIdViewsViewIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1AssetsAssetIdObjectTypeObjectIdViewsViewIdGet", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -78,6 +66,8 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/metadata/v1/assets/{asset_id}/{object_type}/{object_id}/views/{view_id}/'
             .replace('{' + 'object_type' + '}', encodeURIComponent(String(objectType)))
@@ -96,6 +86,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -108,28 +109,16 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_metadata_values 
      * Edit view metadata values for sub-objects of an asset (Such as segments)
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param objectType 
      * @param objectId 
      * @param viewId 
      * @param metadataValuesSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async metadataV1AssetsAssetIdObjectTypeObjectIdViewsViewIdPut(appID: string, authToken: string, assetId: string, objectType: string, objectId: string, viewId: string, metadataValuesSchema: MetadataValuesSchema, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1AssetsAssetIdObjectTypeObjectIdViewsViewIdPut(assetId: string, objectType: string, objectId: string, viewId: string, metadataValuesSchema: MetadataValuesSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1AssetsAssetIdObjectTypeObjectIdViewsViewIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1AssetsAssetIdObjectTypeObjectIdViewsViewIdPut", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -161,6 +150,8 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/metadata/v1/assets/{asset_id}/{object_type}/{object_id}/views/{view_id}/'
             .replace('{' + 'asset_id' + '}', encodeURIComponent(String(assetId)))
@@ -190,6 +181,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -202,26 +204,14 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_metadata_values 
      * Get object metadata by object type, object ID, version ID and view ID
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
      * @param viewId 
+     * @param appID 
+     * @param authToken 
      */
-    public async metadataV1AssetsAssetIdVersionsVersionIdViewsViewIdGet(appID: string, authToken: string, assetId: string, versionId: string, viewId: string, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1AssetsAssetIdVersionsVersionIdViewsViewIdGet(assetId: string, versionId: string, viewId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1AssetsAssetIdVersionsVersionIdViewsViewIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1AssetsAssetIdVersionsVersionIdViewsViewIdGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -241,6 +231,8 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/metadata/v1/assets/{asset_id}/versions/{version_id}/views/{view_id}/'
             .replace('{' + 'asset_id' + '}', encodeURIComponent(String(assetId)))
@@ -258,6 +250,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -270,27 +273,15 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_metadata_values 
      * Get asset metadata by object type, object ID, version ID and view ID
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
      * @param versionId 
      * @param viewId 
+     * @param appID 
+     * @param authToken 
      */
-    public async metadataV1AssetsObjectTypeObjectIdVersionsVersionIdViewsViewIdGet(appID: string, authToken: string, objectType: string, objectId: string, versionId: string, viewId: string, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1AssetsObjectTypeObjectIdVersionsVersionIdViewsViewIdGet(objectType: string, objectId: string, versionId: string, viewId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1AssetsObjectTypeObjectIdVersionsVersionIdViewsViewIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1AssetsObjectTypeObjectIdVersionsVersionIdViewsViewIdGet", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -316,6 +307,8 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/metadata/v1/assets/{object_type}/{object_id}/versions/{version_id}/views/{view_id}/'
             .replace('{' + 'object_type' + '}', encodeURIComponent(String(objectType)))
@@ -334,6 +327,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -346,29 +350,19 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_metadata_fields 
      * Delete a particular field by name
+     * @param fieldName 
      * @param appID 
      * @param authToken 
-     * @param fieldName 
      */
-    public async metadataV1FieldsFieldNameDelete(appID: string, authToken: string, fieldName: string, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1FieldsFieldNameDelete(fieldName: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1FieldsFieldNameDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1FieldsFieldNameDelete", "authToken");
-        }
-
 
         // verify required parameter 'fieldName' is not null or undefined
         if (fieldName === null || fieldName === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1FieldsFieldNameDelete", "fieldName");
         }
+
+
 
 
         // Path Params
@@ -386,6 +380,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -398,29 +403,19 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_metadata_fields 
      * Returns a particular field by name
+     * @param fieldName 
      * @param appID 
      * @param authToken 
-     * @param fieldName 
      */
-    public async metadataV1FieldsFieldNameGet(appID: string, authToken: string, fieldName: string, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1FieldsFieldNameGet(fieldName: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1FieldsFieldNameGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1FieldsFieldNameGet", "authToken");
-        }
-
 
         // verify required parameter 'fieldName' is not null or undefined
         if (fieldName === null || fieldName === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1FieldsFieldNameGet", "fieldName");
         }
+
+
 
 
         // Path Params
@@ -438,6 +433,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -450,25 +456,13 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_metadata_fields 
      * Update field by name
-     * @param appID 
-     * @param authToken 
      * @param fieldName 
      * @param metadataFieldSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async metadataV1FieldsFieldNamePatch(appID: string, authToken: string, fieldName: string, metadataFieldSchema: MetadataFieldSchema, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1FieldsFieldNamePatch(fieldName: string, metadataFieldSchema: MetadataFieldSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1FieldsFieldNamePatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1FieldsFieldNamePatch", "authToken");
-        }
-
 
         // verify required parameter 'fieldName' is not null or undefined
         if (fieldName === null || fieldName === undefined) {
@@ -480,6 +474,8 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         if (metadataFieldSchema === null || metadataFieldSchema === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1FieldsFieldNamePatch", "metadataFieldSchema");
         }
+
+
 
 
         // Path Params
@@ -508,6 +504,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -520,25 +527,13 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_metadata_fields 
      * Update field by name
-     * @param appID 
-     * @param authToken 
      * @param fieldName 
      * @param metadataFieldSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async metadataV1FieldsFieldNamePut(appID: string, authToken: string, fieldName: string, metadataFieldSchema: MetadataFieldSchema, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1FieldsFieldNamePut(fieldName: string, metadataFieldSchema: MetadataFieldSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1FieldsFieldNamePut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1FieldsFieldNamePut", "authToken");
-        }
-
 
         // verify required parameter 'fieldName' is not null or undefined
         if (fieldName === null || fieldName === undefined) {
@@ -550,6 +545,8 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         if (metadataFieldSchema === null || metadataFieldSchema === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1FieldsFieldNamePut", "metadataFieldSchema");
         }
+
+
 
 
         // Path Params
@@ -578,6 +575,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -596,19 +604,9 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
      * @param lastFieldName If your request returns per_page entries, send the last value of \&quot;name\&quot; to fetch next page
      * @param filter A comma separated list of fieldnames For example - first_name,last_name,salary
      */
-    public async metadataV1FieldsGet(appID: string, authToken: string, perPage?: number, lastFieldName?: string, filter?: string, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1FieldsGet(appID?: string, authToken?: string, perPage?: number, lastFieldName?: string, filter?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1FieldsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1FieldsGet", "authToken");
-        }
 
 
 
@@ -643,6 +641,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -655,29 +664,19 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_metadata_fields 
      * Create a new field
+     * @param metadataFieldCreateSchema body
      * @param appID 
      * @param authToken 
-     * @param metadataFieldCreateSchema body
      */
-    public async metadataV1FieldsPost(appID: string, authToken: string, metadataFieldCreateSchema: MetadataFieldCreateSchema, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1FieldsPost(metadataFieldCreateSchema: MetadataFieldCreateSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1FieldsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1FieldsPost", "authToken");
-        }
-
 
         // verify required parameter 'metadataFieldCreateSchema' is not null or undefined
         if (metadataFieldCreateSchema === null || metadataFieldCreateSchema === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1FieldsPost", "metadataFieldCreateSchema");
         }
+
+
 
 
         // Path Params
@@ -705,6 +704,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -717,29 +727,19 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_metadata_fields 
      * Get the metadata field mapping
+     * @param fieldName 
      * @param appID 
      * @param authToken 
-     * @param fieldName 
      */
-    public async metadataV1MappingFieldsFieldNameGet(appID: string, authToken: string, fieldName: string, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1MappingFieldsFieldNameGet(fieldName: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1MappingFieldsFieldNameGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1MappingFieldsFieldNameGet", "authToken");
-        }
-
 
         // verify required parameter 'fieldName' is not null or undefined
         if (fieldName === null || fieldName === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1MappingFieldsFieldNameGet", "fieldName");
         }
+
+
 
 
         // Path Params
@@ -757,6 +757,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -769,29 +780,19 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_metadata_fields 
      * Create a new metadata field mapping
+     * @param metadataFieldMappingSchema body
      * @param appID 
      * @param authToken 
-     * @param metadataFieldMappingSchema body
      */
-    public async metadataV1MappingFieldsPost(appID: string, authToken: string, metadataFieldMappingSchema: MetadataFieldMappingSchema, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1MappingFieldsPost(metadataFieldMappingSchema: MetadataFieldMappingSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1MappingFieldsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1MappingFieldsPost", "authToken");
-        }
-
 
         // verify required parameter 'metadataFieldMappingSchema' is not null or undefined
         if (metadataFieldMappingSchema === null || metadataFieldMappingSchema === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1MappingFieldsPost", "metadataFieldMappingSchema");
         }
+
+
 
 
         // Path Params
@@ -819,6 +820,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -834,19 +846,9 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async metadataV1MappingOptionsGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1MappingOptionsGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1MappingOptionsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1MappingOptionsGet", "authToken");
-        }
 
 
         // Path Params
@@ -863,6 +865,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -875,29 +888,19 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_metadata_categories 
      * Get metadata categories
+     * @param objectType 
      * @param appID 
      * @param authToken 
-     * @param objectType 
      */
-    public async metadataV1ObjectTypeCategoriesGet(appID: string, authToken: string, objectType: string, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1ObjectTypeCategoriesGet(objectType: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeCategoriesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeCategoriesGet", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1ObjectTypeCategoriesGet", "objectType");
         }
+
+
 
 
         // Path Params
@@ -915,6 +918,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -927,25 +941,13 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_metadata_categories 
      * Delete metadata category by object type and category name
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param name 
+     * @param appID 
+     * @param authToken 
      */
-    public async metadataV1ObjectTypeCategoriesNameDelete(appID: string, authToken: string, objectType: string, name: string, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1ObjectTypeCategoriesNameDelete(objectType: string, name: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeCategoriesNameDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeCategoriesNameDelete", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -957,6 +959,8 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         if (name === null || name === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1ObjectTypeCategoriesNameDelete", "name");
         }
+
+
 
 
         // Path Params
@@ -975,6 +979,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -987,25 +1002,13 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_metadata_categories 
      * Get metadata category by object type and category name
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param name 
+     * @param appID 
+     * @param authToken 
      */
-    public async metadataV1ObjectTypeCategoriesNameGet(appID: string, authToken: string, objectType: string, name: string, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1ObjectTypeCategoriesNameGet(objectType: string, name: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeCategoriesNameGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeCategoriesNameGet", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -1017,6 +1020,8 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         if (name === null || name === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1ObjectTypeCategoriesNameGet", "name");
         }
+
+
 
 
         // Path Params
@@ -1035,6 +1040,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1047,26 +1063,14 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_metadata_categories 
      * Edit metadata category for an object type
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param name 
      * @param metadataCategorySchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async metadataV1ObjectTypeCategoriesNamePut(appID: string, authToken: string, objectType: string, name: string, metadataCategorySchema: MetadataCategorySchema, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1ObjectTypeCategoriesNamePut(objectType: string, name: string, metadataCategorySchema: MetadataCategorySchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeCategoriesNamePut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeCategoriesNamePut", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -1084,6 +1088,8 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         if (metadataCategorySchema === null || metadataCategorySchema === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1ObjectTypeCategoriesNamePut", "metadataCategorySchema");
         }
+
+
 
 
         // Path Params
@@ -1113,6 +1119,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1125,27 +1142,15 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_metadata_categories 
      * Get metadata views with field for object type and category
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param name 
+     * @param appID 
+     * @param authToken 
      * @param extOptions 
      * @param writableOnly 
      */
-    public async metadataV1ObjectTypeCategoriesNameViewsGet(appID: string, authToken: string, objectType: string, name: string, extOptions?: boolean, writableOnly?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1ObjectTypeCategoriesNameViewsGet(objectType: string, name: string, appID?: string, authToken?: string, extOptions?: boolean, writableOnly?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeCategoriesNameViewsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeCategoriesNameViewsGet", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -1157,6 +1162,8 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         if (name === null || name === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1ObjectTypeCategoriesNameViewsGet", "name");
         }
+
+
 
 
 
@@ -1187,6 +1194,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1199,25 +1217,13 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_metadata_categories 
      * Add a metadata category for an object type
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param metadataCategorySchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async metadataV1ObjectTypeCategoriesPost(appID: string, authToken: string, objectType: string, metadataCategorySchema: MetadataCategorySchema, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1ObjectTypeCategoriesPost(objectType: string, metadataCategorySchema: MetadataCategorySchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeCategoriesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeCategoriesPost", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -1229,6 +1235,8 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         if (metadataCategorySchema === null || metadataCategorySchema === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1ObjectTypeCategoriesPost", "metadataCategorySchema");
         }
+
+
 
 
         // Path Params
@@ -1257,6 +1265,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1269,26 +1288,14 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_metadata_values 
      * Edit view metadata values for collection or saved search content.
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param viewId 
      * @param collectionMetadataValuesBatchSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async metadataV1ObjectTypeContentViewsViewIdPut(appID: string, authToken: string, objectType: string, viewId: string, collectionMetadataValuesBatchSchema: CollectionMetadataValuesBatchSchema, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1ObjectTypeContentViewsViewIdPut(objectType: string, viewId: string, collectionMetadataValuesBatchSchema: CollectionMetadataValuesBatchSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeContentViewsViewIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeContentViewsViewIdPut", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -1306,6 +1313,8 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         if (collectionMetadataValuesBatchSchema === null || collectionMetadataValuesBatchSchema === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1ObjectTypeContentViewsViewIdPut", "collectionMetadataValuesBatchSchema");
         }
+
+
 
 
         // Path Params
@@ -1335,6 +1344,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1347,26 +1367,14 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * This endpoint is available only for admins
      * Get object metadata by object type and object ID
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
+     * @param appID 
+     * @param authToken 
      * @param includeValuesForDeletedFields Filter out metadata field values, for deleted fields
      */
-    public async metadataV1ObjectTypeObjectIdGet(appID: string, authToken: string, objectType: string, objectId: string, includeValuesForDeletedFields?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1ObjectTypeObjectIdGet(objectType: string, objectId: string, appID?: string, authToken?: string, includeValuesForDeletedFields?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeObjectIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeObjectIdGet", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -1378,6 +1386,8 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         if (objectId === null || objectId === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1ObjectTypeObjectIdGet", "objectId");
         }
+
+
 
 
 
@@ -1402,6 +1412,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1414,26 +1435,14 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Edit metadata values directly without a view. Admin access required.
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
      * @param metadataValuesSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async metadataV1ObjectTypeObjectIdPut(appID: string, authToken: string, objectType: string, objectId: string, metadataValuesSchema: MetadataValuesSchema, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1ObjectTypeObjectIdPut(objectType: string, objectId: string, metadataValuesSchema: MetadataValuesSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeObjectIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeObjectIdPut", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -1451,6 +1460,8 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         if (metadataValuesSchema === null || metadataValuesSchema === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1ObjectTypeObjectIdPut", "metadataValuesSchema");
         }
+
+
 
 
         // Path Params
@@ -1480,6 +1491,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1492,26 +1514,14 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_metadata_values 
      * Get object metadata by object type, object ID and view ID
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
      * @param viewId 
+     * @param appID 
+     * @param authToken 
      */
-    public async metadataV1ObjectTypeObjectIdViewsViewIdGet(appID: string, authToken: string, objectType: string, objectId: string, viewId: string, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1ObjectTypeObjectIdViewsViewIdGet(objectType: string, objectId: string, viewId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeObjectIdViewsViewIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeObjectIdViewsViewIdGet", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -1531,6 +1541,8 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/metadata/v1/{object_type}/{object_id}/views/{view_id}/'
             .replace('{' + 'object_type' + '}', encodeURIComponent(String(objectType)))
@@ -1548,6 +1560,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1560,27 +1583,15 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_metadata_values 
      * Edit view metadata values for a single object
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param objectId 
      * @param viewId 
      * @param metadataValuesSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async metadataV1ObjectTypeObjectIdViewsViewIdPut(appID: string, authToken: string, objectType: string, objectId: string, viewId: string, metadataValuesSchema: MetadataValuesSchema, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1ObjectTypeObjectIdViewsViewIdPut(objectType: string, objectId: string, viewId: string, metadataValuesSchema: MetadataValuesSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeObjectIdViewsViewIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeObjectIdViewsViewIdPut", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -1606,6 +1617,8 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/metadata/v1/{object_type}/{object_id}/views/{view_id}/'
             .replace('{' + 'object_type' + '}', encodeURIComponent(String(objectType)))
@@ -1634,6 +1647,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1646,26 +1670,14 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_metadata_values 
      * Add view metadata values for multiple objects (Assets, Collections or Segments)
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param viewId 
      * @param createMetadataValuesBatchSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async metadataV1ObjectTypeViewsViewIdPost(appID: string, authToken: string, objectType: string, viewId: string, createMetadataValuesBatchSchema: CreateMetadataValuesBatchSchema, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1ObjectTypeViewsViewIdPost(objectType: string, viewId: string, createMetadataValuesBatchSchema: CreateMetadataValuesBatchSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeViewsViewIdPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeViewsViewIdPost", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -1683,6 +1695,8 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         if (createMetadataValuesBatchSchema === null || createMetadataValuesBatchSchema === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1ObjectTypeViewsViewIdPost", "createMetadataValuesBatchSchema");
         }
+
+
 
 
         // Path Params
@@ -1712,6 +1726,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1724,26 +1749,14 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_metadata_values 
      * Edit view metadata values for multiple objects (Assets, Collections or Segments)
-     * @param appID 
-     * @param authToken 
      * @param objectType 
      * @param viewId 
      * @param metadataValuesBatchSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async metadataV1ObjectTypeViewsViewIdPut(appID: string, authToken: string, objectType: string, viewId: string, metadataValuesBatchSchema: MetadataValuesBatchSchema, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1ObjectTypeViewsViewIdPut(objectType: string, viewId: string, metadataValuesBatchSchema: MetadataValuesBatchSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeViewsViewIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ObjectTypeViewsViewIdPut", "authToken");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -1761,6 +1774,8 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         if (metadataValuesBatchSchema === null || metadataValuesBatchSchema === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1ObjectTypeViewsViewIdPut", "metadataValuesBatchSchema");
         }
+
+
 
 
         // Path Params
@@ -1790,6 +1805,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1805,19 +1831,9 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async metadataV1UserFieldsGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1UserFieldsGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1UserFieldsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1UserFieldsGet", "authToken");
-        }
 
 
         // Path Params
@@ -1834,6 +1850,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1849,19 +1876,9 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async metadataV1ViewsGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1ViewsGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ViewsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ViewsGet", "authToken");
-        }
 
 
         // Path Params
@@ -1878,6 +1895,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1890,29 +1918,19 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_metadata_views 
      * Create a new view
+     * @param metadataViewInputSchema body
      * @param appID 
      * @param authToken 
-     * @param metadataViewInputSchema body
      */
-    public async metadataV1ViewsPost(appID: string, authToken: string, metadataViewInputSchema: MetadataViewInputSchema, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1ViewsPost(metadataViewInputSchema: MetadataViewInputSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ViewsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ViewsPost", "authToken");
-        }
-
 
         // verify required parameter 'metadataViewInputSchema' is not null or undefined
         if (metadataViewInputSchema === null || metadataViewInputSchema === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1ViewsPost", "metadataViewInputSchema");
         }
+
+
 
 
         // Path Params
@@ -1940,6 +1958,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1952,29 +1981,19 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_metadata_views 
      * Delete a particular view by id
+     * @param viewId 
      * @param appID 
      * @param authToken 
-     * @param viewId 
      */
-    public async metadataV1ViewsViewIdDelete(appID: string, authToken: string, viewId: string, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1ViewsViewIdDelete(viewId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ViewsViewIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ViewsViewIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'viewId' is not null or undefined
         if (viewId === null || viewId === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1ViewsViewIdDelete", "viewId");
         }
+
+
 
 
         // Path Params
@@ -1992,6 +2011,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2004,30 +2034,20 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_metadata_views 
      * Returns a particular view by id
+     * @param viewId 
      * @param appID 
      * @param authToken 
-     * @param viewId 
      * @param mergeFields 
      */
-    public async metadataV1ViewsViewIdGet(appID: string, authToken: string, viewId: string, mergeFields?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1ViewsViewIdGet(viewId: string, appID?: string, authToken?: string, mergeFields?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ViewsViewIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ViewsViewIdGet", "authToken");
-        }
-
 
         // verify required parameter 'viewId' is not null or undefined
         if (viewId === null || viewId === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1ViewsViewIdGet", "viewId");
         }
+
+
 
 
 
@@ -2051,6 +2071,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2063,25 +2094,13 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_metadata_views 
      * Update view
-     * @param appID 
-     * @param authToken 
      * @param viewId 
      * @param metadataViewInputSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async metadataV1ViewsViewIdPatch(appID: string, authToken: string, viewId: string, metadataViewInputSchema: MetadataViewInputSchema, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1ViewsViewIdPatch(viewId: string, metadataViewInputSchema: MetadataViewInputSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ViewsViewIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ViewsViewIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'viewId' is not null or undefined
         if (viewId === null || viewId === undefined) {
@@ -2093,6 +2112,8 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         if (metadataViewInputSchema === null || metadataViewInputSchema === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1ViewsViewIdPatch", "metadataViewInputSchema");
         }
+
+
 
 
         // Path Params
@@ -2121,6 +2142,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2133,25 +2165,13 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_metadata_views 
      * Update view
-     * @param appID 
-     * @param authToken 
      * @param viewId 
      * @param metadataViewInputSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async metadataV1ViewsViewIdPut(appID: string, authToken: string, viewId: string, metadataViewInputSchema: MetadataViewInputSchema, _options?: Configuration): Promise<RequestContext> {
+    public async metadataV1ViewsViewIdPut(viewId: string, metadataViewInputSchema: MetadataViewInputSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ViewsViewIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("MetadataApi", "metadataV1ViewsViewIdPut", "authToken");
-        }
-
 
         // verify required parameter 'viewId' is not null or undefined
         if (viewId === null || viewId === undefined) {
@@ -2163,6 +2183,8 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         if (metadataViewInputSchema === null || metadataViewInputSchema === undefined) {
             throw new RequiredError("MetadataApi", "metadataV1ViewsViewIdPut", "metadataViewInputSchema");
         }
+
+
 
 
         // Path Params
@@ -2191,6 +2213,17 @@ export class MetadataApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {

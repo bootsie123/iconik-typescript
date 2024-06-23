@@ -36,16 +36,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.JobsApi(configuration);
 
 let body:iconik.JobsApiJobsV1JobsDeleteRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // JobsBulkDeleteSchema | body
   jobsBulkDeleteSchema: {
     jobIds: [
       "jobIds_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.jobsV1JobsDelete(body).then((data:any) => {
@@ -59,8 +59,8 @@ apiInstance.jobsV1JobsDelete(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jobsBulkDeleteSchema** | **JobsBulkDeleteSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -103,9 +103,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.JobsApi(configuration);
 
 let body:iconik.JobsApiJobsV1JobsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // boolean | If facets should be returned (optional)
   facets: true,
@@ -153,8 +153,8 @@ apiInstance.jobsV1JobsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **facets** | [**boolean**] | If facets should be returned | (optional) defaults to true
  **aggregations** | [**string**] | List of aggregation keys if facets is true | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -216,11 +216,11 @@ const apiInstance = new iconik.JobsApi(configuration);
 
 let body:iconik.JobsApiJobsV1JobsJobIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   jobId: "job_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.jobsV1JobsJobIdDelete(body).then((data:any) => {
@@ -233,9 +233,9 @@ apiInstance.jobsV1JobsJobIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **jobId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -280,11 +280,11 @@ const apiInstance = new iconik.JobsApi(configuration);
 
 let body:iconik.JobsApiJobsV1JobsJobIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   jobId: "job_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.jobsV1JobsJobIdGet(body).then((data:any) => {
@@ -297,9 +297,9 @@ apiInstance.jobsV1JobsJobIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **jobId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -344,10 +344,6 @@ const apiInstance = new iconik.JobsApi(configuration);
 
 let body:iconik.JobsApiJobsV1JobsJobIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   jobId: "job_id_example",
   // JobSchema | body
   jobSchema: {
@@ -396,6 +392,10 @@ let body:iconik.JobsApiJobsV1JobsJobIdPatchRequest = {
     title: "title_example",
     type: "MEDIAINFO",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.jobsV1JobsJobIdPatch(body).then((data:any) => {
@@ -409,9 +409,9 @@ apiInstance.jobsV1JobsJobIdPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jobSchema** | **JobSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **jobId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -455,10 +455,6 @@ const apiInstance = new iconik.JobsApi(configuration);
 
 let body:iconik.JobsApiJobsV1JobsJobIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   jobId: "job_id_example",
   // JobSchema | body
   jobSchema: {
@@ -507,6 +503,10 @@ let body:iconik.JobsApiJobsV1JobsJobIdPutRequest = {
     title: "title_example",
     type: "MEDIAINFO",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.jobsV1JobsJobIdPut(body).then((data:any) => {
@@ -520,9 +520,9 @@ apiInstance.jobsV1JobsJobIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jobSchema** | **JobSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **jobId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -566,15 +566,15 @@ const apiInstance = new iconik.JobsApi(configuration);
 
 let body:iconik.JobsApiJobsV1JobsJobIdReindexPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   jobId: "job_id_example",
   // ReindexJobSchema | body
   reindexJobSchema: {
     syncToAnotherDc: true,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.jobsV1JobsJobIdReindexPost(body).then((data:any) => {
@@ -588,9 +588,9 @@ apiInstance.jobsV1JobsJobIdReindexPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reindexJobSchema** | **ReindexJobSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **jobId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -599,7 +599,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -634,10 +634,6 @@ const apiInstance = new iconik.JobsApi(configuration);
 
 let body:iconik.JobsApiJobsV1JobsJobIdStepsJobStepIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   jobId: "job_id_example",
   // string
   jobStepId: "job_step_id_example",
@@ -649,6 +645,10 @@ let body:iconik.JobsApiJobsV1JobsJobIdStepsJobStepIdPatchRequest = {
     message: "message_example",
     status: "IN_PROGRESS",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.jobsV1JobsJobIdStepsJobStepIdPatch(body).then((data:any) => {
@@ -662,10 +662,10 @@ apiInstance.jobsV1JobsJobIdStepsJobStepIdPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jobStepSchema** | **JobStepSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **jobId** | [**string**] |  | defaults to undefined
  **jobStepId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -674,7 +674,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -709,10 +709,6 @@ const apiInstance = new iconik.JobsApi(configuration);
 
 let body:iconik.JobsApiJobsV1JobsJobIdStepsJobStepIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   jobId: "job_id_example",
   // string
   jobStepId: "job_step_id_example",
@@ -724,6 +720,10 @@ let body:iconik.JobsApiJobsV1JobsJobIdStepsJobStepIdPutRequest = {
     message: "message_example",
     status: "IN_PROGRESS",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.jobsV1JobsJobIdStepsJobStepIdPut(body).then((data:any) => {
@@ -737,10 +737,10 @@ apiInstance.jobsV1JobsJobIdStepsJobStepIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jobStepSchema** | **JobStepSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **jobId** | [**string**] |  | defaults to undefined
  **jobStepId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -749,7 +749,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -784,10 +784,6 @@ const apiInstance = new iconik.JobsApi(configuration);
 
 let body:iconik.JobsApiJobsV1JobsJobIdStepsPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   jobId: "job_id_example",
   // JobStepsUpdateSchema | body
   jobStepsUpdateSchema: {
@@ -801,6 +797,10 @@ let body:iconik.JobsApiJobsV1JobsJobIdStepsPatchRequest = {
       },
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.jobsV1JobsJobIdStepsPatch(body).then((data:any) => {
@@ -814,9 +814,9 @@ apiInstance.jobsV1JobsJobIdStepsPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jobStepsUpdateSchema** | **JobStepsUpdateSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **jobId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -825,7 +825,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -860,10 +860,6 @@ const apiInstance = new iconik.JobsApi(configuration);
 
 let body:iconik.JobsApiJobsV1JobsJobIdStepsPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   jobId: "job_id_example",
   // JobStepsUpdateSchema | body
   jobStepsUpdateSchema: {
@@ -877,6 +873,10 @@ let body:iconik.JobsApiJobsV1JobsJobIdStepsPutRequest = {
       },
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.jobsV1JobsJobIdStepsPut(body).then((data:any) => {
@@ -890,9 +890,9 @@ apiInstance.jobsV1JobsJobIdStepsPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jobStepsUpdateSchema** | **JobStepsUpdateSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **jobId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -901,7 +901,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -935,10 +935,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.JobsApi(configuration);
 
 let body:iconik.JobsApiJobsV1JobsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // JobSchema | body
   jobSchema: {
     actionContext: {
@@ -986,6 +982,10 @@ let body:iconik.JobsApiJobsV1JobsPostRequest = {
     title: "title_example",
     type: "MEDIAINFO",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.jobsV1JobsPost(body).then((data:any) => {
@@ -999,8 +999,8 @@ apiInstance.jobsV1JobsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jobSchema** | **JobSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1009,7 +1009,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1043,10 +1043,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.JobsApi(configuration);
 
 let body:iconik.JobsApiJobsV1JobsPriorityPutRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // JobsPrioritySchema | body
   jobsPrioritySchema: {
     jobIds: [
@@ -1054,6 +1050,10 @@ let body:iconik.JobsApiJobsV1JobsPriorityPutRequest = {
     ],
     priority: 1,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.jobsV1JobsPriorityPut(body).then((data:any) => {
@@ -1067,8 +1067,8 @@ apiInstance.jobsV1JobsPriorityPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jobsPrioritySchema** | **JobsPrioritySchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1077,7 +1077,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1112,10 +1112,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.JobsApi(configuration);
 
 let body:iconik.JobsApiJobsV1JobsStatePutRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // JobsStateSchema1 | body
   jobsStateSchema1: {
     action: "PAUSE",
@@ -1123,6 +1119,10 @@ let body:iconik.JobsApiJobsV1JobsStatePutRequest = {
       "jobIds_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.jobsV1JobsStatePut(body).then((data:any) => {
@@ -1136,8 +1136,8 @@ apiInstance.jobsV1JobsStatePut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jobsStateSchema1** | **JobsStateSchema1**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1146,7 +1146,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 

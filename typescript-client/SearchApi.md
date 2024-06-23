@@ -53,9 +53,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1DiscoveryDefaultEntitiesAdminGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -69,8 +69,8 @@ apiInstance.searchV1DiscoveryDefaultEntitiesAdminGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -114,11 +114,11 @@ const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1DiscoveryDefaultEntitiesEntityIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   entityId: "entity_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1DiscoveryDefaultEntitiesEntityIdDelete(body).then((data:any) => {
@@ -131,9 +131,9 @@ apiInstance.searchV1DiscoveryDefaultEntitiesEntityIdDelete(body).then((data:any)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **entityId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -178,11 +178,11 @@ const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1DiscoveryDefaultEntitiesEntityIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   entityId: "entity_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1DiscoveryDefaultEntitiesEntityIdGet(body).then((data:any) => {
@@ -195,9 +195,9 @@ apiInstance.searchV1DiscoveryDefaultEntitiesEntityIdGet(body).then((data:any) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **entityId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -242,10 +242,6 @@ const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1DiscoveryDefaultEntitiesEntityIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   entityId: "entity_id_example",
   // DiscoveryEntitySchema | body
   discoveryEntitySchema: {
@@ -257,6 +253,10 @@ let body:iconik.SearchApiSearchV1DiscoveryDefaultEntitiesEntityIdPatchRequest = 
     title: "title_example",
     userId: "userId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1DiscoveryDefaultEntitiesEntityIdPatch(body).then((data:any) => {
@@ -270,9 +270,9 @@ apiInstance.searchV1DiscoveryDefaultEntitiesEntityIdPatch(body).then((data:any) 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **discoveryEntitySchema** | **DiscoveryEntitySchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **entityId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -317,10 +317,6 @@ const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1DiscoveryDefaultEntitiesEntityIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   entityId: "entity_id_example",
   // DiscoveryEntitySchema | body
   discoveryEntitySchema: {
@@ -332,6 +328,10 @@ let body:iconik.SearchApiSearchV1DiscoveryDefaultEntitiesEntityIdPutRequest = {
     title: "title_example",
     userId: "userId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1DiscoveryDefaultEntitiesEntityIdPut(body).then((data:any) => {
@@ -345,9 +345,9 @@ apiInstance.searchV1DiscoveryDefaultEntitiesEntityIdPut(body).then((data:any) =>
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **discoveryEntitySchema** | **DiscoveryEntitySchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **entityId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -391,9 +391,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1DiscoveryDefaultEntitiesGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -407,8 +407,8 @@ apiInstance.searchV1DiscoveryDefaultEntitiesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -417,7 +417,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -451,10 +451,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1DiscoveryDefaultEntitiesPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // DiscoveryEntitySchema | body
   discoveryEntitySchema: {
     dateCreated: new Date('1970-01-01T00:00:00.00Z'),
@@ -465,6 +461,10 @@ let body:iconik.SearchApiSearchV1DiscoveryDefaultEntitiesPostRequest = {
     title: "title_example",
     userId: "userId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1DiscoveryDefaultEntitiesPost(body).then((data:any) => {
@@ -478,8 +478,8 @@ apiInstance.searchV1DiscoveryDefaultEntitiesPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **discoveryEntitySchema** | **DiscoveryEntitySchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -488,7 +488,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -522,16 +522,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1DiscoveryDefaultPutRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // DiscoveryViewSettingsSchema | body
   discoveryViewSettingsSchema: {
     entityIds: [
       "entityIds_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1DiscoveryDefaultPut(body).then((data:any) => {
@@ -545,8 +545,8 @@ apiInstance.searchV1DiscoveryDefaultPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **discoveryViewSettingsSchema** | **DiscoveryViewSettingsSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -555,7 +555,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -590,10 +590,6 @@ const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1DiscoveryEntitiesObjectTypeObjectIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
@@ -607,6 +603,10 @@ let body:iconik.SearchApiSearchV1DiscoveryEntitiesObjectTypeObjectIdPatchRequest
     title: "title_example",
     userId: "userId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1DiscoveryEntitiesObjectTypeObjectIdPatch(body).then((data:any) => {
@@ -620,10 +620,10 @@ apiInstance.searchV1DiscoveryEntitiesObjectTypeObjectIdPatch(body).then((data:an
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **discoveryEntitySchema** | **DiscoveryEntitySchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -632,7 +632,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -668,10 +668,6 @@ const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1DiscoveryEntitiesObjectTypeObjectIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
@@ -685,6 +681,10 @@ let body:iconik.SearchApiSearchV1DiscoveryEntitiesObjectTypeObjectIdPutRequest =
     title: "title_example",
     userId: "userId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1DiscoveryEntitiesObjectTypeObjectIdPut(body).then((data:any) => {
@@ -698,10 +698,10 @@ apiInstance.searchV1DiscoveryEntitiesObjectTypeObjectIdPut(body).then((data:any)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **discoveryEntitySchema** | **DiscoveryEntitySchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -710,7 +710,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -745,9 +745,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchHistoryGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -761,8 +761,8 @@ apiInstance.searchV1SearchHistoryGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -771,7 +771,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -806,11 +806,11 @@ const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchHistorySearchHistoryIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   searchHistoryId: "search_history_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1SearchHistorySearchHistoryIdDelete(body).then((data:any) => {
@@ -823,9 +823,9 @@ apiInstance.searchV1SearchHistorySearchHistoryIdDelete(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **searchHistoryId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -834,7 +834,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -870,11 +870,11 @@ const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchHistorySearchHistoryIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   searchHistoryId: "search_history_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1SearchHistorySearchHistoryIdGet(body).then((data:any) => {
@@ -887,9 +887,9 @@ apiInstance.searchV1SearchHistorySearchHistoryIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **searchHistoryId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -898,7 +898,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -933,10 +933,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // SearchCriteriaSchema | body
   searchCriteriaSchema: {
     docTypes: [
@@ -996,6 +992,10 @@ let body:iconik.SearchApiSearchV1SearchPostRequest = {
       },
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of documents for each page (optional)
   perPage: 1,
   // number | Which page number to fetch (optional)
@@ -1023,8 +1023,8 @@ apiInstance.searchV1SearchPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **searchCriteriaSchema** | **SearchCriteriaSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of documents for each page | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
  **scroll** | [**boolean**] | If true passed then uses scroll pagination instead of default one (Deprecated, user search_after body parameter instead) | (optional) defaults to undefined
@@ -1040,7 +1040,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1075,9 +1075,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchSavedGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 1,
@@ -1107,8 +1107,8 @@ apiInstance.searchV1SearchSavedGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
  **scroll** | [**boolean**] | If true passed then uses scroll pagination instead of default one | (optional) defaults to undefined
@@ -1125,7 +1125,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1161,11 +1161,11 @@ const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchSavedGroupGroupIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   groupId: "group_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1SearchSavedGroupGroupIdDelete(body).then((data:any) => {
@@ -1178,9 +1178,9 @@ apiInstance.searchV1SearchSavedGroupGroupIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **groupId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1189,7 +1189,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1224,11 +1224,11 @@ const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchSavedGroupGroupIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   groupId: "group_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1SearchSavedGroupGroupIdGet(body).then((data:any) => {
@@ -1241,9 +1241,9 @@ apiInstance.searchV1SearchSavedGroupGroupIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **groupId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1252,7 +1252,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1287,10 +1287,6 @@ const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchSavedGroupGroupIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   groupId: "group_id_example",
   // SavedSearchGroupSchema | body
   savedSearchGroupSchema: {
@@ -1298,6 +1294,10 @@ let body:iconik.SearchApiSearchV1SearchSavedGroupGroupIdPatchRequest = {
     systemDomainId: "systemDomainId_example",
     userId: "userId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1SearchSavedGroupGroupIdPatch(body).then((data:any) => {
@@ -1311,9 +1311,9 @@ apiInstance.searchV1SearchSavedGroupGroupIdPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **savedSearchGroupSchema** | **SavedSearchGroupSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **groupId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1322,7 +1322,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1358,10 +1358,6 @@ const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchSavedGroupGroupIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   groupId: "group_id_example",
   // SavedSearchGroupSchema | body
   savedSearchGroupSchema: {
@@ -1369,6 +1365,10 @@ let body:iconik.SearchApiSearchV1SearchSavedGroupGroupIdPutRequest = {
     systemDomainId: "systemDomainId_example",
     userId: "userId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1SearchSavedGroupGroupIdPut(body).then((data:any) => {
@@ -1382,9 +1382,9 @@ apiInstance.searchV1SearchSavedGroupGroupIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **savedSearchGroupSchema** | **SavedSearchGroupSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **groupId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1393,7 +1393,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1429,13 +1429,13 @@ const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchSavedGroupGroupIdSearchSearchIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   groupId: "group_id_example",
   // string
   searchId: "search_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1SearchSavedGroupGroupIdSearchSearchIdDelete(body).then((data:any) => {
@@ -1448,10 +1448,10 @@ apiInstance.searchV1SearchSavedGroupGroupIdSearchSearchIdDelete(body).then((data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **groupId** | [**string**] |  | defaults to undefined
  **searchId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1460,7 +1460,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1496,13 +1496,13 @@ const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchSavedGroupGroupIdSearchSearchIdPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   groupId: "group_id_example",
   // string
   searchId: "search_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1SearchSavedGroupGroupIdSearchSearchIdPost(body).then((data:any) => {
@@ -1515,10 +1515,10 @@ apiInstance.searchV1SearchSavedGroupGroupIdSearchSearchIdPost(body).then((data:a
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **groupId** | [**string**] |  | defaults to undefined
  **searchId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1527,7 +1527,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1562,16 +1562,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchSavedGroupPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // SavedSearchGroupSchema | body
   savedSearchGroupSchema: {
     name: "name_example",
     systemDomainId: "systemDomainId_example",
     userId: "userId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1SearchSavedGroupPost(body).then((data:any) => {
@@ -1585,8 +1585,8 @@ apiInstance.searchV1SearchSavedGroupPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **savedSearchGroupSchema** | **SavedSearchGroupSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1595,7 +1595,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1629,9 +1629,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchSavedGroupsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 1,
@@ -1653,8 +1653,8 @@ apiInstance.searchV1SearchSavedGroupsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
  **ids** | [**string**] | A comma separated list of IDs. for example - 3c2db7d8-1f39-46e3-8c77-992101e5e616,683a2c63-63a0-42b0-aed8-5b62dedba840 | (optional) defaults to undefined
@@ -1667,7 +1667,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1703,11 +1703,11 @@ const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchSavedGroupsGroupIdReindexPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   groupId: "group_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1SearchSavedGroupsGroupIdReindexPost(body).then((data:any) => {
@@ -1720,9 +1720,9 @@ apiInstance.searchV1SearchSavedGroupsGroupIdReindexPost(body).then((data:any) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **groupId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1731,7 +1731,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1766,10 +1766,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchSavedPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // SavedSearchSchema | body
   savedSearchSchema: {
     criteria: {
@@ -1836,6 +1832,10 @@ let body:iconik.SearchApiSearchV1SearchSavedPostRequest = {
       "permissions_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1SearchSavedPost(body).then((data:any) => {
@@ -1849,8 +1849,8 @@ apiInstance.searchV1SearchSavedPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **savedSearchSchema** | **SavedSearchSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1859,7 +1859,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1894,11 +1894,11 @@ const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchSavedSearchIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   searchId: "search_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1SearchSavedSearchIdDelete(body).then((data:any) => {
@@ -1911,9 +1911,9 @@ apiInstance.searchV1SearchSavedSearchIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **searchId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1922,7 +1922,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1958,11 +1958,11 @@ const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchSavedSearchIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   searchId: "search_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 1,
   // number | Which page number to fetch (optional)
@@ -1981,9 +1981,9 @@ apiInstance.searchV1SearchSavedSearchIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **searchId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
  **includeResults** | [**boolean**] | Set to false if you only want the search definition | (optional) defaults to true
@@ -1995,7 +1995,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2031,10 +2031,6 @@ const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchSavedSearchIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   searchId: "search_id_example",
   // SavedSearchSchema | body
   savedSearchSchema: {
@@ -2102,6 +2098,10 @@ let body:iconik.SearchApiSearchV1SearchSavedSearchIdPatchRequest = {
       "permissions_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1SearchSavedSearchIdPatch(body).then((data:any) => {
@@ -2115,9 +2115,9 @@ apiInstance.searchV1SearchSavedSearchIdPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **savedSearchSchema** | **SavedSearchSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **searchId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2126,7 +2126,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2162,10 +2162,6 @@ const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchSavedSearchIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   searchId: "search_id_example",
   // SavedSearchSchema | body
   savedSearchSchema: {
@@ -2233,6 +2229,10 @@ let body:iconik.SearchApiSearchV1SearchSavedSearchIdPutRequest = {
       "permissions_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1SearchSavedSearchIdPut(body).then((data:any) => {
@@ -2246,9 +2246,9 @@ apiInstance.searchV1SearchSavedSearchIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **savedSearchSchema** | **SavedSearchSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **searchId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2257,7 +2257,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2293,15 +2293,15 @@ const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchSavedSearchIdReindexPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   searchId: "search_id_example",
   // ReindexSavedSearchSchema | body
   reindexSavedSearchSchema: {
     syncToAnotherDc: true,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1SearchSavedSearchIdReindexPost(body).then((data:any) => {
@@ -2315,9 +2315,9 @@ apiInstance.searchV1SearchSavedSearchIdReindexPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reindexSavedSearchSchema** | **ReindexSavedSearchSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **searchId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2326,7 +2326,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2361,10 +2361,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.SearchApi(configuration);
 
 let body:iconik.SearchApiSearchV1SearchSuggestPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // SearchSuggestSchema | body
   searchSuggestSchema: {
     docTypes: [
@@ -2374,6 +2370,10 @@ let body:iconik.SearchApiSearchV1SearchSuggestPostRequest = {
     metadataViewId: "metadataViewId_example",
     query: "query_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.searchV1SearchSuggestPost(body).then((data:any) => {
@@ -2387,8 +2387,8 @@ apiInstance.searchV1SearchSuggestPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **searchSuggestSchema** | **SearchSuggestSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2397,7 +2397,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 

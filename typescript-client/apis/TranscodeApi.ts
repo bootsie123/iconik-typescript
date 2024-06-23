@@ -34,30 +34,20 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_analyze_content 
      * Start a job that sends an asset for analysis
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      * @param analyzeSchema body
      */
-    public async transcodeV1AnalyzeAssetsAssetIdPost(appID: string, authToken: string, assetId: string, analyzeSchema?: AnalyzeSchema, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1AnalyzeAssetsAssetIdPost(assetId: string, appID?: string, authToken?: string, analyzeSchema?: AnalyzeSchema, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1AnalyzeAssetsAssetIdPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1AnalyzeAssetsAssetIdPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1AnalyzeAssetsAssetIdPost", "assetId");
         }
+
+
 
 
 
@@ -87,6 +77,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -99,26 +100,14 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * with a default analysis profile of specified media typewith a default analysis profile of specified media type Required roles:  - can_analyze_content 
      * Start a job that sends an asset for analysis
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param mediaType 
+     * @param appID 
+     * @param authToken 
      * @param analyzeSchema body
      */
-    public async transcodeV1AnalyzeAssetsAssetIdProfilesDefaultMediaTypePost(appID: string, authToken: string, assetId: string, mediaType: string, analyzeSchema?: AnalyzeSchema, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1AnalyzeAssetsAssetIdProfilesDefaultMediaTypePost(assetId: string, mediaType: string, appID?: string, authToken?: string, analyzeSchema?: AnalyzeSchema, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1AnalyzeAssetsAssetIdProfilesDefaultMediaTypePost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1AnalyzeAssetsAssetIdProfilesDefaultMediaTypePost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -130,6 +119,8 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         if (mediaType === null || mediaType === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1AnalyzeAssetsAssetIdProfilesDefaultMediaTypePost", "mediaType");
         }
+
+
 
 
 
@@ -160,6 +151,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -172,30 +174,20 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_analyze_content 
      * Start a job that sends an asset for analysis with a default analysis profile
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      * @param analyzeSchema body
      */
-    public async transcodeV1AnalyzeAssetsAssetIdProfilesDefaultPost(appID: string, authToken: string, assetId: string, analyzeSchema?: AnalyzeSchema, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1AnalyzeAssetsAssetIdProfilesDefaultPost(assetId: string, appID?: string, authToken?: string, analyzeSchema?: AnalyzeSchema, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1AnalyzeAssetsAssetIdProfilesDefaultPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1AnalyzeAssetsAssetIdProfilesDefaultPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1AnalyzeAssetsAssetIdProfilesDefaultPost", "assetId");
         }
+
+
 
 
 
@@ -225,6 +217,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -237,26 +240,14 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_analyze_content 
      * Start a job that sends an asset for analysis with a custom analysis profile
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param profileId 
+     * @param appID 
+     * @param authToken 
      * @param analyzeSchema body
      */
-    public async transcodeV1AnalyzeAssetsAssetIdProfilesProfileIdPost(appID: string, authToken: string, assetId: string, profileId: string, analyzeSchema?: AnalyzeSchema, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1AnalyzeAssetsAssetIdProfilesProfileIdPost(assetId: string, profileId: string, appID?: string, authToken?: string, analyzeSchema?: AnalyzeSchema, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1AnalyzeAssetsAssetIdProfilesProfileIdPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1AnalyzeAssetsAssetIdProfilesProfileIdPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -268,6 +259,8 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         if (profileId === null || profileId === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1AnalyzeAssetsAssetIdProfilesProfileIdPost", "profileId");
         }
+
+
 
 
 
@@ -298,6 +291,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -314,19 +318,9 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
      * @param authToken 
      * @param bulkAnalyzeSchema body
      */
-    public async transcodeV1AnalyzeBulkPost(appID: string, authToken: string, bulkAnalyzeSchema?: BulkAnalyzeSchema, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1AnalyzeBulkPost(appID?: string, authToken?: string, bulkAnalyzeSchema?: BulkAnalyzeSchema, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1AnalyzeBulkPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1AnalyzeBulkPost", "authToken");
-        }
 
 
 
@@ -355,6 +349,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -367,29 +372,19 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Gets metadata info from the link
+     * @param assetLinkURLSchema body
      * @param appID 
      * @param authToken 
-     * @param assetLinkURLSchema body
      */
-    public async transcodeV1AssetsLinkMetadataPost(appID: string, authToken: string, assetLinkURLSchema: AssetLinkURLSchema, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1AssetsLinkMetadataPost(assetLinkURLSchema: AssetLinkURLSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1AssetsLinkMetadataPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1AssetsLinkMetadataPost", "authToken");
-        }
-
 
         // verify required parameter 'assetLinkURLSchema' is not null or undefined
         if (assetLinkURLSchema === null || assetLinkURLSchema === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1AssetsLinkMetadataPost", "assetLinkURLSchema");
         }
+
+
 
 
         // Path Params
@@ -417,6 +412,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -429,29 +435,19 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_transcode_jobs 
      * Acknowledge an edge transcode job
+     * @param jobId 
      * @param appID 
      * @param authToken 
-     * @param jobId 
      */
-    public async transcodeV1EdgeTranscodeJobsJobIdAcknowledgePost(appID: string, authToken: string, jobId: string, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1EdgeTranscodeJobsJobIdAcknowledgePost(jobId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1EdgeTranscodeJobsJobIdAcknowledgePost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1EdgeTranscodeJobsJobIdAcknowledgePost", "authToken");
-        }
-
 
         // verify required parameter 'jobId' is not null or undefined
         if (jobId === null || jobId === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1EdgeTranscodeJobsJobIdAcknowledgePost", "jobId");
         }
+
+
 
 
         // Path Params
@@ -469,6 +465,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -484,19 +491,9 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async transcodeV1EdgeTranscodeWorkersGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1EdgeTranscodeWorkersGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1EdgeTranscodeWorkersGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1EdgeTranscodeWorkersGet", "authToken");
-        }
 
 
         // Path Params
@@ -513,6 +510,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -525,29 +533,19 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - is_storage_worker - can_write_transcoders 
      * Create a new edge transcode worker
+     * @param edgeTranscodeWorkerSchema body
      * @param appID 
      * @param authToken 
-     * @param edgeTranscodeWorkerSchema body
      */
-    public async transcodeV1EdgeTranscodeWorkersPost(appID: string, authToken: string, edgeTranscodeWorkerSchema: EdgeTranscodeWorkerSchema, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1EdgeTranscodeWorkersPost(edgeTranscodeWorkerSchema: EdgeTranscodeWorkerSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1EdgeTranscodeWorkersPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1EdgeTranscodeWorkersPost", "authToken");
-        }
-
 
         // verify required parameter 'edgeTranscodeWorkerSchema' is not null or undefined
         if (edgeTranscodeWorkerSchema === null || edgeTranscodeWorkerSchema === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1EdgeTranscodeWorkersPost", "edgeTranscodeWorkerSchema");
         }
+
+
 
 
         // Path Params
@@ -575,6 +573,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -587,29 +596,19 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - is_storage_worker - can_write_transcoders 
      * Delete a edge transcode worker
+     * @param workerId 
      * @param appID 
      * @param authToken 
-     * @param workerId 
      */
-    public async transcodeV1EdgeTranscodeWorkersWorkerIdDelete(appID: string, authToken: string, workerId: string, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1EdgeTranscodeWorkersWorkerIdDelete(workerId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1EdgeTranscodeWorkersWorkerIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1EdgeTranscodeWorkersWorkerIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'workerId' is not null or undefined
         if (workerId === null || workerId === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1EdgeTranscodeWorkersWorkerIdDelete", "workerId");
         }
+
+
 
 
         // Path Params
@@ -627,6 +626,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -639,29 +649,19 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - is_storage_worker - can_read_transcoders 
      * Get a edge transcode worker
+     * @param workerId 
      * @param appID 
      * @param authToken 
-     * @param workerId 
      */
-    public async transcodeV1EdgeTranscodeWorkersWorkerIdGet(appID: string, authToken: string, workerId: string, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1EdgeTranscodeWorkersWorkerIdGet(workerId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1EdgeTranscodeWorkersWorkerIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1EdgeTranscodeWorkersWorkerIdGet", "authToken");
-        }
-
 
         // verify required parameter 'workerId' is not null or undefined
         if (workerId === null || workerId === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1EdgeTranscodeWorkersWorkerIdGet", "workerId");
         }
+
+
 
 
         // Path Params
@@ -679,6 +679,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -691,25 +702,13 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - is_storage_worker - can_write_transcoders 
      * Update a edge transcode worker
-     * @param appID 
-     * @param authToken 
      * @param workerId 
      * @param edgeTranscodeWorkerSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async transcodeV1EdgeTranscodeWorkersWorkerIdPatch(appID: string, authToken: string, workerId: string, edgeTranscodeWorkerSchema: EdgeTranscodeWorkerSchema, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1EdgeTranscodeWorkersWorkerIdPatch(workerId: string, edgeTranscodeWorkerSchema: EdgeTranscodeWorkerSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1EdgeTranscodeWorkersWorkerIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1EdgeTranscodeWorkersWorkerIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'workerId' is not null or undefined
         if (workerId === null || workerId === undefined) {
@@ -721,6 +720,8 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         if (edgeTranscodeWorkerSchema === null || edgeTranscodeWorkerSchema === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1EdgeTranscodeWorkersWorkerIdPatch", "edgeTranscodeWorkerSchema");
         }
+
+
 
 
         // Path Params
@@ -749,6 +750,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -761,25 +773,13 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - is_storage_worker - can_write_transcoders 
      * Update a edge transcode worker
-     * @param appID 
-     * @param authToken 
      * @param workerId 
      * @param edgeTranscodeWorkerSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async transcodeV1EdgeTranscodeWorkersWorkerIdPut(appID: string, authToken: string, workerId: string, edgeTranscodeWorkerSchema: EdgeTranscodeWorkerSchema, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1EdgeTranscodeWorkersWorkerIdPut(workerId: string, edgeTranscodeWorkerSchema: EdgeTranscodeWorkerSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1EdgeTranscodeWorkersWorkerIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1EdgeTranscodeWorkersWorkerIdPut", "authToken");
-        }
-
 
         // verify required parameter 'workerId' is not null or undefined
         if (workerId === null || workerId === undefined) {
@@ -791,6 +791,8 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         if (edgeTranscodeWorkerSchema === null || edgeTranscodeWorkerSchema === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1EdgeTranscodeWorkersWorkerIdPut", "edgeTranscodeWorkerSchema");
         }
+
+
 
 
         // Path Params
@@ -819,6 +821,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -831,30 +844,20 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_transcode_jobs 
      * Start a job that creates a collection keyframe
+     * @param collectionId 
      * @param appID 
      * @param authToken 
-     * @param collectionId 
      * @param generateCollectionKeyframeSchema body
      */
-    public async transcodeV1KeyframesCollectionsCollectionIdPost(appID: string, authToken: string, collectionId: string, generateCollectionKeyframeSchema?: GenerateCollectionKeyframeSchema, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1KeyframesCollectionsCollectionIdPost(collectionId: string, appID?: string, authToken?: string, generateCollectionKeyframeSchema?: GenerateCollectionKeyframeSchema, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1KeyframesCollectionsCollectionIdPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1KeyframesCollectionsCollectionIdPost", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1KeyframesCollectionsCollectionIdPost", "collectionId");
         }
+
+
 
 
 
@@ -884,6 +887,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -896,30 +910,20 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_transcode_jobs 
      * Cancel all transcode jobs linked to the storage
+     * @param storageId 
      * @param appID 
      * @param authToken 
-     * @param storageId 
      * @param abortStorageTranscodeJobsSchema body
      */
-    public async transcodeV1StoragesStorageIdDelete(appID: string, authToken: string, storageId: string, abortStorageTranscodeJobsSchema?: AbortStorageTranscodeJobsSchema, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1StoragesStorageIdDelete(storageId: string, appID?: string, authToken?: string, abortStorageTranscodeJobsSchema?: AbortStorageTranscodeJobsSchema, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1StoragesStorageIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1StoragesStorageIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1StoragesStorageIdDelete", "storageId");
         }
+
+
 
 
 
@@ -949,6 +953,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -961,30 +976,20 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_transcode_jobs 
      * Get a edge transcode jobs from the job queue
+     * @param storageId 
      * @param appID 
      * @param authToken 
-     * @param storageId 
      * @param limit The max number of items to fetch
      */
-    public async transcodeV1StoragesStorageIdEdgeTranscodeJobsGet(appID: string, authToken: string, storageId: string, limit?: number, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1StoragesStorageIdEdgeTranscodeJobsGet(storageId: string, appID?: string, authToken?: string, limit?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1StoragesStorageIdEdgeTranscodeJobsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1StoragesStorageIdEdgeTranscodeJobsGet", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1StoragesStorageIdEdgeTranscodeJobsGet", "storageId");
         }
+
+
 
 
 
@@ -1008,6 +1013,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1020,25 +1036,13 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_transcode_jobs 
      * Delete local storage transcode job.
-     * @param authToken 
-     * @param appID 
      * @param storageId 
      * @param fileId 
+     * @param authToken 
+     * @param appID 
      */
-    public async transcodeV1StoragesStorageIdFilesFileIdTranscodeDelete(authToken: string, appID: string, storageId: string, fileId: string, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1StoragesStorageIdFilesFileIdTranscodeDelete(storageId: string, fileId: string, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1StoragesStorageIdFilesFileIdTranscodeDelete", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1StoragesStorageIdFilesFileIdTranscodeDelete", "appID");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -1050,6 +1054,8 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         if (fileId === null || fileId === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1StoragesStorageIdFilesFileIdTranscodeDelete", "fileId");
         }
+
+
 
 
         // Path Params
@@ -1068,6 +1074,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1080,31 +1097,21 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_transcode_jobs 
      * Get pending local storage transcode jobs.
+     * @param storageId 
      * @param authToken 
      * @param appID 
-     * @param storageId 
      * @param perPage The number of items for each page
      * @param lastId ID of a last transcode job entity on previous page
      */
-    public async transcodeV1StoragesStorageIdTranscodeGet(authToken: string, appID: string, storageId: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1StoragesStorageIdTranscodeGet(storageId: string, authToken?: string, appID?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1StoragesStorageIdTranscodeGet", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1StoragesStorageIdTranscodeGet", "appID");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1StoragesStorageIdTranscodeGet", "storageId");
         }
+
+
 
 
 
@@ -1134,6 +1141,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1146,25 +1164,13 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_transcode_jobs 
      * Delete local storage transcode job.
-     * @param authToken 
-     * @param appID 
      * @param storageId 
      * @param recordId 
+     * @param authToken 
+     * @param appID 
      */
-    public async transcodeV1StoragesStorageIdTranscodeRecordIdDelete(authToken: string, appID: string, storageId: string, recordId: string, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1StoragesStorageIdTranscodeRecordIdDelete(storageId: string, recordId: string, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1StoragesStorageIdTranscodeRecordIdDelete", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1StoragesStorageIdTranscodeRecordIdDelete", "appID");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -1176,6 +1182,8 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         if (recordId === null || recordId === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1StoragesStorageIdTranscodeRecordIdDelete", "recordId");
         }
+
+
 
 
         // Path Params
@@ -1194,6 +1202,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1206,25 +1225,13 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_transcode_jobs 
      * Get local storage transcode job.
-     * @param authToken 
-     * @param appID 
      * @param storageId 
      * @param recordId 
+     * @param authToken 
+     * @param appID 
      */
-    public async transcodeV1StoragesStorageIdTranscodeRecordIdGet(authToken: string, appID: string, storageId: string, recordId: string, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1StoragesStorageIdTranscodeRecordIdGet(storageId: string, recordId: string, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1StoragesStorageIdTranscodeRecordIdGet", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1StoragesStorageIdTranscodeRecordIdGet", "appID");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -1236,6 +1243,8 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         if (recordId === null || recordId === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1StoragesStorageIdTranscodeRecordIdGet", "recordId");
         }
+
+
 
 
         // Path Params
@@ -1254,6 +1263,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1266,25 +1286,13 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_transcode_jobs 
      * Returns list of transcode queue records by object_id
-     * @param authToken 
-     * @param appID 
      * @param objectType 
      * @param objectId 
+     * @param authToken 
+     * @param appID 
      */
-    public async transcodeV1TranscodeObjectTypeObjectIdGet(authToken: string, appID: string, objectType: string, objectId: string, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1TranscodeObjectTypeObjectIdGet(objectType: string, objectId: string, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscodeObjectTypeObjectIdGet", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscodeObjectTypeObjectIdGet", "appID");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -1296,6 +1304,8 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         if (objectId === null || objectId === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1TranscodeObjectTypeObjectIdGet", "objectId");
         }
+
+
 
 
         // Path Params
@@ -1314,6 +1324,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1326,26 +1347,14 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_transcode_jobs 
      * Returns list of transcode queue records by version_id
-     * @param authToken 
-     * @param appID 
      * @param objectType 
      * @param objectId 
      * @param versionId 
+     * @param authToken 
+     * @param appID 
      */
-    public async transcodeV1TranscodeObjectTypeObjectIdVersionsVersionIdGet(authToken: string, appID: string, objectType: string, objectId: string, versionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1TranscodeObjectTypeObjectIdVersionsVersionIdGet(objectType: string, objectId: string, versionId: string, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscodeObjectTypeObjectIdVersionsVersionIdGet", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscodeObjectTypeObjectIdVersionsVersionIdGet", "appID");
-        }
-
 
         // verify required parameter 'objectType' is not null or undefined
         if (objectType === null || objectType === undefined) {
@@ -1365,6 +1374,8 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/transcode/v1/transcode/{object_type}/{object_id}/versions/{version_id}/'
             .replace('{' + 'object_type' + '}', encodeURIComponent(String(objectType)))
@@ -1382,6 +1393,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1394,29 +1416,19 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Use /API/files/v1/assets/ID/files/ID/keyframes insteadUse /API/files/v1/assets/ID/files/ID/keyframes instead Required roles:  - can_write_transcode_jobs 
      * Starts a new transcode.
+     * @param jobSchema1 body
      * @param appID 
      * @param authToken 
-     * @param jobSchema1 body
      */
-    public async transcodeV1TranscodePost(appID: string, authToken: string, jobSchema1: JobSchema1, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1TranscodePost(jobSchema1: JobSchema1, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscodePost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscodePost", "authToken");
-        }
-
 
         // verify required parameter 'jobSchema1' is not null or undefined
         if (jobSchema1 === null || jobSchema1 === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1TranscodePost", "jobSchema1");
         }
+
+
 
 
         // Path Params
@@ -1444,6 +1456,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1462,19 +1485,9 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
      * @param page 
      * @param sort A comma separated list of fieldnames without spaces. object_type,user_id,retry_count,priority,type,status
      */
-    public async transcodeV1TranscodeQueueGet(appID: string, authToken: string, perPage?: number, page?: number, sort?: string, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1TranscodeQueueGet(appID?: string, authToken?: string, perPage?: number, page?: number, sort?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscodeQueueGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscodeQueueGet", "authToken");
-        }
 
 
 
@@ -1509,6 +1522,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1528,19 +1552,9 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
      * @param page 
      * @param sort 
      */
-    public async transcodeV1TranscodeQueueSystemGet(appID: string, authToken: string, perDomainId?: boolean, perPage?: number, page?: number, sort?: string, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1TranscodeQueueSystemGet(appID?: string, authToken?: string, perDomainId?: boolean, perPage?: number, page?: number, sort?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscodeQueueSystemGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscodeQueueSystemGet", "authToken");
-        }
 
 
 
@@ -1581,6 +1595,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1593,29 +1618,19 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_transcode_jobs 
      * Cancel a particular transcode job by id
+     * @param transcodeJobId 
      * @param appID 
      * @param authToken 
-     * @param transcodeJobId 
      */
-    public async transcodeV1TranscodeTranscodeJobIdDelete(appID: string, authToken: string, transcodeJobId: string, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1TranscodeTranscodeJobIdDelete(transcodeJobId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscodeTranscodeJobIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscodeTranscodeJobIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'transcodeJobId' is not null or undefined
         if (transcodeJobId === null || transcodeJobId === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1TranscodeTranscodeJobIdDelete", "transcodeJobId");
         }
+
+
 
 
         // Path Params
@@ -1633,6 +1648,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1645,29 +1671,19 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_transcode_jobs 
      * Get transcode job
+     * @param transcodeJobId 
      * @param appID 
      * @param authToken 
-     * @param transcodeJobId 
      */
-    public async transcodeV1TranscodeTranscodeJobIdGet(appID: string, authToken: string, transcodeJobId: string, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1TranscodeTranscodeJobIdGet(transcodeJobId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscodeTranscodeJobIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscodeTranscodeJobIdGet", "authToken");
-        }
-
 
         // verify required parameter 'transcodeJobId' is not null or undefined
         if (transcodeJobId === null || transcodeJobId === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1TranscodeTranscodeJobIdGet", "transcodeJobId");
         }
+
+
 
 
         // Path Params
@@ -1685,6 +1701,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1697,25 +1724,13 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_transcode_jobs 
      * Move transcode job to top or bottom of the queue
-     * @param appID 
-     * @param authToken 
      * @param transcodeJobId 
      * @param position move transcode job to \&quot;top\&quot; or \&quot;bottom\&quot; position
+     * @param appID 
+     * @param authToken 
      */
-    public async transcodeV1TranscodeTranscodeJobIdPositionPositionPost(appID: string, authToken: string, transcodeJobId: string, position: string, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1TranscodeTranscodeJobIdPositionPositionPost(transcodeJobId: string, position: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscodeTranscodeJobIdPositionPositionPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscodeTranscodeJobIdPositionPositionPost", "authToken");
-        }
-
 
         // verify required parameter 'transcodeJobId' is not null or undefined
         if (transcodeJobId === null || transcodeJobId === undefined) {
@@ -1727,6 +1742,8 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         if (position === null || position === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1TranscodeTranscodeJobIdPositionPositionPost", "position");
         }
+
+
 
 
         // Path Params
@@ -1745,6 +1762,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1757,25 +1785,13 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_transcode_jobs 
      * Change transcode job priority
-     * @param appID 
-     * @param authToken 
      * @param transcodeJobId 
      * @param priority 
+     * @param appID 
+     * @param authToken 
      */
-    public async transcodeV1TranscodeTranscodeJobIdPriorityPriorityPut(appID: string, authToken: string, transcodeJobId: string, priority: number, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1TranscodeTranscodeJobIdPriorityPriorityPut(transcodeJobId: string, priority: number, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscodeTranscodeJobIdPriorityPriorityPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscodeTranscodeJobIdPriorityPriorityPut", "authToken");
-        }
-
 
         // verify required parameter 'transcodeJobId' is not null or undefined
         if (transcodeJobId === null || transcodeJobId === undefined) {
@@ -1787,6 +1803,8 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         if (priority === null || priority === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1TranscodeTranscodeJobIdPriorityPriorityPut", "priority");
         }
+
+
 
 
         // Path Params
@@ -1805,6 +1823,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1817,30 +1846,20 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_transcribe_content 
      * Start a job that sends an asset to default transcription service
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      * @param transcribeSchema body
      */
-    public async transcodeV1TranscribeAssetsAssetIdProfilesDefaultPost(appID: string, authToken: string, assetId: string, transcribeSchema?: TranscribeSchema, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1TranscribeAssetsAssetIdProfilesDefaultPost(assetId: string, appID?: string, authToken?: string, transcribeSchema?: TranscribeSchema, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscribeAssetsAssetIdProfilesDefaultPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscribeAssetsAssetIdProfilesDefaultPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1TranscribeAssetsAssetIdProfilesDefaultPost", "assetId");
         }
+
+
 
 
 
@@ -1870,6 +1889,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1882,29 +1912,19 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_transcribe_content 
      * Start a job that sends multiple objects to transcription service
+     * @param bulkTranscribeSchema body
      * @param appID 
      * @param authToken 
-     * @param bulkTranscribeSchema body
      */
-    public async transcodeV1TranscribeBulkPost(appID: string, authToken: string, bulkTranscribeSchema: BulkTranscribeSchema, _options?: Configuration): Promise<RequestContext> {
+    public async transcodeV1TranscribeBulkPost(bulkTranscribeSchema: BulkTranscribeSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscribeBulkPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("TranscodeApi", "transcodeV1TranscribeBulkPost", "authToken");
-        }
-
 
         // verify required parameter 'bulkTranscribeSchema' is not null or undefined
         if (bulkTranscribeSchema === null || bulkTranscribeSchema === undefined) {
             throw new RequiredError("TranscodeApi", "transcodeV1TranscribeBulkPost", "bulkTranscribeSchema");
         }
+
+
 
 
         // Path Params
@@ -1932,6 +1952,17 @@ export class TranscodeApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {

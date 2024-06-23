@@ -167,10 +167,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ApprovalsBulkPostRequest = {
-  // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
   // BulkSetApprovalSchema | body
   bulkSetApprovalSchema: {
     objectIds: [
@@ -179,6 +175,10 @@ let body:iconik.AssetsApiAssetsV1ApprovalsBulkPostRequest = {
     objectType: "assets",
     status: "APPROVED",
   },
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.assetsV1ApprovalsBulkPost(body).then((data:any) => {
@@ -192,8 +192,8 @@ apiInstance.assetsV1ApprovalsBulkPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bulkSetApprovalSchema** | **BulkSetApprovalSchema**| body |
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -236,10 +236,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ApprovalsBulkRemovePostRequest = {
-  // string
-  authToken: "Auth-Token_example",
-  // string
-  appID: "App-ID_example",
   // BulkRemoveApprovalSchema | body
   bulkRemoveApprovalSchema: {
     objectIds: [
@@ -247,6 +243,10 @@ let body:iconik.AssetsApiAssetsV1ApprovalsBulkRemovePostRequest = {
     ],
     objectType: "assets",
   },
+  // string (optional)
+  authToken: "Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.assetsV1ApprovalsBulkRemovePost(body).then((data:any) => {
@@ -260,8 +260,8 @@ apiInstance.assetsV1ApprovalsBulkRemovePost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bulkRemoveApprovalSchema** | **BulkRemoveApprovalSchema**| body |
- **authToken** | [**string**] |  | defaults to undefined
- **appID** | [**string**] |  | defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -305,11 +305,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdDelete(body).then((data:any) => {
@@ -322,9 +322,9 @@ apiInstance.assetsV1AssetsAssetIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -370,11 +370,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | include collection membership (optional)
   includeCollections: false,
   // boolean | include info about the users who have interacted with this asset (optional)
@@ -391,9 +391,9 @@ apiInstance.assetsV1AssetsAssetIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **includeCollections** | [**boolean**] | include collection membership | (optional) defaults to false
  **includeUsers** | [**boolean**] | include info about the users who have interacted with this asset | (optional) defaults to false
 
@@ -404,7 +404,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -440,11 +440,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdHistoryGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 1,
   // number | Which page number to fetch (optional)
@@ -465,9 +465,9 @@ apiInstance.assetsV1AssetsAssetIdHistoryGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
  **sort** | [**string**] | A comma separated list of fieldnames with order. For example - first_name,asc;last_name,desc | (optional) defaults to undefined
@@ -480,7 +480,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -516,13 +516,13 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdHistoryHistoryEntityIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   historyEntityId: "history_entity_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdHistoryHistoryEntityIdDelete(body).then((data:any) => {
@@ -535,10 +535,10 @@ apiInstance.assetsV1AssetsAssetIdHistoryHistoryEntityIdDelete(body).then((data:a
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **historyEntityId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -547,7 +547,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -582,13 +582,13 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdHistoryHistoryEntityIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   historyEntityId: "history_entity_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdHistoryHistoryEntityIdGet(body).then((data:any) => {
@@ -601,10 +601,10 @@ apiInstance.assetsV1AssetsAssetIdHistoryHistoryEntityIdGet(body).then((data:any)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **historyEntityId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -613,7 +613,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -648,13 +648,13 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdHistoryHistoryEntityIdReindexPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   historyEntityId: "history_entity_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdHistoryHistoryEntityIdReindexPost(body).then((data:any) => {
@@ -667,10 +667,10 @@ apiInstance.assetsV1AssetsAssetIdHistoryHistoryEntityIdReindexPost(body).then((d
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **historyEntityId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -679,7 +679,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -714,10 +714,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdHistoryPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // AssetHistorySchema | body
   assetHistorySchema: {
@@ -727,6 +723,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdHistoryPostRequest = {
     shareId: "shareId_example",
     shareUserId: "shareUserId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdHistoryPost(body).then((data:any) => {
@@ -740,9 +740,9 @@ apiInstance.assetsV1AssetsAssetIdHistoryPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetHistorySchema** | **AssetHistorySchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -751,7 +751,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -787,10 +787,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // AssetSchema | body
   assetSchema: {
@@ -818,6 +814,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdPatchRequest = {
     type: "ASSET",
     warning: "warning_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdPatch(body).then((data:any) => {
@@ -831,9 +831,9 @@ apiInstance.assetsV1AssetsAssetIdPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetSchema** | **AssetSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -842,7 +842,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -878,11 +878,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdPurgeDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdPurgeDelete(body).then((data:any) => {
@@ -895,9 +895,9 @@ apiInstance.assetsV1AssetsAssetIdPurgeDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -906,7 +906,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -942,10 +942,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // AssetSchema | body
   assetSchema: {
@@ -973,6 +969,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdPutRequest = {
     type: "ASSET",
     warning: "warning_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdPut(body).then((data:any) => {
@@ -986,9 +986,9 @@ apiInstance.assetsV1AssetsAssetIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetSchema** | **AssetSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -997,7 +997,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1033,10 +1033,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdReindexPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // ReindexAssetSchema | body
   reindexAssetSchema: {
@@ -1045,6 +1041,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdReindexPostRequest = {
     ],
     syncToAnotherDc: true,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdReindexPost(body).then((data:any) => {
@@ -1058,9 +1058,9 @@ apiInstance.assetsV1AssetsAssetIdReindexPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reindexAssetSchema** | **ReindexAssetSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1069,7 +1069,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1104,11 +1104,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdRelationsGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Also show assets from recycle bin in relations (optional)
   includeDeleted: false,
   // number | The number of items for each page (optional)
@@ -1129,9 +1129,9 @@ apiInstance.assetsV1AssetsAssetIdRelationsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **includeDeleted** | [**boolean**] | Also show assets from recycle bin in relations | (optional) defaults to false
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
@@ -1144,7 +1144,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1180,10 +1180,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdRelationsPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // RelationSchema | body
   relationSchema: {
@@ -1192,6 +1188,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdRelationsPostRequest = {
     relatedToAssetId: "relatedToAssetId_example",
     relationType: "relationType_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdRelationsPost(body).then((data:any) => {
@@ -1205,9 +1205,9 @@ apiInstance.assetsV1AssetsAssetIdRelationsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **relationSchema** | **RelationSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1216,7 +1216,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1252,13 +1252,13 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdRelationsRelationTypeGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   relationType: "relation_type_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Also show assets from recycle bin in relations (optional)
   includeDeleted: false,
 };
@@ -1273,10 +1273,10 @@ apiInstance.assetsV1AssetsAssetIdRelationsRelationTypeGet(body).then((data:any) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **relationType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **includeDeleted** | [**boolean**] | Also show assets from recycle bin in relations | (optional) defaults to false
 
 
@@ -1286,7 +1286,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1321,15 +1321,15 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   relationType: "relation_type_example",
   // string
   relatedToAssetId: "related_to_asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdDelete(body).then((data:any) => {
@@ -1342,11 +1342,11 @@ apiInstance.assetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdDelete(bod
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **relationType** | [**string**] |  | defaults to undefined
  **relatedToAssetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1355,7 +1355,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1390,10 +1390,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   relationType: "relation_type_example",
@@ -1406,6 +1402,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdRelationsRelationTypeRelatedToAsse
     relatedToAssetId: "relatedToAssetId_example",
     relationType: "relationType_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdPost(body).then((data:any) => {
@@ -1419,11 +1419,11 @@ apiInstance.assetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdPost(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **relationSchema** | **RelationSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **relationType** | [**string**] |  | defaults to undefined
  **relatedToAssetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1432,7 +1432,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1468,15 +1468,15 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdReversePostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   relationType: "relation_type_example",
   // string
   relatedToAssetId: "related_to_asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdReversePost(body).then((data:any) => {
@@ -1489,11 +1489,11 @@ apiInstance.assetsV1AssetsAssetIdRelationsRelationTypeRelatedToAssetIdReversePos
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **relationType** | [**string**] |  | defaults to undefined
  **relatedToAssetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1502,7 +1502,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1537,11 +1537,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdRestorePutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdRestorePut(body).then((data:any) => {
@@ -1554,9 +1554,9 @@ apiInstance.assetsV1AssetsAssetIdRestorePut(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1565,7 +1565,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1601,10 +1601,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdSearchDocumentPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // AssetElasticSchema | body
   assetElasticSchema: {
@@ -1630,6 +1626,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdSearchDocumentPutRequest = {
     type: "ASSET",
     warning: "warning_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdSearchDocumentPut(body).then((data:any) => {
@@ -1643,9 +1643,9 @@ apiInstance.assetsV1AssetsAssetIdSearchDocumentPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetElasticSchema** | **AssetElasticSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1654,7 +1654,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1690,10 +1690,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdSegmentsBulkDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // DeleteSegmentsSchema | body
   deleteSegmentsSchema: {
@@ -1702,6 +1698,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdSegmentsBulkDeleteRequest = {
     ],
     segmentType: "MARKER",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | If false, delete segments asynchronously (optional)
   immediately: true,
   // boolean | If false, reindex (optional)
@@ -1719,9 +1719,9 @@ apiInstance.assetsV1AssetsAssetIdSegmentsBulkDelete(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteSegmentsSchema** | **DeleteSegmentsSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **immediately** | [**boolean**] | If false, delete segments asynchronously | (optional) defaults to true
  **ignoreReindexing** | [**boolean**] | If false, reindex | (optional) defaults to true
 
@@ -1732,7 +1732,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1767,10 +1767,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdSegmentsBulkPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // string
   assetId: "asset_id_example",
   // BulkCreateSegmentsSchema | body
@@ -1827,6 +1823,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdSegmentsBulkPostRequest = {
       },
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdSegmentsBulkPost(body).then((data:any) => {
@@ -1840,9 +1840,9 @@ apiInstance.assetsV1AssetsAssetIdSegmentsBulkPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bulkCreateSegmentsSchema** | **BulkCreateSegmentsSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1851,7 +1851,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1886,11 +1886,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdSegmentsGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | Sort on field (Comma separated) (optional)
   sort: "sort_example",
   // string | Only include these segments (Comma separated) (optional)
@@ -1939,9 +1939,9 @@ apiInstance.assetsV1AssetsAssetIdSegmentsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **sort** | [**string**] | Sort on field (Comma separated) | (optional) defaults to undefined
  **ids** | [**string**] | Only include these segments (Comma separated) | (optional) defaults to undefined
  **query** | [**string**] | Search using query | (optional) defaults to undefined
@@ -1968,7 +1968,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2003,10 +2003,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdSegmentsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // string
   assetId: "asset_id_example",
   // SegmentSchema | body
@@ -2059,6 +2055,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdSegmentsPostRequest = {
     },
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | This header is used for shares by URL to identify user. Only valid emails are allowed. (optional)
   shareUserEmail: "Share-User-Email_example",
 };
@@ -2074,9 +2074,9 @@ apiInstance.assetsV1AssetsAssetIdSegmentsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **segmentSchema** | **SegmentSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **shareUserEmail** | [**string**] | This header is used for shares by URL to identify user. Only valid emails are allowed. | (optional) defaults to undefined
 
 
@@ -2086,7 +2086,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2121,10 +2121,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdSegmentsReindexPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // ReindexSegmentSchema | body
   reindexSegmentSchema: {
@@ -2134,6 +2130,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdSegmentsReindexPostRequest = {
     ],
     syncToAnotherDc: true,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdSegmentsReindexPost(body).then((data:any) => {
@@ -2147,9 +2147,9 @@ apiInstance.assetsV1AssetsAssetIdSegmentsReindexPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reindexSegmentSchema** | **ReindexSegmentSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2158,7 +2158,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2193,13 +2193,13 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdSegmentsSegmentIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   segmentId: "segment_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean (optional)
   softDelete: true,
 };
@@ -2214,10 +2214,10 @@ apiInstance.assetsV1AssetsAssetIdSegmentsSegmentIdDelete(body).then((data:any) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **segmentId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **softDelete** | [**boolean**] |  | (optional) defaults to undefined
 
 
@@ -2227,7 +2227,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2262,13 +2262,13 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdSegmentsSegmentIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   segmentId: "segment_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | If true passed then uses scroll pagination instead of default one (optional)
   scroll: true,
   // string | In order to get next batch of results using scroll pagination the scroll_id is required  (optional)
@@ -2285,10 +2285,10 @@ apiInstance.assetsV1AssetsAssetIdSegmentsSegmentIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **segmentId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **scroll** | [**boolean**] | If true passed then uses scroll pagination instead of default one | (optional) defaults to undefined
  **scrollId** | [**string**] | In order to get next batch of results using scroll pagination the scroll_id is required  | (optional) defaults to undefined
 
@@ -2299,7 +2299,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2335,10 +2335,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdSegmentsSegmentIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   segmentId: "segment_id_example",
@@ -2388,6 +2384,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdSegmentsSegmentIdPatchRequest = {
     },
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdSegmentsSegmentIdPatch(body).then((data:any) => {
@@ -2401,10 +2401,10 @@ apiInstance.assetsV1AssetsAssetIdSegmentsSegmentIdPatch(body).then((data:any) =>
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **editSegmentSchema** | **EditSegmentSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **segmentId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2413,7 +2413,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2449,10 +2449,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdSegmentsSegmentIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   segmentId: "segment_id_example",
@@ -2502,6 +2498,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdSegmentsSegmentIdPutRequest = {
     },
     versionId: "versionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdSegmentsSegmentIdPut(body).then((data:any) => {
@@ -2515,10 +2515,10 @@ apiInstance.assetsV1AssetsAssetIdSegmentsSegmentIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **editSegmentSchema** | **EditSegmentSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **segmentId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2527,7 +2527,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2563,10 +2563,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdSegmentsSegmentIdReindexPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   segmentId: "segment_id_example",
@@ -2578,6 +2574,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdSegmentsSegmentIdReindexPostReques
     ],
     syncToAnotherDc: true,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdSegmentsSegmentIdReindexPost(body).then((data:any) => {
@@ -2591,10 +2591,10 @@ apiInstance.assetsV1AssetsAssetIdSegmentsSegmentIdReindexPost(body).then((data:a
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reindexSegmentSchema** | **ReindexSegmentSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **segmentId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2603,7 +2603,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2638,13 +2638,13 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdSegmentsSegmentTypeGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   segmentType: "segment_type_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | Sort on field (Comma separated) (optional)
   sort: "sort_example",
   // string | Only include these segments (Comma separated) (optional)
@@ -2681,10 +2681,10 @@ apiInstance.assetsV1AssetsAssetIdSegmentsSegmentTypeGet(body).then((data:any) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **segmentType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **sort** | [**string**] | Sort on field (Comma separated) | (optional) defaults to undefined
  **ids** | [**string**] | Only include these segments (Comma separated) | (optional) defaults to undefined
  **query** | [**string**] | Search using query | (optional) defaults to undefined
@@ -2705,7 +2705,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2741,11 +2741,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdSegmentsSrtGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | Only include these segments (Comma separated) (optional)
   ids: "ids_example",
   // string | Search using query (optional)
@@ -2772,9 +2772,9 @@ apiInstance.assetsV1AssetsAssetIdSegmentsSrtGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **ids** | [**string**] | Only include these segments (Comma separated) | (optional) defaults to undefined
  **query** | [**string**] | Search using query | (optional) defaults to undefined
  **transcriptionId** | [**string**] | Filter segments by transcription_id | (optional) defaults to undefined
@@ -2790,7 +2790,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2826,11 +2826,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdSegmentsVttGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | Only include these segments (Comma separated) (optional)
   ids: "ids_example",
   // string | Search using query (optional)
@@ -2857,9 +2857,9 @@ apiInstance.assetsV1AssetsAssetIdSegmentsVttGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **ids** | [**string**] | Only include these segments (Comma separated) | (optional) defaults to undefined
  **query** | [**string**] | Search using query | (optional) defaults to undefined
  **transcriptionId** | [**string**] | Filter segments by transcription_id | (optional) defaults to undefined
@@ -2875,7 +2875,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2911,11 +2911,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdUploadsDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdUploadsDelete(body).then((data:any) => {
@@ -2928,9 +2928,9 @@ apiInstance.assetsV1AssetsAssetIdUploadsDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2939,7 +2939,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2975,10 +2975,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsFromAssetsSourceAssetIdPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   sourceAssetId: "source_asset_id_example",
@@ -2990,6 +2986,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsFromAssetsSourceAssetIdPos
     ],
     sourceMetadataAssetId: "sourceMetadataAssetId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdVersionsFromAssetsSourceAssetIdPost(body).then((data:any) => {
@@ -3003,10 +3003,10 @@ apiInstance.assetsV1AssetsAssetIdVersionsFromAssetsSourceAssetIdPost(body).then(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createAssetVersionFromAssetSchema** | **CreateAssetVersionFromAssetSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **sourceAssetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3015,7 +3015,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3052,10 +3052,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsFromVersionsSourceVersionIdPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   sourceVersionId: "source_version_id_example",
@@ -3070,6 +3066,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsFromVersionsSourceVersionI
     ],
     sourceMetadataAssetId: "sourceMetadataAssetId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdVersionsFromVersionsSourceVersionIdPost(body).then((data:any) => {
@@ -3083,10 +3083,10 @@ apiInstance.assetsV1AssetsAssetIdVersionsFromVersionsSourceVersionIdPost(body).t
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createAssetVersionFromVersionSchema** | **CreateAssetVersionFromVersionSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **sourceVersionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3095,7 +3095,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3131,11 +3131,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsOldDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdVersionsOldDelete(body).then((data:any) => {
@@ -3148,9 +3148,9 @@ apiInstance.assetsV1AssetsAssetIdVersionsOldDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3159,7 +3159,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3196,10 +3196,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // CreateAssetVersionSchema | body
   createAssetVersionSchema: {
@@ -3210,6 +3206,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsPostRequest = {
     ],
     sourceVersionId: "sourceVersionId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdVersionsPost(body).then((data:any) => {
@@ -3223,9 +3223,9 @@ apiInstance.assetsV1AssetsAssetIdVersionsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createAssetVersionSchema** | **CreateAssetVersionSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3234,7 +3234,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3270,13 +3270,13 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsVersionIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | completely remove the version (optional)
   hardDelete: false,
 };
@@ -3291,10 +3291,10 @@ apiInstance.assetsV1AssetsAssetIdVersionsVersionIdDelete(body).then((data:any) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **hardDelete** | [**boolean**] | completely remove the version | (optional) defaults to false
 
 
@@ -3304,7 +3304,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3341,10 +3341,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsVersionIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
@@ -3360,6 +3356,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsVersionIdPatchRequest = {
     status: "ACTIVE",
     transcribeStatus: "N/A",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdVersionsVersionIdPatch(body).then((data:any) => {
@@ -3373,10 +3373,10 @@ apiInstance.assetsV1AssetsAssetIdVersionsVersionIdPatch(body).then((data:any) =>
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetVersionSchema** | **AssetVersionSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3385,7 +3385,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3421,13 +3421,13 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsVersionIdPromotePutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdVersionsVersionIdPromotePut(body).then((data:any) => {
@@ -3440,10 +3440,10 @@ apiInstance.assetsV1AssetsAssetIdVersionsVersionIdPromotePut(body).then((data:an
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3452,7 +3452,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3488,10 +3488,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsVersionIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
@@ -3507,6 +3503,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsVersionIdPutRequest = {
     status: "ACTIVE",
     transcribeStatus: "N/A",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdVersionsVersionIdPut(body).then((data:any) => {
@@ -3520,10 +3520,10 @@ apiInstance.assetsV1AssetsAssetIdVersionsVersionIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetVersionSchema** | **AssetVersionSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3532,7 +3532,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3568,13 +3568,13 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPropertiesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPropertiesGet(body).then((data:any) => {
@@ -3587,10 +3587,10 @@ apiInstance.assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPropertiesGet(bo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3599,7 +3599,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3635,10 +3635,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPropertiesPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
@@ -3647,6 +3643,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPro
     language: "language_example",
     speakerLabels: {},
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPropertiesPost(body).then((data:any) => {
@@ -3660,10 +3660,10 @@ apiInstance.assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsPropertiesPost(b
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetTranscriptionPropertiesSchema** | **AssetTranscriptionPropertiesSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3672,7 +3672,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3708,10 +3708,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsSubtitlesPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
@@ -3723,6 +3719,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsSub
     language: "language_example",
     sourceSubtitleId: "sourceSubtitleId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsSubtitlesPost(body).then((data:any) => {
@@ -3736,10 +3736,10 @@ apiInstance.assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsSubtitlesPost(bo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetTranscriptionFromSubtitleSchema** | **AssetTranscriptionFromSubtitleSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3748,7 +3748,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3784,15 +3784,15 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
   // string
   transcriptionId: "transcription_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesDelete(body).then((data:any) => {
@@ -3805,11 +3805,11 @@ apiInstance.assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdP
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
  **transcriptionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3818,7 +3818,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3854,15 +3854,15 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
   // string
   transcriptionId: "transcription_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesGet(body).then((data:any) => {
@@ -3875,11 +3875,11 @@ apiInstance.assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdP
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
  **transcriptionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3888,7 +3888,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -3924,10 +3924,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
@@ -3938,6 +3934,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTra
     language: "language_example",
     speakerLabels: {},
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesPatch(body).then((data:any) => {
@@ -3951,11 +3951,11 @@ apiInstance.assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdP
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetTranscriptionPropertiesSchema** | **AssetTranscriptionPropertiesSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
  **transcriptionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -3964,7 +3964,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4000,10 +4000,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
   // string
   versionId: "version_id_example",
@@ -4014,6 +4010,10 @@ let body:iconik.AssetsApiAssetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTra
     language: "language_example",
     speakerLabels: {},
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdPropertiesPut(body).then((data:any) => {
@@ -4027,11 +4027,11 @@ apiInstance.assetsV1AssetsAssetIdVersionsVersionIdTranscriptionsTranscriptionIdP
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetTranscriptionPropertiesSchema** | **AssetTranscriptionPropertiesSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
  **transcriptionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4040,7 +4040,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4076,11 +4076,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsAssetIdViewsPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   assetId: "asset_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsAssetIdViewsPost(body).then((data:any) => {
@@ -4093,9 +4093,9 @@ apiInstance.assetsV1AssetsAssetIdViewsPost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **assetId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4104,7 +4104,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4139,9 +4139,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 1,
@@ -4167,8 +4167,8 @@ apiInstance.assetsV1AssetsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
  **scroll** | [**boolean**] | If true passed then uses scroll pagination instead of default one | (optional) defaults to undefined
@@ -4183,7 +4183,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4218,10 +4218,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsPatchRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // BulkAssetEditSchema | body
   bulkAssetEditSchema: {
     objects: [
@@ -4253,6 +4249,10 @@ let body:iconik.AssetsApiAssetsV1AssetsPatchRequest = {
       },
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsPatch(body).then((data:any) => {
@@ -4266,8 +4266,8 @@ apiInstance.assetsV1AssetsPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bulkAssetEditSchema** | **BulkAssetEditSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4276,7 +4276,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4310,10 +4310,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // AssetCreateSchema | body
   assetCreateSchema: {
     analyzeStatus: "N/A",
@@ -4342,6 +4338,10 @@ let body:iconik.AssetsApiAssetsV1AssetsPostRequest = {
     type: "ASSET",
     warning: "warning_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Adds default ACLs to an asset (optional)
   applyDefaultAcls: true,
   // boolean | Adds containing collection\'s ACLs to an asset (optional)
@@ -4361,8 +4361,8 @@ apiInstance.assetsV1AssetsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetCreateSchema** | **AssetCreateSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **applyDefaultAcls** | [**boolean**] | Adds default ACLs to an asset | (optional) defaults to true
  **applyCollectionAcls** | [**boolean**] | Adds containing collection\&#39;s ACLs to an asset | (optional) defaults to false
  **assignToCollection** | [**boolean**] | Adds the asset to the collection specified in the body | (optional) defaults to false
@@ -4374,7 +4374,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4409,10 +4409,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsPutRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // BulkAssetEditSchema | body
   bulkAssetEditSchema: {
     objects: [
@@ -4444,6 +4440,10 @@ let body:iconik.AssetsApiAssetsV1AssetsPutRequest = {
       },
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsPut(body).then((data:any) => {
@@ -4457,8 +4457,8 @@ apiInstance.assetsV1AssetsPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bulkAssetEditSchema** | **BulkAssetEditSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4467,7 +4467,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4501,9 +4501,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsReindexPostRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // ReindexAllAssetsSchema | body (optional)
   reindexAllAssetsSchema: {
@@ -4528,8 +4528,8 @@ apiInstance.assetsV1AssetsReindexPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reindexAllAssetsSchema** | **ReindexAllAssetsSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4538,7 +4538,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4571,9 +4571,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsRelationTypesGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -4587,8 +4587,8 @@ apiInstance.assetsV1AssetsRelationTypesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4597,7 +4597,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4631,10 +4631,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsRelationTypesPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // RelationTypeSchema | body
   relationTypeSchema: {
     description: "description_example",
@@ -4643,6 +4639,10 @@ let body:iconik.AssetsApiAssetsV1AssetsRelationTypesPostRequest = {
     name: "name_example",
     sourceLabel: "sourceLabel_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsRelationTypesPost(body).then((data:any) => {
@@ -4656,8 +4656,8 @@ apiInstance.assetsV1AssetsRelationTypesPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **relationTypeSchema** | **RelationTypeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4666,7 +4666,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4701,11 +4701,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsRelationTypesRelationTypeDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   relationType: "relation_type_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsRelationTypesRelationTypeDelete(body).then((data:any) => {
@@ -4718,9 +4718,9 @@ apiInstance.assetsV1AssetsRelationTypesRelationTypeDelete(body).then((data:any) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **relationType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4729,7 +4729,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4764,11 +4764,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsRelationTypesRelationTypeGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   relationType: "relation_type_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsRelationTypesRelationTypeGet(body).then((data:any) => {
@@ -4781,9 +4781,9 @@ apiInstance.assetsV1AssetsRelationTypesRelationTypeGet(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **relationType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4792,7 +4792,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4827,10 +4827,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsRelationTypesRelationTypePatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   relationType: "relation_type_example",
   // RelationTypeSchema | body
   relationTypeSchema: {
@@ -4840,6 +4836,10 @@ let body:iconik.AssetsApiAssetsV1AssetsRelationTypesRelationTypePatchRequest = {
     name: "name_example",
     sourceLabel: "sourceLabel_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsRelationTypesRelationTypePatch(body).then((data:any) => {
@@ -4853,9 +4853,9 @@ apiInstance.assetsV1AssetsRelationTypesRelationTypePatch(body).then((data:any) =
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **relationTypeSchema** | **RelationTypeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **relationType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4864,7 +4864,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4899,10 +4899,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsRelationTypesRelationTypePutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   relationType: "relation_type_example",
   // RelationTypeSchema | body
   relationTypeSchema: {
@@ -4912,6 +4908,10 @@ let body:iconik.AssetsApiAssetsV1AssetsRelationTypesRelationTypePutRequest = {
     name: "name_example",
     sourceLabel: "sourceLabel_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsRelationTypesRelationTypePut(body).then((data:any) => {
@@ -4925,9 +4925,9 @@ apiInstance.assetsV1AssetsRelationTypesRelationTypePut(body).then((data:any) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **relationTypeSchema** | **RelationTypeSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **relationType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -4936,7 +4936,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -4970,10 +4970,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1AssetsSegmentsReindexPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // ReindexAllSegmentsSchema | body
   reindexAllSegmentsSchema: {
     assetIds: [
@@ -4985,6 +4981,10 @@ let body:iconik.AssetsApiAssetsV1AssetsSegmentsReindexPostRequest = {
     ],
     syncToAnotherDc: true,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1AssetsSegmentsReindexPost(body).then((data:any) => {
@@ -4998,8 +4998,8 @@ apiInstance.assetsV1AssetsSegmentsReindexPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reindexAllSegmentsSchema** | **ReindexAllSegmentsSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -5008,7 +5008,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5042,11 +5042,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdAncestorsGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CollectionsCollectionIdAncestorsGet(body).then((data:any) => {
@@ -5059,9 +5059,9 @@ apiInstance.assetsV1CollectionsCollectionIdAncestorsGet(body).then((data:any) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -5070,7 +5070,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5106,11 +5106,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdContentInfoGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | If false, include all the contents (optional)
   onlyActive: true,
 };
@@ -5125,9 +5125,9 @@ apiInstance.assetsV1CollectionsCollectionIdContentInfoGet(body).then((data:any) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **onlyActive** | [**boolean**] | If false, include all the contents | (optional) defaults to true
 
 
@@ -5137,7 +5137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5172,11 +5172,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdContentsGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | Comma separated list of content types. Example - assets,collections (optional)
   objectTypes: "object_types_example",
   // string | Comma separated list of content ids. (optional)
@@ -5203,9 +5203,9 @@ apiInstance.assetsV1CollectionsCollectionIdContentsGet(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **objectTypes** | [**string**] | Comma separated list of content types. Example - assets,collections | (optional) defaults to undefined
  **objectIds** | [**string**] | Comma separated list of content ids. | (optional) defaults to undefined
  **externalId** | [**string**] |  | (optional) defaults to undefined
@@ -5221,7 +5221,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5257,15 +5257,15 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdContentsObjectTypeObjectIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
   // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CollectionsCollectionIdContentsObjectTypeObjectIdDelete(body).then((data:any) => {
@@ -5278,11 +5278,11 @@ apiInstance.assetsV1CollectionsCollectionIdContentsObjectTypeObjectIdDelete(body
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -5291,7 +5291,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5327,10 +5327,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdContentsObjectTypeObjectIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
   // string
   objectType: "object_type_example",
@@ -5342,6 +5338,10 @@ let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdContentsObjectTypeObject
     beforeObjectId: "beforeObjectId_example",
     position: -1,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CollectionsCollectionIdContentsObjectTypeObjectIdPut(body).then((data:any) => {
@@ -5355,11 +5355,11 @@ apiInstance.assetsV1CollectionsCollectionIdContentsObjectTypeObjectIdPut(body).t
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionContentOrderingSchema** | **CollectionContentOrderingSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -5368,7 +5368,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5404,10 +5404,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdContentsObjectTypeObjectIdReindexPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
   // string
   objectType: "object_type_example",
@@ -5417,6 +5413,10 @@ let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdContentsObjectTypeObject
   reindexCollectionContentSchema: {
     syncToAnotherDc: true,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CollectionsCollectionIdContentsObjectTypeObjectIdReindexPost(body).then((data:any) => {
@@ -5430,11 +5430,11 @@ apiInstance.assetsV1CollectionsCollectionIdContentsObjectTypeObjectIdReindexPost
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reindexCollectionContentSchema** | **ReindexCollectionContentSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -5443,7 +5443,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5478,11 +5478,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdContentsOrderingCustomDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CollectionsCollectionIdContentsOrderingCustomDelete(body).then((data:any) => {
@@ -5495,9 +5495,9 @@ apiInstance.assetsV1CollectionsCollectionIdContentsOrderingCustomDelete(body).th
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -5506,7 +5506,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5542,15 +5542,15 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdContentsOrderingCustomPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
   // CreateCollectionContentOrderingSchema | body
   createCollectionContentOrderingSchema: {
     customOrderSort: "customOrderSort_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CollectionsCollectionIdContentsOrderingCustomPost(body).then((data:any) => {
@@ -5564,9 +5564,9 @@ apiInstance.assetsV1CollectionsCollectionIdContentsOrderingCustomPost(body).then
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createCollectionContentOrderingSchema** | **CreateCollectionContentOrderingSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -5575,7 +5575,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5611,16 +5611,16 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdContentsPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
   // CollectionContentSchema | body
   collectionContentSchema: {
     objectId: "objectId_example",
     objectType: "objectType_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CollectionsCollectionIdContentsPost(body).then((data:any) => {
@@ -5634,9 +5634,9 @@ apiInstance.assetsV1CollectionsCollectionIdContentsPost(body).then((data:any) =>
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionContentSchema** | **CollectionContentSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -5645,7 +5645,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5681,11 +5681,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CollectionsCollectionIdDelete(body).then((data:any) => {
@@ -5698,9 +5698,9 @@ apiInstance.assetsV1CollectionsCollectionIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -5709,7 +5709,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5745,11 +5745,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdFullPathGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Use to get the upload path instead of the full path (optional)
   getUploadPath: true,
 };
@@ -5764,9 +5764,9 @@ apiInstance.assetsV1CollectionsCollectionIdFullPathGet(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **getUploadPath** | [**boolean**] | Use to get the upload path instead of the full path | (optional) defaults to undefined
 
 
@@ -5776,7 +5776,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5812,11 +5812,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CollectionsCollectionIdGet(body).then((data:any) => {
@@ -5829,9 +5829,9 @@ apiInstance.assetsV1CollectionsCollectionIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -5840,7 +5840,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5875,10 +5875,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdKeyframesPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
   // SynchronizeCollectionKeyframesSchema | body
   synchronizeCollectionKeyframesSchema: {
@@ -5886,6 +5882,10 @@ let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdKeyframesPostRequest = {
       "assetIds_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CollectionsCollectionIdKeyframesPost(body).then((data:any) => {
@@ -5899,9 +5899,9 @@ apiInstance.assetsV1CollectionsCollectionIdKeyframesPost(body).then((data:any) =
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **synchronizeCollectionKeyframesSchema** | **SynchronizeCollectionKeyframesSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -5910,7 +5910,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -5946,10 +5946,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
   // CollectionInputSchema | body
   collectionInputSchema: {
@@ -5967,6 +5963,10 @@ let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdPatchRequest = {
     storageId: "storageId_example",
     title: "title_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | Set to \'move\' or \'copy\'. Ignored if \'parent_id\' hasn\'t changed (optional)
   changeParentMode: "move",
 };
@@ -5982,9 +5982,9 @@ apiInstance.assetsV1CollectionsCollectionIdPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionInputSchema** | **CollectionInputSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **changeParentMode** | [**string**] | Set to \&#39;move\&#39; or \&#39;copy\&#39;. Ignored if \&#39;parent_id\&#39; hasn\&#39;t changed | (optional) defaults to 'move'
 
 
@@ -5994,7 +5994,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6030,11 +6030,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdPurgeDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CollectionsCollectionIdPurgeDelete(body).then((data:any) => {
@@ -6047,9 +6047,9 @@ apiInstance.assetsV1CollectionsCollectionIdPurgeDelete(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -6058,7 +6058,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6095,10 +6095,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
   // CollectionInputSchema | body
   collectionInputSchema: {
@@ -6116,6 +6112,10 @@ let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdPutRequest = {
     storageId: "storageId_example",
     title: "title_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | Set to \'move\' or \'copy\'. Ignored if \'parent_id\' hasn\'t changed (optional)
   changeParentMode: "move",
 };
@@ -6131,9 +6131,9 @@ apiInstance.assetsV1CollectionsCollectionIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionInputSchema** | **CollectionInputSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **changeParentMode** | [**string**] | Set to \&#39;move\&#39; or \&#39;copy\&#39;. Ignored if \&#39;parent_id\&#39; hasn\&#39;t changed | (optional) defaults to 'move'
 
 
@@ -6143,7 +6143,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6179,11 +6179,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdReindexContentsPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CollectionsCollectionIdReindexContentsPost(body).then((data:any) => {
@@ -6196,9 +6196,9 @@ apiInstance.assetsV1CollectionsCollectionIdReindexContentsPost(body).then((data:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -6207,7 +6207,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6242,10 +6242,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdReindexPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
   // ReindexCollectionSchema | body
   reindexCollectionSchema: {
@@ -6254,6 +6250,10 @@ let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdReindexPostRequest = {
     ],
     syncToAnotherDc: true,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CollectionsCollectionIdReindexPost(body).then((data:any) => {
@@ -6267,9 +6267,9 @@ apiInstance.assetsV1CollectionsCollectionIdReindexPost(body).then((data:any) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reindexCollectionSchema** | **ReindexCollectionSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -6278,7 +6278,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6313,11 +6313,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdRestorePutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CollectionsCollectionIdRestorePut(body).then((data:any) => {
@@ -6330,9 +6330,9 @@ apiInstance.assetsV1CollectionsCollectionIdRestorePut(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -6341,7 +6341,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6378,10 +6378,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdSearchDocumentPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
   // CollectionSchema | body
   collectionSchema: {
@@ -6407,6 +6403,10 @@ let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdSearchDocumentPutRequest
     storageId: "storageId_example",
     title: "title_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CollectionsCollectionIdSearchDocumentPut(body).then((data:any) => {
@@ -6420,9 +6420,9 @@ apiInstance.assetsV1CollectionsCollectionIdSearchDocumentPut(body).then((data:an
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionSchema** | **CollectionSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -6431,7 +6431,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6467,11 +6467,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdSizeGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // string | Compute total size only for files with the specified format name (optional)
   formatName: "format_name_example",
   // boolean | Compute total size for all files including sub_collections\' assets (optional)
@@ -6488,9 +6488,9 @@ apiInstance.assetsV1CollectionsCollectionIdSizeGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **formatName** | [**string**] | Compute total size only for files with the specified format name | (optional) defaults to undefined
  **includeSubcollections** | [**boolean**] | Compute total size for all files including sub_collections\&#39; assets | (optional) defaults to false
 
@@ -6501,7 +6501,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6537,16 +6537,16 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsCollectionIdSubcollectionsPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   collectionId: "collection_id_example",
   // CollectionContentSchema | body
   collectionContentSchema: {
     objectId: "objectId_example",
     objectType: "objectType_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CollectionsCollectionIdSubcollectionsPost(body).then((data:any) => {
@@ -6560,9 +6560,9 @@ apiInstance.assetsV1CollectionsCollectionIdSubcollectionsPost(body).then((data:a
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionContentSchema** | **CollectionContentSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **collectionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -6571,7 +6571,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6606,9 +6606,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 1,
@@ -6636,8 +6636,8 @@ apiInstance.assetsV1CollectionsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
  **scroll** | [**boolean**] | If true passed then uses scroll pagination instead of default one | (optional) defaults to undefined
@@ -6653,7 +6653,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6688,10 +6688,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // CollectionInputSchema | body
   collectionInputSchema: {
     category: "category_example",
@@ -6708,6 +6704,10 @@ let body:iconik.AssetsApiAssetsV1CollectionsPostRequest = {
     storageId: "storageId_example",
     title: "title_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean | Adds default ACLs to a collection (optional)
   applyDefaultAcls: true,
   // boolean | Adds containing collection\'s ACLs to a collection (optional)
@@ -6727,8 +6727,8 @@ apiInstance.assetsV1CollectionsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionInputSchema** | **CollectionInputSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **applyDefaultAcls** | [**boolean**] | Adds default ACLs to a collection | (optional) defaults to true
  **applyCollectionAcls** | [**boolean**] | Adds containing collection\&#39;s ACLs to a collection | (optional) defaults to false
  **restrictCollectionAcls** | [**boolean**] | Restricts ACLS to containing collection\&#39;s ACLs | (optional) defaults to false
@@ -6740,7 +6740,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6774,9 +6774,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CollectionsReindexPostRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // ReindexAllCollectionsSchema | body (optional)
   reindexAllCollectionsSchema: {
@@ -6800,8 +6800,8 @@ apiInstance.assetsV1CollectionsReindexPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reindexAllCollectionsSchema** | **ReindexAllCollectionsSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -6810,7 +6810,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6844,10 +6844,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CustomActionsContextActionIdCallbackPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   context: "context_example",
   // string
   actionId: "action_id_example",
@@ -6865,6 +6861,10 @@ let body:iconik.AssetsApiAssetsV1CustomActionsContextActionIdCallbackPostRequest
       "savedSearchIds_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CustomActionsContextActionIdCallbackPost(body).then((data:any) => {
@@ -6878,10 +6878,10 @@ apiInstance.assetsV1CustomActionsContextActionIdCallbackPost(body).then((data:an
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customActionCallbackSchema** | **CustomActionCallbackSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **context** | [**string**] |  | defaults to undefined
  **actionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -6890,7 +6890,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6926,13 +6926,13 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CustomActionsContextActionIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   context: "context_example",
   // string
   actionId: "action_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CustomActionsContextActionIdDelete(body).then((data:any) => {
@@ -6945,10 +6945,10 @@ apiInstance.assetsV1CustomActionsContextActionIdDelete(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **context** | [**string**] |  | defaults to undefined
  **actionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -6957,7 +6957,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -6992,13 +6992,13 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CustomActionsContextActionIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   context: "context_example",
   // string
   actionId: "action_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CustomActionsContextActionIdGet(body).then((data:any) => {
@@ -7011,10 +7011,10 @@ apiInstance.assetsV1CustomActionsContextActionIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **context** | [**string**] |  | defaults to undefined
  **actionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7023,7 +7023,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7058,10 +7058,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CustomActionsContextActionIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   context: "context_example",
   // string
   actionId: "action_id_example",
@@ -7079,6 +7075,10 @@ let body:iconik.AssetsApiAssetsV1CustomActionsContextActionIdPatchRequest = {
     type: "OPEN",
     url: "url_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CustomActionsContextActionIdPatch(body).then((data:any) => {
@@ -7092,10 +7092,10 @@ apiInstance.assetsV1CustomActionsContextActionIdPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customActionSchema** | **CustomActionSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **context** | [**string**] |  | defaults to undefined
  **actionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7104,7 +7104,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7139,10 +7139,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CustomActionsContextActionIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   context: "context_example",
   // string
   actionId: "action_id_example",
@@ -7160,6 +7156,10 @@ let body:iconik.AssetsApiAssetsV1CustomActionsContextActionIdPutRequest = {
     type: "OPEN",
     url: "url_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CustomActionsContextActionIdPut(body).then((data:any) => {
@@ -7173,10 +7173,10 @@ apiInstance.assetsV1CustomActionsContextActionIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customActionSchema** | **CustomActionSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **context** | [**string**] |  | defaults to undefined
  **actionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7185,7 +7185,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7220,11 +7220,11 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CustomActionsContextGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   context: "context_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CustomActionsContextGet(body).then((data:any) => {
@@ -7237,9 +7237,9 @@ apiInstance.assetsV1CustomActionsContextGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **context** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7248,7 +7248,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7284,10 +7284,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CustomActionsContextPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   context: "context_example",
   // CustomActionSchema | body
   customActionSchema: {
@@ -7303,6 +7299,10 @@ let body:iconik.AssetsApiAssetsV1CustomActionsContextPostRequest = {
     type: "OPEN",
     url: "url_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CustomActionsContextPost(body).then((data:any) => {
@@ -7316,9 +7316,9 @@ apiInstance.assetsV1CustomActionsContextPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customActionSchema** | **CustomActionSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **context** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7327,7 +7327,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7361,9 +7361,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CustomActionsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -7377,8 +7377,8 @@ apiInstance.assetsV1CustomActionsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7387,7 +7387,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7423,10 +7423,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1CustomActionsSharedContextActionIdCallbackPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   context: "context_example",
   // string
   actionId: "action_id_example",
@@ -7444,6 +7440,10 @@ let body:iconik.AssetsApiAssetsV1CustomActionsSharedContextActionIdCallbackPostR
       "savedSearchIds_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1CustomActionsSharedContextActionIdCallbackPost(body).then((data:any) => {
@@ -7457,10 +7457,10 @@ apiInstance.assetsV1CustomActionsSharedContextActionIdCallbackPost(body).then((d
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customActionCallbackSchema** | **CustomActionCallbackSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **context** | [**string**] |  | defaults to undefined
  **actionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7469,7 +7469,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7504,16 +7504,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1DeleteQueueAssetsDeleteRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // DeleteQueueSchema | body
   deleteQueueSchema: {
     ids: [
       "ids_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1DeleteQueueAssetsDelete(body).then((data:any) => {
@@ -7527,8 +7527,8 @@ apiInstance.assetsV1DeleteQueueAssetsDelete(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteQueueSchema** | **DeleteQueueSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7537,7 +7537,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7571,9 +7571,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1DeleteQueueAssetsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 1,
@@ -7595,8 +7595,8 @@ apiInstance.assetsV1DeleteQueueAssetsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
  **sort** | [**string**] | A comma separated list of fieldnames with order. For example - first_name,asc;last_name,desc | (optional) defaults to undefined
@@ -7609,7 +7609,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7644,16 +7644,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1DeleteQueueAssetsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // DeleteQueueSchema | body
   deleteQueueSchema: {
     ids: [
       "ids_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1DeleteQueueAssetsPost(body).then((data:any) => {
@@ -7667,8 +7667,8 @@ apiInstance.assetsV1DeleteQueueAssetsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteQueueSchema** | **DeleteQueueSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7677,7 +7677,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7711,9 +7711,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1DeleteQueueAssetsPurgeAllPostRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -7727,8 +7727,8 @@ apiInstance.assetsV1DeleteQueueAssetsPurgeAllPost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7737,7 +7737,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7771,16 +7771,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1DeleteQueueAssetsPurgePostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // DeleteQueueSchema | body
   deleteQueueSchema: {
     ids: [
       "ids_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1DeleteQueueAssetsPurgePost(body).then((data:any) => {
@@ -7794,8 +7794,8 @@ apiInstance.assetsV1DeleteQueueAssetsPurgePost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteQueueSchema** | **DeleteQueueSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7804,7 +7804,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7838,9 +7838,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1DeleteQueueAssetsRestoreAllPostRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -7854,8 +7854,8 @@ apiInstance.assetsV1DeleteQueueAssetsRestoreAllPost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7864,7 +7864,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7898,10 +7898,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1DeleteQueueBulkPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // BulkDeleteSchema | body
   bulkDeleteSchema: {
     contentOnly: true,
@@ -7910,6 +7906,10 @@ let body:iconik.AssetsApiAssetsV1DeleteQueueBulkPostRequest = {
     ],
     objectType: "assets",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1DeleteQueueBulkPost(body).then((data:any) => {
@@ -7923,8 +7923,8 @@ apiInstance.assetsV1DeleteQueueBulkPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bulkDeleteSchema** | **BulkDeleteSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -7933,7 +7933,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -7967,16 +7967,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1DeleteQueueCollectionsDeleteRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // DeleteQueueSchema | body
   deleteQueueSchema: {
     ids: [
       "ids_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1DeleteQueueCollectionsDelete(body).then((data:any) => {
@@ -7990,8 +7990,8 @@ apiInstance.assetsV1DeleteQueueCollectionsDelete(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteQueueSchema** | **DeleteQueueSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8000,7 +8000,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8035,9 +8035,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1DeleteQueueCollectionsGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 1,
@@ -8059,8 +8059,8 @@ apiInstance.assetsV1DeleteQueueCollectionsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
  **sort** | [**string**] | A comma separated list of fieldnames with order. For example - first_name,asc;last_name,desc | (optional) defaults to undefined
@@ -8073,7 +8073,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8108,16 +8108,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1DeleteQueueCollectionsPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // DeleteQueueSchema | body
   deleteQueueSchema: {
     ids: [
       "ids_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1DeleteQueueCollectionsPost(body).then((data:any) => {
@@ -8131,8 +8131,8 @@ apiInstance.assetsV1DeleteQueueCollectionsPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteQueueSchema** | **DeleteQueueSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8141,7 +8141,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8176,9 +8176,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1DeleteQueueCollectionsPurgeAllPostRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -8192,8 +8192,8 @@ apiInstance.assetsV1DeleteQueueCollectionsPurgeAllPost(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8202,7 +8202,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8236,16 +8236,16 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1DeleteQueueCollectionsPurgePostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // DeleteQueueSchema | body
   deleteQueueSchema: {
     ids: [
       "ids_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1DeleteQueueCollectionsPurgePost(body).then((data:any) => {
@@ -8259,8 +8259,8 @@ apiInstance.assetsV1DeleteQueueCollectionsPurgePost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteQueueSchema** | **DeleteQueueSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8269,7 +8269,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8304,9 +8304,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1DeleteQueueCollectionsRestoreAllPostRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -8320,8 +8320,8 @@ apiInstance.assetsV1DeleteQueueCollectionsRestoreAllPost(body).then((data:any) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8330,7 +8330,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8364,9 +8364,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1DeleteQueuePurgeAllPostRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -8380,8 +8380,8 @@ apiInstance.assetsV1DeleteQueuePurgeAllPost(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8390,7 +8390,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8424,9 +8424,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1FavoritesAllDeleteRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -8440,8 +8440,8 @@ apiInstance.assetsV1FavoritesAllDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8450,7 +8450,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8485,10 +8485,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1FavoritesDeleteRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // BulkDeleteFromFavoritesSchema | body
   bulkDeleteFromFavoritesSchema: {
     objectIds: [
@@ -8496,6 +8492,10 @@ let body:iconik.AssetsApiAssetsV1FavoritesDeleteRequest = {
     ],
     objectType: "assets",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1FavoritesDelete(body).then((data:any) => {
@@ -8509,8 +8509,8 @@ apiInstance.assetsV1FavoritesDelete(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bulkDeleteFromFavoritesSchema** | **BulkDeleteFromFavoritesSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8519,7 +8519,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8554,9 +8554,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1FavoritesGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
   // number | The number of objects for each page (optional)
   perPage: 1,
@@ -8576,8 +8576,8 @@ apiInstance.assetsV1FavoritesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of objects for each page | (optional) defaults to undefined
  **page** | [**number**] | Which page number to fetch | (optional) defaults to 1
  **sort** | [**string**] | A comma separated list of fieldnames with order. For example - title,asc;date_created,desc | (optional) defaults to undefined
@@ -8589,7 +8589,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8624,10 +8624,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1FavoritesPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // BulkAddToFavoritesSchema | body
   bulkAddToFavoritesSchema: {
     objectIds: [
@@ -8635,6 +8631,10 @@ let body:iconik.AssetsApiAssetsV1FavoritesPostRequest = {
     ],
     objectType: "assets",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1FavoritesPost(body).then((data:any) => {
@@ -8648,8 +8648,8 @@ apiInstance.assetsV1FavoritesPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bulkAddToFavoritesSchema** | **BulkAddToFavoritesSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8658,7 +8658,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8693,9 +8693,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1FavouritesAllDeleteRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -8709,8 +8709,8 @@ apiInstance.assetsV1FavouritesAllDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8719,7 +8719,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8755,13 +8755,13 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdApprovalsDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectId: "object_id_example",
   // string
   objectType: "object_type_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdApprovalsDelete(body).then((data:any) => {
@@ -8774,10 +8774,10 @@ apiInstance.assetsV1ObjectTypeObjectIdApprovalsDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8786,7 +8786,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8822,15 +8822,15 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdApprovalsExternalEmailDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectId: "object_id_example",
   // string
   objectType: "object_type_example",
   // string
   email: "email_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdApprovalsExternalEmailDelete(body).then((data:any) => {
@@ -8843,11 +8843,11 @@ apiInstance.assetsV1ObjectTypeObjectIdApprovalsExternalEmailDelete(body).then((d
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **email** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8856,7 +8856,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8892,13 +8892,13 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdApprovalsGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectId: "object_id_example",
   // string
   objectType: "object_type_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdApprovalsGet(body).then((data:any) => {
@@ -8911,10 +8911,10 @@ apiInstance.assetsV1ObjectTypeObjectIdApprovalsGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8923,7 +8923,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -8959,10 +8959,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdApprovalsPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectId: "object_id_example",
   // string
   objectType: "object_type_example",
@@ -8973,6 +8969,10 @@ let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdApprovalsPutRequest = {
     status: "N/A",
     user: "user_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdApprovalsPut(body).then((data:any) => {
@@ -8986,10 +8986,10 @@ apiInstance.assetsV1ObjectTypeObjectIdApprovalsPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **approvalBySchema** | **ApprovalBySchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -8998,7 +8998,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9034,13 +9034,13 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdApprovalsRequestDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectId: "object_id_example",
   // string
   objectType: "object_type_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdApprovalsRequestDelete(body).then((data:any) => {
@@ -9053,10 +9053,10 @@ apiInstance.assetsV1ObjectTypeObjectIdApprovalsRequestDelete(body).then((data:an
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -9065,7 +9065,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9101,13 +9101,13 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdApprovalsRequestGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectId: "object_id_example",
   // string
   objectType: "object_type_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdApprovalsRequestGet(body).then((data:any) => {
@@ -9120,10 +9120,10 @@ apiInstance.assetsV1ObjectTypeObjectIdApprovalsRequestGet(body).then((data:any) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -9132,7 +9132,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9168,10 +9168,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdApprovalsRequestPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectId: "object_id_example",
   // string
   objectType: "object_type_example",
@@ -9192,6 +9188,10 @@ let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdApprovalsRequestPatchRequest 
       "users_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdApprovalsRequestPatch(body).then((data:any) => {
@@ -9205,10 +9205,10 @@ apiInstance.assetsV1ObjectTypeObjectIdApprovalsRequestPatch(body).then((data:any
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **approvalSchema** | **ApprovalSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -9217,7 +9217,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9253,10 +9253,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdApprovalsRequestPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectId: "object_id_example",
   // string
   objectType: "object_type_example",
@@ -9277,6 +9273,10 @@ let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdApprovalsRequestPostRequest =
       "users_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdApprovalsRequestPost(body).then((data:any) => {
@@ -9290,10 +9290,10 @@ apiInstance.assetsV1ObjectTypeObjectIdApprovalsRequestPost(body).then((data:any)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **approvalSchema** | **ApprovalSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -9302,7 +9302,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9338,10 +9338,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdApprovalsRequestPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectId: "object_id_example",
   // string
   objectType: "object_type_example",
@@ -9362,6 +9358,10 @@ let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdApprovalsRequestPutRequest = 
       "users_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdApprovalsRequestPut(body).then((data:any) => {
@@ -9375,10 +9375,10 @@ apiInstance.assetsV1ObjectTypeObjectIdApprovalsRequestPut(body).then((data:any) 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **approvalSchema** | **ApprovalSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -9387,7 +9387,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9423,15 +9423,15 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdApprovalsUserUserIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectId: "object_id_example",
   // string
   objectType: "object_type_example",
   // string
   userId: "user_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdApprovalsUserUserIdDelete(body).then((data:any) => {
@@ -9444,11 +9444,11 @@ apiInstance.assetsV1ObjectTypeObjectIdApprovalsUserUserIdDelete(body).then((data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **userId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -9457,7 +9457,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9493,13 +9493,13 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdSharesGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 1,
   // string (optional)
@@ -9516,10 +9516,10 @@ apiInstance.assetsV1ObjectTypeObjectIdSharesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to undefined
  **lastId** | [**string**] |  | (optional) defaults to undefined
 
@@ -9530,7 +9530,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9566,10 +9566,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdSharesPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
@@ -9600,6 +9596,10 @@ let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdSharesPostRequest = {
     title: "title_example",
     uploadStorageId: "uploadStorageId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean (optional)
   isApproval: true,
 };
@@ -9615,10 +9615,10 @@ apiInstance.assetsV1ObjectTypeObjectIdSharesPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shareCreateSchema** | **ShareCreateSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **isApproval** | [**boolean**] |  | (optional) defaults to undefined
 
 
@@ -9628,7 +9628,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9664,15 +9664,15 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdSharesShareIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
   // string
   shareId: "share_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdSharesShareIdDelete(body).then((data:any) => {
@@ -9685,11 +9685,11 @@ apiInstance.assetsV1ObjectTypeObjectIdSharesShareIdDelete(body).then((data:any) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **shareId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -9698,7 +9698,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9734,15 +9734,15 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdSharesShareIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
   // string
   shareId: "share_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdSharesShareIdGet(body).then((data:any) => {
@@ -9755,11 +9755,11 @@ apiInstance.assetsV1ObjectTypeObjectIdSharesShareIdGet(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **shareId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -9768,7 +9768,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9804,10 +9804,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdSharesShareIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
@@ -9834,6 +9830,10 @@ let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdSharesShareIdPutRequest = {
     title: "title_example",
     uploadStorageId: "uploadStorageId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdSharesShareIdPut(body).then((data:any) => {
@@ -9847,11 +9847,11 @@ apiInstance.assetsV1ObjectTypeObjectIdSharesShareIdPut(body).then((data:any) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shareSchema** | **ShareSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **shareId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -9860,7 +9860,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9896,15 +9896,15 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
   // string
   shareId: "share_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // number | The number of items for each page (optional)
   perPage: 1,
   // string (optional)
@@ -9921,11 +9921,11 @@ apiInstance.assetsV1ObjectTypeObjectIdSharesShareIdUsersGet(body).then((data:any
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **shareId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **perPage** | [**number**] | The number of items for each page | (optional) defaults to undefined
  **lastId** | [**string**] |  | (optional) defaults to undefined
 
@@ -9936,7 +9936,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -9972,10 +9972,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
@@ -9987,6 +9983,10 @@ let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersPostRequest
     id: "id_example",
     password: "password_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdSharesShareIdUsersPost(body).then((data:any) => {
@@ -10000,11 +10000,11 @@ apiInstance.assetsV1ObjectTypeObjectIdSharesShareIdUsersPost(body).then((data:an
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shareUserSchema** | **ShareUserSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **shareId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10013,7 +10013,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10048,10 +10048,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
@@ -10059,6 +10055,10 @@ let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserId
   shareId: "share_id_example",
   // string
   shareUserId: "share_user_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdDelete(body).then((data:any) => {
@@ -10071,12 +10071,12 @@ apiInstance.assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdDelete(body).
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **shareId** | [**string**] |  | defaults to undefined
  **shareUserId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10085,7 +10085,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10121,10 +10121,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
@@ -10132,6 +10128,10 @@ let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserId
   shareId: "share_id_example",
   // string
   shareUserId: "share_user_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdGet(body).then((data:any) => {
@@ -10144,12 +10144,12 @@ apiInstance.assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdGet(body).the
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **shareId** | [**string**] |  | defaults to undefined
  **shareUserId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10158,7 +10158,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10194,10 +10194,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
@@ -10211,6 +10207,10 @@ let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserId
     id: "id_example",
     password: "password_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdPatch(body).then((data:any) => {
@@ -10224,12 +10224,12 @@ apiInstance.assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdPatch(body).t
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shareUserSchema** | **ShareUserSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **shareId** | [**string**] |  | defaults to undefined
  **shareUserId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10238,7 +10238,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10274,10 +10274,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
@@ -10291,6 +10287,10 @@ let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserId
     id: "id_example",
     password: "password_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdPut(body).then((data:any) => {
@@ -10304,12 +10304,12 @@ apiInstance.assetsV1ObjectTypeObjectIdSharesShareIdUsersShareUserIdPut(body).the
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shareUserSchema** | **ShareUserSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **shareId** | [**string**] |  | defaults to undefined
  **shareUserId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10318,7 +10318,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10354,10 +10354,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdSharesUrlPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
@@ -10385,6 +10381,10 @@ let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdSharesUrlPostRequest = {
     title: "title_example",
     uploadStorageId: "uploadStorageId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdSharesUrlPost(body).then((data:any) => {
@@ -10398,10 +10398,10 @@ apiInstance.assetsV1ObjectTypeObjectIdSharesUrlPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shareURLCreateSchema** | **ShareURLCreateSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10410,7 +10410,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10446,15 +10446,15 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdVersionsVersionIdApprovalsGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
   // string
   versionId: "version_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdVersionsVersionIdApprovalsGet(body).then((data:any) => {
@@ -10467,11 +10467,11 @@ apiInstance.assetsV1ObjectTypeObjectIdVersionsVersionIdApprovalsGet(body).then((
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10480,7 +10480,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10516,15 +10516,15 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ObjectTypeObjectIdVersionsVersionIdApprovalsRequestGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectId: "object_id_example",
   // string
   versionId: "version_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ObjectTypeObjectIdVersionsVersionIdApprovalsRequestGet(body).then((data:any) => {
@@ -10537,11 +10537,11 @@ apiInstance.assetsV1ObjectTypeObjectIdVersionsVersionIdApprovalsRequestGet(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectId** | [**string**] |  | defaults to undefined
  **versionId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10550,7 +10550,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10585,10 +10585,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1SegmentsReindexPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // ReindexSegmentsSchema | body
   reindexSegmentsSchema: {
     ignoreComments: true,
@@ -10600,6 +10596,10 @@ let body:iconik.AssetsApiAssetsV1SegmentsReindexPostRequest = {
     ],
     syncToAnotherDc: true,
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1SegmentsReindexPost(body).then((data:any) => {
@@ -10613,8 +10613,8 @@ apiInstance.assetsV1SegmentsReindexPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reindexSegmentsSchema** | **ReindexSegmentsSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10623,7 +10623,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10657,10 +10657,6 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1ShareObjectTypePostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // BulkShareCreateSchema | body
   bulkShareCreateSchema: {
@@ -10692,6 +10688,10 @@ let body:iconik.AssetsApiAssetsV1ShareObjectTypePostRequest = {
     title: "title_example",
     uploadStorageId: "uploadStorageId_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.assetsV1ShareObjectTypePost(body).then((data:any) => {
@@ -10705,9 +10705,9 @@ apiInstance.assetsV1ShareObjectTypePost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bulkShareCreateSchema** | **BulkShareCreateSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10716,7 +10716,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10751,8 +10751,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1SharesAuthLoginPostRequest = {
-  // string
-  appID: "App-ID_example",
   // ShareLoginSchema | body
   shareLoginSchema: {
     hash: "hash_example",
@@ -10760,6 +10758,8 @@ let body:iconik.AssetsApiAssetsV1SharesAuthLoginPostRequest = {
     objectType: "objectType_example",
     password: "password_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.assetsV1SharesAuthLoginPost(body).then((data:any) => {
@@ -10773,7 +10773,7 @@ apiInstance.assetsV1SharesAuthLoginPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shareLoginSchema** | **ShareLoginSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10782,7 +10782,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10817,9 +10817,9 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1SharesAuthTokenGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
   shareAuthToken: "Share-Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.assetsV1SharesAuthTokenGet(body).then((data:any) => {
@@ -10832,8 +10832,8 @@ apiInstance.assetsV1SharesAuthTokenGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
  **shareAuthToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10842,7 +10842,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -10878,9 +10878,9 @@ const apiInstance = new iconik.AssetsApi(configuration);
 
 let body:iconik.AssetsApiAssetsV1SharesAuthTokenPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
   shareAuthToken: "Share-Auth-Token_example",
+  // string (optional)
+  appID: "App-ID_example",
 };
 
 apiInstance.assetsV1SharesAuthTokenPut(body).then((data:any) => {
@@ -10893,8 +10893,8 @@ apiInstance.assetsV1SharesAuthTokenPut(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
  **shareAuthToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -10903,7 +10903,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 

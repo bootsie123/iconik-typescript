@@ -54,10 +54,6 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1AclObjectTypeContentDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // DeleteBulkACLsSchema | body
   deleteBulkACLsSchema: {
@@ -73,6 +69,10 @@ let body:iconik.AclsApiAclsV1AclObjectTypeContentDeleteRequest = {
       "userIds_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1AclObjectTypeContentDelete(body).then((data:any) => {
@@ -86,9 +86,9 @@ apiInstance.aclsV1AclObjectTypeContentDelete(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteBulkACLsSchema** | **DeleteBulkACLsSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -132,10 +132,6 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1AclObjectTypeContentPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // CreateBulkACLsSchema | body
   createBulkACLsSchema: {
@@ -155,6 +151,10 @@ let body:iconik.AclsApiAclsV1AclObjectTypeContentPutRequest = {
       "userIds_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1AclObjectTypeContentPut(body).then((data:any) => {
@@ -168,9 +168,9 @@ apiInstance.aclsV1AclObjectTypeContentPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createBulkACLsSchema** | **CreateBulkACLsSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -215,10 +215,6 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1AclObjectTypeDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // DeleteACLsSchema | body
   deleteACLsSchema: {
@@ -232,6 +228,10 @@ let body:iconik.AclsApiAclsV1AclObjectTypeDeleteRequest = {
       "userIds_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1AclObjectTypeDelete(body).then((data:any) => {
@@ -245,9 +245,9 @@ apiInstance.aclsV1AclObjectTypeDelete(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteACLsSchema** | **DeleteACLsSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -291,13 +291,13 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1AclObjectTypeObjectKeyGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectKey: "object_key_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1AclObjectTypeObjectKeyGet(body).then((data:any) => {
@@ -310,10 +310,10 @@ apiInstance.aclsV1AclObjectTypeObjectKeyGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectKey** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -357,15 +357,15 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1AclObjectTypeObjectKeyPermissionGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectKey: "object_key_example",
   // string
   permission: "permission_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1AclObjectTypeObjectKeyPermissionGet(body).then((data:any) => {
@@ -378,11 +378,11 @@ apiInstance.aclsV1AclObjectTypeObjectKeyPermissionGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectKey** | [**string**] |  | defaults to undefined
  **permission** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -391,7 +391,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -427,13 +427,13 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1AclObjectTypeObjectKeyPermissionsGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectKey: "object_key_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1AclObjectTypeObjectKeyPermissionsGet(body).then((data:any) => {
@@ -446,10 +446,10 @@ apiInstance.aclsV1AclObjectTypeObjectKeyPermissionsGet(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectKey** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -493,10 +493,6 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1AclObjectTypePermissionPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   permission: "permission_example",
@@ -506,6 +502,10 @@ let body:iconik.AclsApiAclsV1AclObjectTypePermissionPostRequest = {
       "objectKeys_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1AclObjectTypePermissionPost(body).then((data:any) => {
@@ -519,10 +519,10 @@ apiInstance.aclsV1AclObjectTypePermissionPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aCLsSchema** | **ACLsSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **permission** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -567,10 +567,6 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1AclObjectTypePutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // CreateACLsSchema | body
   createACLsSchema: {
@@ -588,6 +584,10 @@ let body:iconik.AclsApiAclsV1AclObjectTypePutRequest = {
       "userIds_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1AclObjectTypePut(body).then((data:any) => {
@@ -601,9 +601,9 @@ apiInstance.aclsV1AclObjectTypePut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createACLsSchema** | **CreateACLsSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -612,7 +612,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -646,10 +646,6 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1AclPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // CheckBulkACLsSchema | body
   checkBulkACLsSchema: {
     objects: [
@@ -664,6 +660,10 @@ let body:iconik.AclsApiAclsV1AclPostRequest = {
       },
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1AclPost(body).then((data:any) => {
@@ -677,8 +677,8 @@ apiInstance.aclsV1AclPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **checkBulkACLsSchema** | **CheckBulkACLsSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -687,7 +687,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -722,9 +722,9 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1AclTemplatesGetRequest = {
-  // string
+  // string (optional)
   appID: "App-ID_example",
-  // string
+  // string (optional)
   authToken: "Auth-Token_example",
 };
 
@@ -738,8 +738,8 @@ apiInstance.aclsV1AclTemplatesGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -748,7 +748,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -782,14 +782,14 @@ const configuration = iconik.createConfiguration();
 const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1AclTemplatesPostRequest = {
-  // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
   // ACLTemplateSchema | body
   aCLTemplateSchema: {
     name: "name_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1AclTemplatesPost(body).then((data:any) => {
@@ -803,8 +803,8 @@ apiInstance.aclsV1AclTemplatesPost(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aCLTemplateSchema** | **ACLTemplateSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -813,7 +813,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -848,11 +848,11 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1AclTemplatesTemplateIdDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   templateId: "template_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1AclTemplatesTemplateIdDelete(body).then((data:any) => {
@@ -865,9 +865,9 @@ apiInstance.aclsV1AclTemplatesTemplateIdDelete(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **templateId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -876,7 +876,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -912,11 +912,11 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1AclTemplatesTemplateIdGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   templateId: "template_id_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1AclTemplatesTemplateIdGet(body).then((data:any) => {
@@ -929,9 +929,9 @@ apiInstance.aclsV1AclTemplatesTemplateIdGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **templateId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -940,7 +940,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -976,15 +976,15 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1AclTemplatesTemplateIdObjectTypeObjectKeyPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   templateId: "template_id_example",
   // string
   objectType: "object_type_example",
   // string
   objectKey: "object_key_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
   // boolean (optional)
   ignoreReindexing: true,
   // string | Do not apply any ACLs that are not in the collection_id provided (Parent collection normally) (optional)
@@ -1001,11 +1001,11 @@ apiInstance.aclsV1AclTemplatesTemplateIdObjectTypeObjectKeyPost(body).then((data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **templateId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectKey** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
  **ignoreReindexing** | [**boolean**] |  | (optional) defaults to undefined
  **restrictAclsCollectionId** | [**string**] | Do not apply any ACLs that are not in the collection_id provided (Parent collection normally) | (optional) defaults to undefined
 
@@ -1016,7 +1016,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1053,15 +1053,15 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1AclTemplatesTemplateIdPatchRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   templateId: "template_id_example",
   // ACLTemplateSchema | body
   aCLTemplateSchema: {
     name: "name_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1AclTemplatesTemplateIdPatch(body).then((data:any) => {
@@ -1075,9 +1075,9 @@ apiInstance.aclsV1AclTemplatesTemplateIdPatch(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aCLTemplateSchema** | **ACLTemplateSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **templateId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1086,7 +1086,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1122,15 +1122,15 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1AclTemplatesTemplateIdPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   templateId: "template_id_example",
   // ACLTemplateSchema | body
   aCLTemplateSchema: {
     name: "name_example",
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1AclTemplatesTemplateIdPut(body).then((data:any) => {
@@ -1144,9 +1144,9 @@ apiInstance.aclsV1AclTemplatesTemplateIdPut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aCLTemplateSchema** | **ACLTemplateSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **templateId** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1155,7 +1155,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1191,15 +1191,15 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1GroupsGroupIdAclObjectTypeObjectKeyDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   groupId: "group_id_example",
   // string
   objectType: "object_type_example",
   // string
   objectKey: "object_key_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1GroupsGroupIdAclObjectTypeObjectKeyDelete(body).then((data:any) => {
@@ -1212,11 +1212,11 @@ apiInstance.aclsV1GroupsGroupIdAclObjectTypeObjectKeyDelete(body).then((data:any
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **groupId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectKey** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1225,7 +1225,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1261,15 +1261,15 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1GroupsGroupIdAclObjectTypeObjectKeyGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   groupId: "group_id_example",
   // string
   objectType: "object_type_example",
   // string
   objectKey: "object_key_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1GroupsGroupIdAclObjectTypeObjectKeyGet(body).then((data:any) => {
@@ -1282,11 +1282,11 @@ apiInstance.aclsV1GroupsGroupIdAclObjectTypeObjectKeyGet(body).then((data:any) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **groupId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectKey** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1295,7 +1295,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1330,10 +1330,6 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1GroupsGroupIdAclObjectTypeObjectKeyPermissionGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   groupId: "group_id_example",
   // string
   objectType: "object_type_example",
@@ -1341,6 +1337,10 @@ let body:iconik.AclsApiAclsV1GroupsGroupIdAclObjectTypeObjectKeyPermissionGetReq
   objectKey: "object_key_example",
   // string
   permission: "permission_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1GroupsGroupIdAclObjectTypeObjectKeyPermissionGet(body).then((data:any) => {
@@ -1353,12 +1353,12 @@ apiInstance.aclsV1GroupsGroupIdAclObjectTypeObjectKeyPermissionGet(body).then((d
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **groupId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectKey** | [**string**] |  | defaults to undefined
  **permission** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1367,7 +1367,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1403,10 +1403,6 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1GroupsGroupIdAclObjectTypeObjectKeyPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   groupId: "group_id_example",
   // string
   objectType: "object_type_example",
@@ -1418,6 +1414,10 @@ let body:iconik.AclsApiAclsV1GroupsGroupIdAclObjectTypeObjectKeyPutRequest = {
       "permissions_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1GroupsGroupIdAclObjectTypeObjectKeyPut(body).then((data:any) => {
@@ -1431,11 +1431,11 @@ apiInstance.aclsV1GroupsGroupIdAclObjectTypeObjectKeyPut(body).then((data:any) =
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupACLSchema** | **GroupACLSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **groupId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectKey** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1444,7 +1444,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1480,13 +1480,13 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1SharesObjectTypeObjectKeyGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   objectType: "object_type_example",
   // string
   objectKey: "object_key_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1SharesObjectTypeObjectKeyGet(body).then((data:any) => {
@@ -1499,10 +1499,10 @@ apiInstance.aclsV1SharesObjectTypeObjectKeyGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectKey** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1511,7 +1511,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1546,15 +1546,15 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1SharesShareIdAclObjectTypeObjectKeyDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   shareId: "share_id_example",
   // string
   objectType: "object_type_example",
   // string
   objectKey: "object_key_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1SharesShareIdAclObjectTypeObjectKeyDelete(body).then((data:any) => {
@@ -1567,11 +1567,11 @@ apiInstance.aclsV1SharesShareIdAclObjectTypeObjectKeyDelete(body).then((data:any
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **shareId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectKey** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1580,7 +1580,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1616,15 +1616,15 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1SharesShareIdAclObjectTypeObjectKeyGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   shareId: "share_id_example",
   // string
   objectType: "object_type_example",
   // string
   objectKey: "object_key_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1SharesShareIdAclObjectTypeObjectKeyGet(body).then((data:any) => {
@@ -1637,11 +1637,11 @@ apiInstance.aclsV1SharesShareIdAclObjectTypeObjectKeyGet(body).then((data:any) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **shareId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectKey** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1650,7 +1650,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1685,10 +1685,6 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1SharesShareIdAclObjectTypeObjectKeyPermissionGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   shareId: "share_id_example",
   // string
   objectType: "object_type_example",
@@ -1696,6 +1692,10 @@ let body:iconik.AclsApiAclsV1SharesShareIdAclObjectTypeObjectKeyPermissionGetReq
   objectKey: "object_key_example",
   // string
   permission: "permission_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1SharesShareIdAclObjectTypeObjectKeyPermissionGet(body).then((data:any) => {
@@ -1708,12 +1708,12 @@ apiInstance.aclsV1SharesShareIdAclObjectTypeObjectKeyPermissionGet(body).then((d
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **shareId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectKey** | [**string**] |  | defaults to undefined
  **permission** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1722,7 +1722,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1758,10 +1758,6 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1SharesShareIdAclObjectTypeObjectKeyPostRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   shareId: "share_id_example",
   // string
   objectType: "object_type_example",
@@ -1773,6 +1769,10 @@ let body:iconik.AclsApiAclsV1SharesShareIdAclObjectTypeObjectKeyPostRequest = {
       "permissions_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1SharesShareIdAclObjectTypeObjectKeyPost(body).then((data:any) => {
@@ -1786,11 +1786,11 @@ apiInstance.aclsV1SharesShareIdAclObjectTypeObjectKeyPost(body).then((data:any) 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shareACLSchema** | **ShareACLSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **shareId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectKey** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1799,7 +1799,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1834,10 +1834,6 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1SharesShareIdAclObjectTypeObjectKeyPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   shareId: "share_id_example",
   // string
   objectType: "object_type_example",
@@ -1849,6 +1845,10 @@ let body:iconik.AclsApiAclsV1SharesShareIdAclObjectTypeObjectKeyPutRequest = {
       "permissions_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1SharesShareIdAclObjectTypeObjectKeyPut(body).then((data:any) => {
@@ -1862,11 +1862,11 @@ apiInstance.aclsV1SharesShareIdAclObjectTypeObjectKeyPut(body).then((data:any) =
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shareACLSchema** | **ShareACLSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **shareId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectKey** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1875,7 +1875,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1911,10 +1911,6 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1SharesShareIdAclObjectTypePutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   shareId: "share_id_example",
   // string
   objectType: "object_type_example",
@@ -1927,6 +1923,10 @@ let body:iconik.AclsApiAclsV1SharesShareIdAclObjectTypePutRequest = {
       "permissions_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1SharesShareIdAclObjectTypePut(body).then((data:any) => {
@@ -1940,10 +1940,10 @@ apiInstance.aclsV1SharesShareIdAclObjectTypePut(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createShareACLsSchema** | **CreateShareACLsSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **shareId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -1952,7 +1952,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -1987,15 +1987,15 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1UsersUserIdAclObjectTypeObjectKeyDeleteRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   userId: "user_id_example",
   // string
   objectType: "object_type_example",
   // string
   objectKey: "object_key_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1UsersUserIdAclObjectTypeObjectKeyDelete(body).then((data:any) => {
@@ -2008,11 +2008,11 @@ apiInstance.aclsV1UsersUserIdAclObjectTypeObjectKeyDelete(body).then((data:any) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **userId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectKey** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2021,7 +2021,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2057,15 +2057,15 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1UsersUserIdAclObjectTypeObjectKeyGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   userId: "user_id_example",
   // string
   objectType: "object_type_example",
   // string
   objectKey: "object_key_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1UsersUserIdAclObjectTypeObjectKeyGet(body).then((data:any) => {
@@ -2078,11 +2078,11 @@ apiInstance.aclsV1UsersUserIdAclObjectTypeObjectKeyGet(body).then((data:any) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **userId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectKey** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2091,7 +2091,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2126,10 +2126,6 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1UsersUserIdAclObjectTypeObjectKeyPermissionGetRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   userId: "user_id_example",
   // string
   objectType: "object_type_example",
@@ -2137,6 +2133,10 @@ let body:iconik.AclsApiAclsV1UsersUserIdAclObjectTypeObjectKeyPermissionGetReque
   objectKey: "object_key_example",
   // string
   permission: "permission_example",
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1UsersUserIdAclObjectTypeObjectKeyPermissionGet(body).then((data:any) => {
@@ -2149,12 +2149,12 @@ apiInstance.aclsV1UsersUserIdAclObjectTypeObjectKeyPermissionGet(body).then((dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **userId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectKey** | [**string**] |  | defaults to undefined
  **permission** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2163,7 +2163,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 
@@ -2199,10 +2199,6 @@ const apiInstance = new iconik.AclsApi(configuration);
 
 let body:iconik.AclsApiAclsV1UsersUserIdAclObjectTypeObjectKeyPutRequest = {
   // string
-  appID: "App-ID_example",
-  // string
-  authToken: "Auth-Token_example",
-  // string
   userId: "user_id_example",
   // string
   objectType: "object_type_example",
@@ -2214,6 +2210,10 @@ let body:iconik.AclsApiAclsV1UsersUserIdAclObjectTypeObjectKeyPutRequest = {
       "permissions_example",
     ],
   },
+  // string (optional)
+  appID: "App-ID_example",
+  // string (optional)
+  authToken: "Auth-Token_example",
 };
 
 apiInstance.aclsV1UsersUserIdAclObjectTypeObjectKeyPut(body).then((data:any) => {
@@ -2227,11 +2227,11 @@ apiInstance.aclsV1UsersUserIdAclObjectTypeObjectKeyPut(body).then((data:any) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userACLSchema** | **UserACLSchema**| body |
- **appID** | [**string**] |  | defaults to undefined
- **authToken** | [**string**] |  | defaults to undefined
  **userId** | [**string**] |  | defaults to undefined
  **objectType** | [**string**] |  | defaults to undefined
  **objectKey** | [**string**] |  | defaults to undefined
+ **appID** | [**string**] |  | (optional) defaults to undefined
+ **authToken** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -2240,7 +2240,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](README.md#authToken), [appId](README.md#appId)
 
 ### HTTP request headers
 

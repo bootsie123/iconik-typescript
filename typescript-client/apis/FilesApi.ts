@@ -115,19 +115,9 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
      * @param perPage The number of items for each page
      * @param lastId ID of a last profile set on previous page
      */
-    public async filesV1AnalysisProfilesGet(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AnalysisProfilesGet(appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisProfilesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisProfilesGet", "authToken");
-        }
 
 
 
@@ -156,6 +146,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -168,29 +169,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Get a default analysis profile
+     * @param mediaType 
      * @param appID 
      * @param authToken 
-     * @param mediaType 
      */
-    public async filesV1AnalysisProfilesMediaTypeDefaultGet(appID: string, authToken: string, mediaType: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AnalysisProfilesMediaTypeDefaultGet(mediaType: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisProfilesMediaTypeDefaultGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisProfilesMediaTypeDefaultGet", "authToken");
-        }
-
 
         // verify required parameter 'mediaType' is not null or undefined
         if (mediaType === null || mediaType === undefined) {
             throw new RequiredError("FilesApi", "filesV1AnalysisProfilesMediaTypeDefaultGet", "mediaType");
         }
+
+
 
 
         // Path Params
@@ -208,6 +199,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -220,29 +222,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_analysis_profiles 
      * Create a new analysis profile
+     * @param analysisProfileSchema body
      * @param appID 
      * @param authToken 
-     * @param analysisProfileSchema body
      */
-    public async filesV1AnalysisProfilesPost(appID: string, authToken: string, analysisProfileSchema: AnalysisProfileSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AnalysisProfilesPost(analysisProfileSchema: AnalysisProfileSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisProfilesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisProfilesPost", "authToken");
-        }
-
 
         // verify required parameter 'analysisProfileSchema' is not null or undefined
         if (analysisProfileSchema === null || analysisProfileSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AnalysisProfilesPost", "analysisProfileSchema");
         }
+
+
 
 
         // Path Params
@@ -270,6 +262,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -282,29 +285,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_analysis_profiles 
      * Removes the default flag on an analysis profile
+     * @param profileId 
      * @param appID 
      * @param authToken 
-     * @param profileId 
      */
-    public async filesV1AnalysisProfilesProfileIdDefaultDelete(appID: string, authToken: string, profileId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AnalysisProfilesProfileIdDefaultDelete(profileId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisProfilesProfileIdDefaultDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisProfilesProfileIdDefaultDelete", "authToken");
-        }
-
 
         // verify required parameter 'profileId' is not null or undefined
         if (profileId === null || profileId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AnalysisProfilesProfileIdDefaultDelete", "profileId");
         }
+
+
 
 
         // Path Params
@@ -322,6 +315,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -334,29 +338,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_analysis_profiles 
      * Set an analysis profile to the default of its media type
+     * @param profileId 
      * @param appID 
      * @param authToken 
-     * @param profileId 
      */
-    public async filesV1AnalysisProfilesProfileIdDefaultPost(appID: string, authToken: string, profileId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AnalysisProfilesProfileIdDefaultPost(profileId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisProfilesProfileIdDefaultPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisProfilesProfileIdDefaultPost", "authToken");
-        }
-
 
         // verify required parameter 'profileId' is not null or undefined
         if (profileId === null || profileId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AnalysisProfilesProfileIdDefaultPost", "profileId");
         }
+
+
 
 
         // Path Params
@@ -374,6 +368,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -386,29 +391,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_analysis_profiles 
      * Delete an analysis profile
+     * @param profileId 
      * @param appID 
      * @param authToken 
-     * @param profileId 
      */
-    public async filesV1AnalysisProfilesProfileIdDelete(appID: string, authToken: string, profileId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AnalysisProfilesProfileIdDelete(profileId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisProfilesProfileIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisProfilesProfileIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'profileId' is not null or undefined
         if (profileId === null || profileId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AnalysisProfilesProfileIdDelete", "profileId");
         }
+
+
 
 
         // Path Params
@@ -426,6 +421,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -438,29 +444,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Get an analysis profile
+     * @param profileId 
      * @param appID 
      * @param authToken 
-     * @param profileId 
      */
-    public async filesV1AnalysisProfilesProfileIdGet(appID: string, authToken: string, profileId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AnalysisProfilesProfileIdGet(profileId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisProfilesProfileIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisProfilesProfileIdGet", "authToken");
-        }
-
 
         // verify required parameter 'profileId' is not null or undefined
         if (profileId === null || profileId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AnalysisProfilesProfileIdGet", "profileId");
         }
+
+
 
 
         // Path Params
@@ -478,6 +474,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -490,25 +497,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_analysis_profiles 
      * Update an analysis profile information
-     * @param appID 
-     * @param authToken 
      * @param profileId 
      * @param analysisProfileSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AnalysisProfilesProfileIdPatch(appID: string, authToken: string, profileId: string, analysisProfileSchema: AnalysisProfileSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AnalysisProfilesProfileIdPatch(profileId: string, analysisProfileSchema: AnalysisProfileSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisProfilesProfileIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisProfilesProfileIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'profileId' is not null or undefined
         if (profileId === null || profileId === undefined) {
@@ -522,6 +517,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/files/v1/analysis/profiles/{profile_id}/'
             .replace('{' + 'profile_id' + '}', encodeURIComponent(String(profileId)));
@@ -548,6 +545,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -560,25 +568,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_analysis_profiles 
      * Update an analysis profile information
-     * @param appID 
-     * @param authToken 
      * @param profileId 
      * @param analysisProfileSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AnalysisProfilesProfileIdPut(appID: string, authToken: string, profileId: string, analysisProfileSchema: AnalysisProfileSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AnalysisProfilesProfileIdPut(profileId: string, analysisProfileSchema: AnalysisProfileSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisProfilesProfileIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisProfilesProfileIdPut", "authToken");
-        }
-
 
         // verify required parameter 'profileId' is not null or undefined
         if (profileId === null || profileId === undefined) {
@@ -590,6 +586,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (analysisProfileSchema === null || analysisProfileSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AnalysisProfilesProfileIdPut", "analysisProfileSchema");
         }
+
+
 
 
         // Path Params
@@ -618,6 +616,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -630,29 +639,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_analysis_service_accounts 
      * Delete an analysis service account
+     * @param analysisServiceAccountId 
      * @param appID 
      * @param authToken 
-     * @param analysisServiceAccountId 
      */
-    public async filesV1AnalysisServiceAccountsAnalysisServiceAccountIdDelete(appID: string, authToken: string, analysisServiceAccountId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AnalysisServiceAccountsAnalysisServiceAccountIdDelete(analysisServiceAccountId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisServiceAccountsAnalysisServiceAccountIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisServiceAccountsAnalysisServiceAccountIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'analysisServiceAccountId' is not null or undefined
         if (analysisServiceAccountId === null || analysisServiceAccountId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AnalysisServiceAccountsAnalysisServiceAccountIdDelete", "analysisServiceAccountId");
         }
+
+
 
 
         // Path Params
@@ -670,6 +669,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -682,29 +692,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_analysis_service_accounts 
      * Get an analysis service account
+     * @param analysisServiceAccountId 
      * @param appID 
      * @param authToken 
-     * @param analysisServiceAccountId 
      */
-    public async filesV1AnalysisServiceAccountsAnalysisServiceAccountIdGet(appID: string, authToken: string, analysisServiceAccountId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AnalysisServiceAccountsAnalysisServiceAccountIdGet(analysisServiceAccountId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisServiceAccountsAnalysisServiceAccountIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisServiceAccountsAnalysisServiceAccountIdGet", "authToken");
-        }
-
 
         // verify required parameter 'analysisServiceAccountId' is not null or undefined
         if (analysisServiceAccountId === null || analysisServiceAccountId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AnalysisServiceAccountsAnalysisServiceAccountIdGet", "analysisServiceAccountId");
         }
+
+
 
 
         // Path Params
@@ -722,6 +722,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -734,25 +745,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_analysis_service_accounts 
      * Update an analysis service account information
-     * @param appID 
-     * @param authToken 
      * @param analysisServiceAccountId 
      * @param analysisServiceAccountSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AnalysisServiceAccountsAnalysisServiceAccountIdPatch(appID: string, authToken: string, analysisServiceAccountId: string, analysisServiceAccountSchema: AnalysisServiceAccountSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AnalysisServiceAccountsAnalysisServiceAccountIdPatch(analysisServiceAccountId: string, analysisServiceAccountSchema: AnalysisServiceAccountSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisServiceAccountsAnalysisServiceAccountIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisServiceAccountsAnalysisServiceAccountIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'analysisServiceAccountId' is not null or undefined
         if (analysisServiceAccountId === null || analysisServiceAccountId === undefined) {
@@ -764,6 +763,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (analysisServiceAccountSchema === null || analysisServiceAccountSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AnalysisServiceAccountsAnalysisServiceAccountIdPatch", "analysisServiceAccountSchema");
         }
+
+
 
 
         // Path Params
@@ -792,6 +793,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -804,25 +816,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_analysis_service_accounts 
      * Update an analysis service account information
-     * @param appID 
-     * @param authToken 
      * @param analysisServiceAccountId 
      * @param analysisServiceAccountSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AnalysisServiceAccountsAnalysisServiceAccountIdPut(appID: string, authToken: string, analysisServiceAccountId: string, analysisServiceAccountSchema: AnalysisServiceAccountSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AnalysisServiceAccountsAnalysisServiceAccountIdPut(analysisServiceAccountId: string, analysisServiceAccountSchema: AnalysisServiceAccountSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisServiceAccountsAnalysisServiceAccountIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisServiceAccountsAnalysisServiceAccountIdPut", "authToken");
-        }
-
 
         // verify required parameter 'analysisServiceAccountId' is not null or undefined
         if (analysisServiceAccountId === null || analysisServiceAccountId === undefined) {
@@ -834,6 +834,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (analysisServiceAccountSchema === null || analysisServiceAccountSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AnalysisServiceAccountsAnalysisServiceAccountIdPut", "analysisServiceAccountSchema");
         }
+
+
 
 
         // Path Params
@@ -862,6 +864,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -879,19 +892,9 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
      * @param perPage The number of items for each page
      * @param lastId ID of a last service account set on previous page
      */
-    public async filesV1AnalysisServiceAccountsGet(appID: string, authToken: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AnalysisServiceAccountsGet(appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisServiceAccountsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisServiceAccountsGet", "authToken");
-        }
 
 
 
@@ -920,6 +923,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -932,29 +946,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_analysis_service_accounts 
      * Create a new analysis service account
+     * @param analysisServiceAccountSchema body
      * @param appID 
      * @param authToken 
-     * @param analysisServiceAccountSchema body
      */
-    public async filesV1AnalysisServiceAccountsPost(appID: string, authToken: string, analysisServiceAccountSchema: AnalysisServiceAccountSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AnalysisServiceAccountsPost(analysisServiceAccountSchema: AnalysisServiceAccountSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisServiceAccountsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AnalysisServiceAccountsPost", "authToken");
-        }
-
 
         // verify required parameter 'analysisServiceAccountSchema' is not null or undefined
         if (analysisServiceAccountSchema === null || analysisServiceAccountSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AnalysisServiceAccountsPost", "analysisServiceAccountSchema");
         }
+
+
 
 
         // Path Params
@@ -982,6 +986,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -994,29 +1009,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_keyframes 
      * Create keyframe of type poster for asset
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      */
-    public async filesV1AssetsAssetIdCustomKeyframePost(appID: string, authToken: string, assetId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdCustomKeyframePost(assetId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdCustomKeyframePost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdCustomKeyframePost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdCustomKeyframePost", "assetId");
         }
+
+
 
 
         // Path Params
@@ -1034,6 +1039,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1046,26 +1062,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_keyframes 
      * Set keyframe of type poster as asset keyframe
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param posterId 
+     * @param appID 
+     * @param authToken 
      * @param overwrite set to false to keep current custom_poster and custom_keyframe on asset
      */
-    public async filesV1AssetsAssetIdCustomKeyframePosterIdPost(appID: string, authToken: string, assetId: string, posterId: string, overwrite?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdCustomKeyframePosterIdPost(assetId: string, posterId: string, appID?: string, authToken?: string, overwrite?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdCustomKeyframePosterIdPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdCustomKeyframePosterIdPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1077,6 +1081,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (posterId === null || posterId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdCustomKeyframePosterIdPost", "posterId");
         }
+
+
 
 
 
@@ -1101,6 +1107,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1113,27 +1130,15 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_exports 
      * Export asset to export location
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param exportLocationId 
      * @param assetExportSchema body
+     * @param appID 
+     * @param authToken 
      * @param allowHostTransfer Enable transfer through iconik host (creates egress)
      */
-    public async filesV1AssetsAssetIdExportLocationsExportLocationIdPost(appID: string, authToken: string, assetId: string, exportLocationId: string, assetExportSchema: AssetExportSchema, allowHostTransfer?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdExportLocationsExportLocationIdPost(assetId: string, exportLocationId: string, assetExportSchema: AssetExportSchema, appID?: string, authToken?: string, allowHostTransfer?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdExportLocationsExportLocationIdPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdExportLocationsExportLocationIdPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1151,6 +1156,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (assetExportSchema === null || assetExportSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdExportLocationsExportLocationIdPost", "assetExportSchema");
         }
+
+
 
 
 
@@ -1186,6 +1193,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1198,26 +1216,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_files 
      * Delete asset\'s file set, file entries, and actual files
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileSetId 
+     * @param appID 
+     * @param authToken 
      * @param keepSource If true, keep source objects
      */
-    public async filesV1AssetsAssetIdFileSetsFileSetIdDelete(appID: string, authToken: string, assetId: string, fileSetId: string, keepSource?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFileSetsFileSetIdDelete(assetId: string, fileSetId: string, appID?: string, authToken?: string, keepSource?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1229,6 +1235,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileSetId === null || fileSetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdDelete", "fileSetId");
         }
+
+
 
 
 
@@ -1253,6 +1261,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1265,29 +1284,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_files 
      * Get files from a file set
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileSetId 
+     * @param appID 
+     * @param authToken 
      * @param perPage The number of items for each page
      * @param lastId 
      * @param generateSignedUrl Set to false if you don\&#39;t need a URL, will speed things up
      * @param fileCount Set to true if you need a total amount of files in a file set
      */
-    public async filesV1AssetsAssetIdFileSetsFileSetIdFilesGet(appID: string, authToken: string, assetId: string, fileSetId: string, perPage?: number, lastId?: string, generateSignedUrl?: boolean, fileCount?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFileSetsFileSetIdFilesGet(assetId: string, fileSetId: string, appID?: string, authToken?: string, perPage?: number, lastId?: string, generateSignedUrl?: boolean, fileCount?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdFilesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdFilesGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1299,6 +1306,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileSetId === null || fileSetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdFilesGet", "fileSetId");
         }
+
+
 
 
 
@@ -1341,6 +1350,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1353,25 +1373,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_files 
      * Get asset\'s file set
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileSetId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFileSetsFileSetIdGet(appID: string, authToken: string, assetId: string, fileSetId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFileSetsFileSetIdGet(assetId: string, fileSetId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1383,6 +1391,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileSetId === null || fileSetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdGet", "fileSetId");
         }
+
+
 
 
         // Path Params
@@ -1401,6 +1411,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1413,26 +1434,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Update file set information
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileSetId 
      * @param fileSetSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFileSetsFileSetIdPatch(appID: string, authToken: string, assetId: string, fileSetId: string, fileSetSchema: FileSetSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFileSetsFileSetIdPatch(assetId: string, fileSetId: string, fileSetSchema: FileSetSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1450,6 +1459,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileSetSchema === null || fileSetSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdPatch", "fileSetSchema");
         }
+
+
 
 
         // Path Params
@@ -1479,6 +1490,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1491,25 +1513,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_files 
      * Purge deleted asset\'s file set, file entries, and actual files.
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileSetId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFileSetsFileSetIdPurgeDelete(appID: string, authToken: string, assetId: string, fileSetId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFileSetsFileSetIdPurgeDelete(assetId: string, fileSetId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdPurgeDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdPurgeDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1521,6 +1531,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileSetId === null || fileSetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdPurgeDelete", "fileSetId");
         }
+
+
 
 
         // Path Params
@@ -1539,6 +1551,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1551,26 +1574,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Update file set information
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileSetId 
      * @param fileSetSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFileSetsFileSetIdPut(appID: string, authToken: string, assetId: string, fileSetId: string, fileSetSchema: FileSetSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFileSetsFileSetIdPut(assetId: string, fileSetId: string, fileSetSchema: FileSetSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdPut", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1588,6 +1599,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileSetSchema === null || fileSetSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdPut", "fileSetSchema");
         }
+
+
 
 
         // Path Params
@@ -1617,6 +1630,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1629,25 +1653,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Restore delete asset\'s file set
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileSetId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFileSetsFileSetIdRestorePut(appID: string, authToken: string, assetId: string, fileSetId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFileSetsFileSetIdRestorePut(assetId: string, fileSetId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdRestorePut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdRestorePut", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1659,6 +1671,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileSetId === null || fileSetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsFileSetIdRestorePut", "fileSetId");
         }
+
+
 
 
         // Path Params
@@ -1677,6 +1691,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1689,32 +1714,22 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_files 
      * Get all asset\'s file sets
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      * @param perPage The number of items for each page
      * @param lastId ID of a last file set on previous page
      * @param fileCount Set to true if you need a total amount of files in a file set
      */
-    public async filesV1AssetsAssetIdFileSetsGet(appID: string, authToken: string, assetId: string, perPage?: number, lastId?: string, fileCount?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFileSetsGet(assetId: string, appID?: string, authToken?: string, perPage?: number, lastId?: string, fileCount?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsGet", "assetId");
         }
+
+
 
 
 
@@ -1750,6 +1765,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1762,25 +1788,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Create file set and associate to asset
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileSetSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFileSetsPost(appID: string, authToken: string, assetId: string, fileSetSchema: FileSetSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFileSetsPost(assetId: string, fileSetSchema: FileSetSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1792,6 +1806,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileSetSchema === null || fileSetSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFileSetsPost", "fileSetSchema");
         }
+
+
 
 
         // Path Params
@@ -1820,6 +1836,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1832,27 +1859,15 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_create_poster 
      * Create a transcode job for creating still keyframe
-     * @param authToken 
-     * @param appID 
      * @param assetId 
      * @param fileId 
      * @param milliseconds 
      * @param transcodeRequestSchema body
+     * @param authToken 
+     * @param appID 
      */
-    public async filesV1AssetsAssetIdFilesFileIdCaptureMillisecondsPost(authToken: string, appID: string, assetId: string, fileId: string, milliseconds: number, transcodeRequestSchema: TranscodeRequestSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdCaptureMillisecondsPost(assetId: string, fileId: string, milliseconds: number, transcodeRequestSchema: TranscodeRequestSchema, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdCaptureMillisecondsPost", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdCaptureMillisecondsPost", "appID");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1876,6 +1891,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (transcodeRequestSchema === null || transcodeRequestSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdCaptureMillisecondsPost", "transcodeRequestSchema");
         }
+
+
 
 
         // Path Params
@@ -1906,6 +1923,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1918,25 +1946,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_files 
      * Delete asset\'s file entry (Not the actual file, use DELETE file_set for that)
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFilesFileIdDelete(appID: string, authToken: string, assetId: string, fileId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdDelete(assetId: string, fileId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -1948,6 +1964,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileId === null || fileId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdDelete", "fileId");
         }
+
+
 
 
         // Path Params
@@ -1966,6 +1984,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -1978,25 +2007,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_files 
      * Get asset\'s file download URL
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFilesFileIdDownloadUrlGet(appID: string, authToken: string, assetId: string, fileId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdDownloadUrlGet(assetId: string, fileId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdDownloadUrlGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdDownloadUrlGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2008,6 +2025,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileId === null || fileId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdDownloadUrlGet", "fileId");
         }
+
+
 
 
         // Path Params
@@ -2026,6 +2045,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2038,26 +2068,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_create_transcode_jobs - can_write_files 
      * Create format, file_set, and file for edit proxy if storage has edit proxy transcoder configured
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileId 
      * @param editProxySchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFilesFileIdEditProxiesPost(appID: string, authToken: string, assetId: string, fileId: string, editProxySchema: EditProxySchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdEditProxiesPost(assetId: string, fileId: string, editProxySchema: EditProxySchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdEditProxiesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdEditProxiesPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2075,6 +2093,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (editProxySchema === null || editProxySchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdEditProxiesPost", "editProxySchema");
         }
+
+
 
 
         // Path Params
@@ -2104,6 +2124,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2116,28 +2147,16 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_files 
      * Get asset\'s file
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileId 
+     * @param appID 
+     * @param authToken 
      * @param generateSignedPostUrl Set to true to get a new upload url for the file
      * @param contentDisposition Set to attachment if you want a download link. Note that this will not create a asset history entry for the download
      * @param bypassUrlCache Set to true to get a new url for the file rather than using a cached url
      */
-    public async filesV1AssetsAssetIdFilesFileIdGet(appID: string, authToken: string, assetId: string, fileId: string, generateSignedPostUrl?: boolean, contentDisposition?: string, bypassUrlCache?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdGet(assetId: string, fileId: string, appID?: string, authToken?: string, generateSignedPostUrl?: boolean, contentDisposition?: string, bypassUrlCache?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2149,6 +2168,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileId === null || fileId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdGet", "fileId");
         }
+
+
 
 
 
@@ -2185,6 +2206,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2197,25 +2229,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_files 
      * Get asset\'s file handler URL for ISG
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFilesFileIdIsgHandlerUrlGet(appID: string, authToken: string, assetId: string, fileId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdIsgHandlerUrlGet(assetId: string, fileId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdIsgHandlerUrlGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdIsgHandlerUrlGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2227,6 +2247,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileId === null || fileId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdIsgHandlerUrlGet", "fileId");
         }
+
+
 
 
         // Path Params
@@ -2245,6 +2267,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2257,26 +2290,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_create_transcode_jobs 
      * Create a transcode job for proxy and keyframes
-     * @param authToken 
-     * @param appID 
      * @param assetId 
      * @param fileId 
      * @param transcodeRequestSchema body
+     * @param authToken 
+     * @param appID 
      */
-    public async filesV1AssetsAssetIdFilesFileIdKeyframesPost(authToken: string, appID: string, assetId: string, fileId: string, transcodeRequestSchema: TranscodeRequestSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdKeyframesPost(assetId: string, fileId: string, transcodeRequestSchema: TranscodeRequestSchema, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdKeyframesPost", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdKeyframesPost", "appID");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2294,6 +2315,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (transcodeRequestSchema === null || transcodeRequestSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdKeyframesPost", "transcodeRequestSchema");
         }
+
+
 
 
         // Path Params
@@ -2323,6 +2346,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2335,26 +2369,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_create_transcode_jobs 
      * Create a job for extracting mediainfo
-     * @param authToken 
-     * @param appID 
      * @param assetId 
      * @param fileId 
      * @param transcodeRequestSchema body
+     * @param authToken 
+     * @param appID 
      */
-    public async filesV1AssetsAssetIdFilesFileIdMediainfoPost(authToken: string, appID: string, assetId: string, fileId: string, transcodeRequestSchema: TranscodeRequestSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdMediainfoPost(assetId: string, fileId: string, transcodeRequestSchema: TranscodeRequestSchema, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMediainfoPost", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMediainfoPost", "appID");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2372,6 +2394,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (transcodeRequestSchema === null || transcodeRequestSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMediainfoPost", "transcodeRequestSchema");
         }
+
+
 
 
         // Path Params
@@ -2401,6 +2425,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2413,27 +2448,15 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Cancel Backblaze B2 multipart upload.
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileId 
      * @param multipartB2CancelUpload body
+     * @param appID 
+     * @param authToken 
      * @param temporary Use temporary file record
      */
-    public async filesV1AssetsAssetIdFilesFileIdMultipartB2CancelPost(appID: string, authToken: string, assetId: string, fileId: string, multipartB2CancelUpload: MultipartB2CancelUpload, temporary?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdMultipartB2CancelPost(assetId: string, fileId: string, multipartB2CancelUpload: MultipartB2CancelUpload, appID?: string, authToken?: string, temporary?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartB2CancelPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartB2CancelPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2451,6 +2474,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (multipartB2CancelUpload === null || multipartB2CancelUpload === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartB2CancelPost", "multipartB2CancelUpload");
         }
+
+
 
 
 
@@ -2486,6 +2511,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2498,27 +2534,15 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Complete Backblaze B2 multipart upload.
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileId 
      * @param multipartB2FinishUpload body
+     * @param appID 
+     * @param authToken 
      * @param temporary Use temporary file record
      */
-    public async filesV1AssetsAssetIdFilesFileIdMultipartB2FinishPost(appID: string, authToken: string, assetId: string, fileId: string, multipartB2FinishUpload: MultipartB2FinishUpload, temporary?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdMultipartB2FinishPost(assetId: string, fileId: string, multipartB2FinishUpload: MultipartB2FinishUpload, appID?: string, authToken?: string, temporary?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartB2FinishPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartB2FinishPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2536,6 +2560,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (multipartB2FinishUpload === null || multipartB2FinishUpload === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartB2FinishPost", "multipartB2FinishUpload");
         }
+
+
 
 
 
@@ -2571,6 +2597,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2583,27 +2620,15 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Start Backblaze B2 multipart upload.
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileId 
+     * @param appID 
+     * @param authToken 
      * @param temporary Use temporary file record
      * @param multipartB2StartUpload body
      */
-    public async filesV1AssetsAssetIdFilesFileIdMultipartB2StartPost(appID: string, authToken: string, assetId: string, fileId: string, temporary?: boolean, multipartB2StartUpload?: MultipartB2StartUpload, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdMultipartB2StartPost(assetId: string, fileId: string, appID?: string, authToken?: string, temporary?: boolean, multipartB2StartUpload?: MultipartB2StartUpload, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartB2StartPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartB2StartPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2615,6 +2640,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileId === null || fileId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartB2StartPost", "fileId");
         }
+
+
 
 
 
@@ -2651,6 +2678,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2663,26 +2701,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Cleanup multipart upload (GCS, S3).
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileId 
      * @param multipartUploadCleanupSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFilesFileIdMultipartCleanupPost(appID: string, authToken: string, assetId: string, fileId: string, multipartUploadCleanupSchema: MultipartUploadCleanupSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdMultipartCleanupPost(assetId: string, fileId: string, multipartUploadCleanupSchema: MultipartUploadCleanupSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartCleanupPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartCleanupPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2700,6 +2726,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (multipartUploadCleanupSchema === null || multipartUploadCleanupSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartCleanupPost", "multipartUploadCleanupSchema");
         }
+
+
 
 
         // Path Params
@@ -2729,6 +2757,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2741,27 +2780,15 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Get object compose url for GCS parallel upload.
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileId 
      * @param multipartUploadComposeSchema body
+     * @param appID 
+     * @param authToken 
      * @param temporary Use temporary file record
      */
-    public async filesV1AssetsAssetIdFilesFileIdMultipartGcsComposeUrlPost(appID: string, authToken: string, assetId: string, fileId: string, multipartUploadComposeSchema: MultipartUploadComposeSchema, temporary?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdMultipartGcsComposeUrlPost(assetId: string, fileId: string, multipartUploadComposeSchema: MultipartUploadComposeSchema, appID?: string, authToken?: string, temporary?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartGcsComposeUrlPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartGcsComposeUrlPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2779,6 +2806,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (multipartUploadComposeSchema === null || multipartUploadComposeSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartGcsComposeUrlPost", "multipartUploadComposeSchema");
         }
+
+
 
 
 
@@ -2814,6 +2843,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2826,27 +2866,15 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Complete multipart upload (GCS).
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileId 
      * @param multipartUploadSchema body
+     * @param appID 
+     * @param authToken 
      * @param temporary Use temporary file record
      */
-    public async filesV1AssetsAssetIdFilesFileIdMultipartPost(appID: string, authToken: string, assetId: string, fileId: string, multipartUploadSchema: MultipartUploadSchema, temporary?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdMultipartPost(assetId: string, fileId: string, multipartUploadSchema: MultipartUploadSchema, appID?: string, authToken?: string, temporary?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2864,6 +2892,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (multipartUploadSchema === null || multipartUploadSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartPost", "multipartUploadSchema");
         }
+
+
 
 
 
@@ -2899,6 +2929,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -2911,29 +2952,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Get presigned urls for multipart upload (S3).
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileId 
      * @param uploadId Multipart UploadId
+     * @param appID 
+     * @param authToken 
      * @param type List of multipart upload urls of required type
      * @param maxPartNumber Maximum PartNumber that multipart upload has
      * @param temporary Use temporary file record
      */
-    public async filesV1AssetsAssetIdFilesFileIdMultipartUrlGet(appID: string, authToken: string, assetId: string, fileId: string, uploadId: string, type?: string, maxPartNumber?: number, temporary?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdMultipartUrlGet(assetId: string, fileId: string, uploadId: string, appID?: string, authToken?: string, type?: string, maxPartNumber?: number, temporary?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartUrlGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartUrlGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -2951,6 +2980,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (uploadId === null || uploadId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartUrlGet", "uploadId");
         }
+
+
 
 
 
@@ -2992,6 +3023,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3004,30 +3046,18 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Get presigned urls for multipart part upload (S3 & GCS).
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileId 
      * @param partsNum Number of parts to upload
+     * @param appID 
+     * @param authToken 
      * @param uploadId Multipart UploadId
      * @param perPage The number of items for each page
      * @param page Which page number to fetch
      * @param temporary Use temporary file record
      */
-    public async filesV1AssetsAssetIdFilesFileIdMultipartUrlPartGet(appID: string, authToken: string, assetId: string, fileId: string, partsNum: number, uploadId?: string, perPage?: number, page?: number, temporary?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdMultipartUrlPartGet(assetId: string, fileId: string, partsNum: number, appID?: string, authToken?: string, uploadId?: string, perPage?: number, page?: number, temporary?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartUrlPartGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartUrlPartGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3045,6 +3075,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (partsNum === null || partsNum === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartUrlPartGet", "partsNum");
         }
+
+
 
 
 
@@ -3092,6 +3124,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3104,27 +3147,15 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Create presigned urls for multipart part S3 upload.
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileId 
      * @param multiPartS3UrlPartsSchema body
+     * @param appID 
+     * @param authToken 
      * @param temporary Use temporary file record
      */
-    public async filesV1AssetsAssetIdFilesFileIdMultipartUrlS3PartPost(appID: string, authToken: string, assetId: string, fileId: string, multiPartS3UrlPartsSchema: MultiPartS3UrlPartsSchema, temporary?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdMultipartUrlS3PartPost(assetId: string, fileId: string, multiPartS3UrlPartsSchema: MultiPartS3UrlPartsSchema, appID?: string, authToken?: string, temporary?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartUrlS3PartPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartUrlS3PartPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3142,6 +3173,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (multiPartS3UrlPartsSchema === null || multiPartS3UrlPartsSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdMultipartUrlS3PartPost", "multiPartS3UrlPartsSchema");
         }
+
+
 
 
 
@@ -3177,6 +3210,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3189,26 +3233,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Update file information
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileId 
      * @param fileSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFilesFileIdPatch(appID: string, authToken: string, assetId: string, fileId: string, fileSchema: FileSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdPatch(assetId: string, fileId: string, fileSchema: FileSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3226,6 +3258,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileSchema === null || fileSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdPatch", "fileSchema");
         }
+
+
 
 
         // Path Params
@@ -3255,6 +3289,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3267,26 +3312,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Update file information
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileId 
      * @param fileSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFilesFileIdPut(appID: string, authToken: string, assetId: string, fileId: string, fileSchema: FileSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdPut(assetId: string, fileId: string, fileSchema: FileSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdPut", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3304,6 +3337,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileSchema === null || fileSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdPut", "fileSchema");
         }
+
+
 
 
         // Path Params
@@ -3333,6 +3368,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3345,25 +3391,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_storages 
      * Trigger reindexing of a file
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFilesFileIdReindexPost(appID: string, authToken: string, assetId: string, fileId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdReindexPost(assetId: string, fileId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdReindexPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3375,6 +3409,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileId === null || fileId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdReindexPost", "fileId");
         }
+
+
 
 
         // Path Params
@@ -3393,6 +3429,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3405,26 +3452,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_create_transcode_jobs 
      * Create a transcode job for subtitle files
-     * @param authToken 
-     * @param appID 
      * @param assetId 
      * @param fileId 
+     * @param authToken 
+     * @param appID 
      * @param subtitleRequestSchema body
      */
-    public async filesV1AssetsAssetIdFilesFileIdSubtitlesPost(authToken: string, appID: string, assetId: string, fileId: string, subtitleRequestSchema?: SubtitleRequestSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesFileIdSubtitlesPost(assetId: string, fileId: string, authToken?: string, appID?: string, subtitleRequestSchema?: SubtitleRequestSchema, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdSubtitlesPost", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdSubtitlesPost", "appID");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3436,6 +3471,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileId === null || fileId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesFileIdSubtitlesPost", "fileId");
         }
+
+
 
 
 
@@ -3466,6 +3503,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3478,33 +3526,23 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_files 
      * Get all asset\'s files
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      * @param perPage The number of items for each page
      * @param generateSignedUrl Set to True if you do need a URL, this makes the request slower.
      * @param contentDisposition Set to attachment if you want a download link. Note that this will not create a download in asset history
      * @param lastId ID of a last file on previous page
      */
-    public async filesV1AssetsAssetIdFilesGet(appID: string, authToken: string, assetId: string, perPage?: number, generateSignedUrl?: boolean, contentDisposition?: string, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesGet(assetId: string, appID?: string, authToken?: string, perPage?: number, generateSignedUrl?: boolean, contentDisposition?: string, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesGet", "assetId");
         }
+
+
 
 
 
@@ -3546,6 +3584,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3558,25 +3607,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Create file and associate to asset
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileCreateSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFilesPost(appID: string, authToken: string, assetId: string, fileCreateSchema: FileCreateSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFilesPost(assetId: string, fileCreateSchema: FileCreateSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3588,6 +3625,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileCreateSchema === null || fileCreateSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFilesPost", "fileCreateSchema");
         }
+
+
 
 
         // Path Params
@@ -3616,6 +3655,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3628,26 +3678,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_archived_formats 
      * Delete archived format
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param formatId 
      * @param formatDeleteArchiveSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFormatsFormatIdArchiveDelete(appID: string, authToken: string, assetId: string, formatId: string, formatDeleteArchiveSchema: FormatDeleteArchiveSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsFormatIdArchiveDelete(assetId: string, formatId: string, formatDeleteArchiveSchema: FormatDeleteArchiveSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdArchiveDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdArchiveDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3665,6 +3703,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (formatDeleteArchiveSchema === null || formatDeleteArchiveSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdArchiveDelete", "formatDeleteArchiveSchema");
         }
+
+
 
 
         // Path Params
@@ -3694,6 +3734,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3706,26 +3757,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_archive_formats 
      * Archive format
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param formatId 
      * @param formatArchiveSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFormatsFormatIdArchivePost(appID: string, authToken: string, assetId: string, formatId: string, formatArchiveSchema: FormatArchiveSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsFormatIdArchivePost(assetId: string, formatId: string, formatArchiveSchema: FormatArchiveSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdArchivePost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdArchivePost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3743,6 +3782,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (formatArchiveSchema === null || formatArchiveSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdArchivePost", "formatArchiveSchema");
         }
+
+
 
 
         // Path Params
@@ -3772,6 +3813,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3784,26 +3836,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_formats 
      * Delete a component in a format
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param formatId 
      * @param componentId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdDelete(appID: string, authToken: string, assetId: string, formatId: string, componentId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdDelete(assetId: string, formatId: string, componentId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3823,6 +3863,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/files/v1/assets/{asset_id}/formats/{format_id}/components/{component_id}/'
             .replace('{' + 'asset_id' + '}', encodeURIComponent(String(assetId)))
@@ -3840,6 +3882,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3852,26 +3905,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_formats 
      * Get a component for a format in an asset
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param formatId 
      * @param componentId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdGet(appID: string, authToken: string, assetId: string, formatId: string, componentId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdGet(assetId: string, formatId: string, componentId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3891,6 +3932,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/files/v1/assets/{asset_id}/formats/{format_id}/components/{component_id}/'
             .replace('{' + 'asset_id' + '}', encodeURIComponent(String(assetId)))
@@ -3908,6 +3951,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3920,26 +3974,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_create_formats 
      * Update a component in a format
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param formatId 
      * @param componentId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdPut(appID: string, authToken: string, assetId: string, formatId: string, componentId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdPut(assetId: string, formatId: string, componentId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdComponentsComponentIdPut", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -3959,6 +4001,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/files/v1/assets/{asset_id}/formats/{format_id}/components/{component_id}/'
             .replace('{' + 'asset_id' + '}', encodeURIComponent(String(assetId)))
@@ -3976,6 +4020,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -3988,25 +4043,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_formats 
      * Get all components for a format in an asset
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param formatId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFormatsFormatIdComponentsGet(appID: string, authToken: string, assetId: string, formatId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsFormatIdComponentsGet(assetId: string, formatId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdComponentsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdComponentsGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -4018,6 +4061,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (formatId === null || formatId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdComponentsGet", "formatId");
         }
+
+
 
 
         // Path Params
@@ -4036,6 +4081,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4048,26 +4104,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_create_formats 
      * Add a new format component
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param formatId 
      * @param componentSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFormatsFormatIdComponentsPost(appID: string, authToken: string, assetId: string, formatId: string, componentSchema: ComponentSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsFormatIdComponentsPost(assetId: string, formatId: string, componentSchema: ComponentSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdComponentsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdComponentsPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -4085,6 +4129,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (componentSchema === null || componentSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdComponentsPost", "componentSchema");
         }
+
+
 
 
         // Path Params
@@ -4114,6 +4160,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4126,26 +4183,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_formats 
      * Delete asset\'s format
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param formatId 
+     * @param appID 
+     * @param authToken 
      * @param deleteImmediately Permanently delete format without sending it to the Recycle Bin
      */
-    public async filesV1AssetsAssetIdFormatsFormatIdDelete(appID: string, authToken: string, assetId: string, formatId: string, deleteImmediately?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsFormatIdDelete(assetId: string, formatId: string, appID?: string, authToken?: string, deleteImmediately?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -4157,6 +4202,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (formatId === null || formatId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdDelete", "formatId");
         }
+
+
 
 
 
@@ -4181,6 +4228,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4193,27 +4251,15 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_files 
      * Get all asset\'s file sets in a specific format
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param formatId 
+     * @param appID 
+     * @param authToken 
      * @param perPage The number of items for each page
      * @param lastId ID of a last file set on previous page
      */
-    public async filesV1AssetsAssetIdFormatsFormatIdFileSetsGet(appID: string, authToken: string, assetId: string, formatId: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsFormatIdFileSetsGet(assetId: string, formatId: string, appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdFileSetsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdFileSetsGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -4225,6 +4271,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (formatId === null || formatId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdFileSetsGet", "formatId");
         }
+
+
 
 
 
@@ -4255,6 +4303,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4267,25 +4326,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_files 
      * Get all file sets with matching format and storage method
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param formatId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFormatsFormatIdFileSetsSourcesGet(appID: string, authToken: string, assetId: string, formatId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsFormatIdFileSetsSourcesGet(assetId: string, formatId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdFileSetsSourcesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdFileSetsSourcesGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -4297,6 +4344,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (formatId === null || formatId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdFileSetsSourcesGet", "formatId");
         }
+
+
 
 
         // Path Params
@@ -4315,6 +4364,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4327,26 +4387,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_files 
      * Get all file sets with matching format and storage method
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param formatId 
      * @param storageMethod 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFormatsFormatIdFileSetsSourcesStorageMethodGet(appID: string, authToken: string, assetId: string, formatId: string, storageMethod: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsFormatIdFileSetsSourcesStorageMethodGet(assetId: string, formatId: string, storageMethod: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdFileSetsSourcesStorageMethodGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdFileSetsSourcesStorageMethodGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -4366,6 +4414,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/files/v1/assets/{asset_id}/formats/{format_id}/file_sets/sources/{storage_method}/'
             .replace('{' + 'asset_id' + '}', encodeURIComponent(String(assetId)))
@@ -4383,6 +4433,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4395,25 +4456,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_formats 
      * Get asset\'s format
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param formatId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFormatsFormatIdGet(appID: string, authToken: string, assetId: string, formatId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsFormatIdGet(assetId: string, formatId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -4425,6 +4474,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (formatId === null || formatId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdGet", "formatId");
         }
+
+
 
 
         // Path Params
@@ -4443,6 +4494,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4455,26 +4517,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_formats 
      * Update format information
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param formatId 
      * @param formatSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFormatsFormatIdPatch(appID: string, authToken: string, assetId: string, formatId: string, formatSchema: FormatSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsFormatIdPatch(assetId: string, formatId: string, formatSchema: FormatSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -4492,6 +4542,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (formatSchema === null || formatSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdPatch", "formatSchema");
         }
+
+
 
 
         // Path Params
@@ -4521,6 +4573,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4533,25 +4596,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_formats 
      * Purge deleted asset\'s format
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param formatId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFormatsFormatIdPurgeDelete(appID: string, authToken: string, assetId: string, formatId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsFormatIdPurgeDelete(assetId: string, formatId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdPurgeDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdPurgeDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -4563,6 +4614,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (formatId === null || formatId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdPurgeDelete", "formatId");
         }
+
+
 
 
         // Path Params
@@ -4581,6 +4634,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4593,26 +4657,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_formats 
      * Update format information
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param formatId 
      * @param formatSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFormatsFormatIdPut(appID: string, authToken: string, assetId: string, formatId: string, formatSchema: FormatSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsFormatIdPut(assetId: string, formatId: string, formatSchema: FormatSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdPut", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -4630,6 +4682,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (formatSchema === null || formatSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdPut", "formatSchema");
         }
+
+
 
 
         // Path Params
@@ -4659,6 +4713,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4671,26 +4736,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_restore_archived_formats 
      * Restore archived format
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param formatId 
      * @param formatRestoreSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFormatsFormatIdRestorePost(appID: string, authToken: string, assetId: string, formatId: string, formatRestoreSchema: FormatRestoreSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsFormatIdRestorePost(assetId: string, formatId: string, formatRestoreSchema: FormatRestoreSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdRestorePost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdRestorePost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -4708,6 +4761,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (formatRestoreSchema === null || formatRestoreSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdRestorePost", "formatRestoreSchema");
         }
+
+
 
 
         // Path Params
@@ -4737,6 +4792,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4749,25 +4815,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_formats 
      * Restore deleted asset\'s format
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param formatId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFormatsFormatIdRestorePut(appID: string, authToken: string, assetId: string, formatId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsFormatIdRestorePut(assetId: string, formatId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdRestorePut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdRestorePut", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -4779,6 +4833,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (formatId === null || formatId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdRestorePut", "formatId");
         }
+
+
 
 
         // Path Params
@@ -4797,6 +4853,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4809,28 +4876,16 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_files 
      * Get all asset\'s file sets in a specific format on a specific storage
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param formatId 
      * @param storageId 
+     * @param appID 
+     * @param authToken 
      * @param perPage The number of items for each page
      * @param lastId ID of a last file set on previous page
      */
-    public async filesV1AssetsAssetIdFormatsFormatIdStoragesStorageIdFileSetsGet(appID: string, authToken: string, assetId: string, formatId: string, storageId: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsFormatIdStoragesStorageIdFileSetsGet(assetId: string, formatId: string, storageId: string, appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdStoragesStorageIdFileSetsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdStoragesStorageIdFileSetsGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -4848,6 +4903,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsFormatIdStoragesStorageIdFileSetsGet", "storageId");
         }
+
+
 
 
 
@@ -4879,6 +4936,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4891,31 +4959,21 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_formats 
      * Get all asset\'s formats
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      * @param perPage The number of items for each page
      * @param lastId ID of a last format on previous page
      */
-    public async filesV1AssetsAssetIdFormatsGet(appID: string, authToken: string, assetId: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsGet(assetId: string, appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsGet", "assetId");
         }
+
+
 
 
 
@@ -4945,6 +5003,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -4957,25 +5026,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_formats 
      * Get asset\'s format
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param name 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFormatsNameGet(appID: string, authToken: string, assetId: string, name: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsNameGet(assetId: string, name: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsNameGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsNameGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -4987,6 +5044,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (name === null || name === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsNameGet", "name");
         }
+
+
 
 
         // Path Params
@@ -5005,6 +5064,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5017,25 +5087,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_formats 
      * Create format and associate to asset
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param formatSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdFormatsPost(appID: string, authToken: string, assetId: string, formatSchema: FormatSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdFormatsPost(assetId: string, formatSchema: FormatSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -5047,6 +5105,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (formatSchema === null || formatSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdFormatsPost", "formatSchema");
         }
+
+
 
 
         // Path Params
@@ -5075,6 +5135,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5087,34 +5158,24 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_assets 
      * Get all asset\'s keyframes
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      * @param perPage The number of items for each page
      * @param generateSignedUrl Set to false if you don\&#39;t need a URL, will speed things up
      * @param contentDisposition Set to attachment if you do not want a download link
      * @param lastId ID of a last keyframe on previous page
      * @param includeAllVersions If true return asset\&#39;s keyframes for all versions
      */
-    public async filesV1AssetsAssetIdKeyframesGet(appID: string, authToken: string, assetId: string, perPage?: number, generateSignedUrl?: boolean, contentDisposition?: string, lastId?: string, includeAllVersions?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdKeyframesGet(assetId: string, appID?: string, authToken?: string, perPage?: number, generateSignedUrl?: boolean, contentDisposition?: string, lastId?: string, includeAllVersions?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesGet", "assetId");
         }
+
+
 
 
 
@@ -5162,6 +5223,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5174,26 +5246,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_keyframes 
      * Delete asset\'s keyframe
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param keyframeId 
+     * @param appID 
+     * @param authToken 
      * @param keepPoster 
      */
-    public async filesV1AssetsAssetIdKeyframesKeyframeIdDelete(appID: string, authToken: string, assetId: string, keyframeId: string, keepPoster?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdKeyframesKeyframeIdDelete(assetId: string, keyframeId: string, appID?: string, authToken?: string, keepPoster?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesKeyframeIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesKeyframeIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -5205,6 +5265,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (keyframeId === null || keyframeId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesKeyframeIdDelete", "keyframeId");
         }
+
+
 
 
 
@@ -5229,6 +5291,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5241,26 +5314,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_assets 
      * Get asset\'s proxy
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param keyframeId 
+     * @param appID 
+     * @param authToken 
      * @param contentDisposition Set to attachment if you do not want a download link
      */
-    public async filesV1AssetsAssetIdKeyframesKeyframeIdGet(appID: string, authToken: string, assetId: string, keyframeId: string, contentDisposition?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdKeyframesKeyframeIdGet(assetId: string, keyframeId: string, appID?: string, authToken?: string, contentDisposition?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesKeyframeIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesKeyframeIdGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -5272,6 +5333,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (keyframeId === null || keyframeId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesKeyframeIdGet", "keyframeId");
         }
+
+
 
 
 
@@ -5296,6 +5359,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5308,26 +5382,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_keyframes 
      * Update keyframe information
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param keyframeId 
      * @param keyframeSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdKeyframesKeyframeIdPatch(appID: string, authToken: string, assetId: string, keyframeId: string, keyframeSchema: KeyframeSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdKeyframesKeyframeIdPatch(assetId: string, keyframeId: string, keyframeSchema: KeyframeSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesKeyframeIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesKeyframeIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -5345,6 +5407,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (keyframeSchema === null || keyframeSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesKeyframeIdPatch", "keyframeSchema");
         }
+
+
 
 
         // Path Params
@@ -5374,6 +5438,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5386,25 +5461,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_keyframes 
      * Make the keyframe link private
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param keyframeId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdKeyframesKeyframeIdPublicDelete(appID: string, authToken: string, assetId: string, keyframeId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdKeyframesKeyframeIdPublicDelete(assetId: string, keyframeId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesKeyframeIdPublicDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesKeyframeIdPublicDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -5416,6 +5479,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (keyframeId === null || keyframeId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesKeyframeIdPublicDelete", "keyframeId");
         }
+
+
 
 
         // Path Params
@@ -5434,6 +5499,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5446,25 +5522,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_keyframes 
      * Make the keyframe link public
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param keyframeId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdKeyframesKeyframeIdPublicPost(appID: string, authToken: string, assetId: string, keyframeId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdKeyframesKeyframeIdPublicPost(assetId: string, keyframeId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesKeyframeIdPublicPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesKeyframeIdPublicPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -5476,6 +5540,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (keyframeId === null || keyframeId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesKeyframeIdPublicPost", "keyframeId");
         }
+
+
 
 
         // Path Params
@@ -5494,6 +5560,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5506,26 +5583,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_keyframes 
      * Update keyframe information
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param keyframeId 
      * @param keyframeSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdKeyframesKeyframeIdPut(appID: string, authToken: string, assetId: string, keyframeId: string, keyframeSchema: KeyframeSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdKeyframesKeyframeIdPut(assetId: string, keyframeId: string, keyframeSchema: KeyframeSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesKeyframeIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesKeyframeIdPut", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -5543,6 +5608,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (keyframeSchema === null || keyframeSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesKeyframeIdPut", "keyframeSchema");
         }
+
+
 
 
         // Path Params
@@ -5572,6 +5639,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5584,26 +5662,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_keyframes 
      * Create keyframe and associate to asset
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param keyframeSchema body
+     * @param appID 
+     * @param authToken 
      * @param useGoogleResumableUpload Set to True to get a google resumable upload link
      */
-    public async filesV1AssetsAssetIdKeyframesPost(appID: string, authToken: string, assetId: string, keyframeSchema: KeyframeSchema, useGoogleResumableUpload?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdKeyframesPost(assetId: string, keyframeSchema: KeyframeSchema, appID?: string, authToken?: string, useGoogleResumableUpload?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -5615,6 +5681,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (keyframeSchema === null || keyframeSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdKeyframesPost", "keyframeSchema");
         }
+
+
 
 
 
@@ -5649,6 +5717,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5661,27 +5740,15 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_keyframes 
      * Create keyframe and associate to asset
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param storageMethod 
      * @param keyframeSchema body
+     * @param appID 
+     * @param authToken 
      * @param useGoogleResumableUpload Set to True to get a google resumable upload link
      */
-    public async filesV1AssetsAssetIdMethodStorageMethodKeyframesPost(appID: string, authToken: string, assetId: string, storageMethod: string, keyframeSchema: KeyframeSchema, useGoogleResumableUpload?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdMethodStorageMethodKeyframesPost(assetId: string, storageMethod: string, keyframeSchema: KeyframeSchema, appID?: string, authToken?: string, useGoogleResumableUpload?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdMethodStorageMethodKeyframesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdMethodStorageMethodKeyframesPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -5699,6 +5766,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (keyframeSchema === null || keyframeSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdMethodStorageMethodKeyframesPost", "keyframeSchema");
         }
+
+
 
 
 
@@ -5734,6 +5803,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5746,26 +5826,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_proxies 
      * Create proxy and associate to asset
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param storageMethod 
      * @param proxySchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdMethodStorageMethodProxiesPost(appID: string, authToken: string, assetId: string, storageMethod: string, proxySchema: ProxySchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdMethodStorageMethodProxiesPost(assetId: string, storageMethod: string, proxySchema: ProxySchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdMethodStorageMethodProxiesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdMethodStorageMethodProxiesPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -5783,6 +5851,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (proxySchema === null || proxySchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdMethodStorageMethodProxiesPost", "proxySchema");
         }
+
+
 
 
         // Path Params
@@ -5812,6 +5882,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5824,34 +5905,24 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_proxies 
      * Get all asset\'s proxies
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      * @param perPage The number of items for each page
      * @param generateSignedUrl Set to false if you don\&#39;t need a URL, will speed things up
      * @param contentDisposition Set to attachment if you want a download link
      * @param lastId ID of a last proxy on previous page
      * @param bypassUrlCache Set to true to get a new url for the file rather than using a cached url
      */
-    public async filesV1AssetsAssetIdProxiesGet(appID: string, authToken: string, assetId: string, perPage?: number, generateSignedUrl?: boolean, contentDisposition?: string, lastId?: string, bypassUrlCache?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdProxiesGet(assetId: string, appID?: string, authToken?: string, perPage?: number, generateSignedUrl?: boolean, contentDisposition?: string, lastId?: string, bypassUrlCache?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesGet", "assetId");
         }
+
+
 
 
 
@@ -5899,6 +5970,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5911,25 +5993,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_proxies 
      * Create proxy and associate to asset
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param proxySchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdProxiesPost(appID: string, authToken: string, assetId: string, proxySchema: ProxySchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdProxiesPost(assetId: string, proxySchema: ProxySchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -5941,6 +6011,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (proxySchema === null || proxySchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesPost", "proxySchema");
         }
+
+
 
 
         // Path Params
@@ -5969,6 +6041,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -5981,25 +6064,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_proxies 
      * Delete asset\'s proxy
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param proxyId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdProxiesProxyIdDelete(appID: string, authToken: string, assetId: string, proxyId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdProxiesProxyIdDelete(assetId: string, proxyId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -6011,6 +6082,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (proxyId === null || proxyId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdDelete", "proxyId");
         }
+
+
 
 
         // Path Params
@@ -6029,6 +6102,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6041,25 +6125,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_proxies 
      * Get asset\'s proxy download url
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param proxyId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdProxiesProxyIdDownloadUrlGet(appID: string, authToken: string, assetId: string, proxyId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdProxiesProxyIdDownloadUrlGet(assetId: string, proxyId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdDownloadUrlGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdDownloadUrlGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -6071,6 +6143,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (proxyId === null || proxyId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdDownloadUrlGet", "proxyId");
         }
+
+
 
 
         // Path Params
@@ -6089,6 +6163,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6101,26 +6186,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_proxies 
      * Get asset\'s proxy
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param proxyId 
+     * @param appID 
+     * @param authToken 
      * @param contentDisposition Set to attachment if you want a download link
      */
-    public async filesV1AssetsAssetIdProxiesProxyIdGet(appID: string, authToken: string, assetId: string, proxyId: string, contentDisposition?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdProxiesProxyIdGet(assetId: string, proxyId: string, appID?: string, authToken?: string, contentDisposition?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -6132,6 +6205,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (proxyId === null || proxyId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdGet", "proxyId");
         }
+
+
 
 
 
@@ -6156,6 +6231,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6168,26 +6254,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_create_transcode_jobs 
      * Create a transcode job for keyframes from a proxy
-     * @param authToken 
-     * @param appID 
      * @param assetId 
      * @param proxyId 
      * @param transcodeRequestSchema body
+     * @param authToken 
+     * @param appID 
      */
-    public async filesV1AssetsAssetIdProxiesProxyIdKeyframesPost(authToken: string, appID: string, assetId: string, proxyId: string, transcodeRequestSchema: TranscodeRequestSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdProxiesProxyIdKeyframesPost(assetId: string, proxyId: string, transcodeRequestSchema: TranscodeRequestSchema, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdKeyframesPost", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdKeyframesPost", "appID");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -6205,6 +6279,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (transcodeRequestSchema === null || transcodeRequestSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdKeyframesPost", "transcodeRequestSchema");
         }
+
+
 
 
         // Path Params
@@ -6234,6 +6310,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6246,26 +6333,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_proxies 
      * Cleanup S3 multipart upload
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param proxyId 
      * @param multipartUploadProxyCleanupSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdProxiesProxyIdMultipartCleanupPost(appID: string, authToken: string, assetId: string, proxyId: string, multipartUploadProxyCleanupSchema: MultipartUploadProxyCleanupSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdProxiesProxyIdMultipartCleanupPost(assetId: string, proxyId: string, multipartUploadProxyCleanupSchema: MultipartUploadProxyCleanupSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdMultipartCleanupPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdMultipartCleanupPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -6283,6 +6358,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (multipartUploadProxyCleanupSchema === null || multipartUploadProxyCleanupSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdMultipartCleanupPost", "multipartUploadProxyCleanupSchema");
         }
+
+
 
 
         // Path Params
@@ -6312,6 +6389,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6324,28 +6412,16 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_proxies 
      * Get presigned urls for S3 multipart upload.
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param proxyId 
      * @param uploadId Multipart UploadId
+     * @param appID 
+     * @param authToken 
      * @param type List of multipart upload urls of required type
      * @param maxPartNumber Maximum PartNumber that multipart upload has
      */
-    public async filesV1AssetsAssetIdProxiesProxyIdMultipartUrlGet(appID: string, authToken: string, assetId: string, proxyId: string, uploadId: string, type?: string, maxPartNumber?: number, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdProxiesProxyIdMultipartUrlGet(assetId: string, proxyId: string, uploadId: string, appID?: string, authToken?: string, type?: string, maxPartNumber?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdMultipartUrlGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdMultipartUrlGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -6363,6 +6439,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (uploadId === null || uploadId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdMultipartUrlGet", "uploadId");
         }
+
+
 
 
 
@@ -6398,6 +6476,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6410,29 +6499,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_proxies 
      * Get presigned urls for S3 multipart part upload.
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param proxyId 
      * @param partsNum Number of parts to upload
+     * @param appID 
+     * @param authToken 
      * @param uploadId Multipart UploadId
      * @param perPage The number of items for each page
      * @param page Which page number to fetch
      */
-    public async filesV1AssetsAssetIdProxiesProxyIdMultipartUrlPartGet(appID: string, authToken: string, assetId: string, proxyId: string, partsNum: number, uploadId?: string, perPage?: number, page?: number, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdProxiesProxyIdMultipartUrlPartGet(assetId: string, proxyId: string, partsNum: number, appID?: string, authToken?: string, uploadId?: string, perPage?: number, page?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdMultipartUrlPartGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdMultipartUrlPartGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -6450,6 +6527,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (partsNum === null || partsNum === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdMultipartUrlPartGet", "partsNum");
         }
+
+
 
 
 
@@ -6491,6 +6570,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6503,26 +6593,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_proxies 
      * Update proxy information
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param proxyId 
      * @param proxySchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdProxiesProxyIdPatch(appID: string, authToken: string, assetId: string, proxyId: string, proxySchema: ProxySchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdProxiesProxyIdPatch(assetId: string, proxyId: string, proxySchema: ProxySchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -6540,6 +6618,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (proxySchema === null || proxySchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdPatch", "proxySchema");
         }
+
+
 
 
         // Path Params
@@ -6569,6 +6649,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6581,25 +6672,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_proxies 
      * Make the proxy link private
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param proxyId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdProxiesProxyIdPublicDelete(appID: string, authToken: string, assetId: string, proxyId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdProxiesProxyIdPublicDelete(assetId: string, proxyId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdPublicDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdPublicDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -6611,6 +6690,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (proxyId === null || proxyId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdPublicDelete", "proxyId");
         }
+
+
 
 
         // Path Params
@@ -6629,6 +6710,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6641,25 +6733,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_proxies 
      * Make the proxy link public
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param proxyId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdProxiesProxyIdPublicPost(appID: string, authToken: string, assetId: string, proxyId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdProxiesProxyIdPublicPost(assetId: string, proxyId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdPublicPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdPublicPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -6671,6 +6751,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (proxyId === null || proxyId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdPublicPost", "proxyId");
         }
+
+
 
 
         // Path Params
@@ -6689,6 +6771,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6701,26 +6794,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_proxies 
      * Update proxy information
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param proxyId 
      * @param proxySchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdProxiesProxyIdPut(appID: string, authToken: string, assetId: string, proxyId: string, proxySchema: ProxySchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdProxiesProxyIdPut(assetId: string, proxyId: string, proxySchema: ProxySchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdPut", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -6738,6 +6819,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (proxySchema === null || proxySchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdProxiesProxyIdPut", "proxySchema");
         }
+
+
 
 
         // Path Params
@@ -6767,6 +6850,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6779,31 +6873,21 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_asset_subtitles 
      * Get all asset\'s subtitles
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      * @param perPage The number of items for each page
      * @param lastId ID of a last subtitle on previous page
      */
-    public async filesV1AssetsAssetIdSubtitlesGet(appID: string, authToken: string, assetId: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdSubtitlesGet(assetId: string, appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesGet", "assetId");
         }
+
+
 
 
 
@@ -6833,6 +6917,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6845,25 +6940,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_asset_subtitles 
      * Get asset\'s closed captions subtitle for a particular language
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param language 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdSubtitlesLanguageCcGet(appID: string, authToken: string, assetId: string, language: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdSubtitlesLanguageCcGet(assetId: string, language: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesLanguageCcGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesLanguageCcGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -6875,6 +6958,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (language === null || language === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesLanguageCcGet", "language");
         }
+
+
 
 
         // Path Params
@@ -6893,6 +6978,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6905,25 +7001,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_asset_subtitles 
      * Get asset\'s closed captions subtitle file for a particular language
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param language 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdSubtitlesLanguageCcWebvttGet(appID: string, authToken: string, assetId: string, language: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdSubtitlesLanguageCcWebvttGet(assetId: string, language: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesLanguageCcWebvttGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesLanguageCcWebvttGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -6935,6 +7019,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (language === null || language === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesLanguageCcWebvttGet", "language");
         }
+
+
 
 
         // Path Params
@@ -6953,6 +7039,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -6965,25 +7062,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_asset_subtitles 
      * Get asset\'s subtitle for a particular language
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param language 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdSubtitlesLanguageGet(appID: string, authToken: string, assetId: string, language: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdSubtitlesLanguageGet(assetId: string, language: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesLanguageGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesLanguageGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -6995,6 +7080,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (language === null || language === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesLanguageGet", "language");
         }
+
+
 
 
         // Path Params
@@ -7013,6 +7100,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7025,25 +7123,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_asset_subtitles 
      * Get asset\'s subtitle file for a particular language
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param language 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdSubtitlesLanguageWebvttGet(appID: string, authToken: string, assetId: string, language: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdSubtitlesLanguageWebvttGet(assetId: string, language: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesLanguageWebvttGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesLanguageWebvttGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -7055,6 +7141,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (language === null || language === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesLanguageWebvttGet", "language");
         }
+
+
 
 
         // Path Params
@@ -7073,6 +7161,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7085,25 +7184,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_asset_subtitles 
      * Create subtitle proxy and associate to asset
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param subtitleSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdSubtitlesPost(appID: string, authToken: string, assetId: string, subtitleSchema: SubtitleSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdSubtitlesPost(assetId: string, subtitleSchema: SubtitleSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -7115,6 +7202,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (subtitleSchema === null || subtitleSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesPost", "subtitleSchema");
         }
+
+
 
 
         // Path Params
@@ -7143,6 +7232,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7155,25 +7255,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_assets 
      * Delete asset\'s subtitle
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param subtitleId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdSubtitlesSubtitleIdCcDelete(appID: string, authToken: string, assetId: string, subtitleId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdSubtitlesSubtitleIdCcDelete(assetId: string, subtitleId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesSubtitleIdCcDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesSubtitleIdCcDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -7185,6 +7273,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (subtitleId === null || subtitleId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesSubtitleIdCcDelete", "subtitleId");
         }
+
+
 
 
         // Path Params
@@ -7203,6 +7293,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7215,25 +7316,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_assets 
      * Delete asset\'s subtitle
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param subtitleId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdSubtitlesSubtitleIdDelete(appID: string, authToken: string, assetId: string, subtitleId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdSubtitlesSubtitleIdDelete(assetId: string, subtitleId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesSubtitleIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesSubtitleIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -7245,6 +7334,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (subtitleId === null || subtitleId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesSubtitleIdDelete", "subtitleId");
         }
+
+
 
 
         // Path Params
@@ -7263,6 +7354,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7275,25 +7377,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_asset_subtitles 
      * Get asset\'s subtitle for a language
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param subtitleId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdSubtitlesSubtitleIdGet(appID: string, authToken: string, assetId: string, subtitleId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdSubtitlesSubtitleIdGet(assetId: string, subtitleId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesSubtitleIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesSubtitleIdGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -7305,6 +7395,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (subtitleId === null || subtitleId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesSubtitleIdGet", "subtitleId");
         }
+
+
 
 
         // Path Params
@@ -7323,6 +7415,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7335,26 +7438,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_asset_subtitles 
      * Update subtitle information
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param subtitleId 
      * @param subtitleSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdSubtitlesSubtitleIdPatch(appID: string, authToken: string, assetId: string, subtitleId: string, subtitleSchema: SubtitleSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdSubtitlesSubtitleIdPatch(assetId: string, subtitleId: string, subtitleSchema: SubtitleSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesSubtitleIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesSubtitleIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -7372,6 +7463,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (subtitleSchema === null || subtitleSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesSubtitleIdPatch", "subtitleSchema");
         }
+
+
 
 
         // Path Params
@@ -7401,6 +7494,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7413,26 +7517,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_asset_subtitles 
      * Update subtitle information
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param subtitleId 
      * @param subtitleSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdSubtitlesSubtitleIdPut(appID: string, authToken: string, assetId: string, subtitleId: string, subtitleSchema: SubtitleSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdSubtitlesSubtitleIdPut(assetId: string, subtitleId: string, subtitleSchema: SubtitleSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesSubtitleIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesSubtitleIdPut", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -7450,6 +7542,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (subtitleSchema === null || subtitleSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdSubtitlesSubtitleIdPut", "subtitleSchema");
         }
+
+
 
 
         // Path Params
@@ -7479,6 +7573,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7491,26 +7596,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_files 
      * Delete temporary file set with files
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileSetId 
+     * @param appID 
+     * @param authToken 
      * @param deleteCloudObjects 
      */
-    public async filesV1AssetsAssetIdTemporaryFileSetsFileSetIdDelete(appID: string, authToken: string, assetId: string, fileSetId: string, deleteCloudObjects?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdTemporaryFileSetsFileSetIdDelete(assetId: string, fileSetId: string, appID?: string, authToken?: string, deleteCloudObjects?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdTemporaryFileSetsFileSetIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdTemporaryFileSetsFileSetIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -7522,6 +7615,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileSetId === null || fileSetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdTemporaryFileSetsFileSetIdDelete", "fileSetId");
         }
+
+
 
 
 
@@ -7546,6 +7641,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7558,26 +7664,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_files 
      * Get files from a temporary file set
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileSetId 
+     * @param appID 
+     * @param authToken 
      * @param generateSignedUrl Set to false if you don\&#39;t need a URL, will speed things up
      */
-    public async filesV1AssetsAssetIdTemporaryFileSetsFileSetIdFilesGet(appID: string, authToken: string, assetId: string, fileSetId: string, generateSignedUrl?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdTemporaryFileSetsFileSetIdFilesGet(assetId: string, fileSetId: string, appID?: string, authToken?: string, generateSignedUrl?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdTemporaryFileSetsFileSetIdFilesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdTemporaryFileSetsFileSetIdFilesGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -7589,6 +7683,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileSetId === null || fileSetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdTemporaryFileSetsFileSetIdFilesGet", "fileSetId");
         }
+
+
 
 
 
@@ -7613,6 +7709,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7625,25 +7732,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Create temporary file set and associate to asset
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param temporaryFileSetSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdTemporaryFileSetsPost(appID: string, authToken: string, assetId: string, temporaryFileSetSchema: TemporaryFileSetSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdTemporaryFileSetsPost(assetId: string, temporaryFileSetSchema: TemporaryFileSetSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdTemporaryFileSetsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdTemporaryFileSetsPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -7655,6 +7750,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (temporaryFileSetSchema === null || temporaryFileSetSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdTemporaryFileSetsPost", "temporaryFileSetSchema");
         }
+
+
 
 
         // Path Params
@@ -7683,6 +7780,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7695,26 +7803,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Update temporary file\'s info
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileId 
      * @param fileSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdTemporaryFilesFileIdPatch(appID: string, authToken: string, assetId: string, fileId: string, fileSchema: FileSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdTemporaryFilesFileIdPatch(assetId: string, fileId: string, fileSchema: FileSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdTemporaryFilesFileIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdTemporaryFilesFileIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -7732,6 +7828,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileSchema === null || fileSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdTemporaryFilesFileIdPatch", "fileSchema");
         }
+
+
 
 
         // Path Params
@@ -7761,6 +7859,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7773,26 +7882,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Update temporary file\'s info
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileId 
      * @param fileSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdTemporaryFilesFileIdPut(appID: string, authToken: string, assetId: string, fileId: string, fileSchema: FileSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdTemporaryFilesFileIdPut(assetId: string, fileId: string, fileSchema: FileSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdTemporaryFilesFileIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdTemporaryFilesFileIdPut", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -7810,6 +7907,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileSchema === null || fileSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdTemporaryFilesFileIdPut", "fileSchema");
         }
+
+
 
 
         // Path Params
@@ -7839,6 +7938,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7851,26 +7961,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Create temporary transfer file for FILE storage transfers
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param fileSchema body
+     * @param appID 
+     * @param authToken 
      * @param store 
      */
-    public async filesV1AssetsAssetIdTemporaryFilesPost(appID: string, authToken: string, assetId: string, fileSchema: FileSchema, store?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdTemporaryFilesPost(assetId: string, fileSchema: FileSchema, appID?: string, authToken?: string, store?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdTemporaryFilesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdTemporaryFilesPost", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -7882,6 +7980,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileSchema === null || fileSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdTemporaryFilesPost", "fileSchema");
         }
+
+
 
 
 
@@ -7916,6 +8016,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7928,31 +8039,21 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_files 
      * Delete asset\'s file sets
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      * @param perPage The number of items for each page
      * @param lastId ID of a last file set on previous page
      */
-    public async filesV1AssetsAssetIdVersionsAllFileSetsDelete(appID: string, authToken: string, assetId: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdVersionsAllFileSetsDelete(assetId: string, appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsAllFileSetsDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsAllFileSetsDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsAllFileSetsDelete", "assetId");
         }
+
+
 
 
 
@@ -7982,6 +8083,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -7994,29 +8106,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_files 
      * Delete asset\'s files entries by version (Not the actual file, use DELETE file_set for that)
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      */
-    public async filesV1AssetsAssetIdVersionsAllFilesDelete(appID: string, authToken: string, assetId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdVersionsAllFilesDelete(assetId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsAllFilesDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsAllFilesDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsAllFilesDelete", "assetId");
         }
+
+
 
 
         // Path Params
@@ -8034,6 +8136,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8046,29 +8159,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_formats 
      * Delete asset\'s formats all versions
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      */
-    public async filesV1AssetsAssetIdVersionsAllFormatsDelete(appID: string, authToken: string, assetId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdVersionsAllFormatsDelete(assetId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsAllFormatsDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsAllFormatsDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsAllFormatsDelete", "assetId");
         }
+
+
 
 
         // Path Params
@@ -8086,6 +8189,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8098,29 +8212,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_keyframes 
      * Delete asset\'s keyframes all versions
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      */
-    public async filesV1AssetsAssetIdVersionsAllKeyframesDelete(appID: string, authToken: string, assetId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdVersionsAllKeyframesDelete(assetId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsAllKeyframesDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsAllKeyframesDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsAllKeyframesDelete", "assetId");
         }
+
+
 
 
         // Path Params
@@ -8138,6 +8242,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8150,29 +8265,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_proxies 
      * Delete asset\'s proxies all versions
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      */
-    public async filesV1AssetsAssetIdVersionsAllProxiesDelete(appID: string, authToken: string, assetId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdVersionsAllProxiesDelete(assetId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsAllProxiesDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsAllProxiesDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsAllProxiesDelete", "assetId");
         }
+
+
 
 
         // Path Params
@@ -8190,6 +8295,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8202,29 +8318,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_assets 
      * Delete asset\'s subtitles all versions
+     * @param assetId 
      * @param appID 
      * @param authToken 
-     * @param assetId 
      */
-    public async filesV1AssetsAssetIdVersionsAllSubtitlesDelete(appID: string, authToken: string, assetId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdVersionsAllSubtitlesDelete(assetId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsAllSubtitlesDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsAllSubtitlesDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsAllSubtitlesDelete", "assetId");
         }
+
+
 
 
         // Path Params
@@ -8242,6 +8348,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8254,27 +8371,15 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_files 
      * Delete asset\'s file sets by version
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
+     * @param appID 
+     * @param authToken 
      * @param perPage The number of items for each page
      * @param lastId ID of a last file set on previous page
      */
-    public async filesV1AssetsAssetIdVersionsVersionIdFileSetsDelete(appID: string, authToken: string, assetId: string, versionId: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdVersionsVersionIdFileSetsDelete(assetId: string, versionId: string, appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdFileSetsDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdFileSetsDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -8286,6 +8391,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (versionId === null || versionId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdFileSetsDelete", "versionId");
         }
+
+
 
 
 
@@ -8316,6 +8423,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8328,28 +8446,16 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_files 
      * Get all asset\'s file sets by version
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
+     * @param appID 
+     * @param authToken 
      * @param perPage The number of items for each page
      * @param lastId ID of a last file set on previous page
      * @param fileCount Set to true if you need a total amount of files in a file set
      */
-    public async filesV1AssetsAssetIdVersionsVersionIdFileSetsGet(appID: string, authToken: string, assetId: string, versionId: string, perPage?: number, lastId?: string, fileCount?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdVersionsVersionIdFileSetsGet(assetId: string, versionId: string, appID?: string, authToken?: string, perPage?: number, lastId?: string, fileCount?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdFileSetsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdFileSetsGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -8361,6 +8467,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (versionId === null || versionId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdFileSetsGet", "versionId");
         }
+
+
 
 
 
@@ -8397,6 +8505,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8409,25 +8528,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_files 
      * Delete asset\'s files entries by version (Not the actual file, use DELETE file_set for that)
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdVersionsVersionIdFilesDelete(appID: string, authToken: string, assetId: string, versionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdVersionsVersionIdFilesDelete(assetId: string, versionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdFilesDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdFilesDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -8439,6 +8546,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (versionId === null || versionId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdFilesDelete", "versionId");
         }
+
+
 
 
         // Path Params
@@ -8457,6 +8566,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8469,29 +8589,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_files 
      * Get all asset\'s files by version
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
+     * @param appID 
+     * @param authToken 
      * @param perPage The number of items for each page
      * @param generateSignedUrl Set to False if you do not need a URL, will slow things down otherwise
      * @param contentDisposition Set to attachment if you want a download link. Note that this will not create a download in asset history
      * @param lastId ID of a last file on previous page
      */
-    public async filesV1AssetsAssetIdVersionsVersionIdFilesGet(appID: string, authToken: string, assetId: string, versionId: string, perPage?: number, generateSignedUrl?: boolean, contentDisposition?: string, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdVersionsVersionIdFilesGet(assetId: string, versionId: string, appID?: string, authToken?: string, perPage?: number, generateSignedUrl?: boolean, contentDisposition?: string, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdFilesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdFilesGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -8503,6 +8611,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (versionId === null || versionId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdFilesGet", "versionId");
         }
+
+
 
 
 
@@ -8545,6 +8655,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8557,25 +8678,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_formats 
      * Delete asset\'s formats by version
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdVersionsVersionIdFormatsDelete(appID: string, authToken: string, assetId: string, versionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdVersionsVersionIdFormatsDelete(assetId: string, versionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdFormatsDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdFormatsDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -8587,6 +8696,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (versionId === null || versionId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdFormatsDelete", "versionId");
         }
+
+
 
 
         // Path Params
@@ -8605,6 +8716,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8617,27 +8739,15 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_formats 
      * Get all asset\'s formats by version
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
+     * @param appID 
+     * @param authToken 
      * @param perPage The number of items for each page
      * @param lastId ID of a last format on previous page
      */
-    public async filesV1AssetsAssetIdVersionsVersionIdFormatsGet(appID: string, authToken: string, assetId: string, versionId: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdVersionsVersionIdFormatsGet(assetId: string, versionId: string, appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdFormatsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdFormatsGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -8649,6 +8759,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (versionId === null || versionId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdFormatsGet", "versionId");
         }
+
+
 
 
 
@@ -8679,6 +8791,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8691,26 +8814,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_keyframes 
      * Delete asset\'s keyframes by version
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
+     * @param appID 
+     * @param authToken 
      * @param keepPoster 
      */
-    public async filesV1AssetsAssetIdVersionsVersionIdKeyframesDelete(appID: string, authToken: string, assetId: string, versionId: string, keepPoster?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdVersionsVersionIdKeyframesDelete(assetId: string, versionId: string, appID?: string, authToken?: string, keepPoster?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdKeyframesDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdKeyframesDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -8722,6 +8833,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (versionId === null || versionId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdKeyframesDelete", "versionId");
         }
+
+
 
 
 
@@ -8746,6 +8859,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8758,29 +8882,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_assets 
      * Get all asset\'s keyframes by version
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
+     * @param appID 
+     * @param authToken 
      * @param perPage The number of items for each page
      * @param generateSignedUrl Set to false if you don\&#39;t need a URL, will speed things up
      * @param contentDisposition Set to attachment if you do not want a download link
      * @param lastId ID of a last keyframe on previous page
      */
-    public async filesV1AssetsAssetIdVersionsVersionIdKeyframesGet(appID: string, authToken: string, assetId: string, versionId: string, perPage?: number, generateSignedUrl?: boolean, contentDisposition?: string, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdVersionsVersionIdKeyframesGet(assetId: string, versionId: string, appID?: string, authToken?: string, perPage?: number, generateSignedUrl?: boolean, contentDisposition?: string, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdKeyframesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdKeyframesGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -8792,6 +8904,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (versionId === null || versionId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdKeyframesGet", "versionId");
         }
+
+
 
 
 
@@ -8834,6 +8948,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8846,25 +8971,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_proxies 
      * Delete asset\'s proxies by version
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdVersionsVersionIdProxiesDelete(appID: string, authToken: string, assetId: string, versionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdVersionsVersionIdProxiesDelete(assetId: string, versionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdProxiesDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdProxiesDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -8876,6 +8989,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (versionId === null || versionId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdProxiesDelete", "versionId");
         }
+
+
 
 
         // Path Params
@@ -8894,6 +9009,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8906,29 +9032,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_proxies 
      * Get all asset\'s proxies by version
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
+     * @param appID 
+     * @param authToken 
      * @param perPage The number of items for each page
      * @param generateSignedUrl Set to false if you don\&#39;t need a URL, will speed things up
      * @param contentDisposition Set to attachment if you want a download link
      * @param lastId ID of a last proxy on previous page
      */
-    public async filesV1AssetsAssetIdVersionsVersionIdProxiesGet(appID: string, authToken: string, assetId: string, versionId: string, perPage?: number, generateSignedUrl?: boolean, contentDisposition?: string, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdVersionsVersionIdProxiesGet(assetId: string, versionId: string, appID?: string, authToken?: string, perPage?: number, generateSignedUrl?: boolean, contentDisposition?: string, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdProxiesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdProxiesGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -8940,6 +9054,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (versionId === null || versionId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdProxiesGet", "versionId");
         }
+
+
 
 
 
@@ -8982,6 +9098,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -8994,25 +9121,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_assets 
      * Delete asset\'s subtitles by version
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdVersionsVersionIdSubtitlesDelete(appID: string, authToken: string, assetId: string, versionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdVersionsVersionIdSubtitlesDelete(assetId: string, versionId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdSubtitlesDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdSubtitlesDelete", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -9024,6 +9139,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (versionId === null || versionId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdSubtitlesDelete", "versionId");
         }
+
+
 
 
         // Path Params
@@ -9042,6 +9159,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9054,27 +9182,15 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_asset_subtitles 
      * Get all asset\'s subtitles by version
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
+     * @param appID 
+     * @param authToken 
      * @param perPage The number of items for each page
      * @param lastId ID of a last subtitle on previous page
      */
-    public async filesV1AssetsAssetIdVersionsVersionIdSubtitlesGet(appID: string, authToken: string, assetId: string, versionId: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdVersionsVersionIdSubtitlesGet(assetId: string, versionId: string, appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdSubtitlesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdSubtitlesGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -9086,6 +9202,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (versionId === null || versionId === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdSubtitlesGet", "versionId");
         }
+
+
 
 
 
@@ -9116,6 +9234,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9128,26 +9257,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_asset_subtitles 
      * Get asset\'s closed captions subtitle file for a particular language by version
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
      * @param language 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdVersionsVersionIdSubtitlesLanguageCcWebvttGet(appID: string, authToken: string, assetId: string, versionId: string, language: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdVersionsVersionIdSubtitlesLanguageCcWebvttGet(assetId: string, versionId: string, language: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdSubtitlesLanguageCcWebvttGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdSubtitlesLanguageCcWebvttGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -9167,6 +9284,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/files/v1/assets/{asset_id}/versions/{version_id}/subtitles/{language}/cc/webvtt/'
             .replace('{' + 'asset_id' + '}', encodeURIComponent(String(assetId)))
@@ -9184,6 +9303,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9196,26 +9326,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_asset_subtitles 
      * Get asset\'s subtitle file for a particular language by version
-     * @param appID 
-     * @param authToken 
      * @param assetId 
      * @param versionId 
      * @param language 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1AssetsAssetIdVersionsVersionIdSubtitlesLanguageWebvttGet(appID: string, authToken: string, assetId: string, versionId: string, language: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsAssetIdVersionsVersionIdSubtitlesLanguageWebvttGet(assetId: string, versionId: string, language: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdSubtitlesLanguageWebvttGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsAssetIdVersionsVersionIdSubtitlesLanguageWebvttGet", "authToken");
-        }
-
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
@@ -9235,6 +9353,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
+
         // Path Params
         const localVarPath = '/files/v1/assets/{asset_id}/versions/{version_id}/subtitles/{language}/webvtt/'
             .replace('{' + 'asset_id' + '}', encodeURIComponent(String(assetId)))
@@ -9252,6 +9372,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9264,29 +9395,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_create_transcode_jobs 
      * Create a transcode job for proxy and keyframes generation of multiple assets
+     * @param bulkTranscodeSchema body
      * @param authToken 
      * @param appID 
-     * @param bulkTranscodeSchema body
      */
-    public async filesV1AssetsBulkKeyframesPost(authToken: string, appID: string, bulkTranscodeSchema: BulkTranscodeSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsBulkKeyframesPost(bulkTranscodeSchema: BulkTranscodeSchema, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsBulkKeyframesPost", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsBulkKeyframesPost", "appID");
-        }
-
 
         // verify required parameter 'bulkTranscodeSchema' is not null or undefined
         if (bulkTranscodeSchema === null || bulkTranscodeSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsBulkKeyframesPost", "bulkTranscodeSchema");
         }
+
+
 
 
         // Path Params
@@ -9314,6 +9435,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9326,19 +9458,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_exports 
      * Export multiple assets to export location
-     * @param appID 
      * @param exportLocationId 
      * @param assetBatchExportSchema body
+     * @param appID 
      * @param allowHostTransfer Enable transfer through iconik host (creates egress)
      */
-    public async filesV1AssetsExportLocationsExportLocationIdPost(appID: string, exportLocationId: string, assetBatchExportSchema: AssetBatchExportSchema, allowHostTransfer?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1AssetsExportLocationsExportLocationIdPost(exportLocationId: string, assetBatchExportSchema: AssetBatchExportSchema, appID?: string, allowHostTransfer?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1AssetsExportLocationsExportLocationIdPost", "appID");
-        }
-
 
         // verify required parameter 'exportLocationId' is not null or undefined
         if (exportLocationId === null || exportLocationId === undefined) {
@@ -9350,6 +9476,7 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (assetBatchExportSchema === null || assetBatchExportSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1AssetsExportLocationsExportLocationIdPost", "assetBatchExportSchema");
         }
+
 
 
 
@@ -9381,6 +9508,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9393,26 +9531,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_keyframes 
      * Set keyframe of type poster as collection keyframe
-     * @param appID 
-     * @param authToken 
      * @param collectionId 
      * @param posterId 
+     * @param appID 
+     * @param authToken 
      * @param overwrite set to false to keep current custom_poster and custom_keyframe on asset
      */
-    public async filesV1CollectionsCollectionIdCustomKeyframePosterIdPost(appID: string, authToken: string, collectionId: string, posterId: string, overwrite?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1CollectionsCollectionIdCustomKeyframePosterIdPost(collectionId: string, posterId: string, appID?: string, authToken?: string, overwrite?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdCustomKeyframePosterIdPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdCustomKeyframePosterIdPost", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
@@ -9424,6 +9550,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (posterId === null || posterId === undefined) {
             throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdCustomKeyframePosterIdPost", "posterId");
         }
+
+
 
 
 
@@ -9448,6 +9576,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9460,27 +9599,15 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_exports 
      * Export collection assets to export location
-     * @param appID 
-     * @param authToken 
      * @param collectionId 
      * @param exportLocationId 
      * @param collectionExportSchema body
+     * @param appID 
+     * @param authToken 
      * @param allowHostTransfer Enable transfer through iconik host (creates egress)
      */
-    public async filesV1CollectionsCollectionIdExportLocationsExportLocationIdPost(appID: string, authToken: string, collectionId: string, exportLocationId: string, collectionExportSchema: CollectionExportSchema, allowHostTransfer?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1CollectionsCollectionIdExportLocationsExportLocationIdPost(collectionId: string, exportLocationId: string, collectionExportSchema: CollectionExportSchema, appID?: string, authToken?: string, allowHostTransfer?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdExportLocationsExportLocationIdPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdExportLocationsExportLocationIdPost", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
@@ -9498,6 +9625,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (collectionExportSchema === null || collectionExportSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdExportLocationsExportLocationIdPost", "collectionExportSchema");
         }
+
+
 
 
 
@@ -9533,6 +9662,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9545,32 +9685,22 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_collections 
      * Get all collection\'s keyframes
+     * @param collectionId 
      * @param appID 
      * @param authToken 
-     * @param collectionId 
      * @param perPage The number of items for each page
      * @param generateSignedUrl Set to false if you don\&#39;t need a URL, will speed things up
      * @param lastId ID of a last collection keyframe on previous page
      */
-    public async filesV1CollectionsCollectionIdKeyframesGet(appID: string, authToken: string, collectionId: string, perPage?: number, generateSignedUrl?: boolean, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1CollectionsCollectionIdKeyframesGet(collectionId: string, appID?: string, authToken?: string, perPage?: number, generateSignedUrl?: boolean, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdKeyframesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdKeyframesGet", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
             throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdKeyframesGet", "collectionId");
         }
+
+
 
 
 
@@ -9606,6 +9736,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9618,26 +9759,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_keyframes 
      * Delete collection\'s keyframe
-     * @param appID 
-     * @param authToken 
      * @param collectionId 
      * @param keyframeId 
+     * @param appID 
+     * @param authToken 
      * @param regenerateKeyframes set to true to force a regeneration of default keyframes
      */
-    public async filesV1CollectionsCollectionIdKeyframesKeyframeIdDelete(appID: string, authToken: string, collectionId: string, keyframeId: string, regenerateKeyframes?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1CollectionsCollectionIdKeyframesKeyframeIdDelete(collectionId: string, keyframeId: string, appID?: string, authToken?: string, regenerateKeyframes?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdKeyframesKeyframeIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdKeyframesKeyframeIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
@@ -9649,6 +9778,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (keyframeId === null || keyframeId === undefined) {
             throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdKeyframesKeyframeIdDelete", "keyframeId");
         }
+
+
 
 
 
@@ -9673,6 +9804,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9685,25 +9827,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_collections 
      * Get collection\'s proxy
-     * @param appID 
-     * @param authToken 
      * @param collectionId 
      * @param keyframeId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1CollectionsCollectionIdKeyframesKeyframeIdGet(appID: string, authToken: string, collectionId: string, keyframeId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1CollectionsCollectionIdKeyframesKeyframeIdGet(collectionId: string, keyframeId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdKeyframesKeyframeIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdKeyframesKeyframeIdGet", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
@@ -9715,6 +9845,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (keyframeId === null || keyframeId === undefined) {
             throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdKeyframesKeyframeIdGet", "keyframeId");
         }
+
+
 
 
         // Path Params
@@ -9733,6 +9865,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9745,26 +9888,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_keyframes 
      * Update keyframe information
-     * @param appID 
-     * @param authToken 
      * @param collectionId 
      * @param keyframeId 
      * @param collectionKeyframeSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1CollectionsCollectionIdKeyframesKeyframeIdPatch(appID: string, authToken: string, collectionId: string, keyframeId: string, collectionKeyframeSchema: CollectionKeyframeSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1CollectionsCollectionIdKeyframesKeyframeIdPatch(collectionId: string, keyframeId: string, collectionKeyframeSchema: CollectionKeyframeSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdKeyframesKeyframeIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdKeyframesKeyframeIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
@@ -9782,6 +9913,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (collectionKeyframeSchema === null || collectionKeyframeSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdKeyframesKeyframeIdPatch", "collectionKeyframeSchema");
         }
+
+
 
 
         // Path Params
@@ -9811,6 +9944,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9823,26 +9967,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_keyframes 
      * Update keyframe information
-     * @param appID 
-     * @param authToken 
      * @param collectionId 
      * @param keyframeId 
      * @param collectionKeyframeSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1CollectionsCollectionIdKeyframesKeyframeIdPut(appID: string, authToken: string, collectionId: string, keyframeId: string, collectionKeyframeSchema: CollectionKeyframeSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1CollectionsCollectionIdKeyframesKeyframeIdPut(collectionId: string, keyframeId: string, collectionKeyframeSchema: CollectionKeyframeSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdKeyframesKeyframeIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdKeyframesKeyframeIdPut", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
@@ -9860,6 +9992,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (collectionKeyframeSchema === null || collectionKeyframeSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdKeyframesKeyframeIdPut", "collectionKeyframeSchema");
         }
+
+
 
 
         // Path Params
@@ -9889,6 +10023,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9901,25 +10046,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_keyframes 
      * Create keyframe and associate to collection
-     * @param appID 
-     * @param authToken 
      * @param collectionId 
      * @param collectionKeyframeSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1CollectionsCollectionIdKeyframesPost(appID: string, authToken: string, collectionId: string, collectionKeyframeSchema: CollectionKeyframeSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1CollectionsCollectionIdKeyframesPost(collectionId: string, collectionKeyframeSchema: CollectionKeyframeSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdKeyframesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdKeyframesPost", "authToken");
-        }
-
 
         // verify required parameter 'collectionId' is not null or undefined
         if (collectionId === null || collectionId === undefined) {
@@ -9931,6 +10064,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (collectionKeyframeSchema === null || collectionKeyframeSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1CollectionsCollectionIdKeyframesPost", "collectionKeyframeSchema");
         }
+
+
 
 
         // Path Params
@@ -9959,6 +10094,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -9971,29 +10117,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Restore file sets from delete queue
+     * @param deleteQueueSchema body
      * @param appID 
      * @param authToken 
-     * @param deleteQueueSchema body
      */
-    public async filesV1DeleteQueueFileSetsDelete(appID: string, authToken: string, deleteQueueSchema: DeleteQueueSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1DeleteQueueFileSetsDelete(deleteQueueSchema: DeleteQueueSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1DeleteQueueFileSetsDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1DeleteQueueFileSetsDelete", "authToken");
-        }
-
 
         // verify required parameter 'deleteQueueSchema' is not null or undefined
         if (deleteQueueSchema === null || deleteQueueSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1DeleteQueueFileSetsDelete", "deleteQueueSchema");
         }
+
+
 
 
         // Path Params
@@ -10021,6 +10157,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -10041,19 +10188,9 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
      * @param query Search using query
      * @param fieldName filter by field_name
      */
-    public async filesV1DeleteQueueFileSetsGet(appID: string, authToken: string, perPage?: number, page?: number, sort?: string, query?: string, fieldName?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1DeleteQueueFileSetsGet(appID?: string, authToken?: string, perPage?: number, page?: number, sort?: string, query?: string, fieldName?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1DeleteQueueFileSetsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1DeleteQueueFileSetsGet", "authToken");
-        }
 
 
 
@@ -10100,6 +10237,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -10115,19 +10263,9 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async filesV1DeleteQueueFileSetsPurgeAllPost(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1DeleteQueueFileSetsPurgeAllPost(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1DeleteQueueFileSetsPurgeAllPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1DeleteQueueFileSetsPurgeAllPost", "authToken");
-        }
 
 
         // Path Params
@@ -10144,6 +10282,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -10156,29 +10305,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_purge_files 
      * Purge file sets from delete queue (Permanently delete)
+     * @param deleteQueueSchema body
      * @param appID 
      * @param authToken 
-     * @param deleteQueueSchema body
      */
-    public async filesV1DeleteQueueFileSetsPurgePost(appID: string, authToken: string, deleteQueueSchema: DeleteQueueSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1DeleteQueueFileSetsPurgePost(deleteQueueSchema: DeleteQueueSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1DeleteQueueFileSetsPurgePost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1DeleteQueueFileSetsPurgePost", "authToken");
-        }
-
 
         // verify required parameter 'deleteQueueSchema' is not null or undefined
         if (deleteQueueSchema === null || deleteQueueSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1DeleteQueueFileSetsPurgePost", "deleteQueueSchema");
         }
+
+
 
 
         // Path Params
@@ -10206,6 +10345,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -10218,29 +10368,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_formats 
      * Restore formats from delete queue
+     * @param deleteQueueSchema body
      * @param appID 
      * @param authToken 
-     * @param deleteQueueSchema body
      */
-    public async filesV1DeleteQueueFormatsDelete(appID: string, authToken: string, deleteQueueSchema: DeleteQueueSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1DeleteQueueFormatsDelete(deleteQueueSchema: DeleteQueueSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1DeleteQueueFormatsDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1DeleteQueueFormatsDelete", "authToken");
-        }
-
 
         // verify required parameter 'deleteQueueSchema' is not null or undefined
         if (deleteQueueSchema === null || deleteQueueSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1DeleteQueueFormatsDelete", "deleteQueueSchema");
         }
+
+
 
 
         // Path Params
@@ -10268,6 +10408,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -10288,19 +10439,9 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
      * @param query Search using query
      * @param fieldName filter by field_name
      */
-    public async filesV1DeleteQueueFormatsGet(appID: string, authToken: string, perPage?: number, page?: number, sort?: string, query?: string, fieldName?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1DeleteQueueFormatsGet(appID?: string, authToken?: string, perPage?: number, page?: number, sort?: string, query?: string, fieldName?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1DeleteQueueFormatsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1DeleteQueueFormatsGet", "authToken");
-        }
 
 
 
@@ -10347,6 +10488,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -10362,19 +10514,9 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async filesV1DeleteQueueFormatsPurgeAllPost(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1DeleteQueueFormatsPurgeAllPost(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1DeleteQueueFormatsPurgeAllPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1DeleteQueueFormatsPurgeAllPost", "authToken");
-        }
 
 
         // Path Params
@@ -10391,6 +10533,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -10403,29 +10556,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_purge_formats 
      * Purge formats from delete queue (Permanently delete)
+     * @param deleteQueueSchema body
      * @param appID 
      * @param authToken 
-     * @param deleteQueueSchema body
      */
-    public async filesV1DeleteQueueFormatsPurgePost(appID: string, authToken: string, deleteQueueSchema: DeleteQueueSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1DeleteQueueFormatsPurgePost(deleteQueueSchema: DeleteQueueSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1DeleteQueueFormatsPurgePost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1DeleteQueueFormatsPurgePost", "authToken");
-        }
-
 
         // verify required parameter 'deleteQueueSchema' is not null or undefined
         if (deleteQueueSchema === null || deleteQueueSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1DeleteQueueFormatsPurgePost", "deleteQueueSchema");
         }
+
+
 
 
         // Path Params
@@ -10453,6 +10596,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -10465,26 +10619,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_exports 
      * Export multiple objects to export location
-     * @param appID 
-     * @param authToken 
      * @param exportLocationId 
      * @param bulkFilesetExportSchema body
+     * @param appID 
+     * @param authToken 
      * @param allowHostTransfer Enable transfer through iconik host (creates egress)
      */
-    public async filesV1ExportLocationsExportLocationIdBulkExportPost(appID: string, authToken: string, exportLocationId: string, bulkFilesetExportSchema: BulkFilesetExportSchema, allowHostTransfer?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1ExportLocationsExportLocationIdBulkExportPost(exportLocationId: string, bulkFilesetExportSchema: BulkFilesetExportSchema, appID?: string, authToken?: string, allowHostTransfer?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1ExportLocationsExportLocationIdBulkExportPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1ExportLocationsExportLocationIdBulkExportPost", "authToken");
-        }
-
 
         // verify required parameter 'exportLocationId' is not null or undefined
         if (exportLocationId === null || exportLocationId === undefined) {
@@ -10496,6 +10638,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (bulkFilesetExportSchema === null || bulkFilesetExportSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1ExportLocationsExportLocationIdBulkExportPost", "bulkFilesetExportSchema");
         }
+
+
 
 
 
@@ -10530,6 +10674,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -10542,29 +10697,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_export_locations 
      * Delete a particular export_location by id
+     * @param exportLocationId 
      * @param appID 
      * @param authToken 
-     * @param exportLocationId 
      */
-    public async filesV1ExportLocationsExportLocationIdDelete(appID: string, authToken: string, exportLocationId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1ExportLocationsExportLocationIdDelete(exportLocationId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1ExportLocationsExportLocationIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1ExportLocationsExportLocationIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'exportLocationId' is not null or undefined
         if (exportLocationId === null || exportLocationId === undefined) {
             throw new RequiredError("FilesApi", "filesV1ExportLocationsExportLocationIdDelete", "exportLocationId");
         }
+
+
 
 
         // Path Params
@@ -10582,6 +10727,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -10594,29 +10750,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_export_locations 
      * Returns a particular export_location by id
+     * @param exportLocationId 
      * @param appID 
      * @param authToken 
-     * @param exportLocationId 
      */
-    public async filesV1ExportLocationsExportLocationIdGet(appID: string, authToken: string, exportLocationId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1ExportLocationsExportLocationIdGet(exportLocationId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1ExportLocationsExportLocationIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1ExportLocationsExportLocationIdGet", "authToken");
-        }
-
 
         // verify required parameter 'exportLocationId' is not null or undefined
         if (exportLocationId === null || exportLocationId === undefined) {
             throw new RequiredError("FilesApi", "filesV1ExportLocationsExportLocationIdGet", "exportLocationId");
         }
+
+
 
 
         // Path Params
@@ -10634,6 +10780,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -10646,25 +10803,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_export_locations 
      * Update export_location
-     * @param appID 
-     * @param authToken 
      * @param exportLocationId 
      * @param exportLocationSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1ExportLocationsExportLocationIdPatch(appID: string, authToken: string, exportLocationId: string, exportLocationSchema: ExportLocationSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1ExportLocationsExportLocationIdPatch(exportLocationId: string, exportLocationSchema: ExportLocationSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1ExportLocationsExportLocationIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1ExportLocationsExportLocationIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'exportLocationId' is not null or undefined
         if (exportLocationId === null || exportLocationId === undefined) {
@@ -10676,6 +10821,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (exportLocationSchema === null || exportLocationSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1ExportLocationsExportLocationIdPatch", "exportLocationSchema");
         }
+
+
 
 
         // Path Params
@@ -10704,6 +10851,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -10716,25 +10874,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_export_locations 
      * Update export_location
-     * @param appID 
-     * @param authToken 
      * @param exportLocationId 
      * @param exportLocationSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1ExportLocationsExportLocationIdPut(appID: string, authToken: string, exportLocationId: string, exportLocationSchema: ExportLocationSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1ExportLocationsExportLocationIdPut(exportLocationId: string, exportLocationSchema: ExportLocationSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1ExportLocationsExportLocationIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1ExportLocationsExportLocationIdPut", "authToken");
-        }
-
 
         // verify required parameter 'exportLocationId' is not null or undefined
         if (exportLocationId === null || exportLocationId === undefined) {
@@ -10746,6 +10892,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (exportLocationSchema === null || exportLocationSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1ExportLocationsExportLocationIdPut", "exportLocationSchema");
         }
+
+
 
 
         // Path Params
@@ -10774,6 +10922,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -10786,29 +10945,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_export_locations 
      * Trigger reindexing of a export location
+     * @param exportLocationId 
      * @param appID 
      * @param authToken 
-     * @param exportLocationId 
      */
-    public async filesV1ExportLocationsExportLocationIdReindexPost(appID: string, authToken: string, exportLocationId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1ExportLocationsExportLocationIdReindexPost(exportLocationId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1ExportLocationsExportLocationIdReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1ExportLocationsExportLocationIdReindexPost", "authToken");
-        }
-
 
         // verify required parameter 'exportLocationId' is not null or undefined
         if (exportLocationId === null || exportLocationId === undefined) {
             throw new RequiredError("FilesApi", "filesV1ExportLocationsExportLocationIdReindexPost", "exportLocationId");
         }
+
+
 
 
         // Path Params
@@ -10826,6 +10975,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -10846,19 +11006,9 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
      * @param lastId ID of a last export_location on previous page
      * @param sort A comma separated list of fieldnames with order. For example - name,asc;id,desc
      */
-    public async filesV1ExportLocationsGet(appID: string, authToken: string, query?: string, ids?: string, perPage?: number, lastId?: string, sort?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1ExportLocationsGet(appID?: string, authToken?: string, query?: string, ids?: string, perPage?: number, lastId?: string, sort?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1ExportLocationsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1ExportLocationsGet", "authToken");
-        }
 
 
 
@@ -10905,6 +11055,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -10917,29 +11078,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_export_locations 
      * Create a new export_location
+     * @param exportLocationSchema body
      * @param appID 
      * @param authToken 
-     * @param exportLocationSchema body
      */
-    public async filesV1ExportLocationsPost(appID: string, authToken: string, exportLocationSchema: ExportLocationSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1ExportLocationsPost(exportLocationSchema: ExportLocationSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1ExportLocationsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1ExportLocationsPost", "authToken");
-        }
-
 
         // verify required parameter 'exportLocationSchema' is not null or undefined
         if (exportLocationSchema === null || exportLocationSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1ExportLocationsPost", "exportLocationSchema");
         }
+
+
 
 
         // Path Params
@@ -10967,6 +11118,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -10979,26 +11141,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_files - can_write_transfers 
      * Queue export job completion between local storages
-     * @param authToken 
-     * @param appID 
      * @param fileSetId 
      * @param storageId Destination storage_id
      * @param completeExportToLocalStorageSchema body
+     * @param authToken 
+     * @param appID 
      */
-    public async filesV1ExportsTemporaryFileSetsFileSetIdStoragesStorageIdPost(authToken: string, appID: string, fileSetId: string, storageId: string, completeExportToLocalStorageSchema: CompleteExportToLocalStorageSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1ExportsTemporaryFileSetsFileSetIdStoragesStorageIdPost(fileSetId: string, storageId: string, completeExportToLocalStorageSchema: CompleteExportToLocalStorageSchema, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1ExportsTemporaryFileSetsFileSetIdStoragesStorageIdPost", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1ExportsTemporaryFileSetsFileSetIdStoragesStorageIdPost", "appID");
-        }
-
 
         // verify required parameter 'fileSetId' is not null or undefined
         if (fileSetId === null || fileSetId === undefined) {
@@ -11016,6 +11166,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (completeExportToLocalStorageSchema === null || completeExportToLocalStorageSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1ExportsTemporaryFileSetsFileSetIdStoragesStorageIdPost", "completeExportToLocalStorageSchema");
         }
+
+
 
 
         // Path Params
@@ -11045,6 +11197,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -11057,30 +11220,20 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_files 
      * Get files from a file set
+     * @param fileSetId 
      * @param appID 
      * @param authToken 
-     * @param fileSetId 
      * @param generateSignedUrl Set to false if you don\&#39;t need a URL, will speed things up
      */
-    public async filesV1FileSetsFileSetIdFilesGet(appID: string, authToken: string, fileSetId: string, generateSignedUrl?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1FileSetsFileSetIdFilesGet(fileSetId: string, appID?: string, authToken?: string, generateSignedUrl?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FileSetsFileSetIdFilesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FileSetsFileSetIdFilesGet", "authToken");
-        }
-
 
         // verify required parameter 'fileSetId' is not null or undefined
         if (fileSetId === null || fileSetId === undefined) {
             throw new RequiredError("FilesApi", "filesV1FileSetsFileSetIdFilesGet", "fileSetId");
         }
+
+
 
 
 
@@ -11104,6 +11257,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -11116,27 +11280,15 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_files - can_write_transfers 
      * Queue copying of a file set with files from one storage to another
-     * @param authToken 
-     * @param appID 
      * @param fileSetId 
      * @param storageId Destination storage_id
      * @param transferFromStorageSchema body
+     * @param authToken 
+     * @param appID 
      * @param allowHostTransfer Enable transfer through iconik host (creates egress)
      */
-    public async filesV1FileSetsFileSetIdStoragesStorageIdPost(authToken: string, appID: string, fileSetId: string, storageId: string, transferFromStorageSchema: TransferFromStorageSchema, allowHostTransfer?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1FileSetsFileSetIdStoragesStorageIdPost(fileSetId: string, storageId: string, transferFromStorageSchema: TransferFromStorageSchema, authToken?: string, appID?: string, allowHostTransfer?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FileSetsFileSetIdStoragesStorageIdPost", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FileSetsFileSetIdStoragesStorageIdPost", "appID");
-        }
-
 
         // verify required parameter 'fileSetId' is not null or undefined
         if (fileSetId === null || fileSetId === undefined) {
@@ -11154,6 +11306,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (transferFromStorageSchema === null || transferFromStorageSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1FileSetsFileSetIdStoragesStorageIdPost", "transferFromStorageSchema");
         }
+
+
 
 
 
@@ -11189,6 +11343,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -11201,26 +11366,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_transfers 
      * Delete file set transfer after handling it
-     * @param authToken 
-     * @param appID 
      * @param fileSetId 
      * @param storageId 
+     * @param authToken 
+     * @param appID 
      * @param failed 
      */
-    public async filesV1FileSetsFileSetIdTransfersFromStorageIdDelete(authToken: string, appID: string, fileSetId: string, storageId: string, failed?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1FileSetsFileSetIdTransfersFromStorageIdDelete(fileSetId: string, storageId: string, authToken?: string, appID?: string, failed?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FileSetsFileSetIdTransfersFromStorageIdDelete", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FileSetsFileSetIdTransfersFromStorageIdDelete", "appID");
-        }
-
 
         // verify required parameter 'fileSetId' is not null or undefined
         if (fileSetId === null || fileSetId === undefined) {
@@ -11232,6 +11385,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1FileSetsFileSetIdTransfersFromStorageIdDelete", "storageId");
         }
+
+
 
 
 
@@ -11256,6 +11411,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -11268,26 +11434,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_transfers 
      * Delete file set transfer after handling it
-     * @param authToken 
-     * @param appID 
      * @param fileSetId 
      * @param storageId 
+     * @param authToken 
+     * @param appID 
      * @param failed 
      */
-    public async filesV1FileSetsFileSetIdTransfersToStorageIdDelete(authToken: string, appID: string, fileSetId: string, storageId: string, failed?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1FileSetsFileSetIdTransfersToStorageIdDelete(fileSetId: string, storageId: string, authToken?: string, appID?: string, failed?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FileSetsFileSetIdTransfersToStorageIdDelete", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FileSetsFileSetIdTransfersToStorageIdDelete", "appID");
-        }
-
 
         // verify required parameter 'fileSetId' is not null or undefined
         if (fileSetId === null || fileSetId === undefined) {
@@ -11299,6 +11453,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1FileSetsFileSetIdTransfersToStorageIdDelete", "storageId");
         }
+
+
 
 
 
@@ -11323,6 +11479,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -11335,31 +11502,21 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_files 
      * Get files by checksum
+     * @param checksum 
      * @param appID 
      * @param authToken 
-     * @param checksum 
      * @param perPage The number of items for each page
      * @param lastId 
      */
-    public async filesV1FilesChecksumChecksumGet(appID: string, authToken: string, checksum: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1FilesChecksumChecksumGet(checksum: string, appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FilesChecksumChecksumGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FilesChecksumChecksumGet", "authToken");
-        }
-
 
         // verify required parameter 'checksum' is not null or undefined
         if (checksum === null || checksum === undefined) {
             throw new RequiredError("FilesApi", "filesV1FilesChecksumChecksumGet", "checksum");
         }
+
+
 
 
 
@@ -11389,6 +11546,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -11401,25 +11569,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - is_storage_worker 
      * Delete file deletion job after handling it
-     * @param authToken 
-     * @param appID 
      * @param fileId 
      * @param storageId 
+     * @param authToken 
+     * @param appID 
      */
-    public async filesV1FilesFileIdDeletionsFromStorageIdDelete(authToken: string, appID: string, fileId: string, storageId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1FilesFileIdDeletionsFromStorageIdDelete(fileId: string, storageId: string, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FilesFileIdDeletionsFromStorageIdDelete", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FilesFileIdDeletionsFromStorageIdDelete", "appID");
-        }
-
 
         // verify required parameter 'fileId' is not null or undefined
         if (fileId === null || fileId === undefined) {
@@ -11431,6 +11587,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1FilesFileIdDeletionsFromStorageIdDelete", "storageId");
         }
+
+
 
 
         // Path Params
@@ -11449,6 +11607,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -11461,30 +11630,20 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_files 
      * Delete all missing files from storage
+     * @param storageId 
      * @param appID 
      * @param authToken 
-     * @param storageId 
      * @param removeAssets 
      */
-    public async filesV1FilesMissingStoragesStorageIdDelete(appID: string, authToken: string, storageId: string, removeAssets?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1FilesMissingStoragesStorageIdDelete(storageId: string, appID?: string, authToken?: string, removeAssets?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FilesMissingStoragesStorageIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FilesMissingStoragesStorageIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1FilesMissingStoragesStorageIdDelete", "storageId");
         }
+
+
 
 
 
@@ -11508,6 +11667,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -11520,26 +11690,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_files 
      * Check file is on storage
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param fileExistenceCheckSchema body
+     * @param appID 
+     * @param authToken 
      * @param getFileSize 
      */
-    public async filesV1FilesStoragesStorageIdPost(appID: string, authToken: string, storageId: string, fileExistenceCheckSchema: FileExistenceCheckSchema, getFileSize?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1FilesStoragesStorageIdPost(storageId: string, fileExistenceCheckSchema: FileExistenceCheckSchema, appID?: string, authToken?: string, getFileSize?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FilesStoragesStorageIdPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FilesStoragesStorageIdPost", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -11551,6 +11709,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileExistenceCheckSchema === null || fileExistenceCheckSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1FilesStoragesStorageIdPost", "fileExistenceCheckSchema");
         }
+
+
 
 
 
@@ -11585,6 +11745,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -11597,26 +11768,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_formats - can_write_transfers 
      * Queue copying of a formats file sets with files from one storage to another
-     * @param authToken 
-     * @param appID 
      * @param formatId 
      * @param storageId Destination storage_id
      * @param transferFromStorageSchema body
+     * @param authToken 
+     * @param appID 
      */
-    public async filesV1FormatsFormatIdStoragesStorageIdPost(authToken: string, appID: string, formatId: string, storageId: string, transferFromStorageSchema: TransferFromStorageSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1FormatsFormatIdStoragesStorageIdPost(formatId: string, storageId: string, transferFromStorageSchema: TransferFromStorageSchema, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FormatsFormatIdStoragesStorageIdPost", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FormatsFormatIdStoragesStorageIdPost", "appID");
-        }
-
 
         // verify required parameter 'formatId' is not null or undefined
         if (formatId === null || formatId === undefined) {
@@ -11634,6 +11793,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (transferFromStorageSchema === null || transferFromStorageSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1FormatsFormatIdStoragesStorageIdPost", "transferFromStorageSchema");
         }
+
+
 
 
         // Path Params
@@ -11663,6 +11824,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -11675,25 +11847,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_archive_formats 
      * Queue bulk archiving of assets, collections and saved_searches
-     * @param authToken 
-     * @param appID 
      * @param formatName 
      * @param bulkFilesetArchiveSchema body
+     * @param authToken 
+     * @param appID 
      */
-    public async filesV1FormatsFormatNameArchiveBulkPost(authToken: string, appID: string, formatName: string, bulkFilesetArchiveSchema: BulkFilesetArchiveSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1FormatsFormatNameArchiveBulkPost(formatName: string, bulkFilesetArchiveSchema: BulkFilesetArchiveSchema, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FormatsFormatNameArchiveBulkPost", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FormatsFormatNameArchiveBulkPost", "appID");
-        }
-
 
         // verify required parameter 'formatName' is not null or undefined
         if (formatName === null || formatName === undefined) {
@@ -11705,6 +11865,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (bulkFilesetArchiveSchema === null || bulkFilesetArchiveSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1FormatsFormatNameArchiveBulkPost", "bulkFilesetArchiveSchema");
         }
+
+
 
 
         // Path Params
@@ -11733,6 +11895,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -11745,25 +11918,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_restore_archived_formats 
      * Queue bulk restore of previously archived assets, collections or saved_searches
-     * @param authToken 
-     * @param appID 
      * @param formatName 
      * @param bulkFilesetRestoreSchema body
+     * @param authToken 
+     * @param appID 
      */
-    public async filesV1FormatsFormatNameRestoreBulkPost(authToken: string, appID: string, formatName: string, bulkFilesetRestoreSchema: BulkFilesetRestoreSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1FormatsFormatNameRestoreBulkPost(formatName: string, bulkFilesetRestoreSchema: BulkFilesetRestoreSchema, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FormatsFormatNameRestoreBulkPost", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1FormatsFormatNameRestoreBulkPost", "appID");
-        }
-
 
         // verify required parameter 'formatName' is not null or undefined
         if (formatName === null || formatName === undefined) {
@@ -11775,6 +11936,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (bulkFilesetRestoreSchema === null || bulkFilesetRestoreSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1FormatsFormatNameRestoreBulkPost", "bulkFilesetRestoreSchema");
         }
+
+
 
 
         // Path Params
@@ -11803,6 +11966,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -11815,26 +11989,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Check if a specific file is already on the storage for shares
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param directoryPath 
      * @param name Filter by name
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1SharesStoragesStorageIdFilesGet(appID: string, authToken: string, storageId: string, directoryPath: string, name: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1SharesStoragesStorageIdFilesGet(storageId: string, directoryPath: string, name: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1SharesStoragesStorageIdFilesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1SharesStoragesStorageIdFilesGet", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -11852,6 +12014,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (name === null || name === undefined) {
             throw new RequiredError("FilesApi", "filesV1SharesStoragesStorageIdFilesGet", "name");
         }
+
+
 
 
         // Path Params
@@ -11879,6 +12043,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -11894,19 +12069,9 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async filesV1StoragesFilesReindexPost(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesFilesReindexPost(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesFilesReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesFilesReindexPost", "authToken");
-        }
 
 
         // Path Params
@@ -11923,6 +12088,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -11950,19 +12126,9 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
      * @param query Filter by any of the above with wildcard support
      * @param ids Filter list of id:s (comma separated)
      */
-    public async filesV1StoragesGet(appID: string, authToken: string, page?: number, perPage?: number, sort?: string, id?: string, name?: string, method?: string, status?: string, purpose?: string, lastScanned?: string, scannerStatus?: string, query?: string, ids?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesGet(appID?: string, authToken?: string, page?: number, perPage?: number, sort?: string, id?: string, name?: string, method?: string, status?: string, purpose?: string, lastScanned?: string, scannerStatus?: string, query?: string, ids?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesGet", "authToken");
-        }
 
 
 
@@ -12051,6 +12217,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -12066,19 +12243,9 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async filesV1StoragesIsgLatestVersionGet(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesIsgLatestVersionGet(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesIsgLatestVersionGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesIsgLatestVersionGet", "authToken");
-        }
 
 
         // Path Params
@@ -12095,6 +12262,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -12107,30 +12285,20 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_storages 
      * Returns a remote storage matching type
+     * @param purpose 
      * @param appID 
      * @param authToken 
-     * @param purpose 
      * @param storageId 
      */
-    public async filesV1StoragesMatchingPurposeGet(appID: string, authToken: string, purpose: string, storageId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesMatchingPurposeGet(purpose: string, appID?: string, authToken?: string, storageId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesMatchingPurposeGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesMatchingPurposeGet", "authToken");
-        }
-
 
         // verify required parameter 'purpose' is not null or undefined
         if (purpose === null || purpose === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesMatchingPurposeGet", "purpose");
         }
+
+
 
 
 
@@ -12154,6 +12322,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -12166,25 +12345,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_storages 
      * Returns a remote storage matching type and method
-     * @param appID 
-     * @param authToken 
      * @param purpose 
      * @param method 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1StoragesMatchingPurposeMethodMethodGet(appID: string, authToken: string, purpose: string, method: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesMatchingPurposeMethodMethodGet(purpose: string, method: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesMatchingPurposeMethodMethodGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesMatchingPurposeMethodMethodGet", "authToken");
-        }
-
 
         // verify required parameter 'purpose' is not null or undefined
         if (purpose === null || purpose === undefined) {
@@ -12196,6 +12363,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (method === null || method === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesMatchingPurposeMethodMethodGet", "method");
         }
+
+
 
 
         // Path Params
@@ -12214,6 +12383,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -12226,29 +12406,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_storages 
      * Create a new storage
+     * @param storageSchema body
      * @param appID 
      * @param authToken 
-     * @param storageSchema body
      */
-    public async filesV1StoragesPost(appID: string, authToken: string, storageSchema: StorageSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesPost(storageSchema: StorageSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesPost", "authToken");
-        }
-
 
         // verify required parameter 'storageSchema' is not null or undefined
         if (storageSchema === null || storageSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesPost", "storageSchema");
         }
+
+
 
 
         // Path Params
@@ -12276,6 +12446,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -12288,29 +12469,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_storages 
      * Get a purpose default storage
+     * @param purpose 
      * @param appID 
      * @param authToken 
-     * @param purpose 
      */
-    public async filesV1StoragesPurposeDefaultGet(appID: string, authToken: string, purpose: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesPurposeDefaultGet(purpose: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesPurposeDefaultGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesPurposeDefaultGet", "authToken");
-        }
-
 
         // verify required parameter 'purpose' is not null or undefined
         if (purpose === null || purpose === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesPurposeDefaultGet", "purpose");
         }
+
+
 
 
         // Path Params
@@ -12328,6 +12499,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -12343,19 +12525,9 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
      * @param appID 
      * @param authToken 
      */
-    public async filesV1StoragesReindexPost(appID: string, authToken: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesReindexPost(appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesReindexPost", "authToken");
-        }
 
 
         // Path Params
@@ -12372,6 +12544,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -12384,29 +12567,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_scan_bucket 
      * Disable cloud storage auto scan
+     * @param storageId 
      * @param appID 
      * @param authToken 
-     * @param storageId 
      */
-    public async filesV1StoragesStorageIdAutoScanDelete(appID: string, authToken: string, storageId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdAutoScanDelete(storageId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdAutoScanDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdAutoScanDelete", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdAutoScanDelete", "storageId");
         }
+
+
 
 
         // Path Params
@@ -12424,6 +12597,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -12436,29 +12620,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_scan_bucket 
      * Get cloud storage auto scan settings
+     * @param storageId 
      * @param appID 
      * @param authToken 
-     * @param storageId 
      */
-    public async filesV1StoragesStorageIdAutoScanGet(appID: string, authToken: string, storageId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdAutoScanGet(storageId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdAutoScanGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdAutoScanGet", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdAutoScanGet", "storageId");
         }
+
+
 
 
         // Path Params
@@ -12476,6 +12650,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -12488,25 +12673,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_scan_bucket 
      * Enable cloud storage auto scan
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param storageAutoScanSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1StoragesStorageIdAutoScanPost(appID: string, authToken: string, storageId: string, storageAutoScanSchema: StorageAutoScanSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdAutoScanPost(storageId: string, storageAutoScanSchema: StorageAutoScanSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdAutoScanPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdAutoScanPost", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -12518,6 +12691,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (storageAutoScanSchema === null || storageAutoScanSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdAutoScanPost", "storageAutoScanSchema");
         }
+
+
 
 
         // Path Params
@@ -12546,6 +12721,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -12558,26 +12744,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_files - can_write_transfers 
      * Queue copying of files from current storage to specified one
-     * @param authToken 
-     * @param appID 
      * @param storageId Destination storage_id
      * @param bulkTransferToStorageSchema body
+     * @param authToken 
+     * @param appID 
      * @param allowHostTransfer Enable transfer through iconik host (creates egress)
      */
-    public async filesV1StoragesStorageIdBulkPost(authToken: string, appID: string, storageId: string, bulkTransferToStorageSchema: BulkTransferToStorageSchema, allowHostTransfer?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdBulkPost(storageId: string, bulkTransferToStorageSchema: BulkTransferToStorageSchema, authToken?: string, appID?: string, allowHostTransfer?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdBulkPost", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdBulkPost", "appID");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -12589,6 +12763,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (bulkTransferToStorageSchema === null || bulkTransferToStorageSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdBulkPost", "bulkTransferToStorageSchema");
         }
+
+
 
 
 
@@ -12623,6 +12799,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -12635,29 +12822,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_storages 
      * Removes the default flag on a storage
+     * @param storageId 
      * @param appID 
      * @param authToken 
-     * @param storageId 
      */
-    public async filesV1StoragesStorageIdDefaultDelete(appID: string, authToken: string, storageId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdDefaultDelete(storageId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdDefaultDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdDefaultDelete", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdDefaultDelete", "storageId");
         }
+
+
 
 
         // Path Params
@@ -12675,6 +12852,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -12687,29 +12875,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_storages 
      * Set a storage to the default of its purpose
+     * @param storageId 
      * @param appID 
      * @param authToken 
-     * @param storageId 
      */
-    public async filesV1StoragesStorageIdDefaultPost(appID: string, authToken: string, storageId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdDefaultPost(storageId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdDefaultPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdDefaultPost", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdDefaultPost", "storageId");
         }
+
+
 
 
         // Path Params
@@ -12727,6 +12905,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -12739,29 +12928,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_storages 
      * Delete a particular storage by id
+     * @param storageId 
      * @param appID 
      * @param authToken 
-     * @param storageId 
      */
-    public async filesV1StoragesStorageIdDelete(appID: string, authToken: string, storageId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdDelete(storageId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdDelete", "storageId");
         }
+
+
 
 
         // Path Params
@@ -12779,6 +12958,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -12791,25 +12981,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - is_storage_worker 
      * Delete file deletion job after handling it
-     * @param authToken 
-     * @param appID 
      * @param storageId 
      * @param deletionId 
+     * @param authToken 
+     * @param appID 
      */
-    public async filesV1StoragesStorageIdDeletionsDeletionIdDelete(authToken: string, appID: string, storageId: string, deletionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdDeletionsDeletionIdDelete(storageId: string, deletionId: string, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdDeletionsDeletionIdDelete", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdDeletionsDeletionIdDelete", "appID");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -12821,6 +12999,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (deletionId === null || deletionId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdDeletionsDeletionIdDelete", "deletionId");
         }
+
+
 
 
         // Path Params
@@ -12839,6 +13019,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -12851,31 +13042,21 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - is_storage_worker 
      * Get pending deletions of files from a local storage
+     * @param storageId 
      * @param authToken 
      * @param appID 
-     * @param storageId 
      * @param perPage The number of items for each page
      * @param lastId ID of a last file deletion entity on previous page
      */
-    public async filesV1StoragesStorageIdDeletionsFromGet(authToken: string, appID: string, storageId: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdDeletionsFromGet(storageId: string, authToken?: string, appID?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdDeletionsFromGet", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdDeletionsFromGet", "appID");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdDeletionsFromGet", "storageId");
         }
+
+
 
 
 
@@ -12905,6 +13086,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -12917,31 +13109,21 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - is_storage_worker 
      * Get pending deletions of files from a local storage
+     * @param storageId 
      * @param authToken 
      * @param appID 
-     * @param storageId 
      * @param perPage The number of items for each page
      * @param lastId ID of a last file deletion entity on previous page
      */
-    public async filesV1StoragesStorageIdDeletionsGet(authToken: string, appID: string, storageId: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdDeletionsGet(storageId: string, authToken?: string, appID?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdDeletionsGet", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdDeletionsGet", "appID");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdDeletionsGet", "storageId");
         }
+
+
 
 
 
@@ -12971,6 +13153,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -12983,9 +13176,9 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_storages - can_delete_files 
      * DELETE files (with copies in different storages) from a storage folder, or all files on a storage
+     * @param storageId 
      * @param appID 
      * @param authToken 
-     * @param storageId 
      * @param path 
      * @param pathSeparator 
      * @param directoryPath 
@@ -12997,25 +13190,15 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
      * @param dateCreated Filter by date_created
      * @param dateModified Filter by date_modified
      */
-    public async filesV1StoragesStorageIdFilesDelete(appID: string, authToken: string, storageId: string, path?: string, pathSeparator?: string, directoryPath?: string, checksum?: string, id?: string, name?: string, type?: string, status?: string, dateCreated?: string, dateModified?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdFilesDelete(storageId: string, appID?: string, authToken?: string, path?: string, pathSeparator?: string, directoryPath?: string, checksum?: string, id?: string, name?: string, type?: string, status?: string, dateCreated?: string, dateModified?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesDelete", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesDelete", "storageId");
         }
+
+
 
 
 
@@ -13093,6 +13276,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -13105,25 +13299,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_storages 
      * Trigger reindexing for a file on a storage
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param fileId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1StoragesStorageIdFilesFileIdReindexPost(appID: string, authToken: string, storageId: string, fileId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdFilesFileIdReindexPost(storageId: string, fileId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesFileIdReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesFileIdReindexPost", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -13135,6 +13317,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileId === null || fileId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesFileIdReindexPost", "fileId");
         }
+
+
 
 
         // Path Params
@@ -13153,6 +13337,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -13165,9 +13360,9 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_storages 
      * Get files in a storage folder, or all files on a storage
+     * @param storageId 
      * @param appID 
      * @param authToken 
-     * @param storageId 
      * @param path 
      * @param pathSeparator 
      * @param directoryPath 
@@ -13184,25 +13379,15 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
      * @param dateCreated Filter by date_created
      * @param dateModified Filter by date_modified
      */
-    public async filesV1StoragesStorageIdFilesGet(appID: string, authToken: string, storageId: string, path?: string, pathSeparator?: string, directoryPath?: string, checksum?: string, perPage?: number, page?: number, scroll?: boolean, scrollId?: string, sort?: string, id?: string, name?: string, type?: string, status?: string, dateCreated?: string, dateModified?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdFilesGet(storageId: string, appID?: string, authToken?: string, path?: string, pathSeparator?: string, directoryPath?: string, checksum?: string, perPage?: number, page?: number, scroll?: boolean, scrollId?: string, sort?: string, id?: string, name?: string, type?: string, status?: string, dateCreated?: string, dateModified?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesGet", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesGet", "storageId");
         }
+
+
 
 
 
@@ -13310,6 +13495,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -13322,25 +13518,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Update file by storage ID and path
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param fileBaseSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1StoragesStorageIdFilesPatch(appID: string, authToken: string, storageId: string, fileBaseSchema: FileBaseSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdFilesPatch(storageId: string, fileBaseSchema: FileBaseSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesPatch", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -13352,6 +13536,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileBaseSchema === null || fileBaseSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesPatch", "fileBaseSchema");
         }
+
+
 
 
         // Path Params
@@ -13380,6 +13566,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -13392,25 +13589,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Create file without associating it to an asset
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param fileBaseSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1StoragesStorageIdFilesPost(appID: string, authToken: string, storageId: string, fileBaseSchema: FileBaseSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdFilesPost(storageId: string, fileBaseSchema: FileBaseSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesPost", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -13422,6 +13607,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileBaseSchema === null || fileBaseSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesPost", "fileBaseSchema");
         }
+
+
 
 
         // Path Params
@@ -13450,6 +13637,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -13462,25 +13660,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_files 
      * Update file by storage ID and path
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param fileBaseSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1StoragesStorageIdFilesPut(appID: string, authToken: string, storageId: string, fileBaseSchema: FileBaseSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdFilesPut(storageId: string, fileBaseSchema: FileBaseSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesPut", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -13492,6 +13678,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (fileBaseSchema === null || fileBaseSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesPut", "fileBaseSchema");
         }
+
+
 
 
         // Path Params
@@ -13520,6 +13708,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -13532,29 +13731,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_storages 
      * Trigger reindexing of all files
+     * @param storageId 
      * @param appID 
      * @param authToken 
-     * @param storageId 
      */
-    public async filesV1StoragesStorageIdFilesReindexPost(appID: string, authToken: string, storageId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdFilesReindexPost(storageId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesReindexPost", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdFilesReindexPost", "storageId");
         }
+
+
 
 
         // Path Params
@@ -13572,6 +13761,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -13584,25 +13784,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Delete storage gateway event
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param eventId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1StoragesStorageIdGatewayEventsEventIdDelete(appID: string, authToken: string, storageId: string, eventId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdGatewayEventsEventIdDelete(storageId: string, eventId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayEventsEventIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayEventsEventIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -13614,6 +13802,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (eventId === null || eventId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayEventsEventIdDelete", "eventId");
         }
+
+
 
 
         // Path Params
@@ -13632,6 +13822,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -13644,25 +13845,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Get pending storage gateway events
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param lastId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1StoragesStorageIdGatewayEventsGet(appID: string, authToken: string, storageId: string, lastId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdGatewayEventsGet(storageId: string, lastId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayEventsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayEventsGet", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -13674,6 +13863,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (lastId === null || lastId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayEventsGet", "lastId");
         }
+
+
 
 
         // Path Params
@@ -13692,6 +13883,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -13704,25 +13906,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Create new storage gateway event
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param iconikStorageGatewayEventSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1StoragesStorageIdGatewayEventsPost(appID: string, authToken: string, storageId: string, iconikStorageGatewayEventSchema: IconikStorageGatewayEventSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdGatewayEventsPost(storageId: string, iconikStorageGatewayEventSchema: IconikStorageGatewayEventSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayEventsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayEventsPost", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -13734,6 +13924,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (iconikStorageGatewayEventSchema === null || iconikStorageGatewayEventSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayEventsPost", "iconikStorageGatewayEventSchema");
         }
+
+
 
 
         // Path Params
@@ -13762,6 +13954,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -13774,25 +13977,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Delete storage gateway events in bulk
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param iconikStorageGatewayEventsPurgeSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1StoragesStorageIdGatewayEventsPurgePost(appID: string, authToken: string, storageId: string, iconikStorageGatewayEventsPurgeSchema: IconikStorageGatewayEventsPurgeSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdGatewayEventsPurgePost(storageId: string, iconikStorageGatewayEventsPurgeSchema: IconikStorageGatewayEventsPurgeSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayEventsPurgePost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayEventsPurgePost", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -13804,6 +13995,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (iconikStorageGatewayEventsPurgeSchema === null || iconikStorageGatewayEventsPurgeSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayEventsPurgePost", "iconikStorageGatewayEventsPurgeSchema");
         }
+
+
 
 
         // Path Params
@@ -13832,6 +14025,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -13844,29 +14048,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Get storage gateway report
+     * @param storageId 
      * @param appID 
      * @param authToken 
-     * @param storageId 
      */
-    public async filesV1StoragesStorageIdGatewayReportGet(appID: string, authToken: string, storageId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdGatewayReportGet(storageId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayReportGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayReportGet", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayReportGet", "storageId");
         }
+
+
 
 
         // Path Params
@@ -13884,6 +14078,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -13896,25 +14101,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - is_storage_worker 
      * Create storage gateway report
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param gatewayReportSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1StoragesStorageIdGatewayReportPut(appID: string, authToken: string, storageId: string, gatewayReportSchema: GatewayReportSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdGatewayReportPut(storageId: string, gatewayReportSchema: GatewayReportSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayReportPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayReportPut", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -13926,6 +14119,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (gatewayReportSchema === null || gatewayReportSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayReportPut", "gatewayReportSchema");
         }
+
+
 
 
         // Path Params
@@ -13954,6 +14149,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -13966,25 +14172,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - is_storage_worker 
      * Update storage gateway status
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param gatewayStatusSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1StoragesStorageIdGatewayStatusPut(appID: string, authToken: string, storageId: string, gatewayStatusSchema: GatewayStatusSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdGatewayStatusPut(storageId: string, gatewayStatusSchema: GatewayStatusSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayStatusPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayStatusPut", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -13996,6 +14190,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (gatewayStatusSchema === null || gatewayStatusSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGatewayStatusPut", "gatewayStatusSchema");
         }
+
+
 
 
         // Path Params
@@ -14024,6 +14220,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -14036,29 +14243,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_storages 
      * Returns a particular storage by id
+     * @param storageId 
      * @param appID 
      * @param authToken 
-     * @param storageId 
      */
-    public async filesV1StoragesStorageIdGet(appID: string, authToken: string, storageId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdGet(storageId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGet", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdGet", "storageId");
         }
+
+
 
 
         // Path Params
@@ -14076,6 +14273,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -14088,25 +14296,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - is_storage_worker 
      * Upload storage logs
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param filename 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1StoragesStorageIdLogsPost(appID: string, authToken: string, storageId: string, filename: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdLogsPost(storageId: string, filename: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdLogsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdLogsPost", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -14118,6 +14314,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (filename === null || filename === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdLogsPost", "filename");
         }
+
+
 
 
         // Path Params
@@ -14140,6 +14338,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -14152,26 +14361,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_storages - can_delete_files 
      * Delete files from a particular storage from multiple objects
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param objectType 
      * @param storageFilesDeleteBulkSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1StoragesStorageIdObjectTypeFilesDelete(appID: string, authToken: string, storageId: string, objectType: string, storageFilesDeleteBulkSchema: StorageFilesDeleteBulkSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdObjectTypeFilesDelete(storageId: string, objectType: string, storageFilesDeleteBulkSchema: StorageFilesDeleteBulkSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdObjectTypeFilesDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdObjectTypeFilesDelete", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -14189,6 +14386,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (storageFilesDeleteBulkSchema === null || storageFilesDeleteBulkSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdObjectTypeFilesDelete", "storageFilesDeleteBulkSchema");
         }
+
+
 
 
         // Path Params
@@ -14218,6 +14417,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -14230,25 +14440,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_storages 
      * Update storage
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param storageSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1StoragesStorageIdPatch(appID: string, authToken: string, storageId: string, storageSchema: StorageSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdPatch(storageId: string, storageSchema: StorageSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -14260,6 +14458,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (storageSchema === null || storageSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdPatch", "storageSchema");
         }
+
+
 
 
         // Path Params
@@ -14288,6 +14488,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -14300,25 +14511,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_storages 
      * Update storage
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param storageSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1StoragesStorageIdPut(appID: string, authToken: string, storageId: string, storageSchema: StorageSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdPut(storageId: string, storageSchema: StorageSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdPut", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -14330,6 +14529,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (storageSchema === null || storageSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdPut", "storageSchema");
         }
+
+
 
 
         // Path Params
@@ -14358,6 +14559,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -14370,29 +14582,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_storages 
      * Trigger reindexing of a storage
+     * @param storageId 
      * @param appID 
      * @param authToken 
-     * @param storageId 
      */
-    public async filesV1StoragesStorageIdReindexPost(appID: string, authToken: string, storageId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdReindexPost(storageId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdReindexPost", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdReindexPost", "storageId");
         }
+
+
 
 
         // Path Params
@@ -14410,6 +14612,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -14422,25 +14635,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_scan_bucket 
      * Requests to scan a storage
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param storageScanSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1StoragesStorageIdScanPost(appID: string, authToken: string, storageId: string, storageScanSchema: StorageScanSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdScanPost(storageId: string, storageScanSchema: StorageScanSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdScanPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdScanPost", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -14452,6 +14653,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (storageScanSchema === null || storageScanSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdScanPost", "storageScanSchema");
         }
+
+
 
 
         // Path Params
@@ -14480,6 +14683,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -14492,25 +14706,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_storages 
      * Update search document for storage
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param storageSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1StoragesStorageIdSearchDocumentPut(appID: string, authToken: string, storageId: string, storageSchema: StorageSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdSearchDocumentPut(storageId: string, storageSchema: StorageSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdSearchDocumentPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdSearchDocumentPut", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -14522,6 +14724,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (storageSchema === null || storageSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdSearchDocumentPut", "storageSchema");
         }
+
+
 
 
         // Path Params
@@ -14550,6 +14754,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -14562,31 +14777,21 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_storages 
      * Get storage\'s exported files
+     * @param storageId 
      * @param appID 
      * @param authToken 
-     * @param storageId 
      * @param perPage The number of items for each page
      * @param lastId ID of a last file on previous page
      */
-    public async filesV1StoragesStorageIdTemporaryFilesGet(appID: string, authToken: string, storageId: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdTemporaryFilesGet(storageId: string, appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTemporaryFilesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTemporaryFilesGet", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTemporaryFilesGet", "storageId");
         }
+
+
 
 
 
@@ -14616,6 +14821,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -14628,31 +14844,21 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_storages - can_read_transcoders 
      * Get all transcoders for a particular storage
+     * @param storageId 
      * @param appID 
      * @param authToken 
-     * @param storageId 
      * @param perPage The number of items for each page
      * @param lastId ID of a last transcoder on previous page
      */
-    public async filesV1StoragesStorageIdTranscodersGet(appID: string, authToken: string, storageId: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdTranscodersGet(storageId: string, appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTranscodersGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTranscodersGet", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTranscodersGet", "storageId");
         }
+
+
 
 
 
@@ -14682,6 +14888,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -14694,25 +14911,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_transcoders 
      * Delete a transcoder from storage
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param transcoderId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1StoragesStorageIdTranscodersTranscoderIdDelete(appID: string, authToken: string, storageId: string, transcoderId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdTranscodersTranscoderIdDelete(storageId: string, transcoderId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTranscodersTranscoderIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTranscodersTranscoderIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -14724,6 +14929,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (transcoderId === null || transcoderId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTranscodersTranscoderIdDelete", "transcoderId");
         }
+
+
 
 
         // Path Params
@@ -14742,6 +14949,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -14754,25 +14972,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_transcoders 
      * Create a new transcoder for storage
-     * @param appID 
-     * @param authToken 
      * @param storageId 
      * @param transcoderId 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1StoragesStorageIdTranscodersTranscoderIdPut(appID: string, authToken: string, storageId: string, transcoderId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdTranscodersTranscoderIdPut(storageId: string, transcoderId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTranscodersTranscoderIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTranscodersTranscoderIdPut", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -14784,6 +14990,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (transcoderId === null || transcoderId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTranscodersTranscoderIdPut", "transcoderId");
         }
+
+
 
 
         // Path Params
@@ -14802,6 +15010,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -14814,31 +15033,21 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_transfers 
      * Get pending transfers of file sets from a local storage
+     * @param storageId 
      * @param authToken 
      * @param appID 
-     * @param storageId 
      * @param perPage The number of items for each page
      * @param lastId ID of a last transfer on previous page
      */
-    public async filesV1StoragesStorageIdTransfersFromGet(authToken: string, appID: string, storageId: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdTransfersFromGet(storageId: string, authToken?: string, appID?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTransfersFromGet", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTransfersFromGet", "appID");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTransfersFromGet", "storageId");
         }
+
+
 
 
 
@@ -14868,6 +15077,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -14880,27 +15100,15 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_transfers 
      * Delete file set transfer after handling it
-     * @param authToken 
-     * @param appID 
      * @param storageId 
      * @param transferId 
+     * @param authToken 
+     * @param appID 
      * @param failed 
      * @param completed 
      */
-    public async filesV1StoragesStorageIdTransfersFromTransferIdDelete(authToken: string, appID: string, storageId: string, transferId: string, failed?: boolean, completed?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdTransfersFromTransferIdDelete(storageId: string, transferId: string, authToken?: string, appID?: string, failed?: boolean, completed?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTransfersFromTransferIdDelete", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTransfersFromTransferIdDelete", "appID");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -14912,6 +15120,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (transferId === null || transferId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTransfersFromTransferIdDelete", "transferId");
         }
+
+
 
 
 
@@ -14942,6 +15152,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -14954,25 +15175,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_transfers 
      * Get file set transfer record
-     * @param authToken 
-     * @param appID 
      * @param storageId 
      * @param transferId 
+     * @param authToken 
+     * @param appID 
      */
-    public async filesV1StoragesStorageIdTransfersFromTransferIdGet(authToken: string, appID: string, storageId: string, transferId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdTransfersFromTransferIdGet(storageId: string, transferId: string, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTransfersFromTransferIdGet", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTransfersFromTransferIdGet", "appID");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -14984,6 +15193,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (transferId === null || transferId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTransfersFromTransferIdGet", "transferId");
         }
+
+
 
 
         // Path Params
@@ -15002,6 +15213,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -15014,31 +15236,21 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_transfers 
      * Get pending transfers of file sets to a local storage
+     * @param storageId 
      * @param authToken 
      * @param appID 
-     * @param storageId 
      * @param perPage The number of items for each page
      * @param lastId ID of a last transfer on previous page
      */
-    public async filesV1StoragesStorageIdTransfersToGet(authToken: string, appID: string, storageId: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdTransfersToGet(storageId: string, authToken?: string, appID?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTransfersToGet", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTransfersToGet", "appID");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTransfersToGet", "storageId");
         }
+
+
 
 
 
@@ -15068,6 +15280,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -15080,27 +15303,15 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_transfers 
      * Delete file set transfer after handling it
-     * @param authToken 
-     * @param appID 
      * @param storageId 
      * @param transferId 
+     * @param authToken 
+     * @param appID 
      * @param failed 
      * @param completed 
      */
-    public async filesV1StoragesStorageIdTransfersToTransferIdDelete(authToken: string, appID: string, storageId: string, transferId: string, failed?: boolean, completed?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdTransfersToTransferIdDelete(storageId: string, transferId: string, authToken?: string, appID?: string, failed?: boolean, completed?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTransfersToTransferIdDelete", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTransfersToTransferIdDelete", "appID");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -15112,6 +15323,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (transferId === null || transferId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTransfersToTransferIdDelete", "transferId");
         }
+
+
 
 
 
@@ -15142,6 +15355,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -15154,25 +15378,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_transfers 
      * Get file set transfer record
-     * @param authToken 
-     * @param appID 
      * @param storageId 
      * @param transferId 
+     * @param authToken 
+     * @param appID 
      */
-    public async filesV1StoragesStorageIdTransfersToTransferIdGet(authToken: string, appID: string, storageId: string, transferId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdTransfersToTransferIdGet(storageId: string, transferId: string, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTransfersToTransferIdGet", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTransfersToTransferIdGet", "appID");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
@@ -15184,6 +15396,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (transferId === null || transferId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdTransfersToTransferIdGet", "transferId");
         }
+
+
 
 
         // Path Params
@@ -15202,6 +15416,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -15214,29 +15439,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_storages 
      * Verify storage access
+     * @param storageId 
      * @param appID 
      * @param authToken 
-     * @param storageId 
      */
-    public async filesV1StoragesStorageIdVerificationsAccessGet(appID: string, authToken: string, storageId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdVerificationsAccessGet(storageId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdVerificationsAccessGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdVerificationsAccessGet", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdVerificationsAccessGet", "storageId");
         }
+
+
 
 
         // Path Params
@@ -15254,6 +15469,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -15266,29 +15492,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_storages 
      * Verify storage permissions
+     * @param storageId 
      * @param appID 
      * @param authToken 
-     * @param storageId 
      */
-    public async filesV1StoragesStorageIdVerificationsPermissionsGet(appID: string, authToken: string, storageId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1StoragesStorageIdVerificationsPermissionsGet(storageId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdVerificationsPermissionsGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1StoragesStorageIdVerificationsPermissionsGet", "authToken");
-        }
-
 
         // verify required parameter 'storageId' is not null or undefined
         if (storageId === null || storageId === undefined) {
             throw new RequiredError("FilesApi", "filesV1StoragesStorageIdVerificationsPermissionsGet", "storageId");
         }
+
+
 
 
         // Path Params
@@ -15306,6 +15522,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -15326,19 +15553,9 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
      * @param ids Filter list of id:s (comma separated)
      * @param sort A comma separated list of fieldnames with order. For example - first_name,asc;last_name,desc
      */
-    public async filesV1TranscodersGet(appID: string, authToken: string, perPage?: number, page?: number, query?: string, ids?: string, sort?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1TranscodersGet(appID?: string, authToken?: string, perPage?: number, page?: number, query?: string, ids?: string, sort?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TranscodersGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TranscodersGet", "authToken");
-        }
 
 
 
@@ -15385,6 +15602,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -15397,29 +15625,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_transcoders 
      * Create a new transcoder
+     * @param transcoderSchema body
      * @param appID 
      * @param authToken 
-     * @param transcoderSchema body
      */
-    public async filesV1TranscodersPost(appID: string, authToken: string, transcoderSchema: TranscoderSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1TranscodersPost(transcoderSchema: TranscoderSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TranscodersPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TranscodersPost", "authToken");
-        }
-
 
         // verify required parameter 'transcoderSchema' is not null or undefined
         if (transcoderSchema === null || transcoderSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1TranscodersPost", "transcoderSchema");
         }
+
+
 
 
         // Path Params
@@ -15447,6 +15665,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -15459,29 +15688,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_delete_transcoders 
      * Delete a particular transcoder by id
+     * @param transcoderId 
      * @param appID 
      * @param authToken 
-     * @param transcoderId 
      */
-    public async filesV1TranscodersTranscoderIdDelete(appID: string, authToken: string, transcoderId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1TranscodersTranscoderIdDelete(transcoderId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdDelete", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdDelete", "authToken");
-        }
-
 
         // verify required parameter 'transcoderId' is not null or undefined
         if (transcoderId === null || transcoderId === undefined) {
             throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdDelete", "transcoderId");
         }
+
+
 
 
         // Path Params
@@ -15499,6 +15718,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -15511,29 +15741,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_transcoders 
      * Returns a particular transcoder by id
+     * @param transcoderId 
      * @param appID 
      * @param authToken 
-     * @param transcoderId 
      */
-    public async filesV1TranscodersTranscoderIdGet(appID: string, authToken: string, transcoderId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1TranscodersTranscoderIdGet(transcoderId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdGet", "authToken");
-        }
-
 
         // verify required parameter 'transcoderId' is not null or undefined
         if (transcoderId === null || transcoderId === undefined) {
             throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdGet", "transcoderId");
         }
+
+
 
 
         // Path Params
@@ -15551,6 +15771,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -15563,25 +15794,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - is_storage_worker 
      * Upload transcoder logs
-     * @param appID 
-     * @param authToken 
      * @param transcoderId 
      * @param filename 
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1TranscodersTranscoderIdLogsPost(appID: string, authToken: string, transcoderId: string, filename: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1TranscodersTranscoderIdLogsPost(transcoderId: string, filename: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdLogsPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdLogsPost", "authToken");
-        }
-
 
         // verify required parameter 'transcoderId' is not null or undefined
         if (transcoderId === null || transcoderId === undefined) {
@@ -15593,6 +15812,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (filename === null || filename === undefined) {
             throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdLogsPost", "filename");
         }
+
+
 
 
         // Path Params
@@ -15615,6 +15836,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -15627,25 +15859,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_transcoders 
      * Update transcoder
-     * @param appID 
-     * @param authToken 
      * @param transcoderId 
      * @param transcoderSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1TranscodersTranscoderIdPatch(appID: string, authToken: string, transcoderId: string, transcoderSchema: TranscoderSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1TranscodersTranscoderIdPatch(transcoderId: string, transcoderSchema: TranscoderSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdPatch", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdPatch", "authToken");
-        }
-
 
         // verify required parameter 'transcoderId' is not null or undefined
         if (transcoderId === null || transcoderId === undefined) {
@@ -15657,6 +15877,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (transcoderSchema === null || transcoderSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdPatch", "transcoderSchema");
         }
+
+
 
 
         // Path Params
@@ -15685,6 +15907,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -15697,25 +15930,13 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_write_transcoders 
      * Update transcoder
-     * @param appID 
-     * @param authToken 
      * @param transcoderId 
      * @param transcoderSchema body
+     * @param appID 
+     * @param authToken 
      */
-    public async filesV1TranscodersTranscoderIdPut(appID: string, authToken: string, transcoderId: string, transcoderSchema: TranscoderSchema, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1TranscodersTranscoderIdPut(transcoderId: string, transcoderSchema: TranscoderSchema, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdPut", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdPut", "authToken");
-        }
-
 
         // verify required parameter 'transcoderId' is not null or undefined
         if (transcoderId === null || transcoderId === undefined) {
@@ -15727,6 +15948,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (transcoderSchema === null || transcoderSchema === undefined) {
             throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdPut", "transcoderSchema");
         }
+
+
 
 
         // Path Params
@@ -15755,6 +15978,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         );
         requestContext.setBody(serializedBody);
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -15767,29 +16001,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_reindex_transcoders 
      * Trigger reindexing of a transcoder
+     * @param transcoderId 
      * @param appID 
      * @param authToken 
-     * @param transcoderId 
      */
-    public async filesV1TranscodersTranscoderIdReindexPost(appID: string, authToken: string, transcoderId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1TranscodersTranscoderIdReindexPost(transcoderId: string, appID?: string, authToken?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdReindexPost", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdReindexPost", "authToken");
-        }
-
 
         // verify required parameter 'transcoderId' is not null or undefined
         if (transcoderId === null || transcoderId === undefined) {
             throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdReindexPost", "transcoderId");
         }
+
+
 
 
         // Path Params
@@ -15807,6 +16031,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -15819,31 +16054,21 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      *  Required roles:  - can_read_transcoders 
      * Get storages linked to a transcoder
+     * @param transcoderId 
      * @param appID 
      * @param authToken 
-     * @param transcoderId 
      * @param perPage The number of items for each page
      * @param lastId ID of a last storage on previous page
      */
-    public async filesV1TranscodersTranscoderIdStoragesGet(appID: string, authToken: string, transcoderId: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1TranscodersTranscoderIdStoragesGet(transcoderId: string, appID?: string, authToken?: string, perPage?: number, lastId?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdStoragesGet", "appID");
-        }
-
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdStoragesGet", "authToken");
-        }
-
 
         // verify required parameter 'transcoderId' is not null or undefined
         if (transcoderId === null || transcoderId === undefined) {
             throw new RequiredError("FilesApi", "filesV1TranscodersTranscoderIdStoragesGet", "transcoderId");
         }
+
+
 
 
 
@@ -15873,6 +16098,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Auth-Token", ObjectSerializer.serialize(authToken, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -15885,29 +16121,19 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Generates a url for direct file downloads (for IGSs)
+     * @param transferId 
      * @param authToken 
      * @param appID 
-     * @param transferId 
      */
-    public async filesV1TransfersTransferIdUrlsPost(authToken: string, appID: string, transferId: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1TransfersTransferIdUrlsPost(transferId: string, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TransfersTransferIdUrlsPost", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TransfersTransferIdUrlsPost", "appID");
-        }
-
 
         // verify required parameter 'transferId' is not null or undefined
         if (transferId === null || transferId === undefined) {
             throw new RequiredError("FilesApi", "filesV1TransfersTransferIdUrlsPost", "transferId");
         }
+
+
 
 
         // Path Params
@@ -15925,6 +16151,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
@@ -15937,26 +16174,14 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * 
      * Verifies the signature of a url
-     * @param authToken 
-     * @param appID 
      * @param transferId 
      * @param userId 
      * @param signature 
+     * @param authToken 
+     * @param appID 
      */
-    public async filesV1TransfersTransferIdUrlsVerifyGet(authToken: string, appID: string, transferId: string, userId: string, signature: string, _options?: Configuration): Promise<RequestContext> {
+    public async filesV1TransfersTransferIdUrlsVerifyGet(transferId: string, userId: string, signature: string, authToken?: string, appID?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'authToken' is not null or undefined
-        if (authToken === null || authToken === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TransfersTransferIdUrlsVerifyGet", "authToken");
-        }
-
-
-        // verify required parameter 'appID' is not null or undefined
-        if (appID === null || appID === undefined) {
-            throw new RequiredError("FilesApi", "filesV1TransfersTransferIdUrlsVerifyGet", "appID");
-        }
-
 
         // verify required parameter 'transferId' is not null or undefined
         if (transferId === null || transferId === undefined) {
@@ -15974,6 +16199,8 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         if (signature === null || signature === undefined) {
             throw new RequiredError("FilesApi", "filesV1TransfersTransferIdUrlsVerifyGet", "signature");
         }
+
+
 
 
         // Path Params
@@ -16001,6 +16228,17 @@ export class FilesApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("App-ID", ObjectSerializer.serialize(appID, "string", ""));
 
 
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["authToken"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["appId"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
         if (defaultAuth?.applySecurityAuthentication) {
