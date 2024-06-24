@@ -38,6 +38,11 @@ jobs:
           config-file: config.json
           command-args: "--global-property=apiDocs=true,modelDocs=true --git-repo-id ${GITHUB_REPOSITORY#*/} --git-user-id ${GITHUB_REPOSITORY_OWNER}"
 
+      - name: Modify sdk
+        run: |
+          cd typescript-client
+          jq '.files = ["dist"]' package.json > package.json.tmp && mv package.json.tmp package.json
+
       - name: Verify changes
         id: verify_changes
         run: git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
